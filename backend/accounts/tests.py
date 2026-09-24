@@ -1,3 +1,1 @@
-from django.test import TestCase
-
-# Create your tests here.
+"""账号业务测试预留文件；随账号功能开发补充测试。"""

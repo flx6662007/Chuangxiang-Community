@@ -1,3 +1,1 @@
-from django.contrib import admin
-
-# Register your models here.
+"""管理后台配置预留文件；用户模型确定后再注册管理类。"""

@@ -1,3 +1,5 @@
-from django.db import models
+"""用户模型预留文件，当前未定义模型。
 
-# Define the custom User model with the backend owner before the first migration.
+先与后端负责人确认登录标识、邮箱唯一性等规则，再定义 accounts.User。
+自定义用户模型需在本应用的首次迁移中创建。
+"""

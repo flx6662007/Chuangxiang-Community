@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+"""账号接口预留文件；注册、登录和学校邮箱验证尚未实现。"""
