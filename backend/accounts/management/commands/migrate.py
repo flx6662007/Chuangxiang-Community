@@ -1,4 +1,4 @@
-"""Prevent an accidental initial migration before the user model is agreed."""
+"""用户模型未确定时阻止建表，避免先创建 Django 默认用户表。"""
 
 from django.conf import settings
 from django.core.management.base import CommandError
