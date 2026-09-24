@@ -46,6 +46,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts.apps.AccountsConfig',
     'competitions.apps.CompetitionsConfig',
+    'teams.apps.TeamsConfig',
+    'research.apps.ResearchConfig',
+    'resources.apps.ResourcesConfig',
+    'newsletters.apps.NewslettersConfig',
+    'favorites.apps.FavoritesConfig',
+    'governance.apps.GovernanceConfig',
+    'notifications.apps.NotificationsConfig',
+    'ingestion.apps.IngestionConfig',
 ]
 
 MIDDLEWARE = [

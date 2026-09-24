@@ -143,3 +143,6 @@ class User(AbstractUser):
                 ).exists() or attempt == 4:
                     raise
                 self.public_code = generate_public_code()
+
+
+from .restriction import UserRestriction  # noqa: E402,F401

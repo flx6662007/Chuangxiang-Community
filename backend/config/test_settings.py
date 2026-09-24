@@ -1,4 +1,4 @@
-"""模型阶段的独立测试配置：只使用临时内存库，不读写本地 PostgreSQL。"""
+"""离线测试配置：在临时 SQLite 内存库执行迁移，不读写本地 PostgreSQL。"""
 
 import os
 
@@ -12,7 +12,5 @@ for key, value in {
 from .settings import *  # noqa: E402,F403
 
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': ':memory:'}}
-# 初始迁移尚未交付；测试运行器仅根据当前模型同步临时表。
-MIGRATION_MODULES = dict.fromkeys(('admin', 'auth', 'contenttypes', 'sessions', 'accounts', 'competitions'))
 PASSWORD_HASHERS = ['django.contrib.auth.hashers.MD5PasswordHasher']
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'

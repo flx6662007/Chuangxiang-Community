@@ -1,6 +1,6 @@
 # 用户字段表
 
-版本：v1.0。用户已确认，作为当前分支的首版建模基线；用户模型、管理器和基础约束已编写，初始迁移尚未生成，待按交接流程同步后端。完整约束、权限及流程见 [用户字段说明](user-fields.md)。
+版本：v1.0。用户已确认，作为当前分支的首版建模基线；用户模型、管理器和基础约束已编写，本地初始迁移及 PostgreSQL 验证已完成，待统一交付后端审核。完整约束、权限及流程见 [用户字段说明](database-fields.md#accounts)。
 
 ## 用户基础表
 
@@ -25,14 +25,14 @@
 
 | 用户权限关系 | 关联对象 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `groups` | Django `Group`，多对多 | 空关系 | 由用户组授予内容维护、举报处理等权限 |
+| `groups` | Django `Group`，多对多 | 空关系 | 由用户组授予内容维护、账号管理等权限 |
 | `user_permissions` | Django `Permission`，多对多 | 空关系 | 个别用户的具体权限，由授权管理员维护 |
 
 以上关系由 Django 管理关联表，不是用户表的普通列。移除默认的 `username`、`first_name`、`last_name`；队长或成员身份来自具体队伍关系。
 
 ## 业务限制记录
 
-模型 `accounts.UserRestriction`，表名 `accounts_userrestriction`。治理阶段实现，不要求与第一轮用户基础表同时建表。
+模型 `accounts.UserRestriction`，表名 `accounts_userrestriction`。已在第二轮通过 `accounts.0002_userrestriction` 建表，代码位于 restriction.py 并由 models.py 导入；管理员事务入口与有效限制不叠加规则待后端接入。
 
 | 字段名 | 中文含义 | Django 类型 | 数据库可空 | 默认值或写入方式 | 主要约束 |
 | --- | --- | --- | --- | --- | --- |
@@ -46,7 +46,7 @@
 | `revoked_by` | 提前解除管理员 | `ForeignKey(User)` | 是 | NULL，提前解除时写入 | `on_delete=PROTECT`；与解除时间同时有值或同时为空 |
 | `revoke_reason` | 提前解除原因 | `CharField(500)` | 否 | 初始 `''` | 人工提前解除时必填 |
 
-外键的数据库列名由 Django 自动追加 `_id`。有效限制同时禁止新增招募和提交新申请，保留登录、已有记录、退出、申诉及已有成员关系。有效条件：当前时间处于开始与结束之间且未提前解除；到期自然恢复。重复处理同一有效限制不叠加或重置时长。
+外键的数据库列名由 Django 自动追加 `_id`。有效限制同时禁止新增招募和提交新申请，保留登录、已有记录、退出、联系管理员提出异议的能力及已有成员关系；按 2026-09-25 最新治理范围，统一使用“联系我们”，不增加独立申诉流程。有效条件：当前时间处于开始与结束之间且未提前解除；到期自然恢复。重复处理同一有效限制不叠加或重置时长。
 
 ## 邮箱验证关联
 
@@ -72,4 +72,4 @@
 | 计算状态 | `school_email_verified`、`has_contact_details`、`is_restricted`、`restriction_ends_at`、`can_publish`、`can_apply` 不新增同名数据库列 |
 | 不新增的重复字段 | 不另存 `contact_email`，不设置只能二选一的 `contact_type`，不重复保存邮箱验证状态 |
 
-本轮用户与赛事模型已编写。下一步同步后端，生成并检查初始迁移、在 PostgreSQL 空库验证、准备虚构样例数据，并配套 Admin 与业务写入流程。
+本轮用户与赛事模型、初始迁移和虚构样例已完成本机 PostgreSQL 验证，复现步骤见 [数据库初始化与验收](database-handoff.md#initialization)。模型、迁移和文档随数据库分支交付，后端继续统一审核，Admin 与业务写入流程待后端接续。

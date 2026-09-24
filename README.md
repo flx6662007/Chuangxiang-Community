@@ -2,7 +2,7 @@
 
 国豪书院创新俱乐部发起的科创资讯与参赛组队网站。面向本校学生集中展示赛事、科研机会和快讯，通过固定模板发布招募，改善微信群中信息难查找、招募分散和邀请新成员不便的问题。
 
-**当前仓库用于共同开发，尚未形成完整可用的网站。** 本分支已有用户和赛事模型代码及基础约束测试；初始迁移、管理后台和业务接口仍待交付，没有采集或导入赛事数据。
+**当前仓库用于共同开发，尚未形成完整可用的网站。** 数据库分支已在本地完成用户、赛事及本轮确认的后续模型、迁移、建表和虚构样例导入；PostgreSQL 108 项测试通过，共 58 张表。数据库成果随当前分支交付，管理后台和业务接口仍待实现，没有采集或导入真实赛事数据。
 
 ## 文档入口
 
@@ -11,12 +11,14 @@
 | [团队进度](docs/progress.md) | 当前交付、下一步、依赖和验收点；进度统一在此更新 |
 | [产品范围](docs/product-scope.md) | 功能边界、组队规则与 AI 方向 |
 | [后端开发说明](docs/backend-development.md) | 首次配置、日常启动、检查与迁移说明 |
-| [用户字段表](docs/user-fields-table.md) | 本分支已确认的用户字段基线；完整约束与交接顺序见 [用户字段说明](docs/user-fields.md) |
-| [赛事字段表](docs/competition-fields-table.md) | 赛事部分已审核通过并形成 v1.0 交付基线；发布、时间、来源和组队关联规则见 [赛事字段说明](docs/competition-fields.md) |
-| [账号与学校邮箱验证方案](docs/account-email-verification.md) | 邮箱登录、allauth 验证、Session、发信方案与接续分工；区分现有模型和待接入功能 |
+| [数据库交付说明](docs/database-handoff.md) | 对照原工作要求，汇总两轮实际成果、空库验证、样例和后续交接；数据库最新入口 |
+| [业务模块字段表](docs/remaining-fields-table.md) | 组队、科研、资源、快讯、收藏、通知、治理与采集追溯；配套 [字段说明](docs/database-fields.md#teams) |
+| [用户字段表](docs/user-fields-table.md) | 本分支已确认的用户字段基线；完整约束与交接顺序见 [用户字段说明](docs/database-fields.md#accounts) |
+| [赛事字段表](docs/competition-fields-table.md) | 赛事部分已审核通过并形成 v1.0 交付基线；发布、时间、来源和组队关联规则见 [赛事字段说明](docs/database-fields.md#competitions) |
 | [API 说明](docs/api.md) | 已实现接口，以及尚未确定的业务接口 |
 | [AI 服务说明](docs/ai-services.md) | 模型配置、调用入口、结果校验、异常和开发边界 |
 | [前端说明](frontend/README.md) | 前端目录的当前用途与开发入口 |
+| [数据库字段与业务规则说明](docs/database-fields.md) | 用户、赛事、组队、内容、通知与治理的关系、状态、权限和写入约束 |
 
 ## 项目结构
 
@@ -28,6 +30,15 @@ Chuangxiang-Community/
 │   ├── config/                 # 配置、网址路由和健康检查
 │   ├── accounts/               # 邮箱登录用户模型、管理器及首次迁移保护
 │   ├── competitions/           # 赛事、来源、分类标签模型；业务接口待开发
+│   ├── teams/                  # 招募、申请、成员、退出与解散模型及样例
+│   ├── research/               # 科研机会、来源与版本模型
+│   ├── resources/              # 外链资源、词条、版本及关联模型
+│   ├── newsletters/            # 快讯草稿、确认版本及内容项
+│   ├── favorites/              # 三类内容收藏
+│   ├── notifications/          # 业务事件和站内通知记录
+│   ├── governance/             # 必要管理员操作记录
+│   ├── ingestion/              # 采集与 AI 处理追溯模型，任务未接入
+│   ├── common/                 # 模型共用校验，无独立表
 │   ├── ai_services/            # 模型调用、提示词、结果校验与异常处理
 │   ├── scripts/                # 数据库检查等辅助脚本
 │   ├── .env.example            # 本地配置样例
@@ -58,7 +69,7 @@ Set-Location .\backend
 {"status":"ok","service":"chuangxiang-backend"}
 ```
 
-这只表示健康检查接口可以响应，**不代表数据库或业务功能可用**。用户模型已配置为 `accounts.User`，仍需生成并检查初始迁移后再建表；操作顺序见开发说明。
+这只表示健康检查接口可以响应，**不代表数据库或业务功能可用**。用户模型已配置为 `accounts.User`，本机已完成初始迁移；其他电脑获取迁移文件后仍需在自己的数据库执行 `migrate`，操作顺序见开发说明。
 
 ## 产品范围
 
@@ -79,7 +90,7 @@ Set-Location .\backend
 | 已接入 | PostgreSQL 17、psycopg、python-dotenv | 数据库连接和本地配置加载 |
 | 已接入 | Django 认证与权限配置、自带测试工具 | 基础权限配置和骨架测试；登录业务待开发 |
 | 规划 | Vue 3、Vite、Vue Router、Axios、Element Plus | 前端界面、构建、路由和接口调用 |
-| 部分完成 | Django ORM、migrations、Admin | 本分支用户及赛事模型已编写；初始迁移、业务写入服务和后台管理待实现 |
+| 部分完成 | Django ORM、migrations、Admin | 已确认模块的模型、迁移和本机建表验证完成；业务写入服务和后台管理待实现 |
 | 规划 | django-allauth | 账号与邮箱核验；尚未安装或接入 |
 | 已接入 | HTTPX、`ai_services` 服务包 | 模型请求、提示词、结果校验和错误分类；默认关闭外部调用 |
 | 规划 | Redis、RQ、Beautiful Soup | 后台任务与资讯采集 |
