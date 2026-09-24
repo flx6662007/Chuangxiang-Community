@@ -1,0 +1,15 @@
+# Python environment and generated files
+.venv/
+__pycache__/
+*.py[cod]
+
+# Local configuration and database runtime
+.env
+.env.*
+!.env.example
+.local/
+*.sqlite3
+
+# Frontend generated files
+node_modules/
+dist/
