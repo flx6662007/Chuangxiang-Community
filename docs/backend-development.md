@@ -2,7 +2,7 @@
 
 ## 当前范围
 
-当前工程可以启动 Django/DRF 服务、响应健康检查，并通过辅助脚本验证 PostgreSQL 连接。用户模型、赛事模型和业务接口尚未实现，没有创建业务表，也没有采集或导入赛事数据。团队最新进度见 [团队进度](progress.md)。
+当前工程可以启动 Django/DRF 服务、响应健康检查，并通过辅助脚本验证 PostgreSQL 连接。本分支已编写用户和赛事模型及基础约束，配置 `AUTH_USER_MODEL = 'accounts.User'`；初始迁移、Admin 表单和业务接口尚未交付，开发库未创建业务表，也没有采集或导入赛事数据。团队最新进度见 [团队进度](progress.md)。
 
 “工程骨架”指项目代码目录、配置、依赖清单和运行入口。每台电脑还需安装 Python、依赖和 PostgreSQL，填写自己的配置。GitHub 同步代码和迁移文件，不同步虚拟环境、密码或数据库记录。
 
@@ -109,7 +109,7 @@ Linux：
 
 根地址 `/` 会跳转到该接口。这个响应不查询数据库，也不是赛事页面。按 `Ctrl+C` 停止开发服务，PostgreSQL 不会随之停止。`runserver` 仅用于本地开发，不用于正式部署。
 
-当前启动时可能提示存在未应用迁移。用户模型尚未确定时保留该提示，先完成下文的首次迁移条件，不要为了消除提示而创建默认用户表。`/admin/` 此时不能正常登录或管理数据。
+当前启动时可能提示未应用迁移或应用尚无迁移。用户模型已配置，初始迁移尚待生成；先完成下文首次迁移步骤，再创建管理员。`/admin/` 尚未完成自定义用户和赛事管理适配。
 
 ## 检查工程
 
@@ -138,8 +138,8 @@ Linux 将 Python 路径改成 `.venv/bin/python`，脚本路径使用 `scripts/c
 | `config/urls.py` | 将请求路径交给对应处理代码 |
 | `config/views.py` | 处理健康检查并返回 JSON |
 | `config/tests.py` | 检查健康接口和首次迁移保护 |
-| `accounts/` | 账号业务模块；当前只有占位文件及迁移保护 |
-| `competitions/` | 赛事业务模块；当前没有模型、查询接口或采集数据 |
+| `accounts/` | 邮箱登录用户模型、用户管理器、基础校验及迁移保护；邮箱验证和接口待开发 |
+| `competitions/` | 赛事届次、来源、分类标签模型及基础校验；事务写入和接口待开发 |
 | `scripts/check_environment.py` | 使用工程配置验证真实数据库连接 |
 | `.env.example` | 展示所需配置项，供各自创建 `.env` |
 | `requirements.txt` | 记录需要共同安装的 Python 依赖版本 |
@@ -150,11 +150,11 @@ Linux 将 Python 路径改成 `.venv/bin/python`，脚本路径使用 `scripts/c
 
 ## 首次迁移
 
-当前模型文件尚未定义平台业务模型。下一步按以下顺序完成：
+本分支已定义 `accounts.User`、`Competition`、`CompetitionSource` 和 `CompetitionTaxonomy`，并配置自定义用户；没有生成迁移文件。整体顺序如下，前两项已完成：
 
-1. 定义自定义用户 `accounts.User`，确认登录标识、邮箱唯一性等规则。
-2. 在 `config/settings.py` 中配置 `AUTH_USER_MODEL = "accounts.User"`。
-3. 定义本轮所需赛事模型，生成并检查初始迁移。自定义用户必须在 `accounts` 的首次迁移中创建。
+1. 定义自定义用户 `accounts.User`，明确邮箱登录、邮箱唯一性等规则并配套管理器。
+2. 在 `config/settings.py` 中配置 `AUTH_USER_MODEL = "accounts.User"`，完成本轮赛事及辅助模型。
+3. 与后端同步模型后生成并检查初始迁移。自定义用户必须在 `accounts` 的首次迁移中创建。
 4. 将模型、配置和迁移文件一起提交；其他开发者获取这些文件后，在自己的数据库执行迁移。
 5. 迁移完成后，才创建管理员账号并使用管理后台。
 
@@ -172,6 +172,20 @@ Linux 将 Python 路径改成 `.venv/bin/python`，脚本路径使用 `scripts/c
 ```
 
 `makemigrations` 根据模型生成代码文件，`migrate` 将这些变化应用到数据库，两者不是同一步。当前 `migrate` 保护仅在用户模型仍为 `auth.User` 时阻止执行；正确实现并配置 `accounts.User` 后自然解除。不要只修改配置字符串而不定义模型，也不要删除保护来提前建表。
+
+## 模型阶段测试与写入约定
+
+在 `backend` 目录运行隔离测试：
+
+```powershell
+.\.venv\Scripts\python.exe manage.py test --settings=config.test_settings
+```
+
+该配置仅用于自动化测试，使用临时 SQLite 内存库，根据当前模型同步临时表，不读取或修改本机 PostgreSQL 数据。当前新增 31 项用户/赛事模型测试，加上原有 28 项测试，共 59 项通过；初始迁移生成后仍需在 PostgreSQL 空库验证迁移、数据库约束和样例导入。
+
+用户创建使用 `User.objects.create_user` / `create_superuser`，保证邮箱规范化、密码强度校验与哈希。`User.save()` 会执行基础验证并维护联系资料时间。已有 Django 认证后端可以按邮箱识别用户，但注册、登录、学校邮箱验证和资料权限的 HTTP 接口尚未实现。
+
+赛事模型需由后端统一写入服务在事务中调用 `full_clean()` 后保存；Django 标准 `save()` 不会自动执行它。数据库约束处理字段底线，跨表发布、主来源切换、内容更新时间、核验身份及权限仍需服务层实现。当前未注册 Admin 管理类；自定义用户表单须适配邮箱字段和系统代号，不能直接复用带 `username` 的默认字段集。详见 [赛事实现边界](competition-fields.md#九-当前模型实现边界)。
 
 ## PostgreSQL 辅助脚本
 

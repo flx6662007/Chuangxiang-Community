@@ -92,8 +92,8 @@ DATABASES = {
     }
 }
 
-# 与数据库负责人定义 accounts.User 后，再添加 AUTH_USER_MODEL 配置。
-# accounts 中的 migrate 命令暂时阻止创建默认用户表。
+# 第一轮用户字段采用学校邮箱登录；必须在 accounts 的首次迁移中创建。
+AUTH_USER_MODEL = 'accounts.User'
 
 # 接口默认要求登录；游客可读的业务接口实现时需单独声明公开权限。
 # 这只是接口默认配置，不代表注册、登录和学校邮箱验证已实现。
