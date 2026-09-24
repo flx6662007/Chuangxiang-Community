@@ -36,7 +36,7 @@ Chuangxiang-Community/
 
 ## 本地运行
 
-新电脑先按 [后端开发说明](docs/backend-development.md) 获取正确分支、安装依赖、准备 PostgreSQL 并填写 `.env`。骨架尚未合入 `main` 时，新克隆的仓库需切换到 `codex/backend-bootstrap`；合并完成后直接使用 `main`。
+基础工程和共享文档已合入 `main`，作为团队后续开发的共同起点。新电脑先按 [后端开发说明](docs/backend-development.md) 获取代码、安装依赖、准备 PostgreSQL 并填写 `.env`。
 
 已配置好的 Windows 电脑，在仓库根目录执行：
 
