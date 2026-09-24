@@ -143,3 +143,14 @@ STATIC_URL = 'static/'
 # 未显式指定主键时，使用自动增长的整数主键。
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AI 默认关闭；仅在主动调用 AI 服务时检查密钥、地址和模型配置。
+AI_SERVICES = {
+    'ENABLED': os.getenv('AI_ENABLED', '0') == '1',
+    'PROVIDER': os.getenv('AI_PROVIDER', 'qwen'),
+    'BASE_URL': os.getenv('AI_BASE_URL', ''),
+    'API_KEY': os.getenv('AI_API_KEY', ''),
+    'MODEL': os.getenv('AI_MODEL', ''),
+    'TIMEOUT_SECONDS': os.getenv('AI_TIMEOUT_SECONDS', '30'),
+    'MAX_OUTPUT_TOKENS': os.getenv('AI_MAX_OUTPUT_TOKENS', '2048'),
+}
