@@ -1,3 +1,1 @@
-from django.contrib import admin
-
-# Register your models here.
+"""赛事管理配置预留文件；模型确定后再添加录入、编辑和筛选功能。"""

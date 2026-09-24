@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+"""赛事接口预留文件；当前还不能查询或返回赛事列表。"""

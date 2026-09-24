@@ -1,3 +1,1 @@
-from django.test import TestCase
-
-# Create your tests here.
+"""赛事业务测试预留文件；随模型和查询接口开发补充测试。"""

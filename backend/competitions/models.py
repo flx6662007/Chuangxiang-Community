@@ -1,3 +1,5 @@
-from django.db import models
+"""赛事模型预留文件，当前未定义模型，也没有赛事数据。
 
-# Competition fields and initial migrations will be added by the database owner.
+字段与后端接口约定确认后，由数据库负责人编写模型和首次迁移。
+赛事采集是另一个待开发功能，建立此模块不代表已经采集信息。
+"""
