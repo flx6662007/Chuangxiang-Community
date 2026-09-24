@@ -12,6 +12,7 @@
 | [产品范围](docs/product-scope.md) | 功能边界、组队规则与 AI 方向 |
 | [后端开发说明](docs/backend-development.md) | 首次配置、日常启动、检查与迁移说明 |
 | [API 说明](docs/api.md) | 已实现接口，以及尚未确定的业务接口 |
+| [AI 服务说明](docs/ai-services.md) | 模型配置、调用入口、结果校验、异常和开发边界 |
 | [前端说明](frontend/README.md) | 前端目录的当前用途与开发入口 |
 
 ## 项目结构
@@ -24,6 +25,7 @@ Chuangxiang-Community/
 │   ├── config/                 # 配置、网址路由和健康检查
 │   ├── accounts/               # 账号模块；含首次迁移保护
 │   ├── competitions/           # 赛事模块；模型和接口待开发
+│   ├── ai_services/            # 模型调用、提示词、结果校验与异常处理
 │   ├── scripts/                # 数据库检查等辅助脚本
 │   ├── .env.example            # 本地配置样例
 │   └── requirements.txt        # Python 依赖版本
@@ -33,6 +35,8 @@ Chuangxiang-Community/
 ```
 
 `accounts` 和 `competitions` 属于同一个 Django 后端，不需要分别部署。模型和迁移文件需要提交；`.venv/`、`.env`、`.local/` 和本地数据库数据不提交。
+
+`ai_services` 是供后端调用的 Python 服务包，不是单独的服务器，也不创建数据库表；无需添加到 `INSTALLED_APPS` 或执行迁移。
 
 ## 本地运行
 
@@ -74,14 +78,36 @@ Set-Location .\backend
 | 规划 | Vue 3、Vite、Vue Router、Axios、Element Plus | 前端界面、构建、路由和接口调用 |
 | 业务待开发 | Django ORM、migrations、Admin | Django 已包含这些组件；平台模型、迁移和后台管理尚待实现 |
 | 规划 | django-allauth | 账号与邮箱核验；尚未安装或接入 |
-| 规划 | Redis、RQ、HTTPX、Beautiful Soup | 后台任务与资讯采集 |
+| 已接入 | HTTPX、`ai_services` 服务包 | 模型请求、提示词、结果校验和错误分类；默认关闭外部调用 |
+| 规划 | Redis、RQ、Beautiful Soup | 后台任务与资讯采集 |
 | 规划 | drf-spectacular、pytest、pytest-django | 扩展接口文档和业务测试 |
 | 规划 | Linux、Gunicorn、Nginx | 正式部署；本地开发可使用 Windows |
 | 候选 | Qwen 托管 API | 通知字段提取与快讯草稿生成，需用实际样本评测 |
 
 实际 Python 依赖以 [`backend/requirements.txt`](backend/requirements.txt) 为准，当前不必安装所有规划组件。邮件服务、Docker Compose、Pinia、TypeScript、pgvector 按后续需求决定。
 
-AI 尚未接入。优先验证官方通知字段提取和快讯草稿生成，保留来源依据，校验后再发布。模型密钥只保存在服务端，AI 不直接决定账号权限或入队结果。
+## AI 开发入口
+
+已增加通知字段提取和快讯草稿生成的基础服务，**默认关闭，尚未完成真实模型联调或模型选型**。它们不是可供前端直接请求的 HTTP 接口，不自动采集、入库或发布内容。
+
+- `extract_notice(source_text, source_url)`：从通知原文提取字段，返回逐字依据和缺失字段。
+- `generate_newsletter(items)`：根据调用方筛选的已核实资讯生成草稿，保留来源引用。
+
+在本机 `backend/.env` 中配置服务端参数后才能调用；以下只是配置格式，不能原样使用：
+
+```dotenv
+AI_ENABLED=0
+AI_PROVIDER=qwen
+AI_BASE_URL=
+AI_API_KEY=
+AI_MODEL=
+AI_TIMEOUT_SECONDS=30
+AI_MAX_OUTPUT_TOKENS=2048
+```
+
+准备真实联调时，按模型服务控制台填写兼容接口地址、密钥和模型名，再把 `AI_ENABLED` 改为 `1`。Qwen 是待评测候选；也支持配置为 `openai_compatible`。密钥只放在服务端，不能提交 Git 或发给前端。
+
+服务会校验结构、原文引文和来源映射，但这些检查不能保证所有表述正确。结果统一标记为待人工确认；后续由管理员确认后发布。浏览赛事卡片时只读取已有数据，不触发模型生成。调用方式和限制见 [AI 服务说明](docs/ai-services.md)。
 
 ## 许可与数据
 
