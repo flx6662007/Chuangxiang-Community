@@ -19,13 +19,16 @@ git clone https://github.com/flx6662007/Chuangxiang-Community.git
 Set-Location .\Chuangxiang-Community
 ```
 
-已有仓库时直接在现有仓库根目录开始，无需重复克隆。
+新克隆的仓库默认使用 `main`，其中已包含基础工程和共享文档，无需切换到原骨架分支。
 
-**骨架尚未合入 `main` 时：**新克隆的仓库需先执行下面的命令。若 `main` 已有完整骨架，跳过此步；若本地已存在该任务分支，使用 `git switch codex/backend-bootstrap` 即可。
+已有仓库无需重复克隆。先提交或妥善保存本地未提交改动，再在仓库根目录更新：
 
 ```powershell
-git switch --track origin/codex/backend-bootstrap
+git switch main
+git pull --ff-only origin main
 ```
+
+后续开发以更新后的 `main` 为起点创建自己的任务分支。
 
 ### 2. 准备数据库
 
@@ -185,7 +188,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\database.ps1 start
 
 | 现象 | 处理方式 |
 | --- | --- |
-| 仓库中没有 `backend` | 确认已获取骨架所在分支；尚未合并时不能只克隆 `main` 后直接进入该目录 |
+| 仓库中没有 `backend` | 确认使用本项目仓库，并按“获取代码”更新 `main`；若仍缺少目录，检查 `git pull` 的提示 |
 | 找不到 `.venv\Scripts\python.exe` | 确认当前目录是 `backend`，且已创建该目录下的虚拟环境 |
 | 缺少配置或密钥无效 | 检查 `backend/.env`，替换样例占位值 |
 | PostgreSQL 连接被拒绝 | 检查数据库是否启动、地址和端口是否正确 |
