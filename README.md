@@ -4,7 +4,7 @@
 
 项目希望改善微信群中信息易被刷走、分类查找困难、招募信息分散和邀请新成员不便的问题。
 
-**当前状态：工程初始化阶段，尚无可运行版本。以下功能为开发计划，技术组件将随对应模块逐步接入。**
+**当前状态：已有可运行的 Django/DRF 后端骨架，提供健康检查接口和 PostgreSQL 连接配置。赛事、账号、组队及前端页面尚未实现。以下产品功能仍为开发计划。**
 
 ## 服务范围
 
@@ -37,7 +37,7 @@
 
 ## 技术方案
 
-Django 与 Django REST Framework 已确定。其余组件按当前设计基线逐步接入，具体版本在工程初始化时统一并锁定。
+Django 与 Django REST Framework 已接入。后端开发基线为 Python 3.13、PostgreSQL 17，Python 依赖版本记录在 [`backend/requirements.txt`](backend/requirements.txt)。下表包含后续计划组件，并非全部已经安装或启用；当前骨架使用 Django 自带测试工具。
 
 | 层次 | 技术 | 用途 |
 | --- | --- | --- |
@@ -84,35 +84,51 @@ flowchart LR
 
 前端通过后端接口访问业务数据。数据库模型与迁移在同一个 Django 工程中维护。模型调用在服务端执行，密钥不发送到浏览器。
 
-## 目录规划
+## 项目目录
 
-当前仓库仅包含项目说明，以下目录在工程初始化及功能开发时建立。
+当前已有以下工程结构。`accounts` 和 `competitions` 是同一后端内的业务模块，模型尚待实现。
 
 ```text
 Chuangxiang-Community/
-├── frontend/          # Vue 前端
-├── backend/           # Django 后端，包含模型、迁移与业务代码
-├── docs/              # 接口、数据字典和环境说明
-├── .github/workflows/ # 后续配置自动检查
+├── backend/
+│   ├── manage.py               # Django 命令入口
+│   ├── config/                 # 配置、路由与健康检查
+│   ├── accounts/               # 账号模块及首次迁移保护
+│   ├── competitions/           # 赛事模块，待补模型与接口
+│   ├── scripts/                # 环境检查等开发辅助脚本
+│   ├── .env.example            # 本地配置样例，不含真实密码
+│   └── requirements.txt        # Python 依赖版本
+├── docs/
+│   ├── backend-development.md  # 后端环境、启动与文件说明
+│   └── api.md                  # 当前接口契约
 ├── .gitignore
 └── README.md
 ```
 
+Vue 前端目录和自动检查工作流在后续开发时建立。`.venv/`、`.env`、`.local/` 属于各自电脑上的环境或配置，不提交到仓库。
+
 ## 本地运行
 
-目前可以克隆仓库：
+首次使用可以克隆仓库；已有本地仓库无需重复克隆：
 
 ```bash
 git clone https://github.com/flx6662007/Chuangxiang-Community.git
 cd Chuangxiang-Community
 ```
 
-工程尚未初始化，暂时无法启动网站。首个可运行版本合并后，将补充并验证：
+按照 [后端开发说明](docs/backend-development.md) 准备虚拟环境、本地 PostgreSQL 与 `.env`。已经配置好的 Windows 开发环境，可在仓库根目录执行：
 
-- 环境版本、依赖安装和配置示例。
-- 数据库创建、迁移与虚构示例数据导入。
-- 前后端启动命令、本地访问地址和接口说明。
-- 测试与构建命令，以及启用后的后台任务启动方式。
+```powershell
+Set-Location .\backend
+.\.venv\Scripts\python.exe manage.py check
+.\.venv\Scripts\python.exe scripts\check_environment.py
+.\.venv\Scripts\python.exe manage.py test config
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+```
+
+访问 <http://127.0.0.1:8000/api/v1/health/>，应收到 `{"status":"ok","service":"chuangxiang-backend"}`。该接口用于确认后端能够响应请求，不查询数据库，也不是赛事列表页面。数据库连接由上面的环境检查脚本单独验证。接口详情见 [API 说明](docs/api.md)。
+
+**当前不要执行 `migrate` 或 `createsuperuser`。** 用户模型尚未确定，骨架暂时阻止迁移；请先完成 `accounts.User` 与初始迁移，并在配置中指定该用户模型。`/admin/` 入口已保留，但尚不能用于管理数据。现有 `.env` 无需覆盖。
 
 计划通过开发代理及正式环境的统一站点入口连接前后端，使用 Session Cookie 时保留 CSRF 保护。
 
@@ -120,7 +136,8 @@ cd Chuangxiang-Community
 
 - [x] 完成前端、后端与数据库技术调研。
 - [x] 确定 Django 与 Django REST Framework。
-- [ ] **第一轮**：初始化工程、模型与测试数据，跑通赛事列表接口和页面。
+- [x] 创建后端骨架、PostgreSQL 配置与健康检查接口。
+- [ ] **第一轮剩余**：完成用户及赛事模型、测试数据，跑通赛事列表接口和页面。
 - [ ] **第二轮 A**：完成注册、登录和学校邮箱验证。
 - [ ] **第二轮 B**：完成固定模板招募的发布与公开查看。
 - [ ] 完成申请加入、联系方式授权、正式入队及退出流程。
