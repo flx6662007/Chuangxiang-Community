@@ -5,7 +5,7 @@ from django.urls import reverse
 
 
 class BootstrapTests(SimpleTestCase):
-    # SimpleTestCase rejects database access: these checks must work pre-migration.
+    # SimpleTestCase 禁止访问数据库，保证这些检查在建表前也能通过。
     def test_public_health_works_without_tables_and_with_a_stale_cookie(self):
         self.client.cookies['sessionid'] = 'stale-session-from-an-earlier-project'
         response = self.client.get(reverse('health'))
