@@ -7,7 +7,7 @@ $ErrorActionPreference = 'Stop'
 $backendRoot = Split-Path -Parent $PSScriptRoot
 $runtimeConfig = Join-Path $backendRoot '.local\postgresql-paths.json'
 if (-not (Test-Path -LiteralPath $runtimeConfig)) {
-    throw 'Local PostgreSQL paths are not configured. See the local environment setup notes.'
+    throw 'Local PostgreSQL paths are not configured. See docs/backend-development.md; this helper is optional.'
 }
 $runtimePaths = Get-Content -LiteralPath $runtimeConfig -Raw -Encoding UTF8 | ConvertFrom-Json
 $pgCtl = Join-Path $runtimePaths.bin 'pg_ctl.exe'
@@ -15,7 +15,7 @@ $dataDir = $runtimePaths.data
 $logPath = Join-Path $dataDir 'server.log'
 
 if (-not (Test-Path -LiteralPath $pgCtl)) {
-    throw 'Local PostgreSQL binaries are missing. See the local environment setup notes.'
+    throw 'Local PostgreSQL binaries are missing. Check backend/.local/postgresql-paths.json and docs/backend-development.md.'
 }
 if (-not (Test-Path -LiteralPath (Join-Path $dataDir 'PG_VERSION'))) {
     throw 'Local PostgreSQL data directory has not been initialized.'

@@ -1,13 +1,9 @@
-"""Check installed dependencies and the local PostgreSQL connection.
+"""显示依赖版本并验证 PostgreSQL 连接；只查询，不创建表或导入数据。"""
 
-This script does not create a Django application or any database tables.
-Run it with backend/.venv/Scripts/python.exe on Windows.
-"""
-
-from importlib.metadata import version
-from pathlib import Path
 import os
 import sys
+from importlib.metadata import version
+from pathlib import Path
 
 import django
 from django.conf import settings
