@@ -1,0 +1,55 @@
+:root {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #243047;
+  background: #f5f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e5e9ef;
+  background: #fff;
+}
+
+.brand {
+  color: #243047;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.app-main {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.welcome {
+  max-width: 640px;
+  margin: 48px auto 0;
+}
+
+.welcome h1 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.welcome p {
+  margin: 0;
+  color: #667085;
+}
