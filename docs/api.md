@@ -1,49 +1,171 @@
 # API 说明
 
-当前只实现了健康检查接口。赛事查询、注册、登录、招募和 AI 接口均尚未实现，不能根据产品规划直接调用。
+本文对应当前实现。普通业务接口使用 `/api/v1/`，账号认证使用 `/api/auth/browser/v1/`。**认证路径末尾没有 `/`，普通业务路径末尾有 `/`**，按表中路径请求。
 
-已有 `ai_services` 服务包供后端 Python 代码内部调用，包括通知提取与快讯草稿生成。**它没有 HTTP 路由，前端不能直接调用该服务包**；后续实现身份权限、任务处理和结果管理后，再在本文登记 AI 接口。内部调用说明见 [AI 服务说明](ai-services.md)。
+游客可读公开赛事。本人资料需要登录；写入使用 Session Cookie 与 CSRF。组队、科研、资源、快讯、采集和 AI 的 HTTP 接口尚未开放。AI 内部调用见 [AI 服务说明](ai-services.md)。
+
+## 请求约定
+
+- JSON 写请求发送 `Content-Type: application/json`，浏览器保留 Session Cookie。
+- 首次写入前调用 `GET /api/v1/accounts/csrf/`。每次写入从当前 `csrftoken` Cookie 读取 `X-CSRFToken`；登录会轮换 CSRF，不能一直复用旧值。
+- 开发时通过前端的 `/api` 代理请求，避免分别配置跨域认证。不要把 Cookie 或密码存入 `localStorage`。
+- 文本空值通常为 `""`，未知日期、时间与可空对象为 `null`；多项关联为空时为 `[]`。
+- 日期是 `YYYY-MM-DD`，时刻是带时区的 ISO 8601 字符串。只有日期不代表当天 00:00 或 23:59；显示时结合相应时区与说明，不补造时刻。
 
 ## 健康检查
 
-| 项目 | 当前实现 |
-| --- | --- |
-| 方法 | `GET` |
-| 路径 | `/api/v1/health/` |
-| 本地地址 | `http://127.0.0.1:8000/api/v1/health/` |
-| 身份要求 | 无需登录 |
-| 请求参数 | 无 |
-| 成功状态 | `200 OK` |
-| 返回格式 | JSON |
-| 数据库访问 | 无 |
-
-成功响应：
+`GET /api/v1/health/`，无需登录，成功为 `200`：
 
 ```json
-{
-  "status": "ok",
-  "service": "chuangxiang-backend"
-}
+{"status":"ok","service":"chuangxiang-backend"}
 ```
 
-`status` 表示这个接口成功响应；`service` 标识后端服务。**该结果不表示数据库、邮件、AI 或业务模块已经可用。** 数据库连接由 `scripts/check_environment.py` 单独检查。
+不查询数据库，也不验证邮件或 AI。根路径 `/` 重定向到该接口，非读取方法返回 `405`。数据库连接用 `scripts/check_environment.py` 单独检查。
 
-该接口不执行用户认证，即使请求带有登录 Cookie，也不会为此查询用户表。不支持 `POST` 等写入方法，这些请求返回 `405 Method Not Allowed`。根路径 `/` 会重定向到该健康检查接口。
+## 赛事查询
 
-开发服务启动后，可在另一个 PowerShell 终端调用：
+### 列表
 
-```powershell
-Invoke-RestMethod -Uri 'http://127.0.0.1:8000/api/v1/health/' -Method Get
+`GET /api/v1/competitions/`，无需登录。只返回 `published` 的赛事，按 `published_at`、`id` 倒序。搜索与分类可组合。
+
+| 参数 | 规则 |
+| --- | --- |
+| `page` | 页码，默认 1；无效或越界页返回 404 |
+| `page_size` | 正整数，默认 20，最大 50；超过 50 按 50，非法值返回 400 |
+| `search` | 最多 200 字符，去首尾空白；匹配标题、简介或主办方 |
+| `category` | 分类 `code`，最多 64 字符；精确匹配，无匹配返回空列表 |
+
+响应结构：
+
+```json
+{"count":0,"next":null,"previous":null,"results":[]}
 ```
 
-## 赛事接口待定事项
+`next`、`previous` 有下一页或上一页时为完整 URL，否则为 `null`。首次页无匹配结果正常返回 `200`。每个 `results` 项包含：
 
-第一阶段计划开发公开赛事列表。游客可查看公开赛事，草稿、下架内容和内部管理字段不应公开；同一赛事不同届次需要区分。持久化字段基线已整理为 [赛事字段表](competition-fields-table.md)，日期精度、来源及发布含义见 [赛事字段说明](database-fields.md#competitions)；当前仍没有可调用的赛事接口。以下 HTTP 契约尚需随实现对齐：
+| 字段 | 类型与含义 |
+| --- | --- |
+| `id`、`code` | 整数主键、稳定赛事编码；详情使用 `id` |
+| `title`、`edition`、`summary` | 标题、年度/届次、列表简介 |
+| `category` | `{id, code, name}` 或 `null` |
+| `tags` | `{id, code, name}` 数组 |
+| `level`、`participation_type` | 模型枚举值，含未知状态；取值见 [赛事字段说明](database-fields.md#competitions) |
+| `organizer` | 主办方文本 |
+| `registration_deadline` | 报名截止日期或 `null` |
+| `registration_deadline_at` | 已知的精确截止时刻或 `null` |
+| `registration_deadline_timezone` | 原通知时区，未知为空串 |
+| `published_at`、`updated_at`、`last_verified_at` | 首次发布时间、内容更新时间、最近核验时间 |
+| `is_recruitment_open` | 是否符合该赛事的招募开放条件；不表示当前用户已获操作权限或组队功能已上线 |
+| `primary_source` | 已核验主来源对象或 `null` |
 
-- URL、公开字段白名单，以及数据库字段到响应字段的名称、类型和空值映射。
-- 分页参数与响应结构。
-- 按字段说明落定日期、精确时刻及来源对象的响应组织与格式。
-- 排序和筛选条件、无数据时的响应。
-- 错误状态码与错误内容。
+来源对象统一为 `{id, source_type, source_name, source_url, source_published_on}`。只公开已核验来源，不返回内部核验依据、操作者或下架原因。
 
-日期缺失时应明确表达未知，不根据模型猜测或自行补造。前端、后端和数据模型约定一致，且接口实现后，再在本文加入可调用的路径和实际响应示例。
+### 详情
+
+`GET /api/v1/competitions/<id>/`，无需登录。成功 `200`；不存在、草稿及下架赛事统一返回 `404`，避免暴露非公开内容。
+
+详情包含列表全部字段，并增加：
+
+| 字段 | 含义 |
+| --- | --- |
+| `description`、`tracks`、`eligibility` | 详情、赛道说明、参赛资格，均为文本 |
+| `team_size_min`、`team_size_max` | 人数下限与上限，未知可空 |
+| `registration_method`、`registration_url` | 报名说明与外部报名链接 |
+| `campus_arrangements` | 校内安排 |
+| `campus_deadline`、`campus_deadline_at`、`campus_deadline_timezone` | 校内截止日期、精确时刻、原通知时区 |
+| `submission_deadline`、`submission_deadline_at`、`submission_deadline_timezone` | 作品提交截止日期、精确时刻、原通知时区 |
+| `deadline_notes` | 截止时间补充说明 |
+| `recruitment_deadline` | 平台招募截止时刻，与官方报名截止分别维护 |
+| `sources` | 全部已核验来源数组 |
+
+列表与详情均为只读，不执行采集、AI 生成或发信。前端把内容作为文本渲染，外链仅允许 `http` / `https`。
+
+## 本人资料
+
+| 方法与路径 | 请求 | 响应 |
+| --- | --- | --- |
+| `GET /api/v1/accounts/csrf/` | 无 | `200 {"csrfToken":"..."}`，同时设置 CSRF Cookie |
+| `GET /api/v1/accounts/me/` | 登录会话 | `200` 本人资料；匿名为 `403` |
+| `PATCH /api/v1/accounts/me/` | 可选 `wechat_id`、`phone_number` | `200` 更新后的本人资料；不允许提交其他字段 |
+
+本人资料字段：
+
+```text
+id, public_code, email, wechat_id, phone_number, contact_updated_at,
+school_email_verified, has_contact_details, account_eligibility
+```
+
+`account_eligibility` 结构为：
+
+```json
+{"eligible":false,"reasons":["email_unverified","contact_required"],"restriction_ends_at":null}
+```
+
+原因可能为 `login_required`、`account_disabled`、`email_unverified`、`account_restricted`、`contact_required`；本人资料接口本身仅供有效登录用户读取。该结果是新增招募/申请的**账号门槛**，后续业务还须检查赛事、队伍、名额和对象权限。目前没有可执行招募或申请的 HTTP 路由。
+
+本人联系方式不放入公开赛事接口；本人资料响应禁止缓存。提交 `email`、权限或验证状态等额外字段返回 `400`。用户可在业务限制期间读取资料、维护联系方式，不把临时业务限制等同于停用账号。
+
+## 账号认证
+
+下表路径均以 `/api/auth/browser/v1/` 开头。只开放浏览器 Session 模式，不提供 App token。
+
+| 方法与相对路径 | JSON 请求 | 正常流程 |
+| --- | --- | --- |
+| `POST auth/signup` | `email`, `password` | `200` 注册并建立会话，邮箱仍未验证；不自动发送验证码 |
+| `POST auth/login` | `email`, `password` | `200` 登录；未验证账号可以登录 |
+| `GET auth/session` | 无 | 已登录 `200`；未登录 `401`，结合 `meta.is_authenticated` 判断 |
+| `DELETE auth/session` | 无 | 正常退出返回 `401` 且 `meta.is_authenticated=false` |
+| `GET account/email` | 无 | 查看本人 allauth 邮箱记录 |
+| `PUT account/email` | `email`：当前绑定邮箱 | `200` 已提交发送；只允许向本人当前、未验证的主邮箱发送或重发 |
+| `POST auth/email/verify` | `key`：邮件中的验证码 | `200` 核验成功，随后重新获取本人资料 |
+| `POST auth/password/request` | `email` | 进入密码找回流程，正常可返回 `401`，见下文 |
+| `POST auth/password/reset` | `key`, `password` | 完成重置后回到未登录状态，正常可返回 `401` |
+| `POST account/password/change` | `current_password`, `new_password` | 已登录时修改密码；本轮页面未提供入口 |
+| `POST auth/reauthenticate` | `password` | 验证当前密码；本轮页面未提供入口 |
+
+邮箱去首尾空白并转小写，域名必须精确为 `tongji.edu.cn`，类似 `tongji.edu.cn.example.org` 无效。重复邮箱注册不会覆盖原账号、密码或资料。User 与 allauth 邮箱记录在同一注册事务中保存。
+
+验证结果只读取属于当前用户、与 `User.email` 相同且 `primary=true`、`verified=true` 的 allauth `EmailAddress`。未提供邮箱自助换绑；后台也不允许把邮箱手工标记为已验证。历史或管理员创建的账号首次通过网站登录时，只对完全缺失的邮箱记录补建未验证主邮箱，不继承其他地址的验证状态。
+
+### 验证码与限流
+
+| 规则 | 当前实现 |
+| --- | --- |
+| 学校邮箱验证码 | 6 位数字；在发起流程的同一浏览器会话中提交 |
+| 有效期 | 从本轮首次发送起 10 分钟；重发不延长 |
+| 重发 | 本轮最多重发 3 次；重发成功后旧码失效 |
+| 输入错误 | 最多 5 次；耗尽、过期或成功使用后，本轮不能再用 |
+| 发信频率 | 同一邮箱 60 秒内最多 1 次、每小时最多 5 次；同一 IP 每小时最多 20 次 |
+| 注册频率 | 同一 IP 每小时最多 5 次 |
+| 登录频率 | 同一 IP 每分钟最多 30 次；失败另限制同一键 5 分钟 5 次、同一 IP 5 分钟 20 次 |
+| 密码找回 | 验证码 10 分钟、最多 5 次尝试；发信频率与邮箱核验相同；码的格式与邮箱验证码不同，以邮件原文为准 |
+
+限流由服务端执行。前端倒计时只是提示，不是权限依据。开发默认 Console 邮件后端，在终端查看验证码；这不代表真实学校邮箱已收件。SMTP 发送异常返回安全错误，不把服务商响应或凭据暴露给前端。
+
+### 正常的 401
+
+allauth 的 `401` 有时用于表示“目前未登录或正在完成认证流程”，不能统一显示为请求失败。
+
+- 请求找回密码后：检查 `data.flows` 是否包含 `{"id":"password_reset_by_code","is_pending":true}`，满足时展示填写验证码及新密码的表单。
+- 重置成功后：确认 `meta.is_authenticated=false`，并且已没有待完成的 `password_reset_by_code`；提示用新密码登录，不假定自动登录。
+- 退出后：确认 `meta.is_authenticated=false`，清空页面中的本人资料。
+- 未登录读取 Session：识别未登录状态，显示登录/注册入口。
+
+前端实现见 `frontend/src/api/accounts.js` 与 `frontend/src/utils/account.js`；不要仅根据 HTTP 状态认定密码重置完成。
+
+## 错误处理
+
+DRF 业务错误通常为 `{"detail":"..."}` 或字段错误对象；allauth 通常包含 `status`、`errors`、`data`、`meta` 中的相关字段，两者格式不同。CSRF 与安全异常包装另有稳定 `code`，不得把所有响应强行当作同一结构。
+
+| 状态 | 常见含义与处理 |
+| --- | --- |
+| `400` | 字段、密码、邮箱或验证码错误；显示可理解的提示，保留可修改输入 |
+| `401` | 先按上一节识别正常账号流程，其他情形提示重新登录 |
+| `403` | 未登录访问本人资料、CSRF 失效、操作无权或本轮重发已达上限；不能全部当作验证码错误 |
+| `404` | 赛事不可公开访问、页码无效或路由不存在 |
+| `405` | 请求方法未开放，例如自行添加、更换或删除邮箱 |
+| `409` | 验证流程已结束/过期、已验证邮箱或注册保存冲突；刷新账号状态后重新开始适当流程 |
+| `429` | 请求过于频繁；等待后再试，不自动连续重发 |
+| `503` | 发件服务不可用；不宣称验证码已发送，不展示 SMTP 内部错误 |
+
+`GET account/email` 等 allauth 入口不等同于公开邮箱查询；只管理当前会话对应用户。所有真正决定能否发布和申请的检查都应在后端业务入口执行，不能依赖前端按钮。

@@ -1,48 +1,32 @@
-# 后端开发说明
+# 后端开发
 
 ## 当前范围
 
-当前工程可以启动 Django/DRF 服务、响应健康检查，并通过辅助脚本验证 PostgreSQL 连接。本分支已完成用户、赛事及本轮确认的后续业务模型，配置 `AUTH_USER_MODEL = 'accounts.User'`；本地共应用 35 项迁移、建立 58 张表并导入两轮虚构样例。Admin 表单、事务服务和业务接口尚未交付，没有采集或导入真实赛事数据。完整成果、复现命令和分工见 [数据库开发交付说明](database-handoff.md)，团队最新进度见 [团队进度](progress.md)。
+已接入 Django/DRF、PostgreSQL、公开赛事 API、赛事管理后台、学校邮箱账号和本人资料；前端已接入列表、详情及账号页面。本轮先交付无需购买服务的本地开发版，邮件输出到终端，AI 默认关闭。没有真实赛事采集、真实邮件投递或公网部署。
 
-“工程骨架”指项目代码目录、配置、依赖清单和运行入口。每台电脑还需安装 Python、依赖和 PostgreSQL，填写自己的配置。GitHub 同步代码和迁移文件，不同步虚拟环境、密码或数据库记录。
+完整状态见 [团队进度](progress.md)，接口见 [API 说明](api.md)，页面操作见 [人工验收](manual-checks.md)。[数据库交付说明](database-handoff.md) 保留同学交付时的模型、迁移、约束和样例记录；其中“接口待实现”等历史状态由本轮进度替代，字段规则不因此改变。
 
 ## 首次配置
 
-### 1. 获取代码
+### 获取代码
 
-新电脑需要 Python 3.13、PostgreSQL 17、Git 和编辑器。Python 依赖版本以 `backend/requirements.txt` 为准。
-
-在准备存放项目的目录执行：
+新电脑准备 Python 3.13、PostgreSQL 17、Git；启动前端还需要符合 `frontend/package.json` 要求的 Node.js 与 npm。
 
 ```powershell
 git clone https://github.com/flx6662007/Chuangxiang-Community.git
 Set-Location .\Chuangxiang-Community
+git branch --show-current
+git status
 ```
 
-新克隆的仓库默认使用 `main`，其中已包含基础工程和共享文档，无需切换到原骨架分支。
+默认克隆 `main`。本轮成果在 `codex/backend-rounds` 整合，新增功能是否已上传或合并须查 [团队进度](progress.md) 与实际远端；未合入 `main` 前，不能认为只拉取 `main` 就取得本轮功能。已有仓库先提交或妥善保存自己的改动，再获取团队确认的分支或提交，避免覆盖未提交工作。
 
-已有仓库无需重复克隆。先提交或妥善保存本地未提交改动，再在仓库根目录更新：
+### 安装依赖
 
-```powershell
-git switch main
-git pull --ff-only origin main
-```
-
-后续开发以更新后的 `main` 为起点创建自己的任务分支。
-
-### 2. 准备数据库
-
-使用 PostgreSQL 管理工具或管理员账号，创建自己的开发数据库和登录用户，并将数据库所有者设为该用户。数据库名和用户名可使用 `chuangxiang_dev`，密码自行设置。
-
-先准备空数据库，不要手工创建用户表、赛事表，也不要导入其他同学的真实个人数据。获取迁移文件后由 Django 创建表结构，具体步骤见下文“首次迁移”。
-
-### 3. 安装依赖
-
-在仓库根目录执行一次 `Set-Location .\backend`。**后续配置、启动和检查命令都在 `backend` 目录执行，不要反复进入 `backend`。** 该目录应能看到 `manage.py` 和 `requirements.txt`。
-
-Windows 首次配置：
+从仓库根目录进入一次 `backend`，后续后端命令均在这里执行。目录中应有 `manage.py`：
 
 ```powershell
+Set-Location .\backend
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 if (-not (Test-Path -LiteralPath .env)) {
@@ -50,9 +34,9 @@ if (-not (Test-Path -LiteralPath .env)) {
 }
 ```
 
-如果不识别 `py`，用已安装 Python 3.13 的完整路径替代它。后续直接使用虚拟环境中的 Python，不要求先运行激活脚本。已有 `.venv` 和 `.env` 的电脑不必重新创建或覆盖。
+已有虚拟环境无需重建；依赖变更后重新执行安装命令。已有 `.env` 不要覆盖，对照样例补新增项。若不识别 `py`，用已安装 Python 3.13 的完整路径代替。直接调用虚拟环境 Python，无需运行激活脚本。
 
-Linux 在同样的 `backend` 目录执行：
+Linux 对应命令：
 
 ```bash
 python3.13 -m venv .venv
@@ -60,248 +44,162 @@ python3.13 -m venv .venv
 test -f .env || cp .env.example .env
 ```
 
-### 4. 填写配置
+### 数据库与配置
 
-工程从 `backend/.env` 加载配置；已有的进程环境变量优先。打开该文件，填写自己的值，不提交到 GitHub。
+在 PostgreSQL 中建立自己的空开发数据库与普通登录用户，让该用户拥有此数据库；例如库名、用户名都用 `chuangxiang_dev`。具体密码由本人设置。不要手工建业务表，也不需要复制同学的数据库文件。
 
-| 配置项 | 含义与填写方式 |
+工程从 `backend/.env` 读取配置，进程环境变量优先。必须替换样例中的占位值：
+
+| 配置 | 本地用途 |
 | --- | --- |
-| `DJANGO_SECRET_KEY` | Django 密钥，每台电脑自行生成，不能保留占位值 |
-| `DJANGO_DEBUG` | 本地开发可设 `1`，未配置默认为 `0` |
-| `DJANGO_ALLOWED_HOSTS` | 允许的主机名，逗号分隔；默认 `127.0.0.1,localhost` |
-| `DB_NAME` | 已创建的开发数据库名 |
-| `DB_USER` | 该数据库的登录用户 |
-| `DB_PASSWORD` | 该用户的真实本机密码 |
-| `DB_HOST` | 数据库地址，本机通常为 `127.0.0.1` |
-| `DB_PORT` | 数据库端口，通常为 `5432` |
+| `DJANGO_SECRET_KEY` | 每台电脑独立生成的 Django 密钥 |
+| `DJANGO_DEBUG=1` | 本地开发模式；不是公网配置 |
+| `DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost` | 本机允许的访问主机 |
+| `DB_NAME`、`DB_USER`、`DB_PASSWORD` | 已建立的本机数据库、用户和密码 |
+| `DB_HOST=127.0.0.1`、`DB_PORT=5432` | PostgreSQL 地址与端口 |
+| `DJANGO_PUBLIC_ORIGIN=http://localhost:5173` | 前端开发地址 |
+| `DJANGO_CSRF_TRUSTED_ORIGINS` | 样例允许 `http://localhost:5173,http://127.0.0.1:5173` |
+| `EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend` | 验证码邮件打印到后端终端，不真实发送 |
+| `AI_ENABLED=0` | 关闭外部模型调用 |
 
-Windows 生成密钥：
+生成本机密钥：
 
 ```powershell
 .\.venv\Scripts\python.exe -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
 
-将结果填写为 `.env` 中 `DJANGO_SECRET_KEY='生成的值'`，单引号用于包裹实际密钥。Linux 将命令中的 Python 路径改为 `.venv/bin/python`。
+将结果填入 `.env` 的 `DJANGO_SECRET_KEY='实际生成值'`。真实配置、验证码、密码和密钥不放进 GitHub 或共享进度。无需填写 SMTP 账号，也不需要本地 Redis；开发使用文件缓存保存限流状态。
 
-完成后，先启动 PostgreSQL，再执行下文的“检查工程”。
+### 迁移和样例
 
-## 日常启动
-
-以下命令均在 `backend` 目录执行，前提是依赖和 `.env` 已准备好。不需要重新运行 `startproject` 或 `startapp`。
-
-Windows：
-
-```powershell
-.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
-```
-
-Linux：
-
-```bash
-.venv/bin/python manage.py runserver 127.0.0.1:8000
-```
-
-访问 <http://127.0.0.1:8000/api/v1/health/>，应收到：
-
-```json
-{"status":"ok","service":"chuangxiang-backend"}
-```
-
-根地址 `/` 会跳转到该接口。这个响应不查询数据库，也不是赛事页面。按 `Ctrl+C` 停止开发服务，PostgreSQL 不会随之停止。`runserver` 仅用于本地开发，不用于正式部署。
-
-新电脑在执行迁移前可能提示未应用迁移。用户模型与初始迁移已准备；先完成下文首次迁移步骤，再按需创建管理员。`/admin/` 尚未完成自定义用户和赛事管理适配。
-
-## 检查工程
-
-首次配置后或修改相关代码后按需检查，不必每次启动都完整执行。在 Windows 的 `backend` 目录运行：
+先启动 PostgreSQL，再执行：
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py check
 .\.venv\Scripts\python.exe scripts\check_environment.py
-.\.venv\Scripts\python.exe manage.py test config
-```
-
-| 命令 | 检查范围 | 不代表什么 |
-| --- | --- | --- |
-| `manage.py check` | Django 配置和系统检查 | 不等于实际数据库连接成功 |
-| `scripts/check_environment.py` | 用工程配置连接 PostgreSQL 并实际查询 | 不等于用户、赛事等业务表已创建 |
-| `manage.py test config` | 当前骨架的健康检查与迁移保护测试 | 不等于业务功能已通过测试 |
-
-Linux 将 Python 路径改成 `.venv/bin/python`，脚本路径使用 `scripts/check_environment.py`。环境检查前需启动 PostgreSQL。当前骨架测试不创建测试数据库；后续业务测试是否需要建库，以对应测试为准。
-
-## 文件作用
-
-| 文件或目录 | 当前作用 |
-| --- | --- |
-| `manage.py` | 执行 Django 检查、迁移、测试和开发服务命令 |
-| `config/settings.py` | 读取配置，启用模块，配置数据库及 DRF |
-| `config/urls.py` | 将请求路径交给对应处理代码 |
-| `config/views.py` | 处理健康检查并返回 JSON |
-| `config/tests.py` | 检查健康接口和首次迁移保护 |
-| `accounts/` | 邮箱登录用户模型、用户管理器、基础校验及迁移保护；邮箱验证和接口待开发 |
-| `competitions/` | 赛事届次、来源、分类标签模型及基础校验；事务写入和接口待开发 |
-| `scripts/check_environment.py` | 使用工程配置验证真实数据库连接 |
-| `.env.example` | 展示所需配置项，供各自创建 `.env` |
-| `requirements.txt` | 记录需要共同安装的 Python 依赖版本 |
-
-`accounts` 和 `competitions` 属于一个后端工程，不是两个独立服务器。`migrations/` 用于保存模型变化生成的迁移文件，不存放数据库数据。
-
-当前请求流程：浏览器访问 `/api/v1/health/` → `config/urls.py` 找到视图 → `config/views.py` 通过 DRF 返回固定 JSON。该接口无需登录，不访问数据库。
-
-## 首次迁移
-
-本轮已定义用户、赛事及全部已确认的后续模型，配置自定义用户，生成完整迁移链。本机和独立空库的迁移与样例验证已完成，文件随数据库分支交付，待团队审核。队友获取全部迁移文件后直接执行：
-
-```powershell
 .\.venv\Scripts\python.exe manage.py migrate --plan
 .\.venv\Scripts\python.exe manage.py migrate --noinput
 .\.venv\Scripts\python.exe manage.py migrate --check
+```
+
+新增的 django-allauth 使用它自带的 `account` 迁移，同样由 `migrate` 应用；不要另外创建验证码表或在 User 中复制“邮箱已验证”字段。已有开发库也需要安装新依赖并执行迁移。
+
+需要演示数据时，在 `DJANGO_DEBUG=1` 的开发库执行：
+
+```powershell
 .\.venv\Scripts\python.exe manage.py seed_demo_data
 .\.venv\Scripts\python.exe manage.py seed_remaining_demo_data
 .\.venv\Scripts\python.exe manage.py verify_database_schema
 ```
 
-两条 `seed` 命令仅用于 `DJANGO_DEBUG=1` 的开发环境，重复运行保留原有记录；第二轮已有样例整批跳过，不自动补造历史。`verify_database_schema` 只读检查实际结构。迁移完成后，可按后端接续需要使用 `createsuperuser` 创建管理员；虚构样例账号全部不可登录，Admin 表单仍待适配。
+两条导入命令都只用于开发，重复运行保留已有内容，第二轮已有样例整批跳过。原始样例包含 15 个禁用虚构用户、29 条赛事，其中 26 条公开；以及后续模块的关联样例。实际数量会随人工试验改变，样例不是爬取结果，也不能作为真实通知发布。禁用样例账号不能直接登录。
 
-`makemigrations` 根据模型生成代码文件，`migrate` 将这些变化应用到数据库，两者不是同一步。后续修改模型时再生成新的迁移；队友无需重新生成已有 `0001`。当前 `migrate` 保护仅在用户模型仍为 `auth.User` 时阻止执行，配置 `accounts.User` 后自然解除。完整初始化、样例范围与测试库准备见 [数据库初始化与验收](database-handoff.md#initialization)。
+`makemigrations` 是模型修改者生成新的迁移文件；`migrate` 是每位成员将已提交迁移应用到自己的数据库。拉取代码后不要重新生成已有 `0001`，不要删迁移或随意使用 `--fake`。当前用户模型始终为 `accounts.User`。
 
-## 模型阶段测试与写入约定
-
-在 `backend` 目录运行隔离测试：
+### 本机管理员
 
 ```powershell
+.\.venv\Scripts\python.exe manage.py createsuperuser
+```
+
+按提示输入自己的学校邮箱和独立强密码，仅用于本机开发后台；仓库不提供预设管理员凭据。后台创建用户已适配邮箱字段，不能手工把邮箱核验记录改为成功。网站的邮箱核验仍需走验证码流程。
+
+## 日常启动与联调
+
+保持 PostgreSQL 运行，在 `backend` 启动：
+
+```powershell
+$env:PYTHONIOENCODING = 'utf-8'
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+```
+
+再开一个终端，从仓库根目录进入前端：
+
+```powershell
+Set-Location .\frontend
+npm.cmd ci
+npm.cmd run dev
+```
+
+`npm ci` 只需在首次安装或锁文件变化后运行。日常直接 `npm.cmd run dev`。浏览器访问 <http://localhost:5173/>；后台访问 <http://127.0.0.1:8000/admin/>。页面通过 Vite 转发 `/api`，后端通过 ORM 查询本机 PostgreSQL；卡片模板早已写在前端，收到 JSON 后填入内容，不触发采集或 AI。
+
+账号注册后可直接登录，但显示未验证。发送验证码后查看后端终端中的中文邮件，在**同一浏览器会话**输入验证码。保持前端地址一致，不在验证中切换 `localhost` / `127.0.0.1`，两者 Cookie 不共用。邮件只出现在本地终端；学校邮箱收不到是当前配置的预期行为。
+
+两个开发终端都需保持运行，`Ctrl+C` 停止对应服务。`runserver` 仅供开发，不能按这个命令直接对公网开放。真实部署使用 [部署说明](deployment.md)，需要资源见 [费用清单](procurement.md)。
+
+## 检查与测试
+
+在 `backend` 执行：
+
+```powershell
+.\.venv\Scripts\python.exe manage.py check
+.\.venv\Scripts\python.exe scripts\check_environment.py
+.\.venv\Scripts\python.exe manage.py makemigrations --check --dry-run
 .\.venv\Scripts\python.exe manage.py test --settings=config.test_settings
 ```
 
-该配置仅用于自动化测试，在临时 SQLite 内存库执行真实迁移，不读取或修改本机 PostgreSQL 数据。本轮共 108 项，106 项通过、2 项 PostgreSQL 专用检查跳过。
+前三项分别检查配置、真实数据库连接、模型是否缺少迁移；测试配置使用临时 SQLite 数据库与内存邮件，不向真实邮箱发信，不修改开发库。SQLite 不能替代 PostgreSQL 的专用约束检查。
 
-PostgreSQL 验收使用独立测试库及真实迁移，108 项全部通过。本机已预建 `test_chuangxiang_dev`，可运行：
+完整 PostgreSQL 测试在单独测试库运行：
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py test --settings=config.postgres_test_settings --keepdb --noinput
 ```
 
-其他电脑的测试库命名及权限准备见 [初始化说明](database-handoff.md#initialization)。
+测试库固定为 `test_` 加 `DB_NAME`。开发账号没有建库权限时，让本机数据库管理员预建该测试库并将所有者设为开发用户；不要为网站账号长期授予数据库超级权限。准备方式见 [数据库初始化](database-handoff.md#initialization)。测试会创建、修改并清空测试数据，测试库不能存放要保留的业务记录。
 
-用户创建使用 `User.objects.create_user` / `create_superuser`，保证邮箱规范化、密码强度校验与哈希。`User.save()` 会执行基础验证并维护联系资料时间。已有 Django 认证后端可以按邮箱识别用户，但注册、登录、学校邮箱验证和资料权限的 HTTP 接口尚未实现。
+前端在 `frontend` 运行 `npm.cmd test` 与 `npm.cmd run build`。自动化覆盖账号、验证码、CSRF、权限、赛事服务/API/后台及模型；页面验收按 [人工验收](manual-checks.md) 另行完成。具体已通过结果记录在团队进度，不能用旧版测试数字代替改动后的验证。
 
-赛事及新增业务模型需由后端统一写入服务在事务中调用 `full_clean()` 后保存；Django 标准 `save()` 不会自动执行它，批量写入及 `M2M.add()` 同样绕过 Python 校验。数据库约束处理字段底线，跨表发布、主来源切换、版本和多选装配、名额并发、核验身份及权限仍需服务层实现。当前未注册 Admin 管理类；自定义用户表单须适配邮箱字段和系统代号，不能直接复用带 `username` 的默认字段集。详见 [赛事实现边界](database-fields.md#competitions)、[后续字段说明](database-fields.md#teams)及 [交付边界](database-handoff.md)。
+## 代码与数据交接
 
-## PostgreSQL 辅助脚本
-
-`scripts/database.ps1` 仅供已配置便携 PostgreSQL 路径的 Windows 电脑使用。在 `backend` 中执行：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\database.ps1 status
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\database.ps1 start
-```
-
-需要停止时，将最后的 `start` 改为 `stop`。脚本依赖本机 `backend/.local/postgresql-paths.json`，该文件不提交。因此它不是通用安装器；通过系统服务安装 PostgreSQL 的电脑，应使用自己的服务管理方式，不必运行此脚本。
-
-## 常见问题
-
-| 现象 | 处理方式 |
+| 文件或目录 | 作用与维护重点 |
 | --- | --- |
-| 仓库中没有 `backend` | 确认使用本项目仓库，并按“获取代码”更新 `main`；若仍缺少目录，检查 `git pull` 的提示 |
-| 找不到 `.venv\Scripts\python.exe` | 确认当前目录是 `backend`，且已创建该目录下的虚拟环境 |
-| 缺少配置或密钥无效 | 检查 `backend/.env`，替换样例占位值 |
-| PostgreSQL 连接被拒绝 | 检查数据库是否启动、地址和端口是否正确 |
-| 数据库认证失败或数据库不存在 | 检查数据库名、用户名、密码及用户权限 |
-| 健康接口正常，数据库检查失败 | 两者检查范围不同，需单独修复数据库连接 |
-| 提示未应用迁移，或 `/admin/` 缺少表 | 获取本分支迁移文件后按“首次迁移”执行 `migrate`；Admin 表单另需后端适配 |
-| 端口 `8000` 已占用 | 确认占用程序，或用 `runserver 127.0.0.1:8001` 并访问对应端口 |
+| `config/settings.py`、`urls.py` | 配置、模块和根路由；修改后同步环境样例与接口说明 |
+| `accounts/models.py`、`migrations/` | 用户及限制的模型基线；结构变化由数据库与后端共同确认 |
+| `accounts/adapters.py`、`headless_urls.py` | 学校邮箱规则、allauth 注册/验证码适配、开放路由 |
+| `accounts/views.py`、`permissions.py` | 本人资料与发布/申请账号门槛；不代替具体队伍权限 |
+| `competitions/models.py`、`migrations/` | 赛事、来源及分类标签模型基线 |
+| `competitions/serializers.py`、`views.py` | 公开字段白名单、分页筛选和详情 |
+| `competitions/services.py`、`admin.py` | 草稿、来源核验、发布与下架的事务操作及后台表单 |
+| `templates/account/email/` | 核验和密码找回邮件模板 |
+| `ai_services/` | 后端内部 AI 调用，无独立 HTTP 接口 |
+| `scripts/check_environment.py` | 只读验证实际数据库连接 |
 
+数据库字段表与迁移继续作为基线；本轮没有另建一套用户、赛事或验证状态。后续接口改变字段含义时，先核对 [用户](database-fields.md#accounts)、[赛事](database-fields.md#competitions) 和 [队伍](database-fields.md#teams) 规则，再共同修改模型、迁移、接口与文档。
+
+模型约束只处理底线。跨表写入、成员名额、状态变化与权限应放入服务层事务，必要时锁行；保存前执行 `full_clean()`。标准模型 `save()`、批量写入和 `M2M.add()` 不能自动替代这些检查。赛事服务已实现本轮操作，其他模块不能因为已有表就绕过服务层直接开放写入。
+
+赛事后台默认保存草稿；补来源并确认原文后，选择发布动作。下架必须填写原因，产生操作记录。关联队伍的赛事暂拒绝下架，后续应把队伍状态、通知和赛事下架放在同一业务设计中接续；不要直接改字段绕过该限制。
 
 <a id="email-integration"></a>
 
-## 学校邮箱验证接入
+## 学校邮箱验证
 
-学校邮箱登录与验证规则已确认，状态归属见[用户与邮箱规则](database-fields.md#email-verification)。后端使用 django-allauth Headless、Django Session、Cookie 和 CSRF 接入页面。当前未安装或接入 allauth；验证码参数、发信和真实收件尚未完成。
+已锁定 `django-allauth[headless]==65.19.4`。使用 `accounts.User`、Django Session、Cookie 与 CSRF；不维护第二套验证码或验证布尔列。允许未验证账号登录，新增招募/申请的账号资格另行要求学校邮箱已验证、账号正常、无有效限制且至少填写一种联系方式。
 
-### 当前账号基础
+这个 allauth 版本的验证码模式要求配置 `ACCOUNT_EMAIL_VERIFICATION='mandatory'`；项目 Adapter 仅去掉登录阶段的邮箱阻断，使未验证用户能进入账号页主动发码。不能只看到配置名就断言未验证用户无法登录，也不能因此省略业务权限检查。
 
-| 内容 | 当前代码与行为 |
+邮箱范围固定为精确域名 `tongji.edu.cn`，由 Adapter、模型校验与数据库约束共同保持一致；没有可单独改动的 `SCHOOL_EMAIL_DOMAINS` 开关。扩展域名需共同修改校验与迁移。
+
+学校邮箱验证码是 6 位数字，本轮首次发送后 10 分钟有效、最多输错 5 次、最多重发 3 次。重发成功使旧码失效，不延长原有效期。另有邮箱与 IP 限流；当前参数与状态码详见 [API 说明](api.md)。找回密码使用 allauth 独立流程，复制邮件中的完整验证码，不假定也是 6 位数字。
+
+当前只开放本人当前主邮箱核验，不提供邮箱自助换绑。用户后台的已有邮箱也设为只读；特殊换绑尚未实现，不能直接改 `User.email` 并沿用旧验证结果。新增管理员或历史用户首次登录网站时，会为完全缺失的 allauth 邮箱记录补建未验证主邮箱。
+
+真实发信需项目持有或获准使用的 SMTP 服务。学校邮箱是收件地址，SMTP 账号是网站的发件身份，网站不收集学生的学校邮箱密码。后续取得资源后配置 TLS/SSL、发件地址并实际检查学校邮箱收件、延迟和垃圾邮件；开发终端出现邮件、自动化测试通过都不等于真实投递通过。
+
+## 常见问题
+
+| 现象 | 处理 |
 | --- | --- |
-| 用户模型 | [accounts/models.py](../backend/accounts/models.py) 定义 `accounts.User`，继承 `AbstractUser`，移除 `username`、`first_name`、`last_name`，以 `email` 为登录标识 |
-| 全局配置 | [config/settings.py](../backend/config/settings.py) 已设置 `AUTH_USER_MODEL = 'accounts.User'`；保留 SessionAuthentication、Session 和 CSRF 中间件 |
-| 邮箱规范化 | [accounts/managers.py](../backend/accounts/managers.py) 将邮箱去首尾空白并转为小写；模型保存同样规范化；邮箱登录查询使用相同规则 |
-| 学校邮箱范围 | [accounts/validators.py](../backend/accounts/validators.py) 校验邮箱格式和精确域名 `tongji.edu.cn`；伪造后缀不被接受 |
-| 邮箱唯一性 | `email` 普通唯一约束、`Lower(email)` 唯一约束，以及规范化和学校域名检查约束已定义 |
-| 密码 | `create_user` / `create_superuser` 执行密码强度校验，通过 Django 密码接口生成哈希；模型校验拒绝普通明文密码写入 |
-| 系统代号 | 自动生成固定的 `CX-` 加 8 位大写字母或数字，必填且唯一；碰撞时有限重试，不接受创建入口传入自定义代号 |
-| 联系资料 | 注册时微信、手机号可空；用户模型提供 `has_contact_details` 并维护联系资料更新时间；发布、申请前的业务门槛待接口接入 |
-| 验证状态 | 当前 User 没有额外的“已验证”布尔列，也没有临时验证码表 |
+| 找不到虚拟环境 Python | 确认当前在 `backend`，并已创建 `.venv` |
+| 没有本轮页面或接口 | 核对分支及提交；本地整合、推送、合入 `main` 是不同状态 |
+| 健康检查成功，列表失败 | 健康接口不查数据库；检查 PostgreSQL、连接配置和迁移 |
+| `account_emailaddress` 等表不存在 | 安装当前依赖后执行 `migrate`，包括 allauth 自带迁移 |
+| 学校邮箱没有收到验证码 | 免费开发版默认只打印到后端终端，不真实发送 |
+| 注册/验证码提示太频繁 | 等待服务端冷却，不反复点击或关闭限流；共享网络可能共用 IP 配额 |
+| 写入提示页面凭据失效 | 刷新取得 CSRF，检查前后端地址与可信来源；不要关闭 CSRF 中间件 |
+| 端口已占用 | 使用空闲端口；前端端口变化同步可信来源，后端变化同步 `DEV_PROXY_TARGET` |
+| 无法登录样例账号 | 样例用户故意禁用；在本机注册测试账号或单独创建管理员 |
+| 关联队伍赛事无法下架 | 当前保护规则，等待组队状态联动实现，不直接绕过服务层 |
 
-上述是模型和基础配置，不代表网站注册、登录或邮箱验证接口已经可用。本地初始迁移与 PostgreSQL 建表验证已完成，开发库仅导入不可登录的虚构用户，没有创建真实用户；Admin 表单也待适配。
-
-当前没有接入 `SCHOOL_EMAIL_DOMAINS` 配置。允许域名在模型校验和数据库约束中固定为首版规则；后端 Adapter 应复用同一规则。将来若扩展域名，必须同步修改校验与数据库约束迁移，不能只增加环境变量。
-
-### 待接入的邮箱验证流程
-
-#### 1. 确定并锁定 allauth 版本
-
-当前依赖中尚无 django-allauth。后端先核对与 Django 5.2、Headless、验证码及未验证账号登录策略的兼容性，再将实际采用版本锁定到项目依赖。
-
-优先使用 allauth 的账号和验证码能力，不同时维护第二套注册或验证状态系统。具体配置项及路由随锁定版本在 [API 说明](api.md) 中登记，本文不把未验证的配置样例作为现成实现。
-
-#### 2. 接入注册与登录
-
-- 注册校验精确学校域名、邮箱规范化和唯一性；通过 Django 密码接口存储密码。
-- 账号接口使用 `accounts.User`，其他业务外键使用 `settings.AUTH_USER_MODEL`。
-- allauth 的实际创建路径也必须满足现有模型约束；不能假设它必然调用自定义 `create_user`，需通过集成测试验证。
-- 已存在但未验证的邮箱再次注册时，不创建第二个账号、不覆盖原密码或资料；引导登录、重发或找回流程，响应与限流由后端统一处理。
-- 使用允许未验证账号登录的验证策略，并实际联调 Headless 和验证码流程。
-
-#### 3. 维护唯一的邮箱验证状态
-
-验证结果只使用 allauth 的 `EmailAddress`，不在 User、申请表或成员表复制验证布尔值。业务读取时，须同时满足：
-
-1. 邮箱记录属于当前用户。
-2. 规范化后的邮箱与当前 `User.email` 一致，且域名在允许范围内。
-3. 记录为当前主邮箱，且 `verified=True`。
-
-首期每个账号只有一个当前生效的绑定主邮箱。特殊换绑由管理员处理，新邮箱须重新验证；不得直接修改 `User.email` 后继承旧邮箱的验证结果。换绑成功时同步用户邮箱、allauth 主邮箱记录和联系资料更新时间。
-
-#### 4. 接入邮件验证码
-
-由 allauth 负责验证码生成、有效期、尝试限制和验证结果更新。验证码位数、有效期、尝试次数、重发冷却及发送限流需结合锁定版本统一配置并联调；早期方案中的示例数值不视为当前代码配置。
-
-验证流程必须覆盖正确、错误、过期、重复使用、重发、频率限制和发信失败。新旧验证码的失效规则应以最终配置和测试结果写入 API 契约，避免前后端理解不同。
-
-#### 5. 接入业务权限
-
-服务端在每次发布招募、提交申请时检查：已登录、账号启用、当前学校邮箱已验证、没有有效业务限制、微信号或手机号至少补齐一项，以及赛事、队伍、名额等对象条件。
-
-`is_active` 表示账号是否启用，不用于表示邮箱是否验证或是否处于 24 小时业务限制。前端隐藏按钮不能替代服务端检查。联系方式仅按已经确认的关系权限返回，不放入公开接口。
-
-### 开发发信与真实联调
-
-接入验证流程时，先使用 Django Console Email Backend 在本机查看邮件内容。它只用于开发验证，不证明真实学校邮箱能够收件；当前代码尚未配置这条验证码发信流程。
-
-真实联调使用项目掌控的发件邮箱或邮件服务，确认提供商后配置 SMTP 或邮件 API。只在 `.env.example` 记录参数名称和安全占位值；真实密码、授权码、API key 留在本机或服务器环境配置中，不提交 Git。
-
-使用 SMTP 时通常需配置邮件后端、主机、端口、发件账号、密码、TLS/SSL 和默认发件地址。具体数值由选定服务决定，本文不写入实际凭据。真实联调须覆盖同济邮箱收件、延迟、垃圾邮件、重发及服务失败。
-
-### 验证结果与后续验收
-
-当前 108 项测试在独立 PostgreSQL 测试库通过；SQLite 离线测试 106 项通过、2 项 PostgreSQL 专用检查跳过。它们没有验证 allauth、账号 HTTP 接口、验证码或真实发信；数据库复现结果见 [初始化与验收](database-handoff.md#initialization)。
-
-后续按下面的范围验收：
-
-| 阶段 | 需要通过的检查 |
-| --- | --- |
-| PostgreSQL 初始化 | 自定义用户在 accounts 首次迁移中建立；空库可迁移；邮箱唯一、大小写、域名及必填约束有效 |
-| allauth 接入 | 注册使用现有用户模型；重复邮箱不能覆盖账号；初始未验证；未验证用户可登录但不能发布或申请 |
-| 验证码 | 正确验证码生效；错误、过期、重复使用、重发、尝试次数与发送限流符合约定 |
-| 验证状态一致性 | 当前主邮箱与 User.email 一致；换绑不能继承旧验证结果；不存在两份互相冲突的验证状态 |
-| Session / CSRF | 登录、退出及刷新行为正确；需要保护的写操作执行 CSRF 校验 |
-| 业务权限 | 邮箱验证之外继续检查账号限制、联系方式和对象条件；公开接口不返回私有联系方式 |
-| 真实发信 | 项目发件服务可向学校邮箱投递；失败响应和重试策略明确 |
-
-### 接续职责
-
-数据库侧已完成已确认模型的迁移、PostgreSQL 空库建表、约束和虚构样例验证，随数据库分支交付，待后端审阅。allauth 使用其锁定版本自带的迁移，不由数据库侧仿建第三方验证码或邮箱状态表。
-
-后端接入 allauth、Adapter、Session、验证码与邮件配置、权限、限流和账号接口，并适配邮箱登录的 Admin 表单。前端按实际 API 契约接入注册、登录、验证码、重发和状态提示。
-
-本文随账号功能进展维护；新增接口及实际配置记录到 [API 说明](api.md)，完成情况记录到 [团队进度](progress.md)。
+便携 PostgreSQL 用户可在 `backend` 使用 `scripts/database.ps1 status` / `start` / `stop`。此脚本依赖本人 `.local/postgresql-paths.json`，不是通用安装器；使用系统服务安装的同学按自己的服务管理方式启动数据库。
