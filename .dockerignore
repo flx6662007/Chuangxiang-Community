@@ -1,0 +1,17 @@
+.git
+.vscode
+**/.venv
+**/__pycache__
+**/*.py[cod]
+**/.env
+**/.env.*
+**/.local
+**/*.sqlite3
+**/node_modules
+**/dist
+**/staticfiles
+**/backups
+outputs
+*.docx
+*.pdf
+

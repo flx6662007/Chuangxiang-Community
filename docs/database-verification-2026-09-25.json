@@ -1,0 +1,653 @@
+{
+  "date_local": "2026-09-25",
+  "scope": "数据库本机验收；不代表接口或业务事务服务已实现",
+  "postgresql_tests": {
+    "run": 108,
+    "passed": 108,
+    "skipped": 0
+  },
+  "sqlite_tests": {
+    "run": 108,
+    "passed": 106,
+    "skipped": 2
+  },
+  "development": {
+    "checked_at": "2026-09-24T17:51:21.788154+00:00",
+    "database": "chuangxiang_dev",
+    "engine": "PostgreSQL 17.11 on x86_64-windows",
+    "total_tables": 58,
+    "project_tables": 51,
+    "applied_migrations": 35,
+    "named_constraints": 209,
+    "declared_indexes": 46,
+    "tables": {
+      "accounts_user_groups": {
+        "rows": 0,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "accounts_user_user_permissions": {
+        "rows": 0,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "accounts_user": {
+        "rows": 15,
+        "columns": 12,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "accounts_userrestriction": {
+        "rows": 1,
+        "columns": 9,
+        "named_constraints": 3,
+        "declared_indexes": 1
+      },
+      "competitions_competitiontaxonomy": {
+        "rows": 7,
+        "columns": 6,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "competitions_competition_tags": {
+        "rows": 26,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "competitions_competition": {
+        "rows": 29,
+        "columns": 38,
+        "named_constraints": 20,
+        "declared_indexes": 2
+      },
+      "competitions_competitionsource": {
+        "rows": 31,
+        "columns": 10,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentoption": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "teams_team": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 1,
+        "declared_indexes": 2
+      },
+      "teams_recruitment": {
+        "rows": 3,
+        "columns": 15,
+        "named_constraints": 8,
+        "declared_indexes": 2
+      },
+      "teams_recruitmentrevision": {
+        "rows": 4,
+        "columns": 12,
+        "named_constraints": 12,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentbaselinemember": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 1
+      },
+      "teams_application": {
+        "rows": 6,
+        "columns": 13,
+        "named_constraints": 8,
+        "declared_indexes": 2
+      },
+      "teams_applicationrevision": {
+        "rows": 6,
+        "columns": 7,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "teams_membership": {
+        "rows": 6,
+        "columns": 9,
+        "named_constraints": 6,
+        "declared_indexes": 1
+      },
+      "teams_departurerequest": {
+        "rows": 2,
+        "columns": 11,
+        "named_constraints": 9,
+        "declared_indexes": 3
+      },
+      "teams_dissolutionrequest": {
+        "rows": 2,
+        "columns": 8,
+        "named_constraints": 6,
+        "declared_indexes": 2
+      },
+      "teams_dissolutionresponse": {
+        "rows": 1,
+        "columns": 6,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "teams_recruitmentcurrentskill": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentrequiredrole": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentrequiredskill": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentcampus": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_applicationdesiredrole": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_applicationskill": {
+        "rows": 6,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "research_researchtaxonomy": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "research_researchopportunity": {
+        "rows": 4,
+        "columns": 47,
+        "named_constraints": 14,
+        "declared_indexes": 3
+      },
+      "research_researchsource": {
+        "rows": 1,
+        "columns": 10,
+        "named_constraints": 2,
+        "declared_indexes": 1
+      },
+      "research_researchrevision": {
+        "rows": 4,
+        "columns": 6,
+        "named_constraints": 2,
+        "declared_indexes": 0
+      },
+      "research_researchtag": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "research_researchdirection": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcetaxonomy": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "resources_resource": {
+        "rows": 4,
+        "columns": 19,
+        "named_constraints": 6,
+        "declared_indexes": 1
+      },
+      "resources_resourcerevision": {
+        "rows": 4,
+        "columns": 6,
+        "named_constraints": 2,
+        "declared_indexes": 0
+      },
+      "resources_resourcetag": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcedirection": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcecompetition": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourceresearchopportunity": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "newsletters_newsletter": {
+        "rows": 1,
+        "columns": 9,
+        "named_constraints": 4,
+        "declared_indexes": 1
+      },
+      "newsletters_newsletterrevision": {
+        "rows": 2,
+        "columns": 12,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "newsletters_newsletteritem": {
+        "rows": 4,
+        "columns": 14,
+        "named_constraints": 7,
+        "declared_indexes": 0
+      },
+      "favorites_favorite": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 4,
+        "declared_indexes": 1
+      },
+      "governance_adminaction": {
+        "rows": 1,
+        "columns": 14,
+        "named_constraints": 5,
+        "declared_indexes": 3
+      },
+      "notifications_businessevent": {
+        "rows": 6,
+        "columns": 11,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "notifications_notification": {
+        "rows": 10,
+        "columns": 7,
+        "named_constraints": 3,
+        "declared_indexes": 1
+      },
+      "ingestion_sourceconfig": {
+        "rows": 1,
+        "columns": 10,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "ingestion_fetchrun": {
+        "rows": 2,
+        "columns": 12,
+        "named_constraints": 7,
+        "declared_indexes": 3
+      },
+      "ingestion_sourceversion": {
+        "rows": 1,
+        "columns": 12,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "ingestion_processingresult": {
+        "rows": 2,
+        "columns": 17,
+        "named_constraints": 7,
+        "declared_indexes": 3
+      },
+      "ingestion_processinginput": {
+        "rows": 3,
+        "columns": 7,
+        "named_constraints": 3,
+        "declared_indexes": 0
+      },
+      "ingestion_aicall": {
+        "rows": 1,
+        "columns": 13,
+        "named_constraints": 7,
+        "declared_indexes": 2
+      }
+    }
+  },
+  "fresh_database": {
+    "checked_at": "2026-09-24T17:50:05.740009+00:00",
+    "database": "chuangxiang_verify_7d400bff4e57",
+    "engine": "PostgreSQL 17.11 on x86_64-windows",
+    "total_tables": 58,
+    "project_tables": 51,
+    "applied_migrations": 35,
+    "named_constraints": 209,
+    "declared_indexes": 46,
+    "tables": {
+      "accounts_user_groups": {
+        "rows": 0,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "accounts_user_user_permissions": {
+        "rows": 0,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "accounts_user": {
+        "rows": 15,
+        "columns": 12,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "accounts_userrestriction": {
+        "rows": 1,
+        "columns": 9,
+        "named_constraints": 3,
+        "declared_indexes": 1
+      },
+      "competitions_competitiontaxonomy": {
+        "rows": 7,
+        "columns": 6,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "competitions_competition_tags": {
+        "rows": 26,
+        "columns": 3,
+        "named_constraints": 0,
+        "declared_indexes": 0
+      },
+      "competitions_competition": {
+        "rows": 29,
+        "columns": 38,
+        "named_constraints": 20,
+        "declared_indexes": 2
+      },
+      "competitions_competitionsource": {
+        "rows": 31,
+        "columns": 10,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentoption": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "teams_team": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 1,
+        "declared_indexes": 2
+      },
+      "teams_recruitment": {
+        "rows": 3,
+        "columns": 15,
+        "named_constraints": 8,
+        "declared_indexes": 2
+      },
+      "teams_recruitmentrevision": {
+        "rows": 4,
+        "columns": 12,
+        "named_constraints": 12,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentbaselinemember": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 1
+      },
+      "teams_application": {
+        "rows": 6,
+        "columns": 13,
+        "named_constraints": 8,
+        "declared_indexes": 2
+      },
+      "teams_applicationrevision": {
+        "rows": 6,
+        "columns": 7,
+        "named_constraints": 4,
+        "declared_indexes": 0
+      },
+      "teams_membership": {
+        "rows": 6,
+        "columns": 9,
+        "named_constraints": 6,
+        "declared_indexes": 1
+      },
+      "teams_departurerequest": {
+        "rows": 2,
+        "columns": 11,
+        "named_constraints": 9,
+        "declared_indexes": 3
+      },
+      "teams_dissolutionrequest": {
+        "rows": 2,
+        "columns": 8,
+        "named_constraints": 6,
+        "declared_indexes": 2
+      },
+      "teams_dissolutionresponse": {
+        "rows": 1,
+        "columns": 6,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "teams_recruitmentcurrentskill": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentrequiredrole": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentrequiredskill": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_recruitmentcampus": {
+        "rows": 4,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_applicationdesiredrole": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "teams_applicationskill": {
+        "rows": 6,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "research_researchtaxonomy": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "research_researchopportunity": {
+        "rows": 4,
+        "columns": 47,
+        "named_constraints": 14,
+        "declared_indexes": 3
+      },
+      "research_researchsource": {
+        "rows": 1,
+        "columns": 10,
+        "named_constraints": 2,
+        "declared_indexes": 1
+      },
+      "research_researchrevision": {
+        "rows": 4,
+        "columns": 6,
+        "named_constraints": 2,
+        "declared_indexes": 0
+      },
+      "research_researchtag": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "research_researchdirection": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcetaxonomy": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "resources_resource": {
+        "rows": 4,
+        "columns": 19,
+        "named_constraints": 6,
+        "declared_indexes": 1
+      },
+      "resources_resourcerevision": {
+        "rows": 4,
+        "columns": 6,
+        "named_constraints": 2,
+        "declared_indexes": 0
+      },
+      "resources_resourcetag": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcedirection": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourcecompetition": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "resources_resourceresearchopportunity": {
+        "rows": 1,
+        "columns": 3,
+        "named_constraints": 1,
+        "declared_indexes": 0
+      },
+      "newsletters_newsletter": {
+        "rows": 1,
+        "columns": 9,
+        "named_constraints": 4,
+        "declared_indexes": 1
+      },
+      "newsletters_newsletterrevision": {
+        "rows": 2,
+        "columns": 12,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "newsletters_newsletteritem": {
+        "rows": 4,
+        "columns": 14,
+        "named_constraints": 7,
+        "declared_indexes": 0
+      },
+      "favorites_favorite": {
+        "rows": 3,
+        "columns": 6,
+        "named_constraints": 4,
+        "declared_indexes": 1
+      },
+      "governance_adminaction": {
+        "rows": 1,
+        "columns": 14,
+        "named_constraints": 5,
+        "declared_indexes": 3
+      },
+      "notifications_businessevent": {
+        "rows": 6,
+        "columns": 11,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "notifications_notification": {
+        "rows": 10,
+        "columns": 7,
+        "named_constraints": 3,
+        "declared_indexes": 1
+      },
+      "ingestion_sourceconfig": {
+        "rows": 1,
+        "columns": 10,
+        "named_constraints": 5,
+        "declared_indexes": 1
+      },
+      "ingestion_fetchrun": {
+        "rows": 2,
+        "columns": 12,
+        "named_constraints": 7,
+        "declared_indexes": 3
+      },
+      "ingestion_sourceversion": {
+        "rows": 1,
+        "columns": 12,
+        "named_constraints": 3,
+        "declared_indexes": 2
+      },
+      "ingestion_processingresult": {
+        "rows": 2,
+        "columns": 17,
+        "named_constraints": 7,
+        "declared_indexes": 3
+      },
+      "ingestion_processinginput": {
+        "rows": 3,
+        "columns": 7,
+        "named_constraints": 3,
+        "declared_indexes": 0
+      },
+      "ingestion_aicall": {
+        "rows": 1,
+        "columns": 13,
+        "named_constraints": 7,
+        "declared_indexes": 2
+      }
+    },
+    "started_empty": true,
+    "repeat_import_counts_unchanged": true,
+    "temporary_database_removed": true
+  }
+}

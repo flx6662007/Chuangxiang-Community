@@ -9,6 +9,7 @@ __pycache__/
 !.env.example
 .local/
 *.sqlite3
+staticfiles/
 
 # Frontend generated files
 node_modules/

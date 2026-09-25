@@ -1,114 +1,113 @@
 # 创享平台 · Chuangxiang Community
 
-国豪书院创新俱乐部发起的科创资讯与参赛组队网站。面向本校学生集中展示赛事、科研机会和快讯，通过固定模板发布招募，改善微信群中信息难查找、招募分散和邀请新成员不便的问题。
+国豪书院创新俱乐部发起的科创资讯与参赛组队网站。通过集中展示赛事、保留原文来源、固定模板招募，改善微信群中信息难查找、招募分散和邀请新成员不便的问题。
 
-**当前仓库用于共同开发，已有后端工程骨架，尚未形成完整可用的网站。** 模块目录存在不代表功能已经完成；`competitions/` 是赛事代码模块，没有采集或导入赛事数据。
+**当前提供无需购买服务的本地开发版：赛事列表、详情、后台维护和学校邮箱账号流程已实现；组队业务尚未开放。** 当前赛事数据是明确标记的虚构样例，没有采集真实赛事。开发邮件输出到后端终端，不会投递到真实邮箱；AI 默认关闭；尚未公网部署。
+
+本轮在 `codex/backend-rounds` 整合数据库与前端分支；上传、合并和验收状态统一记录在 [团队进度](docs/progress.md)。请核对所在分支，不要把本地实现理解为已经上线。
 
 ## 文档入口
 
-| 文档 | 查看内容 |
+| 文档 | 内容 |
 | --- | --- |
-| [团队进度](docs/progress.md) | 当前交付、下一步、依赖和验收点；进度统一在此更新 |
-| [产品范围](docs/product-scope.md) | 功能边界、组队规则与 AI 方向 |
-| [后端开发说明](docs/backend-development.md) | 首次配置、日常启动、检查与迁移说明 |
-| [API 说明](docs/api.md) | 已实现接口，以及尚未确定的业务接口 |
-| [AI 服务说明](docs/ai-services.md) | 模型配置、调用入口、结果校验、异常和开发边界 |
-| [前端说明](frontend/README.md) | 前端目录的当前用途与开发入口 |
+| [团队进度](docs/progress.md) | 两轮交付、验证边界、后续分工与 Git 状态 |
+| [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) | 首次配置、迁移和日常启动 |
+| [人工验收](docs/manual-checks.md) | 按页面检查赛事、账号、验证码与后台 |
+| [API 说明](docs/api.md) | 实际路径、参数、返回字段和错误处理 |
+| [数据库交付](docs/database-handoff.md) · [字段规则](docs/database-fields.md) | 模型基线、约束、样例与接续写入要求 |
+| [用户字段](docs/user-fields-table.md) · [赛事字段](docs/competition-fields-table.md) · [其他字段](docs/remaining-fields-table.md) | 各业务模型的数据定义 |
+| [产品范围](docs/product-scope.md) | 产品规划；具体实现状态以团队进度为准 |
+| [AI 服务](docs/ai-services.md) | 模型调用、提示词、结果校验与异常处理 |
+| [部署准备](docs/deployment.md) · [资源与费用清单](docs/procurement.md) | 后续开放访问需要的资源、部署步骤和采购时机 |
+
+## 已实现功能
+
+| 部分 | 当前能力 | 边界 |
+| --- | --- | --- |
+| 赛事页面 | 公开赛事列表、搜索、分页、详情与来源链接；加载、空结果和失败提示 | 页面读取数据库，不在访问时采集或生成卡片；分类筛选已提供 API，页面暂无分类控件 |
+| 内容后台 | 草稿维护、分类标签、来源核验、发布、填写理由下架及操作记录 | 关联队伍的赛事暂不能下架，需先接续队伍状态处理；未建立自动采集任务 |
+| 账号页面 | 学校邮箱注册、登录、退出、验证码核验、联系方式维护、密码找回 | 仅接受 `@tongji.edu.cn`；控制台邮件仅供开发；未开放邮箱自助换绑 |
+| 业务资格 | 服务端检查账号状态、当前邮箱核验、有效限制和联系方式 | 已提供可复用权限基础；招募、申请、入队接口尚未实现 |
+| 数据模型 | 用户、赛事、组队、科研、资源、快讯、通知、收藏、治理与采集追溯模型及迁移 | 模型存在不等于相应页面和业务流程完成 |
+| AI 服务包 | 通知提取、快讯草稿、来源依据校验、错误分类及离线测试 | 默认关闭；没有真实模型联调、HTTP 入口或自动发布 |
+
+## 本地运行
+
+新电脑先按 [后端开发说明](docs/backend-development.md) 安装 Python、PostgreSQL，填写自己的 `.env`，安装依赖并执行迁移。前端需要符合 `frontend/package.json` 要求的 Node.js 和 npm。不要重复执行 `startproject` 或 `startapp`。
+
+已配置好的电脑，打开两个终端，分别从仓库根目录执行：
+
+```powershell
+# 终端一：后端
+Set-Location .\backend
+.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
+```
+
+```powershell
+# 终端二：前端；首次安装或锁文件变化后先执行 npm ci
+Set-Location .\frontend
+npm.cmd ci
+npm.cmd run dev
+```
+
+打开 <http://localhost:5173/>。前端通过 Vite 将 `/api` 请求转给本机后端；使用账号功能时保持同一个浏览器地址，不要来回切换 `localhost` 和 `127.0.0.1`。终端需保持运行，`Ctrl+C` 停止对应服务。
+
+后端健康检查：<http://127.0.0.1:8000/api/v1/health/>；管理后台：<http://127.0.0.1:8000/admin/>。健康检查只说明 HTTP 服务可响应，不能证明数据库、邮件或业务流程可用。管理员需在本机单独创建，没有预设管理员密码。
 
 ## 项目结构
 
 ```text
 Chuangxiang-Community/
-├── frontend/                   # 前端代码位置，当前状态见目录说明
+├── frontend/                   # Vue 页面、路由、接口封装与前端测试
 ├── backend/
-│   ├── manage.py               # Django 管理命令入口
-│   ├── config/                 # 配置、网址路由和健康检查
-│   ├── accounts/               # 账号模块；含首次迁移保护
-│   ├── competitions/           # 赛事模块；模型和接口待开发
-│   ├── ai_services/            # 模型调用、提示词、结果校验与异常处理
-│   ├── scripts/                # 数据库检查等辅助脚本
-│   ├── .env.example            # 本地配置样例
-│   └── requirements.txt        # Python 依赖版本
-├── docs/                       # 共享进度、接口和开发说明
-├── .gitignore
+│   ├── config/                 # Django 配置、根路由和测试配置
+│   ├── accounts/               # 自定义用户、认证适配、本人资料、业务资格
+│   ├── competitions/           # 赛事模型、查询 API、事务服务和 Admin
+│   ├── teams/                  # 招募、申请、成员等模型；业务接口待开发
+│   ├── research/               # 科研机会模型
+│   ├── resources/              # 外链资源与版本模型
+│   ├── newsletters/            # 快讯与内容项模型
+│   ├── favorites/              # 收藏模型
+│   ├── notifications/          # 业务事件与站内通知模型
+│   ├── governance/             # 管理操作记录模型
+│   ├── ingestion/              # 采集与 AI 处理追溯模型
+│   ├── common/                 # 共用模型校验
+│   ├── ai_services/            # 后端内部模型调用服务
+│   ├── templates/account/email/ # 验证码与找回密码邮件模板
+│   ├── scripts/                # 数据库等辅助检查
+│   ├── .env.example            # 配置样例，无真实密钥
+│   ├── requirements.txt        # 本地通用依赖
+│   └── requirements-production.txt # 正式部署补充依赖
+├── deploy/                     # Linux 容器与 HTTPS 配置
+├── compose.yaml                # 正式部署服务编排
+├── docs/                       # 共享进度、接口与开发说明
 └── README.md
 ```
 
-`accounts` 和 `competitions` 属于同一个 Django 后端，不需要分别部署。模型和迁移文件需要提交；`.venv/`、`.env`、`.local/` 和本地数据库数据不提交。
-
-`ai_services` 是供后端调用的 Python 服务包，不是单独的服务器，也不创建数据库表；无需添加到 `INSTALLED_APPS` 或执行迁移。
-
-## 本地运行
-
-基础工程和共享文档已合入 `main`，作为团队后续开发的共同起点。新电脑先按 [后端开发说明](docs/backend-development.md) 获取代码、安装依赖、准备 PostgreSQL 并填写 `.env`。
-
-已配置好的 Windows 电脑，在仓库根目录执行：
-
-```powershell
-Set-Location .\backend
-.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
-```
-
-如果终端已经位于 `backend`，只执行第二行。访问 <http://127.0.0.1:8000/api/v1/health/> 应收到：
-
-```json
-{"status":"ok","service":"chuangxiang-backend"}
-```
-
-这只表示健康检查接口可以响应，**不代表数据库或业务功能可用**。数据库检查和首次迁移的前置条件见开发说明；当前不要直接迁移默认用户表。
-
-## 产品范围
-
-以下为产品约定，具体实现状态以团队进度为准：
-
-- 首期只做电脑端网页，在国豪书院试点，接受本校其他院系学生注册。
-- 游客可查看资讯、快讯和不含联系方式的招募卡；发布与申请前须完成学校邮箱验证。
-- 招募仅用于参赛，必须关联已收录赛事；采用固定模板，不设开放式讨论区或站内聊天。
-- 资讯保留来源链接与更新时间；计划定期检查允许接入的官方来源，并支持手动更新。
-- 快讯由管理员按需生成草稿、确认后发布；资源中心由管理员维护。
-- 卡片模板由前端提前编写，页面读取已有数据，不等待 AI 制作卡片。
+这些业务目录属于同一个 Django 后端，不需要分别购买服务器。`ai_services` 是 Python 服务包，不创建数据库表，也不单独部署。GitHub 同步代码、迁移和文档；`.venv/`、`.env`、`.local/`、`node_modules/`、数据库记录及真实凭据不提交。
 
 ## 技术方案
 
-| 状态 | 技术 | 用途 |
-| --- | --- | --- |
-| 已接入 | Python 3.13、Django、Django REST Framework | 后端工程和接口基础 |
-| 已接入 | PostgreSQL 17、psycopg、python-dotenv | 数据库连接和本地配置加载 |
-| 已接入 | Django 认证与权限配置、自带测试工具 | 基础权限配置和骨架测试；登录业务待开发 |
-| 规划 | Vue 3、Vite、Vue Router、Axios、Element Plus | 前端界面、构建、路由和接口调用 |
-| 业务待开发 | Django ORM、migrations、Admin | Django 已包含这些组件；平台模型、迁移和后台管理尚待实现 |
-| 规划 | django-allauth | 账号与邮箱核验；尚未安装或接入 |
-| 已接入 | HTTPX、`ai_services` 服务包 | 模型请求、提示词、结果校验和错误分类；默认关闭外部调用 |
-| 规划 | Redis、RQ、Beautiful Soup | 后台任务与资讯采集 |
-| 规划 | drf-spectacular、pytest、pytest-django | 扩展接口文档和业务测试 |
-| 规划 | Linux、Gunicorn、Nginx | 正式部署；本地开发可使用 Windows |
-| 候选 | Qwen 托管 API | 通知字段提取与快讯草稿生成，需用实际样本评测 |
+| 技术 | 用途与当前状态 |
+| --- | --- |
+| Python 3.13、Django 5.2、DRF | 后端业务、管理后台和 JSON API，已接入 |
+| PostgreSQL 17、Django ORM、psycopg | 数据持久化、迁移、约束与事务，已接入 |
+| django-allauth Headless、Session、CSRF | 学校邮箱账号、验证码和浏览器会话，已接入 |
+| Vue 3、JavaScript、Vite、Vue Router、Axios、Element Plus | 电脑端界面及前后端请求，已接入 |
+| HTTPX、`ai_services` | 兼容模型 API 的内部调用，默认关闭 |
+| Linux、Docker Compose、Caddy、Gunicorn、Redis、SMTP | 已提供部署准备文件；尚未在目标服务器运行或验证真实发信 |
 
-实际 Python 依赖以 [`backend/requirements.txt`](backend/requirements.txt) 为准，当前不必安装所有规划组件。邮件服务、Docker Compose、Pinia、TypeScript、pgvector 按后续需求决定。
+Python 精确版本以依赖文件为准，前端依赖以 `package-lock.json` 为准。本地免费开发不需要先安装 Docker、Redis 或购买邮件服务。采集调度、真实 AI 和组队业务在核心流程验收后接续。
 
 ## AI 开发入口
 
-已增加通知字段提取和快讯草稿生成的基础服务，**默认关闭，尚未完成真实模型联调或模型选型**。它们不是可供前端直接请求的 HTTP 接口，不自动采集、入库或发布内容。
+- `extract_notice(source_text, source_url)`：提取通知字段，保留原文依据与缺失项。
+- `generate_newsletter(items)`：用调用方选定的已核实资讯生成草稿，保留来源引用。
 
-- `extract_notice(source_text, source_url)`：从通知原文提取字段，返回逐字依据和缺失字段。
-- `generate_newsletter(items)`：根据调用方筛选的已核实资讯生成草稿，保留来源引用。
+两个函数供后端内部调用，前端不能直接访问。当前 `AI_ENABLED=0`；真实调用需要服务端兼容 API 地址、模型名与密钥。Qwen 是待评测候选，尚未确定最终模型。密钥只留在服务端，不能提交 Git 或放入前端。
 
-在本机 `backend/.env` 中配置服务端参数后才能调用；以下只是配置格式，不能原样使用：
+结构和引文检查不能保证内容完全正确，生成结果仍需管理员确认。赛事卡片的样式提前写在前端，打开页面只读取已保存数据，不等待 AI 制作卡片。详细边界见 [AI 服务说明](docs/ai-services.md)。
 
-```dotenv
-AI_ENABLED=0
-AI_PROVIDER=qwen
-AI_BASE_URL=
-AI_API_KEY=
-AI_MODEL=
-AI_TIMEOUT_SECONDS=30
-AI_MAX_OUTPUT_TOKENS=2048
-```
+## 数据与许可
 
-准备真实联调时，按模型服务控制台填写兼容接口地址、密钥和模型名，再把 `AI_ENABLED` 改为 `1`。Qwen 是待评测候选；也支持配置为 `openai_compatible`。密钥只放在服务端，不能提交 Git 或发给前端。
-
-服务会校验结构、原文引文和来源映射，但这些检查不能保证所有表述正确。结果统一标记为待人工确认；后续由管理员确认后发布。浏览赛事卡片时只读取已有数据，不触发模型生成。调用方式和限制见 [AI 服务说明](docs/ai-services.md)。
-
-## 许可与数据
-
-项目许可证尚待团队确认。引入第三方软件、模型和素材时记录来源、版本及许可证。仓库不提交真实学生资料、数据库备份、密码或服务密钥。
+开发样例均为虚构数据，不得当作真实通知对外发布。项目许可证尚待团队确认；引入第三方代码、模型和素材应记录来源、版本及许可证。仓库不提交真实学生资料、数据库备份、密码或服务密钥。

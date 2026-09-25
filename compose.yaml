@@ -1,0 +1,139 @@
+name: chuangxiang
+
+services:
+  db:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Fill POSTGRES_PASSWORD in deploy/.env}
+      DB_NAME: ${DB_NAME:?Fill DB_NAME in deploy/.env}
+      DB_USER: ${DB_USER:?Fill DB_USER in deploy/.env}
+      DB_PASSWORD: ${DB_PASSWORD:?Fill DB_PASSWORD in deploy/.env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./deploy/postgres/10-create-app.sh:/docker-entrypoint-initdb.d/10-create-app.sh:ro
+    networks: [data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -h 127.0.0.1 -U postgres -d postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:?Fill REDIS_PASSWORD in deploy/.env}
+      REDISCLI_AUTH: ${REDIS_PASSWORD:?Fill REDIS_PASSWORD in deploy/.env}
+    command: [sh, -c, 'exec redis-server --appendonly yes --requirepass "$$REDIS_PASSWORD"']
+    volumes:
+      - redis_data:/data
+    networks: [data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    logging: *logging
+
+  backend:
+    build:
+      context: .
+      dockerfile: deploy/backend.Dockerfile
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs: [/tmp]
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Fill DJANGO_SECRET_KEY in deploy/.env}
+      DJANGO_DEBUG: '0'
+      DJANGO_ALLOWED_HOSTS: ${DOMAIN:?Fill DOMAIN in deploy/.env}
+      DJANGO_CSRF_TRUSTED_ORIGINS: https://${DOMAIN:?Fill DOMAIN in deploy/.env}
+      DJANGO_PUBLIC_ORIGIN: https://${DOMAIN:?Fill DOMAIN in deploy/.env}
+      DJANGO_SECURE_SSL_REDIRECT: '1'
+      ALLAUTH_TRUSTED_PROXY_COUNT: '1'
+      DB_NAME: ${DB_NAME:?Fill DB_NAME in deploy/.env}
+      DB_USER: ${DB_USER:?Fill DB_USER in deploy/.env}
+      DB_PASSWORD: ${DB_PASSWORD:?Fill DB_PASSWORD in deploy/.env}
+      DB_HOST: db
+      DB_PORT: '5432'
+      REDIS_URL: redis://:${REDIS_PASSWORD:?Fill REDIS_PASSWORD in deploy/.env}@redis:6379/1
+      EMAIL_BACKEND: django.core.mail.backends.smtp.EmailBackend
+      EMAIL_HOST: ${EMAIL_HOST:?Fill EMAIL_HOST in deploy/.env}
+      EMAIL_PORT: ${EMAIL_PORT:-587}
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER:?Fill EMAIL_HOST_USER in deploy/.env}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD:?Fill EMAIL_HOST_PASSWORD in deploy/.env}
+      EMAIL_USE_TLS: ${EMAIL_USE_TLS:-1}
+      EMAIL_USE_SSL: ${EMAIL_USE_SSL:-0}
+      DEFAULT_FROM_EMAIL: ${DEFAULT_FROM_EMAIL:?Fill DEFAULT_FROM_EMAIL in deploy/.env}
+      EMAIL_TIMEOUT: ${EMAIL_TIMEOUT:-10}
+      AI_ENABLED: ${AI_ENABLED:-0}
+      AI_PROVIDER: ${AI_PROVIDER:-qwen}
+      AI_BASE_URL: ${AI_BASE_URL:-}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-}
+      AI_TIMEOUT_SECONDS: ${AI_TIMEOUT_SECONDS:-30}
+      AI_MAX_OUTPUT_TOKENS: ${AI_MAX_OUTPUT_TOKENS:-2048}
+    volumes:
+      - django_static:/app/staticfiles
+    networks: [proxy, data]
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import json,os,urllib.request; r=urllib.request.Request('http://127.0.0.1:8000/api/v1/health/',headers={'Host':os.environ['DJANGO_ALLOWED_HOSTS'],'X-Forwarded-Proto':'https'}); assert json.load(urllib.request.urlopen(r,timeout=5))['status']=='ok'"
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    logging: *logging
+
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/tmp]
+    environment:
+      DOMAIN: ${DOMAIN:?Fill DOMAIN in deploy/.env}
+      ACME_EMAIL: ${ACME_EMAIL:?Fill ACME_EMAIL in deploy/.env}
+    ports:
+      - '80:80'
+      - '443:443'
+      - '443:443/udp'
+    volumes:
+      - django_static:/srv/django-static:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [proxy]
+    depends_on:
+      backend:
+        condition: service_healthy
+    logging: *logging
+
+networks:
+  proxy:
+  data:
+    internal: true
+
+volumes:
+  postgres_data:
+  redis_data:
+  django_static:
+  caddy_data:
+  caddy_config:
