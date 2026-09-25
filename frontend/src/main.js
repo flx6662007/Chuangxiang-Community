@@ -1,9 +1,10 @@
 import { createApp } from 'vue'
-import { ElCard, ElContainer, ElHeader, ElMain } from 'element-plus'
+import { ElCard, ElContainer, ElHeader, ElMain, ElPagination } from 'element-plus'
 import 'element-plus/es/components/card/style/css'
 import 'element-plus/es/components/container/style/css'
 import 'element-plus/es/components/header/style/css'
 import 'element-plus/es/components/main/style/css'
+import 'element-plus/es/components/pagination/style/css'
 
 import App from './App.vue'
 import router from './router'
@@ -16,4 +17,5 @@ app.component(ElCard.name, ElCard)
 app.component(ElContainer.name, ElContainer)
 app.component(ElHeader.name, ElHeader)
 app.component(ElMain.name, ElMain)
+app.component(ElPagination.name, ElPagination)
 app.mount('#app')

@@ -109,25 +109,18 @@ a:focus-visible {
   font-size: 28px;
 }
 
-.page-heading p,
-.competition-placeholder p {
+.page-heading p {
   margin: 0;
   color: #667085;
   line-height: 1.7;
 }
 
-.competition-panel {
-  border-radius: 12px;
+.competition-list {
+  display: grid;
+  gap: 16px;
 }
 
-.competition-placeholder {
-  padding: 80px 16px;
-  text-align: center;
-}
-
-.competition-placeholder h2 {
-  margin: 0 0 12px;
-  color: #344054;
-  font-size: 20px;
-  font-weight: 500;
+.competition-pagination {
+  justify-content: center;
+  margin-top: 24px;
 }
