@@ -1,0 +1,30 @@
+{
+    email {$ACME_EMAIL}
+}
+
+{$DOMAIN} {
+    encode zstd gzip
+
+    # 保留路径前缀：同时覆盖 DRF /api/v1/ 与 allauth /api/auth/。
+    @backend path /api /api/* /admin /admin/*
+    handle @backend {
+        reverse_proxy backend:8000 {
+            # 仅信任 Caddy 亲自确认的客户端地址和 HTTPS 状态。
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    handle_path /static/* {
+        root * /srv/django-static
+        file_server
+    }
+
+    handle {
+        root * /srv/frontend
+        try_files {path} /index.html
+        header Cache-Control "no-cache"
+        file_server
+    }
+}
+
