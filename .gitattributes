@@ -1,0 +1,2 @@
+# PostgreSQL 容器会执行此脚本；Windows 检出也须保留 LF。
+*.sh text eol=lf
