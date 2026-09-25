@@ -26,6 +26,45 @@ body {
   background: #fff;
 }
 
+.app-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: min(100%, 1160px);
+  height: 100%;
+  margin: 0 auto;
+}
+
+.app-nav {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  height: 100%;
+}
+
+.app-nav a {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  color: #667085;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.app-nav a:hover,
+.app-nav a.is-active {
+  color: #2563eb;
+}
+
+.app-nav a.is-active {
+  border-bottom-color: #2563eb;
+}
+
+a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 4px;
+}
+
 .brand {
   color: #243047;
   font-size: 18px;
@@ -52,4 +91,43 @@ body {
 .welcome p {
   margin: 0;
   color: #667085;
+}
+
+.primary-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #2563eb;
+  text-underline-offset: 4px;
+}
+
+.page-heading {
+  margin: 16px 0 28px;
+}
+
+.page-heading h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.page-heading p,
+.competition-placeholder p {
+  margin: 0;
+  color: #667085;
+  line-height: 1.7;
+}
+
+.competition-panel {
+  border-radius: 12px;
+}
+
+.competition-placeholder {
+  padding: 80px 16px;
+  text-align: center;
+}
+
+.competition-placeholder h2 {
+  margin: 0 0 12px;
+  color: #344054;
+  font-size: 20px;
+  font-weight: 500;
 }
