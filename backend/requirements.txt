@@ -1,5 +1,6 @@
 asgiref==3.12.1
 Django==5.2.17
+django-allauth[headless]==65.19.4
 httpx==0.28.1
 djangorestframework==3.18.1
 psycopg==3.3.6
