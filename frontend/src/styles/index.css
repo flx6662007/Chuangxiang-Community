@@ -1903,3 +1903,127 @@ summary:focus-visible {
     font-size: 18px;
   }
 }
+
+.governance-form {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+}
+.governance-form label {
+  font-size: 14px;
+  color: #304b73;
+  font-weight: 600;
+}
+.governance-form select,
+.governance-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+  padding: 12px;
+  font: inherit;
+  color: #233c62;
+}
+.governance-form textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.8;
+}
+.governance-form select {
+  min-height: 46px;
+}
+.governance-form :disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.governance-form .action-button {
+  justify-self: start;
+}
+.governance-panel h2 {
+  margin-top: 0;
+}
+.governance-record-link {
+  display: block;
+  margin-top: 18px;
+  font-size: 14px;
+}
+.governance-description {
+  overflow-wrap: anywhere;
+}
+
+.editorial-label {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #edf4ff;
+  color: #53759d;
+  font-size: 12px;
+}
+.editorial-empty {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid #dceafa;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #f3f8ff, #fff);
+}
+.editorial-empty h3 {
+  margin: 0 0 9px;
+  font-size: 18px;
+  color: #244372;
+}
+.editorial-empty p,
+.editorial-intro {
+  margin: 0;
+  color: #64778f;
+  line-height: 1.9;
+  font-size: 14px;
+}
+.editorial-intro {
+  margin: -4px 0 22px;
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.editorial-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 8px 25px #2a64aa06;
+}
+.editorial-card h3 {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 10px 0 12px;
+}
+.editorial-card p {
+  color: #63758c;
+  line-height: 1.9;
+  font-size: 13px;
+}
+.editorial-card .editorial-meta {
+  margin-top: 0;
+  color: #3276ca;
+  font-size: 12px;
+}
+.editorial-card .editorial-participation {
+  color: #29766d;
+}
+.editorial-card .more-link {
+  margin-top: 12px;
+  font-size: 13px;
+}
+@media (max-width: 1000px) {
+  .editorial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .editorial-grid {
+    grid-template-columns: 1fr;
+  }
+}
