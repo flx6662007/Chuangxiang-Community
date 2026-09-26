@@ -12,7 +12,7 @@ from django.utils import timezone
 import httpx
 
 from competitions.models import Competition, CompetitionSource
-from .adapters import ADAPTERS
+from .adapters import ADAPTERS, RULE_VERSION
 from .http import FetchError, OfficialClient, Page, checked_url
 from .models import FetchRun, ProcessingResult, SourceVersion
 from .services import accept_candidate, initialize_sources, record_extraction, source_mutex, sync_source
@@ -94,6 +94,46 @@ class AdapterTests(SimpleTestCase):
         html = AIC_HTML.replace('参赛选手可单人创建队伍，每支参赛团队人数不超过3人。', '每支团队可设指导教师最多2人，其他人数规则见附件。')
         parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
         self.assertIsNone(parsed.candidate['team_size_max'])
+        self.assertIn('ambiguous_team_size', parsed.errors)
+
+    def test_member_limit_and_teacher_limit_keep_student_count_and_eligibility(self):
+        rules = ('参赛选手可单人创建队伍参赛，也可与本校（不含分校）其他选手组队参赛。'
+                 '每支团队成员上限3名（跨校组队无效），每支团队最多可设置2名指导教师。')
+        html = AIC_HTML.replace('参赛选手可单人创建队伍，每支参赛团队人数不超过3人。', rules)
+        parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
+        self.assertEqual((parsed.candidate['participation_type'], parsed.candidate['team_size_min'],
+                          parsed.candidate['team_size_max']), ('both', 1, 3))
+        self.assertIn('跨校组队无效', parsed.candidate['eligibility'])
+        self.assertIn('2名指导教师', parsed.candidate['eligibility'])
+        self.assertIn(parsed.evidence['team_size_max'], parsed.body)
+        self.assertEqual(parsed.candidate['rule_version'], 'official-html-2026-09-v2')
+        self.assertEqual(parsed.errors, [])
+
+    def test_separate_single_person_rule_and_conflicting_group_limits(self):
+        original = '参赛选手可单人创建队伍，每支参赛团队人数不超过3人。'
+        html = AIC_HTML.replace(original, '参赛选手可单人创建队伍。</p><p>每支团队成员上限3名。')
+        parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
+        self.assertEqual((parsed.candidate['participation_type'], parsed.candidate['team_size_min'],
+                          parsed.candidate['team_size_max']), ('both', 1, 3))
+        html = html.replace('每支团队成员上限3名。', '学生组每支团队成员上限3名。</p><p>综合组每支团队成员上限5名。')
+        parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
+        self.assertIsNone(parsed.candidate['team_size_max'])
+        self.assertIsNone(parsed.candidate['team_size_min'])
+        self.assertEqual(parsed.candidate['participation_type'], 'unknown')
+        self.assertIn('ambiguous_team_size', parsed.errors)
+
+        html = AIC_HTML.replace('参赛选手可单人创建队伍，每支参赛团队人数不超过3人。',
+                                '每支团队成员上限3名，不允许单人参赛。')
+        parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
+        self.assertEqual(parsed.candidate['participation_type'], 'team')
+        self.assertIsNone(parsed.candidate['team_size_min'])
+
+    def test_teacher_only_maximum_does_not_become_member_limit(self):
+        html = AIC_HTML.replace('参赛选手可单人创建队伍，每支参赛团队人数不超过3人。',
+                                '每支团队最多2名指导教师，学生人数见附件，不允许单人参赛。')
+        parsed = ADAPTERS['aicomp'].parse(Page(AIC_URL, html))
+        self.assertIsNone(parsed.candidate['team_size_max'])
+        self.assertEqual(parsed.candidate['participation_type'], 'unknown')
         self.assertIn('ambiguous_team_size', parsed.errors)
 
     def test_url_allowlist_and_private_dns(self):
@@ -266,6 +306,38 @@ class IngestionTests(TestCase):
         again = sync_source(self.source, client=FakeClient(), auto_accept=True)
         self.assertEqual(first['accepted'], 1)
         self.assertEqual(again['unchanged'], 1)
+        self.assertEqual(Competition.objects.count(), 1)
+
+    def test_expired_registration_never_opens_recruitment(self):
+        result, _ = self.record(AIC_HTML.replace('2030', '2020'))
+        competition = accept_candidate(result.pk, actor=self.actor, mode='rules', enable_recruitment=True)
+        self.assertEqual(competition.team_size_max, 3)
+        self.assertFalse(competition.recruitment_enabled)
+        self.assertFalse(competition.is_recruitment_open)
+        self.assertIsNone(competition.recruitment_deadline)
+
+    def test_ambiguous_member_limits_cannot_be_automatically_accepted(self):
+        html = AIC_HTML.replace('每支参赛团队人数不超过3人。',
+                                '学生组每支团队成员上限3名，综合组每支团队成员上限5名。')
+        result, _ = self.record(html)
+        with self.assertRaises(ValidationError):
+            accept_candidate(result.pk, actor=self.actor, mode='rules', enable_recruitment=True)
+        result.refresh_from_db()
+        self.assertEqual(result.status, 'pending')
+        self.assertFalse(Competition.objects.exists())
+
+    def test_rule_upgrade_reuses_original_but_creates_new_candidate(self):
+        old_rule = 'official-html-2026-09-v1'
+        with patch('ingestion.adapters.RULE_VERSION', old_rule), patch('ingestion.services.RULE_VERSION', old_rule):
+            original, _ = self.record()
+            competition = accept_candidate(original.pk, actor=self.actor, mode='rules')
+        revised, unchanged = self.record()
+        self.assertTrue(unchanged)
+        self.assertEqual(revised.source_version_id, original.source_version_id)
+        self.assertNotEqual(revised.pk, original.pk)
+        self.assertEqual(revised.candidate['rule_version'], RULE_VERSION)
+        self.assertEqual(accept_candidate(revised.pk, actor=self.actor, mode='rules').pk, competition.pk)
+        self.assertEqual(SourceVersion.objects.count(), 1)
         self.assertEqual(Competition.objects.count(), 1)
 
 

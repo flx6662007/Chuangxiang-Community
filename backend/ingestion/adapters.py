@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 from .http import FetchError, checked_url
 
-RULE_VERSION = 'official-html-2026-09-v1'
+RULE_VERSION = 'official-html-2026-09-v2'
 
 
 def normalized(text):
@@ -184,25 +184,38 @@ class AicompAdapter(Adapter):
             put('level', 'international', eligibility)
         elif '全国' in eligibility:
             put('level', 'national', eligibility)
-        team_line = first_line(body, r'(?:每支|每个|每队).*?(?:团队|队伍|参赛队).*?(?:不超过|至多|最多)\s*\d+\s*[人名]')
-        if team_line:
+        # 同一参赛条款可能先写教师人数，再写学生人数；只识别成员主体的上限。
+        # 检查全部匹配条款，不能只取第一条而漏掉不同组别的冲突上限。
+        requirements = section(body, '参赛要求') or body
+        team_lines = [line for line in requirements.splitlines() if re.search(
+            r'(?:每支|每个|每队).*?(?:不得超过|不超过|至多|最多|上限(?:为)?)\s*\d+\s*[人名]', line)]
+        if team_lines:
             maximums = set()
             for pattern in (
-                r'(?:每支|每个|每队)(?:参赛)?(?:团队|队伍|参赛队)(?:学生|队员|成员)?(?:人数)?\s*(?:不得超过|不超过|至多|最多)\s*(\d+)\s*人',
+                r'(?:每(?:支|个)(?:参赛)?(?:团队|队伍|参赛队)|每队)(?:学生|队员|成员)?(?:人数)?\s*(?:不得超过|不超过|至多|最多|上限(?:为)?)\s*(\d+)\s*[人名](?!\s*(?:指导)?教师)',
                 r'(?:学生|参赛选手|队员|参赛成员)(?:人数)?\s*(?:不得超过|不超过|至多|最多)\s*(\d+)\s*[人名]',
                 r'(?:不得超过|不超过|至多|最多)\s*(\d+)\s*名学生',
             ):
-                maximums.update(int(match.group(1)) for match in re.finditer(pattern, team_line))
+                for team_line in team_lines:
+                    maximums.update(int(match.group(1)) for match in re.finditer(pattern, team_line))
+            # 使用连续原文作为依据，保留单人、跨校和指导教师等限制，不拼接伪造引文。
+            rule_start = body.index(team_lines[0])
+            rule_end = body.index(team_lines[-1]) + len(team_lines[-1])
+            single_line = first_line(requirements, r'(?<!不)(?:可以?|允许)(?:由)?单人(?:创建队伍|参赛)')
+            if single_line:
+                rule_start = min(rule_start, body.index(single_line))
+                rule_end = max(rule_end, body.index(single_line) + len(single_line))
+            team_quote = body[rule_start:rule_end]
             if len(maximums) == 1:
-                put('team_size_max', maximums.pop(), team_line)
-                put('participation_type', 'team', team_line)
+                put('team_size_max', maximums.pop(), team_quote)
+                put('participation_type', 'team', team_quote)
+                if single_line:
+                    put('team_size_min', 1, team_quote)
+                    put('participation_type', 'both', team_quote)
             else:
                 data.setdefault('_extraction_errors', []).append('ambiguous_team_size')
-            if '单人' in team_line:
-                put('team_size_min', 1, team_line)
-                put('participation_type', 'both', team_line)
-            if eligibility and body.index(team_line) > body.index(eligibility):
-                eligibility_with_rules = body[body.index(eligibility):body.index(team_line) + len(team_line)]
+            if eligibility and rule_start > body.index(eligibility):
+                eligibility_with_rules = body[body.index(eligibility):rule_end]
                 put('eligibility', eligibility_with_rules[:2500], eligibility_with_rules)
         tracks = section(body, '赛题说明') or section(body, '赛题方向')
         if tracks:
