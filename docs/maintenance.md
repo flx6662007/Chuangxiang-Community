@@ -37,6 +37,8 @@ Get-ScheduledTaskInfo -TaskName 'Chuangxiang-TeamSettlement'
 
 脚本注册当前用户的两项任务；再次执行会更新同名任务，不创建重复调度：
 
+可先单独安装不依赖采集账号的组队结算：`./deploy/windows/install-maintenance.ps1 -Task settle`。待真实来源初始化完成，再以 `-Task ingest` 安装采集任务；不带参数时安装两项。
+
 | 任务 | 周期 | 内容 |
 | --- | --- | --- |
 | `Chuangxiang-CompetitionSync` | 每 6 小时 | 获取启用官方来源、保存新版本和候选，受控采纳 |
