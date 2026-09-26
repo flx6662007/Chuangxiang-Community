@@ -89,6 +89,27 @@ class CompetitionAPITests(TestCase):
         self.assertEqual(self.client.get('/api/v1/competitions/?page=999').status_code, 404)
         self.assertEqual(self.client.get('/api/v1/competitions/', {'search': 'x' * 201}).status_code, 400)
 
+    def test_categories_and_options_exclude_inactive_and_separate_kinds(self):
+        CompetitionTaxonomy.objects.create(code='disabled', name='停用分类', kind='category', is_active=False)
+        response = self.client.get('/api/v1/competitions/categories/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), [{'id': self.category.pk, 'code': 'engineering', 'name': '工程'}])
+        options = self.client.get('/api/v1/competitions/options/').json()
+        self.assertEqual([row['code'] for row in options['tags']], ['robot'])
+        self.assertIn({'code': 'unknown', 'name': '未注明'}, options['levels'])
+
+    def test_recruitment_filter_requires_all_event_conditions(self):
+        event = self.public[0]
+        event.participation_type = 'team'
+        event.recruitment_enabled = True
+        event.recruitment_deadline = timezone.now() + timedelta(days=1)
+        event.full_clean()
+        event.save()
+        result = self.client.get('/api/v1/competitions/?recruitment_open=true').json()
+        self.assertEqual([row['id'] for row in result['results']], [event.pk])
+        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=false').json()['count'], 23)
+        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=maybe').status_code, 400)
+
     def test_read_only_and_no_authentication_overhead(self):
         self.assertEqual(self.client.post('/api/v1/competitions/', {}).status_code, 405)
         self.assertEqual(self.client.delete(f'/api/v1/competitions/{self.public[0].pk}/').status_code, 405)

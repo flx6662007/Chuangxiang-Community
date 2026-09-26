@@ -53,6 +53,18 @@ def _validate_public_relations(competition):
 
 @transaction.atomic
 def save_competition(instance, *, actor, tags=None):
+    from teams.services import lock_competition_graph, reconcile_competition
+
+    if instance.pk is None:
+        return _save_competition(instance, actor=actor, tags=tags)
+    require_editor(actor)
+    with lock_competition_graph(instance.pk):
+        saved = _save_competition(instance, actor=actor, tags=tags)
+        reconcile_competition(saved.pk)
+        return saved
+
+
+def _save_competition(instance, *, actor, tags=None):
     """只编辑内容；发布状态和系统核验字段不能由此入口伪造。"""
     creating = instance.pk is None
     require_editor(actor, 'add_competition' if creating else 'change_competition')
@@ -79,6 +91,12 @@ def save_competition(instance, *, actor, tags=None):
         CompetitionTaxonomy.objects.select_for_update().get(pk=saved.category_id)
     if saved.publication_status == Competition.PublicationStatus.PUBLISHED:
         _validate_public_relations(saved)
+    if not creating and saved.recruitment_enabled and any(
+        name in changed for name in ('team_size_min', 'team_size_max', 'participation_type', 'eligibility')
+    ):
+        from teams.models import Recruitment
+        if Recruitment.objects.filter(team__competition_id=saved.pk, publication_status='published', closed_at__isnull=True).exists():
+            raise ValidationError('本届有进行中的招募。修改参赛资格或人数规则时，请同时停止招募，核对规则后重新开放。')
     saved.full_clean()
     if creating or changed:
         if creating:
@@ -169,13 +187,16 @@ def withdraw_competition(competition_id, *, actor, reason):
     require_editor(actor)
     if not isinstance(reason, str) or not reason.strip() or len(reason.strip()) > 500:
         raise ValidationError('请填写 1 至 500 字的具体下架原因。')
-    competition = Competition.objects.select_for_update().get(pk=competition_id)
+    from teams.services import lock_competition_graph, reconcile_competition
+    with lock_competition_graph(competition_id) as competition:
+        result = _withdraw_locked(competition, actor=actor, reason=reason)
+        reconcile_competition(competition_id)
+        return result
+
+
+def _withdraw_locked(competition, *, actor, reason):
     if competition.publication_status != Competition.PublicationStatus.PUBLISHED:
         raise ValidationError('只能下架当前已公开的赛事。')
-    # 组队事务尚未实现时，不提供会遗漏申请终结/联系权限处理的下架入口。
-    from teams.models import Team
-    if Team.objects.filter(competition_id=competition.pk).exists():
-        raise ValidationError('本届已有队伍，须先接入组队联动下架流程。')
     competition.publication_status = Competition.PublicationStatus.WITHDRAWN
     competition.withdrawal_reason = reason.strip()
     competition.recruitment_enabled = False
