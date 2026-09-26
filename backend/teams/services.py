@@ -95,6 +95,11 @@ def ensure_open(card):
     check(card.is_open, 'card_unavailable', '当前招募已满员、暂停或结束，请刷新查看。')
 
 
+def ensure_real_competition(competition):
+    is_demo = competition.code.startswith(('demo-r1-', 'demo-r2-')) and competition.title.startswith('【虚构样例】')
+    check(not is_demo, 'demo_unavailable', '该赛事为历史演示样例，不接受新的招募或申请。')
+
+
 def recipients(app):
     return [app.applicant_id, app.recruitment.team.recruiter_id]
 
@@ -277,6 +282,7 @@ def publish_recruitment(*, actor, data):
     def action(now):
         ensure_actor(actor, new=True)
         competition = Competition.objects.get(pk=data['competition_id'])
+        ensure_real_competition(competition)
         check(competition.is_recruitment_open, 'card_unavailable', '该赛事当前不允许招募。')
         if data.get('team_id'):
             team = Team.objects.get(pk=data['team_id'])
@@ -382,6 +388,7 @@ def submit_application(card_id, *, actor, data):
     def action(now):
         card = Recruitment.objects.get(pk=card_id)
         ensure_actor(actor, new=True)
+        ensure_real_competition(card.team.competition)
         check_version(card, data)
         ensure_open(card)
         check(actor.pk != card.team.recruiter_id, 'forbidden', '不能申请自己的招募。', 403)

@@ -534,3 +534,36 @@ class TeamFlowTests(TestCase):
         choices = self.client.get('/api/v1/recruitments/options/').json()['roles']
         self.assertNotIn('demo-r2-hidden', [item['code'] for item in choices])
         self.assertIn('demo-r2-real', [item['code'] for item in choices])
+
+    def test_verified_users_cannot_publish_or_apply_to_hidden_demo_competition(self):
+        now = timezone.now()
+        demo = s.save(Competition(code='demo-r1-archived-example', title='【虚构样例】旧赛事', edition='2026',
+            category=self.category, summary='历史演示', description='仅用于隔离测试', participation_type='team',
+            recruitment_note='历史样例期限', recruitment_deadline=now + timedelta(days=30)))
+        s.save(CompetitionSource(competition=demo, source_type='official', source_name='虚构来源',
+            source_url='https://example.org/demo', is_primary=True, last_verified_at=now))
+        demo.publication_status, demo.published_at, demo.last_verified_at = 'published', now, now
+        demo.recruitment_enabled = True
+        s.save(demo)
+        # 表示旧种子已存在的卡片，完整装配历史模型；新建服务不得再提供演示业务入口。
+        team = s.save(Team(competition=demo, recruiter=self.owner))
+        member = s.save(Membership(team=team, competition=demo, user=self.owner, join_source='recruiter'))
+        card = s.save(Recruitment(team=team, duration_days=7))
+        revision = s.save(RecruitmentRevision(recruitment=card, version=1, existing_member_count=1,
+            recruitment_quota=1, foundation_requirement='beginner_ok', weekly_effort='over_2_to_5',
+            collaboration_mode='online', edited_by=self.owner))
+        s.save(RecruitmentBaselineMember(revision=revision, membership=member))
+        card.current_revision, card.publication_status = revision, 'published'
+        card.published_at, card.expires_at = now, now + timedelta(days=7)
+        s.save(card)
+        self.client.force_authenticate(self.third)
+        publish = self.client.post('/api/v1/recruitments/', self.card_data(competition_id=demo.pk), format='json')
+        self.assertEqual(publish.status_code, 409)
+        self.assertEqual(publish.json()['code'], 'demo_unavailable')
+        self.client.force_authenticate(self.student)
+        apply = self.client.post(f'/api/v1/recruitments/{card.pk}/applications/',
+            {'expected_version': 1, 'weekly_effort': 'over_2_to_5', 'desired_roles': [], 'skills': []}, format='json')
+        self.assertEqual(apply.status_code, 409)
+        self.assertEqual(apply.json()['code'], 'demo_unavailable')
+        self.assertEqual(Application.objects.filter(recruitment=card).count(), 0)
+        self.assertEqual(Recruitment.objects.filter(team__competition=demo).count(), 1)
