@@ -1,7 +1,9 @@
 """只开放本轮所需的浏览器认证入口；不开放自行换绑邮箱或 APP token。"""
 from allauth.account.internal.flows.email_verification_by_code import EmailVerificationProcess
+from allauth.account.internal.flows.password_reset_by_code import PasswordResetVerificationProcess
+from allauth.account.internal.userkit import filter_users_by_email
 from allauth.headless.account import views
-from allauth.headless.account.inputs import SignupInput
+from allauth.headless.account.inputs import RequestPasswordResetInput, SignupInput
 from allauth.account.adapter import get_adapter
 from allauth.headless.base.response import ConflictResponse, ForbiddenResponse
 from allauth.headless.constants import Client
@@ -31,6 +33,40 @@ class SchoolSignupInput(SignupInput):
 
 class SchoolSignupView(views.SignupView):
     input_class = {'POST': SchoolSignupInput}
+
+
+class PasswordAccountResetInput(RequestPasswordResetInput):
+    def clean_email(self):
+        email = get_adapter().clean_email(self.cleaned_data['email'].lower())
+        # 当前没有 SSO：不可用密码代表非交互账号，不能借找回密码启用登录。
+        self.users = [user for user in filter_users_by_email(
+            email, is_active=True, prefer_verified=True, for_login=True
+        ) if user.has_usable_password()]
+        # 无账号与不可重置账号均走 allauth 的空用户流程，不暴露账号类型。
+        return email
+
+
+class PasswordAccountResetRequestView(views.RequestPasswordResetView):
+    input_class = PasswordAccountResetInput
+
+
+class PasswordAccountResetView(views.ResetPasswordView):
+    def handle(self, request, *args, **kwargs):
+        process = PasswordResetVerificationProcess.resume(request)
+        if process and process.user and (
+            not process.user.is_active or not process.user.has_usable_password()
+        ):
+            # 发码后被禁用的账号不能用旧验证码恢复密码或间接核验邮箱。
+            process.abort()
+            return ConflictResponse(request)
+        return super().handle(request, *args, **kwargs)
+
+
+class PasswordAccountChangeView(views.ChangePasswordView):
+    def handle(self, request, *args, **kwargs):
+        if request.user.is_authenticated and not request.user.has_usable_password():
+            return ForbiddenResponse(request)
+        return super().handle(request, *args, **kwargs)
 
 
 class CurrentEmailView(views.ManageEmailView):
@@ -78,9 +114,9 @@ account_patterns = [
     path('auth/login', browser_view(views.LoginView), name='login'),
     path('auth/email/verify', browser_view(CurrentVerifyEmailView), name='verify_email'),
     path('account/email', browser_view(CurrentEmailView), name='manage_email'),
-    path('auth/password/request', browser_view(views.RequestPasswordResetView), name='request_password_reset'),
-    path('auth/password/reset', browser_view(views.ResetPasswordView), name='reset_password'),
-    path('account/password/change', browser_view(views.ChangePasswordView), name='change_password'),
+    path('auth/password/request', browser_view(PasswordAccountResetRequestView), name='request_password_reset'),
+    path('auth/password/reset', browser_view(PasswordAccountResetView), name='reset_password'),
+    path('account/password/change', browser_view(PasswordAccountChangeView), name='change_password'),
     path('auth/reauthenticate', browser_view(views.ReauthenticateView), name='reauthenticate'),
 ]
 app_name = 'headless'

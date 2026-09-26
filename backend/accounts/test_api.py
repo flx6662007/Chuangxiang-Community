@@ -234,6 +234,112 @@ class AccountAPITests(TestCase):
         user.refresh_from_db()
         self.assertTrue(user.check_password('NewForest!River95'))
 
+    def test_password_reset_hides_unusable_inactive_and_unknown_accounts(self):
+        service = User.objects.create_user('collector-test@tongji.edu.cn', None)
+        EmailAddress.objects.create(user=service, email=service.email, primary=True, verified=True)
+        inactive = User.objects.create_user('inactive-test@tongji.edu.cn', PASSWORD, is_active=False)
+        student = User.objects.create_user(EMAIL, PASSWORD)
+        expected = None
+        for email in (service.email, inactive.email, 'unknown-test@tongji.edu.cn'):
+            with self.subTest(email=email):
+                response = self.request('post', AUTH + 'auth/password/request', {'email': email})
+                self.assertEqual(response.status_code, 401, response.content)
+                self.assertIn({'id': 'password_reset_by_code', 'is_pending': True},
+                    response.json()['data']['flows'])
+                if expected is None:
+                    expected = response.json()
+                self.assertEqual(response.json(), expected)
+                state = self.client.session['account_password_reset_verification']
+                self.assertNotIn('user_id', state)
+                self.assertNotIn('code', state)
+                self.assertEqual(len(mail.outbox), 0)
+                invalid = self.request('post', AUTH + 'auth/password/reset',
+                    {'key': '123456', 'password': 'NewForest!River95'})
+                self.assertEqual(invalid.status_code, 400, invalid.content)
+        response = self.request('post', AUTH + 'auth/password/request', {'email': student.email})
+        self.assertEqual(response.status_code, 401, response.content)
+        self.assertEqual(response.json(), expected)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].to, [student.email])
+        service.refresh_from_db()
+        self.assertFalse(service.has_usable_password())
+        inactive.refresh_from_db()
+        self.assertTrue(inactive.check_password(PASSWORD))
+
+    def test_unusable_password_cannot_login_signup_or_use_anonymous_change(self):
+        service = User.objects.create_user(EMAIL, None)
+        response = self.request('post', AUTH + 'auth/login', {'email': EMAIL, 'password': PASSWORD})
+        self.assertEqual(response.status_code, 400, response.content)
+        self.assertNotIn('_auth_user_id', self.client.session)
+        response = self.request('post', AUTH + 'auth/signup', {'email': EMAIL, 'password': PASSWORD})
+        self.assertEqual(response.status_code, 400, response.content)
+        for path, payload in (
+            ('account/password/change', {'new_password': PASSWORD}),
+            ('auth/reauthenticate', {'password': PASSWORD}),
+        ):
+            response = self.request('post', AUTH + path, payload)
+            self.assertEqual(response.status_code, 401, response.content)
+        self.assertEqual(User.objects.count(), 1)
+        service.refresh_from_db()
+        self.assertFalse(service.has_usable_password())
+
+    def test_existing_unusable_password_session_cannot_set_password(self):
+        service = User.objects.create_user(EMAIL, None)
+        # 模拟受信内部代码遗留的会话，HTTP 登录本身不能产生此会话。
+        self.client.force_login(service, backend='django.contrib.auth.backends.ModelBackend')
+        response = self.request('post', AUTH + 'account/password/change', {'new_password': PASSWORD})
+        self.assertEqual(response.status_code, 403, response.content)
+        response = self.request('post', AUTH + 'auth/reauthenticate', {'password': PASSWORD})
+        self.assertEqual(response.status_code, 400, response.content)
+        service.refresh_from_db()
+        self.assertFalse(service.has_usable_password())
+
+    def test_old_reset_code_cannot_restore_disabled_password_or_verify_email(self):
+        user = User.objects.create_user(EMAIL, PASSWORD)
+        address = EmailAddress.objects.create(user=user, email=EMAIL, primary=True, verified=False)
+        for method in ('get', 'post'):
+            with self.subTest(method=method):
+                cache.clear()
+                user.set_password(PASSWORD)
+                user.save(update_fields=['password'])
+                response = self.request('post', AUTH + 'auth/password/request', {'email': EMAIL})
+                self.assertEqual(response.status_code, 401, response.content)
+                code = re.search(r'验证码：(\S+)', mail.outbox[-1].body).group(1)
+                user.set_unusable_password()
+                user.save(update_fields=['password'])
+                if method == 'get':
+                    response = self.client.get(AUTH + 'auth/password/reset', HTTP_X_PASSWORD_RESET_KEY=code)
+                else:
+                    response = self.request('post', AUTH + 'auth/password/reset',
+                        {'key': code, 'password': 'NewForest!River95'})
+                self.assertEqual(response.status_code, 409, response.content)
+                self.assertNotIn('account_password_reset_verification', self.client.session)
+                user.refresh_from_db()
+                address.refresh_from_db()
+                self.assertFalse(user.has_usable_password())
+                self.assertFalse(address.verified)
+
+    def test_normal_student_password_change_still_requires_current_password(self):
+        user = self.signup()
+        response = self.request('post', AUTH + 'account/password/change',
+            {'new_password': 'NewForest!River95'})
+        self.assertEqual(response.status_code, 400, response.content)
+        response = self.request('post', AUTH + 'account/password/change',
+            {'current_password': PASSWORD, 'new_password': 'NewForest!River95'})
+        self.assertEqual(response.status_code, 200, response.content)
+        user.refresh_from_db()
+        self.assertTrue(user.check_password('NewForest!River95'))
+
+    def test_other_password_and_passwordless_routes_are_not_exposed(self):
+        for path in (
+            '/accounts/login/', '/accounts/password/reset/', '/accounts/password/set/',
+            AUTH + 'auth/code/request', AUTH + 'auth/code/confirm',
+            AUTH + 'auth/provider', AUTH + 'account/password/set',
+            '/api/auth/app/v1/auth/password/request',
+        ):
+            with self.subTest(path=path):
+                self.assertEqual(self.request('post', path).status_code, 404)
+
     def test_user_admin_uses_email_form_and_disallows_manual_verification(self):
         admin_user = User.objects.create_superuser('admin-rounds@tongji.edu.cn', PASSWORD)
         self.client.force_login(admin_user, backend='django.contrib.auth.backends.ModelBackend')
