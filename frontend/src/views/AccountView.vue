@@ -477,7 +477,7 @@ onBeforeUnmount(() => {
             }}
           </p>
           <p class="muted">
-            组队发布和申请功能尚未开放，后续操作仍需符合赛事和队伍的具体条件。
+            发布和申请还需符合赛事、队伍和名额条件；具体允许操作以最新状态为准。
           </p>
           <button class="text-button" :disabled="!!busy" @click="loadSession">
             刷新账号状态
