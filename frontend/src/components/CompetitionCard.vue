@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import {
   formatDate,
-  formatDeadline,
+  summaryDeadline,
   levelLabels,
   participationLabels,
   safeExternalUrl,
@@ -13,9 +13,7 @@ const props = defineProps({
   competition: { type: Object, required: true },
   detailQuery: { type: Object, default: () => ({}) },
 })
-const registrationDeadline = computed(() =>
-  formatDeadline(props.competition, 'registration_deadline'),
-)
+const deadline = computed(() => summaryDeadline(props.competition))
 const sourcePublishedAt = computed(() =>
   formatDate(props.competition.primary_source?.source_published_on),
 )
@@ -85,8 +83,8 @@ const detailLink = computed(() => ({
     </div>
     <div class="competition-card-aside">
       <span class="deadline-label"
-        ><AppIcon name="calendar" :size="16" />报名截止</span
-      ><strong>{{ registrationDeadline }}</strong
+        ><AppIcon name="calendar" :size="16" />{{ deadline.label }}</span
+      ><strong>{{ deadline.value }}</strong
       ><RouterLink class="card-detail-link" :to="detailLink"
         >查看详情<AppIcon name="arrow" :size="16"
       /></RouterLink>
