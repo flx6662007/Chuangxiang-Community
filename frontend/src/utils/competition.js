@@ -27,7 +27,7 @@ export function formatDeadline(record, field) {
   const day = formatDate(record[field])
   const instant = record[`${field}_at`]
   const zone = record[`${field}_timezone`]
-  if (!instant) return day === '未注明' ? day : `${day}（未注明时刻）`
+  if (!instant) return day === '未注明' ? day : `${day}（时刻以原文为准）`
   const date = new Date(instant)
   if (Number.isNaN(date.getTime())) return `${day}（时刻待核实）`
   if (zone) {
