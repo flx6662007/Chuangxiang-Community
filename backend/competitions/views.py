@@ -54,6 +54,10 @@ class PublicCompetitionMixin:
             _still_open=Case(When(
                 Q(registration_deadline_at__gt=timezone.now()) |
                 Q(registration_deadline_at__isnull=True, registration_deadline__gte=timezone.localdate()) |
+                (Q(registration_deadline__isnull=True, registration_deadline_at__isnull=True) & (
+                    Q(submission_deadline_at__gt=timezone.now()) |
+                    Q(submission_deadline_at__isnull=True, submission_deadline__gte=timezone.localdate())
+                )) |
                 Q(recruitment_enabled=True, recruitment_deadline__gt=timezone.now()),
                 then=Value(1),
             ), default=Value(0), output_field=IntegerField()),

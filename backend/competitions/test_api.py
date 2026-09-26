@@ -127,6 +127,50 @@ class CompetitionAPITests(TestCase):
         self.assertEqual(result[0]['id'], current.pk)
         self.assertEqual(result[1]['id'], old_notice.pk)
 
+    def test_list_includes_submission_date_instant_and_source_timezone(self):
+        event = self.public[-1]
+        deadline = timezone.now() + timedelta(days=7)
+        Competition.objects.filter(pk=event.pk).update(
+            registration_deadline=None, submission_deadline=deadline.date(),
+            submission_deadline_at=deadline, submission_deadline_timezone='UTC',
+        )
+        card = self.client.get('/api/v1/competitions/').json()['results'][0]
+        detail = self.client.get(f'/api/v1/competitions/{event.pk}/').json()
+        self.assertEqual(card['id'], event.pk)
+        self.assertEqual(card['submission_deadline'], deadline.date().isoformat())
+        self.assertEqual(card['submission_deadline_timezone'], 'UTC')
+        self.assertIsNotNone(card['submission_deadline_at'])
+        self.assertIsNone(card['registration_deadline'])
+        for field in ('submission_deadline', 'submission_deadline_at', 'submission_deadline_timezone'):
+            self.assertEqual(card[field], detail[field])
+            self.assertEqual(CompetitionDetailSerializer.Meta.fields.count(field), 1)
+
+    def test_submission_fallback_orders_current_but_does_not_override_expired_registration(self):
+        current, registered = self.public[:2]
+        tomorrow = timezone.localdate() + timedelta(days=1)
+        Competition.objects.filter(pk=current.pk).update(registration_deadline=None, submission_deadline=tomorrow)
+        Competition.objects.filter(pk=registered.pk).update(submission_deadline=tomorrow)
+        current.sources.update(source_published_on=timezone.localdate() - timedelta(days=1))
+        registered.sources.update(source_published_on=timezone.localdate())
+        result = self.client.get('/api/v1/competitions/').json()['results']
+        self.assertEqual(result[0]['id'], current.pk)
+        self.assertEqual(result[1]['id'], registered.pk)
+        self.assertFalse(result[0]['is_recruitment_open'])
+
+    def test_precise_submission_expiry_takes_precedence_over_calendar_date(self):
+        current, expired = self.public[:2]
+        for item, offset in ((current, 1), (expired, -1)):
+            instant = timezone.now() + timedelta(hours=offset)
+            Competition.objects.filter(pk=item.pk).update(
+                registration_deadline=None, submission_deadline=instant.date(),
+                submission_deadline_at=instant, submission_deadline_timezone='UTC',
+            )
+        current.sources.update(source_published_on=timezone.localdate() - timedelta(days=1))
+        expired.sources.update(source_published_on=timezone.localdate())
+        result = self.client.get('/api/v1/competitions/').json()['results']
+        self.assertEqual(result[0]['id'], current.pk)
+        self.assertEqual(result[1]['id'], expired.pk)
+
     def test_read_only_and_no_authentication_overhead(self):
         self.assertEqual(self.client.post('/api/v1/competitions/', {}).status_code, 405)
         self.assertEqual(self.client.delete(f'/api/v1/competitions/{self.public[0].pk}/').status_code, 405)

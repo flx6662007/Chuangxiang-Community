@@ -33,6 +33,7 @@ class CompetitionListSerializer(serializers.ModelSerializer):
             'id', 'code', 'title', 'edition', 'summary', 'category', 'tags', 'level',
             'participation_type', 'organizer', 'registration_deadline',
             'registration_deadline_at', 'registration_deadline_timezone',
+            'submission_deadline', 'submission_deadline_at', 'submission_deadline_timezone',
             'published_at', 'updated_at', 'last_verified_at', 'is_recruitment_open',
             'primary_source',
         )
@@ -46,6 +47,5 @@ class CompetitionDetailSerializer(CompetitionListSerializer):
             'description', 'tracks', 'eligibility', 'team_size_min', 'team_size_max',
             'registration_method', 'registration_url', 'campus_arrangements',
             'campus_deadline', 'campus_deadline_at', 'campus_deadline_timezone',
-            'submission_deadline', 'submission_deadline_at', 'submission_deadline_timezone',
             'deadline_notes', 'recruitment_deadline', 'sources',
         )
