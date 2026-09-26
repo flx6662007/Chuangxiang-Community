@@ -2,27 +2,19 @@
 
 创新俱乐部发起的科创资讯与参赛组队网站。通过集中展示赛事、保留原文来源、固定模板招募，改善微信群中信息难查找、招募分散和邀请新成员不便的问题。
 
-**当前开发版已接入固定模板招募、申请、双方确认入队、退出／解散和官方赛事采集。** 赛事卡片读取已采纳的数据库记录；首次使用需初始化来源并执行采集。开发邮件输出到后端终端，不会投递到真实邮箱；AI 默认关闭；尚未公网部署。
+**当前开发版支持真实赛事浏览、完整参赛组队、登录举报与申诉。** AIC、数维杯、NCDA 三个官方来源接入自动采集；首页预留人工快讯，展示已核查的本科科研线索。卡片读取已保存数据，打开页面不等待爬虫或 AI。开发邮件输出到终端；AI 默认关闭；尚未公网部署。
 
 账号与数据基线来自 [PR #3](https://github.com/flx6662007/Chuangxiang-Community/pull/3)，蓝白界面来自 [PR #4](https://github.com/flx6662007/Chuangxiang-Community/pull/4)。本次组队、采集的验证与 GitHub 同步状态见 [团队进度](docs/progress.md)。代码合入不代表已经公网部署。
 
-## 文档入口
+## 从这里开始
 
-| 文档 | 内容 |
+| 需要了解 | 入口 |
 | --- | --- |
-| [下一轮团队任务](docs/next-steps.md) | 前端、后端、数据库接下来两轮的任务、依赖和完成标准 |
-| [界面与功能修订](docs/ui-plan.md) · [前端方案](docs/frontend-plan.md) · [后端方案](docs/backend-plan.md) | 根据参考图调整栏目、视觉、实施顺序及前后端交接；方案不代表功能已完成 |
-| [团队进度](docs/progress.md) | 两轮交付、验证边界、后续分工与 Git 状态 |
-| [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) | 首次配置、迁移和日常启动 |
-| [人工验收](docs/manual-checks.md) | 按页面检查赛事、账号、验证码与后台 |
-| [API 说明](docs/api.md) | 实际路径、参数、返回字段和错误处理 |
-| [组队接口](docs/api-teams.md) · [前端实现](docs/frontend-implementation.md) | 固定模板、申请状态、联系方式与页面对应关系 |
-| [赛事采集](docs/ingestion-implementation.md) · [本机定时任务](docs/maintenance.md) | 官方来源、字段提取、去重、受控采纳与每 6 小时运行 |
-| [数据库交付](docs/database-handoff.md) · [字段规则](docs/database-fields.md) | 模型基线、约束、样例与接续写入要求 |
-| [用户字段](docs/user-fields-table.md) · [赛事字段](docs/competition-fields-table.md) · [其他字段](docs/remaining-fields-table.md) | 各业务模型的数据定义 |
-| [产品范围](docs/product-scope.md) | 产品规划；具体实现状态以团队进度为准 |
-| [AI 服务](docs/ai-services.md) | 模型调用、提示词、结果校验与异常处理 |
-| [部署准备](docs/deployment.md) · [资源与费用清单](docs/procurement.md) | 后续开放访问需要的资源、部署步骤和采购时机 |
+| 目前做到哪里、还有什么 | [团队进度](docs/progress.md) |
+| 怎么启动 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) |
+| 代码在哪里、各文件做什么 | [后端目录](backend/README.md) · [前端实现](docs/frontend-implementation.md) |
+| 前后端怎么对接 | [赛事与账号 API](docs/api.md) · [组队 API](docs/api-teams.md) · [举报申诉 API](docs/api-governance.md) |
+| 其他设计、字段、来源和验收 | [文档导航](docs/README.md) |
 
 ## 已实现功能
 
@@ -32,7 +24,9 @@
 | 内容后台 | 草稿、来源核验、发布、下架与审计；采集记录和候选采纳 | 赛事下架会结束未完成申请并收回联系权限，保留已加入的成员关系 |
 | 账号页面 | 学校邮箱注册、登录、退出、验证码核验、联系方式维护、密码找回 | 仅接受 `@tongji.edu.cn`；控制台邮件仅供开发；未开放邮箱自助换绑 |
 | 参赛组队 | 固定模板发布／编辑、申请／接受联系、双方确认、版本变更后继续、退出／移除／解散、站内通知 | 新增发布和申请须核验邮箱与资料；接受申请不占名额，双方确认才入队；联系方式只给获授权双方 |
-| 赛事采集 | 两个官方站点适配器、原文版本、去重、候选、失败记录与定时命令 | 新的完整规则结果可采纳；日期、资格、人数等重要变化留待复核；不是全网通用爬虫 |
+| 赛事采集 | 三个官方站点适配器、原文版本、去重、候选、失败记录与定时任务 | 报名和投稿分开；重要字段变化留待复核；新增站点需要适配规则，详见[来源清单](docs/competition-sources.md) |
+| 举报与申诉 | 赛事／招募详情举报、本人记录与反馈、本人事项申诉、后台独立复核 | 当前登录即可使用；被限制用户仍可申诉；举报不自动处罚，复核结论不等同于撤销处分 |
+| 快讯与本科科研 | 手动快讯位置、6 条官方明确接受本科生的科研线索及原文链接 | 维护 `frontend/src/data/editorial.js`；快讯当前为空；旧招募不代表当前有名额，见[内容维护](docs/undergraduate-labs.md) |
 | 数据模型 | 用户、赛事、组队、科研、资源、快讯、通知、收藏、治理与采集追溯模型及迁移 | 模型存在不等于相应页面和业务流程完成 |
 | AI 服务包 | 通知提取、快讯草稿、来源依据校验、错误分类及离线测试 | 默认关闭；没有真实模型联调、HTTP 入口或自动发布 |
 
@@ -40,11 +34,12 @@
 
 新电脑先按 [后端开发说明](docs/backend-development.md) 安装 Python、PostgreSQL，填写自己的 `.env`，安装依赖并执行迁移。前端需要符合 `frontend/package.json` 要求的 Node.js 和 npm。不要重复执行 `startproject` 或 `startapp`。
 
-已配置好的电脑，打开两个终端，分别从仓库根目录执行：
+已配置好的电脑，拉取更新后先执行已有迁移，再打开前后端：
 
 ```powershell
 # 终端一：后端
 Set-Location .\backend
+.\.venv\Scripts\python.exe manage.py migrate
 .\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
 ```
 
@@ -74,7 +69,7 @@ Chuangxiang-Community/
 │   ├── newsletters/            # 快讯与内容项模型
 │   ├── favorites/              # 收藏模型
 │   ├── notifications/          # 事务事件、站内通知与本人已读接口
-│   ├── governance/             # 管理操作记录模型
+│   ├── governance/             # 登录举报、本人申诉、管理员独立复核与留痕
 │   ├── ingestion/              # 官方适配器、采集命令、原文版本与候选采纳
 │   ├── common/                 # 共用模型校验
 │   ├── ai_services/            # 后端内部模型调用服务
