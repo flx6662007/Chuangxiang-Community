@@ -70,6 +70,11 @@ const router = createRouter({
           component: () => import('../views/NotificationsView.vue'),
         },
         {
+          path: 'account/governance',
+          name: 'governance',
+          component: () => import('../views/GovernanceView.vue'),
+        },
+        {
           path: ':pathMatch(.*)*',
           name: 'not-found',
           component: NotFoundView,
