@@ -15,7 +15,7 @@ class Command(BaseCommand):
         parser.add_argument('--source', action='append', help='来源 code，可重复；省略时运行全部启用来源')
         parser.add_argument('--trigger', choices=('manual', 'scheduled'), default='scheduled')
         parser.add_argument('--actor-id', type=int, help='人工初始化/采集的管理员 ID，不接受用户名密码')
-        parser.add_argument('--init-sources', action='store_true', help='登记两个内置官方来源；不覆盖已有配置')
+        parser.add_argument('--init-sources', action='store_true', help='登记内置官方来源；不覆盖已有配置')
         parser.add_argument('--auto-accept', action='store_true', help='按已核验规则采纳完整新记录，无害更新须未被人工修改')
         parser.add_argument('--enable-recruitment', action='store_true', help='对新收录且人数/报名日明确的赛事启用保守平台招募期限')
         parser.add_argument('--max-pages', type=int, default=20, help='每来源最多获取的文章数，1–50')
