@@ -1,0 +1,5 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<p>招募编号：{{ card.code }}。下架后将结束所有未入队申请并隐藏对应联系权限，已有正式成员关系保留。</p>
+<form method="post">{% csrf_token %}{{ form.as_p }}<input type="submit" value="确认下架"></form>
+{% endblock %}
