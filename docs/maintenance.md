@@ -12,6 +12,8 @@
 
 由具备赛事维护权限的管理员运行首次采集。`12` 仅为编号示例，要替换为本机实际管理员编号；项目不提供默认密码，也不要求提交密码到命令或 GitHub。
 
+无人值守采集应使用经负责人明确授权的非交互身份：只授予 `competitions.add_competition`、`competitions.change_competition`、`competitions.add_competitionsource`，不授予超级管理员权限。当前服务校验要求它启用且具有 staff 标记；必须设置不可用密码，不核验邮箱、不填写联系方式。账号入口已阻止此类身份自助重置或设置密码。创建与授权是一次性管理操作，安装调度脚本不会自行创建账号。
+
 ```powershell
 .\.venv\Scripts\python.exe manage.py sync_competitions --init-sources --actor-id 12 --trigger manual --auto-accept --enable-recruitment
 ```
