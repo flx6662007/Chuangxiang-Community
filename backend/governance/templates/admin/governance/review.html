@@ -1,0 +1,16 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+  <p><strong>对象：</strong>{{ record.target_title }}</p>
+  <p><strong>提交人：</strong>{{ record.submitted_by }}</p>
+  <p><strong>提交说明：</strong>{{ record.description|linebreaksbr }}</p>
+  <p><strong>当前状态：</strong>{{ record.get_status_display }}</p>
+  <p>{{ effect_note }}</p>
+  {% if record.status == 'pending' %}
+    <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="保存核实结论与反馈">
+    </form>
+  {% else %}
+    <p><strong>处理反馈：</strong>{{ record.feedback|linebreaksbr }}</p>
+  {% endif %}
+{% endblock %}
