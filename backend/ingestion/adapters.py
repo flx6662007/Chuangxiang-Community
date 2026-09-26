@@ -1,4 +1,4 @@
-"""两个官方站点的受限规则解析；提取范围只取文章正文，不取导航、页脚或相关文章。"""
+"""官方站点受限规则解析；提取范围只取文章正文，不取页脚或相关文章。"""
 from dataclasses import dataclass
 from datetime import date
 import hashlib
@@ -8,6 +8,7 @@ from urllib.parse import urljoin, urlsplit
 from bs4 import BeautifulSoup
 
 from .http import FetchError, checked_url
+from .ncda import NcdaAdapter
 
 RULE_VERSION = 'official-html-2026-09-v2'
 
@@ -275,4 +276,4 @@ class NmmcmAdapter(Adapter):
                 break
 
 
-ADAPTERS = {adapter.key: adapter for adapter in (AicompAdapter(), NmmcmAdapter())}
+ADAPTERS = {adapter.key: adapter for adapter in (AicompAdapter(), NmmcmAdapter(), NcdaAdapter(RULE_VERSION))}
