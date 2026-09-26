@@ -2,7 +2,7 @@
 
 本文对应当前实现。普通业务接口使用 `/api/v1/`，账号认证使用 `/api/auth/browser/v1/`。**认证路径末尾没有 `/`，普通业务路径末尾有 `/`**，按表中路径请求。
 
-游客可读公开赛事。本人资料需要登录；写入使用 Session Cookie 与 CSRF。组队、科研、资源、快讯、采集和 AI 的 HTTP 接口尚未开放。AI 内部调用见 [AI 服务说明](ai-services.md)。
+游客可读公开赛事和招募卡。本人资料、申请、队伍与通知需要登录；写入使用 Session Cookie 与 CSRF。组队路径、固定模板、权限、版本和状态详见 [组队接口](api-teams.md)。采集通过管理命令与 Admin 运行；科研、资源、快讯和 AI 的公共 HTTP 接口尚未开放。AI 内部调用见 [AI 服务说明](ai-services.md)。
 
 ## 请求约定
 
@@ -26,7 +26,7 @@
 
 ### 列表
 
-`GET /api/v1/competitions/`，无需登录。只返回 `published` 的赛事，按 `published_at`、`id` 倒序。搜索与分类可组合。
+`GET /api/v1/competitions/`，无需登录。只返回 `published` 且非固定虚构种子的赛事。明确尚未过报名日期或仍开放平台招募的记录优先，随后按主来源原通知发布日期、平台首次发布时间和 ID 倒序；原通知日期未知的排在同组已知日期后。采集时间不冒充通知发布时间。搜索与分类可组合。
 
 | 参数 | 规则 |
 | --- | --- |
@@ -34,6 +34,9 @@
 | `page_size` | 正整数，默认 20，最大 50；超过 50 按 50，非法值返回 400 |
 | `search` | 最多 200 字符，去首尾空白；匹配标题、简介或主办方 |
 | `category` | 分类 `code`，最多 64 字符；精确匹配，无匹配返回空列表 |
+| `recruitment_open` | `true` / `false`（兼容 `1` / `0`）；筛选赛事是否开放站内招募，不能据此推断官方报名状态 |
+
+分类词表：`GET /api/v1/competitions/categories/` 返回启用分类数组，例如 `[{"id":1,"code":"engineering","name":"工程"}]`。分类、标签与赛事范围集合：`GET /api/v1/competitions/options/` 返回 `{categories:[], tags:[], levels:[]}`；词条含 `id/code/name`，范围含 `code/name`。两接口均允许游客只读，停用项不供新选择，历史记录仍保留名称。
 
 响应结构：
 

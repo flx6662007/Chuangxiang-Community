@@ -40,6 +40,36 @@ const router = createRouter({
           component: AccountView,
         },
         {
+          path: 'teams',
+          name: 'teams',
+          component: () => import('../views/TeamListView.vue'),
+        },
+        {
+          path: 'teams/publish',
+          name: 'recruitment-publish',
+          component: () => import('../views/RecruitmentFormView.vue'),
+        },
+        {
+          path: 'teams/:id(\\d+)/edit',
+          name: 'recruitment-edit',
+          component: () => import('../views/RecruitmentFormView.vue'),
+        },
+        {
+          path: 'teams/:id(\\d+)',
+          name: 'recruitment-detail',
+          component: () => import('../views/RecruitmentDetailView.vue'),
+        },
+        {
+          path: 'account/teams',
+          name: 'my-teams',
+          component: () => import('../views/MyTeamsView.vue'),
+        },
+        {
+          path: 'account/notifications',
+          name: 'notifications',
+          component: () => import('../views/NotificationsView.vue'),
+        },
+        {
           path: ':pathMatch(.*)*',
           name: 'not-found',
           component: NotFoundView,

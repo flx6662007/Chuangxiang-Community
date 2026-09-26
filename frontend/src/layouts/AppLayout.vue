@@ -22,6 +22,17 @@ import AppIcon from '../components/AppIcon.vue'
           <RouterLink :to="{ name: 'account' }" exact-active-class="is-active"
             >我的账号</RouterLink
           >
+          <RouterLink
+            to="/teams"
+            :class="{ 'is-active': $route.path.startsWith('/teams') }"
+            >团队广场</RouterLink
+          >
+          <RouterLink to="/account/teams" exact-active-class="is-active"
+            >我的组队</RouterLink
+          >
+          <RouterLink to="/account/notifications" exact-active-class="is-active"
+            >通知</RouterLink
+          >
         </nav>
         <RouterLink class="header-account" :to="{ name: 'account' }"
           ><AppIcon name="user" :size="16" /><span>账号中心</span></RouterLink

@@ -88,7 +88,7 @@ svg {
 .app-header-inner {
   display: flex;
   align-items: center;
-  gap: 72px;
+  gap: 40px;
   width: min(100%, 1240px);
   height: 100%;
   margin: auto;
@@ -124,7 +124,7 @@ svg {
 .app-nav {
   display: flex;
   align-items: stretch;
-  gap: 38px;
+  gap: 24px;
   height: 100%;
 }
 .app-nav a {
@@ -1455,5 +1455,451 @@ a.service-card:hover {
   a.service-card:hover,
   .latest-card:hover {
     transform: none;
+  }
+}
+/* Teams share the existing blue-and-white component system. */
+select {
+  font: inherit;
+  color: var(--ink);
+}
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #91bafa;
+  outline-offset: 3px;
+}
+.heading-with-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.stack-links {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+.team-panel {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 26px #23477905;
+}
+.team-panel h2 {
+  font-size: 20px;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+.team-panel h3 {
+  font-size: 16px;
+  margin: 24px 0 12px;
+}
+.team-panel p {
+  line-height: 1.9;
+}
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 0;
+}
+.filter-panel label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  color: #53637b;
+  flex: 1;
+  min-width: 145px;
+}
+.filter-panel select,
+.form-field select,
+.form-field input,
+.inline-search input {
+  border: 1px solid #d6e3f4;
+  background: white;
+  padding: 12px 14px;
+  border-radius: 9px;
+  width: 100%;
+  min-height: 44px;
+}
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0 5px;
+}
+.category-tabs > button {
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+.category-tabs > button.selected {
+  background: #3378fa;
+  color: white;
+  border-color: #3378fa;
+}
+.recruitment-list,
+.team-records {
+  display: grid;
+  gap: 16px;
+}
+.team-records .team-panel {
+  margin-bottom: 0;
+}
+.recruitment-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: white;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 5px 20px #23477904;
+}
+.recruitment-emblem {
+  height: 56px;
+  width: 56px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  display: grid;
+  place-items: center;
+  color: #2d7bf4;
+  background: #edf5ff;
+}
+.recruitment-card-copy {
+  flex: 1;
+  min-width: 0;
+}
+.recruitment-card h2 {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 8px 0;
+}
+.recruitment-card h2 a {
+  color: var(--ink);
+}
+.recruitment-card p {
+  font-size: 13px;
+  color: #667085;
+  line-height: 1.8;
+}
+.recruitment-card-aside {
+  display: grid;
+  gap: 8px;
+  align-self: center;
+  min-width: 112px;
+  border-left: 1px solid var(--line);
+  padding-left: 25px;
+  font-size: 13px;
+}
+.recruitment-card-aside strong {
+  color: #3075f4;
+  font-size: 32px;
+  font-weight: 700;
+}
+.recruitment-card-aside > span {
+  color: #667085;
+  margin-bottom: 16px;
+}
+.recruitment-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+  margin: 20px 0;
+}
+.recruitment-facts > div {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f4fa;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.recruitment-facts dt {
+  color: #667085;
+}
+.recruitment-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.recruitment-editor {
+  max-width: 960px;
+  margin: auto;
+}
+.recruitment-editor .team-panel {
+  padding: 32px 38px;
+}
+.plain-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 32px;
+  min-width: 0;
+}
+.form-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  padding: 0;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+  margin: 20px 0;
+}
+.form-field {
+  display: grid;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.required-mark {
+  color: #bd2b3d;
+}
+.option-picker {
+  border: 0;
+  margin: 22px 0;
+  padding: 0;
+  min-width: 0;
+}
+.option-picker legend {
+  padding: 0 0 12px;
+  font-size: 14px;
+}
+.checkbox-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.checkbox-options label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  border: 1px solid #dce6f4;
+  border-radius: 8px;
+  background: #fbfcff;
+  font-size: 13px;
+  cursor: pointer;
+}
+.checkbox-options label.selected {
+  background: #edf4ff;
+  border-color: #8bb3fa;
+  color: #1759c4;
+}
+.checkbox-options input {
+  accent-color: #3378fa;
+}
+.inline-search {
+  display: flex;
+  gap: 12px;
+}
+.inline-search input {
+  flex: 1;
+}
+.selected-competition {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  background: #f1f7ff;
+  padding: 18px 22px;
+  border-radius: 12px;
+}
+.selected-competition p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+.competition-picker,
+.member-list {
+  list-style: none;
+  padding: 0;
+}
+.competition-picker li,
+.member-list li,
+.history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.member-list strong {
+  margin-right: 12px;
+}
+.member-list .timestamp,
+.history-row .timestamp {
+  margin: 7px 0 0;
+}
+.history-row .tag {
+  margin-left: 12px;
+}
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.9;
+  margin: 24px 0;
+}
+.consent-row input {
+  flex: 0 0 auto;
+  margin-top: 6px;
+  accent-color: #3378fa;
+  width: 16px;
+  height: 16px;
+}
+.form-error {
+  color: #a92138;
+  background: #fff2f3;
+  border: 1px solid #f6d6dc;
+  padding: 15px 20px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+.tab-nav {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 12px;
+  margin: 20px 0 25px;
+}
+.tab-nav button {
+  padding: 12px 18px;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.tab-nav button.active {
+  color: #1760cb;
+  background: #edf5ff;
+  font-weight: 700;
+}
+.tab-nav .refresh-button {
+  margin-left: auto;
+  color: #667085;
+}
+.application-panel details {
+  background: #f7faff;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 18px 0;
+}
+.application-panel summary {
+  cursor: pointer;
+  color: #2769d0;
+  font-size: 14px;
+}
+.confirmation-state {
+  color: #225fbd;
+  padding: 10px 15px;
+  background: #f1f7ff;
+  border-radius: 8px;
+}
+.action-confirm {
+  border: 1px solid #bdd4f7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 22px;
+  background: #f8fbff;
+}
+.action-confirm h3 {
+  margin-top: 0;
+}
+.contact-panel {
+  background: #eef8f5;
+  border: 1px solid #c6e8dd;
+  border-radius: 12px;
+  margin-top: 22px;
+  padding: 22px;
+  overflow-wrap: anywhere;
+}
+.contact-panel p {
+  margin: 8px 0;
+}
+.request-record {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 24px;
+}
+.compact-list {
+  font-size: 13px;
+  line-height: 1.9;
+  padding-left: 20px;
+  color: #53637b;
+}
+.notification-card.unread {
+  border-left: 4px solid #4385f8;
+}
+.notification-card h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+@media (max-width: 1000px) {
+  .app-header-inner {
+    gap: 24px;
+  }
+  .app-nav {
+    gap: 16px;
+  }
+  .header-account {
+    display: none;
+  }
+  .heading-with-actions {
+    flex-wrap: wrap;
+  }
+  .recruitment-facts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .recruitment-editor .team-panel,
+  .team-panel {
+    padding: 22px;
+  }
+  .recruitment-emblem {
+    display: none;
+  }
+  .recruitment-card {
+    padding: 18px;
+    gap: 12px;
+  }
+  .recruitment-card-aside {
+    min-width: 80px;
+    padding-left: 15px;
+  }
+  .tab-nav {
+    flex-wrap: wrap;
+  }
+  .app-nav {
+    gap: 14px;
+    overflow-x: auto;
+  }
+  .app-header-inner {
+    gap: 20px;
+  }
+  .brand-subtitle {
+    display: none;
+  }
+  .brand {
+    font-size: 18px;
   }
 }

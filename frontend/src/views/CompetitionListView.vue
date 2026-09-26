@@ -1,7 +1,10 @@
 <script setup>
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { listCompetitions } from '../api/competitions'
+import {
+  listCompetitions,
+  listCompetitionCategories,
+} from '../api/competitions'
 import CompetitionCard from '../components/CompetitionCard.vue'
 import AppIcon from '../components/AppIcon.vue'
 
@@ -12,6 +15,11 @@ const count = ref(0)
 const loading = ref(false)
 const error = ref('')
 const searchInput = ref('')
+const categories = ref([])
+const categoryError = ref('')
+const category = computed(() =>
+  typeof route.query.category === 'string' ? route.query.category : '',
+)
 const pageSize = 20
 const search = computed(() =>
   typeof route.query.search === 'string' ? route.query.search.trim() : '',
@@ -37,6 +45,7 @@ async function load() {
         page: page.value,
         page_size: pageSize,
         search: search.value || undefined,
+        category: category.value || undefined,
       },
       controller.signal,
     )
@@ -65,6 +74,7 @@ function changePage(next) {
     name: 'competitions',
     query: {
       ...(search.value ? { search: search.value } : {}),
+      ...(category.value ? { category: category.value } : {}),
       ...(next > 1 ? { page: next } : {}),
     },
   })
@@ -75,18 +85,39 @@ function submitSearch() {
   if (nextSearch === search.value && page.value === 1) return load()
   router.push({
     name: 'competitions',
-    query: nextSearch ? { search: nextSearch } : {},
+    query: {
+      ...(nextSearch ? { search: nextSearch } : {}),
+      ...(category.value ? { category: category.value } : {}),
+    },
   })
 }
 
 watch(
-  () => [page.value, search.value],
+  () => [page.value, search.value, category.value],
   () => {
     searchInput.value = search.value
     load()
   },
   { immediate: true },
 )
+async function loadCategories() {
+  categoryError.value = ''
+  try {
+    categories.value = await listCompetitionCategories()
+  } catch {
+    categoryError.value = '分类选项暂时无法加载。'
+  }
+}
+function selectCategory(value) {
+  router.push({
+    name: 'competitions',
+    query: {
+      ...(search.value ? { search: search.value } : {}),
+      ...(value ? { category: value } : {}),
+    },
+  })
+}
+onMounted(loadCategories)
 onBeforeUnmount(() => {
   requestNumber++
   controller?.abort()
@@ -115,6 +146,21 @@ onBeforeUnmount(() => {
       />
       <button class="action-button" type="submit">搜索</button>
     </form>
+    <div class="category-tabs" aria-label="赛事分类">
+      <button :class="{ selected: !category }" @click="selectCategory('')">
+        全部分类</button
+      ><button
+        v-for="option in categories"
+        :key="option.code"
+        :class="{ selected: category === option.code }"
+        @click="selectCategory(option.code)"
+      >
+        {{ option.name }}</button
+      ><span v-if="categoryError" role="alert"
+        >{{ categoryError }}
+        <button class="text-button" @click="loadCategories">重试</button></span
+      >
+    </div>
     <div class="competition-content">
       <aside class="competition-sidebar" aria-label="赛事导航">
         <div class="sidebar-title">EXPLORE / 赛事导航</div>

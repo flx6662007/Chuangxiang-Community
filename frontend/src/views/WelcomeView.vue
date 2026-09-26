@@ -90,13 +90,14 @@ onBeforeUnmount(() => controller?.abort())
         </div>
         <AppIcon name="arrow" :size="20"
       /></RouterLink>
-      <div class="service-card teal planned-service">
+      <RouterLink class="service-card teal" to="/teams">
         <span class="service-icon"><AppIcon name="users" :size="28" /></span>
         <div>
-          <h2>团队广场 <span class="coming-label">筹备中</span></h2>
+          <h2>团队广场</h2>
           <p>围绕已收录赛事，寻找同行伙伴</p>
         </div>
-      </div>
+        <AppIcon name="arrow" :size="20" />
+      </RouterLink>
     </div>
     <section class="home-latest" aria-labelledby="latest-title">
       <div class="section-heading">
@@ -154,7 +155,7 @@ onBeforeUnmount(() => controller?.abort())
       /></RouterLink>
     </section>
     <p class="development-note">
-      后续建设：参赛组队、创享资讯与快讯、基于来源的智能辅助。上述功能尚未开放。
+      后续建设：创享资讯与快讯、基于来源的智能辅助。上述功能尚未开放。
     </p>
   </section>
 </template>

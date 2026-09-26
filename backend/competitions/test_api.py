@@ -89,6 +89,44 @@ class CompetitionAPITests(TestCase):
         self.assertEqual(self.client.get('/api/v1/competitions/?page=999').status_code, 404)
         self.assertEqual(self.client.get('/api/v1/competitions/', {'search': 'x' * 201}).status_code, 400)
 
+    def test_categories_and_options_exclude_inactive_and_separate_kinds(self):
+        CompetitionTaxonomy.objects.create(code='disabled', name='停用分类', kind='category', is_active=False)
+        CompetitionTaxonomy.objects.create(code='demo-r1-category-1', name='【虚构样例】分类', kind='category')
+        response = self.client.get('/api/v1/competitions/categories/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), [{'id': self.category.pk, 'code': 'engineering', 'name': '工程'}])
+        options = self.client.get('/api/v1/competitions/options/').json()
+        self.assertEqual([row['code'] for row in options['tags']], ['robot'])
+        self.assertIn({'code': 'unknown', 'name': '未注明'}, options['levels'])
+
+    def test_known_seed_samples_are_not_public_but_history_is_preserved(self):
+        event = self.public[0]
+        Competition.objects.filter(pk=event.pk).update(code='demo-r1-public-001', title='【虚构样例】演示')
+        self.assertEqual(self.client.get('/api/v1/competitions/').json()['count'], 23)
+        self.assertEqual(self.client.get(f'/api/v1/competitions/{event.pk}/').status_code, 404)
+        self.assertTrue(Competition.objects.filter(pk=event.pk, publication_status='published').exists())
+
+    def test_recruitment_filter_requires_all_event_conditions(self):
+        event = self.public[0]
+        event.participation_type = 'team'
+        event.recruitment_enabled = True
+        event.recruitment_deadline = timezone.now() + timedelta(days=1)
+        event.full_clean()
+        event.save()
+        result = self.client.get('/api/v1/competitions/?recruitment_open=true').json()
+        self.assertEqual([row['id'] for row in result['results']], [event.pk])
+        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=false').json()['count'], 23)
+        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=maybe').status_code, 400)
+
+    def test_available_events_precede_expired_and_source_date_precedes_fetch_order(self):
+        current = self.public[0]
+        Competition.objects.filter(pk=current.pk).update(registration_deadline=timezone.localdate() + timedelta(days=7))
+        old_notice = self.public[1]
+        old_notice.sources.update(source_published_on=timezone.localdate())
+        result = self.client.get('/api/v1/competitions/').json()['results']
+        self.assertEqual(result[0]['id'], current.pk)
+        self.assertEqual(result[1]['id'], old_notice.pk)
+
     def test_read_only_and_no_authentication_overhead(self):
         self.assertEqual(self.client.post('/api/v1/competitions/', {}).status_code, 405)
         self.assertEqual(self.client.delete(f'/api/v1/competitions/{self.public[0].pk}/').status_code, 405)

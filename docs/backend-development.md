@@ -84,7 +84,13 @@ test -f .env || cp .env.example .env
 
 新增的 django-allauth 使用它自带的 `account` 迁移，同样由 `migrate` 应用；不要另外创建验证码表或在 User 中复制“邮箱已验证”字段。已有开发库也需要安装新依赖并执行迁移。
 
-需要演示数据时，在 `DJANGO_DEBUG=1` 的开发库执行：
+内部演示先初始化真实招募选项，再按[采集说明](ingestion-implementation.md)导入官方赛事并按[定时任务](maintenance.md)安排更新：
+
+```powershell
+.\.venv\Scripts\python.exe manage.py seed_recruitment_options
+```
+
+以下虚构样例命令仅用于隔离开发回归；带种子编码和虚构标记的赛事、招募与词表不进入正常公共页面。在 `DJANGO_DEBUG=1` 的隔离开发库执行：
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py seed_demo_data

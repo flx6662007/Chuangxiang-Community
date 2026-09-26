@@ -2,9 +2,9 @@
 
 创新俱乐部发起的科创资讯与参赛组队网站。通过集中展示赛事、保留原文来源、固定模板招募，改善微信群中信息难查找、招募分散和邀请新成员不便的问题。
 
-**当前提供无需购买服务的本地开发版：赛事列表、详情、后台维护和学校邮箱账号流程已实现；组队业务尚未开放。** 当前赛事数据是明确标记的虚构样例，没有采集真实赛事。开发邮件输出到后端终端，不会投递到真实邮箱；AI 默认关闭；尚未公网部署。
+**当前开发版已接入固定模板招募、申请、双方确认入队、退出／解散和官方赛事采集。** 赛事卡片读取已采纳的数据库记录；首次使用需初始化来源并执行采集。开发邮件输出到后端终端，不会投递到真实邮箱；AI 默认关闭；尚未公网部署。
 
-两轮成果已通过 [PR #3](https://github.com/flx6662007/Chuangxiang-Community/pull/3) 合入 `main`，全队可从主分支获取共同开发基线。验证结果与后续任务见 [团队进度](docs/progress.md)。代码合入不代表已经公网部署。
+账号与数据基线来自 [PR #3](https://github.com/flx6662007/Chuangxiang-Community/pull/3)，蓝白界面来自 [PR #4](https://github.com/flx6662007/Chuangxiang-Community/pull/4)。本次组队、采集的验证与 GitHub 同步状态见 [团队进度](docs/progress.md)。代码合入不代表已经公网部署。
 
 ## 文档入口
 
@@ -16,6 +16,8 @@
 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) | 首次配置、迁移和日常启动 |
 | [人工验收](docs/manual-checks.md) | 按页面检查赛事、账号、验证码与后台 |
 | [API 说明](docs/api.md) | 实际路径、参数、返回字段和错误处理 |
+| [组队接口](docs/api-teams.md) · [前端实现](docs/frontend-implementation.md) | 固定模板、申请状态、联系方式与页面对应关系 |
+| [赛事采集](docs/ingestion-implementation.md) · [本机定时任务](docs/maintenance.md) | 官方来源、字段提取、去重、受控采纳与每 6 小时运行 |
 | [数据库交付](docs/database-handoff.md) · [字段规则](docs/database-fields.md) | 模型基线、约束、样例与接续写入要求 |
 | [用户字段](docs/user-fields-table.md) · [赛事字段](docs/competition-fields-table.md) · [其他字段](docs/remaining-fields-table.md) | 各业务模型的数据定义 |
 | [产品范围](docs/product-scope.md) | 产品规划；具体实现状态以团队进度为准 |
@@ -26,10 +28,11 @@
 
 | 部分 | 当前能力 | 边界 |
 | --- | --- | --- |
-| 赛事页面 | 公开赛事列表、搜索、分页、详情与来源链接；加载、空结果和失败提示 | 页面读取数据库，不在访问时采集或生成卡片；分类筛选已提供 API，页面暂无分类控件 |
-| 内容后台 | 草稿维护、分类标签、来源核验、发布、填写理由下架及操作记录 | 关联队伍的赛事暂不能下架，需先接续队伍状态处理；未建立自动采集任务 |
+| 赛事页面 | 列表、搜索、分页、分类、完整详情、来源链接与关联组队入口 | 读取已保存数据，不在访问时采集或生成卡片；官方未知字段明确显示为空缺 |
+| 内容后台 | 草稿、来源核验、发布、下架与审计；采集记录和候选采纳 | 赛事下架会结束未完成申请并收回联系权限，保留已加入的成员关系 |
 | 账号页面 | 学校邮箱注册、登录、退出、验证码核验、联系方式维护、密码找回 | 仅接受 `@tongji.edu.cn`；控制台邮件仅供开发；未开放邮箱自助换绑 |
-| 业务资格 | 服务端检查账号状态、当前邮箱核验、有效限制和联系方式 | 已提供可复用权限基础；招募、申请、入队接口尚未实现 |
+| 参赛组队 | 固定模板发布／编辑、申请／接受联系、双方确认、版本变更后继续、退出／移除／解散、站内通知 | 新增发布和申请须核验邮箱与资料；接受申请不占名额，双方确认才入队；联系方式只给获授权双方 |
+| 赛事采集 | 两个官方站点适配器、原文版本、去重、候选、失败记录与定时命令 | 新的完整规则结果可采纳；日期、资格、人数等重要变化留待复核；不是全网通用爬虫 |
 | 数据模型 | 用户、赛事、组队、科研、资源、快讯、通知、收藏、治理与采集追溯模型及迁移 | 模型存在不等于相应页面和业务流程完成 |
 | AI 服务包 | 通知提取、快讯草稿、来源依据校验、错误分类及离线测试 | 默认关闭；没有真实模型联调、HTTP 入口或自动发布 |
 
@@ -65,14 +68,14 @@ Chuangxiang-Community/
 │   ├── config/                 # Django 配置、根路由和测试配置
 │   ├── accounts/               # 自定义用户、认证适配、本人资料、业务资格
 │   ├── competitions/           # 赛事模型、查询 API、事务服务和 Admin
-│   ├── teams/                  # 招募、申请、成员等模型；业务接口待开发
+│   ├── teams/                  # 招募、申请、成员事务、API 与到期结算
 │   ├── research/               # 科研机会模型
 │   ├── resources/              # 外链资源与版本模型
 │   ├── newsletters/            # 快讯与内容项模型
 │   ├── favorites/              # 收藏模型
-│   ├── notifications/          # 业务事件与站内通知模型
+│   ├── notifications/          # 事务事件、站内通知与本人已读接口
 │   ├── governance/             # 管理操作记录模型
-│   ├── ingestion/              # 采集与 AI 处理追溯模型
+│   ├── ingestion/              # 官方适配器、采集命令、原文版本与候选采纳
 │   ├── common/                 # 共用模型校验
 │   ├── ai_services/            # 后端内部模型调用服务
 │   ├── templates/account/email/ # 验证码与找回密码邮件模板
@@ -80,7 +83,7 @@ Chuangxiang-Community/
 │   ├── .env.example            # 配置样例，无真实密钥
 │   ├── requirements.txt        # 本地通用依赖
 │   └── requirements-production.txt # 正式部署补充依赖
-├── deploy/                     # Linux 容器与 HTTPS 配置
+├── deploy/                     # Linux 部署配置及 Windows 本机定时脚本
 ├── compose.yaml                # 正式部署服务编排
 ├── docs/                       # 共享进度、接口与开发说明
 └── README.md
@@ -96,10 +99,11 @@ Chuangxiang-Community/
 | PostgreSQL 17、Django ORM、psycopg | 数据持久化、迁移、约束与事务，已接入 |
 | django-allauth Headless、Session、CSRF | 学校邮箱账号、验证码和浏览器会话，已接入 |
 | Vue 3、JavaScript、Vite、Vue Router、Axios、Element Plus | 电脑端界面及前后端请求，已接入 |
-| HTTPX、`ai_services` | 兼容模型 API 的内部调用，默认关闭 |
+| HTTPX、Beautiful Soup | 有限来源的 HTTP 获取和 HTML 正文解析；不需要付费模型 |
+| `ai_services` | 模型内部调用、提示词与校验，默认关闭 |
 | Linux、Docker Compose、Caddy、Gunicorn、Redis、SMTP | 已提供部署准备文件；尚未在目标服务器运行或验证真实发信 |
 
-Python 精确版本以依赖文件为准，前端依赖以 `package-lock.json` 为准。本地免费开发不需要先安装 Docker、Redis 或购买邮件服务。采集调度、真实 AI 和组队业务在核心流程验收后接续。
+Python 精确版本以依赖文件为准，前端依赖以 `package-lock.json` 为准。本地开发不需要先安装 Docker、Redis 或购买邮件服务。Windows 定时采集依赖本机持续开机、用户登录与 PostgreSQL 可连接；真实 AI 和公网部署另行接续。
 
 ## AI 开发入口
 
@@ -112,4 +116,4 @@ Python 精确版本以依赖文件为准，前端依赖以 `package-lock.json` �
 
 ## 数据与许可
 
-开发样例均为虚构数据，不得当作真实通知对外发布。项目许可证尚待团队确认；引入第三方代码、模型和素材应记录来源、版本及许可证。仓库不提交真实学生资料、数据库备份、密码或服务密钥。
+旧开发样例可用 `retire_demo_data --actor-id 管理员编号` 下架并保留历史；正常内部演示使用官方采集数据。采集保留原文链接，官方通知仍是最终依据。项目许可证尚待团队确认；引入第三方代码、模型和素材应记录来源、版本及许可证。仓库不提交真实学生资料、数据库备份、密码或服务密钥。

@@ -167,6 +167,25 @@ onBeforeUnmount(() => {
           >
         </div>
         <aside class="detail-sidebar">
+          <section class="team-panel">
+            <h2>寻找参赛伙伴</h2>
+            <p>查看本届赛事招募，或以固定模板发起组队。</p>
+            <div class="stack-links">
+              <RouterLink
+                class="action-button"
+                :to="{ name: 'teams', query: { competition_id: item.id } }"
+                >查看本赛事招募</RouterLink
+              ><RouterLink
+                v-if="item.is_recruitment_open"
+                :to="{
+                  name: 'recruitment-publish',
+                  query: { competition_id: item.id },
+                }"
+                >为本赛事发布招募 →</RouterLink
+              >
+              <p v-else class="muted">本赛事当前未开放平台招募。</p>
+            </div>
+          </section>
           <el-card class="detail-section" shadow="never"
             ><h2><AppIcon name="calendar" :size="21" /> 赛事信息</h2>
             <dl class="detail-facts">
