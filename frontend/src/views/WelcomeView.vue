@@ -2,7 +2,13 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { listCompetitions } from '../api/competitions'
-import { formatDeadline, levelLabels } from '../utils/competition'
+import {
+  summaryDeadline,
+  formatDate,
+  levelLabels,
+  safeExternalUrl,
+} from '../utils/competition'
+import { newsletters, laboratories } from '../data/editorial'
 import AppIcon from '../components/AppIcon.vue'
 import CampusIllustration from '../components/CampusIllustration.vue'
 
@@ -103,7 +109,7 @@ onBeforeUnmount(() => controller?.abort())
       <div class="section-heading">
         <div>
           <span class="section-kicker">DISCOVER</span>
-          <h2 id="latest-title">新近收录赛事</h2>
+          <h2 id="latest-title">赛事速览</h2>
         </div>
         <RouterLink class="more-link" :to="{ name: 'competitions' }"
           >查看全部<AppIcon name="arrow" :size="17"
@@ -136,12 +142,104 @@ onBeforeUnmount(() => controller?.abort())
           </p>
           <div class="latest-deadline">
             <AppIcon name="calendar" :size="16" /><span
-              >报名截止<br /><strong>{{
-                formatDeadline(item, 'registration_deadline')
+              >{{ summaryDeadline(item).label }}<br /><strong>{{
+                summaryDeadline(item).value
               }}</strong></span
             >
           </div></RouterLink
         >
+      </div>
+    </section>
+    <section
+      id="newsletters"
+      class="home-latest"
+      aria-labelledby="newsletters-title"
+    >
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">EDITORIAL BRIEFING</span>
+          <h2 id="newsletters-title">创享快讯</h2>
+        </div>
+        <span class="editorial-label">团队手动整理</span>
+      </div>
+      <div v-if="!newsletters.length" class="editorial-empty">
+        <span class="service-icon"><AppIcon name="book" :size="28" /></span>
+        <div>
+          <h3>由团队整理发布，首期筹备中</h3>
+          <p>汇集值得关注的赛事与科创动态。</p>
+        </div>
+      </div>
+      <div v-else class="editorial-grid">
+        <article
+          v-for="item in newsletters"
+          :key="item.id"
+          class="editorial-card"
+        >
+          <p class="editorial-meta">
+            创享快讯<span v-if="item.date"> · {{ formatDate(item.date) }}</span>
+          </p>
+          <h3>{{ item.title }}</h3>
+          <p class="preserve-lines">{{ item.summary }}</p>
+          <a
+            v-if="safeExternalUrl(item.sourceUrl)"
+            class="more-link"
+            :href="safeExternalUrl(item.sourceUrl)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >阅读快讯 ↗</a
+          >
+        </article>
+      </div>
+    </section>
+    <section id="research" class="home-latest" aria-labelledby="research-title">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">UNDERGRADUATE RESEARCH</span>
+          <h2 id="research-title">本科科研机会</h2>
+        </div>
+        <span class="editorial-label">实验室招募线索</span>
+      </div>
+      <p class="editorial-intro">
+        汇集官方明确欢迎本科生参与的研究方向与实验室。线索不代表当前有名额，参与条件和安排请查阅官方说明并联系相关团队。
+      </p>
+      <div v-if="!laboratories.length" class="editorial-empty">
+        <span class="service-icon"><AppIcon name="spark" :size="28" /></span>
+        <div>
+          <h3>官方线索整理中</h3>
+          <p>核对本科生参与说明后在此展示。</p>
+        </div>
+      </div>
+      <div v-else class="editorial-grid">
+        <article
+          v-for="item in laboratories"
+          :key="item.id"
+          class="editorial-card"
+        >
+          <p class="editorial-meta">{{ item.unit || '官方科研线索' }}</p>
+          <h3>{{ item.title }}</h3>
+          <p class="preserve-lines">{{ item.summary }}</p>
+          <p v-if="item.participation" class="editorial-participation">
+            {{ item.participation }}
+          </p>
+          <p v-if="item.evidenceNote" class="field-hint preserve-lines">
+            {{ item.evidenceNote }}
+          </p>
+          <p v-if="item.date || item.verifiedOn" class="timestamp">
+            <span>原文日期：{{ formatDate(item.date) }}</span
+            ><span v-if="item.verifiedOn"> · </span
+            ><span v-if="item.verifiedOn"
+              >核验：{{ formatDate(item.verifiedOn) }}</span
+            >
+          </p>
+          <a
+            v-if="safeExternalUrl(item.sourceUrl)"
+            class="more-link"
+            :href="safeExternalUrl(item.sourceUrl)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >查阅官方说明 ↗</a
+          >
+        </article>
       </div>
     </section>
     <section class="home-vision">
@@ -155,7 +253,7 @@ onBeforeUnmount(() => controller?.abort())
       /></RouterLink>
     </section>
     <p class="development-note">
-      后续建设：创享资讯与快讯、基于来源的智能辅助。上述功能尚未开放。
+      快讯由团队整理，科研参与条件以官方说明为准。智能辅助功能尚未开放。
     </p>
   </section>
 </template>

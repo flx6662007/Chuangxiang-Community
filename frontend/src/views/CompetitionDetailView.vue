@@ -3,6 +3,7 @@ import { onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { getCompetition } from '../api/competitions'
 import AppIcon from '../components/AppIcon.vue'
+import ReportPanel from '../components/ReportPanel.vue'
 import {
   formatDate,
   formatDeadline,
@@ -217,6 +218,7 @@ onBeforeUnmount(() => {
               未注明的日期或时刻请查阅官方原文，报名和提交时间可能不同。
             </p></el-card
           >
+          <ReportPanel target-type="competition" :target-id="item.id" />
           <div class="detail-quote">
             <AppIcon name="spark" :size="32" />
             <h3>好想法，<br />从一次尝试开始。</h3>

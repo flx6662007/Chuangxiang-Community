@@ -17,6 +17,7 @@ import {
 import { formatUpdatedAt } from '../utils/competition'
 import RecruitmentFacts from '../components/RecruitmentFacts.vue'
 import ApplicationFields from '../components/ApplicationFields.vue'
+import ReportPanel from '../components/ReportPanel.vue'
 const route = useRoute(),
   router = useRouter(),
   item = ref(null),
@@ -220,6 +221,7 @@ onBeforeUnmount(() => {
               ><RouterLink to="/account/teams">我的组队与申请 →</RouterLink>
             </div>
           </section>
+          <ReportPanel target-type="recruitment" :target-id="item.id" />
         </aside>
       </div>
     </template>

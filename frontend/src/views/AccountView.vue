@@ -479,6 +479,14 @@ onBeforeUnmount(() => {
           <p class="muted">
             发布和申请还需符合赛事、队伍和名额条件；具体允许操作以最新状态为准。
           </p>
+          <div class="stack-links">
+            <RouterLink class="action-button secondary" to="/account/governance"
+              >我的举报与申诉</RouterLink
+            >
+            <p class="field-hint">
+              邮箱待核验或账号受限时，仍可查看记录并提交申诉。
+            </p>
+          </div>
           <button class="text-button" :disabled="!!busy" @click="loadSession">
             刷新账号状态
           </button>
