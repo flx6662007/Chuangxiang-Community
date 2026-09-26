@@ -44,7 +44,16 @@ class DomainModel(CleanFieldsModel):
             if self.relation_kind:
                 require(target.kind == self.relation_kind, '关联词条用途不匹配。')
                 if self._state.adding:
-                    require(target.is_active, '不能新增选择已停用词条。')
+                    retained = False
+                    if owner._meta.model_name in ('recruitmentrevision', 'applicationrevision'):
+                        parent_field = 'recruitment' if owner._meta.model_name == 'recruitmentrevision' else 'application'
+                        parent = getattr(owner, parent_field)
+                        if parent.current_revision_id:
+                            retained = type(self).objects.filter(**{
+                                self.relation_owner + '_id': parent.current_revision_id,
+                                self.relation_target + '_id': target.pk,
+                            }).exists()
+                    require(target.is_active or retained, '不能新增选择已停用词条。')
             if owner._meta.model_name in ('recruitmentrevision', 'applicationrevision'):
                 parent_field = 'recruitment' if owner._meta.model_name == 'recruitmentrevision' else 'application'
                 parent = getattr(owner, parent_field)
