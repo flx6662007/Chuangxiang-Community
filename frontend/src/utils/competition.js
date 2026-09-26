@@ -44,6 +44,17 @@ export function formatDeadline(record, field) {
   return `${instant}${zone ? `（来源时区 ${zone}）` : ''}`
 }
 
+// 保留截止类型：后续作品提交日期不能掩盖已经截止的报名日期。
+export function summaryDeadline(record) {
+  if (record.registration_deadline || record.registration_deadline_at) {
+    return { label: '报名截止', value: formatDeadline(record, 'registration_deadline') }
+  }
+  if (record.submission_deadline || record.submission_deadline_at) {
+    return { label: '作品提交截止', value: formatDeadline(record, 'submission_deadline') }
+  }
+  return { label: '截止时间', value: '未注明' }
+}
+
 export function formatUpdatedAt(value) {
   if (!value) return '未注明'
   const date = new Date(value)
