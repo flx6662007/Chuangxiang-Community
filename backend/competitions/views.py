@@ -1,6 +1,6 @@
 """游客只读赛事接口，读取已维护的数据，不在页面请求中抓取或调用 AI。"""
 
-from django.db.models import Prefetch, Q
+from django.db.models import Case, F, IntegerField, OuterRef, Prefetch, Q, Subquery, Value, When
 from django.utils import timezone
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.pagination import PageNumberPagination
@@ -11,6 +11,13 @@ from rest_framework.response import Response
 
 from .models import Competition, CompetitionSource, CompetitionTaxonomy
 from .serializers import CompetitionDetailSerializer, CompetitionListSerializer, TaxonomySerializer
+
+
+DEMO_PREFIX = Q(code__startswith='demo-r1-') | Q(code__startswith='demo-r2-')
+
+
+def public_taxonomies():
+    return CompetitionTaxonomy.objects.filter(is_active=True).exclude(DEMO_PREFIX, name__startswith='【虚构样例】')
 
 
 class CompetitionPagination(PageNumberPagination):
@@ -38,12 +45,22 @@ class PublicCompetitionMixin:
     def get_queryset(self):
         return Competition.objects.filter(
             publication_status=Competition.PublicationStatus.PUBLISHED,
-        ).select_related('category').prefetch_related(
+        ).exclude(DEMO_PREFIX, title__startswith='【虚构样例】').select_related('category').prefetch_related(
             'tags',
             Prefetch('sources', queryset=CompetitionSource.objects.filter(
                 last_verified_at__isnull=False,
             ), to_attr='public_sources'),
-        ).order_by('-published_at', '-id')
+        ).annotate(
+            _still_open=Case(When(
+                Q(registration_deadline_at__gt=timezone.now()) |
+                Q(registration_deadline_at__isnull=True, registration_deadline__gte=timezone.localdate()) |
+                Q(recruitment_enabled=True, recruitment_deadline__gt=timezone.now()),
+                then=Value(1),
+            ), default=Value(0), output_field=IntegerField()),
+            _source_date=Subquery(CompetitionSource.objects.filter(
+                competition_id=OuterRef('pk'), is_primary=True,
+            ).values('source_published_on')[:1]),
+        ).order_by('-_still_open', F('_source_date').desc(nulls_last=True), '-published_at', '-id')
 
 
 class CompetitionListView(PublicCompetitionMixin, ListAPIView):
@@ -81,7 +98,7 @@ class CompetitionCategoriesView(ListAPIView):
     permission_classes = (AllowAny,)
     serializer_class = TaxonomySerializer
     pagination_class = None
-    queryset = CompetitionTaxonomy.objects.filter(kind='category', is_active=True)
+    queryset = public_taxonomies().filter(kind='category')
 
 
 class CompetitionOptionsView(APIView):
@@ -89,7 +106,7 @@ class CompetitionOptionsView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
-        rows = list(CompetitionTaxonomy.objects.filter(is_active=True))
+        rows = list(public_taxonomies())
         return Response({
             'categories': TaxonomySerializer([x for x in rows if x.kind == 'category'], many=True).data,
             'tags': TaxonomySerializer([x for x in rows if x.kind == 'tag'], many=True).data,
