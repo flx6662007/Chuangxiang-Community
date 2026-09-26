@@ -187,7 +187,9 @@ async function run() {
             request.is_initiator
               ? ' · 我发起'
               : request.is_responder
-                ? ' · 待我回应'
+                ? request.status === 'pending'
+                  ? ' · 待我回应'
+                  : ' · 回应方为本人'
                 : ''
           }}
         </p>
