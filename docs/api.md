@@ -2,7 +2,7 @@
 
 本文对应当前实现。普通业务接口使用 `/api/v1/`，账号认证使用 `/api/auth/browser/v1/`。**认证路径末尾没有 `/`，普通业务路径末尾有 `/`**，按表中路径请求。
 
-游客可读公开赛事和招募卡。本人资料、申请、队伍与通知需要登录；写入使用 Session Cookie 与 CSRF。组队路径、固定模板、权限、版本和状态详见 [组队接口](api-teams.md)。采集通过管理命令与 Admin 运行；科研、资源、快讯和 AI 的公共 HTTP 接口尚未开放。AI 内部调用见 [AI 服务说明](ai-services.md)。
+游客可读公开赛事和招募卡。本人资料、申请、队伍、通知、举报与申诉需要登录；写入使用 Session Cookie 与 CSRF。组队规则详见[组队接口](api-teams.md)，治理路径与本人权限详见[举报与申诉](api-governance.md)。采集通过管理命令与 Admin 运行；科研、资源、快讯和 AI 的公共 HTTP 接口尚未开放，首页人工栏目直接读取编辑内容文件。AI 内部调用见[AI 服务说明](ai-services.md)。
 
 ## 请求约定
 
@@ -26,7 +26,7 @@
 
 ### 列表
 
-`GET /api/v1/competitions/`，无需登录。只返回 `published` 且非固定虚构种子的赛事。明确尚未过报名日期或仍开放平台招募的记录优先，随后按主来源原通知发布日期、平台首次发布时间和 ID 倒序；原通知日期未知的排在同组已知日期后。采集时间不冒充通知发布时间。搜索与分类可组合。
+`GET /api/v1/competitions/`，无需登录。只返回 `published` 且非固定虚构种子的赛事。明确尚未过报名日期或仍开放平台招募的记录优先；无报名日期时可使用作品提交截止判断排序。已有报名截止的记录不能因作品截止更晚而被当成仍可报名。随后按主来源原通知发布日期、平台首次发布时间和 ID 倒序；原通知日期未知的排在同组已知日期后。采集时间不冒充通知发布时间。搜索与分类可组合。
 
 | 参数 | 规则 |
 | --- | --- |
@@ -57,6 +57,7 @@
 | `registration_deadline` | 报名截止日期或 `null` |
 | `registration_deadline_at` | 已知的精确截止时刻或 `null` |
 | `registration_deadline_timezone` | 原通知时区，未知为空串 |
+| `submission_deadline`、`submission_deadline_at`、`submission_deadline_timezone` | 作品提交截止的日期、精确时刻和时区；与报名截止分别保存。卡片没有报名日期时展示“作品提交截止”，不据此开放站内组队 |
 | `published_at`、`updated_at`、`last_verified_at` | 首次发布时间、内容更新时间、最近核验时间 |
 | `is_recruitment_open` | 是否符合该赛事的招募开放条件；不表示当前用户已获操作权限或组队功能已上线 |
 | `primary_source` | 已核验主来源对象或 `null` |

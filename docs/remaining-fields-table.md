@@ -1,10 +1,10 @@
 # 业务模块字段表
 
-版本：v1.0；2026-09-25。业务口径已经本轮逐模块确认；本表已落实为模型与迁移，并完成本机建表验证。类型、长度及拆表属于实现选择，后端可在不改变业务规则的前提下评审。配套见[字段说明](database-fields.md#teams)与[数据库交付说明](database-handoff.md)。
+版本：v1.1；2026-09-26，新增 `Report`、`Appeal` 及 `governance.0004` 迁移字段。其他业务字段沿用首版建模基线。类型、长度及拆表属于实现选择，后端可在不改变业务规则的前提下评审。配套见[字段说明](database-fields.md#teams)与[历史数据库交付](database-handoff.md)；当前运行及验收见[团队进度](progress.md)。
 
 ## 一 共用约定
 
-- 本表共 32 张主体/历史记录表及 12 张显式多选关联表；`UserRestriction` 沿用原用户字段表，其他已完成的 User 与 Competition 表不重复建模。
+- 本表共 34 张主体/历史记录表及 12 张显式多选关联表；其中 `Report`、`Appeal` 为本次新增两表。`UserRestriction` 沿用原用户字段表，其他已完成的 User 与 Competition 表不重复建模。
 - “数据库可空”指 SQL NULL；文本选填采用空串，JSON 使用独立的 dict/list。系统字段由服务维护，不要求学生或管理员逐项手填。草稿可缺发布资料，发布时才执行条件必填。
 - 主键为 BigAutoField；有稳定编码的业务对象使用小写前缀加 UUID4 hex。时间存带时区的时刻；来源只有日期时只存 DateField，不补造具体时间。
 - 除 J01–J12 的拥有方外键使用 CASCADE，本文外键均使用 PROTECT（含可空外键），防止删除仍被引用的历史。CASCADE 不意味着业务可任意删除版本；历史删除仍受服务权限控制。已有 User/Competition 的原删除策略保持原定义。
@@ -536,7 +536,7 @@
 
 ### G02 governance.AdminAction
 
-表名：`governance_adminaction`。管理员统一操作的必要记录，不建立举报、申诉或工单流程。
+表名：`governance_adminaction`。管理员实际操作的不可变记录；举报与申诉的提交和复核结论另存 `Report`、`Appeal`，不与实际处罚或撤销混为一条记录。
 
 | 字段名 | 中文含义 | Django 类型 | 数据库可空 | 默认/赋值方式 | 约束与用途 |
 | --- | --- | --- | --- | --- | --- |
@@ -556,9 +556,63 @@
 | `reverses` | 被撤销的操作 | `OneToOneField(governance.AdminAction)` | 是 | NULL | PROTECT；禁止自指；用于 restore/revoke_restriction/enable_account |
 
 - 六个目标恰好一个非空；关联限制的目标用户必须一致。
-- 记录只追加；纠正使用新记录；不强制不同管理员复核，也不限制学生反馈次数。联系我们使用运营配置，不建立反馈模型。
+- 记录只追加，纠正使用新记录。针对本人招募下架操作的申诉通过 `Appeal.admin_action` 关联，必须由原操作人之外的管理员复核；申诉提交受到下述去重和频率限制。申诉成立不会自动追加撤销操作或恢复招募。
 
 索引：(created_at)；(target_user,created_at)；(recruitment,created_at)。
+
+### G03 governance.Report
+
+表名：`governance_report`。登录用户对赛事或招募提交的问题记录；未核验邮箱、缺少联系方式或处于业务限制期间仍可提交。不是公开帖子，只有提交本人和具备治理权限的管理员可读。
+
+| 字段名 | 中文含义 | Django 类型 | 数据库可空 | 默认/赋值方式 | 约束与用途 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | 举报主键 | `BigAutoField` | 否 | 自动生成 | 用于本人记录及申诉关联 |
+| `submitted_by` | 提交人 | `ForeignKey(accounts.User)` | 否 | 当前登录用户 | PROTECT；客户端不可指定；不可改写 |
+| `competition` | 被举报赛事 | `ForeignKey(competitions.Competition)` | 是 | NULL | PROTECT；与 recruitment 恰有一项非空；须公开或本人有访问关系 |
+| `recruitment` | 被举报招募 | `ForeignKey(teams.Recruitment)` | 是 | NULL | PROTECT；目标创建后不可改写；不支持任意用户举报 |
+| `target_title` | 对象名称快照 | `CharField(240)` | 否 | 后端读取目标名称 | 非空；保存提交时名称，不随目标后来改名覆盖 |
+| `reason` | 问题类型 | `CharField(24)` | 否 | 用户从固定词表选择 | false_information / fraud / inappropriate / other |
+| `description` | 具体说明 | `CharField(1000)` | 否 | 用户必填 | 1～1000 字符，去首尾空白，普通文字；提交后不可改写 |
+| `status` | 核实状态 | `CharField(16)` | 否 | pending | pending / confirmed / dismissed |
+| `created_at` | 提交时间 | `DateTimeField` | 否 | timezone.now | 系统写入，不可改写 |
+| `reviewed_by` | 处理管理员 | `ForeignKey(accounts.User)` | 是 | NULL | PROTECT；待处理为空，不能是提交本人 |
+| `reviewed_at` | 处理时间 | `DateTimeField` | 是 | NULL | 已处理时必填且不得早于 created_at |
+| `feedback` | 给本人的反馈 | `CharField(1000)` | 否 | '' | 待处理为空串；已处理时非空，最多1000字符 |
+
+- 目标单选、理由与状态枚举、处理字段配对、非空文本、处理时间顺序及不允许本人处理均有数据库约束。
+- 条件唯一：`(submitted_by,competition)` 或 `(submitted_by,recruitment)` 在 `status=pending` 时分别唯一；理由变化不允许绕过同目标去重。
+- 每分钟最多3条，滚动24小时最多10条；事务锁定提交用户后核对，跨进程并发仍受控制。
+- 原始提交字段不可修改；结案后不得覆盖状态、处理人、时间或反馈。对结论的异议另建 Appeal，举报成立本身不触发处罚。
+
+索引：`(submitted_by,-created_at)`；`(status,created_at)`。接口见[举报与申诉](api-governance.md)。
+
+### G04 governance.Appeal
+
+表名：`governance_appeal`。登录用户对本人限制、本人招募下架或本人已处理举报结果请求独立复核。共用字段由抽象 `ReviewRecord` 定义；抽象模型本身不建表。
+
+| 字段名 | 中文含义 | Django 类型 | 数据库可空 | 默认/赋值方式 | 约束与用途 |
+| --- | --- | --- | --- | --- | --- |
+| `id` | 申诉主键 | `BigAutoField` | 否 | 自动生成 | 本人记录引用 |
+| `submitted_by` | 申诉人 | `ForeignKey(accounts.User)` | 否 | 当前登录用户 | PROTECT；客户端不可指定；不可改写 |
+| `restriction` | 被申诉限制 | `ForeignKey(accounts.UserRestriction)` | 是 | NULL | PROTECT；被限制人必须是申诉人；可针对历史记录复核 |
+| `admin_action` | 被申诉下架操作 | `ForeignKey(governance.AdminAction)` | 是 | NULL | PROTECT；仅 action=withdraw 的本人招募下架；不是任意管理操作 |
+| `report` | 被申诉举报结果 | `ForeignKey(governance.Report)` | 是 | NULL | PROTECT；必须由本人提交且已处理；不支持嵌套申诉 |
+| `target_title` | 对象名称快照 | `CharField(240)` | 否 | 后端生成 | 非空；创建后不可改写 |
+| `description` | 申诉说明 | `CharField(1000)` | 否 | 本人必填 | 1～1000字符；创建后不可改写 |
+| `status` | 复核状态 | `CharField(16)` | 否 | pending | pending / upheld / rejected |
+| `created_at` | 提交时间 | `DateTimeField` | 否 | timezone.now | 不可改写 |
+| `reviewed_by` | 复核管理员 | `ForeignKey(accounts.User)` | 是 | NULL | PROTECT；不得是原处理人或提交本人 |
+| `reviewed_at` | 复核时间 | `DateTimeField` | 是 | NULL | 已处理时必填且不得早于 created_at |
+| `feedback` | 给本人的反馈 | `CharField(1000)` | 否 | '' | 待处理为空串；已处理时须为1～1000字符 |
+
+- 三个目标恰有一个非空。本人关联、仅招募下架及举报已处理等跨表条件由模型 full_clean 与服务校验。
+- 条件唯一：提交人与三个目标分别构成唯一组合，生效条件均为 `status=pending`；数据库同时约束状态、处理字段配对及时间顺序。
+- 每分钟最多2条，滚动24小时最多5条。已有待处理申诉不能重复提交；不同对象也受总额度限制。
+- 原处理人分别取限制的 `created_by`、下架操作的 `actor`、举报的 `reviewed_by`。申诉复核者必须不同于该用户；超级管理员也不能绕过该规则。
+- 申诉结论与原处理记录分别保留。`upheld` 只表示申诉成立，不自动改写限制解除字段、恢复招募或修改原举报结论。实际撤销仍须另行授权操作与留痕。
+- 提交字段与已处理结论不可改写。客户端仅可创建和读取本人记录；反馈在本人页面展示，不产生外部邮件或额外组队通知。
+
+索引：`(submitted_by,-created_at)`；`(status,created_at)`。字段可见性、可申诉对象列表及错误码见[举报与申诉接口](api-governance.md)。
 
 ### M01 notifications.BusinessEvent
 
