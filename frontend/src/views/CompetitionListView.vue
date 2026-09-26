@@ -184,7 +184,7 @@ onBeforeUnmount(() => {
         <div class="list-summary">
           <span
             >{{ search ? `“${search}” 的搜索结果` : '全部赛事' }} ·
-            按最新发布排序</span
+            有效赛事优先 · 同组按来源发布日期由新到旧</span
           ><span v-if="!loading && !error"
             >共 <strong>{{ count }}</strong> 项赛事</span
           >
