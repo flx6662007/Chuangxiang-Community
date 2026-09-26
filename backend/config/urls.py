@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/v1/accounts/', include('accounts.urls')),
     path('api/v1/', include('teams.urls')),
     path('api/v1/notifications/', include('notifications.urls')),
+    path('api/v1/governance/', include('governance.urls')),
     path('api/auth/', include('accounts.headless_urls')),
     path('accounts/', include('allauth.urls')),
     # 用户模型和数据库迁移完成后，管理后台才能登录使用。
