@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppLayout from '../layouts/AppLayout.vue'
 import WelcomeView from '../views/WelcomeView.vue'
 import CompetitionListView from '../views/CompetitionListView.vue'
+import InformationCenterView from '../views/InformationCenterView.vue'
 import CompetitionDetailView from '../views/CompetitionDetailView.vue'
 import AccountView from '../views/AccountView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
@@ -26,11 +27,31 @@ const router = createRouter({
         },
         {
           path: 'competitions',
-          name: 'competitions',
-          component: CompetitionListView,
+          redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
         },
         {
-          path: 'competitions/:id(\\d+)',
+          path: 'information',
+          component: InformationCenterView,
+          children: [
+            {
+              path: '',
+              redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
+            },
+            {
+              path: 'competitions',
+              name: 'competitions',
+              component: CompetitionListView,
+            },
+            {
+              path: 'projects',
+              name: 'research-projects',
+              component: () => import('../views/ProjectListView.vue'),
+            },
+          ],
+        },
+        {
+          path: 'information/competitions/:id(\\d+)',
+          alias: 'competitions/:id(\\d+)',
           name: 'competition-detail',
           component: CompetitionDetailView,
         },
