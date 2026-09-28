@@ -89,7 +89,7 @@ onBeforeUnmount(() => controller?.abort())
         ><span class="service-icon"><AppIcon name="trophy" :size="28" /></span>
         <div>
           <h2>信息中心</h2>
-          <p>赛事讯息与项目招募，一站查阅</p>
+          <p>赛事、项目招募与学习资源，一站查阅</p>
         </div>
         <AppIcon name="arrow" :size="20"
       /></RouterLink>

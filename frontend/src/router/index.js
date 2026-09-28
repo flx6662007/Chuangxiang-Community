@@ -47,6 +47,16 @@ const router = createRouter({
               name: 'research-projects',
               component: () => import('../views/ProjectListView.vue'),
             },
+            {
+              path: 'resources',
+              name: 'resources',
+              component: () => import('../views/ResourceCenterView.vue'),
+            },
+            {
+              path: 'resources/:id',
+              name: 'resource-detail',
+              component: () => import('../views/ResourceDetailView.vue'),
+            },
           ],
         },
         {
