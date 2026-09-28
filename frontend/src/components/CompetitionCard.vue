@@ -13,6 +13,7 @@ import AppIcon from './AppIcon.vue'
 const props = defineProps({
   competition: { type: Object, required: true },
   detailQuery: { type: Object, default: () => ({}) },
+  detailEnabled: { type: Boolean, default: true },
 })
 const deadline = computed(() => summaryDeadline(props.competition))
 const sourcePublishedAt = computed(() =>
@@ -39,7 +40,8 @@ const detailLink = computed(() => ({
     <div class="competition-card-body">
       <div class="competition-card__header">
         <h2 :id="`competition-${competition.id}-title`">
-          <RouterLink :to="detailLink">{{ competition.title }}</RouterLink>
+          <RouterLink v-if="detailEnabled" :to="detailLink">{{ competition.title }}</RouterLink>
+          <span v-else>{{ competition.title }}</span>
         </h2>
         <span class="competition-card__edition">{{ competition.edition }}</span>
       </div>
@@ -87,7 +89,7 @@ const detailLink = computed(() => ({
       <span class="deadline-label"
         ><AppIcon name="calendar" :size="16" />{{ deadline.label }}</span
       ><strong>{{ deadline.value }}</strong
-      ><RouterLink class="card-detail-link" :to="detailLink"
+      ><RouterLink v-if="detailEnabled" class="card-detail-link" :to="detailLink"
         >查看详情<AppIcon name="arrow" :size="16"
       /></RouterLink>
     </div>

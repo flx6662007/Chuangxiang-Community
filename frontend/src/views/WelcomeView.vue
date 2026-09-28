@@ -13,6 +13,7 @@ import { newsletters, laboratories } from '../data/editorial'
 import AppIcon from '../components/AppIcon.vue'
 import CampusIllustration from '../components/CampusIllustration.vue'
 import ProjectOpportunityCard from '../components/ProjectOpportunityCard.vue'
+import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
 
 const router = useRouter()
 const search = ref('')
@@ -110,6 +111,7 @@ onBeforeUnmount(() => controller?.abort())
         <AppIcon name="arrow" :size="20" />
       </RouterLink>
     </div>
+    <AICompetitionAssistant />
     <section class="home-latest" aria-labelledby="latest-title">
       <div class="section-heading">
         <div>
@@ -239,7 +241,7 @@ onBeforeUnmount(() => controller?.abort())
       /></RouterLink>
     </section>
     <p class="development-note">
-      快讯由团队整理，科研参与条件以官方说明为准。智能辅助功能尚未开放。
+      快讯由团队整理，科研参与条件以官方说明为准。AI 竞赛助手当前仅提供前端模拟演示。
     </p>
   </section>
 </template>
