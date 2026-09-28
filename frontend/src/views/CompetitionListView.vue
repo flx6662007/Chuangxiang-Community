@@ -6,6 +6,11 @@ import {
   listCompetitionCategories,
 } from '../api/competitions'
 import CompetitionCard from '../components/CompetitionCard.vue'
+import {
+  competitionTimeOptions,
+  normalizeTimeStatus,
+  competitionListQuery,
+} from '../utils/competition'
 import AppIcon from '../components/AppIcon.vue'
 
 const route = useRoute()
@@ -21,6 +26,7 @@ const category = computed(() =>
   typeof route.query.category === 'string' ? route.query.category : '',
 )
 const pageSize = 20
+const timeStatus = computed(() => normalizeTimeStatus(route.query.time_status))
 const search = computed(() =>
   typeof route.query.search === 'string' ? route.query.search.trim() : '',
 )
@@ -44,6 +50,7 @@ async function load() {
       {
         page: page.value,
         page_size: pageSize,
+        time_status: timeStatus.value,
         search: search.value || undefined,
         category: category.value || undefined,
       },
@@ -72,11 +79,12 @@ async function load() {
 function changePage(next) {
   router.push({
     name: 'competitions',
-    query: {
-      ...(search.value ? { search: search.value } : {}),
-      ...(category.value ? { category: category.value } : {}),
-      ...(next > 1 ? { page: next } : {}),
-    },
+    query: competitionListQuery({
+      search: search.value,
+      category: category.value,
+      timeStatus: timeStatus.value,
+      page: next,
+    }),
   })
 }
 
@@ -85,15 +93,27 @@ function submitSearch() {
   if (nextSearch === search.value && page.value === 1) return load()
   router.push({
     name: 'competitions',
-    query: {
-      ...(nextSearch ? { search: nextSearch } : {}),
-      ...(category.value ? { category: category.value } : {}),
-    },
+    query: competitionListQuery({
+      search: nextSearch,
+      category: category.value,
+      timeStatus: timeStatus.value,
+    }),
+  })
+}
+
+function selectTimeStatus(value) {
+  router.push({
+    name: 'competitions',
+    query: competitionListQuery({
+      search: search.value,
+      category: category.value,
+      timeStatus: value,
+    }),
   })
 }
 
 watch(
-  () => [page.value, search.value, category.value],
+  () => [page.value, search.value, category.value, timeStatus.value],
   () => {
     searchInput.value = search.value
     load()
@@ -111,10 +131,11 @@ async function loadCategories() {
 function selectCategory(value) {
   router.push({
     name: 'competitions',
-    query: {
-      ...(search.value ? { search: search.value } : {}),
-      ...(value ? { category: value } : {}),
-    },
+    query: competitionListQuery({
+      search: search.value,
+      category: value,
+      timeStatus: timeStatus.value,
+    }),
   })
 }
 onMounted(loadCategories)
@@ -126,11 +147,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="competition-page" aria-labelledby="competition-title">
-    <header class="page-heading">
-      <span class="section-kicker">COMPETITION CENTER</span>
-      <h1 id="competition-title">赛事中心</h1>
-      <p>汇聚赛事信息，发现值得投入的方向。</p>
-    </header>
+    <h2 id="competition-title" class="sr-only">赛事讯息</h2>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
       <AppIcon name="search" :size="19" /><label
         class="sr-only"
@@ -161,6 +178,20 @@ onBeforeUnmount(() => {
         <button class="text-button" @click="loadCategories">重试</button></span
       >
     </div>
+    <div class="category-tabs" aria-label="赛事时效">
+      <button
+        v-for="option in competitionTimeOptions"
+        :key="option.code"
+        :class="{ selected: timeStatus === option.code }"
+        :aria-pressed="timeStatus === option.code"
+        @click="selectTimeStatus(option.code)"
+      >
+        {{ option.name }}
+      </button>
+    </div>
+    <p class="muted">
+      当前赛事包括未明确截止的赛事；时间未知不代表正在报名。历史赛事保留官方信息与既有组队记录。
+    </p>
     <div class="competition-content">
       <aside class="competition-sidebar" aria-label="赛事导航">
         <div class="sidebar-title">EXPLORE / 赛事导航</div>
@@ -183,8 +214,14 @@ onBeforeUnmount(() => {
       <div class="competition-results">
         <div class="list-summary">
           <span
-            >{{ search ? `“${search}” 的搜索结果` : '全部赛事' }} ·
-            有效赛事优先 · 同组按来源发布日期由新到旧</span
+            >{{
+              search
+                ? `“${search}” 的搜索结果`
+                : competitionTimeOptions.find(
+                    (option) => option.code === timeStatus,
+                  )?.name + '赛事'
+            }}
+            · 按截止状态及来源发布日期排序</span
           ><span v-if="!loading && !error"
             >共 <strong>{{ count }}</strong> 项赛事</span
           >
@@ -211,12 +248,12 @@ onBeforeUnmount(() => {
           </button>
         </div>
         <div v-else-if="!items.length" class="state-panel" role="status">
-          <h2>{{ search ? '没有找到相关赛事' : '暂时没有公开赛事' }}</h2>
+          <h2>{{ search ? '没有找到相关赛事' : '当前筛选下暂无赛事' }}</h2>
           <p>
             {{
               search
-                ? '换个关键词试试，或清空搜索查看全部赛事。'
-                : '新赛事发布后会显示在这里。'
+                ? '换个关键词试试，或调整分类和时效筛选。'
+                : '可切换历史或全部查看已有记录，新赛事发布后会显示在这里。'
             }}
           </p>
         </div>

@@ -26,7 +26,7 @@
 
 ### 列表
 
-`GET /api/v1/competitions/`，无需登录。只返回 `published` 且非固定虚构种子的赛事。明确尚未过报名日期或仍开放平台招募的记录优先；无报名日期时可使用作品提交截止判断排序。已有报名截止的记录不能因作品截止更晚而被当成仍可报名。随后按主来源原通知发布日期、平台首次发布时间和 ID 倒序；原通知日期未知的排在同组已知日期后。采集时间不冒充通知发布时间。搜索与分类可组合。
+`GET /api/v1/competitions/`，无需登录。只返回 `published`、非虚构且关联当前学校目录的赛事，包含全部学科。默认隐藏明确截止的历史赛事；没有明确截止日期的记录仍显示并标为未知，不能解释为报名中。判断顺序为报名截止、作品提交截止；平台招募期限不参与官方时效判断。组内按主来源发布日期、平台首次发布时间和 ID 倒序；采集时间不冒充发布时间。搜索、分类和时效可以组合。
 
 | 参数 | 规则 |
 | --- | --- |
@@ -34,6 +34,7 @@
 | `page_size` | 正整数，默认 20，最大 50；超过 50 按 50，非法值返回 400 |
 | `search` | 最多 200 字符，去首尾空白；匹配标题、简介或主办方 |
 | `category` | 分类 `code`，最多 64 字符；精确匹配，无匹配返回空列表 |
+| `time_status` | `current`（默认）、`expired`、`all`；只影响时效，不绕过发布状态与目录范围 |
 | `recruitment_open` | `true` / `false`（兼容 `1` / `0`）；筛选赛事是否开放站内招募，不能据此推断官方报名状态 |
 
 分类词表：`GET /api/v1/competitions/categories/` 返回启用分类数组，例如 `[{"id":1,"code":"engineering","name":"工程"}]`。分类、标签与赛事范围集合：`GET /api/v1/competitions/options/` 返回 `{categories:[], tags:[], levels:[]}`；词条含 `id/code/name`，范围含 `code/name`。两接口均允许游客只读，停用项不供新选择，历史记录仍保留名称。
@@ -61,12 +62,17 @@
 | `published_at`、`updated_at`、`last_verified_at` | 首次发布时间、内容更新时间、最近核验时间 |
 | `is_recruitment_open` | 是否符合该赛事的招募开放条件；不表示当前用户已获操作权限或组队功能已上线 |
 | `primary_source` | 已核验主来源对象或 `null` |
+| `deadline_status` | `open` / `closed` / `unknown`；open 仅表示对应截止尚未到，不证明报名已经开始 |
+| `deadline_kind` | `registration` / `submission` / `unknown`；不能把投稿截止当报名截止 |
+| `deadline_status_label` | 服务端明确标签；只有日期时，当天显示“今日截止，时刻以原文为准” |
 
 来源对象统一为 `{id, source_type, source_name, source_url, source_published_on}`。只公开已核验来源，不返回内部核验依据、操作者或下架原因。
 
 ### 详情
 
 `GET /api/v1/competitions/<id>/`，无需登录。成功 `200`；不存在、草稿及下架赛事统一返回 `404`，避免暴露非公开内容。
+
+已公开的历史或目录外详情保留，方便查看已有组队记录；它们不会因此重新进入当前列表。学校目录与未处理官网通知只在管理员后台展示，没有公共采集或检索接口。
 
 详情包含列表全部字段，并增加：
 

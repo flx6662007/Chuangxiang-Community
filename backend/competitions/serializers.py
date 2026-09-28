@@ -3,6 +3,7 @@
 from rest_framework import serializers
 
 from .models import Competition, CompetitionSource, CompetitionTaxonomy
+from .timeliness import deadline_status_label
 
 
 class TaxonomySerializer(serializers.ModelSerializer):
@@ -22,6 +23,12 @@ class CompetitionListSerializer(serializers.ModelSerializer):
     tags = TaxonomySerializer(many=True, read_only=True)
     primary_source = serializers.SerializerMethodField()
     is_recruitment_open = serializers.BooleanField(read_only=True)
+    deadline_status = serializers.CharField(source='_deadline_status', read_only=True)
+    deadline_kind = serializers.CharField(source='_deadline_kind', read_only=True)
+    deadline_status_label = serializers.SerializerMethodField()
+
+    def get_deadline_status_label(self, obj):
+        return deadline_status_label(obj)
 
     def get_primary_source(self, obj):
         source = next((source for source in obj.public_sources if source.is_primary), None)
@@ -35,7 +42,7 @@ class CompetitionListSerializer(serializers.ModelSerializer):
             'registration_deadline_at', 'registration_deadline_timezone',
             'submission_deadline', 'submission_deadline_at', 'submission_deadline_timezone',
             'published_at', 'updated_at', 'last_verified_at', 'is_recruitment_open',
-            'primary_source',
+            'primary_source', 'deadline_status', 'deadline_kind', 'deadline_status_label',
         )
 
 

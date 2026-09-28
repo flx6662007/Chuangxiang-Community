@@ -5,12 +5,15 @@ import hashlib
 import uuid
 from zoneinfo import ZoneInfo
 
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import connection, transaction
 from django.db.models import Max
 from django.utils import timezone
 
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
+from competitions.scope import apply_competition_scope
+from competition_catalog.registry import ADAPTER_CATALOG, bind_official_competition
 from competitions.services import publish_competition, require_editor, save_competition, save_source
 from .adapters import ADAPTERS, RULE_VERSION
 from .http import FetchError, OfficialClient
@@ -50,6 +53,8 @@ def initialize_sources(*, actor):
     require_editor(actor, 'add_competition')
     sources = []
     for adapter in ADAPTERS.values():
+        if settings.COMPETITION_CATALOG_ONLY and adapter.key not in ADAPTER_CATALOG:
+            continue
         source, created = SourceConfig.objects.get_or_create(code=adapter.key, defaults=dict(
             name=adapter.name, base_url=adapter.base_url, content_kind='competition', adapter_key=adapter.key,
             is_active=True, maintained_by=actor,
@@ -82,7 +87,9 @@ def accept_candidate(result_id, *, actor, mode='human', enable_recruitment=False
         raise ValidationError('未知采纳方式。')
     require_editor(actor)
     original = ProcessingResult.objects.select_related('source_version__source').get(pk=result_id)
-    SourceConfig.objects.select_for_update().get(pk=original.source_version.source_id)
+    locked_source = SourceConfig.objects.select_for_update().get(pk=original.source_version.source_id)
+    if mode == 'rules' and not locked_source.is_active:
+        raise ValidationError('来源已停用，不自动采纳；旧候选仍可由有权限的管理员人工核对。')
     result = ProcessingResult.objects.select_for_update(of=('self',)).select_related('source_version__source').get(pk=result_id)
     if result.status == 'accepted':
         return result.competition
@@ -91,6 +98,8 @@ def accept_candidate(result_id, *, actor, mode='human', enable_recruitment=False
     if result.validation_errors:
         raise ValidationError('候选存在提取校验错误，需修正适配器并重新采集。')
     candidate, version = result.candidate, result.source_version
+    if settings.COMPETITION_CATALOG_ONLY and version.source.adapter_key not in ADAPTER_CATALOG:
+        raise ValidationError('此来源尚未核对学校目录归属，不新增发布。')
     latest_observation = SourceVersion.objects.filter(source_id=version.source_id, source_url=version.source_url).order_by('-last_seen_at', '-pk').first()
     if latest_observation.pk != version.pk:
         raise ValidationError('此候选已被较新的原文观察替代，不能覆盖当前信息；请处理最新原文候选。')
@@ -182,6 +191,7 @@ def accept_candidate(result_id, *, actor, mode='human', enable_recruitment=False
     result.reviewed_by = actor if mode == 'human' else None
     result.reviewed_at, result.competition = timezone.now(), competition
     clean_save(result)
+    bind_official_competition(competition, version.source.adapter_key)
     return competition
 
 
@@ -250,9 +260,17 @@ def sync_source(source, *, actor=None, trigger='scheduled', auto_accept=False, e
     editor = actor or source.maintained_by
     require_editor(editor)
     stats = dict(source=source.code, discovered=0, fetched=0, unchanged=0, accepted=0, pending=0, failed=0, locked=False)
+    if settings.COMPETITION_CATALOG_ONLY and source.adapter_key not in ADAPTER_CATALOG:
+        stats['skipped'] = 'not_in_school_catalog'
+        return stats
     with source_mutex(source.pk) as acquired:
         if not acquired:
             stats['locked'] = True
+            return stats
+        # 来源对象可能早于管理员停用操作读取；取得互斥后以数据库现状为准。
+        source.refresh_from_db()
+        if not source.is_active:
+            stats['skipped'] = 'inactive'
             return stats
         batch = uuid.uuid4()
         owned = client is None
@@ -279,10 +297,16 @@ def sync_source(source, *, actor=None, trigger='scheduled', auto_accept=False, e
             # 首轮发现新页，已收录但列表已翻页的有效来源也持续复查。
             known = list(ProcessingResult.objects.filter(
                 source_version__source=source, status='accepted', competition__publication_status='published',
+                competition__in=apply_competition_scope(Competition.objects.all()),
             ).order_by('-source_version__last_seen_at').values_list('source_version__source_url', flat=True).distinct())
             urls = list(dict.fromkeys(urls + known))
             seen = {row['source_url']: row['last_seen'] for row in SourceVersion.objects.filter(
                 source=source, source_url__in=urls).values('source_url').annotate(last_seen=Max('last_seen_at'))}
+            # 失败、范围外或附件页面也已尝试；不能永远抢占新页预算。
+            for row in FetchRun.objects.filter(source=source, requested_url__in=urls, finished_at__isnull=False).values('requested_url').annotate(last_attempt=Max('finished_at')):
+                key = row['requested_url']
+                if key not in seen or row['last_attempt'] > seen[key]:
+                    seen[key] = row['last_attempt']
             # 新页优先；其后轮换最久未成功获取的页，避免列表较长时旧页永久饥饿。
             urls.sort(key=lambda url: seen[url].timestamp() if url in seen else 0)
             urls = urls[:max_pages]

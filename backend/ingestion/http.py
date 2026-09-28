@@ -154,6 +154,14 @@ class OfficialClient:
         policy = self.robots[origin]
         if policy and not policy.can_fetch(USER_AGENT, url):
             raise FetchError('robots_disallowed', '站点 robots 规则不允许采集此地址。')
+        if policy:
+            delay = policy.crawl_delay(USER_AGENT) or policy.crawl_delay('*') or 0
+            rate = policy.request_rate(USER_AGENT) or policy.request_rate('*')
+            if rate and rate.requests:
+                delay = max(delay, rate.seconds / rate.requests)
+            if delay > 60:
+                raise FetchError('robots_delay_unsupported', '站点要求超过一分钟的请求间隔，当前采集器暂不接入。')
+            self.interval = max(self.interval, delay)
 
     def get(self, url):
         return self._get(url)

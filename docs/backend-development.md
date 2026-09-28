@@ -2,7 +2,7 @@
 
 ## 当前范围
 
-已接入 Django/DRF、PostgreSQL、公开赛事 API、赛事管理后台、学校邮箱账号和本人资料；前端已接入列表、详情及账号页面。本轮先交付无需购买服务的本地开发版，邮件输出到终端，AI 默认关闭。没有真实赛事采集、真实邮件投递或公网部署。
+已接入 Django/DRF、PostgreSQL、账号、赛事、组队、举报申诉和后台信息库。赛事采集按学校 2026 版目录覆盖全部学科：通用采集保存后台原文，专用适配器提取并校验公开卡片。本机开发版邮件输出到终端，AI 默认关闭；尚未真实邮件投递或公网部署。
 
 完整状态见 [团队进度](progress.md)，接口见 [API 说明](api.md)，页面操作见 [人工验收](manual-checks.md)。[数据库交付说明](database-handoff.md) 保留同学交付时的模型、迁移、约束和样例记录；其中“接口待实现”等历史状态由本轮进度替代，字段规则不因此改变。
 
@@ -80,9 +80,12 @@ test -f .env || cp .env.example .env
 .\.venv\Scripts\python.exe manage.py migrate --plan
 .\.venv\Scripts\python.exe manage.py migrate --noinput
 .\.venv\Scripts\python.exe manage.py migrate --check
+.\.venv\Scripts\python.exe manage.py init_competition_catalog
 ```
 
 新增的 django-allauth 使用它自带的 `account` 迁移，同样由 `migrate` 应用；不要另外创建验证码表或在 User 中复制“邮箱已验证”字段。已有开发库也需要安装新依赖并执行迁移。
+
+`init_competition_catalog` 导入 255 项全学科目录及已核对来源，可重复执行，不创建账号。默认公开列表仅显示已关联目录的赛事，因此新环境不能跳过初始化；目录不是 255 条当年报名通知，具体赛事仍需采集并通过字段校验。拉取来源清单更新后也执行此命令。
 
 内部演示先初始化真实招募选项，再按[采集说明](ingestion-implementation.md)导入官方赛事并按[定时任务](maintenance.md)安排更新：
 

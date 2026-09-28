@@ -15,6 +15,7 @@ urlpatterns = [
     path('api/v1/governance/', include('governance.urls')),
     path('api/auth/', include('accounts.headless_urls')),
     path('accounts/', include('allauth.urls')),
-    # 用户模型和数据库迁移完成后，管理后台才能登录使用。
+    path('admin/information-library/', include('information_library.urls')),
+    # 信息库与管理后台均要求工作人员登录，信息库再按内容类型检查查看权限。
     path('admin/', admin.site.urls),
 ]

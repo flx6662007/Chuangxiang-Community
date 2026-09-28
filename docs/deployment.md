@@ -91,6 +91,7 @@ dc up -d --wait db redis
 dc run --rm --no-deps backend python manage.py check --deploy
 dc run --rm --no-deps backend python manage.py migrate --noinput
 dc run --rm --no-deps backend python manage.py migrate --check
+dc run --rm --no-deps backend python manage.py init_competition_catalog
 dc run --rm --no-deps --user root backend chown 10001:10001 /app/staticfiles
 dc run --rm --no-deps backend python manage.py collectstatic --noinput
 dc run --rm --no-deps backend python manage.py createsuperuser
@@ -160,7 +161,7 @@ dc exec -T db sh -c 'pg_restore --exit-on-error --no-owner --no-privileges -U "$
 
 再在隔离服务环境中指向该恢复库，运行迁移检查并核对赛事、用户和权限；没有完成恢复演练不能仅凭备份文件存在就认定可恢复。恢复库包含真实个人信息，演练后由管理员按数据保留规则清理。
 
-升级顺序：通知短时维护 → 备份 → 获取已验收的指定提交 → 构建镜像 → 停止网页和后端 → 迁移与收集静态文件 → 启动 → 完成核心流程检查。小团队先采用明确的短时维护，不声称零停机：
+升级顺序：通知短时维护 → 备份 → 获取已验收的指定提交 → 构建镜像 → 停止网页和后端 → 迁移、同步目录与收集静态文件 → 启动 → 完成核心流程检查。小团队先采用明确的短时维护，不声称零停机：
 
 ```bash
 git fetch origin
@@ -168,6 +169,7 @@ git fetch origin
 dc build --pull backend web
 dc stop web backend
 dc run --rm --no-deps backend python manage.py migrate --noinput
+dc run --rm --no-deps backend python manage.py init_competition_catalog
 dc run --rm --no-deps backend python manage.py collectstatic --noinput
 dc up -d --wait backend web
 ```

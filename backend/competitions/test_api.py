@@ -47,7 +47,7 @@ class CompetitionAPITests(TestCase):
         )
 
     def test_guest_list_has_public_only_stable_order_and_pagination(self):
-        response = self.client.get('/api/v1/competitions/')
+        response = self.client.get('/api/v1/competitions/?time_status=all')
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(set(payload), {'count', 'next', 'previous', 'results'})
@@ -56,10 +56,10 @@ class CompetitionAPITests(TestCase):
         self.assertEqual(payload['results'][0]['id'], self.public[-1].pk)
         self.assertIsNone(payload['previous'])
         self.assertIn('page=2', payload['next'])
-        self.assertEqual(len(self.client.get('/api/v1/competitions/?page=2').json()['results']), 4)
+        self.assertEqual(len(self.client.get('/api/v1/competitions/?time_status=all&page=2').json()['results']), 4)
 
     def test_field_whitelists_and_source_privacy(self):
-        card = self.client.get('/api/v1/competitions/').json()['results'][0]
+        card = self.client.get('/api/v1/competitions/?time_status=all').json()['results'][0]
         self.assertEqual(set(card), set(CompetitionListSerializer.Meta.fields))
         detail = self.client.get(f'/api/v1/competitions/{self.public[0].pk}/').json()
         self.assertEqual(set(detail), set(CompetitionDetailSerializer.Meta.fields))
@@ -76,18 +76,18 @@ class CompetitionAPITests(TestCase):
 
     def test_search_and_category_filters(self):
         for search in ('机器人', '工程竞赛', '工程协会'):
-            self.assertEqual(self.client.get('/api/v1/competitions/', {'search': search}).json()['count'], 24)
-        self.assertEqual(self.client.get('/api/v1/competitions/?search=不存在').json()['count'], 0)
-        self.assertEqual(self.client.get('/api/v1/competitions/?category=engineering').json()['count'], 24)
-        self.assertEqual(self.client.get('/api/v1/competitions/?category=unknown').json()['count'], 0)
+            self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all', {'time_status': 'all', 'search': search}).json()['count'], 24)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&search=不存在').json()['count'], 0)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&category=engineering').json()['count'], 24)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&category=unknown').json()['count'], 0)
 
     def test_page_size_bounds_and_bad_inputs(self):
-        self.assertEqual(len(self.client.get('/api/v1/competitions/?page_size=1').json()['results']), 1)
-        self.assertEqual(len(self.client.get('/api/v1/competitions/?page_size=500').json()['results']), 24)
+        self.assertEqual(len(self.client.get('/api/v1/competitions/?time_status=all&page_size=1').json()['results']), 1)
+        self.assertEqual(len(self.client.get('/api/v1/competitions/?time_status=all&page_size=500').json()['results']), 24)
         for value in ('0', '-1', 'x'):
-            self.assertEqual(self.client.get('/api/v1/competitions/', {'page_size': value}).status_code, 400)
-        self.assertEqual(self.client.get('/api/v1/competitions/?page=999').status_code, 404)
-        self.assertEqual(self.client.get('/api/v1/competitions/', {'search': 'x' * 201}).status_code, 400)
+            self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all', {'time_status': 'all', 'page_size': value}).status_code, 400)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&page=999').status_code, 404)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all', {'time_status': 'all', 'search': 'x' * 201}).status_code, 400)
 
     def test_categories_and_options_exclude_inactive_and_separate_kinds(self):
         CompetitionTaxonomy.objects.create(code='disabled', name='停用分类', kind='category', is_active=False)
@@ -102,7 +102,7 @@ class CompetitionAPITests(TestCase):
     def test_known_seed_samples_are_not_public_but_history_is_preserved(self):
         event = self.public[0]
         Competition.objects.filter(pk=event.pk).update(code='demo-r1-public-001', title='【虚构样例】演示')
-        self.assertEqual(self.client.get('/api/v1/competitions/').json()['count'], 23)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all').json()['count'], 23)
         self.assertEqual(self.client.get(f'/api/v1/competitions/{event.pk}/').status_code, 404)
         self.assertTrue(Competition.objects.filter(pk=event.pk, publication_status='published').exists())
 
@@ -113,17 +113,17 @@ class CompetitionAPITests(TestCase):
         event.recruitment_deadline = timezone.now() + timedelta(days=1)
         event.full_clean()
         event.save()
-        result = self.client.get('/api/v1/competitions/?recruitment_open=true').json()
+        result = self.client.get('/api/v1/competitions/?time_status=all&recruitment_open=true').json()
         self.assertEqual([row['id'] for row in result['results']], [event.pk])
-        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=false').json()['count'], 23)
-        self.assertEqual(self.client.get('/api/v1/competitions/?recruitment_open=maybe').status_code, 400)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&recruitment_open=false').json()['count'], 23)
+        self.assertEqual(self.client.get('/api/v1/competitions/?time_status=all&recruitment_open=maybe').status_code, 400)
 
     def test_available_events_precede_expired_and_source_date_precedes_fetch_order(self):
         current = self.public[0]
         Competition.objects.filter(pk=current.pk).update(registration_deadline=timezone.localdate() + timedelta(days=7))
         old_notice = self.public[1]
         old_notice.sources.update(source_published_on=timezone.localdate())
-        result = self.client.get('/api/v1/competitions/').json()['results']
+        result = self.client.get('/api/v1/competitions/?time_status=all').json()['results']
         self.assertEqual(result[0]['id'], current.pk)
         self.assertEqual(result[1]['id'], old_notice.pk)
 
@@ -134,7 +134,7 @@ class CompetitionAPITests(TestCase):
             registration_deadline=None, submission_deadline=deadline.date(),
             submission_deadline_at=deadline, submission_deadline_timezone='UTC',
         )
-        card = self.client.get('/api/v1/competitions/').json()['results'][0]
+        card = self.client.get('/api/v1/competitions/?time_status=all').json()['results'][0]
         detail = self.client.get(f'/api/v1/competitions/{event.pk}/').json()
         self.assertEqual(card['id'], event.pk)
         self.assertEqual(card['submission_deadline'], deadline.date().isoformat())
@@ -152,7 +152,7 @@ class CompetitionAPITests(TestCase):
         Competition.objects.filter(pk=registered.pk).update(submission_deadline=tomorrow)
         current.sources.update(source_published_on=timezone.localdate() - timedelta(days=1))
         registered.sources.update(source_published_on=timezone.localdate())
-        result = self.client.get('/api/v1/competitions/').json()['results']
+        result = self.client.get('/api/v1/competitions/?time_status=all').json()['results']
         self.assertEqual(result[0]['id'], current.pk)
         self.assertEqual(result[1]['id'], registered.pk)
         self.assertFalse(result[0]['is_recruitment_open'])
@@ -167,17 +167,17 @@ class CompetitionAPITests(TestCase):
             )
         current.sources.update(source_published_on=timezone.localdate() - timedelta(days=1))
         expired.sources.update(source_published_on=timezone.localdate())
-        result = self.client.get('/api/v1/competitions/').json()['results']
+        result = self.client.get('/api/v1/competitions/?time_status=all').json()['results']
         self.assertEqual(result[0]['id'], current.pk)
         self.assertEqual(result[1]['id'], expired.pk)
 
     def test_read_only_and_no_authentication_overhead(self):
-        self.assertEqual(self.client.post('/api/v1/competitions/', {}).status_code, 405)
+        self.assertEqual(self.client.post('/api/v1/competitions/?time_status=all', {}).status_code, 405)
         self.assertEqual(self.client.delete(f'/api/v1/competitions/{self.public[0].pk}/').status_code, 405)
         self.client.force_login(self.actor)
         # count + 主查询（含分类）+ 标签 + 来源；即使带登录 cookie 也不读取会话/账号。
         with self.assertNumQueries(4):
-            response = self.client.get('/api/v1/competitions/')
+            response = self.client.get('/api/v1/competitions/?time_status=all')
             self.assertEqual(response.status_code, 200)
         with self.assertNumQueries(3):
             self.assertEqual(self.client.get(f'/api/v1/competitions/{self.public[0].pk}/').status_code, 200)

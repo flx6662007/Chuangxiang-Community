@@ -11,6 +11,7 @@ import {
   levelLabels,
   participationLabels,
   safeExternalUrl,
+  deadlineStatusLabel,
 } from '../utils/competition'
 
 const route = useRoute()
@@ -53,7 +54,7 @@ onBeforeUnmount(() => {
     <RouterLink
       class="back-link"
       :to="{ name: 'competitions', query: route.query }"
-      >← 赛事中心<span>/</span>赛事详情</RouterLink
+      >← 信息中心 · 赛事讯息<span>/</span>赛事详情</RouterLink
     >
     <div v-if="loading" class="state-panel" role="status">
       正在加载赛事详情…
@@ -76,6 +77,7 @@ onBeforeUnmount(() => {
             }}</span
             ><span class="tag neutral">{{ item.edition }}</span>
           </div>
+          <p>{{ deadlineStatusLabel(item) }}</p>
           <p>{{ item.summary || '简介待补充' }}</p>
         </div>
         <a

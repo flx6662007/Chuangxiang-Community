@@ -1,0 +1,66 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    .library-detail { max-width: 1050px; }
+    .library-meta { display: grid; grid-template-columns: 150px 1fr; gap: 12px 18px; padding: 22px; background: var(--darkened-bg); border-radius: 8px; }
+    .library-meta dt { font-weight: bold; }
+    .library-meta dd { margin: 0; overflow-wrap: anywhere; }
+    .library-body { white-space: pre-wrap; line-height: 1.9; overflow-wrap: anywhere; }
+    .library-note { padding: 16px 20px; border-left: 4px solid var(--link-fg); background: var(--darkened-bg); }
+    .library-sources { line-height: 1.8; overflow-wrap: anywhere; }
+  </style>
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">管理首页</a> &rsaquo;
+    <a href="{% url 'information_library:index' %}">信息库</a> &rsaquo; {{ record.title }}
+  </div>
+{% endblock %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+  <div class="library-detail">
+    <h1>{{ record.title }}</h1>
+    <p class="library-note">{{ record.status_note }}</p>
+    <dl class="library-meta">
+      <dt>类型 / 发布状态</dt><dd>{{ record.kind_label }} / {{ record.status_label }}</dd>
+      <dt>核验时间</dt><dd>{{ record.verified_at|default:"未核验" }}</dd>
+      <dt>内容更新时间</dt><dd>{{ record.updated_at|default:"未记录" }}</dd>
+      <dt>平台发布时间</dt><dd>{{ record.published_at|default:"未记录" }}</dd>
+      <dt>内部检索</dt>
+      <dd>{% if ai_ready %}可检索，须同时保留来源与状态提示{% else %}不纳入（未发布、依据不足或引用待复核）{% endif %}</dd>
+      <dt>内容标识</dt><dd>{{ record.kind }} / {{ record.id }}</dd>
+      <dt>版本</dt><dd>{{ record.version }}</dd>
+      {% for label,value in date_fields %}<dt>{{ label }}</dt><dd>{{ value }}</dd>{% endfor %}
+    </dl>
+    <h2>可核验来源</h2>
+    <ul class="library-sources">
+      {% for source in record.source_dates %}
+        <li>
+          <a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.url }}</a>
+          · 来源发布日期：{{ source.published_on|default:"未注明" }}
+        </li>
+      {% empty %}
+        <li>暂无已核验的安全来源链接。</li>
+      {% endfor %}
+    </ul>
+    {% if pending_sources %}
+      <h2>待核验来源 · 仅后台查看</h2>
+      <ul class="library-sources">
+        {% for source in pending_sources %}
+          <li><a href="{{ source }}" target="_blank" rel="noopener noreferrer">{{ source }}</a></li>
+        {% endfor %}
+      </ul>
+      <p>这些链接尚无核验记录，不传入内部 AI 检索。</p>
+    {% endif %}
+    <h2>内容</h2>
+    <div class="library-body">{{ record.text|default:"暂无可展示的正文。" }}</div>
+    <h2>维护位置</h2>
+    <p>{{ maintenance }}</p>
+    <p>本页面只读。账号、联系方式和内部核验说明不进入后续 AI 检索数据。</p>
+    <a href="{% url 'information_library:index' %}">返回信息库</a>
+  </div>
+{% endblock %}
