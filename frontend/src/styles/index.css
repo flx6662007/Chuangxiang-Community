@@ -1959,6 +1959,34 @@ summary:focus-visible {
   color: #53759d;
   font-size: 12px;
 }
+.information-tabs {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.information-tabs a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border: 1px solid #dce8f8;
+  border-radius: 10px;
+  background: #fff;
+  color: #536d90;
+  font-size: 15px;
+  font-weight: 600;
+}
+.information-tabs a:hover {
+  background: #edf4ff;
+}
+.information-tabs a.selected {
+  border-color: #3278f4;
+  background: #3278f4;
+  color: #fff;
+  box-shadow: 0 4px 12px #3278f420;
+}
 .editorial-empty {
   display: flex;
   gap: 24px;
