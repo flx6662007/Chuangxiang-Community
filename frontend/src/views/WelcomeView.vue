@@ -7,10 +7,12 @@ import {
   formatDate,
   levelLabels,
   safeExternalUrl,
+  deadlineStatusLabel,
 } from '../utils/competition'
 import { newsletters, laboratories } from '../data/editorial'
 import AppIcon from '../components/AppIcon.vue'
 import CampusIllustration from '../components/CampusIllustration.vue'
+import ProjectOpportunityCard from '../components/ProjectOpportunityCard.vue'
 
 const router = useRouter()
 const search = ref('')
@@ -30,7 +32,10 @@ async function load() {
   loading.value = true
   error.value = false
   try {
-    const data = await listCompetitions({ page_size: 4 }, controller.signal)
+    const data = await listCompetitions(
+      { page_size: 4, time_status: 'current' },
+      controller.signal,
+    )
     if (!Array.isArray(data.results)) throw new Error('Invalid response')
     items.value = data.results
   } catch (err) {
@@ -83,8 +88,8 @@ onBeforeUnmount(() => controller?.abort())
       <RouterLink class="service-card" :to="{ name: 'competitions' }"
         ><span class="service-icon"><AppIcon name="trophy" :size="28" /></span>
         <div>
-          <h2>赛事中心</h2>
-          <p>发现赛事，查阅通知与参赛要求</p>
+          <h2>信息中心</h2>
+          <p>赛事讯息与项目招募，一站查阅</p>
         </div>
         <AppIcon name="arrow" :size="20"
       /></RouterLink>
@@ -115,6 +120,9 @@ onBeforeUnmount(() => controller?.abort())
           >查看全部<AppIcon name="arrow" :size="17"
         /></RouterLink>
       </div>
+      <p class="editorial-intro">
+        优先展示未明确截止的赛事；时间未知不代表正在报名。
+      </p>
       <div v-if="loading" class="state-panel compact-state" role="status">
         正在加载赛事…
       </div>
@@ -123,7 +131,7 @@ onBeforeUnmount(() => controller?.abort())
         <button class="text-button" @click="load">重新加载</button>
       </div>
       <div v-else-if="!items.length" class="state-panel compact-state">
-        <p>新赛事发布后会显示在这里。</p>
+        <p>当前暂无未明确截止的赛事，可到赛事讯息切换历史记录。</p>
       </div>
       <div v-else class="latest-grid">
         <RouterLink
@@ -136,6 +144,7 @@ onBeforeUnmount(() => controller?.abort())
             ><AppIcon name="arrow" :size="18" />
           </div>
           <h3>{{ item.title }}</h3>
+          <p>{{ deadlineStatusLabel(item) }}</p>
           <p>
             {{ levelLabels[item.level] || '范围未注明' }}<span>·</span
             >{{ item.edition }}
@@ -195,9 +204,11 @@ onBeforeUnmount(() => controller?.abort())
       <div class="section-heading">
         <div>
           <span class="section-kicker">UNDERGRADUATE RESEARCH</span>
-          <h2 id="research-title">本科科研机会</h2>
+          <h2 id="research-title">项目招募</h2>
         </div>
-        <span class="editorial-label">实验室招募线索</span>
+        <RouterLink class="more-link" :to="{ name: 'research-projects' }"
+          >查看全部<AppIcon name="arrow" :size="17"
+        /></RouterLink>
       </div>
       <p class="editorial-intro">
         汇集官方明确欢迎本科生参与的研究方向与实验室。线索不代表当前有名额，参与条件和安排请查阅官方说明并联系相关团队。
@@ -210,36 +221,11 @@ onBeforeUnmount(() => controller?.abort())
         </div>
       </div>
       <div v-else class="editorial-grid">
-        <article
-          v-for="item in laboratories"
+        <ProjectOpportunityCard
+          v-for="item in laboratories.slice(0, 3)"
           :key="item.id"
-          class="editorial-card"
-        >
-          <p class="editorial-meta">{{ item.unit || '官方科研线索' }}</p>
-          <h3>{{ item.title }}</h3>
-          <p class="preserve-lines">{{ item.summary }}</p>
-          <p v-if="item.participation" class="editorial-participation">
-            {{ item.participation }}
-          </p>
-          <p v-if="item.evidenceNote" class="field-hint preserve-lines">
-            {{ item.evidenceNote }}
-          </p>
-          <p v-if="item.date || item.verifiedOn" class="timestamp">
-            <span>原文日期：{{ formatDate(item.date) }}</span
-            ><span v-if="item.verifiedOn"> · </span
-            ><span v-if="item.verifiedOn"
-              >核验：{{ formatDate(item.verifiedOn) }}</span
-            >
-          </p>
-          <a
-            v-if="safeExternalUrl(item.sourceUrl)"
-            class="more-link"
-            :href="safeExternalUrl(item.sourceUrl)"
-            target="_blank"
-            rel="noopener noreferrer"
-            >查阅官方说明 ↗</a
-          >
-        </article>
+          :item="item"
+        />
       </div>
     </section>
     <section class="home-vision">

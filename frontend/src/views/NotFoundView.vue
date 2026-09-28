@@ -13,7 +13,7 @@ import AppIcon from '../components/AppIcon.vue'
       ><RouterLink
         class="action-button secondary"
         :to="{ name: 'competitions' }"
-        >发现赛事</RouterLink
+        >前往信息中心</RouterLink
       >
     </div>
   </section>

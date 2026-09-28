@@ -132,6 +132,7 @@ async function findCompetitions(page = 1) {
         page,
         page_size: 10,
         recruitment_open: true,
+        time_status: 'all',
       },
       searchController.signal,
     )
