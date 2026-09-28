@@ -1,10 +1,19 @@
 export const levelLabels = {
-  unknown: '范围未注明', international: '国际', national: '全国',
-  provincial: '省级', municipal: '市级', university: '校级', college: '院系级', other: '其他',
+  unknown: '范围未注明',
+  international: '国际',
+  national: '全国',
+  provincial: '省级',
+  municipal: '市级',
+  university: '校级',
+  college: '院系级',
+  other: '其他',
 }
 
 export const participationLabels = {
-  unknown: '参赛形式未说明', individual: '个人赛', team: '团队赛', both: '个人或团队',
+  unknown: '参赛形式未说明',
+  individual: '个人赛',
+  team: '团队赛',
+  both: '个人或团队',
 }
 
 // 外部网址只接受明确的 HTTP(S) 地址，不把来源内容作为 HTML 执行。
@@ -12,14 +21,20 @@ export function safeExternalUrl(value) {
   if (typeof value !== 'string') return ''
   try {
     const url = new URL(value)
-    return ['http:', 'https:'].includes(url.protocol) && !url.username && !url.password ? url.href : ''
+    return ['http:', 'https:'].includes(url.protocol) &&
+      !url.username &&
+      !url.password
+      ? url.href
+      : ''
   } catch {
     return ''
   }
 }
 
 export function formatDate(value) {
-  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : '未注明'
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+    ? value
+    : '未注明'
 }
 
 // 日历日期不能被当成当地午夜；只有明确时刻才进行时区转换。
@@ -33,8 +48,14 @@ export function formatDeadline(record, field) {
   if (zone) {
     try {
       const formatted = new Intl.DateTimeFormat('zh-CN', {
-        timeZone: zone, year: 'numeric', month: '2-digit', day: '2-digit',
-        hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+        timeZone: zone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hourCycle: 'h23',
       }).format(date)
       return `${formatted}（${zone}）`
     } catch {
@@ -47,10 +68,16 @@ export function formatDeadline(record, field) {
 // 保留截止类型：后续作品提交日期不能掩盖已经截止的报名日期。
 export function summaryDeadline(record) {
   if (record.registration_deadline || record.registration_deadline_at) {
-    return { label: '报名截止', value: formatDeadline(record, 'registration_deadline') }
+    return {
+      label: '报名截止',
+      value: formatDeadline(record, 'registration_deadline'),
+    }
   }
   if (record.submission_deadline || record.submission_deadline_at) {
-    return { label: '作品提交截止', value: formatDeadline(record, 'submission_deadline') }
+    return {
+      label: '作品提交截止',
+      value: formatDeadline(record, 'submission_deadline'),
+    }
   }
   return { label: '截止时间', value: '未注明' }
 }
@@ -59,8 +86,56 @@ export function formatUpdatedAt(value) {
   if (!value) return '未注明'
   const date = new Date(value)
   if (Number.isNaN(date.getTime())) return '未注明'
-  return new Intl.DateTimeFormat('zh-CN', {
-    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
-    hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
-  }).format(date) + '（北京时间）'
+  return (
+    new Intl.DateTimeFormat('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      hourCycle: 'h23',
+    }).format(date) + '（北京时间）'
+  )
+}
+
+export const competitionTimeOptions = [
+  { code: 'current', name: '当前' },
+  { code: 'expired', name: '历史' },
+  { code: 'all', name: '全部' },
+]
+
+export function normalizeTimeStatus(value) {
+  return competitionTimeOptions.some((item) => item.code === value)
+    ? value
+    : 'current'
+}
+
+export function competitionListQuery({
+  search = '',
+  category = '',
+  timeStatus = 'current',
+  page = 1,
+} = {}) {
+  const status = normalizeTimeStatus(timeStatus)
+  return {
+    ...(search ? { search } : {}),
+    ...(category ? { category } : {}),
+    ...(status !== 'current' ? { time_status: status } : {}),
+    ...(Number.isSafeInteger(page) && page > 1 ? { page } : {}),
+  }
+}
+
+// 以服务端时效为准；缺少状态或只有组队资格时，不能推断为正在报名。
+export function deadlineStatusLabel(record) {
+  if (
+    ['open', 'closed', 'unknown'].includes(record.deadline_status) &&
+    typeof record.deadline_status_label === 'string' &&
+    record.deadline_status_label.trim()
+  ) {
+    return record.deadline_status_label
+  }
+  return record.deadline_status === 'closed'
+    ? '已截止'
+    : '截止时间未明确，请查阅官方通知'
 }
