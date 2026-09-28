@@ -1,0 +1,103 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    .library-intro { max-width: 1000px; line-height: 1.8; }
+    .library-stats { display: flex; gap: 14px; margin: 20px 0; }
+    .library-stats span { padding: 15px 22px; border: 1px solid var(--hairline-color); border-radius: 8px; background: var(--darkened-bg); }
+    .library-stats strong { font-size: 23px; margin-right: 8px; }
+    .library-filter { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; margin: 22px 0; }
+    .library-filter label { display: block; margin-bottom: 6px; }
+    .library-filter input[type=search] { min-width: 260px; padding: 8px; }
+    .library-filter select { min-height: 36px; }
+    .library-table { width: 100%; margin-top: 20px; }
+    .library-table td { vertical-align: top; line-height: 1.6; }
+    .library-table .title { min-width: 230px; }
+    .library-table small { display: block; color: var(--body-quiet-color); }
+    .library-pagination { display: flex; gap: 18px; align-items: center; padding: 20px 0; }
+    .library-readonly { display: inline-block; font-size: 12px; font-weight: normal; padding: 4px 9px; border-radius: 4px; background: var(--darkened-bg); margin-left: 10px; }
+  </style>
+{% endblock %}
+
+{% block breadcrumbs %}
+  <div class="breadcrumbs"><a href="{% url 'admin:index' %}">管理首页</a> &rsaquo; 信息库</div>
+{% endblock %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+  <h1>信息库 <span class="library-readonly">内部 · 只读</span></h1>
+  <p class="library-intro">集中查看赛事、项目招募与快讯，保留原始来源、时间和内容状态。这里只显示你有权查看的类型，旧演示数据不进入信息库。内部检索仅使用已发布、有核验依据的内容；历史或待复核线索会保留提示，不能直接解释为当前可报名或仍有名额。</p>
+  {% if perms.competition_catalog.view_catalogentry %}
+    <p><a href="{% url 'admin:competition_catalog_catalogentry_changelist' %}">学校赛事目录</a>
+    {% if perms.competition_catalog.view_officialsite %} · <a href="{% url 'admin:competition_catalog_officialsite_changelist' %}">官网监测状态</a>{% endif %}
+    {% if perms.competition_catalog.view_officialnotice %} · <a href="{% url 'admin:competition_catalog_officialnotice_changelist' %}">待处理官网通知</a>{% endif %}</p>
+  {% endif %}
+  <div class="library-stats">
+    <span><strong>{{ page_obj.paginator.count }}</strong>筛选结果</span>
+    <span><strong>{{ ai_count }}</strong>可供内部检索</span>
+  </div>
+  <form method="get" class="library-filter">
+    <div>
+      <label for="library-q">关键词</label>
+      <input id="library-q" name="q" type="search" maxlength="200" value="{{ q }}" placeholder="搜索标题或内容">
+    </div>
+    <div>
+      <label for="library-kind">内容类型</label>
+      <select id="library-kind" name="kind">
+        <option value="">全部可见类型</option>
+        {% for key,label in kind_options %}
+          <option value="{{ key }}" {% if kind == key %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label for="library-status">发布状态</label>
+      <select id="library-status" name="status">
+        <option value="">全部状态</option>
+        {% for key,label in status_options %}
+          <option value="{{ key }}" {% if status == key %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="button">筛选</button>
+    <a href="{% url 'information_library:index' %}">重置</a>
+  </form>
+  <div style="overflow-x:auto">
+    <table class="library-table">
+      <thead>
+        <tr><th>内容</th><th>类型 / 发布状态</th><th>来源发布日期</th><th>核验时间</th><th>内容更新时间</th></tr>
+      </thead>
+      <tbody>
+        {% for row in page_obj %}
+          <tr>
+            <td class="title">
+              <a href="{% url 'information_library:detail' row.kind row.id %}">{{ row.title }}</a>
+              <small>{{ row.status_note }}</small>
+            </td>
+            <td>{{ row.kind_label }}<small>{{ row.status_label }}</small></td>
+            <td>
+              {% for source in row.source_dates %}
+                {{ source.published_on|default:"未注明" }}{% if not forloop.last %}<br>{% endif %}
+              {% empty %}未注明{% endfor %}
+            </td>
+            <td>{{ row.verified_at|default:"未核验" }}</td>
+            <td>{{ row.updated_at|default:"未记录" }}</td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5">暂无符合条件的内容。真实内容尚未收录时保持为空，不以演示记录补充。</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="library-pagination">
+    {% if page_obj.has_previous %}
+      <a href="?{{ filters }}&amp;page={{ page_obj.previous_page_number }}">上一页</a>
+    {% endif %}
+    <span>第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 页</span>
+    {% if page_obj.has_next %}
+      <a href="?{{ filters }}&amp;page={{ page_obj.next_page_number }}">下一页</a>
+    {% endif %}
+  </div>
+  <p>信息库尚不支持在线编辑；维护位置见各条详情。这里只准备内部检索数据，尚未连接 AI 模型。</p>
+{% endblock %}
