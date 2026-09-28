@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | 创享管理后台{% endblock %}
+{% block branding %}
+<div id="site-name"><a href="{% url 'admin:index' %}">创享管理后台</a></div>
+{% endblock %}
+{% block nav-global %}
+{% if user.is_active and user.is_staff %}
+  {% if perms.competitions.view_competition or perms.competitions.change_competition or perms.research.view_researchopportunity or perms.research.change_researchopportunity or perms.newsletters.view_newsletter or perms.newsletters.change_newsletter %}
+    <a href="{% url 'information_library:index' %}" style="margin: 0 20px; white-space: nowrap;">信息库</a>
+  {% endif %}
+{% endif %}
+{% endblock %}
