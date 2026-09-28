@@ -17,3 +17,4 @@ PASSWORD_HASHERS = ['django.contrib.auth.hashers.MD5PasswordHasher']
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
 SECURE_SSL_REDIRECT = False
+COMPETITION_CATALOG_ONLY = False  # 目录专项测试显式开启。
