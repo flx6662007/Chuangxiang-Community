@@ -6,6 +6,7 @@ import {
   levelLabels,
   participationLabels,
   safeExternalUrl,
+  deadlineStatusLabel,
 } from '../utils/competition'
 import AppIcon from './AppIcon.vue'
 
@@ -54,6 +55,7 @@ const detailLink = computed(() => ({
           '参赛形式未说明'
         }}</span>
       </div>
+      <p class="muted">{{ deadlineStatusLabel(competition) }}</p>
       <p class="competition-card__summary">
         {{ competition.summary || '简介待补充' }}
       </p>
