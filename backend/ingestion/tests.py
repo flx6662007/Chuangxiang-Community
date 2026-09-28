@@ -184,6 +184,34 @@ class AdapterTests(SimpleTestCase):
         finally:
             client.close()
 
+    def test_robots_rate_and_delay_control_article_requests(self):
+        def handle(request):
+            return httpx.Response(200, text=(
+                'User-agent: *\nCrawl-delay: 2\nRequest-rate: 1/5\n'
+                if request.url.path == '/robots.txt' else '<p>OK</p>'))
+        client = OfficialClient(ADAPTERS['aicomp'].hosts, transport=httpx.MockTransport(handle), resolve=False, interval=0)
+        try:
+            with patch('ingestion.http.time.sleep') as sleep:
+                client.get(AIC_URL)
+                self.assertEqual(client.interval, 5)
+                self.assertTrue(any(call.args[0] > 4 for call in sleep.call_args_list))
+        finally:
+            client.close()
+
+    def test_unsupported_long_robots_delay_does_not_request_article(self):
+        seen = []
+        def handle(request):
+            seen.append(request.url.path)
+            return httpx.Response(200, text='User-agent: *\nCrawl-delay: 120\n')
+        client = OfficialClient(ADAPTERS['aicomp'].hosts, transport=httpx.MockTransport(handle), resolve=False, interval=0)
+        try:
+            with self.assertRaises(FetchError) as caught:
+                client.get(AIC_URL)
+            self.assertEqual(caught.exception.code, 'robots_delay_unsupported')
+            self.assertEqual(seen, ['/robots.txt'])
+        finally:
+            client.close()
+
     def test_public_resolver_cannot_authorize_private_ip(self):
         seen = []
         def handle(request):
