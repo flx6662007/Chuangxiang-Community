@@ -4,11 +4,14 @@
 
 | 要做的事情 | 入口 |
 | --- | --- |
+| 第一次阅读项目代码 | [代码导读：从一次赛事请求开始](code-guide.md) |
+| 学校目录与官网实测情况 | [255 项采集覆盖表](competition-catalog-coverage.md) · [持续监测机制](competition-discovery.md) |
 | 启动项目 | [后端开发](backend-development.md) · [前端开发](../frontend/README.md) |
 | 找到要改的代码 | [后端目录](../backend/README.md) · [前端实现](frontend-implementation.md) |
 | 对接接口 | [赛事与账号](api.md) · [组队](api-teams.md) · [举报与申诉](api-governance.md) |
 | 扩展赛事来源 | [采集实现](ingestion-implementation.md) · [来源清单](competition-sources.md) · [定时任务](maintenance.md) |
 | 编辑快讯与科研线索 | [编辑说明及本科科研依据](undergraduate-labs.md) |
+| 查看统一后台内容、给 AI 提供资料 | [只读信息库与内部检索](information-library.md) |
 | 调整数据结构 | [数据库字段与约束](database-fields.md) · [用户字段](user-fields-table.md) · [赛事字段](competition-fields-table.md) · [其他字段](remaining-fields-table.md) |
 | 了解 AI 与部署准备 | [AI 服务](ai-services.md) · [部署](deployment.md) · [费用清单](procurement.md) |
 | 复查本轮验收 | [组队页面](browser-acceptance-2026-09-26.md) · [首批真实采集](ingestion-acceptance-2026-09-26.md) · [举报与申诉](governance-acceptance-2026-09-26.md) |

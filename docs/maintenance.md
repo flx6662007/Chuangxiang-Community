@@ -8,6 +8,7 @@
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py seed_recruitment_options
+.\.venv\Scripts\python.exe manage.py init_competition_catalog
 ```
 
 由具备赛事维护权限的管理员运行首次采集。`12` 仅为编号示例，要替换为本机实际管理员编号；项目不提供默认密码，也不要求提交密码到命令或 GitHub。
@@ -48,6 +49,8 @@ Get-ScheduledTaskInfo -TaskName 'Chuangxiang-TeamSettlement'
 
 任务在隐藏窗口运行，不存储 Windows 密码。休眠和关机期间无法运行；恢复后由系统尽早补跑。每分钟结算可能产生约一分钟可见延迟，但关键写入也会先检查期限，不能通过延迟结算抢占过期名额。
 
+采集脚本先运行已适配的 `sync_competitions`，再运行 `sync_competition_catalog --limit 300 --max-pages 3`。后者按学校目录监测已核实官网，只把页面、附件链接和版本存入后台，不自动生成正式赛事卡片。共享官网复用当轮响应；失败入口退避，最长 72 小时再试。来源失败不会阻止其余入口运行，但脚本会保留非零退出码。目录清单和实际成功数量分别记录，见[目录采集说明](competition-discovery.md)。
+
 手动触发与停止后续调度：
 
 ```powershell
@@ -63,6 +66,7 @@ Disable-ScheduledTask -TaskName 'Chuangxiang-TeamSettlement'
 
 - 脚本最新日志在仓库 `.local/maintenance/ingest-latest.log` 和 `settle-latest.log`，不提交 GitHub。
 - 每次采集的持久记录在 Admin 的 `FetchRun`，原文在 `SourceVersion`，候选与采纳结论在 `ProcessingResult`。
+- 学校目录官网监测另在后台“学校赛事目录与官网监测”中查看入口、原文和运行记录；目录有 255 项不代表 255 个官网都已接通。
 - 来源超时或解析失败不会清空已发布数据；查看失败原因，修正适配器后手动重试。
 - 想增加官网，应添加有样本和测试的适配器。只粘贴新网址不会自动理解任意网页。
 - 后续迁移到持续运行的 Linux 主机，继续调用同一 Django 命令，再用主机调度替代 Windows 任务计划。
