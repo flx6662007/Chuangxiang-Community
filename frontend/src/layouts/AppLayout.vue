@@ -15,9 +15,9 @@ import AppIcon from '../components/AppIcon.vue'
           <RouterLink to="/" exact-active-class="is-active">首页</RouterLink>
           <RouterLink
             :to="{ name: 'competitions' }"
-            :class="{ 'is-active': $route.path.startsWith('/competitions') }"
+            :class="{ 'is-active': $route.path.startsWith('/information') || $route.path.startsWith('/competitions') }"
           >
-            赛事中心
+            信息中心
           </RouterLink>
           <RouterLink :to="{ name: 'account' }" exact-active-class="is-active"
             >我的账号</RouterLink
@@ -47,7 +47,7 @@ import AppIcon from '../components/AppIcon.vue'
         <span class="footer-brand">创享 · 让好想法找到起点</span
         ><span>创新俱乐部</span>
       </div>
-      <p>赛事信息以官方通知为准</p>
+      <p>赛事与项目参与要求以官方说明为准</p>
     </footer>
   </el-container>
 </template>
