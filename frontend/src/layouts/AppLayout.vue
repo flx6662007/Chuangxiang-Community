@@ -2,7 +2,13 @@
 import AppIcon from '../components/AppIcon.vue'
 </script>
 <template>
-  <el-container class="app-shell" :class="{ 'is-home': $route.name === 'home' }">
+  <el-container
+    class="app-shell"
+    :class="{
+      'is-home': $route.name === 'home',
+      'is-editorial-page': ['competitions', 'research-projects'].includes($route.name),
+    }"
+  >
     <el-header class="app-header">
       <div class="app-header-inner">
         <RouterLink class="brand" to="/" aria-label="创享平台首页"

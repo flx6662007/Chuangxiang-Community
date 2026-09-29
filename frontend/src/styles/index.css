@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 body {
-  min-width: 360px;
+  min-width: 320px;
   margin: 0;
 }
 button,

@@ -53,16 +53,14 @@ watch(
 
 <template>
   <section class="project-page" aria-labelledby="projects-title">
-    <div class="section-heading">
-      <h2 id="projects-title">项目招募</h2>
-      <span class="editorial-label">官方科研线索</span>
+    <div v-reveal class="project-intro">
+      <span class="inner-kicker">RESEARCH INDEX</span>
+      <h2 id="projects-title">把好奇心带进实验室。</h2>
+      <p>阅读真实来源，找到与你的兴趣相交的研究方向。</p>
     </div>
-    <p class="editorial-intro">
-      本科科研与实验室参与机会，具体安排以官方说明为准。
-    </p>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
       <AppIcon name="search" :size="19" />
-      <label class="sr-only" for="project-search">搜索项目招募</label>
+      <label class="sr-only" for="project-search">搜索科研线索</label>
       <input
         id="project-search"
         v-model="searchInput"
@@ -85,17 +83,18 @@ watch(
     </p>
     <div class="list-summary" role="status" aria-live="polite">
       <span>{{
-        search ? '“' + search + '” 的搜索结果' : '全部项目招募线索'
+        search ? '“' + search + '” 的搜索结果' : '全部科研线索'
       }}</span>
       <span
         >共 <strong>{{ items.length }}</strong> 条线索</span
       >
     </div>
-    <div v-if="items.length" class="editorial-grid">
+    <div v-if="items.length" v-reveal class="research-editorial-list">
       <ProjectOpportunityCard
-        v-for="item in items"
+        v-for="(item, index) in items"
         :key="item.id"
         :item="item"
+        :index="index + 1"
       />
     </div>
     <div v-else class="state-panel compact-state">

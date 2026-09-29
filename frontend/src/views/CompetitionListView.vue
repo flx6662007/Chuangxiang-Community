@@ -147,7 +147,13 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="competition-page" aria-labelledby="competition-title">
-    <h2 id="competition-title" class="sr-only">赛事讯息</h2>
+    <div v-reveal class="competition-intro">
+      <div>
+        <span class="inner-kicker">COMPETITION INDEX</span>
+        <h2 id="competition-title">探索赛事</h2>
+      </div>
+      <p>名称、方向、时间与来源，一起看清这场比赛是否适合你。</p>
+    </div>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
       <AppIcon name="search" :size="19" /><label
         class="sr-only"
@@ -163,54 +169,42 @@ onBeforeUnmount(() => {
       />
       <button class="action-button" type="submit">搜索</button>
     </form>
-    <div class="category-tabs" aria-label="赛事分类">
-      <button :class="{ selected: !category }" @click="selectCategory('')">
-        全部分类</button
-      ><button
-        v-for="option in categories"
-        :key="option.code"
-        :class="{ selected: category === option.code }"
-        @click="selectCategory(option.code)"
-      >
-        {{ option.name }}</button
-      ><span v-if="categoryError" role="alert"
-        >{{ categoryError }}
-        <button class="text-button" @click="loadCategories">重试</button></span
-      >
-    </div>
-    <div class="category-tabs" aria-label="赛事时效">
-      <button
-        v-for="option in competitionTimeOptions"
-        :key="option.code"
-        :class="{ selected: timeStatus === option.code }"
-        :aria-pressed="timeStatus === option.code"
-        @click="selectTimeStatus(option.code)"
-      >
-        {{ option.name }}
-      </button>
-    </div>
-    <p class="muted">
-      当前赛事包括未明确截止的赛事；时间未知不代表正在报名。历史赛事保留官方信息与既有组队记录。
-    </p>
-    <div class="competition-content">
-      <aside class="competition-sidebar" aria-label="赛事导航">
-        <div class="sidebar-title">EXPLORE / 赛事导航</div>
-        <RouterLink class="sidebar-active" :to="{ name: 'competitions' }"
-          ><AppIcon name="trophy" :size="19" />全部赛事</RouterLink
+    <div v-reveal class="competition-filters">
+      <div class="filter-heading"><span>01 / CATEGORY</span><strong>按方向筛选</strong></div>
+      <div class="category-tabs competition-category-tabs" aria-label="赛事分类">
+        <button :class="{ selected: !category }" @click="selectCategory('')">
+          全部分类
+        </button>
+        <button
+          v-for="option in categories"
+          :key="option.code"
+          :class="{ selected: category === option.code }"
+          @click="selectCategory(option.code)"
         >
-        <div class="sidebar-note">
-          <h2>找到你的参赛方向</h2>
-          <p>用赛事名称、感兴趣的关键词或主办单位搜索。</p>
-        </div>
-        <div class="sidebar-illustration">
-          <AppIcon name="book" :size="42" />
-          <p>每一次探索<br />都是新的开始</p>
-        </div>
-        <div class="sidebar-note">
-          <h2>查阅提示</h2>
-          <p>报名要求与截止时间以赛事官方通知为准。</p>
-        </div>
-      </aside>
+          {{ option.name }}
+        </button>
+        <span v-if="categoryError" role="alert">
+          {{ categoryError }}
+          <button class="text-button" @click="loadCategories">重试</button>
+        </span>
+      </div>
+      <div class="filter-heading"><span>02 / TIMELINE</span><strong>按时效筛选</strong></div>
+      <div class="category-tabs competition-time-tabs" aria-label="赛事时效">
+        <button
+          v-for="option in competitionTimeOptions"
+          :key="option.code"
+          :class="{ selected: timeStatus === option.code }"
+          :aria-pressed="timeStatus === option.code"
+          @click="selectTimeStatus(option.code)"
+        >
+          {{ option.name }}
+        </button>
+      </div>
+      <p class="competition-filter-note">
+        当前赛事包括未明确截止的赛事；时间未知不代表正在报名。历史赛事保留官方信息与既有组队记录。
+      </p>
+    </div>
+    <div v-reveal class="competition-content">
       <div class="competition-results">
         <div class="list-summary">
           <span

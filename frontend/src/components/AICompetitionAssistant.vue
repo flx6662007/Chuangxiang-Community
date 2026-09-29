@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
     <div class="section-heading ai-assistant-heading">
       <div>
         <span class="section-kicker">✦ CHUANGXIANG AI / FRONTEND DEMO</span>
-        <h2 id="ai-assistant-title">不知道参加什么？<br />告诉我你会什么。</h2>
+        <h2 id="ai-assistant-title">不知道参加什么？<br /><span>告诉我你会什么。</span></h2>
       </div>
       <span class="editorial-label">前端功能演示</span>
     </div>

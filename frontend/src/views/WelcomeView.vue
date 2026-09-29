@@ -140,12 +140,14 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <div id="ai" class="home-dark home-ai"><div class="home-wrap"><AICompetitionAssistant /></div></div>
+    <div id="ai" class="home-dark home-ai"><div v-reveal class="home-wrap"><AICompetitionAssistant /></div></div>
+
+    <div class="home-transition home-transition-to-light" aria-hidden="true"></div>
 
     <section id="discover" class="home-light home-discover" aria-labelledby="discover-title">
-      <div class="home-wrap">
+      <div v-reveal class="home-wrap">
         <header class="home-section-heading">
-          <div><span class="home-kicker">01 / DISCOVER</span><h2 id="discover-title">最近，<br />有什么值得参加？</h2></div>
+          <div><span class="home-kicker">01 / DISCOVER</span><h2 id="discover-title">最近，<br /><span>有什么值得参加？</span></h2></div>
           <RouterLink class="home-more" :to="{ name: 'competitions' }">VIEW ALL <span>↗</span></RouterLink>
         </header>
         <p class="home-intro">{{ isVisualPreview ? '以下是版式占位示例；真实赛事与时间请进入赛事列表核对。' : '从真实收录的赛事开始探索。时间未知不代表正在报名，请以官方通知为准。' }}</p>
@@ -163,9 +165,9 @@ onBeforeUnmount(() => {
     </section>
 
     <section id="research" class="home-light home-research" aria-labelledby="research-title">
-      <div class="home-wrap">
+      <div v-reveal class="home-wrap">
         <header class="home-section-heading">
-          <div><span class="home-kicker">02 / RESEARCH</span><h2 id="research-title">加入真正的研究。</h2></div>
+          <div><span class="home-kicker">02 / RESEARCH</span><h2 id="research-title">加入<span>真正的研究。</span></h2></div>
           <RouterLink class="home-more" :to="{ name: 'research-projects' }">VIEW ALL <span>↗</span></RouterLink>
         </header>
         <p class="home-intro">来自官方页面的本科科研线索。具体课题、条件与当前名额请向相关团队确认。</p>
@@ -181,9 +183,11 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
+    <div class="home-transition home-transition-to-dark" aria-hidden="true"></div>
+
     <section id="together" class="home-dark home-together" aria-labelledby="together-title">
-      <div class="home-wrap">
-        <header class="home-section-heading"><div><span class="home-kicker">03 / TOGETHER</span><h2 id="together-title">找到一起把想法<br />做出来的人。</h2></div><RouterLink class="home-more" :to="{ name: 'teams' }">EXPLORE TEAMS <span>↗</span></RouterLink></header>
+      <div v-reveal class="home-wrap">
+        <header class="home-section-heading"><div><span class="home-kicker">03 / TOGETHER</span><h2 id="together-title">找到一起把想法<br /><span>做出来的人。</span></h2></div><RouterLink class="home-more" :to="{ name: 'teams' }">EXPLORE TEAMS <span>↗</span></RouterLink></header>
         <p class="home-intro">{{ isVisualPreview ? '以下团队为视觉占位；真实招募请进入团队广场查看。' : '围绕真实赛事组队，让不同能力的人找到共同的目标。' }}</p>
         <div v-if="teamsLoading" class="home-state" role="status">正在加载招募…</div>
         <div v-else-if="teamsError" class="home-state" role="alert">暂时无法加载招募。<button type="button" @click="loadTeams">重新加载 ↗</button></div>
@@ -199,10 +203,13 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section id="newsletters" class="home-light home-briefing" aria-labelledby="briefing-title"><div class="home-wrap">
-      <header class="home-section-heading"><div><span class="home-kicker">04 / BRIEFING</span><h2 id="briefing-title">这周，<br />科创圈发生了什么？</h2></div><span class="briefing-aside">创享快讯 / 团队整理</span></header>
+    <div class="home-transition home-transition-to-light" aria-hidden="true"></div>
+
+    <section id="newsletters" class="home-light home-briefing" aria-labelledby="briefing-title"><div v-reveal class="home-wrap">
+      <header class="home-section-heading"><div><span class="home-kicker">04 / BRIEFING</span><h2 id="briefing-title">这周，<br /><span>科创圈发生了什么？</span></h2></div><span class="briefing-aside">创享快讯 / 团队整理</span></header>
       <div v-if="!newsletters.length" class="briefing-empty"><span>01</span><div><h3>创享快讯正在筹备</h3><p>团队会在核实来源后，把值得关注的科创动态放在这里。</p></div><span>✦</span></div>
       <div v-else class="briefing-list"><article v-for="(item, index) in newsletters" :key="item.id" class="briefing-row"><span>{{ String(index + 1).padStart(2, '0') }}</span><div><h3>{{ item.title }}</h3><p>{{ item.summary }}</p></div><time :datetime="item.date || undefined">{{ item.date || '日期未注明' }}</time><a v-if="safeExternalUrl(item.sourceUrl)" :href="safeExternalUrl(item.sourceUrl)" target="_blank" rel="noopener noreferrer" :aria-label="`阅读${item.title}的来源`">↗</a></article></div>
     </div></section>
+    <div class="home-transition home-transition-to-footer" aria-hidden="true"></div>
   </div>
 </template>

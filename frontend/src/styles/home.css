@@ -330,3 +330,47 @@
   .welcome .briefing-row time { grid-column: 2; }
   .welcome .briefing-row a { grid-column: 3; grid-row: 1; }
 }
+
+/* Quiet transitions and motion shared by the home sections. */
+.welcome .home-transition { position: relative; height: clamp(110px, 12vw, 184px); overflow: hidden; pointer-events: none; }
+.welcome .home-transition-to-light { background: linear-gradient(180deg, #101824 0%, #26384d 29%, #73849a 64%, #f4f3f0 100%); }
+.welcome .home-transition-to-dark { background: linear-gradient(180deg, #f4f3f0 0%, #a5aeb6 32%, #34465a 70%, #101824 100%); }
+.welcome .home-transition-to-footer { height: clamp(100px, 10vw, 150px); background: linear-gradient(180deg, #f4f3f0 0%, #8e9aab 42%, #26364a 75%, #080d15 100%); }
+.welcome .home-transition::after { content: ''; position: absolute; width: 62%; height: 150%; right: -8%; top: -25%; background: radial-gradient(ellipse, #a9c6ec28 0, transparent 62%); -webkit-mask-image: linear-gradient(transparent, #000 25%, #000 70%, transparent); mask-image: linear-gradient(transparent, #000 25%, #000 70%, transparent); }
+.welcome .hero-copy h1 span,
+.welcome .home-section-heading h2 span,
+.welcome .ai-assistant-heading h2 span { font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif; font-weight: 500; font-style: normal; }
+.welcome .art-orbit-outer { animation: home-orbit 65s linear infinite; }
+.welcome .art-orbit-inner { animation: home-orbit 86s linear infinite reverse; }
+.welcome .art-spark { animation: home-spark 9s ease-in-out infinite; }
+.welcome .discover-item,
+.welcome .team-preview { transition: transform .32s ease, background-color .32s ease, border-color .32s ease, box-shadow .32s ease; }
+.welcome .discover-item:hover,
+.welcome .team-preview:hover { transform: translateY(-3px); box-shadow: 0 15px 32px #0f243020; }
+.welcome .home-more span,
+.welcome .start-arrow,
+.welcome .research-arrow,
+.welcome .discover-top > span:last-child { display: inline-block; transition: transform .3s ease; }
+.welcome .home-more:hover span,
+.welcome .start-links a:hover .start-arrow,
+.welcome .research-row:hover .research-arrow,
+.welcome .discover-item:hover .discover-top > span:last-child { transform: translate(3px, -2px); }
+@keyframes home-orbit { to { transform: rotate(360deg); } }
+@keyframes home-spark { 50% { transform: translateY(-11px) scale(1.04); } }
+@media (prefers-reduced-motion: reduce) {
+  .welcome .art-orbit-outer,
+  .welcome .art-orbit-inner,
+  .welcome .art-spark { animation: none; }
+  .welcome .discover-item,
+  .welcome .team-preview,
+  .welcome .home-more span,
+  .welcome .start-arrow,
+  .welcome .research-arrow,
+  .welcome .discover-top > span:last-child { transition: none; }
+  .welcome .discover-item:hover,
+  .welcome .team-preview:hover,
+  .welcome .home-more:hover span,
+  .welcome .start-links a:hover .start-arrow,
+  .welcome .research-row:hover .research-arrow,
+  .welcome .discover-item:hover .discover-top > span:last-child { transform: none; }
+}

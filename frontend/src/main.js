@@ -10,10 +10,13 @@ import App from './App.vue'
 import router from './router'
 import './styles/index.css'
 import './styles/home.css'
+import './styles/information.css'
+import reveal from './directives/reveal'
 
 const app = createApp(App)
 
 app.use(router)
+app.directive('reveal', reveal)
 app.component(ElCard.name, ElCard)
 app.component(ElContainer.name, ElContainer)
 app.component(ElHeader.name, ElHeader)
