@@ -35,6 +35,7 @@ def related_title(site, title):
 def discover(site, page):
     """只跟随已核对域名，不根据正文自行扩大站点范围。"""
     urls = []
+    priorities = {}
     for anchor in BeautifulSoup(page.text, 'html.parser').select('a[href]'):
         title = anchor.get_text(' ', strip=True)
         if not (related_title(site, title) or (site.dedicated and NOTICE_WORDS.search(title))):
@@ -48,7 +49,21 @@ def discover(site, page):
             continue
         if url not in urls and url != page.url:
             urls.append(url)
-    return urls
+            # New links with actual entry information precede result reports or old editions.
+            # This only prioritizes fetching; publication still requires independent extraction.
+            years = [int(value) for value in re.findall(r'20\d{2}', title)]
+            current_year = timezone.localdate().year
+            score = 0
+            if current_year in years or current_year + 1 in years:
+                score += 6
+            elif years and max(years) < current_year:
+                score -= 8
+            if re.search(r'报名|参赛指南|参赛说明|征集|征稿|竞赛通知|大赛通知|竞赛规程', title):
+                score += 4
+            if re.search(r'获奖|名单|公示|颁奖|圆满|成功举办|闭幕|图集|观赛|住宿|研学', title):
+                score -= 6
+            priorities[url] = score
+    return sorted(urls, key=lambda url: -priorities[url])
 
 
 def discover_indexes(site, page):
@@ -74,8 +89,9 @@ def discover_indexes(site, page):
 def parse_page(site, page, *, index=False):
     soup = BeautifulSoup(page.text, 'html.parser')
     root = None
-    for selector in ('article', '.article-content', '.v_news_content', '.wp_articlecontent',
-                     '.news_details_content', '.TRS_Editor', '.article-body', 'main'):
+    for selector in ('.v_news_content', '.wp_articlecontent', '.TRS_Editor', '.TRS_UEDITOR',
+                     '.article-content', '.news_details_content', '.article-body',
+                     '.entry-content', '#zoom', 'article', 'main'):
         root = soup.select_one(selector)
         if root:
             break
@@ -205,7 +221,8 @@ def sync_site(site, *, max_pages=3, session=None):
             observed = {row['url']: row['last_seen_at'] for row in
                         site.notices.filter(is_current_version=True).values('url', 'last_seen_at')}
             # 新通知优先，其余最久未读取先；历史链接仍可检查变更，但不会变成新届赛事。
-            known = [url for url in observed if url != page.url and urlsplit(url).hostname in site.allowed_hosts]
+            known = [url for url in observed if url != page.url and urlsplit(url).hostname in site.allowed_hosts
+                     and not ATTACHMENT.search(url)]
             urls = list(dict.fromkeys(urls + known))
             attempts = dict(site.page_attempts)
             urls.sort(key=lambda url: attempts.get(url, observed[url].timestamp() if url in observed else 0))
@@ -233,7 +250,14 @@ def sync_site(site, *, max_pages=3, session=None):
                         urls[position:] = remainder
                 except (FetchError, ValueError) as exc:
                     errors.append(f'{getattr(exc, "code", "parse_error")}: {str(exc)[:200]}')
-            site.page_attempts = dict(sorted(attempts.items(), key=lambda x: x[1], reverse=True)[:500])
+            # Keep separate bounded histories so attachment parsing does not displace
+            # normal HTML rotation, or vice versa. All writers share this site's lock.
+            attachment_attempts = {key: value for key, value in attempts.items() if key.startswith('attachment')}
+            html_attempts = {key: value for key, value in attempts.items() if not key.startswith('attachment')}
+            site.page_attempts = {
+                **dict(sorted(html_attempts.items(), key=lambda x: x[1], reverse=True)[:500]),
+                **dict(sorted(attachment_attempts.items(), key=lambda x: x[1], reverse=True)[:500]),
+            }
             if not run.pages:
                 run.status = 'failed'
             elif errors:
