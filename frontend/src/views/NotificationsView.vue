@@ -5,6 +5,7 @@ import { getSessionProfile } from '../api/accounts'
 import { listNotifications, readNotification } from '../api/notifications'
 import { notificationTarget, teamError, validPage } from '../utils/teams'
 import { formatUpdatedAt } from '../utils/competition'
+import AccountPageHeader from '../components/AccountPageHeader.vue'
 const route = useRoute(),
   router = useRouter(),
   items = ref([]),
@@ -80,17 +81,19 @@ onBeforeUnmount(() => {
 })
 </script>
 <template>
-  <section>
-    <header class="page-heading heading-with-actions">
-      <div>
-        <span class="section-kicker">NOTIFICATIONS</span>
-        <h1>系统通知</h1>
-        <p>阅读通知不会代替继续申请、确认入队或同意退出。</p>
-      </div>
-      <RouterLink class="action-button secondary" to="/account/teams"
-        >我的组队</RouterLink
-      >
-    </header>
+  <section class="account-subpage">
+    <AccountPageHeader
+      eyebrow="NOTIFICATIONS"
+      title="系统"
+      accent="通知。"
+      index="03"
+      description="阅读通知不会代替继续申请、确认入队或同意退出。"
+    />
+    <div class="account-content account-subpage-content">
+    <div class="account-subpage-intro">
+      <span class="inner-kicker">NOTIFICATIONS / 02</span>
+      <RouterLink class="action-button secondary" to="/account/teams">我的组队</RouterLink>
+    </div>
     <nav class="tab-nav" aria-label="通知筛选">
       <button :class="{ active: !unread }" @click="change(1, false)">
         全部通知</button
@@ -155,5 +158,6 @@ onBeforeUnmount(() => {
       background
       @update:current-page="change($event)"
     />
+    </div>
   </section>
 </template>

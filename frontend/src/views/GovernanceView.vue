@@ -18,6 +18,7 @@ import {
 } from '../utils/governance'
 import { validPage } from '../utils/teams'
 import { formatUpdatedAt } from '../utils/competition'
+import AccountPageHeader from '../components/AccountPageHeader.vue'
 const route = useRoute(),
   router = useRouter(),
   items = ref([]),
@@ -110,17 +111,19 @@ watch(
 )
 </script>
 <template>
-  <section>
-    <header class="page-heading heading-with-actions">
-      <div>
-        <span class="section-kicker">REPORTS & APPEALS</span>
-        <h1>我的举报与申诉</h1>
-        <p>仅显示本人记录。登录后即可使用，邮箱未核验或账号受限不影响提交。</p>
-      </div>
-      <RouterLink class="action-button secondary" to="/account"
-        >账号中心</RouterLink
-      >
-    </header>
+  <section class="account-subpage">
+    <AccountPageHeader
+      eyebrow="REPORTS & APPEALS"
+      title="举报与"
+      accent="申诉。"
+      index="04"
+      description="仅显示本人记录。登录后即可使用，邮箱未核验或账号受限不影响提交。"
+    />
+    <div class="account-content account-subpage-content">
+    <div class="account-subpage-intro">
+      <span class="inner-kicker">REPORTS & APPEALS / 03</span>
+      <RouterLink class="action-button secondary" to="/account">账户总览</RouterLink>
+    </div>
     <nav class="tab-nav" aria-label="举报与申诉分类">
       <button
         :class="{ active: tab === 'reports' }"
@@ -292,5 +295,6 @@ watch(
         @update:current-page="navigate(tab, $event)"
       />
     </template>
+    </div>
   </section>
 </template>

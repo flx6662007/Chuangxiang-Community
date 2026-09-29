@@ -12,8 +12,10 @@ import {
   verifyEmail,
 } from '../api/accounts'
 import { accountErrorMessages } from '../utils/account'
+import { accountOverview } from '../utils/accountOverview'
 import { formatUpdatedAt } from '../utils/competition'
 import AppIcon from '../components/AppIcon.vue'
+import AccountPageHeader from '../components/AccountPageHeader.vue'
 
 const user = ref(null)
 const initializing = ref(true)
@@ -47,6 +49,7 @@ const reasonLabels = {
   account_disabled: '账号已停用',
   login_required: '请先登录',
 }
+const overview = computed(() => accountOverview(user.value))
 let timer
 
 function updateUser(profile) {
@@ -206,12 +209,15 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="account-page" aria-labelledby="account-title">
-    <header class="page-heading">
-      <span class="section-kicker">MY ACCOUNT</span>
-      <h1 id="account-title">我的账号</h1>
-      <p>管理你的校园身份，准备下一次探索。</p>
-    </header>
+  <section class="account-page-shell">
+    <AccountPageHeader
+      eyebrow="MY ACCOUNT"
+      title="我的"
+      accent="账号。"
+      description="管理校园身份，也为下一次合作做好准备。"
+      :show-nav="!!user && !initializing"
+    />
+    <div class="account-content">
     <div v-if="errors.length" class="form-alert error" role="alert">
       <p v-for="(error, index) in errors" :key="index">{{ error }}</p>
       <button
@@ -230,16 +236,6 @@ onBeforeUnmount(() => {
     </div>
     <template v-else-if="!initializationFailed">
       <div v-if="!user" class="account-entry">
-        <aside class="account-intro">
-          <span class="service-icon"><AppIcon name="shield" :size="31" /></span>
-          <h2>连接校园，<br />从一个好想法开始。</h2>
-          <p>
-            使用学校邮箱建立你的创享账号。<br />赛事信息无需登录，即可自由浏览。
-          </p>
-          <RouterLink class="more-link" :to="{ name: 'competitions' }"
-            >先去发现赛事<AppIcon name="arrow" :size="17" /></RouterLink
-          ><AppIcon class="account-intro-art" name="spark" :size="210" />
-        </aside>
         <el-card class="account-panel" shadow="never">
           <div v-if="['login', 'signup'].includes(mode)" class="account-tabs">
             <button
@@ -361,29 +357,63 @@ onBeforeUnmount(() => {
             </button>
           </div>
         </el-card>
+        <aside class="account-intro">
+          <span class="account-intro-index">01 / START HERE</span>
+          <h2>连接校园，<br /><span>从一个好想法开始。</span></h2>
+          <p>使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。</p>
+          <RouterLink class="more-link" :to="{ name: 'competitions' }"
+            >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>
+          <span class="account-intro-note">从这里出发。</span>
+        </aside>
       </div>
       <template v-else>
-        <el-card class="detail-section" shadow="never">
-          <div class="account-heading">
-            <h2>账号资料</h2>
-            <button class="text-button" :disabled="!!busy" @click="logout">
-              {{ busy === 'logout' ? '正在退出…' : '退出登录' }}
-            </button>
+        <section class="account-overview" aria-labelledby="account-overview-title">
+          <div class="account-overview-main">
+            <div class="account-heading">
+              <div>
+                <span class="inner-kicker">01 / ACCOUNT OVERVIEW</span>
+                <h2 id="account-overview-title">账号总览</h2>
+              </div>
+              <button class="text-button" :disabled="!!busy" @click="logout">
+                {{ busy === 'logout' ? '正在退出…' : '退出登录' }}
+              </button>
+            </div>
+            <dl class="account-identity">
+              <div><dt>系统代号</dt><dd>{{ user.public_code }}</dd></div>
+              <div><dt>学校邮箱</dt><dd>{{ user.email }}</dd></div>
+              <div><dt>当前状态</dt><dd><span class="account-status">{{ overview.status }}</span></dd></div>
+            </dl>
           </div>
-          <dl class="detail-facts">
-            <div>
-              <dt>系统代号</dt>
-              <dd>{{ user.public_code }}</dd>
-            </div>
-            <div>
-              <dt>学校邮箱</dt>
-              <dd>{{ user.email }}</dd>
-            </div>
-            <div>
-              <dt>邮箱核验</dt>
-              <dd>{{ user.school_email_verified ? '已验证' : '待验证' }}</dd>
-            </div>
-          </dl>
+          <div class="account-next-step">
+            <span class="inner-kicker">NEXT STEP / 下一步</span>
+            <h3>{{ overview.title }}</h3>
+            <p>{{ overview.description }}</p>
+            <RouterLink class="account-next-link" :to="overview.to">
+              前往处理 <span aria-hidden="true">↗</span>
+            </RouterLink>
+          </div>
+        </section>
+        <section class="account-shortcuts" aria-labelledby="account-shortcuts-title">
+          <div class="account-section-heading">
+            <span class="inner-kicker">02 / YOUR SPACE</span>
+            <h2 id="account-shortcuts-title">与你有关</h2>
+          </div>
+          <div class="account-shortcut-grid">
+            <RouterLink :to="{ name: 'my-teams' }">我的组队 <span aria-hidden="true">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'notifications' }">系统通知 <span aria-hidden="true">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'governance' }">我的举报与申诉 <span aria-hidden="true">↗</span></RouterLink>
+          </div>
+        </section>
+        <div class="account-section-heading account-detail-heading">
+          <span class="inner-kicker">03 / ACCOUNT DETAILS</span>
+          <h2>账号设置与说明</h2>
+        </div>
+        <el-card id="email-verification" class="detail-section account-detail-section" shadow="never">
+          <div class="account-heading">
+            <h2>学校邮箱验证</h2>
+            <span class="account-section-state">{{ user.school_email_verified ? '已验证' : '待验证' }}</span>
+          </div>
+          <p v-if="user.school_email_verified" class="muted">学校邮箱已经核验。</p>
           <div v-if="!user.school_email_verified" class="verification-box">
             <p class="muted">
               核验需要收取学校邮箱中的验证码。注册成功后，请点击下方按钮发送。
@@ -427,7 +457,7 @@ onBeforeUnmount(() => {
             </p>
           </div>
         </el-card>
-        <el-card class="detail-section" shadow="never">
+        <el-card id="contact-details" class="detail-section account-detail-section" shadow="never">
           <h2>联系方式</h2>
           <p class="muted">
             微信号或手机号至少补充一项，用于后续组队联系。游客赛事页面不会展示这里的资料。
@@ -458,12 +488,12 @@ onBeforeUnmount(() => {
             </button>
           </form>
         </el-card>
-        <el-card class="detail-section" shadow="never">
+        <el-card id="account-status" class="detail-section account-detail-section" shadow="never">
           <h2>账号状态</h2>
           <p v-if="user.account_eligibility?.eligible">
             邮箱和联系方式已完善，账号当前满足新增发布与申请的基础条件。
           </p>
-          <ul v-else class="account-reasons">
+          <ul v-else-if="user.account_eligibility?.reasons?.length" class="account-reasons">
             <li
               v-for="reason in user.account_eligibility?.reasons || []"
               :key="reason"
@@ -471,6 +501,7 @@ onBeforeUnmount(() => {
               {{ reasonLabels[reason] || '账号状态待核实' }}
             </li>
           </ul>
+          <p v-else class="muted">账号资格状态待核实，请刷新状态后再尝试发布或申请。</p>
           <p v-if="user.account_eligibility?.restriction_ends_at" class="muted">
             限制到期：{{
               formatUpdatedAt(user.account_eligibility.restriction_ends_at)
@@ -493,5 +524,6 @@ onBeforeUnmount(() => {
         </el-card>
       </template>
     </template>
+    </div>
   </section>
 </template>

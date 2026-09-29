@@ -6,8 +6,9 @@ import AppIcon from '../components/AppIcon.vue'
     class="app-shell"
     :class="{
       'is-home': $route.name === 'home',
-      'is-editorial-page': ['competitions', 'research-projects', 'teams', 'recruitment-detail'].includes($route.name),
+      'is-editorial-page': ['competitions', 'research-projects', 'teams', 'recruitment-detail', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
       'is-team-page': ['teams', 'recruitment-detail'].includes($route.name),
+      'is-account-page': ['account', 'my-teams', 'notifications', 'governance'].includes($route.name),
     }"
   >
     <el-header class="app-header">

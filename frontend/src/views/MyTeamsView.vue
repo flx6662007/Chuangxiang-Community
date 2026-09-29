@@ -11,6 +11,7 @@ import {
 import { teamError, validPage } from '../utils/teams'
 import TeamPanel from '../components/TeamPanel.vue'
 import ApplicationPanel from '../components/ApplicationPanel.vue'
+import AccountPageHeader from '../components/AccountPageHeader.vue'
 const route = useRoute(),
   router = useRouter(),
   dictionaries = ref({}),
@@ -106,19 +107,19 @@ onBeforeUnmount(() => {
 })
 </script>
 <template>
-  <section>
-    <header class="page-heading heading-with-actions">
-      <div>
-        <span class="section-kicker">MY COLLABORATIONS</span>
-        <h1>我的组队</h1>
-        <p>处理申请、核对条件，记录每一次正式确认。</p>
-      </div>
-      <div class="button-row">
-        <RouterLink class="action-button secondary" to="/account/notifications"
-          >系统通知</RouterLink
-        ><RouterLink class="action-button" to="/teams">寻找伙伴</RouterLink>
-      </div>
-    </header>
+  <section class="account-subpage">
+    <AccountPageHeader
+      eyebrow="MY COLLABORATIONS"
+      title="我的"
+      accent="组队。"
+      index="02"
+      description="处理申请、核对条件，记录每一次正式确认。"
+    />
+    <div class="account-content account-subpage-content">
+    <div class="account-subpage-intro">
+      <span class="inner-kicker">MY COLLABORATIONS / 01</span>
+      <RouterLink class="action-button secondary" to="/teams">寻找伙伴</RouterLink>
+    </div>
     <nav class="tab-nav" aria-label="我的组队分类">
       <button :class="{ active: tab === 'teams' }" @click="routeTo('teams')">
         我的队伍与招募</button
@@ -195,5 +196,6 @@ onBeforeUnmount(() => {
         background
         @update:current-page="routeTo(tab, $event)"
     /></template>
+    </div>
   </section>
 </template>
