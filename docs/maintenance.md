@@ -47,9 +47,13 @@ Get-ScheduledTaskInfo -TaskName 'Chuangxiang-TeamSettlement'
 | `Chuangxiang-CompetitionSync` | 每 6 小时 | 获取启用官方来源、保存新版本和候选，受控采纳 |
 | `Chuangxiang-TeamSettlement` | 每分钟 | 结算招募到期、退出／移除及解散请求的固定期限 |
 
-任务在隐藏窗口运行，不存储 Windows 密码。休眠和关机期间无法运行；恢复后由系统尽早补跑。每分钟结算可能产生约一分钟可见延迟，但关键写入也会先检查期限，不能通过延迟结算抢占过期名额。
+任务直接使用虚拟环境的 `pythonw.exe` 运行 `deploy/windows/run-maintenance.py`，子进程通过 `CREATE_NO_WINDOW` 启动，避免每分钟闪出终端。无需存储 Windows 密码。原 `run-maintenance.ps1` 保留为手动入口，调用同一 Python 脚本。已有安装应重新运行安装脚本以更新任务入口；仅拉取代码不会修改 Windows 任务计划。
 
-采集脚本先运行已适配的 `sync_competitions`，再运行 `sync_competition_catalog --limit 300 --max-pages 3`。后者按学校目录监测已核实官网，只把页面、附件链接和版本存入后台，不自动生成正式赛事卡片。共享官网复用当轮响应；失败入口退避，最长 72 小时再试。来源失败不会阻止其余入口运行，但脚本会保留非零退出码。目录清单和实际成功数量分别记录，见[目录采集说明](competition-discovery.md)。
+休眠和关机期间无法运行；恢复后由系统尽早补跑。每分钟结算可能产生约一分钟可见延迟，但关键写入也会先检查期限，不能通过延迟结算抢占过期名额。
+
+采集脚本先运行已适配的 `sync_competitions`，再运行 `sync_competition_catalog --limit 300 --max-pages 3`。正文采集后运行 `process_catalog_notices --scheduled`，再尝试 PDF/DOCX 附件并再次提取。只有开启 `CATALOG_AUTO_PUBLISH`、配置现有维护账号且通过字段与原文校验的候选才上架；其余内容仍留后台。详见[赛事提取与上架](catalog-publication.md)。
+
+共享官网复用当轮响应；失败入口退避，最长 72 小时再试。来源失败不会阻止其余入口和后续提取，但脚本会保留非零退出码。目录清单和实际成功数量分别记录，见[目录采集说明](competition-discovery.md)。
 
 手动触发与停止后续调度：
 

@@ -6,6 +6,7 @@
 | --- | --- |
 | 第一次阅读项目代码 | [代码导读：从一次赛事请求开始](code-guide.md) |
 | 学校目录与官网实测情况 | [255 项采集覆盖表](competition-catalog-coverage.md) · [持续监测机制](competition-discovery.md) |
+| 从官网原文提取并上架赛事 | [赛事提取与上架](catalog-publication.md) · [9月29日逐项结果](catalog-extraction-2026-09-29.md) |
 | 启动项目 | [后端开发](backend-development.md) · [前端开发](../frontend/README.md) |
 | 找到要改的代码 | [后端目录](../backend/README.md) · [前端实现](frontend-implementation.md) |
 | 对接接口 | [赛事与账号](api.md) · [组队](api-teams.md) · [举报与申诉](api-governance.md) |

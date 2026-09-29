@@ -8,6 +8,7 @@ from django.urls import include, path
 from .models import Competition, CompetitionSource, CompetitionTaxonomy
 
 urlpatterns = [
+    path('admin/information-library/', include('information_library.urls')),
     path('admin/', admin.site.urls),
     path('api/v1/competitions/', include('competitions.urls')),
 ]

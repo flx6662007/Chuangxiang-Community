@@ -15,7 +15,10 @@ class TaxonomySerializer(serializers.ModelSerializer):
 class PublicSourceSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompetitionSource
-        fields = ('id', 'source_type', 'source_name', 'source_url', 'source_published_on')
+        fields = (
+            'id', 'source_type', 'source_name', 'source_url', 'source_published_on',
+            'source_updated_on', 'last_verified_at',
+        )
 
 
 class CompetitionListSerializer(serializers.ModelSerializer):
@@ -38,7 +41,8 @@ class CompetitionListSerializer(serializers.ModelSerializer):
         model = Competition
         fields = (
             'id', 'code', 'title', 'edition', 'summary', 'category', 'tags', 'level',
-            'participation_type', 'organizer', 'registration_deadline',
+            'participation_type', 'organizer', 'eligibility', 'team_size_min', 'team_size_max',
+            'registration_deadline',
             'registration_deadline_at', 'registration_deadline_timezone',
             'submission_deadline', 'submission_deadline_at', 'submission_deadline_timezone',
             'published_at', 'updated_at', 'last_verified_at', 'is_recruitment_open',
@@ -51,7 +55,7 @@ class CompetitionDetailSerializer(CompetitionListSerializer):
 
     class Meta(CompetitionListSerializer.Meta):
         fields = CompetitionListSerializer.Meta.fields + (
-            'description', 'tracks', 'eligibility', 'team_size_min', 'team_size_max',
+            'description', 'tracks',
             'registration_method', 'registration_url', 'campus_arrangements',
             'campus_deadline', 'campus_deadline_at', 'campus_deadline_timezone',
             'deadline_notes', 'recruitment_deadline', 'sources',

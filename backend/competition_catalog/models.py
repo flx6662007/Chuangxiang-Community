@@ -1,4 +1,7 @@
+from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
+from django.db.models import Q
 
 
 class CatalogEntry(models.Model):
@@ -98,3 +101,76 @@ class CatalogBinding(models.Model):
         constraints = [models.UniqueConstraint(fields=['entry', 'competition'], name='catalog_competition_unique')]
         verbose_name = '已发布赛事目录关联'
         verbose_name_plural = verbose_name
+
+
+class CatalogExtraction(models.Model):
+    """提取结果绑定不可变原文；普通后台不能编辑候选冒充核验。"""
+
+    notice = models.ForeignKey(OfficialNotice, on_delete=models.PROTECT, related_name='extractions')
+    source_hash = models.CharField('提取时原文哈希', max_length=64, editable=False)
+    candidate = models.JSONField('字段候选', default=dict, blank=True)
+    evidence = models.JSONField('字段原文依据', default=dict, blank=True)
+    missing_fields = models.JSONField('缺少字段', default=list, blank=True)
+    errors = models.JSONField('提取错误', default=list, blank=True)
+    rule_version = models.CharField('提取规则版本', max_length=100)
+    disposition = models.CharField('提取结论', max_length=16, choices=[
+        ('ready', '可进一步核验发布'), ('review', '待补充核对'),
+        ('irrelevant', '非赛事报名通知'), ('historical', '历史赛事'),
+    ])
+    status = models.CharField('处理状态', max_length=16, default='pending', choices=[
+        ('pending', '待处理'), ('published', '已关联发布'), ('rejected', '已拒绝'),
+    ])
+    competition = models.ForeignKey(
+        'competitions.Competition', on_delete=models.PROTECT, null=True, blank=True,
+        related_name='catalog_extractions', verbose_name='已发布赛事',
+    )
+    decision_mode = models.CharField('处理方式', max_length=16, blank=True, default='',
+                                     choices=[('rules', '规则复核'), ('human', '管理员复核')])
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT, null=True, blank=True,
+        related_name='reviewed_catalog_extractions', verbose_name='维护身份',
+    )
+    reviewed_at = models.DateTimeField('处理时间', null=True, blank=True)
+    review_note = models.CharField('处理说明', max_length=1000, blank=True, default='')
+    created_at = models.DateTimeField('提取时间', auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at', '-pk']
+        verbose_name = '官网赛事提取'
+        verbose_name_plural = verbose_name
+        constraints = [
+            models.UniqueConstraint(fields=['notice', 'rule_version'], name='catalog_extraction_version_unique'),
+            models.CheckConstraint(condition=Q(disposition__in=['ready', 'review', 'irrelevant', 'historical']),
+                                   name='catalog_extraction_disposition'),
+            models.CheckConstraint(
+                condition=Q(status='pending', competition__isnull=True, reviewed_by__isnull=True,
+                            reviewed_at__isnull=True, decision_mode='')
+                | Q(status='published', competition__isnull=False, reviewed_by__isnull=False,
+                    reviewed_at__isnull=False, decision_mode__in=['rules', 'human'])
+                | Q(status='rejected', competition__isnull=True, reviewed_by__isnull=False,
+                    reviewed_at__isnull=False, decision_mode='human'),
+                name='catalog_extraction_decision_pair',
+            ),
+        ]
+
+    def clean(self):
+        super().clean()
+        errors = {}
+        for field in ('candidate', 'evidence'):
+            if not isinstance(getattr(self, field), dict):
+                errors[field] = '必须是字段对象。'
+        for field in ('missing_fields', 'errors'):
+            value = getattr(self, field)
+            if not isinstance(value, list) or any(not isinstance(x, str) for x in value):
+                errors[field] = '必须是文字列表。'
+        if self.pk:
+            old = type(self).objects.get(pk=self.pk)
+            immutable = ('notice_id', 'source_hash', 'candidate', 'evidence',
+                         'missing_fields', 'errors', 'rule_version', 'disposition')
+            if any(getattr(self, field) != getattr(old, field) for field in immutable):
+                errors['candidate'] = '原文及提取结果不可改写；修正规则后使用新版本重新提取。'
+            if old.status != 'pending' and any(getattr(self, field) != getattr(old, field) for field in
+                    ('status', 'competition_id', 'decision_mode', 'reviewed_by_id', 'reviewed_at')):
+                errors['status'] = '已处理结论不能覆盖。'
+        if errors:
+            raise ValidationError(errors)
