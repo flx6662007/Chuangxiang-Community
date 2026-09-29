@@ -10,6 +10,13 @@ from urllib.robotparser import RobotFileParser
 import httpx
 
 USER_AGENT = 'ChuangxiangCompetitionSync/1.0 (+https://github.com/flx6662007/Chuangxiang-Community)'
+MAX_DOCUMENT_BYTES = 8_000_000
+DOCUMENT_CONTENT_TYPES = {
+    'application/pdf', 'application/x-pdf',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/octet-stream', 'binary/octet-stream', 'application/zip',
+    'application/msword', 'text/plain',
+}
 
 
 class FetchError(Exception):
@@ -38,6 +45,14 @@ def checked_url(url, hosts, *, resolve=True):
 class Page:
     url: str
     text: str
+    status: int = 200
+
+
+@dataclass
+class Document:
+    url: str
+    content: bytes
+    content_type: str
     status: int = 200
 
 
@@ -87,7 +102,7 @@ class OfficialClient:
         self.addresses[host] = sorted(addresses, key=lambda address: ':' in address)[0]
         return self.addresses[host]
 
-    def _get(self, url, *, robots=False):
+    def _get(self, url, *, robots=False, document=False):
         for attempt in range(3):
             current = url
             try:
@@ -103,6 +118,11 @@ class OfficialClient:
                         # 固定已核验 IP，防止校验后第二次解析发生 DNS 重绑定；TLS 仍核验原域名。
                         request_url = httpx.URL(current).copy_with(host=self._public_address(parts.hostname))
                         request_options = {'headers': {'Host': parts.netloc}, 'extensions': {'sni_hostname': parts.hostname}}
+                    if document:
+                        request_options.setdefault('headers', {}).update({
+                            'Accept': 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/octet-stream;q=0.8',
+                            'Accept-Encoding': 'identity',
+                        })
                     with self.client.stream('GET', request_url, **request_options) as response:
                         if response.status_code in (301, 302, 303, 307, 308):
                             if hop == 3 or not response.headers.get('location'):
@@ -112,15 +132,28 @@ class OfficialClient:
                         if response.status_code != 200:
                             raise FetchError('http_error', f'官方页面返回 HTTP {response.status_code}。', response.status_code)
                         kind = response.headers.get('content-type', '').lower()
-                        if kind and not any(v in kind for v in ('text/html', 'text/plain', 'application/xhtml')):
+                        if document:
+                            kind = kind.split(';', 1)[0].strip()
+                            if kind and kind not in DOCUMENT_CONTENT_TYPES:
+                                raise FetchError('unsupported_document', '附件不是可解析的 PDF 或 DOCX；需人工核验。')
+                            if response.headers.get('content-encoding', 'identity').lower().strip() != 'identity':
+                                raise FetchError('unsupported_document_encoding', '附件传输压缩格式不受支持；需人工核验。')
+                            length = response.headers.get('content-length', '')
+                            if length.isdigit() and int(length) > MAX_DOCUMENT_BYTES:
+                                raise FetchError('document_too_large', '附件超过 8 MB 上限。')
+                        elif kind and not any(v in kind for v in ('text/html', 'text/plain', 'application/xhtml')):
                             raise FetchError('unsupported_content', '当前适配器仅解析 HTML/纯文本；附件须另行核验。', response.status_code)
                         chunks, size = [], 0
-                        for chunk in response.iter_bytes():
+                        for chunk in response.iter_bytes(chunk_size=65536):
                             size += len(chunk)
-                            if size > 2_000_000:
+                            if document and size > MAX_DOCUMENT_BYTES:
+                                raise FetchError('document_too_large', '附件超过 8 MB 上限。')
+                            if not document and size > 2_000_000:
                                 raise FetchError('page_too_large', '页面超过 2 MB 上限。')
                             chunks.append(chunk)
                         content = b''.join(chunks)
+                        if document:
+                            return Document(current, content, kind, response.status_code)
                         encoding = re.search(br'charset=["\s]*([\w-]+)', content[:4096], re.I)
                         charset = encoding.group(1).decode('ascii') if encoding else 'utf-8'
                         if charset.lower() not in ('utf-8', 'utf8', 'gbk', 'gb2312', 'gb18030'):
@@ -165,3 +198,7 @@ class OfficialClient:
 
     def get(self, url):
         return self._get(url)
+
+    def get_document(self, url):
+        """受同一白名单、robots、重定向及 TLS 策略约束的附件下载。"""
+        return self._get(url, document=True)
