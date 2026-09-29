@@ -55,21 +55,21 @@ onBeforeUnmount(() => {
   <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <span class="section-kicker">AI ASSISTANT · DEMO</span>
-        <h2 id="ai-assistant-title"><AppIcon name="spark" :size="22" />AI 竞赛助手</h2>
+        <span class="section-kicker">✦ CHUANGXIANG AI / FRONTEND DEMO</span>
+        <h2 id="ai-assistant-title">不知道参加什么？<br />告诉我你会什么。</h2>
       </div>
       <span class="editorial-label">前端功能演示</span>
     </div>
-    <p class="ai-assistant-intro">用自然语言描述你的需求，我来帮你寻找合适的竞赛</p>
+    <p class="ai-assistant-intro">把你的专业、技能和兴趣写下来，从一个方向开始探索。</p>
     <div class="ai-assistant-panel">
       <form class="ai-assistant-form" role="search" aria-label="AI 竞赛搜索" @submit.prevent="submitSearch">
-        <label for="ai-competition-query">你的参赛需求</label>
+        <label for="ai-competition-query">YOUR IDEA / 你的参赛需求</label>
         <textarea
           id="ai-competition-query"
           v-model="query"
           maxlength="500"
           rows="3"
-          placeholder="例如：我是大二物理专业学生，想找人工智能相关、近期还能报名、最好可以组队参加的比赛。"
+          placeholder="我是物理专业大二学生，会一点 Python，对人工智能感兴趣，希望找一个近期可以报名、适合组队的比赛……"
           :aria-invalid="Boolean(validation)"
           :aria-describedby="validation ? 'ai-query-validation' : undefined"
           @input="validation = ''"
@@ -87,6 +87,7 @@ onBeforeUnmount(() => {
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
+      <div class="ai-visual" aria-hidden="true"><span>✦</span><p>SKILLS<br />INTERESTS<br />POSSIBILITIES</p><small>DISCOVER YOUR NEXT STEP ↗</small></div>
       <p class="ai-demo-note">当前为模拟匹配，以下赛事均为虚构演示数据；报名状态和参赛资格不代表真实赛事。</p>
     </div>
 

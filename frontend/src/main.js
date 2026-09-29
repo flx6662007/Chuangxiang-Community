@@ -9,6 +9,7 @@ import 'element-plus/es/components/pagination/style/css'
 import App from './App.vue'
 import router from './router'
 import './styles/index.css'
+import './styles/home.css'
 
 const app = createApp(App)
 
