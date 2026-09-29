@@ -11,6 +11,7 @@ import router from './router'
 import './styles/index.css'
 import './styles/home.css'
 import './styles/information.css'
+import './styles/teams.css'
 import reveal from './directives/reveal'
 
 const app = createApp(App)

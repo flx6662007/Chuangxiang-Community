@@ -90,10 +90,40 @@ onBeforeUnmount(() => {
 })
 </script>
 <template>
-  <section class="detail-page">
-    <RouterLink class="back-link" :to="{ name: 'teams', query: route.query }"
-      >← 团队广场<span>/</span>招募详情</RouterLink
-    >
+  <section class="team-page team-detail-page">
+    <header class="information-hero team-detail-hero">
+      <div class="information-hero-inner">
+        <RouterLink class="back-link" :to="{ name: 'teams', query: route.query }"
+          >← 团队广场<span>/</span>招募详情</RouterLink
+        >
+        <template v-if="item">
+          <div class="tag-row team-detail-status">
+            <span class="tag recruitment-status" :class="{ neutral: !item.is_open }">{{
+              item.is_open ? '正在招募' : label(item.status)
+            }}</span
+            ><span class="muted">{{ item.competition.edition }}</span>
+          </div>
+          <h1>{{ item.competition.title }}</h1>
+          <p class="team-detail-roles">寻找 {{ item.required_roles?.length ? optionNames(item.required_roles) : '参赛伙伴' }}</p>
+          <div class="team-detail-hero-footer">
+            <p>剩余 {{ item.remaining_slots }} 个名额 <span>· 卡片版本 {{ item.version }}</span></p>
+            <RouterLink
+              class="action-button secondary"
+              :to="{
+                name: 'competition-detail',
+                params: { id: item.competition.id },
+              }"
+              >查看赛事与官方来源</RouterLink
+            >
+          </div>
+        </template>
+        <template v-else>
+          <p class="information-eyebrow">TOGETHER / RECRUITMENT</p>
+          <h1>招募详情</h1>
+        </template>
+      </div>
+    </header>
+    <div class="team-content">
     <div v-if="loading" class="state-panel" role="status">正在加载招募…</div>
     <div v-else-if="error" class="state-panel" role="alert">
       <p>{{ error }}</p>
@@ -101,39 +131,10 @@ onBeforeUnmount(() => {
       ><RouterLink to="/account/teams">查看我的历史记录</RouterLink>
     </div>
     <template v-else-if="item">
-      <header class="detail-hero">
-        <div class="detail-hero-copy">
-          <div class="tag-row">
-            <span class="tag" :class="{ neutral: !item.is_open }">{{
-              item.is_open ? '正在招募' : label(item.status)
-            }}</span
-            ><span class="muted">卡片版本 {{ item.version }}</span>
-          </div>
-          <h1>
-            {{ item.competition.title }} ·
-            {{
-              item.required_roles?.length
-                ? optionNames(item.required_roles)
-                : '参赛招募'
-            }}
-          </h1>
-          <p>
-            {{ item.competition.edition }} · 剩余
-            {{ item.remaining_slots }} 个名额
-          </p>
-        </div>
-        <RouterLink
-          class="action-button secondary"
-          :to="{
-            name: 'competition-detail',
-            params: { id: item.competition.id },
-          }"
-          >查看赛事与官方来源</RouterLink
-        >
-      </header>
       <div class="detail-layout">
         <div class="detail-main">
-          <section class="team-panel">
+          <section v-reveal class="team-panel team-conditions">
+            <span class="inner-kicker">01 / THE FIT</span>
             <h2>招募条件</h2>
             <RecruitmentFacts :revision="item" />
             <p class="muted">
@@ -152,7 +153,7 @@ onBeforeUnmount(() => {
           </p>
           <form
             v-if="applying && can(item, 'apply')"
-            class="team-panel"
+            class="team-panel team-application"
             @submit.prevent="submit"
           >
             <h2>申请加入</h2>
@@ -188,7 +189,8 @@ onBeforeUnmount(() => {
           </form>
         </div>
         <aside class="detail-sidebar">
-          <section class="team-panel">
+          <section class="team-panel team-join-panel">
+            <span class="inner-kicker">02 / NEXT STEP</span>
             <h2>一起完成一场赛事</h2>
             <p>
               接受申请不占名额。双方针对当前条件确认后，才建立正式队伍关系。
@@ -225,5 +227,6 @@ onBeforeUnmount(() => {
         </aside>
       </div>
     </template>
+    </div>
   </section>
 </template>

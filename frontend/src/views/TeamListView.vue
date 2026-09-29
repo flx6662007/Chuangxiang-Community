@@ -24,6 +24,15 @@ const filters = reactive({
   open_only: '',
 })
 const page = computed(() => validPage(route.query.page))
+const moreFiltersOpen = ref(false)
+const advancedFilterCount = computed(() =>
+  ['skill', 'collaboration_mode', 'campus'].filter((key) => filters[key]).length,
+)
+watch(
+  () => [route.query.skill, route.query.collaboration_mode, route.query.campus],
+  (values) => { if (values.some(Boolean)) moreFiltersOpen.value = true },
+  { immediate: true },
+)
 let request = 0,
   controller
 function query() {
@@ -115,14 +124,19 @@ onBeforeUnmount(() => {
 })
 </script>
 <template>
-  <section>
-    <header class="page-heading heading-with-actions">
-      <div>
-        <span class="section-kicker">FIND YOUR TEAM</span>
-        <h1>团队广场</h1>
-        <p>围绕同一场赛事，找到一起投入的伙伴。</p>
-      </div>
-      <div class="button-row">
+  <section class="team-page" aria-labelledby="team-title">
+    <header class="information-hero team-hero">
+      <div class="information-hero-inner">
+        <p class="information-eyebrow">CHUANGXIANG / <em>Better together</em></p>
+        <span class="information-index">03 / TOGETHER</span>
+        <div class="team-hero-grid">
+          <div>
+            <h1 id="team-title">寻找一起<br /><span>参赛的伙伴。</span></h1>
+            <p class="team-hero-lead">围绕同一场赛事，让不同的能力走到一起。</p>
+          </div>
+          <span class="team-handwritten" aria-hidden="true">一起试试？<span>↗</span></span>
+        </div>
+        <div class="button-row team-hero-actions">
         <RouterLink class="action-button secondary" to="/account/teams"
           >我的组队</RouterLink
         ><RouterLink
@@ -135,8 +149,12 @@ onBeforeUnmount(() => {
           }"
           >发布招募 ＋</RouterLink
         >
+        </div>
       </div>
     </header>
+    <div class="team-content">
+    <section class="team-filter-surface" aria-labelledby="team-filter-title">
+      <div class="team-section-heading"><span class="inner-kicker">FIND YOUR TEAM</span><h2 id="team-filter-title">从你能带来的不同开始。</h2></div>
     <form class="search-bar" role="search" @submit.prevent="changeFilters">
       <AppIcon name="search" :size="19" /><label
         class="sr-only"
@@ -156,7 +174,7 @@ onBeforeUnmount(() => {
       }}
       <RouterLink :to="{ name: 'teams' }">查看全部赛事招募</RouterLink>
     </p>
-    <div class="filter-panel">
+    <div class="filter-panel team-primary-filters">
       <label
         >所需角色<select v-model="filters.role" @change="changeFilters">
           <option value="">全部角色</option>
@@ -169,6 +187,16 @@ onBeforeUnmount(() => {
           </option>
         </select></label
       >
+      <label
+        >招募状态<select v-model="filters.open_only" @change="changeFilters">
+          <option value="">全部公开招募</option>
+          <option value="true">仅正在招募</option>
+        </select></label
+      >
+    </div>
+    <details class="team-more-filters" :open="moreFiltersOpen" @toggle="moreFiltersOpen = $event.target.open">
+      <summary>更多筛选 <span v-if="advancedFilterCount" class="team-filter-count">已选 {{ advancedFilterCount }} 项</span><span class="team-filter-hint">技能 · 协作方式 · 校区</span><span class="team-filter-toggle" aria-hidden="true">＋</span></summary>
+      <div class="filter-panel team-advanced-filters">
       <label
         >所需技能<select v-model="filters.skill" @change="changeFilters">
           <option value="">全部技能</option>
@@ -208,18 +236,14 @@ onBeforeUnmount(() => {
           </option>
         </select></label
       >
-      <label
-        >招募状态<select v-model="filters.open_only" @change="changeFilters">
-          <option value="">全部公开招募</option>
-          <option value="true">仅正在招募</option>
-        </select></label
-      >
-    </div>
+      </div>
+    </details>
     <p v-if="optionsError" role="alert" class="notice-text">
       筛选选项加载失败：{{ optionsError }}
       <button class="text-button" @click="loadOptions">重试</button>
     </p>
-    <div class="list-summary">
+    </section>
+    <div class="list-summary team-list-summary">
       <span>接受申请后开放联系，双方确认才正式入队</span
       ><span v-if="!loading && !error">共 {{ count }} 条招募</span>
     </div>
@@ -256,7 +280,9 @@ onBeforeUnmount(() => {
       prev-text="上一页"
       next-text="下一页"
       background
+      aria-label="招募列表分页"
       @update:current-page="changePage"
     />
+    </div>
   </section>
 </template>

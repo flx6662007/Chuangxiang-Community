@@ -2,7 +2,6 @@
 import { recruitmentDeadline } from '../utils/teams'
 import { label, optionNames } from '../utils/teams'
 import { formatUpdatedAt } from '../utils/competition'
-import AppIcon from './AppIcon.vue'
 defineProps({ item: Object, detailQuery: Object })
 const statusLabels = {
   open: '正在招募',
@@ -14,42 +13,32 @@ const statusLabels = {
 }
 </script>
 <template>
-  <article class="recruitment-card">
-    <span class="recruitment-emblem"><AppIcon name="users" :size="28" /></span>
+  <article v-reveal class="recruitment-card" :aria-labelledby="`recruitment-${item.id}-title`">
     <div class="recruitment-card-copy">
       <div class="tag-row">
-        <span class="tag" :class="{ neutral: !item.is_open }">{{
+        <span class="tag recruitment-status" :class="{ neutral: !item.is_open }">{{
           statusLabels[item.status] || '不可申请'
         }}</span
         ><span class="muted">{{ item.competition.edition }}</span>
       </div>
-      <h2>
+      <h2 :id="`recruitment-${item.id}-title`">
         <RouterLink
           :to="{
             name: 'recruitment-detail',
             params: { id: item.id },
             query: detailQuery,
           }"
-          >{{ item.competition.title }} ·
-          {{
-            item.required_roles?.length
-              ? optionNames(item.required_roles)
-              : '参赛招募'
-          }}</RouterLink
+          >{{ item.competition.title }}</RouterLink
         >
       </h2>
-      <p>
+      <dl class="recruitment-needs">
+        <div><dt>寻找角色</dt><dd>{{ optionNames(item.required_roles) }}</dd></div>
+        <div><dt>所需技能</dt><dd>{{ optionNames(item.required_skills) }}</dd></div>
+      </dl>
+      <p class="recruitment-commitment">
         {{ label(item.foundation_requirement) }} ·
         {{ label(item.weekly_effort) }} · {{ label(item.collaboration_mode) }}
       </p>
-      <div class="tag-row">
-        <span
-          v-for="skill in item.required_skills"
-          :key="skill.code"
-          class="tag neutral"
-          >{{ skill.name }}</span
-        >
-      </div>
       <p class="timestamp">
         到期：{{ formatUpdatedAt(recruitmentDeadline(item))
         }}<span v-if="item.last_edited_at">
@@ -58,15 +47,18 @@ const statusLabels = {
       </p>
     </div>
     <div class="recruitment-card-aside">
-      <strong>{{ item.remaining_slots }}</strong
-      ><span>剩余名额</span
-      ><RouterLink
+      <dl class="recruitment-members">
+        <div><dt>已有成员基数</dt><dd>{{ item.current_existing_member_count ?? '—' }} <span>人</span></dd></div>
+        <div><dt>本轮已加入</dt><dd>{{ item.joined_member_count ?? '—' }} <span>人</span></dd></div>
+        <div class="recruitment-slots"><dt>剩余名额</dt><dd>{{ item.remaining_slots }} <span>人</span></dd></div>
+      </dl>
+      <RouterLink class="recruitment-detail-link"
         :to="{
           name: 'recruitment-detail',
           params: { id: item.id },
           query: detailQuery,
         }"
-        >查看招募 →</RouterLink
+        >查看招募 <span aria-hidden="true">↗</span></RouterLink
       >
     </div>
   </article>

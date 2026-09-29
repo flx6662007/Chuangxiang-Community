@@ -6,7 +6,8 @@ import AppIcon from '../components/AppIcon.vue'
     class="app-shell"
     :class="{
       'is-home': $route.name === 'home',
-      'is-editorial-page': ['competitions', 'research-projects'].includes($route.name),
+      'is-editorial-page': ['competitions', 'research-projects', 'teams', 'recruitment-detail'].includes($route.name),
+      'is-team-page': ['teams', 'recruitment-detail'].includes($route.name),
     }"
   >
     <el-header class="app-header">
@@ -36,7 +37,7 @@ import AppIcon from '../components/AppIcon.vue'
         <div class="header-actions">
           <RouterLink to="/account/teams" exact-active-class="is-active">我的组队</RouterLink>
           <RouterLink to="/account/notifications" exact-active-class="is-active">通知</RouterLink>
-          <RouterLink class="header-account" :to="{ name: 'account' }"
+          <RouterLink class="header-account" :to="{ name: 'account' }" aria-label="账户"
             ><AppIcon name="user" :size="16" /><span>账户</span></RouterLink
           >
         </div>
