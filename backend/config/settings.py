@@ -63,6 +63,8 @@ INSTALLED_APPS = [
 
 # 当前收录范围由学校目录决定，包含全部学科。
 COMPETITION_CATALOG_ONLY = os.getenv('COMPETITION_CATALOG_ONLY', '1') == '1'
+CATALOG_AUTO_PUBLISH = os.getenv('CATALOG_AUTO_PUBLISH', '0') == '1'
+CATALOG_PUBLISH_ACTOR_ID = os.getenv('CATALOG_PUBLISH_ACTOR_ID', '')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
