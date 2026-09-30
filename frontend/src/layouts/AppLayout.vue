@@ -1,13 +1,22 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
+const route = useRoute()
+function revisitAi() {
+  if (route.name === 'home' && route.hash === '#ai') {
+    document.getElementById('ai')?.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+    })
+  }
+}
 </script>
 <template>
   <el-container
     class="app-shell"
     :class="{
       'is-home': $route.name === 'home',
-      'is-editorial-page': ['competitions', 'research-projects', 'teams', 'recruitment-detail', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
-      'is-team-page': ['teams', 'recruitment-detail'].includes($route.name),
+      'is-editorial-page': ['competitions', 'research-projects', 'resources', 'resource-detail', 'teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
+      'is-team-page': ['teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit'].includes($route.name),
       'is-account-page': ['account', 'my-teams', 'notifications', 'governance'].includes($route.name),
     }"
   >
@@ -21,6 +30,7 @@ import AppIcon from '../components/AppIcon.vue'
         >
         <nav class="app-nav" aria-label="主导航">
           <RouterLink to="/" exact-active-class="is-active">发现</RouterLink>
+          <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi">AI</RouterLink>
           <RouterLink
             :to="{ name: 'competitions' }"
             :class="{ 'is-active': $route.name === 'competitions' || $route.name === 'competition-detail' }"
@@ -28,12 +38,12 @@ import AppIcon from '../components/AppIcon.vue'
             赛事
           </RouterLink>
           <RouterLink :to="{ name: 'research-projects' }" :class="{ 'is-active': $route.name === 'research-projects' }">科研</RouterLink>
+          <RouterLink :to="{ name: 'resources' }" :class="{ 'is-active': ['resources', 'resource-detail'].includes($route.name) }">资源</RouterLink>
           <RouterLink
             to="/teams"
             :class="{ 'is-active': $route.path.startsWith('/teams') }"
             >组队</RouterLink
           >
-          <a v-if="$route.name === 'home'" href="#ai">AI</a>
         </nav>
         <div class="header-actions">
           <RouterLink to="/account/teams" exact-active-class="is-active">我的组队</RouterLink>

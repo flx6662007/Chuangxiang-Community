@@ -27,43 +27,50 @@ const router = createRouter({
         },
         {
           path: 'competitions',
-          redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
+          component: InformationCenterView,
+          children: [{ path: '', name: 'competitions', component: CompetitionListView }],
         },
         {
-          path: 'information',
+          path: 'research',
+          component: InformationCenterView,
+          children: [{ path: '', name: 'research-projects', component: () => import('../views/ProjectListView.vue') }],
+        },
+        {
+          path: 'resources',
           component: InformationCenterView,
           children: [
-            {
-              path: '',
-              redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
-            },
-            {
-              path: 'competitions',
-              name: 'competitions',
-              component: CompetitionListView,
-            },
-            {
-              path: 'projects',
-              name: 'research-projects',
-              component: () => import('../views/ProjectListView.vue'),
-            },
-            {
-              path: 'resources',
-              name: 'resources',
-              component: () => import('../views/ResourceCenterView.vue'),
-            },
-            {
-              path: 'resources/:id',
-              name: 'resource-detail',
-              component: () => import('../views/ResourceDetailView.vue'),
-            },
+            { path: '', name: 'resources', component: () => import('../views/ResourceCenterView.vue') },
+            { path: ':id', name: 'resource-detail', component: () => import('../views/ResourceDetailView.vue') },
           ],
         },
         {
-          path: 'information/competitions/:id(\\d+)',
-          alias: 'competitions/:id(\\d+)',
+          path: 'competitions/:id(\\d+)',
           name: 'competition-detail',
           component: CompetitionDetailView,
+        },
+        {
+          path: 'information',
+          redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
+        },
+        {
+          path: 'information/competitions',
+          redirect: to => ({ name: 'competitions', query: to.query, hash: to.hash }),
+        },
+        {
+          path: 'information/competitions/:id(\\d+)',
+          redirect: to => ({ name: 'competition-detail', params: to.params, query: to.query, hash: to.hash }),
+        },
+        {
+          path: 'information/projects',
+          redirect: to => ({ name: 'research-projects', query: to.query, hash: to.hash }),
+        },
+        {
+          path: 'information/resources',
+          redirect: to => ({ name: 'resources', query: to.query, hash: to.hash }),
+        },
+        {
+          path: 'information/resources/:id',
+          redirect: to => ({ name: 'resource-detail', params: to.params, query: to.query, hash: to.hash }),
         },
         {
           path: 'account',

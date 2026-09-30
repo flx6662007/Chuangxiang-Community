@@ -12,6 +12,7 @@ import './styles/index.css'
 import './styles/home.css'
 import './styles/information.css'
 import './styles/teams.css'
+import './styles/recruitment.css'
 import './styles/account.css'
 import reveal from './directives/reveal'
 

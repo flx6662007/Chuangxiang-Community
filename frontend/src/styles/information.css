@@ -52,7 +52,7 @@
 .is-editorial-page .information-hero h1 { color: #f4f3ef; font-size: clamp(44px, 5vw, 72px); line-height: 1.17; letter-spacing: -.045em; font-weight: 670; margin: 0 0 19px; }
 .is-editorial-page .information-hero h1 span { font-family: 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'SimSun', serif; font-weight: 500; letter-spacing: -.04em; }
 .is-editorial-page .information-hero-inner > p:last-child { color: #a8b5c2; font-size: 14px; line-height: 1.8; margin: 0; }
-.is-editorial-page .information-content { width: min(calc(100% - 96px), 1320px); margin: 0 auto; padding: 0 0 120px; }
+.is-editorial-page .information-content { width: min(calc(100% - 96px), 1320px); margin: 0 auto; padding: 54px 0 120px; }
 .is-editorial-page .information-tabs { gap: 39px; margin: 0 0 62px; padding: 0; border-bottom: 1px solid #cdd3d4; }
 .is-editorial-page .information-tabs a { position: relative; min-height: 76px; padding: 21px 0; border: 0; border-radius: 0; background: none; color: #697681; box-shadow: none; font-size: 14px; font-weight: 560; }
 .is-editorial-page .information-tabs a svg { display: none; }
@@ -141,6 +141,35 @@
 .is-editorial-page .research-opportunity-action span { color: #78858d; font-size: 11px; }
 .is-editorial-page .state-panel { border-color: #d5dbdd; background: #fbfaf7; color: #5a6976; }
 
+/* Resource examples use the same editorial surface without implying publication approval. */
+.is-editorial-page .resource-page .section-heading h2 { color: #1d2d3d; letter-spacing: -.025em; }
+.is-editorial-page .resource-page .editorial-intro { color: #5e6d77; font-size: 13px; line-height: 1.9; }
+.is-editorial-page .resource-page .resource-category-card,
+.is-editorial-page .resource-page .resource-card { border: 1px solid #d5dbd9; border-radius: 5px; background: #fbfaf7; box-shadow: none; }
+.is-editorial-page .resource-page .resource-category-card { padding: 19px; }
+.is-editorial-page .resource-page .resource-category-card:hover,
+.is-editorial-page .resource-page .resource-category-card.selected { border-color: #7da1bd; background: #ecf1f2; }
+.is-editorial-page .resource-page .resource-category-icon { border-radius: 5px; background: #e8eef1; color: #326b9b; }
+.is-editorial-page .resource-page .resource-category-card.selected .resource-category-icon { background: #dbe8ef; }
+.is-editorial-page .resource-page .resource-category-card strong { color: #21374a; }
+.is-editorial-page .resource-page .resource-notice { background: #e9eeed; border-left-color: #89a8b7; color: #4d6473; }
+.is-editorial-page .resource-page .resource-card { padding: 25px; }
+.is-editorial-page .resource-page .resource-card h3 a { color: #203348; }
+.is-editorial-page .resource-page .resource-card h3 a:hover { color: #2c6d9f; }
+.is-editorial-page .resource-page .resource-card .resource-description,
+.is-editorial-page .resource-page .resource-card-source { color: #5d6f7c; }
+.is-editorial-page .resource-detail .back-link { color: #346e9d; }
+.is-editorial-page .resource-detail .detail-hero,
+.is-editorial-page .resource-detail .detail-section { background: #fbfaf7; border-color: #d5dbd9; border-radius: 5px; box-shadow: none; }
+.is-editorial-page .resource-detail .detail-emblem { background: #e7eef1; color: #326b9b; }
+.is-editorial-page .resource-detail .resource-detail-title { color: #203348; }
+
+@media (max-width: 900px) {
+  .is-editorial-page .app-nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .is-editorial-page .app-nav a { flex: 0 0 auto; }
+  .is-editorial-page .app-nav::-webkit-scrollbar { display: none; }
+}
+
 [data-reveal-ready] { opacity: 0; transform: translateY(18px); transition: opacity .72s ease, transform .72s cubic-bezier(.2,.72,.2,1); }
 [data-reveal-ready].is-revealed { opacity: 1; transform: translateY(0); }
 
@@ -171,7 +200,7 @@
   .is-editorial-page .information-eyebrow { margin-bottom: 37px; }
   .is-editorial-page .information-index { right: 0; top: 82px; }
   .is-editorial-page .information-hero h1 { font-size: clamp(38px, 9.3vw, 52px); }
-  .is-editorial-page .information-content { padding-bottom: 80px; }
+  .is-editorial-page .information-content { padding-top: 38px; padding-bottom: 80px; }
   .is-editorial-page .information-tabs { flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; gap: 26px; margin-bottom: 45px; }
   .is-editorial-page .information-tabs::-webkit-scrollbar { display: none; }
   .is-editorial-page .information-tabs a { flex: 0 0 auto; min-height: 62px; font-size: 12px; }

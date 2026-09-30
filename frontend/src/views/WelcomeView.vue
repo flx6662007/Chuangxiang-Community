@@ -1,19 +1,16 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { listCompetitions } from '../api/competitions'
 import { listRecruitments } from '../api/teams'
 import { summaryDeadline, levelLabels, safeExternalUrl, deadlineStatusLabel } from '../utils/competition'
 import { label, optionNames } from '../utils/teams'
 import { newsletters, laboratories } from '../data/editorial'
 import { previewCompetitions, previewRecruitments } from '../mocks/homeVisualPreview'
-import AppIcon from '../components/AppIcon.vue'
 import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
 
-const router = useRouter()
 const route = useRoute()
 const isVisualPreview = computed(() => route.query.ui_preview === '1')
-const search = ref('')
 const items = ref(isVisualPreview.value ? previewCompetitions : [])
 const loading = ref(!isVisualPreview.value)
 const error = ref(false)
@@ -22,13 +19,6 @@ const teamsLoading = ref(!isVisualPreview.value)
 const teamsError = ref(false)
 let competitionController
 let teamController
-
-function submitSearch() {
-  router.push({
-    name: 'competitions',
-    query: search.value.trim() ? { search: search.value.trim() } : {},
-  })
-}
 
 async function loadCompetitions() {
   competitionController?.abort()
@@ -109,13 +99,6 @@ onBeforeUnmount(() => {
             <p class="home-kicker"><span class="kicker-line" />CONNECT · DISCOVER · CREATE <span class="kicker-muted">/ TONGJI UNIVERSITY</span></p>
             <h1 id="welcome-title">在创新中相遇，<br />遇见<span>更大的可能。</span></h1>
             <p class="hero-lead">发现值得投入的比赛、研究与伙伴。<br />从一个想法开始。</p>
-            <form class="hero-search" role="search" @submit.prevent="submitSearch">
-              <AppIcon name="search" :size="19" />
-              <label class="sr-only" for="home-search">搜索赛事</label>
-              <input id="home-search" v-model="search" type="search" maxlength="200" placeholder="搜索感兴趣的赛事或关键词" />
-              <button type="submit" aria-label="搜索赛事"><AppIcon name="arrow" :size="20" /></button>
-            </form>
-            <p class="hero-search-hint">探索已收录赛事 · 以官方通知为准</p>
           </div>
           <div class="hero-art" aria-hidden="true">
             <span class="art-index">CX / 001</span>
@@ -132,9 +115,10 @@ onBeforeUnmount(() => {
         <div class="start-here" aria-labelledby="start-title">
           <div class="start-label"><span id="start-title">START HERE</span><span>从你的下一步开始</span></div>
           <div class="start-links">
-            <RouterLink :to="{ name: 'competitions' }"><span>01</span><strong>找一个适合我的比赛</strong><span class="start-arrow">↗</span></RouterLink>
-            <RouterLink :to="{ name: 'research-projects' }"><span>02</span><strong>看看有哪些科研机会</strong><span class="start-arrow">↗</span></RouterLink>
-            <RouterLink :to="{ name: 'teams' }"><span>03</span><strong>找正在招人的参赛团队</strong><span class="start-arrow">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'competitions' }"><span>01 / 赛事</span><strong>浏览已收录比赛</strong><span class="start-arrow">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'research-projects' }"><span>02 / 科研</span><strong>查阅官方研究线索</strong><span class="start-arrow">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'teams' }"><span>03 / 组队</span><strong>寻找参赛伙伴</strong><span class="start-arrow">↗</span></RouterLink>
+            <RouterLink :to="{ name: 'resources' }"><span>04 / 资源</span><strong>查看学习与工具示例</strong><span class="start-arrow">↗</span></RouterLink>
           </div>
         </div>
       </div>

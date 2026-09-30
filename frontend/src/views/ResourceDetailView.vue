@@ -37,7 +37,7 @@ onBeforeUnmount(() => { requestNumber++ })
 <template>
   <section class="detail-page resource-detail" aria-labelledby="resource-detail-title">
     <RouterLink class="back-link" :to="{ name: 'resources', query: route.query }">
-      ← 信息中心 · 资源中心<span>/</span>返回资源列表
+      ← 资源中心<span>/</span>返回资源列表
     </RouterLink>
 
     <div v-if="loading" class="state-panel compact-state" role="status">正在加载资源详情…</div>

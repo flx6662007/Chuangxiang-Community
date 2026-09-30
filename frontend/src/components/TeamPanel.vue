@@ -122,6 +122,7 @@ async function run() {
       </li>
     </ul>
     <h3>本队招募记录</h3>
+    <p class="muted">若要更改公开招募条件，建议关闭本轮，再发布新一轮。当前版本仍可编辑原卡；变更后未完成申请需重新确认。</p>
     <div v-for="card in team.recruitments" :key="card.id" class="history-row">
       <div>
         <RouterLink
@@ -137,7 +138,7 @@ async function run() {
         <RouterLink
           v-if="can(card, 'edit')"
           :to="{ name: 'recruitment-edit', params: { id: card.id } }"
-          >编辑</RouterLink
+          >编辑原卡</RouterLink
         ><button
           v-if="can(card, 'close')"
           class="text-button"

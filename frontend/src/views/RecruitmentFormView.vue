@@ -29,6 +29,7 @@ const dictionaries = ref({}),
   profile = ref(null),
   selected = ref(null),
   loading = ref(true),
+  loadFailed = ref(false),
   error = ref(''),
   busy = ref(false),
   conflict = ref(false),
@@ -71,6 +72,7 @@ async function load() {
   controller?.abort()
   controller = new AbortController()
   loading.value = true
+  loadFailed.value = false
   error.value = ''
   preview.value = null
   conflict.value = false
@@ -113,8 +115,10 @@ async function load() {
       selected.value = competition
     }
   } catch (err) {
-    if (request === serial && err.code !== 'ERR_CANCELED')
+    if (request === serial && err.code !== 'ERR_CANCELED') {
+      loadFailed.value = true
       error.value = teamError(err)
+    }
   } finally {
     if (request === serial) loading.value = false
   }
@@ -199,15 +203,23 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <section class="recruitment-editor">
-    <RouterLink class="back-link" to="/teams">← 团队广场</RouterLink>
-    <header class="page-heading">
-      <span class="section-kicker">BUILD A TEAM</span>
-      <h1>{{ editing ? '编辑招募' : '发布招募' }}</h1>
-      <p>选定赛事，填写固定条件，让期待更清楚。</p>
+    <header class="information-hero recruitment-editor-hero">
+      <div class="information-hero-inner">
+        <RouterLink class="back-link" to="/teams">← 返回团队广场</RouterLink>
+        <p class="information-eyebrow">TOGETHER / BUILD A TEAM</p>
+        <span class="information-index">{{ editing ? 'EDIT / 02' : 'PUBLISH / 01' }}</span>
+        <h1>{{ editing ? '核对' : '发布' }}<span>{{ editing ? '招募条件。' : '一份新招募。' }}</span></h1>
+        <p>{{ editing ? '当前版本仍可编辑原卡；更换公开条件时，建议关闭本轮并发布新卡。' : '选择已收录且开放招募的赛事，填写固定条件，预览后再发布。' }}</p>
+      </div>
     </header>
+    <div class="team-content recruitment-editor-content">
     <div v-if="loading" class="state-panel" role="status">正在加载表单…</div>
     <p v-if="error" class="form-error" role="alert">{{ error }}</p>
-    <div v-if="!loading && !allowed" class="state-panel">
+    <div v-if="!loading && loadFailed" class="state-panel">
+      <p>暂时无法读取发布资格与表单选项。</p>
+      <button class="action-button secondary" @click="load">重新加载</button>
+    </div>
+    <div v-else-if="!loading && !allowed" class="state-panel">
       <p>
         {{
           editing
@@ -218,9 +230,10 @@ onBeforeUnmount(() => {
       <RouterLink class="action-button" to="/account">检查账号状态</RouterLink
       ><button class="action-button secondary" @click="load">重新加载</button>
     </div>
-    <form v-else-if="!loading" class="team-panel" @submit.prevent="submit">
+    <form v-else-if="!loading" class="team-panel recruitment-editor-form" @submit.prevent="submit">
+      <p class="notice-text recruitment-editor-guide">公开标题、说明和编号由系统生成。表单只收集固定选项与人数，不填写自由正文、任意链接或成员资料。</p>
       <fieldset class="plain-fieldset" :disabled="busy || conflict">
-        <legend class="form-section-title">1. 所属赛事</legend>
+        <legend class="form-section-title"><span>01</span> 选择赛事</legend>
         <div v-if="selected" class="selected-competition">
           <div>
             <strong>{{ selected.title }}</strong>
@@ -299,7 +312,7 @@ onBeforeUnmount(() => {
         </div>
       </fieldset>
       <fieldset class="plain-fieldset" :disabled="busy || conflict">
-        <legend class="form-section-title">2. 人数与能力</legend>
+        <legend class="form-section-title"><span>02</span> 已有成员与团队能力</legend>
         <div class="form-grid">
           <label class="form-field"
             ><span>申报已有成员数（含本人） *</span
@@ -308,8 +321,20 @@ onBeforeUnmount(() => {
               type="number"
               min="1"
               step="1"
-              required /></label
-          ><label class="form-field"
+              required /></label>
+        </div>
+        <p class="field-hint">已有成员数包含发起人；线下成员无需逐个注册平台账号。此数字用于核对队伍规模，不公开成员资料。</p>
+        <OptionPicker
+          v-model="form.current_skills"
+          :options="dictionaries.skills"
+          label="团队已有能力（选填）"
+          multiple
+        />
+      </fieldset>
+      <fieldset class="plain-fieldset" :disabled="busy || conflict">
+        <legend class="form-section-title"><span>03</span> 本轮招募条件</legend>
+        <div class="form-grid">
+          <label class="form-field"
             ><span>本轮计划招募人数 *</span
             ><input
               v-model.number="form.recruitment_quota"
@@ -319,12 +344,8 @@ onBeforeUnmount(() => {
               required
           /></label>
         </div>
+        <p class="field-hint">招募人数是本轮新增名额，不包含已有成员。角色、技能及基础要求均从固定选项选择。</p>
         <OptionPicker
-          v-model="form.current_skills"
-          :options="dictionaries.skills"
-          label="团队已有能力（选填）"
-          multiple
-        /><OptionPicker
           v-model="form.required_roles"
           :options="dictionaries.roles"
           label="所需角色（选填）"
@@ -335,16 +356,17 @@ onBeforeUnmount(() => {
           label="所需技能（选填）"
           multiple
         />
+        <OptionPicker
+          v-model="form.foundation_requirement"
+          :options="dictionaries.foundation_requirement"
+          label="基础要求"
+          required
+        />
       </fieldset>
       <fieldset class="plain-fieldset" :disabled="busy || conflict">
-        <legend class="form-section-title">3. 合作安排</legend>
+        <legend class="form-section-title"><span>04</span> 合作安排</legend>
         <div class="form-grid">
           <OptionPicker
-            v-model="form.foundation_requirement"
-            :options="dictionaries.foundation_requirement"
-            label="基础要求"
-            required
-          /><OptionPicker
             v-model="form.weekly_effort"
             :options="dictionaries.weekly_effort"
             label="每周投入"
@@ -362,12 +384,6 @@ onBeforeUnmount(() => {
             v-model="form.expected_duration"
             :options="dictionaries.expected_duration"
             label="入队后合作时长（选填）"
-          /><OptionPicker
-            v-if="!editing"
-            v-model="duration"
-            :options="dictionaries.duration_days"
-            label="招募有效期"
-            required
           />
         </div>
         <OptionPicker
@@ -377,6 +393,18 @@ onBeforeUnmount(() => {
           label="协作校区（线下或混合必选）"
           multiple
         />
+        <p class="field-hint">每周投入、合作目标、合作时长及协作方式使用固定选项；线下地点只选择校区。</p>
+      </fieldset>
+      <fieldset class="plain-fieldset recruitment-validity" :disabled="busy || conflict">
+        <legend class="form-section-title"><span>05</span> 有效期与发布前预览</legend>
+        <OptionPicker
+          v-if="!editing"
+          v-model="duration"
+          :options="dictionaries.duration_days"
+          label="招募有效期"
+          required
+        />
+        <p v-if="!editing" class="field-hint">可选 3／7／14 天；实际到期以服务端预览为准，若赛事招募截止更早则提前结束。</p>
         <p v-if="editing" class="notice-text">
           编辑不延长有效期。本卡实际到期：{{
             formatUpdatedAt(recruitmentDeadline(record))
@@ -431,6 +459,8 @@ onBeforeUnmount(() => {
                 : '校验并预览有效期'
         }}
       </button>
+      <p v-if="editing" class="field-hint">若要重新设定公开招募条件，建议先关闭本轮，再从“我的组队”发布新一轮。当前版本仍支持编辑原卡，修改会通知成员并挂起未完成申请。</p>
     </form>
+    </div>
   </section>
 </template>

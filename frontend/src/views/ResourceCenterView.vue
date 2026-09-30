@@ -99,7 +99,7 @@ onBeforeUnmount(() => { requestNumber++ })
       <span class="editorial-label">长期检索 · 分类整理</span>
     </div>
     <p class="editorial-intro">
-      按方向和资源类型查找竞赛、科研与技能学习资料，进入详情了解用途，再按需查阅原文。
+      按方向和资源类型查找竞赛、科研与技能学习资料。未来由管理员维护；当前先展示前端示例清单。
     </p>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
       <AppIcon name="search" :size="19" />
@@ -159,14 +159,14 @@ onBeforeUnmount(() => { requestNumber++ })
     </section>
 
     <p class="notice-text resource-notice">
-      当前为前端 Mock 示例资源，用于展示检索和浏览结构。示例清单不是当期报名通知，具体要求请以相应原文为准。
+      当前为前端 Mock 示例资源，尚未接入管理员审核与发布。示例清单不是当期报名通知，具体要求请以相应原文为准。
     </p>
 
     <section v-if="!activeFilters && !loading && !error && featuredItems.length" class="resource-featured" aria-labelledby="resource-featured-title">
       <div class="section-heading">
         <div>
           <span class="section-kicker">START HERE</span>
-          <h2 id="resource-featured-title">精选资源</h2>
+          <h2 id="resource-featured-title">先看这些示例</h2>
         </div>
       </div>
       <div class="editorial-grid">

@@ -196,6 +196,7 @@ onBeforeUnmount(() => {
               接受申请不占名额。双方针对当前条件确认后，才建立正式队伍关系。
             </p>
             <p>平台内组队不等于完成官方报名。</p>
+            <p v-if="can(item, 'edit')" class="muted">变更公开条件时，建议关闭本轮后发布新卡。当前版本仍可编辑原卡，未完成申请需重新确认。</p>
             <button
               v-if="can(item, 'apply') && !applying"
               class="action-button"
@@ -206,7 +207,7 @@ onBeforeUnmount(() => {
               v-if="can(item, 'edit')"
               class="action-button"
               :to="{ name: 'recruitment-edit', params: { id: item.id } }"
-              >编辑招募</RouterLink
+              >编辑原卡</RouterLink
             >
             <p
               v-if="!can(item, 'apply') && !can(item, 'edit')"
