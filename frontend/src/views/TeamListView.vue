@@ -6,6 +6,7 @@ import { getCompetition } from '../api/competitions'
 import { teamError, validPage } from '../utils/teams'
 import RecruitmentCard from '../components/RecruitmentCard.vue'
 import AppIcon from '../components/AppIcon.vue'
+import EditorialHeroVisual from '../components/EditorialHeroVisual.vue'
 const route = useRoute(),
   router = useRouter()
 const options = ref({}),
@@ -127,6 +128,7 @@ onBeforeUnmount(() => {
   <section class="team-page" aria-labelledby="team-title">
     <header class="information-hero team-hero">
       <div class="information-hero-inner">
+        <EditorialHeroVisual variant="team" />
         <p class="information-eyebrow">CHUANGXIANG / <em>Better together</em></p>
         <span class="information-index">03 / TOGETHER</span>
         <div class="team-hero-grid">
@@ -134,7 +136,6 @@ onBeforeUnmount(() => {
             <h1 id="team-title">寻找一起<br /><span>参赛的伙伴。</span></h1>
             <p class="team-hero-lead">围绕同一场赛事，让不同的能力走到一起。</p>
           </div>
-          <span class="team-handwritten" aria-hidden="true">一起试试？<span>↗</span></span>
         </div>
         <div class="button-row team-hero-actions">
         <RouterLink class="action-button secondary" to="/account/teams"

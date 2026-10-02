@@ -14,6 +14,7 @@ import './styles/information.css'
 import './styles/teams.css'
 import './styles/recruitment.css'
 import './styles/account.css'
+import './styles/motion.css'
 import reveal from './directives/reveal'
 
 const app = createApp(App)

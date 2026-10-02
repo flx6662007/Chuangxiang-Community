@@ -26,7 +26,7 @@ const status = computed(() =>
   padding: 5px 10px;
   border: 1px solid;
   border-radius: 7px;
-  font-size: 13px;
+  font-size: var(--type-small);
   font-weight: 600;
   line-height: 1.6;
   overflow-wrap: anywhere;

@@ -129,8 +129,8 @@ const detailLink = computed(() => ({
 .competition-card__team-size {
   margin: 7px 0 0;
   color: #667085;
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: var(--type-small);
+  line-height: var(--leading-body);
   overflow-wrap: anywhere;
 }
 </style>

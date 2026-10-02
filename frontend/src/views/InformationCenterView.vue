@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import EditorialHeroVisual from '../components/EditorialHeroVisual.vue'
 
 const route = useRoute()
 const page = computed(() => {
@@ -23,6 +24,10 @@ const page = computed(() => {
   <section class="information-center" aria-labelledby="information-title">
     <header class="information-hero">
       <div class="information-hero-inner">
+        <EditorialHeroVisual
+          v-if="route.name === 'competitions' || route.name === 'research-projects'"
+          :variant="route.name === 'competitions' ? 'competition' : 'research'"
+        />
         <p class="information-eyebrow">CHUANGXIANG / <em>Discover &amp; Create</em></p>
         <span class="information-index">{{ page.index }}</span>
         <h1 id="information-title">

@@ -126,8 +126,6 @@ onBeforeUnmount(() => {
 
     <div id="ai" class="home-dark home-ai"><div v-reveal class="home-wrap"><AICompetitionAssistant /></div></div>
 
-    <div class="home-transition home-transition-to-light" aria-hidden="true"></div>
-
     <section id="discover" class="home-light home-discover" aria-labelledby="discover-title">
       <div v-reveal class="home-wrap">
         <header class="home-section-heading">
@@ -167,8 +165,6 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <div class="home-transition home-transition-to-dark" aria-hidden="true"></div>
-
     <section id="together" class="home-dark home-together" aria-labelledby="together-title">
       <div v-reveal class="home-wrap">
         <header class="home-section-heading"><div><span class="home-kicker">03 / TOGETHER</span><h2 id="together-title">找到一起把想法<br /><span>做出来的人。</span></h2></div><RouterLink class="home-more" :to="{ name: 'teams' }">EXPLORE TEAMS <span>↗</span></RouterLink></header>
@@ -187,13 +183,10 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <div class="home-transition home-transition-to-light" aria-hidden="true"></div>
-
     <section id="newsletters" class="home-light home-briefing" aria-labelledby="briefing-title"><div v-reveal class="home-wrap">
       <header class="home-section-heading"><div><span class="home-kicker">04 / BRIEFING</span><h2 id="briefing-title">这周，<br /><span>科创圈发生了什么？</span></h2></div><span class="briefing-aside">创享快讯 / 团队整理</span></header>
       <div v-if="!newsletters.length" class="briefing-empty"><span>01</span><div><h3>创享快讯正在筹备</h3><p>团队会在核实来源后，把值得关注的科创动态放在这里。</p></div><span>✦</span></div>
       <div v-else class="briefing-list"><article v-for="(item, index) in newsletters" :key="item.id" class="briefing-row"><span>{{ String(index + 1).padStart(2, '0') }}</span><div><h3>{{ item.title }}</h3><p>{{ item.summary }}</p></div><time :datetime="item.date || undefined">{{ item.date || '日期未注明' }}</time><a v-if="safeExternalUrl(item.sourceUrl)" :href="safeExternalUrl(item.sourceUrl)" target="_blank" rel="noopener noreferrer" :aria-label="`阅读${item.title}的来源`">↗</a></article></div>
     </div></section>
-    <div class="home-transition home-transition-to-footer" aria-hidden="true"></div>
   </div>
 </template>

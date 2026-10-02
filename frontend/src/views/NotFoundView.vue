@@ -40,20 +40,20 @@ import AppIcon from '../components/AppIcon.vue'
 }
 .not-found-number {
   font-size: 90px;
-  font-weight: 750;
+  font-weight: var(--weight-strong);
   line-height: 1;
   color: #3278e4;
   margin: 30px 0 22px;
   letter-spacing: 6px;
 }
 .not-found h1 {
-  font-size: 25px;
+  font-size: var(--type-title-lg);
   margin: 0 0 16px;
 }
 .not-found > p:not(.not-found-number) {
-  font-size: 13px;
+  font-size: var(--type-small);
   color: #8095b4;
-  line-height: 1.8;
+  line-height: var(--leading-body);
 }
 .not-found-actions {
   display: flex;

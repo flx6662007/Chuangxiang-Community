@@ -1,0 +1,72 @@
+/* Shared motion language: state feedback first, entrances only where content changes. */
+:is(.category-tabs > button, .tab-nav button, .information-tabs a, .account-section-nav a, .checkbox-options label, .team-more-filters summary) {
+  transition:
+    color var(--motion-fast) var(--motion-ease-standard),
+    background-color var(--motion-fast) var(--motion-ease-standard),
+    border-color var(--motion-fast) var(--motion-ease-standard);
+}
+
+.search-bar,
+.is-editorial-page .search-bar,
+.welcome .ai-assistant-form textarea {
+  transition:
+    border-color var(--motion-fast) var(--motion-ease-standard),
+    box-shadow var(--motion-fast) var(--motion-ease-standard),
+    background-color var(--motion-fast) var(--motion-ease-standard);
+}
+
+.action-button:active:not(:disabled) { transform: translateY(1px); }
+
+:is(.welcome .discover-item, .welcome .team-preview, .is-editorial-page .competition-card, .is-team-page .recruitment-card, .is-account-page .team-panel) {
+  transition:
+    border-color var(--motion-standard) var(--motion-ease-standard),
+    background-color var(--motion-standard) var(--motion-ease-standard),
+    color var(--motion-fast) var(--motion-ease-standard);
+}
+:is(.welcome .discover-item:hover, .welcome .team-preview:hover, .is-editorial-page .competition-card:hover, .is-team-page .recruitment-card:hover, .is-account-page .team-panel:hover) {
+  transform: none;
+  box-shadow: none;
+}
+
+:is(.welcome .start-arrow, .welcome .home-more span, .is-editorial-page .card-detail-link svg, .is-team-page .recruitment-detail-link span) {
+  transition: transform var(--motion-standard) var(--motion-ease-out);
+}
+.is-team-page .team-filter-toggle { transition: transform var(--motion-standard) var(--motion-ease-out); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .app-main > :not(.information-center),
+  .information-center .information-hero-inner,
+  .information-content > * {
+    animation: page-enter var(--motion-enter) var(--motion-ease-out) both;
+  }
+
+  :is(.competition-grid, .research-editorial-list, .editorial-grid) > * {
+    animation: item-enter var(--motion-standard) var(--motion-ease-out) both;
+  }
+  .state-panel,
+  .is-team-page .team-more-filters[open] .team-advanced-filters {
+    animation: item-enter var(--motion-standard) var(--motion-ease-out) both;
+  }
+  :is(.competition-grid, .research-editorial-list, .editorial-grid) > :nth-child(2) { animation-delay: 40ms; }
+  :is(.competition-grid, .research-editorial-list, .editorial-grid) > :nth-child(3) { animation-delay: 80ms; }
+  :is(.competition-grid, .research-editorial-list, .editorial-grid) > :nth-child(4) { animation-delay: 120ms; }
+
+  :is(.app-nav a.is-active, .information-tabs a.selected, .is-account-page .account-section-nav a.selected, .is-account-page .tab-nav button.active)::after {
+    animation: indicator-enter var(--motion-fast) var(--motion-ease-out) both;
+    transform-origin: left center;
+  }
+}
+
+@keyframes page-enter { from { opacity: 0; transform: translateY(8px); } }
+@keyframes item-enter { from { opacity: 0; transform: translateY(6px); } }
+@keyframes indicator-enter { from { transform: scaleX(.35); opacity: .45; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal-ready] { opacity: 1 !important; transform: none !important; }
+}
