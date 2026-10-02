@@ -39,6 +39,12 @@ Chuangxiang-Community/
 
 ## 本地启动
 
+### macOS 双击启动
+
+首次使用先按[后端开发说明](docs/backend-development.md)准备 Python 3.13、PostgreSQL 17、`backend/.venv`、`backend/.env` 和数据库迁移；前端需要符合 `frontend/package.json` 要求的 Node.js。之后在 Finder 双击仓库根目录的 [`start-macos.command`](start-macos.command)。启动器会检查数据库，启动 Django 和 Vite，等两个服务就绪后用默认浏览器打开 <http://localhost:5173/>。前端依赖缺失时会按锁文件执行 `npm ci`；窗口保持打开，按 `Ctrl+C` 停止本次启动的前后端服务。若已有后端服务，启动器会复用它，不会在退出时关闭它；PostgreSQL 由本机服务或 Postgres.app 管理，退出启动器不会关闭数据库。
+
+Windows 的 `start-frontend.bat` 保留；下方是 Windows PowerShell 的手动启动命令，仍可用于排障。
+
 首次使用先按[后端开发说明](docs/backend-development.md)安装依赖、启动 PostgreSQL 并配置自己的 `.env`。以下命令在已配置好的项目根目录执行，两个终端分别启动：
 
 ```powershell
