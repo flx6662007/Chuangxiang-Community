@@ -4,7 +4,7 @@
 
 同济2026目录131—255保留125项目录阅读记录，本轮导入116项，9项暂缓。交付125个实际赛事届次、143份去重学习资源、393份知识正文，以及报名方式、来源定位、392份原件和375份提取文本。资料中的往届日期及缺口继续保留。
 
-代码包含离线入库模型、迁移、管理命令、测试和应用注册。操作步骤见[入库说明](curated-competition-package.txt)，资料包从[本仓库Release](https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002)下载；[交付清单](curated-delivery-files.json)记录文件范围与哈希。前端页面和公开接口沿用main。
+代码包含离线入库模型、迁移、管理命令、测试和应用注册。操作步骤见[入库说明](curated-competition-package.txt)，资料包尚未上传，拟从[本仓库Release](https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002)提供下载（待明确确认公开上传）；[交付清单](curated-delivery-files.json)记录文件范围与哈希。前端页面和公开接口沿用main。
 
 基于main（7a91a4a）加必需入库文件，在隔离PostgreSQL执行 `python manage.py test curation --settings=config.postgres_test_settings --noinput`，17项通过，包含真实资料五批两轮导入。系统检查、迁移一致性、392份原件哈希和2,531个本地链接校验通过。本机开发库已有草稿数据；队友需按说明向自己的数据库导入，本次代码交付不操作队友或生产数据库，也不公开发布赛事或开启组队。
 
