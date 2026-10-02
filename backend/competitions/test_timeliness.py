@@ -84,6 +84,7 @@ class CompetitionTimelinessTests(TestCase):
         self.assertEqual(row['id'], event.pk)
         self.assertEqual(row['deadline_status'], 'open')
         self.assertEqual(row['deadline_kind'], 'registration')
+        self.assertEqual(row['deadline_status_label'], '报名尚未截止')
 
     def test_submission_fallback_does_not_claim_registration_is_open(self):
         current = self.event(submission_deadline=self.today + timedelta(days=1))
@@ -91,7 +92,7 @@ class CompetitionTimelinessTests(TestCase):
         row = self.listing()['results'][0]
         self.assertEqual(row['id'], current.pk)
         self.assertEqual(row['deadline_kind'], 'submission')
-        self.assertIn('作品提交未截止', row['deadline_status_label'])
+        self.assertIn('作品提交尚未截止', row['deadline_status_label'])
         self.assertIn('报名时间未明确', row['deadline_status_label'])
         self.assertNotIn('报名中', row['deadline_status_label'])
         self.assertEqual(self.detail(expired)['deadline_status_label'], '作品提交已截止')

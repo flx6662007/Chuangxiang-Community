@@ -6,7 +6,7 @@
 
 ## 按功能找目录
 
-新增 `competition_catalog/`：学校 255 项目录、官网白名单、原文版本、运行记录和公开赛事关联。首次运行先迁移，再执行 `init_competition_catalog`；采集结果见[覆盖表](../docs/competition-catalog-coverage.md)。
+`competition_catalog/` 管理学校 255 项目录、官网白名单与原文版本；`extraction.py` 提取字段，`attachments.py` 读取 PDF/DOCX，`publication.py` 核验发布并关联目录。首次运行先安装依赖、迁移，再执行 `init_competition_catalog`；运行方法见[提取上架](../docs/catalog-publication.md)，实际结果见[逐项记录](../docs/catalog-extraction-2026-09-29.md)。
 
 | 目录 | 职责与主要入口 |
 | --- | --- |

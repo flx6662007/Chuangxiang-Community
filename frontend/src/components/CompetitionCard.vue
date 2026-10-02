@@ -6,9 +6,13 @@ import {
   levelLabels,
   participationLabels,
   safeExternalUrl,
-  deadlineStatusLabel,
+  officialText,
+  officialUnknown,
+  teamSizeLabel,
+  formatUpdatedAt,
 } from '../utils/competition'
 import AppIcon from './AppIcon.vue'
+import DeadlineStatusBadge from './DeadlineStatusBadge.vue'
 
 const props = defineProps({
   competition: { type: Object, required: true },
@@ -50,22 +54,25 @@ const detailLink = computed(() => ({
           competition.category.name
         }}</span
         ><span class="tag warm">{{
-          levelLabels[competition.level] || '范围未注明'
+          competition.level === 'unknown' ? officialUnknown : levelLabels[competition.level] || officialUnknown
         }}</span
         ><span class="tag neutral">{{
-          participationLabels[competition.participation_type] ||
-          '参赛形式未说明'
+          competition.participation_type === 'unknown' ? officialUnknown : participationLabels[competition.participation_type] || officialUnknown
         }}</span>
       </div>
-      <p class="muted">{{ deadlineStatusLabel(competition) }}</p>
+      <p><DeadlineStatusBadge :competition="competition" /></p>
       <p class="competition-card__summary">
-        {{ competition.summary || '简介待补充' }}
+        {{ officialText(competition.summary) }}
       </p>
       <p class="competition-card__organizer">
-        <AppIcon name="building" :size="14" />{{
-          competition.organizer || '主办方未注明'
-        }}
+        <AppIcon name="building" :size="14" /><span class="competition-card__organizer-text">{{
+          officialText(competition.organizer)
+        }}</span>
       </p>
+      <p class="competition-card__eligibility">
+        <span>参赛资格：</span>{{ officialText(competition.eligibility) }}
+      </p>
+      <p class="competition-card__team-size">参赛人数：{{ teamSizeLabel(competition) }}</p>
       <div
         v-if="competition.tags?.length"
         class="tag-row competition-card__tags"
@@ -75,7 +82,8 @@ const detailLink = computed(() => ({
         >
       </div>
       <footer class="competition-card__source">
-        <span>来源发布：{{ sourcePublishedAt }}</span
+        <span>原文发布：{{ sourcePublishedAt === '未注明' ? officialUnknown : sourcePublishedAt }}</span>
+        <span>最近核验：{{ competition.last_verified_at ? formatUpdatedAt(competition.last_verified_at) : '尚未记录' }}</span
         ><a
           v-if="sourceUrl"
           :href="sourceUrl"
@@ -95,3 +103,34 @@ const detailLink = computed(() => ({
     </div>
   </article>
 </template>
+
+<style scoped>
+.competition-card__summary,
+.competition-card__organizer-text,
+.competition-card__eligibility {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.competition-card__organizer-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.competition-card__organizer :deep(svg) {
+  flex-shrink: 0;
+}
+.competition-card__source > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.competition-card__eligibility,
+.competition-card__team-size {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+</style>

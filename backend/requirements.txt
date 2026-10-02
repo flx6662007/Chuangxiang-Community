@@ -6,6 +6,7 @@ httpx==0.28.1
 djangorestframework==3.18.1
 psycopg==3.3.6
 psycopg-binary==3.3.6
+pypdf==6.19.0
 python-dotenv==1.2.3
 sqlparse==0.6.0
 soupsieve==2.10

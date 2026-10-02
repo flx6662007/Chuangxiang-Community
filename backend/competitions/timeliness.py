@@ -50,5 +50,5 @@ def deadline_status_label(obj):
     if not getattr(obj, field + '_at') and getattr(obj, field) == timezone.localdate():
         label = f'{subject}今日截止，时刻以原文为准'
     else:
-        label = f'{subject}未截止'
+        label = f'{subject}尚未截止'
     return label if kind == 'registration' else label + '；报名时间未明确'
