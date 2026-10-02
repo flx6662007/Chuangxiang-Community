@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'notifications.apps.NotificationsConfig',
     'ingestion.apps.IngestionConfig',
     'competition_catalog.apps.CompetitionCatalogConfig',
+    'curation.apps.CurationConfig',
 ]
 
 # 当前收录范围由学校目录决定，包含全部学科。

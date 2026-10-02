@@ -1,0 +1,145 @@
+同济2026目录131—255：赛事资料与入库交付说明
+整理日期：2026-10-02；本次交付资料、离线入库所需文件及操作说明。
+
+一、交付内容和当前状态
+
+资料包原位置：D:\创享科创信息与组队服务平台\赛事资料库\同济2026-131-255
+资料包下载（本仓库Release附件）：
+https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002
+下载 tongji-2026-131-255-20261002.zip 并解压到自己的持久目录。
+代码与说明合入main；资料包作为Release附件提供，工程工作区不复制一整份。
+docs/curated-delivery-files.json 记录逐文件哈希及压缩包哈希；解压时保留相对目录。
+Release同时附带 curated-delivery-files.json，方便接收方离线校验。
+
+阅读入口为开始阅读.html，汇总为总索引.xlsx，入库输入为导入清单.json。
+整理底稿.json 是事实与来源的唯一维护源；其他索引、JSONL和阅读版是派生文件。
+资料覆盖125项目录，本轮导入116项；9项按用户要求暂缓：
+139、160、165、171、200、226、245、247、253。
+导入量：125个实际赛事届次、143份去重学习资源、393份知识正文；
+116项共440个学习资源关联。目录2026不代表每份规则都适用于2026届。
+本轮67项取得规则或正式通知，其余保留细则不全、仅有报道或身份线索的缺口。
+153、163、230身份关联不确定，243历史通知年份冲突，不编造赛事届次。
+报名入口及方式已整合进各赛事档案；82项确认方式，34项待核。
+所有报名状态以2026-10-02的核验日和所标届次为准，历史截止时间不作为当前期限。
+
+附件按内容哈希归档：392份原件、375份可提取文本；6条下载失败记录留在附件清单。
+其中343份原件关联丘成桐数学竞赛，多为历届论文和赛题，不能用附件数表示赛事覆盖率。
+提取文本未逐页复核；已核关键条款以正文来源定位为准。课程视频只保存链接和介绍。
+
+本机开发库已验收并保留草稿数据，未发布、未开放组队。
+这不代表队友数据库已导入。接收方按以下步骤执行，为后续卡片、资源和AI准备数据。
+本次不交付页面改动、资源HTTP接口、停用采集改动、启动器或数据库备份。
+不要求接收者为资料交付重新逐项核对全部赛事。已知缺口继续保留，不改写成已确认事实。
+
+二、工程包含哪些文件
+
+1. backend/curation/ 下的17个Python文件，包括：
+   models.py、两份迁移、package.py、importer.py；
+   import_curated_competitions、review_curated_document 两个管理命令；
+   admin.py、apps.py、services.py、retrieval.py、两个测试文件及包初始化文件。
+   完整逐文件名单以 curated-delivery-files.json 的 full_files 为准。
+   两份迁移需一起交付，不重写已有迁移历史。
+
+2. backend/config/settings.py 只提交 INSTALLED_APPS 中这一行：
+       'curation.apps.CurationConfig',
+   离线入库保留main原有采集行为。
+
+3. 交付 docs/curated-competition-package.txt 和 docs/curated-delivery-files.json。
+   README.md 只选人工资料入库说明链接；docs/progress.md 只选本次资料交付记录。
+   两个文件中此前的Windows启动器说明不在此次范围，不能整文件一并提交。
+
+4. 以下仍属本地其他改动，本次不选：
+   backend/competition_catalog/ 下的停用采集改动；
+   backend/ingestion/ 下的停用采集改动及独立测试；
+   backend/config/test_settings.py、backend/config/postgres_test_settings.py；
+   deploy/windows/、backend/scripts/database.ps1；
+   scripts/、start-project.bat、四份早期字段设计文档。
+   本次交付不改变采集任务、页面或目标数据库；接收方自行执行入库命令。
+
+三、接收资料包
+
+从上述Release下载完整ZIP并解压，不能只取导入JSON而漏掉附件。
+必需内容包括：整理底稿、导入清单、导入JSONL、来源/附件清单、索引、
+赛事档案、批次报告、被正式附件清单引用的原件与提取文本、阅读和入库说明。
+机器清单记录每个文件的大小和SHA-256，可用于核对传输完整性。
+待整理附件、历史副本、Excel调试文件、本机验收执行清单和运行日志不随包交付。
+这些记录留在本机原处；不是要求删除原始资料。
+
+四、校验、预演与入库
+
+前置条件：接收上述工程文件，按项目后端说明配置 Python、依赖和 PostgreSQL。
+使用已激活的后端虚拟环境，在仓库 backend 目录执行命令。
+先在接收方测试库验证，再切换到实际目标库；目标库配置沿用现有工程方式。
+以下 <资料包>、<报告目录> 和 <管理员ID> 都替换成接收方自己的值。
+
+0. 确认当前数据库，只输出库名和地址，不输出口令：
+   python manage.py shell -c "from django.db import connection; print({k: connection.settings_dict[k] for k in ('ENGINE','NAME','HOST','PORT')})"
+   python manage.py migrate
+
+1. 文件校验，不写数据库、不访问赛事网站：
+   python manage.py import_curated_competitions "<资料包>/导入清单.json" --report "<报告目录>/文件校验.json"
+   预期：catalog=116、competitions=125、resources=143、documents=393。
+   该命令会检查结构、编码、引用、附件路径及原件哈希。
+
+2. 获取有权限的现有管理员ID，进行事务预演：
+   python manage.py import_curated_competitions "<资料包>/导入清单.json" --actor-id <管理员ID> --preview --report "<报告目录>/预演.json"
+   预演会执行数据库校验，结束时回滚全部写入。
+   操作者需 active、staff，以及 curation.add_importrun、curation.add_knowledgedocument、
+   competitions.add_competition、competitions.change_competition、
+   competitions.add_competitionsource、resources.add_resource、resources.change_resource 权限。
+   不沿用本机验收账号ID；该账号已停用，数据库ID也不具备跨环境含义。
+
+3. 记录本次草稿入库确认。
+   随包导入清单的review仍为pending，直接使用--apply会被现有导入命令拒绝。
+   本机旧“本地验收导入清单.json”只授权过本机验收，不用于其他数据库。
+   接收方确认本次导入范围和目标库后，在资料包同一目录另存“导入执行清单.json”，
+   仅把其review填写为：
+       {"status":"approved","reviewed_by":"实际确认人","reviewed_on":"实际确认日期YYYY-MM-DD"}
+   这是此次草稿入库操作的确认，不等同于所有事实核验完毕或公开发布批准。
+   不修改赛事正文、来源、稳定编码和package_id；事实维护源仍是整理底稿.json。
+
+4. 对确认后的执行清单再次预演，再正式导入：
+   python manage.py import_curated_competitions "<资料包>/导入执行清单.json" --actor-id <管理员ID> --preview --report "<报告目录>/执行预演.json"
+   python manage.py import_curated_competitions "<资料包>/导入执行清单.json" --actor-id <管理员ID> --apply --report "<报告目录>/入库结果.json"
+   全部成功后再次预演，同一批数据应报告unchanged，且不新增正文版本。
+
+不指定--batch时处理全部116项；也可按五批选择：
+--batch 1：131—155；--batch 2：156—180；--batch 3：181—205；
+--batch 4：206—230；--batch 5：231—255。--batch可重复指定。
+每次命令在一个事务中执行；异常回滚该次命令，不会回滚此前已成功的其他批次。
+--preview和--apply互斥。失败时先查看报告；人工修改冲突沿用现有处理，不强行覆盖。
+本命令当前仅接受131—255，前130项后续由对应负责人的交付另行接入。
+
+五、写进哪些表、以后怎样使用
+
+CatalogEntry：目录身份、2026目录年份、等级、责任学院。
+Competition、CompetitionSource、CatalogBinding：实际届次、参赛规则、报名、来源及目录关联。
+Resource及关联：学习资源、介绍、链接；稳定编码复用同一资源。
+KnowledgeDocument、DocumentRevision、DocumentLink：整理正文、来源定位、附件路径/哈希、
+适用届次及版本关联。学习导读可直接关联目录，不凭空关联到全部历史届次。
+ImportRun、ImportedObject、ImportedObjectRevision：操作记录、幂等识别及更新历史。
+DocumentReview：具体正文版本的审核记录，供以后公开检索使用。
+
+赛事、资源和知识正文初始为草稿，recruitment_enabled=False。
+版本metadata.package_root记录本次导入文件所在绝对目录，附件使用相对路径。
+部署后必须持久保存资料包；移动资料包前安排根路径迁移，不能留下失效附件。
+日后页面和AI接入这些表时，再按现有发布规则选择可公开的内容。
+student_visible_documents()会排除未审核正文以及关联的草稿/下架内容。
+本次未新增公开HTTP接口、向量库、模型调用或聊天界面。
+
+六、验收与维护
+
+接收方测试库中运行：
+   python manage.py test curation --settings=config.postgres_test_settings --noinput
+上述测试默认跳过真实包专项；要同时验收本资料包，在PowerShell先设置：
+   $env:CURATION_TEST_PACKAGE = '<资料包>/导入清单.json'
+再执行同一测试命令。测试会创建隔离的test_数据库，管理员需有相应建库权限。
+真实包测试在测试事务内使用测试确认标记，不改源文件的review状态。
+覆盖五批两轮导入、届次区分、资源复用、版本、缺失/篡改附件、失败回滚、
+真实人工改动保护、历史日期和草稿检索限制。停用采集测试已从本模块拆出。
+本次范围独立验证结果见交付文件清单的validation；历史混合范围测试不冒充本次结果。
+
+后续修改事实时编辑整理底稿.json，再统一生成派生内容。本次交付已有成品，
+首次校验、预演和导入不需要任何生成器、Node.js或Codex专有依赖。
+本机保留 scripts/build-curated-package.py 和 scripts/build-curated-index.mjs 作为维护工具，
+后者依赖Codex内置 @oai/artifact-tool，暂不把它列为接收方的安装要求。
