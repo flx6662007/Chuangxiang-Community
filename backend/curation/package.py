@@ -37,20 +37,44 @@ COMPETITION_FIELDS = {
 RESOURCE_FIELDS = {'title', 'description', 'provider', 'access_url', 'source_note', 'availability'}
 
 
+def package_scope(data):
+    """各交付范围显式选择；旧包默认131—255，不允许参数扩张范围。"""
+    if 'catalog_scope' not in data:
+        return {'first': 131, 'last': 255, 'batch_size': 25}
+    scope = data['catalog_scope']
+    if isinstance(scope, dict) and set(scope) == {'start', 'end', 'batch_size'}:
+        require(all(type(scope[key]) is int for key in scope)
+                and scope == {'start': 90, 'end': 130, 'batch_size': 25},
+                '90—130资料包范围声明无效。')
+        return {'first': 90, 'last': 130, 'batch_size': 25}
+    allowed = {'first': 1, 'last': 89, 'batch_size': 25}
+    require(isinstance(scope, dict) and scope.keys() == allowed.keys()
+            and all(type(scope[key]) is int and scope[key] == value
+                    for key, value in allowed.items()),
+            'catalog_scope 仅接受1—89或90—130的明确交付范围；131—255旧包请省略此字段。')
+    return scope
+
+
 def load_package(filename, batches=()):
     filename = Path(filename).resolve()
     require(filename.stat().st_size <= 30_000_000, '资料包 JSON 超过 30 MB。')
     data = json.loads(filename.read_text(encoding='utf-8-sig'))
     require(data.get('schema_version') == 1, '不支持的 schema_version。')
     require(isinstance(data.get('package_id'), str) and re.fullmatch(r'[a-z0-9-]{1,100}', data['package_id']), '资料包编号无效。')
+    scope = package_scope(data)
+    first, last, batch_size = (scope[key] for key in ('first', 'last', 'batch_size'))
+    batch_numbers = list(range(1, (last - first) // batch_size + 2))
+    require(isinstance(batches, (list, tuple)) and all(
+        type(batch) is int and batch in batch_numbers for batch in batches),
+        f'批次必须为 1—{batch_numbers[-1]} 范围内的整数。')
     require(isinstance(data.get('catalog'), list), '缺少 catalog 清单。')
     codes = [x['code'] for x in data['catalog']]
     require(len(codes) == len(set(codes)), '目录编号重复。')
     for row in data['catalog']:
-        require(re.fullmatch(r'2026(?:1[3-9][0-9]|2[0-5][0-9])', row['code']) is not None
-                and 2026131 <= int(row['code']) <= 2026255, '目录超出 131—255 范围。')
+        require(isinstance(row['code'], str) and re.fullmatch(r'2026[0-9]{3}', row['code']) is not None
+                and first <= int(row['code'][-3:]) <= last, f'目录超出 {first}—{last} 范围。')
         require(row.get('name') and row.get('grade') and row.get('departments'), '目录信息不完整。')
-    selected = {c for c in codes if not batches or (int(c[-3:]) - 131) // 25 + 1 in batches}
+    selected = {c for c in codes if not batches or (int(c[-3:]) - first) // batch_size + 1 in batches}
     require(bool(selected), '所选批次没有目录条目。')
     result = {**data, 'catalog': [x for x in data['catalog'] if x['code'] in selected]}
     identities = {}
@@ -94,6 +118,29 @@ def load_package(filename, batches=()):
                     require(target.is_relative_to(filename.parent), '附件路径越界。')
                     require(target.is_file(), f'附件不存在：{rel}')
                     require(hashlib.sha256(target.read_bytes()).hexdigest() == attachment.get('sha256'), f'附件哈希不符：{rel}')
+    references = data.get('references', {})
+    require(isinstance(references, dict) and set(references) <= {'competitions', 'resources'}, '复用清单无效。')
+    result['references'] = {}
+    for kind in ('competitions', 'resources'):
+        rows = references.get(kind, [])
+        require(isinstance(rows, list), '复用清单必须为数组。')
+        seen = set()
+        result['references'][kind] = []
+        for row in rows:
+            require(set(row) == {'code', 'package_id', 'payload_hash', 'catalog_codes'}, '复用声明字段无效。')
+            code = row['code']
+            require(isinstance(code, str) and re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', code)
+                    and len(code) <= 80 and code not in identities[kind] and code not in seen, '复用编码重复或无效。')
+            require(isinstance(row['package_id'], str) and re.fullmatch(r'[a-z0-9-]{1,100}', row['package_id'])
+                    and row['package_id'] != data['package_id'], '复用来源包无效。')
+            require(isinstance(row['payload_hash'], str) and re.fullmatch(r'[a-f0-9]{64}', row['payload_hash']), '复用载荷哈希无效。')
+            links = row['catalog_codes']
+            require(isinstance(links, list) and links and len(links) == len(set(links))
+                    and set(links) <= set(codes), '复用目录关联无效。')
+            seen.add(code)
+            if set(links) & selected:
+                result['references'][kind].append(row)
+        identities[kind].update(seen)
     for kind in ('resources', 'documents'):
         for row in data.get(kind, []):
             require(set(row.get('competition_codes', [])) <= identities['competitions'], f'{row["code"]} 引用了不存在的赛事。')
@@ -102,4 +149,6 @@ def load_package(filename, batches=()):
     result['_root'] = str(filename.parent)
     result['_hash'] = digest(data)
     result['_batches'] = sorted(set(batches))
+    result['_batch_numbers'] = batch_numbers
+    result['_catalog_scope'] = scope
     return result

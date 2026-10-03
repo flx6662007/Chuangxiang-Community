@@ -81,6 +81,32 @@ def require_actor(actor):
         raise PermissionDenied('需要有效管理员及人工资料导入、赛事、来源和资源维护权限。')
 
 
+def link_references(data, actor, catalogs, counts):
+    """Only append catalog bindings; the original package continues to own each object."""
+    for kind, model in [('competitions', Competition), ('resources', Resource)]:
+        entity_kind = 'competition' if kind == 'competitions' else 'resource'
+        for row in data.get('references', {}).get(kind, []):
+            obj = model.objects.select_for_update().filter(code=row['code']).first()
+            stamp = ImportedObject.objects.select_for_update().filter(kind=entity_kind, code=row['code']).first()
+            require(obj is not None and stamp is not None, f'复用对象缺失：{row["code"]}；请先导入依赖包。')
+            require(stamp.package_id == row['package_id'] and stamp.payload_hash == row['payload_hash'],
+                    f'复用对象来源或版本不一致：{row["code"]}')
+            require(stamp.state_hash == digest(entity_state(entity_kind, obj)), f'复用对象已被人工修改：{row["code"]}')
+            if kind == 'competitions':
+                missing = [catalogs[c] for c in row['catalog_codes'] if c in catalogs
+                           and not obj.catalog_bindings.filter(entry=catalogs[c]).exists()]
+                if missing:
+                    require(obj.publication_status == 'draft', f'复用赛事已发布，不能增补目录：{row["code"]}')
+                    previous = stamp.revisions.order_by('-version').first()
+                    require(previous is not None and digest(previous.payload) == stamp.payload_hash,
+                            f'复用赛事缺少原始载荷版本：{row["code"]}')
+                    for entry in missing:
+                        CatalogBinding.objects.create(entry=entry, competition=obj, basis='人工资料包复用同一赛事届次；保留原包所有目录关联。')
+                    stamp_object(entity_kind, obj, previous.payload, stamp.package_id, actor)
+                    counts['referenced_catalog_links_created'] += len(missing)
+            counts[f'{entity_kind}_referenced'] += 1
+
+
 @transaction.atomic
 def import_package(data, *, actor, apply=False):
     require_actor(actor)
@@ -102,6 +128,7 @@ def import_package(data, *, actor, apply=False):
             obj = checked_save(CatalogEntry(**{k: row[k] for k in ('code', 'name', 'grade', 'levels', 'departments', 'source_url')}, version=2026))
             counts['catalog_created'] += 1
         catalogs[row['code']] = obj
+    link_references(data, actor, catalogs, counts)
     for row in data['competitions']:
         obj, changed = decision('competition', Competition, row, package_id, counts)
         if changed:

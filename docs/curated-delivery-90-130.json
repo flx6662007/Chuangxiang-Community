@@ -1,0 +1,1748 @@
+{
+  "schema_version": 1,
+  "package_id": "tongji-2026-90-130",
+  "prepared_on": "2026-10-03",
+  "base_commit": "9229a123a1d88addfd0668a6767823684f42c692",
+  "release_url": "https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-90-130-20261003",
+  "scope": {
+    "start": 90,
+    "end": 130,
+    "batch_size": 25
+  },
+  "zip": {
+    "name": "tongji-2026-90-130-20261003.zip",
+    "bytes": 33964075,
+    "sha256": "81b4076c6846e971724421371095d9127c7ceeec513739d973f5fc1d3bac6300"
+  },
+  "package_files": [
+    {
+      "path": "交付统计.json",
+      "bytes": 884,
+      "sha256": "e551697255e55299f984a1bafca8a74fb3f1150ad415c1216227cc83e22513e3"
+    },
+    {
+      "path": "入库操作说明.md",
+      "bytes": 3947,
+      "sha256": "a57db38361b36517e75947ed3e2628d540d0519bd7126f4f03ddcd57ddd88c54"
+    },
+    {
+      "path": "导入底稿.jsonl",
+      "bytes": 773311,
+      "sha256": "d467b3529486f54a5b0e2f85046b7de766dc369e3694e0b20b0feecf2e67d8d4"
+    },
+    {
+      "path": "导入清单.json",
+      "bytes": 912509,
+      "sha256": "17fa99fdaeb37a0f3a3220d00bfb4e46c3815dff9cda73da3b729b36ea301cc6"
+    },
+    {
+      "path": "开始阅读.txt",
+      "bytes": 553,
+      "sha256": "8ada19fa80a94f215967f87f9460a0f572a7011fdb0faa15c6700f4596531d10"
+    },
+    {
+      "path": "总索引.xlsx",
+      "bytes": 48815,
+      "sha256": "517fa31fbdbaec0fec234349f253259f5758db8fb9a23c1e1c63affe9bd9c5ae"
+    },
+    {
+      "path": "批次报告/第1批-缺口.json",
+      "bytes": 28845,
+      "sha256": "a2abb916e11661b218387a915265bfad814fcb8a25200e2437676e80b4c49f0e"
+    },
+    {
+      "path": "批次报告/第2批-缺口.json",
+      "bytes": 18744,
+      "sha256": "54261a8de9fde691ccaef9b7fb34ce4a839a0609bec1bffd5b73eeda80c04818"
+    },
+    {
+      "path": "整理底稿.json",
+      "bytes": 547676,
+      "sha256": "8b9a38f98b2066960a47c9334f8f45bdd1c32d326f3009090de447c5e51d9e7c"
+    },
+    {
+      "path": "索引数据.json",
+      "bytes": 47586,
+      "sha256": "18a86b25d064a9f845dd574f3e0a1a010785de9cc74d29ff29cffc2737682998"
+    },
+    {
+      "path": "赛事档案/2026090/c90-2026-1/来源清单.json",
+      "bytes": 877,
+      "sha256": "a6b6f305a124febe65335c9f017630ec153edc3f5ee1c73549234481f516e858"
+    },
+    {
+      "path": "赛事档案/2026090/c90-2026-1/赛事说明.txt",
+      "bytes": 1727,
+      "sha256": "00719bcfbc47c1a76ec7b75c19f1932c4b00ec7121722e9677cb8e99143d2fac"
+    },
+    {
+      "path": "赛事档案/2026090/学习资料导读.txt",
+      "bytes": 2494,
+      "sha256": "451579b4211b2e0e3b2fdee84fe6be1049f7c1a3dd8d3e704c9e387a172b9b54"
+    },
+    {
+      "path": "赛事档案/2026090/缺口与检索记录.json",
+      "bytes": 1353,
+      "sha256": "0c55ba424704ebc8264bcf5a80837951f37d2476fd8aa6eea811923f701a3715"
+    },
+    {
+      "path": "赛事档案/2026090/附件清单.json",
+      "bytes": 1398,
+      "sha256": "12b423aa7e0e0ac93fffee5269a99e6c5913294a8b98e771a2ced2038f993203"
+    },
+    {
+      "path": "赛事档案/2026091/c91-2026-1/来源清单.json",
+      "bytes": 795,
+      "sha256": "010dda2e18e482bbbaa361a520f9851f390d696e3a349a8cfbed10fa661a3253"
+    },
+    {
+      "path": "赛事档案/2026091/c91-2026-1/赛事说明.txt",
+      "bytes": 1415,
+      "sha256": "1bdfc918ae63c105a6b05a41dda2103e208f547d15cfb3586f02b70d73ffbd73"
+    },
+    {
+      "path": "赛事档案/2026091/学习资料导读.txt",
+      "bytes": 3374,
+      "sha256": "28f9650efa3713b1a513cd7116e13ff5bb4b53e43c67ddd411e5b808a8e6146b"
+    },
+    {
+      "path": "赛事档案/2026091/缺口与检索记录.json",
+      "bytes": 1420,
+      "sha256": "b36c6617c562321055892f5ab946233f11453a45f6a30dc92eead28f9535d866"
+    },
+    {
+      "path": "赛事档案/2026091/附件清单.json",
+      "bytes": 764,
+      "sha256": "e188b97f868aa5a54e5a17c6be047a7142b5874bc7271b5b3ef588fc02994be6"
+    },
+    {
+      "path": "赛事档案/2026092/c92-2026-1/来源清单.json",
+      "bytes": 1146,
+      "sha256": "1079817ac984e30bc49156e71188dc005db432b189c563578cca6ac34d229a9c"
+    },
+    {
+      "path": "赛事档案/2026092/c92-2026-1/赛事说明.txt",
+      "bytes": 1715,
+      "sha256": "dbe5931bd68252ab4261e8eff9034142659493153fbe8d96f74ee5ad7bc055e8"
+    },
+    {
+      "path": "赛事档案/2026092/学习资料导读.txt",
+      "bytes": 3475,
+      "sha256": "2ad8c1b1b4771bc27aa33186cbdc8ef6b9ae5b2fb07e9c3df799c1c2095f4187"
+    },
+    {
+      "path": "赛事档案/2026092/缺口与检索记录.json",
+      "bytes": 2180,
+      "sha256": "04a58df3f55fe87940368a9b7a2e9097165cf2bf57292d08bede2c66582b685f"
+    },
+    {
+      "path": "赛事档案/2026092/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026093/c93-2025-2/来源清单.json",
+      "bytes": 707,
+      "sha256": "b8ec8d743165e6e3a78b1e08fdcac04b74de338743fced138b35a1bca9e645d5"
+    },
+    {
+      "path": "赛事档案/2026093/c93-2025-2/赛事说明.txt",
+      "bytes": 1509,
+      "sha256": "2dd7f32f55ddc22cad22b23ecb3e67a8313c7fb84d63d7024d12feef0c489278"
+    },
+    {
+      "path": "赛事档案/2026093/c93-2026-1/来源清单.json",
+      "bytes": 794,
+      "sha256": "9078dbfd6865712c2e038d68f3f45cade8663326270e1e1d1fd9fbee34add19c"
+    },
+    {
+      "path": "赛事档案/2026093/c93-2026-1/赛事说明.txt",
+      "bytes": 1284,
+      "sha256": "7d7e98fdf97782f7586b23479f741dfc13d1544e4c924ca202bf036f4c25d338"
+    },
+    {
+      "path": "赛事档案/2026093/学习资料导读.txt",
+      "bytes": 4395,
+      "sha256": "300bc8f03b61022e360de74717307fdf6495da20b3c8ac397bd21e7b282f4265"
+    },
+    {
+      "path": "赛事档案/2026093/缺口与检索记录.json",
+      "bytes": 2071,
+      "sha256": "ea96aa942bba1480c1fec56e58af3e0b2225bbfc781d7c2365d6f175f949a47a"
+    },
+    {
+      "path": "赛事档案/2026093/附件清单.json",
+      "bytes": 1490,
+      "sha256": "c974ea4034cf506a2fb0088e464d360316ccccb89a6cbbd610625e1773ae97eb"
+    },
+    {
+      "path": "赛事档案/2026094/c94-2022-2/来源清单.json",
+      "bytes": 394,
+      "sha256": "7f20d36a354011ce91805126c38cadf7457bca1447c9bf4b87cf79d94121d6a2"
+    },
+    {
+      "path": "赛事档案/2026094/c94-2022-2/赛事说明.txt",
+      "bytes": 1525,
+      "sha256": "abd0f061a28189f48ef243ba91439c0c40ed7b0259e04449c5abe232edcba0a0"
+    },
+    {
+      "path": "赛事档案/2026094/c94-2024-1/来源清单.json",
+      "bytes": 363,
+      "sha256": "2ec7f36d99be48082d495a108d7e3077a9a259c8c7d79bd24818200911d8fe24"
+    },
+    {
+      "path": "赛事档案/2026094/c94-2024-1/赛事说明.txt",
+      "bytes": 688,
+      "sha256": "afd67a0dc17f69c97487ea99ee899c435d7d6904ffd9cb32a35f5247c6b2f3d5"
+    },
+    {
+      "path": "赛事档案/2026094/学习资料导读.txt",
+      "bytes": 3504,
+      "sha256": "46cfea4ac469e2a3b09da230d42f42dd973e1bfeb978005b02f9b70115bc3538"
+    },
+    {
+      "path": "赛事档案/2026094/缺口与检索记录.json",
+      "bytes": 1241,
+      "sha256": "5e8fb565326bd4ca59333d90fd1b6ad1b517840adc065d411e1c0e90756c14f4"
+    },
+    {
+      "path": "赛事档案/2026094/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026095/c95-2026-1/来源清单.json",
+      "bytes": 1153,
+      "sha256": "31055ba71a7d03f46fa59b237b9997a8d4b4bae0945dee7d796eb7945aef32ab"
+    },
+    {
+      "path": "赛事档案/2026095/c95-2026-1/赛事说明.txt",
+      "bytes": 1457,
+      "sha256": "a96b96df5aa15904d73cdcb8a3d98bfbe6c10d92790f7171df79fa5065f9b014"
+    },
+    {
+      "path": "赛事档案/2026095/学习资料导读.txt",
+      "bytes": 3512,
+      "sha256": "3a1c0038b495e13fb3eed857c9eb092e4101870ef9e2751270abb434985a8c51"
+    },
+    {
+      "path": "赛事档案/2026095/缺口与检索记录.json",
+      "bytes": 2674,
+      "sha256": "fba67fa94b7c36b665cd299f4c4a046c3c1c7f63e1d2b39abf112385e37990cb"
+    },
+    {
+      "path": "赛事档案/2026095/附件清单.json",
+      "bytes": 1594,
+      "sha256": "fc7872f33e6d081b7ace940c1b1f028a9d2dbaddcf2c47f8d22fd49e45f57ac0"
+    },
+    {
+      "path": "赛事档案/2026096/c96-2025-1/来源清单.json",
+      "bytes": 396,
+      "sha256": "8878635057ca3beacda7d0552fb924537ee6b7d39ff2b1c644802bedf03a9b51"
+    },
+    {
+      "path": "赛事档案/2026096/c96-2025-1/赛事说明.txt",
+      "bytes": 1429,
+      "sha256": "d5813e38be7b058a7e44335a75c47fa386f722073600606463770b83cb63cfeb"
+    },
+    {
+      "path": "赛事档案/2026096/学习资料导读.txt",
+      "bytes": 2881,
+      "sha256": "1308108967484fcc7722f89b0090d5b7f5d53790c604514eeca22dcf697f008d"
+    },
+    {
+      "path": "赛事档案/2026096/缺口与检索记录.json",
+      "bytes": 1360,
+      "sha256": "d9ee637ab2574f806a06dc376db6252b5faba0f5f6942357cc31d7a8658c935b"
+    },
+    {
+      "path": "赛事档案/2026096/附件清单.json",
+      "bytes": 735,
+      "sha256": "572f100be2161304fa336aff31a93e835277d3ecfa123f349a9811a2d005719c"
+    },
+    {
+      "path": "赛事档案/2026097/c97-2026-1/来源清单.json",
+      "bytes": 1006,
+      "sha256": "07a4608dc511ac479a466ccd3cbb15ca19cabfe481f3d95b3afaa39407c18efa"
+    },
+    {
+      "path": "赛事档案/2026097/c97-2026-1/赛事说明.txt",
+      "bytes": 1589,
+      "sha256": "864a1ccd8dafc89cacb89672e554ba953e5d5116dff0871067c8f2f2be0bad06"
+    },
+    {
+      "path": "赛事档案/2026097/学习资料导读.txt",
+      "bytes": 2654,
+      "sha256": "a3afbf74c987aac2a2b2923f3446cd6089af43e0de5628d641e720d4b8389126"
+    },
+    {
+      "path": "赛事档案/2026097/缺口与检索记录.json",
+      "bytes": 1409,
+      "sha256": "ac58208303a5178b9ce503eb019acc3983733fe4fde1356820a230ca3a9e420e"
+    },
+    {
+      "path": "赛事档案/2026097/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026098/c98-2026-1/来源清单.json",
+      "bytes": 764,
+      "sha256": "5ab86995c4036827638b51e9f68352ab69b11a706f481e0b54a5c49558a07007"
+    },
+    {
+      "path": "赛事档案/2026098/c98-2026-1/赛事说明.txt",
+      "bytes": 1519,
+      "sha256": "a3af87dbb5a7ac616861fa41eb9f1c3183c80d9bcc52063aa2a4b72d1abc7905"
+    },
+    {
+      "path": "赛事档案/2026098/学习资料导读.txt",
+      "bytes": 3318,
+      "sha256": "a31caaec18ca0c9109f39ac55e13d4d94f7499b85debab0e87d4d261f12c347e"
+    },
+    {
+      "path": "赛事档案/2026098/缺口与检索记录.json",
+      "bytes": 1470,
+      "sha256": "fd4246d9e78b91e270994f3f7be13e48b98093e4affd4b4564e164422954dd2c"
+    },
+    {
+      "path": "赛事档案/2026098/附件清单.json",
+      "bytes": 1623,
+      "sha256": "4102ffbd31b12884c44fe75caf1cdfd9319784e4bb36e723ac659db5999ee7d8"
+    },
+    {
+      "path": "赛事档案/2026099/c99-2025-2/来源清单.json",
+      "bytes": 426,
+      "sha256": "918a5bbbc5e6581db54b88bd56338c84323be3d5feed55c63c4fa3b25d0b8b6d"
+    },
+    {
+      "path": "赛事档案/2026099/c99-2025-2/赛事说明.txt",
+      "bytes": 1182,
+      "sha256": "f03f54499f6d6151fd630c619ed80e97f934e8a2632cd0e715bb40465e329d61"
+    },
+    {
+      "path": "赛事档案/2026099/c99-2026-1/来源清单.json",
+      "bytes": 820,
+      "sha256": "63ce00052d211f959c159eda66245af04450968d5d46380dfa08e508813fe931"
+    },
+    {
+      "path": "赛事档案/2026099/c99-2026-1/赛事说明.txt",
+      "bytes": 1192,
+      "sha256": "3a2cd95f71691813ef89e8fb8bba5784ebaab996f169c318fcf30fa3bff67337"
+    },
+    {
+      "path": "赛事档案/2026099/学习资料导读.txt",
+      "bytes": 2603,
+      "sha256": "26d06ab1c2155afb46331d6a8444c9000cdc0a448c92a9b611828f8d9dd14c8a"
+    },
+    {
+      "path": "赛事档案/2026099/缺口与检索记录.json",
+      "bytes": 1806,
+      "sha256": "592d190daf62d2afbc446ab3409a76f5b56cd498a3f9d23338ddf0baaa57a2be"
+    },
+    {
+      "path": "赛事档案/2026099/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026100/c100-2026-1/来源清单.json",
+      "bytes": 398,
+      "sha256": "63ac729b7aeb0f19f1a221e61ea87e1431f433ff2c0f86f805571abf829cb344"
+    },
+    {
+      "path": "赛事档案/2026100/c100-2026-1/赛事说明.txt",
+      "bytes": 1473,
+      "sha256": "5f573a98df4fe88beca6122cf8def4e3a64b0c2a26a4cbe5771031d0bfe3894d"
+    },
+    {
+      "path": "赛事档案/2026100/学习资料导读.txt",
+      "bytes": 3717,
+      "sha256": "b87010975254e791f81e6e3d80408005939e0b525dd25988a6ae77a0e42c74d0"
+    },
+    {
+      "path": "赛事档案/2026100/缺口与检索记录.json",
+      "bytes": 1084,
+      "sha256": "c129a586055855c5d64d6d0a2e2c335f20d42ce1776be26cc45e64396b5e2f2b"
+    },
+    {
+      "path": "赛事档案/2026100/附件清单.json",
+      "bytes": 979,
+      "sha256": "b62becb7b1adc842f09322475a3a03b23cd5c01ea5cab114889e83fbf73b5924"
+    },
+    {
+      "path": "赛事档案/2026101/c101-2026-1/来源清单.json",
+      "bytes": 378,
+      "sha256": "0a5a76b5283e9e038305fdf6592d550dbe9fb955f9629935a1fa6a2f8627131a"
+    },
+    {
+      "path": "赛事档案/2026101/c101-2026-1/赛事说明.txt",
+      "bytes": 1817,
+      "sha256": "43a7dafc684415a129649a05efa2c356d04d65ea9502a3a47dd18fcac094ef83"
+    },
+    {
+      "path": "赛事档案/2026101/学习资料导读.txt",
+      "bytes": 3567,
+      "sha256": "e763e8c6e2431bb6dc88b019ca10f61b4fb0ee32f95db29ac42db18330509f73"
+    },
+    {
+      "path": "赛事档案/2026101/缺口与检索记录.json",
+      "bytes": 1166,
+      "sha256": "cf5f2b01c1f4c2354017009c05f2ba48a1dcf1f8927d4d08e3012404820309c2"
+    },
+    {
+      "path": "赛事档案/2026101/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026102/c102-2024-2/来源清单.json",
+      "bytes": 386,
+      "sha256": "74f14a0a2b812f0cc0365e36e581c77e2169da4e5a5abf4028403d89ba9d3d11"
+    },
+    {
+      "path": "赛事档案/2026102/c102-2024-2/赛事说明.txt",
+      "bytes": 1022,
+      "sha256": "6e9a39928eb282f86373cebb105433a551af8b8fd6a7853b5ea00a815b891ea5"
+    },
+    {
+      "path": "赛事档案/2026102/c102-2025-1/来源清单.json",
+      "bytes": 879,
+      "sha256": "719b073ec9189a1e1feeebb70f2596f4d41002a7f1707911623d8522c5c35842"
+    },
+    {
+      "path": "赛事档案/2026102/c102-2025-1/赛事说明.txt",
+      "bytes": 895,
+      "sha256": "887ecefbc9dc114ce09283226a760472f57b6b467347178a745a3e4501e065e8"
+    },
+    {
+      "path": "赛事档案/2026102/学习资料导读.txt",
+      "bytes": 3446,
+      "sha256": "3a3025a3a2b291e2ddf7c396ce1ca008331a9009302e486e6ea8b1a4c4a9a8b6"
+    },
+    {
+      "path": "赛事档案/2026102/缺口与检索记录.json",
+      "bytes": 1991,
+      "sha256": "393046bf6e8f7725540cb4e14cfde5b20ff72f378030bbdd48d0a68209182734"
+    },
+    {
+      "path": "赛事档案/2026102/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026103/c103-2026-1/来源清单.json",
+      "bytes": 724,
+      "sha256": "ab38cd532aa5555ef2f8345c5c4d9be46eb8ec7f5799d88293cd1c71b56a7c51"
+    },
+    {
+      "path": "赛事档案/2026103/c103-2026-1/赛事说明.txt",
+      "bytes": 1309,
+      "sha256": "b386def58a1d3d1d95e1b6c52ed5b81996a67bdfeb068717f18a7143cf605547"
+    },
+    {
+      "path": "赛事档案/2026103/学习资料导读.txt",
+      "bytes": 2639,
+      "sha256": "bf293ca95684079984b5de858c11d73839b6605680018c5f7cfa2384e0849202"
+    },
+    {
+      "path": "赛事档案/2026103/缺口与检索记录.json",
+      "bytes": 2166,
+      "sha256": "69d47d6367ba1fe7d5a874806475d10fd4323d9967a49f67e43065673f5c9b25"
+    },
+    {
+      "path": "赛事档案/2026103/附件清单.json",
+      "bytes": 1488,
+      "sha256": "065ecee29a6333e5f869c8d9b4a4acd2190eaf6ea241295c3186190ab6534d6c"
+    },
+    {
+      "path": "赛事档案/2026104/c104-2026-1/来源清单.json",
+      "bytes": 407,
+      "sha256": "09bf751d7263bf461d8afc8d18a0b32ddd4e4c353fbc9ad0c5d9da52cccb305b"
+    },
+    {
+      "path": "赛事档案/2026104/c104-2026-1/赛事说明.txt",
+      "bytes": 1724,
+      "sha256": "52abc6e84680e69e70eb0fba6d941d817b554e778e41acf76a13773e1d1ff0b0"
+    },
+    {
+      "path": "赛事档案/2026104/学习资料导读.txt",
+      "bytes": 2559,
+      "sha256": "738d1adb7d12eda8fa62265831864ea8195c85f682ed240fca9b93a7f86a1387"
+    },
+    {
+      "path": "赛事档案/2026104/缺口与检索记录.json",
+      "bytes": 1661,
+      "sha256": "655191d0f66e98312ee1902276f28374586c0315b37290a5b8a0fafa32a5d56a"
+    },
+    {
+      "path": "赛事档案/2026104/附件清单.json",
+      "bytes": 673,
+      "sha256": "cb88b398484307ff50e1fb24db0baae57005c7e3998774310b0643b143b8177b"
+    },
+    {
+      "path": "赛事档案/2026105/c105-2025-2/来源清单.json",
+      "bytes": 377,
+      "sha256": "83d5562ccfe0a6acb7cfe83c318750c513a5c33f05b8c4ce7d29b419c2066886"
+    },
+    {
+      "path": "赛事档案/2026105/c105-2025-2/赛事说明.txt",
+      "bytes": 792,
+      "sha256": "d083c1358ef9eca73ccd794cb87b7b4eb1718a46d740a24604cb287cabc878ca"
+    },
+    {
+      "path": "赛事档案/2026105/c105-2026-1/来源清单.json",
+      "bytes": 1463,
+      "sha256": "1b06ad7b97dd3d01df5817ee5aa83bfd4a501ce7645300de3dd2fc97dfe77e66"
+    },
+    {
+      "path": "赛事档案/2026105/c105-2026-1/赛事说明.txt",
+      "bytes": 1845,
+      "sha256": "3ae5dc682a895583331644adf140df07b106deb9a548392799375ac1659c9c92"
+    },
+    {
+      "path": "赛事档案/2026105/学习资料导读.txt",
+      "bytes": 2705,
+      "sha256": "5c9d2da32a2be028b7d9ae49a98c0a7471384d235b6d07da9b7921f14431d691"
+    },
+    {
+      "path": "赛事档案/2026105/缺口与检索记录.json",
+      "bytes": 2378,
+      "sha256": "daef8f9308a829d105785fee001af27303ad9e89585e4832a71c94a267258469"
+    },
+    {
+      "path": "赛事档案/2026105/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026106/c106-2026-1/来源清单.json",
+      "bytes": 675,
+      "sha256": "377e41c32bebeff3072eff0a493c7a3ebca06da6d7f88573d4d70f82c59cea02"
+    },
+    {
+      "path": "赛事档案/2026106/c106-2026-1/赛事说明.txt",
+      "bytes": 1485,
+      "sha256": "d6c556b6e3ed30c8780c18e29fe7016eb32628ea151a7e0250553ec3b03a5561"
+    },
+    {
+      "path": "赛事档案/2026106/学习资料导读.txt",
+      "bytes": 3379,
+      "sha256": "c732bddb0c76f469cfdfbe9174d37eca601e5a77258b85fb45ae8bade9ed601c"
+    },
+    {
+      "path": "赛事档案/2026106/缺口与检索记录.json",
+      "bytes": 2130,
+      "sha256": "de305464de2ca4aa46c093ffe83c513fbf6baaece5eead355cd1c5ffec73b860"
+    },
+    {
+      "path": "赛事档案/2026106/附件清单.json",
+      "bytes": 2146,
+      "sha256": "0c8b1be294dc8b0e6d8078c832d8c8f846945be98f4e72b9ba94760b4831e9d1"
+    },
+    {
+      "path": "赛事档案/2026107/c107-2026-1/来源清单.json",
+      "bytes": 708,
+      "sha256": "2feaca43a5d8902b7c2b4346ecbbe127d5b17daf7744a998eeda1826049d9984"
+    },
+    {
+      "path": "赛事档案/2026107/c107-2026-1/赛事说明.txt",
+      "bytes": 1485,
+      "sha256": "a54b53dbab9d26cd9d364c99a63eac902877dea123ac46cd6950532ac25447a7"
+    },
+    {
+      "path": "赛事档案/2026107/学习资料导读.txt",
+      "bytes": 2669,
+      "sha256": "7481664a73046318021a3b0b4345180288628a1e39e0c2445e12a3b01103fbef"
+    },
+    {
+      "path": "赛事档案/2026107/缺口与检索记录.json",
+      "bytes": 1118,
+      "sha256": "a9f38cfc79481236ec527244df0467475ee48bb63b3e432ce690a1412aa8f5fe"
+    },
+    {
+      "path": "赛事档案/2026107/附件清单.json",
+      "bytes": 782,
+      "sha256": "2db8d5be9c082e7613d2a8e2c410072bb19b46579f239797ccff8cd12997e0e2"
+    },
+    {
+      "path": "赛事档案/2026108/c108-2026-1/来源清单.json",
+      "bytes": 384,
+      "sha256": "5cf33f38333c34ba526382e311e7e1b104b3961bac791377cc0fa2ced3325eab"
+    },
+    {
+      "path": "赛事档案/2026108/c108-2026-1/赛事说明.txt",
+      "bytes": 1686,
+      "sha256": "ae2b72aaac1c6d6ab074e061bb4e2584f28bd95d5d74d25761d53c30e51cf6a0"
+    },
+    {
+      "path": "赛事档案/2026108/学习资料导读.txt",
+      "bytes": 2680,
+      "sha256": "348be95245f83f3b2c1746313755af78a571130cdb4c7b5fb467326b2b0fbc66"
+    },
+    {
+      "path": "赛事档案/2026108/缺口与检索记录.json",
+      "bytes": 1074,
+      "sha256": "c6c36fb896809ea80a8859bdebddc055ee47774cd1b03fbba07265695e39644e"
+    },
+    {
+      "path": "赛事档案/2026108/附件清单.json",
+      "bytes": 768,
+      "sha256": "5cd815eba9172f56e5bb1bac39ac9bef5650bd925adbd99750631c9df88106b7"
+    },
+    {
+      "path": "赛事档案/2026109/c109-2025-1/来源清单.json",
+      "bytes": 781,
+      "sha256": "f7795310918223432dea0b2867abd02c71acdc25ef8d2f0783e1aa21d7e6921f"
+    },
+    {
+      "path": "赛事档案/2026109/c109-2025-1/赛事说明.txt",
+      "bytes": 1439,
+      "sha256": "3086793e8b8ddb2fdab11565503b60abc187afc5684a9136699242b08da4aeab"
+    },
+    {
+      "path": "赛事档案/2026109/学习资料导读.txt",
+      "bytes": 2695,
+      "sha256": "cbcda12a9b86d79b0150972ad4bb731e91ffbf15996da86a073edc3dd46e4272"
+    },
+    {
+      "path": "赛事档案/2026109/缺口与检索记录.json",
+      "bytes": 1680,
+      "sha256": "e2a313af15889c988d5e069c91f134680626758a618738ebc533265779ea0c3f"
+    },
+    {
+      "path": "赛事档案/2026109/附件清单.json",
+      "bytes": 2392,
+      "sha256": "fe10bff103453039302a079bc1f3e676113cd1d6ef3991c27abc41eee7941246"
+    },
+    {
+      "path": "赛事档案/2026110/c110-2026-1/来源清单.json",
+      "bytes": 361,
+      "sha256": "df2728c5b7f7b61fa9afb29d6cf3d6a41156e232248f98a0c0b357d67124e05e"
+    },
+    {
+      "path": "赛事档案/2026110/c110-2026-1/赛事说明.txt",
+      "bytes": 1278,
+      "sha256": "8f116da627f73a755d95b2ade51511eddcc2be6632f7fc553710be10af91ea55"
+    },
+    {
+      "path": "赛事档案/2026110/学习资料导读.txt",
+      "bytes": 2631,
+      "sha256": "4b50359ee4225b8dc4aadccd1e60736707091aabf620b80b91d0859cd46158eb"
+    },
+    {
+      "path": "赛事档案/2026110/缺口与检索记录.json",
+      "bytes": 1277,
+      "sha256": "6aacd304b1d2db8acb5f564bf37486ca070a8aa788c12488980c493f89c5eb0a"
+    },
+    {
+      "path": "赛事档案/2026110/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026111/c111-2024-2/来源清单.json",
+      "bytes": 404,
+      "sha256": "407c54f962533391e2c71c9eb1719053ce88d67dd6bd906dba6bc90616cf091c"
+    },
+    {
+      "path": "赛事档案/2026111/c111-2024-2/赛事说明.txt",
+      "bytes": 898,
+      "sha256": "936bd82a891d89e1a5326ccada43438fec3f95c2efa85f2d36ba0fa62354a2a3"
+    },
+    {
+      "path": "赛事档案/2026111/c111-2025-1/来源清单.json",
+      "bytes": 397,
+      "sha256": "339153b705f006b47bbbae2f291b1fc979ae07a81a87c92bef8a0f93981ec7f4"
+    },
+    {
+      "path": "赛事档案/2026111/c111-2025-1/赛事说明.txt",
+      "bytes": 1083,
+      "sha256": "2880aaf47788577a29d2ef2b809b752d706a3813afa8d83efbd2d6bb8cdc8a63"
+    },
+    {
+      "path": "赛事档案/2026111/学习资料导读.txt",
+      "bytes": 1976,
+      "sha256": "153074f12509ef7570c6b8f0bf06c95911169c10be243049f2bc8a7a1e2a887e"
+    },
+    {
+      "path": "赛事档案/2026111/缺口与检索记录.json",
+      "bytes": 2966,
+      "sha256": "662b27795336b490e34a8e1751edfe2e0feeb0a492ef0cb9335a4539f0ba0bd2"
+    },
+    {
+      "path": "赛事档案/2026111/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026112/c112-2019-2/来源清单.json",
+      "bytes": 477,
+      "sha256": "a411955306cf1c662e58fd094eaa71ab0e61ef10a39fe42a823e2bef1cd6594d"
+    },
+    {
+      "path": "赛事档案/2026112/c112-2019-2/赛事说明.txt",
+      "bytes": 1105,
+      "sha256": "6c698e74344610cd7b32a67ecef48ce61fab7526bb8cb69a55c842ed03cb3fcc"
+    },
+    {
+      "path": "赛事档案/2026112/c112-2026-1/来源清单.json",
+      "bytes": 335,
+      "sha256": "30ebf55f19ba89c866b315d01143ff83fb16233b77b0ade6a9c474721b04582a"
+    },
+    {
+      "path": "赛事档案/2026112/c112-2026-1/赛事说明.txt",
+      "bytes": 910,
+      "sha256": "8f778b95cfdaaa587dadfc1b5fffec0c6b7e37ea3c8c00301ba50761203f2411"
+    },
+    {
+      "path": "赛事档案/2026112/学习资料导读.txt",
+      "bytes": 3574,
+      "sha256": "b07abbb41687f1b15d6d8e0a8d0006336335fb7f78f1dc975562fea0b7ade47f"
+    },
+    {
+      "path": "赛事档案/2026112/缺口与检索记录.json",
+      "bytes": 1835,
+      "sha256": "b476117851c2cc0bdda8fa20b16b231d8052584c94441c89f3f885841dd79939"
+    },
+    {
+      "path": "赛事档案/2026112/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026113/c113-2026-1/来源清单.json",
+      "bytes": 393,
+      "sha256": "852d8fcc9d901ad3552b71607e9c9d1e35ed82fa0500dea7e170a70d72d7d153"
+    },
+    {
+      "path": "赛事档案/2026113/c113-2026-1/赛事说明.txt",
+      "bytes": 1583,
+      "sha256": "ce513c5b1a951bedca84bfefc3e8a1b31e8e47c1045065dd48545c31a5b47779"
+    },
+    {
+      "path": "赛事档案/2026113/学习资料导读.txt",
+      "bytes": 2569,
+      "sha256": "bca6193beacd77dee32194a24609e23f192344100c6737ea7a1855f47cd4eae7"
+    },
+    {
+      "path": "赛事档案/2026113/缺口与检索记录.json",
+      "bytes": 1103,
+      "sha256": "5c3793b07b51949dee0a409317c597bdcc8a788925785ac3d050d14ff0786665"
+    },
+    {
+      "path": "赛事档案/2026113/附件清单.json",
+      "bytes": 763,
+      "sha256": "b7436b8a347c93e641d9ec1c91cd51e45d0bcc69fcbddd3f54d1497a9a35e5a6"
+    },
+    {
+      "path": "赛事档案/2026114/c114-2024-2/来源清单.json",
+      "bytes": 465,
+      "sha256": "9bab7c9e87b97d1c4c3dfd2bba88cd494ae4a981d79d3d0eae13501b7284fedf"
+    },
+    {
+      "path": "赛事档案/2026114/c114-2024-2/赛事说明.txt",
+      "bytes": 891,
+      "sha256": "665f5b4adfbe96abf2bed7e80e559678f88ffd051264f26f76e256ca083e85e5"
+    },
+    {
+      "path": "赛事档案/2026114/c114-2026-1/来源清单.json",
+      "bytes": 855,
+      "sha256": "b7cb0df85bb95bd4a4d8f0c5b1c95f1c5ff64b90f3fbc2ff1da6727fa18a3ffa"
+    },
+    {
+      "path": "赛事档案/2026114/c114-2026-1/赛事说明.txt",
+      "bytes": 1278,
+      "sha256": "cd31e0364536cceae083f500632469e9784db8c27a5dd4b0ced73ecdc04c0a21"
+    },
+    {
+      "path": "赛事档案/2026114/学习资料导读.txt",
+      "bytes": 2609,
+      "sha256": "ec1581f6807488f19897669138123dafb892fac2769dbe30ea49e907801eeddb"
+    },
+    {
+      "path": "赛事档案/2026114/缺口与检索记录.json",
+      "bytes": 1925,
+      "sha256": "3e38f968a8fa58b1d8d99bdd649712bb9043a4f9479c54e7b9ddfd4854ebc742"
+    },
+    {
+      "path": "赛事档案/2026114/附件清单.json",
+      "bytes": 841,
+      "sha256": "7a698f953df483079af9b71668bb68fd3b1889eb9cf9e3ea7a24e49666024b11"
+    },
+    {
+      "path": "赛事档案/2026115/c115-2026-1/来源清单.json",
+      "bytes": 1555,
+      "sha256": "b5ce787e11d29a56c14e738eefeeab09c8dcbeae1c5a4059d126661c5f2aa8ef"
+    },
+    {
+      "path": "赛事档案/2026115/c115-2026-1/赛事说明.txt",
+      "bytes": 1851,
+      "sha256": "09f78330e1d728f4e34b6648cc10db8df330bd65a9a3b27fac38808d2c4302ec"
+    },
+    {
+      "path": "赛事档案/2026115/学习资料导读.txt",
+      "bytes": 3687,
+      "sha256": "11c27801086019ca52b022e75df99f6ae55eae0fe19e34c5ec12c4693b01bbc2"
+    },
+    {
+      "path": "赛事档案/2026115/缺口与检索记录.json",
+      "bytes": 1828,
+      "sha256": "3e671aab3d1fb9d442a301f4c1d5075a16c7b4b7f319fae46353e4321402aaa8"
+    },
+    {
+      "path": "赛事档案/2026115/附件清单.json",
+      "bytes": 1630,
+      "sha256": "23eb509ced96a450a65106c74d659fc11b53220eac83819a4b90c28f23654523"
+    },
+    {
+      "path": "赛事档案/2026116/c116-2025-2/来源清单.json",
+      "bytes": 423,
+      "sha256": "70676ff1ba3bb3a1132f545668d53052d43b4c080376486449ba0eca2ee41e63"
+    },
+    {
+      "path": "赛事档案/2026116/c116-2025-2/赛事说明.txt",
+      "bytes": 688,
+      "sha256": "aaecd98a5cc9b0ee887e493b4e50bc348cac714b522856dc828d40d15ce42731"
+    },
+    {
+      "path": "赛事档案/2026116/c116-2026-1/来源清单.json",
+      "bytes": 452,
+      "sha256": "68617084a5614466fd466a7c0633731a78bd9dce1a2c5bd318c687e516d7f1cf"
+    },
+    {
+      "path": "赛事档案/2026116/c116-2026-1/赛事说明.txt",
+      "bytes": 1296,
+      "sha256": "e8df63c87821112d88155743a01e3672cdb634ca6b8fa0ac2a68becfa8818247"
+    },
+    {
+      "path": "赛事档案/2026116/学习资料导读.txt",
+      "bytes": 2628,
+      "sha256": "21133f0142c70a07e1dc3ef31a4d453866e1c3d3c5dcacdd53970b095538d33d"
+    },
+    {
+      "path": "赛事档案/2026116/缺口与检索记录.json",
+      "bytes": 1623,
+      "sha256": "6594054076479f85a28ed030f3016303dadd0b639a312af8ce050cb90db37ce8"
+    },
+    {
+      "path": "赛事档案/2026116/附件清单.json",
+      "bytes": 718,
+      "sha256": "f61a9bce34f47e023ed7a3a45f4d42eb2df5423cd644fa53635b56cf399cc008"
+    },
+    {
+      "path": "赛事档案/2026117/c117-2026-1/来源清单.json",
+      "bytes": 834,
+      "sha256": "7e4c4676b8cae3eedf81a620d68dc48d43d013f62453ee4962f49688ecfa6f2c"
+    },
+    {
+      "path": "赛事档案/2026117/c117-2026-1/赛事说明.txt",
+      "bytes": 1396,
+      "sha256": "6df5a3bac19e08b55345013a7ba23a5b4d50b33ec313fcebbac860a533981327"
+    },
+    {
+      "path": "赛事档案/2026117/学习资料导读.txt",
+      "bytes": 3642,
+      "sha256": "c75ba0cc9f4de0ba8962ff1c22084167e4068fb6fdda4528589b53deb5613875"
+    },
+    {
+      "path": "赛事档案/2026117/缺口与检索记录.json",
+      "bytes": 1397,
+      "sha256": "0f977f20266a61ae1053d4394eff82b0b53d57e24fa16e325b708971eb9680c8"
+    },
+    {
+      "path": "赛事档案/2026117/附件清单.json",
+      "bytes": 1023,
+      "sha256": "49833d8d094dc93a936abe641866030879864b08fcddf866226cac6d45098079"
+    },
+    {
+      "path": "赛事档案/2026118/c118-identity-1/来源清单.json",
+      "bytes": 805,
+      "sha256": "12eb4a5e53452a1a30addded71d3f0d5e0c73ab0c6a77e3c79033293016862db"
+    },
+    {
+      "path": "赛事档案/2026118/c118-identity-1/赛事说明.txt",
+      "bytes": 834,
+      "sha256": "0f243d2aaa504b2e48bcdf36ceb3eea890e853116375a32c218f40e8bda5c6a5"
+    },
+    {
+      "path": "赛事档案/2026118/学习资料导读.txt",
+      "bytes": 2678,
+      "sha256": "45422a8940f57c0fdb71c9546b6b34f1e105149556f1f19cad7928b7d9d13446"
+    },
+    {
+      "path": "赛事档案/2026118/缺口与检索记录.json",
+      "bytes": 1199,
+      "sha256": "165269c96d7457d8de50220c3acff591248bf13486b3c66afcefc0bb9ddc40b9"
+    },
+    {
+      "path": "赛事档案/2026118/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026119/c119-2026-1/来源清单.json",
+      "bytes": 689,
+      "sha256": "344024cb3603a89005bbc5d50e8db3cc869472e20f092aa6befad1befc8b64cd"
+    },
+    {
+      "path": "赛事档案/2026119/c119-2026-1/赛事说明.txt",
+      "bytes": 1650,
+      "sha256": "dd754dd42037e299c07d93a924eeb97714b0e1fa8d3ad88e9d1fb44f96361bd9"
+    },
+    {
+      "path": "赛事档案/2026119/学习资料导读.txt",
+      "bytes": 4145,
+      "sha256": "796bad054c1cad4ed11b5554747ea3816610f4e12ac38fe57865ae9e8f72e836"
+    },
+    {
+      "path": "赛事档案/2026119/缺口与检索记录.json",
+      "bytes": 1883,
+      "sha256": "625ab9748cbaaf05c3023eaa70e802b4952f6179e748decad6e19c43128412e2"
+    },
+    {
+      "path": "赛事档案/2026119/附件清单.json",
+      "bytes": 2059,
+      "sha256": "b387043a24fdf623668ab3572d8ebfc73427e91606ffc9560a923c6b9ae4dd67"
+    },
+    {
+      "path": "赛事档案/2026120/c120-2025-2/来源清单.json",
+      "bytes": 363,
+      "sha256": "138db1b7cff34b391ebabdaa99a8cb18ad6d18db2ec37dca948d63b313f73f3e"
+    },
+    {
+      "path": "赛事档案/2026120/c120-2025-2/赛事说明.txt",
+      "bytes": 718,
+      "sha256": "f19aca3941c1ebf8064ab1d0123173da897e683cce437409939d9f432b610928"
+    },
+    {
+      "path": "赛事档案/2026120/c120-2026-1/来源清单.json",
+      "bytes": 380,
+      "sha256": "61bb2291bf61490aeefdfacbdc08e1ac01f60a63c6611d4c5a1c2b81eb2802b7"
+    },
+    {
+      "path": "赛事档案/2026120/c120-2026-1/赛事说明.txt",
+      "bytes": 1100,
+      "sha256": "0794b7482c01763f3e4360961b1b789bbb3ffa1f75b8c119af9b4919e1c78252"
+    },
+    {
+      "path": "赛事档案/2026120/学习资料导读.txt",
+      "bytes": 3546,
+      "sha256": "72151b396ec124832aba082661c2c54ad6a9398555e49a3e2975bae7d484bcbb"
+    },
+    {
+      "path": "赛事档案/2026120/缺口与检索记录.json",
+      "bytes": 1022,
+      "sha256": "399cd7752cf3fd2ba41255cc7db9a0f79c916f5c7a6ffeff53161034ec678873"
+    },
+    {
+      "path": "赛事档案/2026120/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026121/c121-2026-1/来源清单.json",
+      "bytes": 469,
+      "sha256": "720d8d98df4fb02e1e99b037bae036241ffadc30393ee94aad7884bbd2226651"
+    },
+    {
+      "path": "赛事档案/2026121/c121-2026-1/赛事说明.txt",
+      "bytes": 1518,
+      "sha256": "2fd0e85eb0c05207883b18c748df8fd04b96e481622734ced98bdbad82e8114f"
+    },
+    {
+      "path": "赛事档案/2026121/学习资料导读.txt",
+      "bytes": 4323,
+      "sha256": "e261fd57da80df243b2a6b7d15707cee22d833cdecd9eeb83d5fbc5d5b9bcae3"
+    },
+    {
+      "path": "赛事档案/2026121/缺口与检索记录.json",
+      "bytes": 1501,
+      "sha256": "ddbf26230acc2f9639354251cadf4e0de007d13fb8bd7f4c482e9db2f19572fb"
+    },
+    {
+      "path": "赛事档案/2026121/附件清单.json",
+      "bytes": 2194,
+      "sha256": "d2526fb1c29604261fc4b0f5c050d16f060caf019c664c601cd30d421ecd687d"
+    },
+    {
+      "path": "赛事档案/2026122/c122-2026-1/来源清单.json",
+      "bytes": 716,
+      "sha256": "f27911ca2e28028131dde888671416e5ea0202c9ebdf8b350e5157220c1de034"
+    },
+    {
+      "path": "赛事档案/2026122/c122-2026-1/赛事说明.txt",
+      "bytes": 1608,
+      "sha256": "c896dc5912460449788954cab9d4c5167fea22fdecf45f49386c68ecc58c79a1"
+    },
+    {
+      "path": "赛事档案/2026122/学习资料导读.txt",
+      "bytes": 3525,
+      "sha256": "db88e8906ff04f17a7c804b17dd9ab3b01706a62ef07e7cc0e3fc590b717b06f"
+    },
+    {
+      "path": "赛事档案/2026122/缺口与检索记录.json",
+      "bytes": 1363,
+      "sha256": "ad688437d3d9c2732faf0bc06358b94d8c16181bb9bfaa057dc85aefb7bdc3e2"
+    },
+    {
+      "path": "赛事档案/2026122/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026123/c123-2026-1/来源清单.json",
+      "bytes": 716,
+      "sha256": "f27911ca2e28028131dde888671416e5ea0202c9ebdf8b350e5157220c1de034"
+    },
+    {
+      "path": "赛事档案/2026123/c123-2026-1/赛事说明.txt",
+      "bytes": 1608,
+      "sha256": "6ed497bb61e1cc6378c5db8bf76b2873ea88d8f1e5fe1271fee05012f66b036f"
+    },
+    {
+      "path": "赛事档案/2026123/学习资料导读.txt",
+      "bytes": 2666,
+      "sha256": "dec658d6ff0a786eb02033283c296fd8f9358f83c3adc4915a9b20041095d3fd"
+    },
+    {
+      "path": "赛事档案/2026123/缺口与检索记录.json",
+      "bytes": 482,
+      "sha256": "e9a04ff46e15c368ea18d268f5f3492d11cc5ab4a090c0bce8a4566eed07a55a"
+    },
+    {
+      "path": "赛事档案/2026123/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026124/c124-2026-1/来源清单.json",
+      "bytes": 349,
+      "sha256": "9e9a0d3500e0f2926249db44bce3776418f4a0905d3cd5cf4c6690786571d863"
+    },
+    {
+      "path": "赛事档案/2026124/c124-2026-1/赛事说明.txt",
+      "bytes": 1406,
+      "sha256": "5af73eb721512727cf46a99d4317922047105d3f1df6b4b6a07d8b8632e1269c"
+    },
+    {
+      "path": "赛事档案/2026124/学习资料导读.txt",
+      "bytes": 3585,
+      "sha256": "6f1dd9c61e0e1f86770265e14421cb6060ddefe6360b681f6a23904eb93dea48"
+    },
+    {
+      "path": "赛事档案/2026124/缺口与检索记录.json",
+      "bytes": 1340,
+      "sha256": "a6e66ccf29b8951a3a7bece71d7b87f6e9d19ee557609967a70edc982098f8ba"
+    },
+    {
+      "path": "赛事档案/2026124/附件清单.json",
+      "bytes": 901,
+      "sha256": "95dbf2a3864b52f6ffc1ad383d304bbb3fc49068932bd2c766335efefa8aad1c"
+    },
+    {
+      "path": "赛事档案/2026125/c125-2026-1/来源清单.json",
+      "bytes": 704,
+      "sha256": "6043b0f69278a5a86b35a351bd8a3065c075dc6ebd122fc184cb9816489c3975"
+    },
+    {
+      "path": "赛事档案/2026125/c125-2026-1/赛事说明.txt",
+      "bytes": 1303,
+      "sha256": "7ccc7619cca4615586a738e066c682dfdf9341575f7e1000ec2f8cfe90133aec"
+    },
+    {
+      "path": "赛事档案/2026125/学习资料导读.txt",
+      "bytes": 3500,
+      "sha256": "cbe5ea1c647f16794ad62a7b235b192f9f2040fce852d3ff6d248969aa218ff6"
+    },
+    {
+      "path": "赛事档案/2026125/缺口与检索记录.json",
+      "bytes": 1236,
+      "sha256": "ee784b9ed4cd2e0567987c6484d51a59b6c2fd44bb45981bfb53dd2877874cdc"
+    },
+    {
+      "path": "赛事档案/2026125/附件清单.json",
+      "bytes": 1433,
+      "sha256": "ef5761c8202b75ff65fa3185896671b128b6692a5f820fea46e19316626c955c"
+    },
+    {
+      "path": "赛事档案/2026126/c126-2026-1/来源清单.json",
+      "bytes": 468,
+      "sha256": "5b0cfe69fda6b595fdf3774369319d7037ffc298f2e8d9c3eb3b806826615b51"
+    },
+    {
+      "path": "赛事档案/2026126/c126-2026-1/赛事说明.txt",
+      "bytes": 1492,
+      "sha256": "ec4c2be98316d044cb586928af1e5b49d4ac8682d56d3447b8b874da1d0e6026"
+    },
+    {
+      "path": "赛事档案/2026126/学习资料导读.txt",
+      "bytes": 3582,
+      "sha256": "39cff4a25d613da41b938ff137ae7e6ad3cf8e2ea8cfe0888806a509cdab0733"
+    },
+    {
+      "path": "赛事档案/2026126/缺口与检索记录.json",
+      "bytes": 756,
+      "sha256": "1254a9ff40f8094030e09dd01a1ff7d630200829d2ab7786c1827809feae850e"
+    },
+    {
+      "path": "赛事档案/2026126/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026127/c127-2026-1/来源清单.json",
+      "bytes": 729,
+      "sha256": "1b15e3fbe0bbff3053f7120ef3949ca61b91e4b1c1390919b1f9090f8b6bf299"
+    },
+    {
+      "path": "赛事档案/2026127/c127-2026-1/赛事说明.txt",
+      "bytes": 1588,
+      "sha256": "2d75e88a17d5d7a128b467faef98158c3c5d0c568c27107d6af9af8fc00389f2"
+    },
+    {
+      "path": "赛事档案/2026127/学习资料导读.txt",
+      "bytes": 3557,
+      "sha256": "33e0ea15433f1a789ddb42b70f2fc1a8af2a735c8becab8af27a87dce56e422a"
+    },
+    {
+      "path": "赛事档案/2026127/缺口与检索记录.json",
+      "bytes": 1358,
+      "sha256": "9ed5a008880d0fb67df9c3364d027d69101363abcc05bbebb84b14cf72e47db6"
+    },
+    {
+      "path": "赛事档案/2026127/附件清单.json",
+      "bytes": 931,
+      "sha256": "51c2fdf98c92fe8a3f07cd029994032db61f32579710fbcf07dad509588ba573"
+    },
+    {
+      "path": "赛事档案/2026128/c128-c135-17bb43de/来源清单.json",
+      "bytes": 1420,
+      "sha256": "ed95ea24c754f308377e3b64d670b2bbd196aec2550aedde04ed8a57ecd57428"
+    },
+    {
+      "path": "赛事档案/2026128/c128-c135-17bb43de/赛事说明.txt",
+      "bytes": 2369,
+      "sha256": "238ee48476ac58e355d546d4312ebd7784d9460084e9918d431f56db6dbeac57"
+    },
+    {
+      "path": "赛事档案/2026128/c128-c135-fe3f1f98/来源清单.json",
+      "bytes": 340,
+      "sha256": "7f689591646a417792b698650c6189e43667d1d52fc1b9826975f4d67b60f28e"
+    },
+    {
+      "path": "赛事档案/2026128/c128-c135-fe3f1f98/赛事说明.txt",
+      "bytes": 682,
+      "sha256": "b9f787d8158554322868cb9168fcdbcd4b02c8260a5625e5c59a1604d4607ebb"
+    },
+    {
+      "path": "赛事档案/2026128/学习资料导读.txt",
+      "bytes": 3221,
+      "sha256": "fdaad2a5672205884d284b4d8f2b465b09fde2f06befe0f51aa765c1bed7decc"
+    },
+    {
+      "path": "赛事档案/2026128/缺口与检索记录.json",
+      "bytes": 1117,
+      "sha256": "da03fd1272c0ad28b1835b2caf3d59292045cc45c6ccf87c2b0b50e94334cf6c"
+    },
+    {
+      "path": "赛事档案/2026128/附件清单.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "赛事档案/2026129/c129-2026-1/来源清单.json",
+      "bytes": 742,
+      "sha256": "0763bb675deed645509202a6c1c85edbb4e962e25a1589fe71fb932dc5ad81e9"
+    },
+    {
+      "path": "赛事档案/2026129/c129-2026-1/赛事说明.txt",
+      "bytes": 1649,
+      "sha256": "b9de103e4b57c84ef409952743b311958c452a788bf31c6b47dd997ce7d8173b"
+    },
+    {
+      "path": "赛事档案/2026129/学习资料导读.txt",
+      "bytes": 3671,
+      "sha256": "ac3ea56c5e37d51f71f7147819a7b89b73b1fb068f4a12388dcbf3389416efca"
+    },
+    {
+      "path": "赛事档案/2026129/缺口与检索记录.json",
+      "bytes": 1452,
+      "sha256": "7e1f84cc3c2fc9b745d2ae545ac67128a41440441dd870a249b4652469a12507"
+    },
+    {
+      "path": "赛事档案/2026129/附件清单.json",
+      "bytes": 835,
+      "sha256": "6b169da46a2ad4559cd845b052619550ef43aae62f86546c4ccefc1dec644847"
+    },
+    {
+      "path": "赛事档案/2026130/c130-2024-2/来源清单.json",
+      "bytes": 891,
+      "sha256": "961f7953ef8691252021b680c90a155b48ad0b6228a2f0204ab7a84f4048ed37"
+    },
+    {
+      "path": "赛事档案/2026130/c130-2024-2/赛事说明.txt",
+      "bytes": 1170,
+      "sha256": "e5507aa08ccff6d6b7334e2cd076251ac8c09645c0de6c89a975d74cb1d5ccc9"
+    },
+    {
+      "path": "赛事档案/2026130/c130-2026-1/来源清单.json",
+      "bytes": 401,
+      "sha256": "87a7ea733faf00af66b2de70dae91d22629fae0664bc94c13539ab20958f6cb8"
+    },
+    {
+      "path": "赛事档案/2026130/c130-2026-1/赛事说明.txt",
+      "bytes": 782,
+      "sha256": "07335d00451d4a179732087216ae4e61640a2b5f6288e5acd15aff57f364f578"
+    },
+    {
+      "path": "赛事档案/2026130/学习资料导读.txt",
+      "bytes": 3540,
+      "sha256": "d32de85bb9569ea828d812a5d4b94d80a3d91118c8440769de44c6e04efae6b2"
+    },
+    {
+      "path": "赛事档案/2026130/缺口与检索记录.json",
+      "bytes": 2058,
+      "sha256": "65822365fb9f3d042c85cdcdf3be2e78a64f934161c0050658d88573cdc854ef"
+    },
+    {
+      "path": "赛事档案/2026130/附件清单.json",
+      "bytes": 755,
+      "sha256": "a887099c2da41c62e72b1ac1cade59e2ab6e7696adb97dfebd1cf1e24980513f"
+    },
+    {
+      "path": "附件/00/00d9a1c55ba8e040e708c161a62ea6f474a2125c3fd2e65da5840549e105c5af.pdf",
+      "bytes": 441604,
+      "sha256": "00d9a1c55ba8e040e708c161a62ea6f474a2125c3fd2e65da5840549e105c5af"
+    },
+    {
+      "path": "附件/00/00d9a1c55ba8e040e708c161a62ea6f474a2125c3fd2e65da5840549e105c5af.txt",
+      "bytes": 101,
+      "sha256": "a8d98ab4edae4c59751d793abb2f1745574ac4c6b055a8a84199c6fd932939d0"
+    },
+    {
+      "path": "附件/00/00d9a1c55ba8e040e708c161a62ea6f474a2125c3fd2e65da5840549e105c5af.关键条款.txt",
+      "bytes": 216,
+      "sha256": "47fb813063e297d88cd9dc1821d95e9e378cf9b5ff97ca55f834d02e3197135f"
+    },
+    {
+      "path": "附件/01/0164daa3bcaa6838f750542688e65af79c28172101d0637f21019a8dfa2d564d.pdf",
+      "bytes": 665605,
+      "sha256": "0164daa3bcaa6838f750542688e65af79c28172101d0637f21019a8dfa2d564d"
+    },
+    {
+      "path": "附件/01/0164daa3bcaa6838f750542688e65af79c28172101d0637f21019a8dfa2d564d.txt",
+      "bytes": 158108,
+      "sha256": "3544c2ed88e3881ec80a4fc8f770b69c1f0aaa100c058659e268260f0aa2853f"
+    },
+    {
+      "path": "附件/08/08fc5135adbb121510b68b6b6c369e763f7c7a8f8acaea011412e8f62844daa6.pdf",
+      "bytes": 1152568,
+      "sha256": "08fc5135adbb121510b68b6b6c369e763f7c7a8f8acaea011412e8f62844daa6"
+    },
+    {
+      "path": "附件/08/08fc5135adbb121510b68b6b6c369e763f7c7a8f8acaea011412e8f62844daa6.txt",
+      "bytes": 80,
+      "sha256": "d7c9fd08fcb50c760b75f9ae3af0cd18dfe2e4308b5c6b2e141f8731195ce153"
+    },
+    {
+      "path": "附件/1a/1aee999ac35cdcffb5e2b47dfae6b375622e79718cd0b9495ebbbc71dd7012f3.doc",
+      "bytes": 23048,
+      "sha256": "1aee999ac35cdcffb5e2b47dfae6b375622e79718cd0b9495ebbbc71dd7012f3"
+    },
+    {
+      "path": "附件/1a/1aee999ac35cdcffb5e2b47dfae6b375622e79718cd0b9495ebbbc71dd7012f3.txt",
+      "bytes": 2874,
+      "sha256": "3313080185e445374303e80672a20925114dbdcd417525c04c56bd5c4738eb37"
+    },
+    {
+      "path": "附件/22/22a6a9fb43099b12c82ef222b1d0597cf1bace3b58861c854815479ba35c167c.pdf",
+      "bytes": 832111,
+      "sha256": "22a6a9fb43099b12c82ef222b1d0597cf1bace3b58861c854815479ba35c167c"
+    },
+    {
+      "path": "附件/22/22a6a9fb43099b12c82ef222b1d0597cf1bace3b58861c854815479ba35c167c.txt",
+      "bytes": 64388,
+      "sha256": "9d208287d0016aab0c2fb75158976bbbb2ac248401736b92b8e91bc7b67db7d9"
+    },
+    {
+      "path": "附件/2c/2cccce55be6d00d5a8485e38ab5aa39878da15c478e06e234489ffd16d0d8f56.pdf",
+      "bytes": 1941568,
+      "sha256": "2cccce55be6d00d5a8485e38ab5aa39878da15c478e06e234489ffd16d0d8f56"
+    },
+    {
+      "path": "附件/2c/2cccce55be6d00d5a8485e38ab5aa39878da15c478e06e234489ffd16d0d8f56.txt",
+      "bytes": 101,
+      "sha256": "a8d98ab4edae4c59751d793abb2f1745574ac4c6b055a8a84199c6fd932939d0"
+    },
+    {
+      "path": "附件/2c/2cccce55be6d00d5a8485e38ab5aa39878da15c478e06e234489ffd16d0d8f56.关键条款.txt",
+      "bytes": 193,
+      "sha256": "a8f5a8772e54d2c633248d86646fb006146c272fe5e843f82ce2e154d455f2ae"
+    },
+    {
+      "path": "附件/34/34edb9727737bd4c3495a1502b2672f6f2242998c6110577f136335c42e199e2.pdf",
+      "bytes": 2361851,
+      "sha256": "34edb9727737bd4c3495a1502b2672f6f2242998c6110577f136335c42e199e2"
+    },
+    {
+      "path": "附件/34/34edb9727737bd4c3495a1502b2672f6f2242998c6110577f136335c42e199e2.txt",
+      "bytes": 115290,
+      "sha256": "dfbe5a525334774e6de8dd8e21081ce9ca0e1f348b5227c853ffb4ae4065ef11"
+    },
+    {
+      "path": "附件/3a/3a57cdfedf32e7b2e712a201ef4bc89b4210ecbe4d10c66aafbe52477ef7eb73.pdf",
+      "bytes": 330452,
+      "sha256": "3a57cdfedf32e7b2e712a201ef4bc89b4210ecbe4d10c66aafbe52477ef7eb73"
+    },
+    {
+      "path": "附件/3a/3a57cdfedf32e7b2e712a201ef4bc89b4210ecbe4d10c66aafbe52477ef7eb73.txt",
+      "bytes": 26353,
+      "sha256": "a4889a9527ac408b4bac835735c0db7a20444f17e2f85145148eb4a2a15ac4be"
+    },
+    {
+      "path": "附件/3d/3dacdabb9abb51ca67dfc97f4ec00198ce11abd530cf257693e8d451bf12cc37.pdf",
+      "bytes": 2423489,
+      "sha256": "3dacdabb9abb51ca67dfc97f4ec00198ce11abd530cf257693e8d451bf12cc37"
+    },
+    {
+      "path": "附件/3d/3dacdabb9abb51ca67dfc97f4ec00198ce11abd530cf257693e8d451bf12cc37.txt",
+      "bytes": 6152,
+      "sha256": "db51ead281eb38a8792fb4bba6299f90e82c414550486a282c422a7f4b85e284"
+    },
+    {
+      "path": "附件/45/456e6dadff312678a191a6e41d1cbeeeb84e93b3c908f79f68652b9bfefe398a.docx",
+      "bytes": 14935,
+      "sha256": "456e6dadff312678a191a6e41d1cbeeeb84e93b3c908f79f68652b9bfefe398a"
+    },
+    {
+      "path": "附件/45/456e6dadff312678a191a6e41d1cbeeeb84e93b3c908f79f68652b9bfefe398a.txt",
+      "bytes": 853,
+      "sha256": "513663a4d8910cf256cf2229ced316924285e56578c6f4d8439e6d9831760fb5"
+    },
+    {
+      "path": "附件/55/5596163deca02667d1ae0f208b36870a61ca5b43905281b6954a59ee0759f6ea.docx",
+      "bytes": 289224,
+      "sha256": "5596163deca02667d1ae0f208b36870a61ca5b43905281b6954a59ee0759f6ea"
+    },
+    {
+      "path": "附件/55/5596163deca02667d1ae0f208b36870a61ca5b43905281b6954a59ee0759f6ea.txt",
+      "bytes": 5567,
+      "sha256": "e4cef580e1addb05b96fa194183a8494b8d7e8835174450d030a9e386e121afb"
+    },
+    {
+      "path": "附件/56/565fc54335e90a171a531fb68378d70cd9efaf66fe896603e866a2e483827ea6.pdf",
+      "bytes": 511115,
+      "sha256": "565fc54335e90a171a531fb68378d70cd9efaf66fe896603e866a2e483827ea6"
+    },
+    {
+      "path": "附件/56/565fc54335e90a171a531fb68378d70cd9efaf66fe896603e866a2e483827ea6.txt",
+      "bytes": 117281,
+      "sha256": "cdf25aac40d78eb2cce6b049a558a0c2913f3c755c37957758cc3e5256e01a50"
+    },
+    {
+      "path": "附件/63/634b25716c3ac70522080edc23289e8cec0cedb2042f633b60536ab70d3e78f4.pdf",
+      "bytes": 248799,
+      "sha256": "634b25716c3ac70522080edc23289e8cec0cedb2042f633b60536ab70d3e78f4"
+    },
+    {
+      "path": "附件/63/634b25716c3ac70522080edc23289e8cec0cedb2042f633b60536ab70d3e78f4.txt",
+      "bytes": 5043,
+      "sha256": "e6d3e13642da761f8abcd87dcabf03b56abff9919faa1b2ff3e8ddeece9c4c82"
+    },
+    {
+      "path": "附件/65/656699fd839ccdcee9468a6e9cf9ab630062a3f36482cec7d88ff1c14b91a384.pdf",
+      "bytes": 2132888,
+      "sha256": "656699fd839ccdcee9468a6e9cf9ab630062a3f36482cec7d88ff1c14b91a384"
+    },
+    {
+      "path": "附件/65/656699fd839ccdcee9468a6e9cf9ab630062a3f36482cec7d88ff1c14b91a384.txt",
+      "bytes": 164,
+      "sha256": "950bb7d550ba4c463bdab2602b1633be85f6232495069431f99f6b531a292952"
+    },
+    {
+      "path": "附件/65/656699fd839ccdcee9468a6e9cf9ab630062a3f36482cec7d88ff1c14b91a384.关键条款.txt",
+      "bytes": 189,
+      "sha256": "3976310cce9c2e68bf988610ef8778bfa636b126d1c4a7c64d15d7b691be20e1"
+    },
+    {
+      "path": "附件/68/68bfa20efbd220af9832a6d9a56c342a911d3f94905ddcf9ccd3fcaa73c48cfb.pdf",
+      "bytes": 265846,
+      "sha256": "68bfa20efbd220af9832a6d9a56c342a911d3f94905ddcf9ccd3fcaa73c48cfb"
+    },
+    {
+      "path": "附件/68/68bfa20efbd220af9832a6d9a56c342a911d3f94905ddcf9ccd3fcaa73c48cfb.txt",
+      "bytes": 12567,
+      "sha256": "fc8fc7fa45ae8f309526955c19228f91b9adbb89815fce107abca40b334874e4"
+    },
+    {
+      "path": "附件/6a/6a03ec18141498bd8a0fe1ce04e25a9ca2537914964f60c44c22223f780021b8.pdf",
+      "bytes": 535688,
+      "sha256": "6a03ec18141498bd8a0fe1ce04e25a9ca2537914964f60c44c22223f780021b8"
+    },
+    {
+      "path": "附件/6a/6a03ec18141498bd8a0fe1ce04e25a9ca2537914964f60c44c22223f780021b8.txt",
+      "bytes": 7689,
+      "sha256": "3344bf540817836c9316e467a9fed1546a5e0cc1cc605ca3b3dc128fa1015cbc"
+    },
+    {
+      "path": "附件/75/7535200f2ffe08af002327e9d48ca5e169f3eb18aca060540808dfc985ab64c2.docx",
+      "bytes": 72189,
+      "sha256": "7535200f2ffe08af002327e9d48ca5e169f3eb18aca060540808dfc985ab64c2"
+    },
+    {
+      "path": "附件/75/7535200f2ffe08af002327e9d48ca5e169f3eb18aca060540808dfc985ab64c2.txt",
+      "bytes": 5093,
+      "sha256": "b9a354edb104225728a07d14651388145b92f8db84ea75c86c70ad8b645e255a"
+    },
+    {
+      "path": "附件/7d/7d343c0aec1ce281f59929eeb34da6abf949aee5ad7ffa60771cc9a5e141bc5e.pdf",
+      "bytes": 886670,
+      "sha256": "7d343c0aec1ce281f59929eeb34da6abf949aee5ad7ffa60771cc9a5e141bc5e"
+    },
+    {
+      "path": "附件/7d/7d343c0aec1ce281f59929eeb34da6abf949aee5ad7ffa60771cc9a5e141bc5e.txt",
+      "bytes": 38,
+      "sha256": "bb0c895b6da3b4a5f39fcb655601a9ff0c0a958ec3d5b329cdd5c8fc43795bec"
+    },
+    {
+      "path": "附件/7d/7d343c0aec1ce281f59929eeb34da6abf949aee5ad7ffa60771cc9a5e141bc5e.关键条款.txt",
+      "bytes": 259,
+      "sha256": "75d5d01ec1308cd591fe0f6a05084586460191d318b1b4a2df54f1c0c0e6ad1d"
+    },
+    {
+      "path": "附件/7d/7dd6967e5b4ee47f1bfd74da955ecbffbc2766e53616133e7aba6dffeffafa98.pdf",
+      "bytes": 845403,
+      "sha256": "7dd6967e5b4ee47f1bfd74da955ecbffbc2766e53616133e7aba6dffeffafa98"
+    },
+    {
+      "path": "附件/7d/7dd6967e5b4ee47f1bfd74da955ecbffbc2766e53616133e7aba6dffeffafa98.txt",
+      "bytes": 21849,
+      "sha256": "93cce6f1402e6d1deb9957402ceeacdf62f2422cec245a132bce96636ac8bc13"
+    },
+    {
+      "path": "附件/7f/7f5d1efb43276e48655b3ae2e08ca1ba924a5381c4d67dc973f6465ee135cbbe.pdf",
+      "bytes": 1125962,
+      "sha256": "7f5d1efb43276e48655b3ae2e08ca1ba924a5381c4d67dc973f6465ee135cbbe"
+    },
+    {
+      "path": "附件/7f/7f5d1efb43276e48655b3ae2e08ca1ba924a5381c4d67dc973f6465ee135cbbe.txt",
+      "bytes": 21430,
+      "sha256": "94430c450adc96f810b8921cefcd83809ede8925e13038cab2068c7f9124370f"
+    },
+    {
+      "path": "附件/81/81ccbc49f2de0a7196da341efaf93e2d8bfe3a0bb98f40946d6576b1c62d9e6d.pdf",
+      "bytes": 811655,
+      "sha256": "81ccbc49f2de0a7196da341efaf93e2d8bfe3a0bb98f40946d6576b1c62d9e6d"
+    },
+    {
+      "path": "附件/81/81ccbc49f2de0a7196da341efaf93e2d8bfe3a0bb98f40946d6576b1c62d9e6d.txt",
+      "bytes": 58262,
+      "sha256": "367a6d626af416f6de65779a9f2887aa422455b6130f082cd1b99f15ea19ce3d"
+    },
+    {
+      "path": "附件/88/887c88770a1af9bcadb66564bfc53cbbe2311534319b6491f62589f4dac5f776.pdf",
+      "bytes": 1194086,
+      "sha256": "887c88770a1af9bcadb66564bfc53cbbe2311534319b6491f62589f4dac5f776"
+    },
+    {
+      "path": "附件/88/887c88770a1af9bcadb66564bfc53cbbe2311534319b6491f62589f4dac5f776.txt",
+      "bytes": 37752,
+      "sha256": "6777367965e52d8473c29135b2c09bbc34427db1886a203c0b626de8b3877817"
+    },
+    {
+      "path": "附件/8b/8b28491f6098f962520163ea31552dea2b7ce73f02d70e17cecd0a43ce62872b.pdf",
+      "bytes": 326778,
+      "sha256": "8b28491f6098f962520163ea31552dea2b7ce73f02d70e17cecd0a43ce62872b"
+    },
+    {
+      "path": "附件/8b/8b28491f6098f962520163ea31552dea2b7ce73f02d70e17cecd0a43ce62872b.txt",
+      "bytes": 7035,
+      "sha256": "692516b96ca09d2c23140b4e608f5328b135155c3d8c5ed6ee38dc6dbda10588"
+    },
+    {
+      "path": "附件/97/9768dc5e75480cef9a498aa09d0e312ff86e995ad96e7a87aca91abb62352914.pdf",
+      "bytes": 1749178,
+      "sha256": "9768dc5e75480cef9a498aa09d0e312ff86e995ad96e7a87aca91abb62352914"
+    },
+    {
+      "path": "附件/97/9768dc5e75480cef9a498aa09d0e312ff86e995ad96e7a87aca91abb62352914.txt",
+      "bytes": 6307,
+      "sha256": "41eab207bca93c9bd291ab5bc20d4f7c11c6f94db86e1c94d726de92de51c18a"
+    },
+    {
+      "path": "附件/b2/b2b6b52059e1f821e7ab2f753719f5690780d0a2260cf98e440f0c9102bdb98e.docx",
+      "bytes": 45715,
+      "sha256": "b2b6b52059e1f821e7ab2f753719f5690780d0a2260cf98e440f0c9102bdb98e"
+    },
+    {
+      "path": "附件/b2/b2b6b52059e1f821e7ab2f753719f5690780d0a2260cf98e440f0c9102bdb98e.txt",
+      "bytes": 11793,
+      "sha256": "1e30c6ebd1db6cc1230c6bf17c6d43768dfe54a522c332c1cdc72c8f900bd96d"
+    },
+    {
+      "path": "附件/b4/b4cdf061eb89b7bf202a3afbbedf3803dadebf368ebc3636eb57bdf64cb8d993.jpg",
+      "bytes": 681005,
+      "sha256": "b4cdf061eb89b7bf202a3afbbedf3803dadebf368ebc3636eb57bdf64cb8d993"
+    },
+    {
+      "path": "附件/be/be2facef5f2858852cf3b3c082b6895740ff6e0e1bd7378c6c0b4c82ad91cddc.pdf",
+      "bytes": 96145,
+      "sha256": "be2facef5f2858852cf3b3c082b6895740ff6e0e1bd7378c6c0b4c82ad91cddc"
+    },
+    {
+      "path": "附件/be/be2facef5f2858852cf3b3c082b6895740ff6e0e1bd7378c6c0b4c82ad91cddc.txt",
+      "bytes": 6285,
+      "sha256": "c10778193d4cb003a8420a146008d129cc190f13653d735debbfe8fa39ee043f"
+    },
+    {
+      "path": "附件/c6/c6b3bd4642a9a51a391ee052276d3b17fe04ec2d4d9b5833f602c0aa6eb691fa.pdf",
+      "bytes": 215990,
+      "sha256": "c6b3bd4642a9a51a391ee052276d3b17fe04ec2d4d9b5833f602c0aa6eb691fa"
+    },
+    {
+      "path": "附件/c6/c6b3bd4642a9a51a391ee052276d3b17fe04ec2d4d9b5833f602c0aa6eb691fa.txt",
+      "bytes": 6930,
+      "sha256": "0551c6d9e9525671d284d456cd30d784db9702cb342d9a2e4078ed15e20f1db1"
+    },
+    {
+      "path": "附件/c8/c89b5407ba5a1bdaed4783bef9cd9ce237162cb1fa89a6ee4402b0e33b9c1ad2.docx",
+      "bytes": 17095,
+      "sha256": "c89b5407ba5a1bdaed4783bef9cd9ce237162cb1fa89a6ee4402b0e33b9c1ad2"
+    },
+    {
+      "path": "附件/c8/c89b5407ba5a1bdaed4783bef9cd9ce237162cb1fa89a6ee4402b0e33b9c1ad2.txt",
+      "bytes": 2986,
+      "sha256": "a773e95de0b12a8630fc07374631280ff3430244ba88ef85edffa4cbd52e2698"
+    },
+    {
+      "path": "附件/ce/ce5b193c7d74de967ebc6c9eaa151479d158c6dd7014d02307f05ebb745ea8c5.pdf",
+      "bytes": 172714,
+      "sha256": "ce5b193c7d74de967ebc6c9eaa151479d158c6dd7014d02307f05ebb745ea8c5"
+    },
+    {
+      "path": "附件/ce/ce5b193c7d74de967ebc6c9eaa151479d158c6dd7014d02307f05ebb745ea8c5.txt",
+      "bytes": 6446,
+      "sha256": "c33310872679336ec90f36ee53eacabce98a115273848a18fa79f8ed37478c0f"
+    },
+    {
+      "path": "附件/d1/d1defaff6756f743f1793f17ae2163bdcfc4a8d911588fcf599c161bdfe20382.pdf",
+      "bytes": 388924,
+      "sha256": "d1defaff6756f743f1793f17ae2163bdcfc4a8d911588fcf599c161bdfe20382"
+    },
+    {
+      "path": "附件/d1/d1defaff6756f743f1793f17ae2163bdcfc4a8d911588fcf599c161bdfe20382.txt",
+      "bytes": 7006,
+      "sha256": "4aaa275041ae508a2a5e03ee8515316f162bd12d3c0562ce9ba730daedc1463c"
+    },
+    {
+      "path": "附件/d8/d8f2ec39f24e78d993dd1f09b4d4d04769e5eca542f8a2dc02f847cfb7b1c22c.pdf",
+      "bytes": 645797,
+      "sha256": "d8f2ec39f24e78d993dd1f09b4d4d04769e5eca542f8a2dc02f847cfb7b1c22c"
+    },
+    {
+      "path": "附件/d8/d8f2ec39f24e78d993dd1f09b4d4d04769e5eca542f8a2dc02f847cfb7b1c22c.txt",
+      "bytes": 33667,
+      "sha256": "6a3d72accfb7726b750f47b6c95b05987db27149f5faa7db252c30bd037d39ca"
+    },
+    {
+      "path": "附件/da/da2b7eb51bc8a28430f2439acaea0c0e792d82bc7c128c471082203afe47742f.pdf",
+      "bytes": 274517,
+      "sha256": "da2b7eb51bc8a28430f2439acaea0c0e792d82bc7c128c471082203afe47742f"
+    },
+    {
+      "path": "附件/da/da2b7eb51bc8a28430f2439acaea0c0e792d82bc7c128c471082203afe47742f.txt",
+      "bytes": 8152,
+      "sha256": "2147f4cd5cc375e80dc9d970ea31746a656bfb6fc2302c44f913265c208bf9c3"
+    },
+    {
+      "path": "附件/db/db505785dddb17715bdebb15f8049b499b4248a61445cfe4829155a7f531fb91.pdf",
+      "bytes": 338604,
+      "sha256": "db505785dddb17715bdebb15f8049b499b4248a61445cfe4829155a7f531fb91"
+    },
+    {
+      "path": "附件/db/db505785dddb17715bdebb15f8049b499b4248a61445cfe4829155a7f531fb91.txt",
+      "bytes": 5342,
+      "sha256": "4be76c9896ca47722efcbc23de834b1d2b64fe399ab99bcfb65459b4618701cc"
+    },
+    {
+      "path": "附件/df/df2c749f0f3e8005ee9b38efc9b894cd12b93c6b7a6b1ffbfb08bf87192bc36c.docx",
+      "bytes": 19422,
+      "sha256": "df2c749f0f3e8005ee9b38efc9b894cd12b93c6b7a6b1ffbfb08bf87192bc36c"
+    },
+    {
+      "path": "附件/df/df2c749f0f3e8005ee9b38efc9b894cd12b93c6b7a6b1ffbfb08bf87192bc36c.txt",
+      "bytes": 1467,
+      "sha256": "d0d27c25b8843329c15693eb4d7c5737113f53f2e6f9fdee2b02509da4b8dbf8"
+    },
+    {
+      "path": "附件/ea/eae906d3f1ab5422b41e29d230369bb24a59a421a55e0a2c22a428073f9ba8ad.pdf",
+      "bytes": 283526,
+      "sha256": "eae906d3f1ab5422b41e29d230369bb24a59a421a55e0a2c22a428073f9ba8ad"
+    },
+    {
+      "path": "附件/ea/eae906d3f1ab5422b41e29d230369bb24a59a421a55e0a2c22a428073f9ba8ad.txt",
+      "bytes": 49277,
+      "sha256": "2db632e8774349452247b7e5521526b63c6a65a29397261f66c2bf208f70c16e"
+    },
+    {
+      "path": "附件/ef/ef56db305e2ed5bd5425860e37cf795b2ab747d64dbb9ddbb4a9fec460b99034.pdf",
+      "bytes": 625674,
+      "sha256": "ef56db305e2ed5bd5425860e37cf795b2ab747d64dbb9ddbb4a9fec460b99034"
+    },
+    {
+      "path": "附件/ef/ef56db305e2ed5bd5425860e37cf795b2ab747d64dbb9ddbb4a9fec460b99034.txt",
+      "bytes": 29082,
+      "sha256": "f89b7816ab43e4f8efaa6bec235c9eddcfcbd8ab101c2de55810347de7bee63e"
+    },
+    {
+      "path": "附件/f2/f2a7e0d90b7a914f59bf41e4fdfd811149698f99595251a93f8acdcd31fe3eb0.pdf",
+      "bytes": 545830,
+      "sha256": "f2a7e0d90b7a914f59bf41e4fdfd811149698f99595251a93f8acdcd31fe3eb0"
+    },
+    {
+      "path": "附件/f2/f2a7e0d90b7a914f59bf41e4fdfd811149698f99595251a93f8acdcd31fe3eb0.txt",
+      "bytes": 38763,
+      "sha256": "9107ff1b787c75e0a123871721eb82d94980b31e4379220b445f089eed6c626d"
+    },
+    {
+      "path": "附件/fa/fad807c950259f9f6b82c2da9af0d43a0cc12a5a16d5e702822e21b30caa0213.pdf",
+      "bytes": 275691,
+      "sha256": "fad807c950259f9f6b82c2da9af0d43a0cc12a5a16d5e702822e21b30caa0213"
+    },
+    {
+      "path": "附件/fa/fad807c950259f9f6b82c2da9af0d43a0cc12a5a16d5e702822e21b30caa0213.txt",
+      "bytes": 6048,
+      "sha256": "eb393213ec99d7a4050c9580ba33f977dfc056cbca75ffa5bc3aed555859751d"
+    },
+    {
+      "path": "附件/fd/fde7444862d7280194697bd2bacae13f6bdc540f3971b823f0250175b62ba81d.pdf",
+      "bytes": 11757655,
+      "sha256": "fde7444862d7280194697bd2bacae13f6bdc540f3971b823f0250175b62ba81d"
+    },
+    {
+      "path": "附件/fd/fde7444862d7280194697bd2bacae13f6bdc540f3971b823f0250175b62ba81d.txt",
+      "bytes": 295294,
+      "sha256": "8ef4830754e99c8732b41bc8a9e942111cf222b0ac4a9a07900e5e82a48403b1"
+    },
+    {
+      "path": "附件清单.json",
+      "bytes": 30843,
+      "sha256": "3772a98214975d642c7003bcc4f2fcb0a3a4709d20d9195d919ac496ef66d4f4"
+    },
+    {
+      "path": "验收报告/Excel独立检查.json",
+      "bytes": 650,
+      "sha256": "5378c7cee9e60a624518e176ea3545ce2460b01b1bfbdbbbe791cbe28e09685d"
+    },
+    {
+      "path": "验收报告/工作簿检查.json",
+      "bytes": 889,
+      "sha256": "afadedccb78c631c60e778e1087b06396c88df8152a740e8a66def4850b2ac00"
+    },
+    {
+      "path": "验收报告/离线结构校验.json",
+      "bytes": 206,
+      "sha256": "4842d9e1761ee28d09e61083e661b3d97c4ac701c2e1c8daa18d13f764a24227"
+    },
+    {
+      "path": "验收报告/索引预览/学习资源.png",
+      "bytes": 103647,
+      "sha256": "6268151a7a54afcb385024c0c1ccd289daaf7ff26e9358c7d50ee8de314081ab"
+    },
+    {
+      "path": "验收报告/索引预览/总索引.png",
+      "bytes": 108457,
+      "sha256": "aa1c07e9269025b1eb507a9703d994c57ca86199ceab08ca12f9dd24e02636b4"
+    },
+    {
+      "path": "验收报告/隔离数据库测试.json",
+      "bytes": 114,
+      "sha256": "061ccab37e0e617b9c54b6f63196a2229f58be36bbc3a704d6d939c6ecc3c4a8"
+    },
+    {
+      "path": "验收报告/隔离数据库测试.txt",
+      "bytes": 307,
+      "sha256": "7fde0a8252ef933bbf1596b3769083bfc5fa93124329f89f1dea7d07034ef1ea"
+    }
+  ],
+  "code_files": [
+    {
+      "path": "backend/curation/package.py",
+      "sha256": "a0c45c97d81e3f0b382490e19eda1133be78a2742f871a845bdab4762d07e9e9",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "backend/curation/importer.py",
+      "sha256": "76078d66a571a2f1a1dffef031ef7bdfd9d11a7f0cb427cd34cd500d47bb5d66",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "backend/curation/test_scope_reuse.py",
+      "sha256": "b5ce1f3d1d48004346ce1b5e8838a9119b06e7c68f9eb13cb9a0ff7e15512e48",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "backend/curation/test_research_delivery.py",
+      "sha256": "f062d0037e45fdcd1fd6433d031ca4004388f0297d17d57883896242c0691db7",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "scripts/build-research-package.py",
+      "sha256": "8ce1429a9f4596373e0a2255c4f3ba2ab4f36264c4c0cd9a9ffb2c1567995576",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "scripts/build-research-index.mjs",
+      "sha256": "915dc72ee240a0ef4de387540e30fb503f037c46238daa5893c91438730b9ca5",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "docs/curated-research-90-130.md",
+      "sha256": "46a6df02e3dc244ad0cf685ba001e1ae38f64c0156d7ab8ba79f1d56c243a3b4",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e841b8fef3e0bbe72edb646640e290f5227b9a817c6ece213852238a305f95f2",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "dc7d81e076623a58233666e96b2e2e76ff0b0292e94a872eaab099e112bc149f",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "docs/competition-research/README.md",
+      "sha256": "42d8e60ecdee21eab26eb6673bd5fb39863b80fbb9885bddaa1106dda766d1ec",
+      "hash_normalization": "CRLF-to-LF"
+    }
+  ],
+  "dependencies": [
+    "tongji-2026-131-255"
+  ],
+  "local_draft_acceptance": {
+    "competition_created": 49,
+    "resource_created": 80,
+    "document_created": 119,
+    "all_draft": true,
+    "published": false
+  },
+  "notes": [
+    "未审核文档不进入学生AI检索；没有发布、页面或主分类变更。",
+    "原有未提交的其他改动未包含在本交付中。"
+  ],
+  "validation": {
+    "isolated_postgresql_tests": 35,
+    "result": "passed",
+    "coverage": [
+      "旧包默认131—255",
+      "队友1—89范围与真实资料包",
+      "90—130两批及真实资料包",
+      "跨包复用、重复导入、失败回滚、附件校验",
+      "全部草稿；未进入学生AI检索"
+    ],
+    "package_files_verified": 330,
+    "zip_hash_verified": true
+  }
+}

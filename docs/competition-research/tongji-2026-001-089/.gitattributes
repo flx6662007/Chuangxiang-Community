@@ -1,0 +1,3 @@
+# 确保不同系统检出后，资料包文本哈希一致。
+* text=auto eol=lf
+*.xlsx binary

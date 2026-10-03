@@ -1,0 +1,132 @@
+{
+  "package_id": "tongji-2026-001-089-20261003",
+  "note": "不含清单自身、Python缓存及数据库。文本先将CRLF统一为LF再计算大小和SHA-256；XLSX按原始字节计算。",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 96,
+      "sha256": "dd2a3902f74883173ba6cde997590edd6b53f820c2cafd5535db50de2cf89425",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "001-022.md",
+      "bytes": 41701,
+      "sha256": "8d3a4acb12823ac7bd6a7f2ac4029aa74f15630fffc00e1c216e23c7b1b3d41e",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "023-044.md",
+      "bytes": 46792,
+      "sha256": "90420ccd2882dd1361b5d67e4210f19305e7911564d89cb77f2e0f8f3341d111",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "045-066.md",
+      "bytes": 48927,
+      "sha256": "ebb85db62042764e17157e613bb41d760578a652cfb01ca1d6cfc29bf8457c46",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "067-089.md",
+      "bytes": 47510,
+      "sha256": "135fd86554fde3958721d24c8f66bfdcbd0583c929a8a8aff7c8a72fe443d6ac",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "build_index.py",
+      "bytes": 13041,
+      "sha256": "ca1f9955b70c2d28bb0b61697844c5a45e52f346f281d22e85a349fa31977c66",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "build_manifest.py",
+      "bytes": 1074,
+      "sha256": "38bab004e1dbb15989d5a851e956519e85471e9bb984864b123911f636f05dec",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 7337,
+      "sha256": "29879bc5e7decfb423b00c20b5df7b7fef954fac92a492061b8543e4f354cbde",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "build_workbook.py",
+      "bytes": 9035,
+      "sha256": "70acb49434fac0ebec21a7612e13ee7c476ccb378845adfdee2769e49fd920af",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7641,
+      "sha256": "1a0e8fd5baaee281262cad56cd5864cb5b04e1dccb05845d2333fd27567defbc",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "导入数据/catalog.jsonl",
+      "bytes": 20507,
+      "sha256": "e6e510874f84894ae92ff14ac1b684aa4bf3a436961559ee8cf046e3f94a2bde",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "导入数据/competitions.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "导入数据/documents.jsonl",
+      "bytes": 634728,
+      "sha256": "db1c419ee28210d485bb6872cab88660766331a8faab7d83f799922620f1aaf8",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "导入数据/resources.jsonl",
+      "bytes": 186353,
+      "sha256": "cbf9f81e72e7965ef1a6fe168051119f9d0761dd1e8fd9119341aa196ad0a7d2",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "导入清单.json",
+      "bytes": 974868,
+      "sha256": "0fd5220c8b6509d6171b6edfdab0a57a705dc76d345a1e8b4e20e8de59381ecd",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "开始阅读.html",
+      "bytes": 548016,
+      "sha256": "21b4dc8a2c024debe94072b2bb3fef5d8a9f01b251a34892c526f83a9a4745e3",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "总索引.xlsx",
+      "bytes": 111737,
+      "sha256": "4d2113f5a70ef2f9c2785c47e26953b8f6436f0245d35934dac7179d150a027b",
+      "hash_normalization": "binary"
+    },
+    {
+      "path": "批次报告.json",
+      "bytes": 1161,
+      "sha256": "c98dde9319bcc6fdde9809a02013414afa4b1ed268461ed2a03030cdea3f8464",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "整理底稿.json",
+      "bytes": 250262,
+      "sha256": "c0fdda195ae49a74fe4a39317db15cc86685a8b618195f75eacc426f60f735a6",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "来源清单.json",
+      "bytes": 188315,
+      "sha256": "0256af4409535c2a46f9cf6f409f2e32c7c6ef483501ec94de86735fd210a05e",
+      "hash_normalization": "CRLF-to-LF"
+    },
+    {
+      "path": "附件清单.json",
+      "bytes": 142,
+      "sha256": "8fa38a0194d311b8edded1f7a3a0b2dd32911c28342bbc71205db5f877af1402",
+      "hash_normalization": "CRLF-to-LF"
+    }
+  ]
+}

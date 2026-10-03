@@ -12,7 +12,8 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('package')
-        parser.add_argument('--batch', type=int, choices=range(1, 6), action='append', default=[])
+        parser.add_argument('--batch', type=int, action='append', default=[],
+                            help='按资料包范围选择批次：旧包 131—255 为 1—5；新包 1—89 为 1—4。可重复指定。')
         parser.add_argument('--actor-id', type=int)
         parser.add_argument('--report', type=Path, help='将校验结果或失败原因保存为 UTF-8 JSON')
         mode = parser.add_mutually_exclusive_group()
@@ -31,6 +32,8 @@ class Command(BaseCommand):
                 actor = get_user_model().objects.get(pk=options['actor_id'])
                 result = {'mode': 'apply' if options['apply'] else 'preview-rolled-back',
                           'counts': import_package(data, actor=actor, apply=options['apply'])}
+            result['catalog_scope'] = data['_catalog_scope']
+            result['available_batches'] = data['_batch_numbers']
         except Exception as exc:
             if options['report']:
                 options['report'].parent.mkdir(parents=True, exist_ok=True)

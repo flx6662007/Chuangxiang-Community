@@ -110,8 +110,8 @@
     },
     {
       "path": "docs/curated-competition-package.txt",
-      "bytes": 10404,
-      "sha256": "8e638a03f6276617f9b3304c1af9b0212b9984a5463809029ddbd7e4639528ae",
+      "bytes": 10325,
+      "sha256": "e4967ff8776a1f0d667a7f97246c6afc994e43511ced9b8568f5c961911318af",
       "hash_normalization": "CRLF-to-LF"
     }
   ],
@@ -129,7 +129,7 @@
     {
       "path": "docs/progress.md",
       "purpose": "只新增本次资料交付记录，不包含其他本地进度段落",
-      "patch": "--- a/docs/progress.md\n+++ b/docs/progress.md\n@@ -1,4 +1,12 @@\n # 团队进度\n+\n+## 2026-10-02：赛事资料与离线入库交付\n+\n+同济2026目录131—255保留125项目录阅读记录，本轮导入116项，9项暂缓。交付125个实际赛事届次、143份去重学习资源、393份知识正文，以及报名方式、来源定位、392份原件和375份提取文本。资料中的往届日期及缺口继续保留。\n+\n+代码包含离线入库模型、迁移、管理命令、测试和应用注册。操作步骤见[入库说明](curated-competition-package.txt)，资料包尚未上传，拟从[本仓库Release](https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002)提供下载（待明确确认公开上传）；[交付清单](curated-delivery-files.json)记录文件范围与哈希。前端页面和公开接口沿用main。\n+\n+基于main（7a91a4a）加必需入库文件，在隔离PostgreSQL执行 `python manage.py test curation --settings=config.postgres_test_settings --noinput`，17项通过，包含真实资料五批两轮导入。系统检查、迁移一致性、392份原件哈希和2,531个本地链接校验通过。本机开发库已有草稿数据；队友需按说明向自己的数据库导入，本次代码交付不操作队友或生产数据库，也不公开发布赛事或开启组队。\n \n **记录日期：2026-09-29。** 本文件统一记录三人共享成果。代码实现、本机验证、上传、合并和公网部署分别记录，不用百分比代替可检查的交付。\n \n"
+      "patch": "--- a/docs/progress.md\n+++ b/docs/progress.md\n@@ -1,4 +1,12 @@\n # 团队进度\n+\n+## 2026-10-02：赛事资料与离线入库交付\n+\n+同济2026目录131—255保留125项目录阅读记录，本轮导入116项，9项暂缓。交付125个实际赛事届次、143份去重学习资源、393份知识正文，以及报名方式、来源定位、392份原件和375份提取文本。资料中的往届日期及缺口继续保留。\n+\n+代码包含离线入库模型、迁移、管理命令、测试和应用注册。操作步骤见[入库说明](curated-competition-package.txt)，资料包从[本仓库Release](https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002)下载；[交付清单](curated-delivery-files.json)记录文件范围与哈希。前端页面和公开接口沿用main。\n+\n+基于main（7a91a4a）加必需入库文件，在隔离PostgreSQL执行 `python manage.py test curation --settings=config.postgres_test_settings --noinput`，17项通过，包含真实资料五批两轮导入。系统检查、迁移一致性、392份原件哈希和2,531个本地链接校验通过。本机开发库已有草稿数据；队友需按说明向自己的数据库导入，本次代码交付不操作队友或生产数据库，也不公开发布赛事或开启组队。\n \n **记录日期：2026-09-29。** 本文件统一记录三人共享成果。代码实现、本机验证、上传、合并和公网部署分别记录，不用百分比代替可检查的交付。\n \n"
     }
   ],
   "excluded_repository_changes": [
@@ -158,13 +158,13 @@
     },
     {
       "path": "使用说明.txt",
-      "bytes": 910,
-      "sha256": "2c06132fbe2d5c318c9c062e484735b8cfe9df7167909446386667eb9aaef051"
+      "bytes": 895,
+      "sha256": "4d527f3e6b17bfc4ccb3a12227369d88c78d691b266d9f1af4cca034441f7dec"
     },
     {
       "path": "入库与维护说明.txt",
-      "bytes": 10549,
-      "sha256": "a392ce8338f4f1320249395ebf952d3c2b4c60860e1ef708a489515fe53dc94d"
+      "bytes": 10470,
+      "sha256": "704c76222ba5d70ebb40635a5ef86bfbe70f7e2632d5e926f4caa5d25a8dc368"
     },
     {
       "path": "导入底稿.jsonl",
@@ -8803,18 +8803,18 @@
     "repository_full_files": 19,
     "repository_partial_files": 3,
     "package_files": 1722,
-    "package_bytes": 177466094
+    "package_bytes": 177466000
   },
   "delivery": {
     "release_tag": "tongji-2026-131-255-20261002",
     "release_url": "https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002",
     "archive_asset": "tongji-2026-131-255-20261002.zip",
-    "archive_bytes": 152914924,
-    "archive_sha256": "f7015931e07eece9ca820d950abb4113aa6b0eaab8fe6b69ddf8dd7e396418bf",
+    "archive_bytes": 152914865,
+    "archive_sha256": "adc3a021b15d1d01c663c19e0f045833812b02115ca21607c1f5dbf8ff0b4bf7",
     "manifest_asset": "curated-delivery-files.json",
     "archive_root_directory": "tongji-2026-131-255",
     "repository_hash_note": "full_files hash LF-normalized text; package_files hash exact archive bytes.",
-    "publication_status": "awaiting_explicit_public_upload_approval",
-    "status_note": "代码已推送main；完整资料包未上传，需明确确认公开发布。"
+    "publication_status": "authorized_public_release",
+    "status_note": "用户于2026-10-03确认继续公开交付；实际发布及下载状态以Release页面为准。"
   }
 }
