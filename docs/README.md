@@ -5,7 +5,7 @@
 | 要做的事情 | 入口 |
 | --- | --- |
 | 第一次阅读项目代码 | [代码导读：从一次赛事请求开始](code-guide.md) |
-| 人工赛事资料与学习资源 | [资料总入口](competition-research/README.md) · [1—89 资料包与入库](competition-research/tongji-2026-001-089/README.md) · [131—255 交付](curated-competition-package.txt) |
+| 人工赛事资料与学习资源 | [资料总入口](competition-research/README.md) · [1—89 资料包与入库](competition-research/tongji-2026-001-089/README.md) · [90—130 交付](curated-research-90-130.md) · [131—255 交付](curated-competition-package.txt) |
 | 学校目录与官网实测情况 | [255 项采集覆盖表](competition-catalog-coverage.md) · [持续监测机制](competition-discovery.md) |
 | 从官网原文提取并上架赛事 | [赛事提取与上架](catalog-publication.md) · [9月29日逐项结果](catalog-extraction-2026-09-29.md) |
 | 启动项目 | [后端开发](backend-development.md) · [前端开发](../frontend/README.md) |
