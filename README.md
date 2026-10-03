@@ -31,7 +31,7 @@
 ## 目录
 
 ```text
-Chuangxiang-Community/
+项目根目录（名称可自行更改）/
 ├── frontend/       # 页面、组件、浏览器请求
 ├── backend/        # 接口、业务、数据库模型、采集与 AI 服务
 ├── docs/           # 接口约定、团队进度、开发说明
@@ -44,30 +44,47 @@ Chuangxiang-Community/
 
 ## 本地启动
 
-### macOS 双击启动
+### macOS：双击打开界面预览
 
-首次使用先按[后端开发说明](docs/backend-development.md)准备 Python 3.13、PostgreSQL 17、`backend/.venv`、`backend/.env` 和数据库迁移；前端需要符合 `frontend/package.json` 要求的 Node.js。之后在 Finder 双击仓库根目录的 [`start-macos.command`](start-macos.command)。启动器会检查数据库，启动 Django 和 Vite，等两个服务就绪后用默认浏览器打开 <http://localhost:5173/>。前端依赖缺失时会按锁文件执行 `npm ci`；窗口保持打开，按 `Ctrl+C` 停止本次启动的前后端服务。若已有后端服务，启动器会复用它，不会在退出时关闭它；PostgreSQL 由本机服务或 Postgres.app 管理，退出启动器不会关闭数据库。
+首次使用先安装符合 [`frontend/package.json`](frontend/package.json) 要求的 Node.js，并在 `frontend/` 执行一次 `npm ci`。之后在 Finder 双击项目根目录的 [`打开界面预览.command`](打开界面预览.command)。脚本按自身位置寻找前端文件夹，启动或复用本项目的 Vite 服务，并打开 <http://127.0.0.1:5174/?ui_preview=1>。新启动的服务需要保持终端窗口打开，按 `Ctrl+C` 停止。
 
-Windows 的 `start-frontend.bat` 保留；下方是 Windows PowerShell 的手动启动命令，仍可用于排障。
+该入口用于查看当前首页界面；首页赛事和招募卡片是视觉示例。它不启动 Django 或 PostgreSQL，也不用于检验账号、赛事和组队等实际业务。
 
-首次使用先按[后端开发说明](docs/backend-development.md)安装依赖、启动 PostgreSQL 并配置自己的 `.env`。以下命令在已配置好的项目根目录执行，两个终端分别启动：
+### 完整业务：手动启动
+
+先按[后端开发说明](docs/backend-development.md)准备 Python 3.13、PostgreSQL 17、`backend/.venv`、`backend/.env` 和数据库。macOS 下从项目根目录打开两个终端，分别执行：
+
+```bash
+# 终端一：后端；首次配置或新增迁移后执行 migrate
+cd backend
+./.venv/bin/python manage.py migrate --noinput
+./.venv/bin/python manage.py runserver 127.0.0.1:8000
+```
+
+```bash
+# 终端二：前端；首次安装或锁文件变化后执行 npm ci
+cd frontend
+npm ci
+npm run dev
+```
+
+首次配置后端时还需按[后端开发说明](docs/backend-development.md)执行 `init_competition_catalog`，导入赛事目录。Windows PowerShell 下也可从项目根目录分别手动启动：
 
 ```powershell
 # 终端一：后端
 Set-Location .\backend
-.\.venv\Scripts\python.exe manage.py migrate
-.\.venv\Scripts\python.exe manage.py init_competition_catalog
+.\.venv\Scripts\python.exe manage.py migrate --noinput
 .\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
 ```
 
 ```powershell
-# 终端二：前端；首次安装或依赖锁文件变化后执行 npm ci
+# 终端二：前端；首次安装或锁文件变化后执行 npm ci
 Set-Location .\frontend
 npm.cmd ci
 npm.cmd run dev
 ```
 
-打开 <http://localhost:5173/>；管理后台为 <http://127.0.0.1:8000/admin/>，没有预设管理员密码。终端保持运行；使用学生账号时保持同一个前端地址，避免来回切换 `localhost` 与 `127.0.0.1`。
+完整业务页面打开 <http://localhost:5173/>；管理后台为 <http://127.0.0.1:8000/admin/>，没有预设管理员密码。两个终端都需保持运行；使用学生账号时保持同一个前端地址，避免来回切换 `localhost` 与 `127.0.0.1`。
 
 ## 继续开发
 

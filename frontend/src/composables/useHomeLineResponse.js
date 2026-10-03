@@ -18,7 +18,9 @@ export function useHomeLineResponse(root) {
   function draw(curve, x, depth) {
     const span = Math.min(90, x, curve.width - x)
     curve.x = x
-    curve.path.setAttribute('d', `M 0 8 H ${x - span} C ${x - span * .45} 8 ${x - span * .4} ${8 + depth} ${x} ${8 + depth} S ${x + span * .45} 8 ${x + span} 8 H ${curve.width}`)
+    const d = `M 0 8 H ${x - span} C ${x - span * .45} 8 ${x - span * .4} ${8 + depth} ${x} ${8 + depth} S ${x + span * .45} 8 ${x + span} 8 H ${curve.width}`
+    curve.path.setAttribute('d', d)
+    curve.glowPath.setAttribute('d', d)
   }
   function clear() {
     cancelAnimationFrame(frame)
@@ -49,6 +51,7 @@ export function useHomeLineResponse(root) {
       const curve = curves.get(active)
       curve.width = active.getBoundingClientRect().width
       curve.svg.setAttribute('viewBox', `0 0 ${curve.width} 24`)
+      curve.glow.setAttribute('viewBox', `0 0 ${curve.width} 24`)
       const x = Math.max(1, Math.min(curve.width - 1, position))
       draw(curve, x, (1 - distance / 64) * 6)
       active.style.setProperty('--line-opacity', `${(1 - distance / 64) * .8}`)
@@ -65,6 +68,7 @@ export function useHomeLineResponse(root) {
       curves.forEach(curve => {
         curve.width = curve.svg.parentElement.getBoundingClientRect().width
         curve.svg.setAttribute('viewBox', `0 0 ${curve.width} 24`)
+      curve.glow.setAttribute('viewBox', `0 0 ${curve.width} 24`)
         draw(curve, curve.width / 2, 0)
       })
     })
@@ -78,8 +82,11 @@ export function useHomeLineResponse(root) {
       svg.setAttribute('focusable', 'false')
       svg.setAttribute('preserveAspectRatio', 'none')
       svg.append(path)
-      line.append(svg)
-      curves.set(line, { svg, path, width: 0 })
+      const glow = svg.cloneNode(true)
+      glow.classList.add('separator-glow')
+      const glowPath = glow.querySelector('path')
+      line.append(svg, glow)
+      curves.set(line, { svg, path, glow, glowPath, width: 0 })
       resizeObserver.observe(line)
     })
     media = matchMedia('(prefers-reduced-motion: reduce), (hover: none)')
@@ -93,7 +100,7 @@ export function useHomeLineResponse(root) {
   onBeforeUnmount(() => {
     clear()
     resizeObserver?.disconnect()
-    curves.forEach(({ svg }) => svg.remove())
+    curves.forEach(({ svg, glow }) => { svg.remove(); glow.remove() })
     curves.clear()
     media?.removeEventListener('change', clear)
     root.value?.removeEventListener('pointermove', move)

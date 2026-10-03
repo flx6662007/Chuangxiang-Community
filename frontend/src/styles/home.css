@@ -56,11 +56,11 @@
 }
 .app-shell.is-home .footer-brand { color: #e8ebee; }
 
-.welcome { color: var(--home-ink); }
-.welcome .home-preview-banner { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; background: #244a7c; color: #edf4fe; padding: 11px 24px; font-size: var(--type-caption); letter-spacing: .02em; }
+.welcome { position: relative; isolation: isolate; color: var(--home-ink); }
+.welcome .home-preview-banner { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; background: #244a7c; color: #edf4fe; padding: 11px 24px; font-size: var(--type-caption); letter-spacing: .02em; }
 .welcome .home-preview-banner span { font: 700 var(--type-overline) var(--font-ui); letter-spacing: .16em; }
 .welcome .home-preview-banner a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
-.welcome .home-wrap { width: min(calc(100% - 96px), 1320px); margin: 0 auto; }
+.welcome .home-wrap { position: relative; z-index: 2; width: min(calc(100% - 96px), 1320px); margin: 0 auto; }
 .welcome .home-dark { color: #f3f2ed; background: var(--home-dark); }
 .welcome .home-light { background: var(--home-light); color: var(--home-ink); border-top: 1px solid #ffffff0e; }
 .welcome .home-kicker {
@@ -375,3 +375,12 @@
   .welcome .pointer-separator { border-top-color: var(--separator-color); }
   .welcome .separator-curve { display: none; }
 }
+
+/* Light stays local to the contact point and shares the exact same curve. */
+.welcome .separator-glow {
+  opacity: var(--line-opacity, 0);
+  mask-image: radial-gradient(90px 24px at var(--line-x, 50%) 50%, #000 15%, transparent);
+  transition: opacity 220ms ease;
+  filter: drop-shadow(0 0 3px #69a9ff88);
+}
+.welcome .separator-glow path { stroke: #9bc7ff; stroke-width: 1.4; }

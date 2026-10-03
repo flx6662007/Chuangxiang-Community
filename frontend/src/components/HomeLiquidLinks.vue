@@ -27,16 +27,16 @@ function paint() {
   nodes.forEach((node, i) => {
     const { x, y, vx, vy } = states[i]
     const idle = media?.matches ? 0 : 1 - engagement
-    const angle = phase * Math.PI * 2 / (i ? 9 : 7) + i * 1.7
-    const floatX = i ? Math.sin(angle) * 2.5 * idle : 0
-    const floatY = Math.sin(angle + (i ? .7 : 0)) * 3 * idle
+    const angle = phase * Math.PI * 2 / (i ? 8 : 6.5) + i * 1.7
+    const floatX = i ? Math.sin(angle) * 3.5 * idle : 0
+    const floatY = Math.sin(angle + (i ? .7 : 0)) * 4 * idle
     // Keep the link hit area fixed while its visible contents float.
     node.querySelector('.liquid-label').style.translate = `${floatX}px ${floatY}px`
-    node.querySelector('.liquid-surface').style.transform = `translate(${x * .5 + floatX}px, ${y * .5 + floatY}px) rotate(${x * .09}deg)`
+    node.querySelector('.liquid-surface').style.transform = `translate(${x * .5 + floatX}px, ${y * .5 + floatY}px) rotate(${x * .11}deg) scale(${1 + Math.sin(angle) * .022 * idle}, ${1 + Math.sin(angle + 1.1) * .018 * idle})`
     // Velocity adds a brief stretch; it decays when the pointer stops.
     node.querySelector('.liquid-surface path').setAttribute('d', outline(
-      x + clamp(vx * .025, 3) + Math.sin(angle) * 1.5 * idle,
-      y + clamp(vy * .025, 3) + Math.cos(angle) * 1.5 * idle, i))
+      x + clamp(vx * .035, 4) + Math.sin(angle) * 5 * idle,
+      y + clamp(vy * .035, 4) + Math.cos(angle) * 5 * idle, i))
   })
 }
 function tick(now) {
@@ -80,7 +80,7 @@ function move(event) {
   const breezeX = inHero ? clamp((event.clientX - hero.left) / hero.width * 2 - 1) * 8 : 0
   const breezeY = inHero ? clamp((event.clientY - hero.top) / hero.height * 2 - 1) * 6 : 0
   engagementTarget = Math.max(hit.strength, inHero ? .3 : 0)
-  const gain = 23 * hit.strength * hit.strength
+  const gain = 30 * hit.strength * hit.strength
   states[index].tx = clamp(hit.dx / hit.radius) * gain
   states[index].ty = clamp(hit.dy / hit.radius) * gain
   states[1 - index].tx = -states[index].tx * .18
@@ -166,7 +166,7 @@ onBeforeUnmount(() => {
 .liquid-link { position: absolute; display: grid; place-items: center; aspect-ratio: 1; color: #102742; border-radius: 44%; isolation: isolate; transition: scale 160ms ease; -webkit-tap-highlight-color: transparent; }
 .liquid-link--ai { width: 60%; top: 0; left: 0; }
 .liquid-link--news { width: 52%; bottom: 0; right: 0; }
-.liquid-surface { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1; }
+.liquid-surface { transform-origin: 50% 50%; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1; }
 .liquid-surface path { fill: #7fa9ed; transition: fill 220ms ease; }
 .liquid-link--news path { fill: #c5d9e9; }
 .liquid-link--news .liquid-icon path { fill: none; }

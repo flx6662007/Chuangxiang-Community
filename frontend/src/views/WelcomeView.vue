@@ -8,7 +8,7 @@ import { label, optionNames } from '../utils/teams'
 import { newsletters, laboratories } from '../data/editorial'
 import { previewCompetitions, previewRecruitments } from '../mocks/homeVisualPreview'
 import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
-import HomeBlankImpression from '../components/HomeBlankImpression.vue'
+import HomeDotField from '../components/HomeDotField.vue'
 import HomeMarginMotif from '../components/HomeMarginMotif.vue'
 import HomeLiquidLinks from '../components/HomeLiquidLinks.vue'
 import { useHomeLineResponse } from '../composables/useHomeLineResponse'
@@ -98,12 +98,12 @@ onBeforeUnmount(() => {
 
 <template>
   <div ref="pageRoot" class="welcome">
+    <HomeDotField />
     <div v-if="isVisualPreview" class="home-preview-banner" role="note"><span>界面预览</span>赛事与团队为前端占位内容，仅用于评估视觉。<RouterLink to="/">退出预览 ↗</RouterLink></div>
     <section class="home-dark home-opening" aria-labelledby="welcome-title">
       <div class="home-wrap">
         <div class="home-hero">
           <div class="hero-copy">
-            <HomeBlankImpression />
             <h1 id="welcome-title">在创新中相遇，<br />遇见<span>更大的可能。</span></h1>
             <p class="hero-lead">发现值得投入的比赛、研究与伙伴。<br />从一个想法开始。</p>
           </div>
