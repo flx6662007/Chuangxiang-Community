@@ -8,6 +8,13 @@ import { label, optionNames } from '../utils/teams'
 import { newsletters, laboratories } from '../data/editorial'
 import { previewCompetitions, previewRecruitments } from '../mocks/homeVisualPreview'
 import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
+import HomeBlankImpression from '../components/HomeBlankImpression.vue'
+import HomeMarginMotif from '../components/HomeMarginMotif.vue'
+import HomeLiquidLinks from '../components/HomeLiquidLinks.vue'
+import { useHomeLineResponse } from '../composables/useHomeLineResponse'
+
+const pageRoot = ref(null)
+useHomeLineResponse(pageRoot)
 
 const route = useRoute()
 const isVisualPreview = computed(() => route.query.ui_preview === '1')
@@ -90,20 +97,17 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="welcome">
+  <div ref="pageRoot" class="welcome">
     <div v-if="isVisualPreview" class="home-preview-banner" role="note"><span>界面预览</span>赛事与团队为前端占位内容，仅用于评估视觉。<RouterLink to="/">退出预览 ↗</RouterLink></div>
     <section class="home-dark home-opening" aria-labelledby="welcome-title">
       <div class="home-wrap">
         <div class="home-hero">
           <div class="hero-copy">
+            <HomeBlankImpression />
             <h1 id="welcome-title">在创新中相遇，<br />遇见<span>更大的可能。</span></h1>
             <p class="hero-lead">发现值得投入的比赛、研究与伙伴。<br />从一个想法开始。</p>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="art-orbit art-orbit-outer"></div>
-            <div class="art-orbit art-orbit-inner"></div>
-            <span class="art-spark">✦</span>
-          </div>
+          <div class="hero-art hero-shortcuts"><HomeLiquidLinks /></div>
         </div>
         <div class="start-here" aria-labelledby="start-title">
           <div class="start-label"><span id="start-title">从你的下一步开始</span></div>
@@ -140,7 +144,8 @@ onBeforeUnmount(() => {
     </section>
 
     <section id="research" class="home-light home-research" aria-labelledby="research-title">
-      <div v-reveal class="home-wrap">
+      <div v-reveal class="home-wrap motif-host">
+        <HomeMarginMotif kind="star" />
         <header class="home-section-heading">
           <div><h2 id="research-title">加入<span>真正的研究。</span></h2></div>
           <RouterLink class="home-more" :to="{ name: 'research-projects' }">查看全部 <span>↗</span></RouterLink>
@@ -158,7 +163,8 @@ onBeforeUnmount(() => {
     </section>
 
     <section id="together" class="home-dark home-together" aria-labelledby="together-title">
-      <div v-reveal class="home-wrap">
+      <div v-reveal class="home-wrap motif-host">
+        <HomeMarginMotif kind="pair" />
         <header class="home-section-heading"><div><h2 id="together-title">找到一起把想法<br /><span>做出来的人。</span></h2></div><RouterLink class="home-more" :to="{ name: 'teams' }">浏览团队 <span>↗</span></RouterLink></header>
         <p class="home-intro">{{ isVisualPreview ? '以下团队为视觉占位；真实招募请进入团队广场查看。' : '围绕真实赛事组队，让不同能力的人找到共同的目标。' }}</p>
         <div v-if="teamsLoading" class="home-state" role="status">正在加载招募…</div>
