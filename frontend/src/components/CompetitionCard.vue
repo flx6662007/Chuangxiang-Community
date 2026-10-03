@@ -128,7 +128,7 @@ const detailLink = computed(() => ({
 .competition-card__eligibility,
 .competition-card__team-size {
   margin: 7px 0 0;
-  color: #667085;
+  color: var(--text-secondary, #667085);
   font-size: var(--type-small);
   line-height: var(--leading-body);
   overflow-wrap: anywhere;

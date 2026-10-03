@@ -70,7 +70,7 @@
       z-index: 1000;
       inset: 0 0 auto;
       height: 2px;
-      background: #69a1f4;
+      background: var(--accent, #69a1f4);
       pointer-events: none;
       transform: scaleX(0);
       transform-origin: left center;

@@ -1,31 +1,31 @@
 /* Publish and edit use the same editorial surface as the team square. */
 .is-team-page .recruitment-editor { max-width: none; margin: 0; }
-.is-team-page .recruitment-editor-hero { min-height: 0; background: radial-gradient(ellipse at 82% 90%, #2d465a 0, #16283a 34%, transparent 65%), #0b111b; }
+.is-team-page .recruitment-editor-hero { min-height: 0; background: radial-gradient(ellipse at 82% 90%, var(--surface-tinted, #2d465a) 0, var(--bg-secondary, #16283a) 34%, transparent 65%), var(--bg-primary, #0b111b); }
 .is-team-page .recruitment-editor-hero .information-hero-inner { padding: 31px 0 55px; }
-.is-team-page .recruitment-editor-hero .back-link { display: inline-block; color: #a9bbca; font-size: var(--type-small); margin: 0 0 37px; }
+.is-team-page .recruitment-editor-hero .back-link { display: inline-block; color: var(--text-secondary, #a9bbca); font-size: var(--type-small); margin: 0 0 37px; }
 .is-team-page .recruitment-editor-hero .information-eyebrow { margin-bottom: 23px; }
 .is-team-page .recruitment-editor-hero h1 { font-size: clamp(38px, 4vw, 60px); overflow-wrap: anywhere; }
 .is-team-page .recruitment-editor-content { width: min(calc(100% - 96px), 1080px); padding-top: 48px; }
-.is-team-page .recruitment-editor-form { background: #fbfaf7; border: 1px solid #d6d9d5; border-radius: 6px; box-shadow: none; padding: 36px 43px; }
+.is-team-page .recruitment-editor-form { background: var(--surface, #fbfaf7); border: 1px solid var(--border, #d6d9d5); border-radius: 6px; box-shadow: none; padding: 36px 43px; }
 .is-team-page .recruitment-editor-guide { margin: 0 0 35px; }
-.is-team-page .recruitment-editor .plain-fieldset { border-top: 1px solid #cbd4d5; padding: 27px 0 30px; margin: 0; }
-.is-team-page .recruitment-editor .form-section-title { color: #20364b; font-size: clamp(20px, 2vw, 25px); font-weight: var(--weight-heading); line-height: 1.45; margin-bottom: 20px; letter-spacing: -.025em; }
-.is-team-page .recruitment-editor .form-section-title span { color: #3976aa; font: 700 var(--type-small) var(--font-ui); letter-spacing: .12em; margin-right: 16px; vertical-align: middle; }
+.is-team-page .recruitment-editor .plain-fieldset { border-top: 1px solid var(--border, #cbd4d5); padding: 27px 0 30px; margin: 0; }
+.is-team-page .recruitment-editor .form-section-title { color: var(--text-primary, #20364b); font-size: clamp(20px, 2vw, 25px); font-weight: var(--weight-heading); line-height: 1.45; margin-bottom: 20px; letter-spacing: -.025em; }
+.is-team-page .recruitment-editor .form-section-title span { color: var(--accent, #3976aa); font: 700 var(--type-small) var(--font-ui); letter-spacing: .12em; margin-right: 16px; vertical-align: middle; }
 .is-team-page .recruitment-editor .form-grid { align-items: start; max-width: 770px; gap: 20px 32px; }
-.is-team-page .recruitment-editor .form-field { color: #425869; font-size: var(--type-small); }
+.is-team-page .recruitment-editor .form-field { color: var(--text-secondary, #425869); font-size: var(--type-small); }
 .is-team-page .recruitment-editor .form-field input,
 .is-team-page .recruitment-editor .inline-search input,
-.is-team-page .recruitment-editor .option-picker select { border: 1px solid #cbd4d6; border-radius: 5px; background: #fff; color: #233a4d; min-height: 45px; }
-.is-team-page .recruitment-editor .field-hint { max-width: 780px; color: #627480; font-size: var(--type-small); line-height: var(--leading-loose); }
+.is-team-page .recruitment-editor .option-picker select { border: 1px solid var(--border, #cbd4d6); border-radius: 5px; background: var(--surface, #fff); color: var(--text-primary, #233a4d); min-height: 45px; }
+.is-team-page .recruitment-editor .field-hint { max-width: 780px; color: var(--text-secondary, #627480); font-size: var(--type-small); line-height: var(--leading-loose); }
 .is-team-page .recruitment-editor .option-picker { margin: 23px 0; }
-.is-team-page .recruitment-editor .option-picker legend { color: #425869; font-size: var(--type-small); }
-.is-team-page .recruitment-editor .checkbox-options label { border-radius: 4px; border-color: #cbd5d8; background: #fff; color: #3b5569; }
-.is-team-page .recruitment-editor .checkbox-options label.selected { background: #e8f0f4; border-color: #7ea3bd; color: #235b88; }
-.is-team-page .recruitment-editor .checkbox-options input { accent-color: #2c659f; }
-.is-team-page .recruitment-editor .selected-competition { border: 1px solid #b9cad1; border-radius: 5px; background: #edf2f3; }
+.is-team-page .recruitment-editor .option-picker legend { color: var(--text-secondary, #425869); font-size: var(--type-small); }
+.is-team-page .recruitment-editor .checkbox-options label { border-radius: 4px; border-color: var(--border, #cbd5d8); background: var(--surface, #fff); color: var(--text-secondary, #3b5569); }
+.is-team-page .recruitment-editor .checkbox-options label.selected { background: var(--surface, #e8f0f4); border-color: var(--border, #7ea3bd); color: var(--text-secondary, #235b88); }
+.is-team-page .recruitment-editor .checkbox-options input { accent-color: var(--accent, #2c659f); }
+.is-team-page .recruitment-editor .selected-competition { border: 1px solid var(--border, #b9cad1); border-radius: 5px; background: var(--surface, #edf2f3); }
 .is-team-page .recruitment-editor .selected-competition strong,
 .is-team-page .recruitment-editor .competition-picker li span { overflow-wrap: anywhere; }
-.is-team-page .recruitment-editor .competition-picker li { border-bottom-color: #d6dddb; }
+.is-team-page .recruitment-editor .competition-picker li { border-bottom-color: var(--border, #d6dddb); }
 .is-team-page .recruitment-editor .consent-row { margin: 22px 0; }
 .is-team-page .recruitment-editor-form > .action-button { display: inline-flex; justify-content: center; min-width: 220px; margin-top: 18px; }
 .is-team-page .recruitment-editor .recruitment-validity { margin-bottom: 20px; }

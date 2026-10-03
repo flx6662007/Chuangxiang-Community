@@ -9,6 +9,12 @@ export function useHomeLineResponse(root) {
   let active
   let resizeObserver
   const curves = new Map()
+  function syncSeparatorColors() {
+    // Read each rule's theme colour before restoring its SVG replacement.
+    lines.forEach(line => line.classList.remove('pointer-separator'))
+    lines.forEach(line => line.style.setProperty('--separator-color', getComputedStyle(line).borderTopColor))
+    lines.forEach(line => line.classList.add('pointer-separator'))
+  }
   function flatten(line) {
     if (!line) return
     line.style.setProperty('--line-opacity', '0')
@@ -89,6 +95,7 @@ export function useHomeLineResponse(root) {
       curves.set(line, { svg, path, glow, glowPath, width: 0 })
       resizeObserver.observe(line)
     })
+    window.addEventListener('themechange', syncSeparatorColors)
     media = matchMedia('(prefers-reduced-motion: reduce), (hover: none)')
     media.addEventListener('change', clear)
     root.value.addEventListener('pointermove', move, { passive: true })
@@ -99,6 +106,7 @@ export function useHomeLineResponse(root) {
   })
   onBeforeUnmount(() => {
     clear()
+    window.removeEventListener('themechange', syncSeparatorColors)
     resizeObserver?.disconnect()
     curves.forEach(({ svg, glow }) => { svg.remove(); glow.remove() })
     curves.clear()

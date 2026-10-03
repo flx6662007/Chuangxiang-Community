@@ -1,0 +1,96 @@
+/* The established dark presentation is kept verbatim in each var() fallback.
+   Light changes this semantic palette only; geometry and motion stay in their original rules. */
+:root {
+  --dot-rgb: 141, 184, 228;
+  --dot-halo-rgb: 91, 138, 190;
+  --theme-button-ink: #a3aeba;
+  --theme-button-hover: #f5f4ef;
+  --theme-button-surface: #ffffff0c;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg-primary: #f2f1ed;
+  --bg-secondary: #e9eae6;
+  --surface: #faf9f6;
+  --surface-tinted: #e5e9e9;
+  --surface-hover: #dce3e5;
+  --text-primary: #25313b;
+  --text-secondary: #566570;
+  --text-muted: #687680;
+  --text-on-accent: #faf9f6;
+  --border-soft: #d9ddda;
+  --border: #cbd2d1;
+  --border-strong: #9daeb5;
+  --border-accent: #66849b;
+  --accent: #38658a;
+  --accent-hover: #2c526f;
+  --accent-soft: #e1e9ed;
+  --accent-wash: #cfdae34d;
+  --shadow: #23343e12;
+  --accent-shadow: #456b891c;
+  --overlay-soft: #41586a0c;
+  --success: #326c55;
+  --success-surface: #e6eee7;
+  --warning: #7a5b28;
+  --warning-surface: #f0eadb;
+  --danger: #a4454c;
+  --danger-surface: #f3e7e6;
+  --illustration: #779dbb;
+  --illustration-soft: #c2d4dc;
+  --dot-rgb: 66, 101, 128;
+  --dot-halo-rgb: 89, 117, 137;
+  --theme-button-ink: #566570;
+  --theme-button-hover: #25313b;
+  --theme-button-surface: #41586a0c;
+  --el-bg-color: var(--surface);
+  --el-bg-color-overlay: var(--surface);
+  --el-fill-color-blank: var(--surface);
+  --el-fill-color-light: var(--bg-secondary);
+  --el-text-color-regular: var(--text-secondary);
+  --el-text-color-secondary: var(--text-muted);
+  --el-border-color: var(--border);
+  --el-border-color-lighter: var(--border-soft);
+  --el-mask-color: #25313b66;
+  --el-color-primary-light-9: var(--accent-soft);
+  --el-color-primary-light-3: var(--border-accent);
+}
+/* Existing anchors retain their coordinates: the extra control uses the free space to their left. */
+.header-actions { position: relative; }
+.theme-toggle {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  color: var(--theme-button-ink);
+  background: transparent;
+  touch-action: manipulation;
+}
+.theme-toggle::before { content: ''; position: absolute; inset: -6px; border-radius: 50%; }
+.theme-toggle:hover { color: var(--theme-button-hover); background: var(--theme-button-surface); }
+.theme-toggle:active { background: var(--theme-button-surface); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent, #6da5ff); outline-offset: 3px; }
+/* Snapshot colours must resolve immediately instead of capturing in-flight colour transitions. */
+html.theme-capture *, html.theme-capture *::before, html.theme-capture *::after { transition-duration: 0s !important; }
+html[data-theme-transition]::view-transition { pointer-events: none; }
+html[data-theme-transition]::view-transition-group(root) { animation: none; }
+html[data-theme-transition]::view-transition-old(root),
+html[data-theme-transition]::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+html[data-theme-transition]::view-transition-old(root) { z-index: 1; }
+html[data-theme-transition]::view-transition-new(root) {
+  z-index: 2;
+  clip-path: circle(0px at var(--theme-origin-x) var(--theme-origin-y));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-fallback,
+  html.theme-fallback :where(body, .app-shell, .app-header, .app-main, .app-footer, .home-dark, .home-light, .information-hero, .account-intro) {
+    transition: background-color 160ms ease-out, color 160ms ease-out;
+  }
+}

@@ -24,8 +24,8 @@ import AppIcon from '../components/AppIcon.vue'
   text-align: center;
   padding: 70px 24px;
   border-radius: 18px;
-  border: 1px solid #e0ebfa;
-  background: linear-gradient(145deg, #f5f9ff, #eaf3ff);
+  border: 1px solid var(--border, #e0ebfa);
+  background: linear-gradient(145deg, var(--accent-wash, #f5f9ff), var(--accent-wash, #eaf3ff));
 }
 .not-found-orbit {
   display: inline-flex;
@@ -33,16 +33,16 @@ import AppIcon from '../components/AppIcon.vue'
   height: 86px;
   align-items: center;
   justify-content: center;
-  border: 1px solid #caddfa;
+  border: 1px solid var(--border, #caddfa);
   border-radius: 50%;
-  color: #6c9eea;
-  box-shadow: 0 0 0 14px #e1edff75;
+  color: var(--accent, #6c9eea);
+  box-shadow: 0 0 0 14px var(--shadow, #e1edff75);
 }
 .not-found-number {
   font-size: 90px;
   font-weight: var(--weight-strong);
   line-height: 1;
-  color: #3278e4;
+  color: var(--accent, #3278e4);
   margin: 30px 0 22px;
   letter-spacing: 6px;
 }
@@ -52,7 +52,7 @@ import AppIcon from '../components/AppIcon.vue'
 }
 .not-found > p:not(.not-found-number) {
   font-size: var(--type-small);
-  color: #8095b4;
+  color: var(--text-secondary, #8095b4);
   line-height: var(--leading-body);
 }
 .not-found-actions {

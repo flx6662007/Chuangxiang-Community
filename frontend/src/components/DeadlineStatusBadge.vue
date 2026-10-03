@@ -32,18 +32,18 @@ const status = computed(() =>
   overflow-wrap: anywhere;
 }
 .deadline-status--open {
-  color: #166443;
-  background: #eaf7ef;
-  border-color: #b9dec8;
+  color: var(--success, #166443);
+  background: var(--success-surface, #eaf7ef);
+  border-color: var(--border, #b9dec8);
 }
 .deadline-status--closed {
-  color: #475467;
-  background: #f2f4f7;
-  border-color: #d0d5dd;
+  color: var(--text-secondary, #475467);
+  background: var(--surface, #f2f4f7);
+  border-color: var(--border, #d0d5dd);
 }
 .deadline-status--unknown {
-  color: #855300;
-  background: #fff5db;
-  border-color: #ebd39b;
+  color: var(--warning, #855300);
+  background: var(--warning-surface, #fff5db);
+  border-color: var(--border, #ebd39b);
 }
 </style>

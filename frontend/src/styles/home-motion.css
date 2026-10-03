@@ -24,14 +24,14 @@
   left: 24px;
   right: 24px;
   height: 2px;
-  background: #77aaff;
+  background: var(--accent, #77aaff);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 420ms var(--motion-ease-out);
 }
 .welcome .start-links a:is(:hover, :focus-visible)::before { transform: scaleX(1); }
 .welcome .start-links a:is(:hover, :focus-visible) strong,
-.welcome .start-links a:is(:hover, :focus-visible) .start-arrow { color: #83b3ff; }
+.welcome .start-links a:is(:hover, :focus-visible) .start-arrow { color: var(--accent, #83b3ff); }
 .welcome .start-links a:is(:hover, :focus-visible) .start-arrow,
 .welcome .home-more:is(:hover, :focus-visible) span,
 .welcome .research-row:focus-within .research-arrow,
@@ -42,7 +42,7 @@
 /* Navigation keeps a quiet geometric response without decorative labels. */
 .welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-outer,
 .welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-inner {
-  border-color: #80b0f16b;
+  border-color: var(--border-accent, #80b0f16b);
 }
 .welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-inner { transform: scale(1.055); }
 /* Each area arrives in its own direction; the rest of the page stays still. */
@@ -83,20 +83,20 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: 3px;
-  background: #83b3ff;
+  background: var(--accent, #83b3ff);
   transform: scaleY(0);
   transform-origin: top center;
   transition: transform 390ms var(--motion-ease-out);
 }
 .welcome .discover-item:is(:hover, :focus-visible)::before { transform: scaleY(1); }
-.welcome .research-row:is(:hover, :focus-within) { border-bottom-color: #6b9ad0; }
+.welcome .research-row:is(:hover, :focus-within) { border-bottom-color: var(--border, #6b9ad0); }
 .welcome .team-preview { position: relative; overflow: hidden; }
 .welcome .team-preview::before {
   content: '';
   position: absolute;
   inset: 0 0 auto;
   height: 2px;
-  background: #83b3ff;
+  background: var(--accent, #83b3ff);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 480ms var(--motion-ease-out);

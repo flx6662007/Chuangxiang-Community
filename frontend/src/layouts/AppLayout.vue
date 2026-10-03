@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
+import ThemeToggle from '../components/ThemeToggle.vue'
 const route = useRoute()
 function revisitAi() {
   if (route.name === 'home' && route.hash === '#ai') {
@@ -46,6 +47,7 @@ function revisitAi() {
           >
         </nav>
         <div class="header-actions">
+          <ThemeToggle />
           <RouterLink to="/account/teams" exact-active-class="is-active">我的组队</RouterLink>
           <RouterLink to="/account/notifications" exact-active-class="is-active">通知</RouterLink>
           <RouterLink class="header-account" :to="{ name: 'account' }" aria-label="账户"

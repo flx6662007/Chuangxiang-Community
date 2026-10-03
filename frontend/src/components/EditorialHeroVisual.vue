@@ -49,7 +49,7 @@ defineProps({
   right: 0;
   width: min(44vw, 560px);
   max-width: 46%;
-  color: #7a9dc3;
+  color: var(--text-secondary, #7a9dc3);
   opacity: .52;
   pointer-events: none;
   z-index: 0;
@@ -60,10 +60,10 @@ defineProps({
 .visual-faint { opacity: .22; }
 .visual-ring { opacity: .25; }
 .visual-dash { stroke-dasharray: 3 9; opacity: .35; }
-.visual-node { fill: #83a9d3; opacity: .62; }
-.visual-node-strong { fill: #a8c5e6; opacity: .86; }
-.is-research { color: #8aaac9; opacity: .45; }
-.is-team { color: #87a9c6; opacity: .4; }
+.visual-node { fill: var(--illustration, #83a9d3); opacity: .62; }
+.visual-node-strong { fill: var(--illustration-soft, #a8c5e6); opacity: .86; }
+.is-research { color: var(--text-secondary, #8aaac9); opacity: .45; }
+.is-team { color: var(--text-secondary, #87a9c6); opacity: .4; }
 
 @media (prefers-reduced-motion: no-preference) {
   .editorial-hero-visual { animation: visual-enter var(--motion-enter) var(--motion-ease-out) both; }

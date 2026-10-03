@@ -163,21 +163,21 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .liquid-links { position: relative; width: min(100%, 480px); height: 400px; margin: auto; }
-.liquid-link { position: absolute; display: grid; place-items: center; aspect-ratio: 1; color: #102742; border-radius: 44%; isolation: isolate; transition: scale 160ms ease; -webkit-tap-highlight-color: transparent; }
+.liquid-link { position: absolute; display: grid; place-items: center; aspect-ratio: 1; color: var(--text-primary, #102742); border-radius: 44%; isolation: isolate; transition: scale 160ms ease; -webkit-tap-highlight-color: transparent; }
 .liquid-link--ai { width: 60%; top: 0; left: 0; }
 .liquid-link--news { width: 52%; bottom: 0; right: 0; }
 .liquid-surface { transform-origin: 50% 50%; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: -1; }
-.liquid-surface path { fill: #7fa9ed; transition: fill 220ms ease; }
-.liquid-link--news path { fill: #c5d9e9; }
+.liquid-surface path { fill: var(--illustration, #7fa9ed); transition: fill 220ms ease; }
+.liquid-link--news path { fill: var(--illustration-soft, #c5d9e9); }
 .liquid-link--news .liquid-icon path { fill: none; }
 .liquid-label { display: flex; flex-direction: column; align-items: center; gap: 13px; pointer-events: none; }
 .liquid-label strong { font-size: clamp(20px, 1.85vw, 27px); font-weight: 600; letter-spacing: -.025em; }
 .liquid-icon { width: 32px; height: 32px; }
 .liquid-arrow { font-size: 24px; line-height: 1; transition: transform 300ms var(--motion-ease-out); }
-.liquid-link:hover .liquid-surface path, .liquid-link:focus-visible .liquid-surface path { fill: #91b7f3; }
-.liquid-link--news:hover .liquid-surface path, .liquid-link--news:focus-visible .liquid-surface path { fill: #d5e4ee; }
+.liquid-link:hover .liquid-surface path, .liquid-link:focus-visible .liquid-surface path { fill: var(--illustration-soft, #91b7f3); }
+.liquid-link--news:hover .liquid-surface path, .liquid-link--news:focus-visible .liquid-surface path { fill: var(--illustration-soft, #d5e4ee); }
 .liquid-link:is(:hover, :focus-visible) .liquid-arrow { transform: translate(3px, -3px); }
-.liquid-link:focus-visible { outline: 2px solid #eef6ff; outline-offset: 6px; }
+.liquid-link:focus-visible { outline: 2px solid var(--border, #eef6ff); outline-offset: 6px; }
 .liquid-link:active { scale: .98; }
 @media (min-width: 901px) and (max-width: 1200px) { .liquid-links { height: 350px; } }
 @media (max-width: 900px) { .liquid-links { max-width: 430px; height: 350px; } }

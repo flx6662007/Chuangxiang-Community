@@ -73,7 +73,7 @@ onBeforeUnmount(() => {
   </span>
 </template>
 <style scoped>
-.margin-motif { position: absolute; left: 65%; top: 40px; width: 46px; height: 46px; color: #82a8d9; pointer-events: none; }
+.margin-motif { position: absolute; left: 65%; top: 40px; width: 46px; height: 46px; color: var(--accent, #82a8d9); pointer-events: none; }
 .margin-motif svg { width: 100%; height: 100%; overflow: visible; }
 @media (max-width: 900px) { .margin-motif { left: 70%; top: -20px; width: 32px; height: 32px; } }
 @media (max-width: 480px) { .margin-motif { left: auto; right: 8px; top: -28px; width: 26px; height: 26px; } }

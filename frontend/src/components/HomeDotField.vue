@@ -11,6 +11,7 @@ const fadeStart = 122
 const fadeEnd = 178
 
 let host
+let dotRgb = '141, 184, 228'
 let context
 let media
 let frame = 0
@@ -18,6 +19,14 @@ let lastTime = 0
 let strength = 0
 let targetStrength = 0
 let pointer = { x: 0, y: 0 }
+
+function syncDotColor() {
+  dotRgb = getComputedStyle(field.value).getPropertyValue('--dot-rgb').trim()
+  if (strength > 0) {
+    const box = host.getBoundingClientRect()
+    draw(pointer.x - box.left, pointer.y - box.top)
+  }
+}
 
 function resizeCanvas() {
   if (!canvas.value) return
@@ -63,7 +72,7 @@ function draw(x, y) {
 
       context.beginPath()
       context.arc(baseX - left + directionX * push, baseY - top + directionY * push, 1.25, 0, Math.PI * 2)
-      context.fillStyle = `rgba(141, 184, 228, ${alpha})`
+      context.fillStyle = `rgba(${dotRgb}, ${alpha})`
       context.fill()
     }
   }
@@ -126,6 +135,8 @@ onMounted(() => {
   host = field.value.parentElement
   media = window.matchMedia('(prefers-reduced-motion: reduce), (hover: none)')
   resizeCanvas()
+  syncDotColor()
+  window.addEventListener('themechange', syncDotColor)
   host.addEventListener('pointermove', move, { passive: true })
   host.addEventListener('pointerleave', hide)
   media.addEventListener('change', mediaChange)
@@ -137,6 +148,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   cancelAnimationFrame(frame)
+  window.removeEventListener('themechange', syncDotColor)
   host?.removeEventListener('pointermove', move)
   host?.removeEventListener('pointerleave', hide)
   media?.removeEventListener('change', mediaChange)
@@ -158,7 +170,7 @@ onBeforeUnmount(() => {
 .home-dot-field { position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
 .home-dot-field__grid {
   position: absolute; inset: 0;
-  background-image: radial-gradient(circle, #8db8e46b 0 1px, #5b8abe20 1.3px, transparent 2.2px);
+  background-image: radial-gradient(circle, rgba(var(--dot-rgb), .4196078431) 0 1px, rgba(var(--dot-halo-rgb), .1254901961) 1.3px, transparent 2.2px);
   background-size: 24px 24px;
   -webkit-mask-image: radial-gradient(circle at var(--dot-x, -1000px) var(--dot-y, -1000px), transparent 0 var(--dot-hole-inner, 0px), #000 var(--dot-hole-outer, 0px));
   mask-image: radial-gradient(circle at var(--dot-x, -1000px) var(--dot-y, -1000px), transparent 0 var(--dot-hole-inner, 0px), #000 var(--dot-hole-outer, 0px));

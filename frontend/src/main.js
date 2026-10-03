@@ -7,6 +7,8 @@ import 'element-plus/es/components/main/style/css'
 import 'element-plus/es/components/pagination/style/css'
 
 import App from './App.vue'
+import { initializeTheme } from './composables/useTheme'
+import './styles/theme.css'
 import router from './router'
 import './styles/index.css'
 import './styles/home.css'
@@ -17,6 +19,8 @@ import './styles/account.css'
 import './styles/motion.css'
 import './styles/home-motion.css'
 import reveal from './directives/reveal'
+
+initializeTheme()
 
 const app = createApp(App)
 
