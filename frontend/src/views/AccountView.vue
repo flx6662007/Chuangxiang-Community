@@ -211,7 +211,6 @@ onBeforeUnmount(() => {
 <template>
   <section class="account-page-shell">
     <AccountPageHeader
-      eyebrow="MY ACCOUNT"
       title="我的"
       accent="账号。"
       description="管理校园身份，也为下一次合作做好准备。"
@@ -358,12 +357,10 @@ onBeforeUnmount(() => {
           </div>
         </el-card>
         <aside class="account-intro">
-          <span class="account-intro-index">01 / START HERE</span>
           <h2>连接校园，<br /><span>从一个好想法开始。</span></h2>
           <p>使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。</p>
           <RouterLink class="more-link" :to="{ name: 'competitions' }"
             >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>
-          <span class="account-intro-note">从这里出发。</span>
         </aside>
       </div>
       <template v-else>
@@ -371,7 +368,6 @@ onBeforeUnmount(() => {
           <div class="account-overview-main">
             <div class="account-heading">
               <div>
-                <span class="inner-kicker">01 / ACCOUNT OVERVIEW</span>
                 <h2 id="account-overview-title">账号总览</h2>
               </div>
               <button class="text-button" :disabled="!!busy" @click="logout">
@@ -385,7 +381,7 @@ onBeforeUnmount(() => {
             </dl>
           </div>
           <div class="account-next-step">
-            <span class="inner-kicker">NEXT STEP / 下一步</span>
+            <span class="inner-kicker">下一步</span>
             <h3>{{ overview.title }}</h3>
             <p>{{ overview.description }}</p>
             <RouterLink class="account-next-link" :to="overview.to">
@@ -395,7 +391,6 @@ onBeforeUnmount(() => {
         </section>
         <section class="account-shortcuts" aria-labelledby="account-shortcuts-title">
           <div class="account-section-heading">
-            <span class="inner-kicker">02 / YOUR SPACE</span>
             <h2 id="account-shortcuts-title">与你有关</h2>
           </div>
           <div class="account-shortcut-grid">
@@ -405,7 +400,6 @@ onBeforeUnmount(() => {
           </div>
         </section>
         <div class="account-section-heading account-detail-heading">
-          <span class="inner-kicker">03 / ACCOUNT DETAILS</span>
           <h2>账号设置与说明</h2>
         </div>
         <el-card id="email-verification" class="detail-section account-detail-section" shadow="never">

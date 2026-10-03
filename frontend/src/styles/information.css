@@ -124,7 +124,7 @@
 .is-editorial-page .project-page .search-bar { margin-bottom: 19px; }
 .is-editorial-page .project-page .notice-text { max-width: 900px; margin: 0 0 42px; padding: 0 0 0 16px; border-left: 2px solid #8aaed2; background: none; color: #62717d; font-size: var(--type-small); line-height: var(--leading-loose); }
 .is-editorial-page .research-editorial-list { border-top: 1px solid #9eabad; }
-.is-editorial-page .research-opportunity { display: grid; grid-template-columns: 46px minmax(0, 1fr) 172px 102px; gap: 24px; align-items: start; padding: 32px 0 35px; border-bottom: 1px solid #cbd2d1; }
+.is-editorial-page .research-opportunity { display: grid; grid-template-columns: minmax(0, 1fr) 172px 102px; gap: 24px; align-items: start; padding: 32px 0 35px; border-bottom: 1px solid #cbd2d1; }
 .is-editorial-page .research-opportunity-number { color: #387bc1; font: 700 var(--type-small) var(--font-ui); letter-spacing: .1em; padding-top: 5px; }
 .is-editorial-page .research-opportunity-main { min-width: 0; }
 .is-editorial-page .research-opportunity-unit { color: #4b729a; font-size: var(--type-caption); line-height: 1.6; margin: 0 0 8px; }
@@ -181,8 +181,8 @@
   .is-editorial-page .app-header-inner { gap: 22px; }
   .is-editorial-page .header-actions > a:not(.header-account) { display: none; }
   .is-editorial-page .header-account { display: flex; }
-  .is-editorial-page .research-opportunity { grid-template-columns: 38px minmax(0, 1fr) 125px; gap: 18px; }
-  .is-editorial-page .research-opportunity-action { grid-column: 3; grid-row: 2; text-align: left; }
+  .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr) 125px; gap: 18px; }
+  .is-editorial-page .research-opportunity-action { grid-column: 2; grid-row: 2; text-align: left; }
 }
 @media (max-width: 640px) {
   .is-editorial-page .app-header { height: auto; min-height: 70px; padding: 0 16px; }
@@ -220,10 +220,10 @@
   .is-editorial-page .competition-card__header h2 { font-size: var(--type-title-md); }
   .is-editorial-page .competition-card-aside { width: 100%; border-left: 0; border-top: 1px solid #d6dcde; padding: 15px 0 0; gap: 5px; }
   .is-editorial-page .card-detail-link { padding-top: 8px; }
-  .is-editorial-page .research-opportunity { grid-template-columns: 32px minmax(0, 1fr); gap: 8px 13px; padding: 26px 0 30px; }
+  .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr); gap: 8px 13px; padding: 26px 0 30px; }
   .is-editorial-page .research-opportunity-main h3 { font-size: var(--type-title-md); }
-  .is-editorial-page .research-opportunity-meta { grid-column: 2; grid-row: 2; display: flex; gap: 24px; flex-wrap: wrap; padding-top: 5px; }
-  .is-editorial-page .research-opportunity-action { grid-column: 2; grid-row: 3; padding-top: 9px; }
+  .is-editorial-page .research-opportunity-meta { grid-column: 1; grid-row: 2; display: flex; gap: 24px; flex-wrap: wrap; padding-top: 5px; }
+  .is-editorial-page .research-opportunity-action { grid-column: 1; grid-row: 3; padding-top: 9px; }
   .is-editorial-page .app-footer { padding: 32px 24px; }
 }
 @media (prefers-reduced-motion: reduce) {

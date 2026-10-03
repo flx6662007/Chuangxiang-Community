@@ -118,7 +118,6 @@ onBeforeUnmount(() => {
           </div>
         </template>
         <template v-else>
-          <p class="information-eyebrow">TOGETHER / RECRUITMENT</p>
           <h1>招募详情</h1>
         </template>
       </div>
@@ -134,7 +133,6 @@ onBeforeUnmount(() => {
       <div class="detail-layout">
         <div class="detail-main">
           <section v-reveal class="team-panel team-conditions">
-            <span class="inner-kicker">01 / THE FIT</span>
             <h2>招募条件</h2>
             <RecruitmentFacts :revision="item" />
             <p class="muted">
@@ -190,7 +188,6 @@ onBeforeUnmount(() => {
         </div>
         <aside class="detail-sidebar">
           <section class="team-panel team-join-panel">
-            <span class="inner-kicker">02 / NEXT STEP</span>
             <h2>一起完成一场赛事</h2>
             <p>
               接受申请不占名额。双方针对当前条件确认后，才建立正式队伍关系。

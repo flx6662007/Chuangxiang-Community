@@ -83,15 +83,12 @@ onBeforeUnmount(() => {
 <template>
   <section class="account-subpage">
     <AccountPageHeader
-      eyebrow="NOTIFICATIONS"
       title="系统"
       accent="通知。"
-      index="03"
       description="阅读通知不会代替继续申请、确认入队或同意退出。"
     />
     <div class="account-content account-subpage-content">
     <div class="account-subpage-intro">
-      <span class="inner-kicker">NOTIFICATIONS / 02</span>
       <RouterLink class="action-button secondary" to="/account/teams">我的组队</RouterLink>
     </div>
     <nav class="tab-nav" aria-label="通知筛选">

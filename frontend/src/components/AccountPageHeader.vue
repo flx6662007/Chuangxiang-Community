@@ -1,10 +1,8 @@
 <script setup>
 defineProps({
-  eyebrow: { type: String, required: true },
   title: { type: String, required: true },
   accent: { type: String, required: true },
   description: { type: String, required: true },
-  index: { type: String, default: '01' },
   showNav: { type: Boolean, default: true },
 })
 
@@ -19,8 +17,6 @@ const links = [
 <template>
   <header class="information-hero account-hero">
     <div class="information-hero-inner">
-      <p class="information-eyebrow">CHUANGXIANG / {{ eyebrow }}</p>
-      <span class="information-index">ACCOUNT / {{ index }}</span>
       <h1>{{ title }}<span>{{ accent }}</span></h1>
       <p>{{ description }}</p>
     </div>

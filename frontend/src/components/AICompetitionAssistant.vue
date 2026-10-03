@@ -55,7 +55,6 @@ onBeforeUnmount(() => {
   <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <span class="section-kicker">✦ CHUANGXIANG AI / FRONTEND DEMO</span>
         <h2 id="ai-assistant-title">不知道参加什么？<br /><span>告诉我你会什么。</span></h2>
       </div>
       <span class="editorial-label">前端功能演示</span>
@@ -63,7 +62,7 @@ onBeforeUnmount(() => {
     <p class="ai-assistant-intro">把你的专业、技能和兴趣写下来，从一个方向开始探索。</p>
     <div class="ai-assistant-panel">
       <form class="ai-assistant-form" role="search" aria-label="AI 竞赛搜索" @submit.prevent="submitSearch">
-        <label for="ai-competition-query">YOUR IDEA / 你的参赛需求</label>
+        <label for="ai-competition-query">你的参赛需求</label>
         <textarea
           id="ai-competition-query"
           v-model="query"
@@ -87,7 +86,6 @@ onBeforeUnmount(() => {
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <div class="ai-visual" aria-hidden="true"><span>✦</span><p>SKILLS<br />INTERESTS<br />POSSIBILITIES</p><small>DISCOVER YOUR NEXT STEP ↗</small></div>
       <p class="ai-demo-note">当前为模拟匹配，以下赛事均为虚构演示数据；报名状态和参赛资格不代表真实赛事。</p>
     </div>
 

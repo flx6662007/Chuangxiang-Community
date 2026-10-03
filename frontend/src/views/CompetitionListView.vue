@@ -149,7 +149,6 @@ onBeforeUnmount(() => {
   <section class="competition-page" aria-labelledby="competition-title">
     <div v-reveal class="competition-intro">
       <div>
-        <span class="inner-kicker">COMPETITION INDEX</span>
         <h2 id="competition-title">探索赛事</h2>
       </div>
       <p>名称、方向、时间与来源，一起看清这场比赛是否适合你。</p>
@@ -170,7 +169,7 @@ onBeforeUnmount(() => {
       <button class="action-button" type="submit">搜索</button>
     </form>
     <div v-reveal class="competition-filters">
-      <div class="filter-heading"><span>01 / CATEGORY</span><strong>按方向筛选</strong></div>
+      <div class="filter-heading"><strong>按方向筛选</strong></div>
       <div class="category-tabs competition-category-tabs" aria-label="赛事分类">
         <button :class="{ selected: !category }" @click="selectCategory('')">
           全部分类
@@ -188,7 +187,7 @@ onBeforeUnmount(() => {
           <button class="text-button" @click="loadCategories">重试</button>
         </span>
       </div>
-      <div class="filter-heading"><span>02 / TIMELINE</span><strong>按时效筛选</strong></div>
+      <div class="filter-heading"><strong>按时效筛选</strong></div>
       <div class="category-tabs competition-time-tabs" aria-label="赛事时效">
         <button
           v-for="option in competitionTimeOptions"

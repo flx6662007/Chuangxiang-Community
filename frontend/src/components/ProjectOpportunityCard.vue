@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { formatDate, safeExternalUrl } from '../utils/competition'
 const props = defineProps({
   item: { type: Object, required: true },
-  index: { type: Number, default: 1 },
 })
 const sourceUrl = computed(() => safeExternalUrl(props.item.sourceUrl))
 </script>
@@ -13,7 +12,6 @@ const sourceUrl = computed(() => safeExternalUrl(props.item.sourceUrl))
     class="research-opportunity"
     :aria-labelledby="'project-' + item.id + '-title'"
   >
-    <span class="research-opportunity-number">{{ String(index).padStart(2, '0') }}</span>
     <div class="research-opportunity-main">
       <p class="research-opportunity-unit">{{ item.unit || '官方科研线索' }}</p>
       <h3 :id="'project-' + item.id + '-title'">{{ item.title }}</h3>

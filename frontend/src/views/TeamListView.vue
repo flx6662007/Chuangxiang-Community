@@ -129,8 +129,6 @@ onBeforeUnmount(() => {
     <header class="information-hero team-hero">
       <div class="information-hero-inner">
         <EditorialHeroVisual variant="team" />
-        <p class="information-eyebrow">CHUANGXIANG / <em>Better together</em></p>
-        <span class="information-index">03 / TOGETHER</span>
         <div class="team-hero-grid">
           <div>
             <h1 id="team-title">寻找一起<br /><span>参赛的伙伴。</span></h1>
@@ -155,7 +153,7 @@ onBeforeUnmount(() => {
     </header>
     <div class="team-content">
     <section class="team-filter-surface" aria-labelledby="team-filter-title">
-      <div class="team-section-heading"><span class="inner-kicker">FIND YOUR TEAM</span><h2 id="team-filter-title">从你能带来的不同开始。</h2></div>
+      <div class="team-section-heading"><h2 id="team-filter-title">从你能带来的不同开始。</h2></div>
     <form class="search-bar" role="search" @submit.prevent="changeFilters">
       <AppIcon name="search" :size="19" /><label
         class="sr-only"

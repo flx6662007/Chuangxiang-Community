@@ -54,7 +54,6 @@ watch(
 <template>
   <section class="project-page" aria-labelledby="projects-title">
     <div v-reveal class="project-intro">
-      <span class="inner-kicker">RESEARCH INDEX</span>
       <h2 id="projects-title">把好奇心带进实验室。</h2>
       <p>阅读真实来源，找到与你的兴趣相交的研究方向。</p>
     </div>
@@ -91,10 +90,9 @@ watch(
     </div>
     <div v-if="items.length" v-reveal class="research-editorial-list">
       <ProjectOpportunityCard
-        v-for="(item, index) in items"
+        v-for="item in items"
         :key="item.id"
         :item="item"
-        :index="index + 1"
       />
     </div>
     <div v-else class="state-panel compact-state">

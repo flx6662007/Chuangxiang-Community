@@ -6,15 +6,15 @@ import EditorialHeroVisual from '../components/EditorialHeroVisual.vue'
 const route = useRoute()
 const page = computed(() => {
   if (route.name === 'research-projects') return {
-    index: '02 / RESEARCH', first: '走进', second: '真正的研究。',
+    first: '走进', second: '真正的研究。',
     description: '从官方科研线索出发，探索适合自己的研究方向。',
   }
   if (['resources', 'resource-detail'].includes(route.name)) return {
-    index: '03 / RESOURCES', first: '查找', second: '学习与工具资源。',
+    first: '查找', second: '学习与工具资源。',
     description: '按方向与类型查找资源。当前清单为前端示例，内容及来源请逐项核对。',
   }
   return {
-    index: '01 / COMPETITIONS', first: '发现', second: '值得参加的赛事。',
+    first: '发现', second: '值得参加的赛事。',
     description: '从真实收录的赛事出发，找到值得投入的下一步。',
   }
 })
@@ -28,8 +28,6 @@ const page = computed(() => {
           v-if="route.name === 'competitions' || route.name === 'research-projects'"
           :variant="route.name === 'competitions' ? 'competition' : 'research'"
         />
-        <p class="information-eyebrow">CHUANGXIANG / <em>Discover &amp; Create</em></p>
-        <span class="information-index">{{ page.index }}</span>
         <h1 id="information-title">
           {{ page.first }}<br />
           <span>{{ page.second }}</span>

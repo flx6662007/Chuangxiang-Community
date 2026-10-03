@@ -93,10 +93,9 @@ onBeforeUnmount(() => { requestNumber++ })
   <section class="resource-page" aria-labelledby="resource-title">
     <div class="section-heading">
       <div>
-        <span class="section-kicker">RESOURCE LIBRARY</span>
         <h2 id="resource-title">资源中心</h2>
       </div>
-      <span class="editorial-label">长期检索 · 分类整理</span>
+
     </div>
     <p class="editorial-intro">
       按方向和资源类型查找竞赛、科研与技能学习资料。未来由管理员维护；当前先展示前端示例清单。
@@ -131,7 +130,6 @@ onBeforeUnmount(() => { requestNumber++ })
     <section class="resource-category-section" aria-labelledby="resource-categories-title">
       <div class="section-heading resource-category-heading">
         <div>
-          <span class="section-kicker">EXPLORE BY TYPE</span>
           <h2 id="resource-categories-title">按资源类型查找</h2>
         </div>
         <button
@@ -165,7 +163,6 @@ onBeforeUnmount(() => { requestNumber++ })
     <section v-if="!activeFilters && !loading && !error && featuredItems.length" class="resource-featured" aria-labelledby="resource-featured-title">
       <div class="section-heading">
         <div>
-          <span class="section-kicker">START HERE</span>
           <h2 id="resource-featured-title">先看这些示例</h2>
         </div>
       </div>
@@ -177,7 +174,6 @@ onBeforeUnmount(() => { requestNumber++ })
     <section id="resource-list" class="resource-results" aria-labelledby="resource-list-title">
       <div class="section-heading">
         <div>
-          <span class="section-kicker">BROWSE RESOURCES</span>
           <h2 id="resource-list-title">资源列表</h2>
         </div>
       </div>
