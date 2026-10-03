@@ -1,0 +1,170 @@
+/* Homepage motion follows the four ways into the site. Content stays readable at rest. */
+.app-shell.is-home .app-main > .welcome { animation: none; }
+.welcome [data-reveal-ready] {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.welcome .art-orbit-outer {
+  transition: border-color 650ms var(--motion-ease-out), opacity 650ms var(--motion-ease-out);
+}
+.welcome .art-orbit-inner {
+  transition: border-color 650ms var(--motion-ease-out), transform 650ms var(--motion-ease-out);
+}
+.welcome .art-word,
+.welcome .art-label,
+.welcome .art-footer {
+  transition: color 420ms var(--motion-ease-out), transform 650ms var(--motion-ease-out), opacity 420ms var(--motion-ease-out);
+}
+.welcome .start-links a {
+  position: relative;
+  isolation: isolate;
+  transition: color var(--motion-fast) var(--motion-ease-standard);
+}
+.welcome .start-links a::before {
+  content: '';
+  position: absolute;
+  top: -33px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: #77aaff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 420ms var(--motion-ease-out);
+}
+.welcome .start-links a:is(:hover, :focus-visible)::before { transform: scaleX(1); }
+.welcome .start-links a:is(:hover, :focus-visible) strong,
+.welcome .start-links a:is(:hover, :focus-visible) .start-arrow { color: #83b3ff; }
+.welcome .start-links a:is(:hover, :focus-visible) .start-arrow,
+.welcome .home-more:is(:hover, :focus-visible) span,
+.welcome .research-row:focus-within .research-arrow,
+.welcome .discover-item:focus-visible .discover-top > span:last-child {
+  transform: translate(4px, -3px);
+}
+
+/* The orbit answers the chosen path, so the decoration also explains navigation. */
+.welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-outer,
+.welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-inner {
+  border-color: #80b0f16b;
+}
+.welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-orbit-inner { transform: scale(1.055); }
+.welcome .home-opening:has(.start-links a:is(:hover, :focus-visible)) .art-word { transform: translateY(-5px); }
+.welcome .home-opening:has(.start-links a:first-child:is(:hover, :focus-visible)) .art-label-one,
+.welcome .home-opening:has(.start-links a:nth-child(2):is(:hover, :focus-visible)) .art-label-two,
+.welcome .home-opening:has(.start-links a:nth-child(3):is(:hover, :focus-visible)) .art-label-three,
+.welcome .home-opening:has(.start-links a:nth-child(4):is(:hover, :focus-visible)) .art-footer {
+  color: #d6e7ff;
+  transform: translateY(-5px);
+}
+
+/* Each area arrives in its own direction; the rest of the page stays still. */
+.welcome .home-ai [data-reveal-ready] .ai-assistant-panel {
+  transform: translateY(24px);
+  transition: transform 720ms var(--motion-ease-out), border-color 720ms var(--motion-ease-out);
+}
+.welcome .home-ai .is-revealed .ai-assistant-panel { transform: translateY(0); }
+.welcome .home-discover [data-reveal-ready] .home-section-heading,
+.welcome .home-together [data-reveal-ready] .home-section-heading {
+  transform: translateY(18px);
+  transition: transform 650ms var(--motion-ease-out);
+}
+.welcome .home-discover .is-revealed .home-section-heading,
+.welcome .home-together .is-revealed .home-section-heading { transform: translateY(0); }
+.welcome .home-research [data-reveal-ready] .research-row {
+  transform: translateX(18px);
+  transition: transform 620ms var(--motion-ease-out), border-color var(--motion-standard) var(--motion-ease-standard);
+}
+.welcome .home-research .is-revealed .research-row { transform: translateX(0); }
+.welcome .home-research .research-row:nth-child(2) { transition-delay: 65ms; }
+.welcome .home-research .research-row:nth-child(3) { transition-delay: 130ms; }
+.welcome .home-briefing [data-reveal-ready] .briefing-list,
+.welcome .home-briefing [data-reveal-ready] .briefing-empty {
+  transform: translateY(16px);
+  transition: transform 680ms var(--motion-ease-out);
+}
+.welcome .home-briefing .is-revealed .briefing-list,
+.welcome .home-briefing .is-revealed .briefing-empty { transform: translateY(0); }
+
+/* Browsing motion communicates which record opens, without lifting every card. */
+.welcome .discover-item {
+  position: relative;
+  overflow: hidden;
+}
+.welcome .discover-item::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #83b3ff;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 390ms var(--motion-ease-out);
+}
+.welcome .discover-item:is(:hover, :focus-visible)::before { transform: scaleY(1); }
+.welcome .research-row:is(:hover, :focus-within) { border-bottom-color: #6b9ad0; }
+.welcome .research-row:is(:hover, :focus-within) .research-number { color: #8bbcff; }
+.welcome .team-preview { position: relative; overflow: hidden; }
+.welcome .team-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  background: #83b3ff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 480ms var(--motion-ease-out);
+}
+.welcome .team-preview:is(:hover, :focus-visible)::before { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .welcome .hero-copy .home-kicker { animation: home-kicker-enter 540ms 80ms var(--motion-ease-out) both; }
+  .welcome .hero-copy h1 { animation: home-headline-enter 900ms 150ms var(--motion-ease-out) both; }
+  .welcome .hero-lead { animation: home-lead-enter 680ms 520ms var(--motion-ease-out) both; }
+  .welcome .hero-art { animation: home-art-enter 980ms 180ms var(--motion-ease-out) both; }
+  .welcome .art-word { animation: home-word-enter 900ms 390ms var(--motion-ease-out) both; }
+  .welcome .start-label { animation: home-kicker-enter 500ms 640ms var(--motion-ease-out) both; }
+  .welcome .start-links a { animation: home-path-enter 650ms var(--motion-ease-out) both; }
+  .welcome .start-links a:nth-child(1) { animation-delay: 580ms; }
+  .welcome .start-links a:nth-child(2) { animation-delay: 650ms; }
+  .welcome .start-links a:nth-child(3) { animation-delay: 720ms; }
+  .welcome .start-links a:nth-child(4) { animation-delay: 790ms; }
+}
+@keyframes home-kicker-enter { from { opacity: 0; transform: translateX(-18px); } }
+@keyframes home-headline-enter { from { opacity: .15; clip-path: inset(0 0 85% 0); transform: translateY(18px); } to { opacity: 1; clip-path: inset(0); transform: translateY(0); } }
+@keyframes home-lead-enter { from { opacity: 0; transform: translateY(12px); } }
+@keyframes home-art-enter { from { opacity: 0; transform: scale(.94); } }
+@keyframes home-word-enter { from { opacity: 0; } to { opacity: .9; } }
+@keyframes home-path-enter { from { opacity: 0; transform: translateY(12px); } }
+
+@media (max-width: 900px) {
+  .welcome .start-links a::before { top: -1px; }
+}
+@media (max-width: 640px) {
+  .welcome .start-links a { grid-template-columns: 86px minmax(0, 1fr) 24px; }
+  .welcome .start-links a > span:first-child { white-space: nowrap; }
+  .welcome .start-links a::before { left: 0; right: 0; }
+  .welcome .start-links a:active::before { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome .art-orbit-outer,
+  .welcome .art-orbit-inner,
+  .welcome .art-word,
+  .welcome .art-label,
+  .welcome .art-footer,
+  .welcome .start-links a,
+  .welcome .home-ai .ai-assistant-panel,
+  .welcome .home-discover .home-section-heading,
+  .welcome .home-together .home-section-heading,
+  .welcome .home-research .research-row,
+  .welcome .home-briefing .briefing-list,
+  .welcome .home-briefing .briefing-empty {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .welcome .start-links a::before,
+  .welcome .discover-item::before,
+  .welcome .team-preview::before { display: none; }
+}
