@@ -37,20 +37,39 @@ COMPETITION_FIELDS = {
 RESOURCE_FIELDS = {'title', 'description', 'provider', 'access_url', 'source_note', 'availability'}
 
 
+def package_scope(data):
+    """旧包不声明范围；前 89 项必须显式选择，不能借参数扩张写入范围。"""
+    if 'catalog_scope' not in data:
+        return {'first': 131, 'last': 255, 'batch_size': 25}
+    scope = data['catalog_scope']
+    allowed = {'first': 1, 'last': 89, 'batch_size': 25}
+    require(isinstance(scope, dict) and scope.keys() == allowed.keys()
+            and all(type(scope[key]) is int and scope[key] == value
+                    for key, value in allowed.items()),
+            'catalog_scope 只接受 {first: 1, last: 89, batch_size: 25}；旧包请省略此字段。')
+    return scope
+
+
 def load_package(filename, batches=()):
     filename = Path(filename).resolve()
     require(filename.stat().st_size <= 30_000_000, '资料包 JSON 超过 30 MB。')
     data = json.loads(filename.read_text(encoding='utf-8-sig'))
     require(data.get('schema_version') == 1, '不支持的 schema_version。')
     require(isinstance(data.get('package_id'), str) and re.fullmatch(r'[a-z0-9-]{1,100}', data['package_id']), '资料包编号无效。')
+    scope = package_scope(data)
+    first, last, batch_size = (scope[key] for key in ('first', 'last', 'batch_size'))
+    batch_numbers = list(range(1, (last - first) // batch_size + 2))
+    require(isinstance(batches, (list, tuple)) and all(
+        type(batch) is int and batch in batch_numbers for batch in batches),
+        f'批次必须为 1—{batch_numbers[-1]} 范围内的整数。')
     require(isinstance(data.get('catalog'), list), '缺少 catalog 清单。')
     codes = [x['code'] for x in data['catalog']]
     require(len(codes) == len(set(codes)), '目录编号重复。')
     for row in data['catalog']:
-        require(re.fullmatch(r'2026(?:1[3-9][0-9]|2[0-5][0-9])', row['code']) is not None
-                and 2026131 <= int(row['code']) <= 2026255, '目录超出 131—255 范围。')
+        require(isinstance(row['code'], str) and re.fullmatch(r'2026[0-9]{3}', row['code']) is not None
+                and first <= int(row['code'][-3:]) <= last, f'目录超出 {first}—{last} 范围。')
         require(row.get('name') and row.get('grade') and row.get('departments'), '目录信息不完整。')
-    selected = {c for c in codes if not batches or (int(c[-3:]) - 131) // 25 + 1 in batches}
+    selected = {c for c in codes if not batches or (int(c[-3:]) - first) // batch_size + 1 in batches}
     require(bool(selected), '所选批次没有目录条目。')
     result = {**data, 'catalog': [x for x in data['catalog'] if x['code'] in selected]}
     identities = {}
@@ -102,4 +121,6 @@ def load_package(filename, batches=()):
     result['_root'] = str(filename.parent)
     result['_hash'] = digest(data)
     result['_batches'] = sorted(set(batches))
+    result['_batch_numbers'] = batch_numbers
+    result['_catalog_scope'] = scope
     return result
