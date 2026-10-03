@@ -4,12 +4,12 @@
 一、交付内容和当前状态
 
 资料包原位置：D:\创享科创信息与组队服务平台\赛事资料库\同济2026-131-255
-资料包拟下载地址（尚未发布，等待明确确认公开上传）：
+资料包下载（本仓库Release附件）：
 https://github.com/flx6662007/Chuangxiang-Community/releases/tag/tongji-2026-131-255-20261002
-附件发布后，下载 tongji-2026-131-255-20261002.zip 并解压到自己的持久目录。
-代码与说明已合入main；资料包尚在本机，拟作为Release附件提供，工程工作区不复制一整份。
+下载 tongji-2026-131-255-20261002.zip 并解压到自己的持久目录。
+代码与说明合入main；资料包作为Release附件提供，工程工作区不复制一整份。
 docs/curated-delivery-files.json 记录逐文件哈希及压缩包哈希；解压时保留相对目录。
-正式发布时同时附带 curated-delivery-files.json，方便接收方离线校验。
+Release同时附带 curated-delivery-files.json，方便接收方离线校验。
 
 阅读入口为开始阅读.html，汇总为总索引.xlsx，入库输入为导入清单.json。
 整理底稿.json 是事实与来源的唯一维护源；其他索引、JSONL和阅读版是派生文件。
