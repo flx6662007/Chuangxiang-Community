@@ -1,0 +1,56 @@
+{
+  "package_id": "tongji-2026-001-089-20261003",
+  "counts": {
+    "catalog": 89,
+    "competitions": 0,
+    "resources": 207,
+    "documents": 301
+  },
+  "research_counts": {
+    "competitions": 89,
+    "competition_sources": 121,
+    "learning_resources": 212,
+    "unique_urls": 267,
+    "evidence": {
+      "search_result": 64,
+      "page_read": 213,
+      "official_index": 56
+    }
+  },
+  "source_status_counts": {
+    "confirmed": 73,
+    "name_uncertain": 5,
+    "unconfirmed": 11
+  },
+  "batches": [
+    {
+      "batch": 1,
+      "first": 1,
+      "last": 25,
+      "catalog": 25
+    },
+    {
+      "batch": 2,
+      "first": 26,
+      "last": 50,
+      "catalog": 25
+    },
+    {
+      "batch": 3,
+      "first": 51,
+      "last": 75,
+      "catalog": 25
+    },
+    {
+      "batch": 4,
+      "first": 76,
+      "last": 89,
+      "catalog": 14
+    }
+  ],
+  "notes": [
+    "207项资源按URL、类型、标题去重；212条学习导读保留各赛事的适用范围。",
+    "301份知识档案为89份赛事摘要与212份学习导读，不是301份来源全文。",
+    "所有入库对象均为草稿；不自动公开或纳入AI问答。"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "package_id": "tongji-2026-001-089-20261003",
+  "note": "本目录文件的字节级校验；不含本清单自身、Python缓存及数据库。文本统一LF。",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 96,
+      "sha256": "dd2a3902f74883173ba6cde997590edd6b53f820c2cafd5535db50de2cf89425"
+    },
+    {
+      "path": "001-022.md",
+      "bytes": 42473,
+      "sha256": "b646f47bdd693053293a079c12a6bcc11cbe33f7775c0fc74f7601b450f62c63"
+    },
+    {
+      "path": "023-044.md",
+      "bytes": 47603,
+      "sha256": "0ac3455475ba988f08795c61fff0439baaf01f0587d9f281e87b80b39ec7ab79"
+    },
+    {
+      "path": "045-066.md",
+      "bytes": 49742,
+      "sha256": "781e5ce2c730bdd59839d08b8aaec72ff1cf7737d321a2b934a8a7ccd8ccee0e"
+    },
+    {
+      "path": "067-089.md",
+      "bytes": 48366,
+      "sha256": "0c991373432740e2a8fddb3366bd891178c48471615784b219464b87a1a0296c"
+    },
+    {
+      "path": "build_index.py",
+      "bytes": 13134,
+      "sha256": "9e7829e3e05cee95428d62c818f02bb7752a82442dee8bb627df8b4d7f50e927"
+    },
+    {
+      "path": "build_manifest.py",
+      "bytes": 855,
+      "sha256": "dd3a96e9cc3cc740bc07d0c1ceb406a1ab139f717a440e0fb95c8c582e51d38b"
+    },
+    {
+      "path": "build_package.py",
+      "bytes": 7337,
+      "sha256": "29879bc5e7decfb423b00c20b5df7b7fef954fac92a492061b8543e4f354cbde"
+    },
+    {
+      "path": "build_workbook.py",
+      "bytes": 9035,
+      "sha256": "70acb49434fac0ebec21a7612e13ee7c476ccb378845adfdee2769e49fd920af"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7488,
+      "sha256": "f8d12f0d8d24d38decd7f4d4cbaab436e6955b348789d6cdea007637d9a6f6c0"
+    },
+    {
+      "path": "导入数据/catalog.jsonl",
+      "bytes": 20596,
+      "sha256": "ba756ca7434f92a322b6f6b86d73c37e9e40535911da62c95460a8a7b25a0623"
+    },
+    {
+      "path": "导入数据/competitions.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "导入数据/documents.jsonl",
+      "bytes": 635029,
+      "sha256": "c03bcf7442cb9db3b273b16659b9e6aceccea4eeace99b4f4a31305c557670e9"
+    },
+    {
+      "path": "导入数据/resources.jsonl",
+      "bytes": 186560,
+      "sha256": "6ea0a661f20ed20e797147cbb303df5bbb2ac3b1e8d1b6b9e0e12370155be702"
+    },
+    {
+      "path": "导入清单.json",
+      "bytes": 991931,
+      "sha256": "06efdd5fda00a0a891fb0ca63ae4d3a3946a75b358a42d2629f950210508f75b"
+    },
+    {
+      "path": "开始阅读.html",
+      "bytes": 548471,
+      "sha256": "9d52c45ff997a5cbaee548ee191b5dce550c6198267c191a295e932857d862b7"
+    },
+    {
+      "path": "总索引.xlsx",
+      "bytes": 111737,
+      "sha256": "4d2113f5a70ef2f9c2785c47e26953b8f6436f0245d35934dac7179d150a027b"
+    },
+    {
+      "path": "批次报告.json",
+      "bytes": 1217,
+      "sha256": "729549cf52a5ff3896f2365b6fd05097cf4e2de3064a954e3824cec2cbce075c"
+    },
+    {
+      "path": "整理底稿.json",
+      "bytes": 255213,
+      "sha256": "f660237ea624f9a4b11e934fb57fcc81fa8928dc38bbf12c0e692a66a1fa73b8"
+    },
+    {
+      "path": "来源清单.json",
+      "bytes": 192616,
+      "sha256": "61e053e0c337ca00d7e24d702b548fb161ab0165f4efb22683f99c24a099bd97"
+    },
+    {
+      "path": "附件清单.json",
+      "bytes": 146,
+      "sha256": "f9fd61521797a2b02da6995bb6bb0d033363c9dacbe937d5778ab8cf5737c919"
+    }
+  ]
+}
