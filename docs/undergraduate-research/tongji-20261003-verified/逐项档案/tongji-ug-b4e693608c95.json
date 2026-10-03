@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-b4e693608c95",
+    "title": "智能大数据可视化实验室 · 本科志愿者（2017 公告）",
+    "unit": "设计创意学院",
+    "summary": "参与数据分析、数据标注及可视化图表判读；原文另说明优秀者可进一步实习。",
+    "participation": "面向理工背景的大三、大四在读本科生，原公告招 5 人。",
+    "evidenceNote": "本科依据：在读大三大四的本科生。时效待确认：2017 年公告未列截止日，年代较早；不得据此认为当前仍有名额。",
+    "date": "2017-03-21",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://see.tongji.edu.cn/info/1106/5966.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "时效待确认",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "在读大三大四的本科生",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "2017 年公告未列截止日，年代较早；不得据此认为当前仍有名额。",
+    "sourceUrls": [
+      "https://see.tongji.edu.cn/info/1106/5966.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://see.tongji.edu.cn/info/1106/5966.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-cdda095bf026"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

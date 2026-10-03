@@ -1,0 +1,40 @@
+{
+  "card": {
+    "id": "tongji-ug-f0ec65431aa0",
+    "title": "PAI 研究中心 · P09 金融科技量化课题（2025）",
+    "unit": "同济大学 PAI 研究中心",
+    "summary": "参与金融数据处理、因子检验和量化模型研究；属企业合作课题。",
+    "participation": "1—3 人；主要面向大三升大四、大四升研一，需 Python 与数据建模；每周至少 4 天、至少 3 个月，可远程。",
+    "evidenceNote": "本科依据：主要面向大三升大四。历史已结束：报名截止 2025-04-30 15:00；本科依据仅用于 P09，不扩展到同文其他课题。",
+    "date": "2025-04-19",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/4YlGp550_PaCMFwQhyynWw"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "历史已结束",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "主要面向大三升大四",
+    "evidenceLocation": "官方书院链接的公众号正文：PAI 研究中心 · P09 金融科技量化课题（2025）／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "报名截止 2025-04-30 15:00；本科依据仅用于 P09，不扩展到同文其他课题。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/4YlGp550_PaCMFwQhyynWw",
+      "https://ai.tongji.edu.cn/index_en.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://ai.tongji.edu.cn/index_en.htm",
+        "note": "PAI 中心与刘二武团队单位"
+      }
+    ],
+    "sourceIds": [
+      "src-5bbd09d143a8",
+      "src-c4aac1f94fb0"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

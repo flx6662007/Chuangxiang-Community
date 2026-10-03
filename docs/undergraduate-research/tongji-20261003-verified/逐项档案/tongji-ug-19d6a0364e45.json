@@ -1,0 +1,48 @@
+{
+  "card": {
+    "id": "tongji-ug-19d6a0364e45",
+    "title": "人工智能系统决策实验室 · 医学影像智能分析",
+    "unit": "机械工程与机器人学院（教师主页旧称机械与能源工程学院）",
+    "summary": "结合医学影像和临床数据开展疾病预测与辅助诊断建模。",
+    "participation": "每方向 2—3 人；面向本科生，欢迎投入 2—3 年；低年级需数理编程基础，高年级需对应方向技能，详见原文。",
+    "evidenceNote": "本科依据：优秀本科生加入。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。 另有书院转载版本文字差异，见逐项档案。",
+    "date": "2026-04-26",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/olBJqxyNeAdiYyhm8XNJHA"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "优秀本科生加入",
+    "evidenceLocation": "官方书院链接的公众号正文：人工智能系统决策实验室 · 医学影像智能分析／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/olBJqxyNeAdiYyhm8XNJHA",
+      "https://faculty.tongji.edu.cn/duanchunyan/zh_CN/index.htm",
+      "https://mp.weixin.qq.com/s/isz5JCyi0YRljxAYgj3a6Q"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://mp.weixin.qq.com/s/isz5JCyi0YRljxAYgj3a6Q",
+        "relationship": "同招募转载／版本补充",
+        "note": "同四方向转载；启迪通用要求重点列低年级，分方向仍列高年级技能，卡片采用国豪完整要求。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://faculty.tongji.edu.cn/duanchunyan/zh_CN/index.htm",
+        "note": "段春艳单位：教师主页旧称机械与能源工程学院"
+      }
+    ],
+    "sourceIds": [
+      "src-9ec919f8f6cd",
+      "src-94d2c9f5e532",
+      "src-02e077e8b4e5"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "card": {
+    "id": "tongji-ug-f5c43bdbc4cb",
+    "title": "陈隽课题组 · 活荷载自动采集智能体研发",
+    "unit": "土木工程学院",
+    "summary": "构建并部署采集住宅、办公与工业建筑活荷载信息的智能体。",
+    "participation": "1—2 人，面向大一至大三；线上线下结合，建议持续一年，线下以四平路为主。",
+    "evidenceNote": "本科依据：大一至大三的同学。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "2026-04-30",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/mwiJ-TAOMZVk_9Mfm69x3A"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "大一至大三的同学",
+    "evidenceLocation": "官方书院链接的公众号正文：陈隽课题组 · 活荷载自动采集智能体研发／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/mwiJ-TAOMZVk_9Mfm69x3A",
+      "https://faculty-civileng.tongji.edu.cn/chenjuan/zh_CN/index.htm",
+      "https://mp.weixin.qq.com/s/L4Cafg6RDjQwJXjS8su62A"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://mp.weixin.qq.com/s/L4Cafg6RDjQwJXjS8su62A",
+        "relationship": "同招募转载／版本补充",
+        "note": "同课题转载，任务、年级与联系人一致。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://faculty-civileng.tongji.edu.cn/chenjuan/zh_CN/index.htm",
+        "note": "陈隽单位：土木工程学院"
+      }
+    ],
+    "sourceIds": [
+      "src-3980d35a05cb",
+      "src-932751e09fe7",
+      "src-f21502feecca"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

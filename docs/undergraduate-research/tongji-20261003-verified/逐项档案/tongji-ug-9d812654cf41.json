@@ -1,0 +1,46 @@
+{
+  "card": {
+    "id": "tongji-ug-9d812654cf41",
+    "title": "智阈实验室 · 机器人系统科研助理",
+    "unit": "电子与信息工程学院",
+    "summary": "开展机器人感知、规划控制、系统集成与智能体工程验证。",
+    "participation": "4 人，大二至大四优先；需机器人相关背景和 ROS、Python/C++ 等开发能力；张江线下。",
+    "evidenceNote": "本科依据：大二至大四学生优先。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "2026-05-21",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/dG_PbmSjQE7giyEMfXhN_g"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "大二至大四学生优先",
+    "evidenceLocation": "官方书院链接的公众号正文：智阈实验室 · 机器人系统科研助理／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/dG_PbmSjQE7giyEMfXhN_g",
+      "https://mp.weixin.qq.com/s/gdXtsUCcWrnilYy5EIfpMg"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://mp.weixin.qq.com/s/gdXtsUCcWrnilYy5EIfpMg",
+        "relationship": "同招募转载／版本补充",
+        "note": "岗位、人数、年级偏好与申请渠道一致。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://mp.weixin.qq.com/s/dG_PbmSjQE7giyEMfXhN_g",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-7d4ee0123ad0",
+      "src-9d159ab746cf"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

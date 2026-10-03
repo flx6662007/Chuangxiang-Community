@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ipoe",
+    "title": "精密光学工程技术研究所 · 本科科研实践",
+    "unit": "精密光学工程技术研究所",
+    "summary": "提供光电方向科研课题、实验与数据分析等实践训练。",
+    "participation": "校内外本科生均有培养模式；校外可短访、至少 4 周暑期实践或较长期课题研究。",
+    "evidenceNote": "本科依据：校外本科生可申请。时效待确认：2022 年本科培养及招生说明未列本轮截止日；具体接收安排、补助和名额需确认。",
+    "date": "2022-06-27",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://ipoe.tongji.edu.cn/info/1036/1020.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "时效待确认",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "校外本科生可申请",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "2022 年本科培养及招生说明未列本轮截止日；具体接收安排、补助和名额需确认。",
+    "sourceUrls": [
+      "https://ipoe.tongji.edu.cn/info/1036/1020.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://ipoe.tongji.edu.cn/info/1036/1020.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-916672e9fe9f"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

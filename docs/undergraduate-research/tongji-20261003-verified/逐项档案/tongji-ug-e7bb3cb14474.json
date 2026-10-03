@@ -1,0 +1,48 @@
+{
+  "card": {
+    "id": "tongji-ug-e7bb3cb14474",
+    "title": "叶伟课题组 · 多模态与三维生成本科实习",
+    "unit": "电子与信息工程学院",
+    "summary": "参与具身多模态大模型、机器学习与三维生成算法研发。",
+    "participation": "5 人；低年级需数理基础，高年级需 Python 与深度学习基础；需英文文献阅读能力。",
+    "evidenceNote": "本科依据：本科实习生。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "2026-04-18",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/bdMz57Ymg4VTovZXWMsL-g"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "本科实习生",
+    "evidenceLocation": "官方书院链接的公众号正文：叶伟课题组 · 多模态与三维生成本科实习／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/bdMz57Ymg4VTovZXWMsL-g",
+      "https://cse.tongji.edu.cn/yw/list.htm",
+      "https://mp.weixin.qq.com/s/7i5RDQl-Jut4vZbGSo3ftA"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://mp.weixin.qq.com/s/7i5RDQl-Jut4vZbGSo3ftA",
+        "relationship": "同招募转载／版本补充",
+        "note": "同课题转载，岗位、人数与要求一致。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://cse.tongji.edu.cn/yw/list.htm",
+        "note": "叶伟单位：控制科学与工程系"
+      }
+    ],
+    "sourceIds": [
+      "src-81f1036c1707",
+      "src-a2d1e9c256ca",
+      "src-7296cab8d7b6"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

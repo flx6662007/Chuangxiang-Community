@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-226356c699ef",
+    "title": "彭铎课题组 · 视觉与多模态科研实习",
+    "unit": "计算机科学与技术学院",
+    "summary": "研究人工智能、计算机视觉、跨域泛化和多模态学习。",
+    "participation": "欢迎本科生开展科研实习，具体基础与安排面谈。",
+    "evidenceNote": "本科依据：课题组常年招收直博生、普通博士生、硕士推免生及考研学生，并且随时欢迎本科生加入课题组进行科研实习，共同开展前沿科研工作！。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://cs.tongji.edu.cn/info/1065/3485.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "课题组常年招收直博生、普通博士生、硕士推免生及考研学生，并且随时欢迎本科生加入课题组进行科研实习，共同开展前沿科研工作！",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://cs.tongji.edu.cn/info/1065/3485.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://cs.tongji.edu.cn/info/1065/3485.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-260d4b8c6c42"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

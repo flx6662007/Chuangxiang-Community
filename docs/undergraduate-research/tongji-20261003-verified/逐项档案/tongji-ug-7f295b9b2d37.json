@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-7f295b9b2d37",
+    "title": "祝澜耘课题组 · 人工智能前沿科研",
+    "unit": "计算机科学与技术学院",
+    "summary": "提供人工智能与具身智能方向的研究资源及导师指导。",
+    "participation": "对科研感兴趣的本科生可邮件联系；正文中的 2027 年入学要求针对研究生招生。",
+    "evidenceNote": "本科依据：本科生同学加入课题组。时效待确认：原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://cs.tongji.edu.cn/info/1065/3527.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "时效待确认",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "本科生同学加入课题组",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "sourceUrls": [
+      "https://cs.tongji.edu.cn/info/1065/3527.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://cs.tongji.edu.cn/info/1065/3527.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-97096cc593e7"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

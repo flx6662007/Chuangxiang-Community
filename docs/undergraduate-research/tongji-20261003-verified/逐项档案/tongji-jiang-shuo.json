@@ -1,0 +1,46 @@
+{
+  "card": {
+    "id": "tongji-jiang-shuo",
+    "title": "蒋烁课题组 · 智能机器人与多模感知",
+    "unit": "电子与信息工程学院",
+    "summary": "研究具身智能、多模感知、人机系统与智能机器人。",
+    "participation": "教师主页明确每年接收本科实习生，可邮件联系。",
+    "evidenceNote": "本科依据：每年招收博士后、博士研究生、硕士研究生、科研助理和本科实习生等。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://robot.tongji.edu.cn/info/1256/2090.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "每年招收博士后、博士研究生、硕士研究生、科研助理和本科实习生等",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://robot.tongji.edu.cn/info/1256/2090.htm",
+      "https://see.tongji.edu.cn/info/1386/12431.htm"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://see.tongji.edu.cn/info/1386/12431.htm",
+        "relationship": "同课题组补充主页",
+        "note": "同一常设本科参与渠道，合并来源，不重复计数。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://robot.tongji.edu.cn/info/1256/2090.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-0fc25368ba47",
+      "src-7b0ea88977e3"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

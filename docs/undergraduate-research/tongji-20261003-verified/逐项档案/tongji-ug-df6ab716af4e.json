@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-df6ab716af4e",
+    "title": "建筑结构实验室 · 本科见习项目（2008 学期）",
+    "unit": "土木工程学院",
+    "summary": "围绕实验室当学期结构科研试验开放见习。",
+    "participation": "土木工程及相关专业本科生可申请，原文每项目限 2—3 人。",
+    "evidenceNote": "本科依据：建筑结构实验室科研试验加入本科生见习平台。历史已结束：公告明确为 2008 年所在学期的安排，不能视为当前名额。",
+    "date": "2008-10-28",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://civileng.tongji.edu.cn/experiment/87/e5/c16509a165861/page.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "历史已结束",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "建筑结构实验室科研试验加入本科生见习平台",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "公告明确为 2008 年所在学期的安排，不能视为当前名额。",
+    "sourceUrls": [
+      "https://civileng.tongji.edu.cn/experiment/87/e5/c16509a165861/page.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://civileng.tongji.edu.cn/experiment/87/e5/c16509a165861/page.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-803b46958390"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

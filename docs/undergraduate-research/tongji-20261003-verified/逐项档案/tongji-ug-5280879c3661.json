@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-5280879c3661",
+    "title": "范睿 MIAS Group · 本科科研实习常设渠道",
+    "unit": "电子与信息工程学院",
+    "summary": "开展智能驾驶环境感知与机器人相关算法研究。",
+    "participation": "教师主页列出每年接收本科实习生；具体批次和名额以课题组回复为准。",
+    "evidenceNote": "本科依据：每年招收博士研究生、硕士研究生、博士后、科研助理和本科实习生。长期招募：教师主页为每年招收渠道；另有 2024、2026 年限时报名公告，分别记录，不能用常设说明延长旧批次。",
+    "date": "2025-01-20",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://see.tongji.edu.cn/info/1447/14473.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "每年招收博士研究生、硕士研究生、博士后、科研助理和本科实习生",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "教师主页为每年招收渠道；另有 2024、2026 年限时报名公告，分别记录，不能用常设说明延长旧批次。",
+    "sourceUrls": [
+      "https://see.tongji.edu.cn/info/1447/14473.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://see.tongji.edu.cn/info/1447/14473.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-a929fd9842c1"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}
