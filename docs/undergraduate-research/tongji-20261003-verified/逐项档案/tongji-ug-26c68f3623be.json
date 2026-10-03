@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-26c68f3623be",
+    "title": "张荣庆课题组 · 网络与机器智能",
+    "unit": "计算机科学与技术学院",
+    "summary": "研究网联交通、低空智能、多智能体和网络智能系统。",
+    "participation": "长期欢迎本科生参与，具体任务与名额向导师确认。",
+    "evidenceNote": "本科依据：张荣庆教授课题组长期招募本科生、科研助理等加入网络与机器智能实验室从事网联智能、低空具身智能等方向的研究工作。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://cs.tongji.edu.cn/info/1066/3573.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "张荣庆教授课题组长期招募本科生、科研助理等加入网络与机器智能实验室从事网联智能、低空具身智能等方向的研究工作",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://cs.tongji.edu.cn/info/1066/3573.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://cs.tongji.edu.cn/info/1066/3573.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-35d0d3369573"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

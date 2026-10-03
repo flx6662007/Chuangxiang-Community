@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-93052b34b436",
+    "title": "结构试验中心 · 叠合墙板抗震见习（2009）",
+    "unit": "土木工程学院",
+    "summary": "参与预制叠合墙板低周反复试验的科研见习。",
+    "participation": "面向本科生，原计划认知见习 1—2 天，共 24 人。",
+    "evidenceNote": "本科依据：欢迎本科学生参加见习。历史已结束：报名截止 2009-06-01，试验安排 2009-05-15 至 07-10。",
+    "date": "2009-04-29",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://civileng.tongji.edu.cn/experiment/87/e2/c16510a165858/page.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "历史已结束",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "欢迎本科学生参加见习",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "报名截止 2009-06-01，试验安排 2009-05-15 至 07-10。",
+    "sourceUrls": [
+      "https://civileng.tongji.edu.cn/experiment/87/e2/c16510a165858/page.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://civileng.tongji.edu.cn/experiment/87/e2/c16510a165858/page.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-0560d57c2a1d"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

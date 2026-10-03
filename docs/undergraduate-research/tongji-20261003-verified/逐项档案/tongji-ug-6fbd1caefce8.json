@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-6fbd1caefce8",
+    "title": "何晶课题组 · 皮肤毛发再生",
+    "unit": "医学院",
+    "summary": "研究脂肪干细胞在皮肤和毛发再生中的机制与转化应用。",
+    "participation": "欢迎校内外生物、临床医学等相关本科生；要求中英文沟通、独立执行及团队协作能力。",
+    "evidenceNote": "本科依据：欢迎校内外具有相关专业背景的本科生加入。时效待确认：原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://med.tongji.edu.cn/info/1406/4511.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "时效待确认",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "欢迎校内外具有相关专业背景的本科生加入",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "sourceUrls": [
+      "https://med.tongji.edu.cn/info/1406/4511.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://med.tongji.edu.cn/info/1406/4511.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-163754760da0"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

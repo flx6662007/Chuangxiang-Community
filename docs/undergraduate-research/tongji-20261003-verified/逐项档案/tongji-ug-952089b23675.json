@@ -1,0 +1,46 @@
+{
+  "card": {
+    "id": "tongji-ug-952089b23675",
+    "title": "薛剑煌课题组 · DNA／RNA 修饰本科实习",
+    "unit": "生命科学与技术学院",
+    "summary": "研究 DNA/RNA 修饰的产生、识别及其在白血病中的功能。",
+    "participation": "公告明确欢迎本科生实习；不要按正式科研助理职位理解学历与薪酬。",
+    "evidenceNote": "本科依据：本科生报考和实习。长期招募：2021 年公告明示长期有效；本科实习与科研助理、博士后为不同参与形式，当前接收情况待确认。",
+    "date": "2021-09-29",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://life.tongji.edu.cn/fc/61/c12689a195681/page.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "本科生报考和实习",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "2021 年公告明示长期有效；本科实习与科研助理、博士后为不同参与形式，当前接收情况待确认。",
+    "sourceUrls": [
+      "https://life.tongji.edu.cn/fc/61/c12689a195681/page.htm",
+      "https://life.tongji.edu.cn/fc/60/c12618a195680/page.htm"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://life.tongji.edu.cn/fc/60/c12618a195680/page.htm",
+        "relationship": "同课题组补充主页",
+        "note": "同一常设本科参与渠道，合并来源，不重复计数。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://life.tongji.edu.cn/fc/61/c12689a195681/page.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-7fb74a9f240c",
+      "src-08cb4c1947e4"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

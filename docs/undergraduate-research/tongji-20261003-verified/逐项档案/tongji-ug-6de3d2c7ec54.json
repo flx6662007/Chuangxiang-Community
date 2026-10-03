@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-6de3d2c7ec54",
+    "title": "自主智能系统实验室 · 多模态智能体（国豪版本）",
+    "unit": "计算机科学与技术学院",
+    "summary": "参与视觉大模型、多模态融合与检索增强智能体研发。",
+    "participation": "3 人，面向一年级、二年级本科生，技能按年级区分；线上线下结合。",
+    "evidenceNote": "本科依据：面向一年级本科生。长期招募：随时接受报名；国豪版本包含二年级，启迪版本只列一年级，分别保留申请条件。",
+    "date": "2026-03-05",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/2v07umoH1ljHztys7HUK5Q"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "面向一年级本科生",
+    "evidenceLocation": "官方书院链接的公众号正文：自主智能系统实验室 · 多模态智能体（国豪版本）／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "随时接受报名；国豪版本包含二年级，启迪版本只列一年级，分别保留申请条件。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/2v07umoH1ljHztys7HUK5Q"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://mp.weixin.qq.com/s/2v07umoH1ljHztys7HUK5Q",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-fe587d732a37"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

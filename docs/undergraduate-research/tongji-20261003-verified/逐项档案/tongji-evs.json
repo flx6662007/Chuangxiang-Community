@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-evs",
+    "title": "干细胞外囊泡研究课题组 · 本科实习",
+    "unit": "医学院",
+    "summary": "研究 EPC 来源细胞外囊泡在消化系统疾病与糖尿病中的机制和治疗潜力。",
+    "participation": "公告欢迎本科生实习；技术员的学历、岗位职责及薪酬福利不视为本科生待遇。",
+    "evidenceNote": "本科依据：欢迎本科生实习。长期招募：2025 年混合招聘公告明示长期有效并欢迎本科实习；当前名额需联系确认。",
+    "date": "2025-09-08",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://med.tongji.edu.cn/info/1327/13605.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "欢迎本科生实习",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "2025 年混合招聘公告明示长期有效并欢迎本科实习；当前名额需联系确认。",
+    "sourceUrls": [
+      "https://med.tongji.edu.cn/info/1327/13605.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://med.tongji.edu.cn/info/1327/13605.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-382dd800c21d"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-7c71a8e7f4a6",
+    "title": "张绍明课题组 · 视觉与遥感项目研究",
+    "unit": "测绘与地理信息学院",
+    "summary": "开展计算机视觉、机器学习等方向的项目研究与实习。",
+    "participation": "常年接收高年级本科生参与项目；年级要求需保留。",
+    "evidenceNote": "本科依据：n 招收硕士和博士研究生，欢迎钟情于计算机视觉和机器学习的本科生报考。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://celiang.tongji.edu.cn/info/1301/2420.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "n 招收硕士和博士研究生，欢迎钟情于计算机视觉和机器学习的本科生报考",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://celiang.tongji.edu.cn/info/1301/2420.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://celiang.tongji.edu.cn/info/1301/2420.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-9aeeef74763b"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

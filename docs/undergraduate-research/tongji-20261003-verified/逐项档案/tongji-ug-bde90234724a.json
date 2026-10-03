@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-bde90234724a",
+    "title": "任云帆课题组 · 无人机与具身智能",
+    "unit": "计算机科学与技术学院",
+    "summary": "开展无人机、灵巧操作、世界模型及强化学习相关研究。",
+    "participation": "本科生可联系科研实习或毕业设计。",
+    "evidenceNote": "本科依据：同时欢迎本科生加入课题组开展科研实习、发表一作高水平论文或完成毕业设计。时效待确认：原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "date": "",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://cs.tongji.edu.cn/info/1065/3487.htm"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "时效待确认",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "同时欢迎本科生加入课题组开展科研实习、发表一作高水平论文或完成毕业设计",
+    "evidenceLocation": "正文中的欢迎加入／本科实习／本科见习段落",
+    "dateEvidence": "原文未标注发布日期，未从履历、版权年或检索摘要推断",
+    "timingExplanation": "原文未给出可确认的当前报名期限，名额和接收状态需向官方确认。",
+    "sourceUrls": [
+      "https://cs.tongji.edu.cn/info/1065/3487.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://cs.tongji.edu.cn/info/1065/3487.htm",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-5c5513cc7fd5"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "card": {
+    "id": "tongji-ug-57986cc2dfab",
+    "title": "PAI 研究中心 · 量化研究助理（2026 寒假）",
+    "unit": "同济大学 PAI 研究中心",
+    "summary": "开展金融数据分析、量化因子与模型研究，线上提交成果。",
+    "participation": "5—8 人，面向全校相关学生；需 Python、数据建模与金融数据处理基础。",
+    "evidenceNote": "本科依据：本科阶段所学。历史已结束：报名截止 2026-01-19 15:00；实践期 2026-01-20 至 02-28，均已结束。",
+    "date": "2026-01-07",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/WJHNp_lhAD6dZ9UjXgZzYg"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "历史已结束",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "本科阶段所学",
+    "evidenceLocation": "官方书院链接的公众号正文：PAI 研究中心 · 量化研究助理（2026 寒假）／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "报名截止 2026-01-19 15:00；实践期 2026-01-20 至 02-28，均已结束。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/WJHNp_lhAD6dZ9UjXgZzYg",
+      "https://ai.tongji.edu.cn/index_en.htm"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://ai.tongji.edu.cn/index_en.htm",
+        "note": "PAI 中心与刘二武团队单位"
+      }
+    ],
+    "sourceIds": [
+      "src-dc94db2eddd6",
+      "src-c4aac1f94fb0"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

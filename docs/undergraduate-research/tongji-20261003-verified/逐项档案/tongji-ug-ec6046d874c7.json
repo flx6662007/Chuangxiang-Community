@@ -1,0 +1,38 @@
+{
+  "card": {
+    "id": "tongji-ug-ec6046d874c7",
+    "title": "MIAS Group · 本科实习（2024 批次）",
+    "unit": "电子与信息工程学院",
+    "summary": "协助研究生搭建机器人系统并开展算法研究。",
+    "participation": "3—5 人；需 C++/Python、数理英语基础；大一大二线上线下结合，大三线下。",
+    "evidenceNote": "本科依据：本科实习生。历史已结束：报名截止 2024-07-05；实践长期进行不意味着本批次仍可报名。",
+    "date": "2024-06-19",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/XZU2xlIcPIayTepthzHUMw"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "历史已结束",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "本科实习生",
+    "evidenceLocation": "官方书院链接的公众号正文：MIAS Group · 本科实习（2024 批次）／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "报名截止 2024-07-05；实践长期进行不意味着本批次仍可报名。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/XZU2xlIcPIayTepthzHUMw"
+    ],
+    "duplicateRelations": [],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://mp.weixin.qq.com/s/XZU2xlIcPIayTepthzHUMw",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-5df362846896"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}

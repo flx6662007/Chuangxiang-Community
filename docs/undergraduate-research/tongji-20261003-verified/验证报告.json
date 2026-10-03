@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "records": 90,
+  "sources": 91,
+  "checks": 2769,
+  "localHtmlLinks": 94,
+  "manifestFiles": 0,
+  "rawHashMatches": 0,
+  "spreadsheet": {
+    "sheets": 1,
+    "rows": 90,
+    "cellValuesChecked": 900
+  },
+  "scope": "只包含已核查资料；本报告校验文件一致性，不再次判定当前名额。",
+  "originalVerifiedRecordsUnchanged": true,
+  "browser": {
+    "passed": true,
+    "checks": [
+      "initial record count",
+      "status 长期招募",
+      "status 时效待确认",
+      "status 历史已结束",
+      "empty state",
+      "Chinese keyword search",
+      "stable existing ID",
+      "unit filter",
+      "keyword empty state",
+      "mobile no horizontal overflow",
+      "long title archive",
+      "no JavaScript errors"
+    ],
+    "errors": []
+  },
+  "visualReview": {
+    "desktop": true,
+    "mobile": true,
+    "longTitle": true,
+    "spreadsheetPreview": true
+  },
+  "workbookBuildExitCode": 0,
+  "previewNote": "Windows 原生预览组件退出时返回非零；预览图片已人工检查，最终工作簿独立重新导出成功（exit 0），OOXML、日期与 900 个数据单元格另行核验通过。"
+}

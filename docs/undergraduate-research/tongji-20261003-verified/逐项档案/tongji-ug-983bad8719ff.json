@@ -1,0 +1,46 @@
+{
+  "card": {
+    "id": "tongji-ug-983bad8719ff",
+    "title": "操锟课题组 · 手物交互与灵巧操作",
+    "unit": "电子与信息工程学院",
+    "summary": "研究物理仿真中的手物交互、轨迹生成与灵巧操作策略。",
+    "participation": "低年级需数理基础；高年级需 Python/PyTorch 与仿真平台能力。每方向 1 人，张江线上线下结合，建议连续 6 个月以上。",
+    "evidenceNote": "本科依据：为加入课题组的本科生提供。长期招募：原文明示常年、长期或随时接受；当前名额仍需确认。 另有书院转载版本文字差异，见逐项档案。",
+    "date": "2026-06-02",
+    "verifiedOn": "2026-10-03",
+    "sourceUrl": "https://mp.weixin.qq.com/s/9y88DFgIimceW-aIxg_kGg"
+  },
+  "review": {
+    "decision": "已核查",
+    "temporalStatus": "长期招募",
+    "readingLevel": "官方正文已读",
+    "undergraduateEvidence": "为加入课题组的本科生提供",
+    "evidenceLocation": "官方书院链接的公众号正文：操锟课题组 · 手物交互与灵巧操作／岗位、能力要求及报名时间",
+    "dateEvidence": "正文发布栏/公众号发布时间",
+    "timingExplanation": "原文明示常年、长期或随时接受；当前名额仍需确认。",
+    "sourceUrls": [
+      "https://mp.weixin.qq.com/s/9y88DFgIimceW-aIxg_kGg",
+      "https://mp.weixin.qq.com/s/tKaalh38WQzEKYCL9XlWwg"
+    ],
+    "duplicateRelations": [
+      {
+        "sourceUrl": "https://mp.weixin.qq.com/s/tKaalh38WQzEKYCL9XlWwg",
+        "relationship": "同招募转载／版本补充",
+        "note": "同课题转载；启迪版本省略部分高年级技能说明，正式卡片采用国豪版本的完整要求，不视为放宽条件。"
+      }
+    ],
+    "attachmentPaths": [],
+    "reviewedOn": "2026-10-03",
+    "unitEvidence": [
+      {
+        "url": "https://mp.weixin.qq.com/s/9y88DFgIimceW-aIxg_kGg",
+        "note": "原文教师任职、机构名称或官方站点归属；跨院团队依原文保留"
+      }
+    ],
+    "sourceIds": [
+      "src-7ff68c121704",
+      "src-6829b416aadb"
+    ],
+    "attachmentsReview": "已检查原文中的公开链接，未发现直接相关且可公开下载的招募附件；二维码和在线表单保留官方原文渠道，不虚构本地附件。"
+  }
+}
