@@ -1,0 +1,56 @@
+[
+  {
+    "batch": "001-089",
+    "file": "source-snapshots/001-089/整理底稿.json",
+    "snapshot": "source-snapshots/001-089/整理底稿.json",
+    "sha256": "f660237ea624f9a4b11e934fb57fcc81fa8928dc38bbf12c0e692a66a1fa73b8"
+  },
+  {
+    "batch": "001-089",
+    "file": "source-snapshots/001-089/导入清单.json",
+    "snapshot": "source-snapshots/001-089/导入清单.json",
+    "sha256": "06efdd5fda00a0a891fb0ca63ae4d3a3946a75b358a42d2629f950210508f75b"
+  },
+  {
+    "batch": "001-089",
+    "file": "source-snapshots/001-089/附件清单.json",
+    "snapshot": "source-snapshots/001-089/附件清单.json",
+    "sha256": "f9fd61521797a2b02da6995bb6bb0d033363c9dacbe937d5778ab8cf5737c919"
+  },
+  {
+    "batch": "090-130",
+    "file": "source-snapshots/090-130/整理底稿.json",
+    "snapshot": "source-snapshots/090-130/整理底稿.json",
+    "sha256": "8b9a38f98b2066960a47c9334f8f45bdd1c32d326f3009090de447c5e51d9e7c"
+  },
+  {
+    "batch": "090-130",
+    "file": "source-snapshots/090-130/导入清单.json",
+    "snapshot": "source-snapshots/090-130/导入清单.json",
+    "sha256": "17fa99fdaeb37a0f3a3220d00bfb4e46c3815dff9cda73da3b729b36ea301cc6"
+  },
+  {
+    "batch": "090-130",
+    "file": "source-snapshots/090-130/附件清单.json",
+    "snapshot": "source-snapshots/090-130/附件清单.json",
+    "sha256": "3772a98214975d642c7003bcc4f2fcb0a3a4709d20d9195d919ac496ef66d4f4"
+  },
+  {
+    "batch": "131-255",
+    "file": "source-snapshots/131-255/整理底稿.json",
+    "snapshot": "source-snapshots/131-255/整理底稿.json",
+    "sha256": "e359cac53ceb906fe65c0cfd34d3b6f706434c70d722932cb9d3f3b64ba41c61"
+  },
+  {
+    "batch": "131-255",
+    "file": "source-snapshots/131-255/导入清单.json",
+    "snapshot": "source-snapshots/131-255/导入清单.json",
+    "sha256": "4994308d031f575de7a08839a0da6e52de284782aa92ab654e78e40748359249"
+  },
+  {
+    "batch": "131-255",
+    "file": "source-snapshots/131-255/附件清单.json",
+    "snapshot": "source-snapshots/131-255/附件清单.json",
+    "sha256": "b4e679e22dc9521e9c695d967f1624395a3d85d25d5c4740e6eac504e20d28dc"
+  }
+]

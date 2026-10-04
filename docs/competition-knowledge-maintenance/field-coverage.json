@@ -1,0 +1,22 @@
+{
+  "records": 198,
+  "fields": {
+    "eligibility": 70,
+    "education": 45,
+    "participation_type": 63,
+    "team_size_min": 31,
+    "team_size_max": 44,
+    "registration_deadline": 24,
+    "submission_deadline": 35,
+    "registration_url": 38,
+    "registration_start": 1,
+    "tracks": 35,
+    "registration_method": 64,
+    "organizer": 5,
+    "majors": 3,
+    "grades": 1
+  },
+  "categorized": 193,
+  "with_aliases": 39,
+  "alias_count": 54
+}

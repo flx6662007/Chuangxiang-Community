@@ -1,0 +1,83 @@
+{
+  "checked_on": "2026-10-04",
+  "records": [
+    {
+      "catalog_code": "2026171",
+      "code": "curated-c171-f29f92cd",
+      "title": "口腔形态技能大赛",
+      "edition": "2026年夏令营口腔形态技能赛",
+      "kind": "overview",
+      "replace_fields": true,
+      "replace_sections": true,
+      "fields": {},
+      "field_evidence": {},
+      "sources": [
+        {
+          "id": "rechecked-camp-2026",
+          "url": "https://dent.tongji.edu.cn/info/1191/11879.htm",
+          "title": "同济大学口腔医学院2026年优秀大学生暑期交流营通知-同济大学口腔医学院",
+          "quote": "",
+          "locator": "活动安排：口腔形态技能大赛",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "camp-context",
+          "heading": "赛事介绍",
+          "text": "口腔形态技能大赛是同济大学口腔医学院暑期交流营的营内活动，参赛范围为入选营员。",
+          "evidence_ids": [
+            "rechecked-camp-2026"
+          ]
+        },
+        {
+          "id": "camp-schedule",
+          "heading": "时间安排",
+          "text": "比赛安排在2026年8月4日上午。",
+          "evidence_ids": [
+            "rechecked-camp-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026171",
+      "code": "curated-c171-e2b6a304",
+      "title": "口腔形态技能大赛",
+      "edition": "2025年夏令营口腔形态技能赛",
+      "kind": "overview",
+      "replace_fields": true,
+      "replace_sections": true,
+      "fields": {},
+      "field_evidence": {},
+      "sources": [
+        {
+          "id": "rechecked-camp-2025",
+          "url": "https://dent.tongji.edu.cn/info/1191/11769.htm",
+          "title": "同济大学口腔医学院2025年优秀大学生暑期夏令营通知",
+          "quote": "",
+          "locator": "活动安排：口腔形态技能大赛",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "camp-context",
+          "heading": "赛事介绍",
+          "text": "口腔形态技能大赛是同济大学口腔医学院暑期交流营的营内活动，参赛范围为入选营员。",
+          "evidence_ids": [
+            "rechecked-camp-2025"
+          ]
+        },
+        {
+          "id": "camp-schedule",
+          "heading": "时间安排",
+          "text": "比赛安排在2025年8月6日8:30。",
+          "evidence_ids": [
+            "rechecked-camp-2025"
+          ]
+        }
+      ]
+    }
+  ]
+}

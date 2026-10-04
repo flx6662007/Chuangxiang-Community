@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "purpose": "Independent development diagnostics for topics absent from the competition corpus; never part of the frozen test set.",
+  "cases": [
+    {
+      "id": "dev-probe-dog-agility",
+      "group": "out-of-corpus-dog-agility",
+      "split": "dev",
+      "scenario": "no_topic_match",
+      "query": "我想带宠物犬参加敏捷障碍赛，找按犬只年龄和体型分组的线下赛事。",
+      "filters": {},
+      "preferences": {},
+      "as_of": "2026-10-04",
+      "relevant_ids": [],
+      "evidence_ids": [],
+      "expect_empty": true,
+      "gold_statement": "问题要求真实宠物犬参加的敏捷障碍赛事；现有学生赛事语料未收录该主题，机器鱼、机器人和车辆的障碍任务不符合参赛对象。",
+      "absence_terms": ["宠物犬", "犬敏捷", "敏捷障碍赛"]
+    },
+    {
+      "id": "dev-probe-professional-poker",
+      "group": "out-of-corpus-professional-poker",
+      "split": "dev",
+      "scenario": "no_topic_match",
+      "query": "寻找职业扑克选手参加的德州扑克现金赛，我要查看买入额、盲注级别和奖金池安排。",
+      "filters": {},
+      "preferences": {},
+      "as_of": "2026-10-04",
+      "relevant_ids": [],
+      "evidence_ids": [],
+      "expect_empty": true,
+      "gold_statement": "问题要求职业扑克现金赛；现有学生赛事语料没有扑克赛事，数学建模、程序设计和创业赛不属于该主题。",
+      "absence_terms": ["德州扑克", "扑克", "盲注", "买入额"]
+    }
+  ]
+}

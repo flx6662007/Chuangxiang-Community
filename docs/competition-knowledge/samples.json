@@ -1,0 +1,2820 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "m89-2026020-overview",
+      "catalog_code": "2026020",
+      "catalog_codes": [
+        "2026020"
+      ],
+      "competition_id": null,
+      "code": "m89-2026020-overview",
+      "title": "全球校园人工智能算法精英大赛·AI+开源",
+      "edition": "2026第八届·AI+开源主题赛",
+      "category": "artificial-intelligence",
+      "level": "unknown",
+      "aliases": [
+        "AIC"
+      ],
+      "summary": "基于AI技术制作可运行作品或算法成果，需用演示、报告和测试说明自主贡献。",
+      "fields": {
+        "eligibility": "面向具有正式学籍的在读专科生、本科生及研究生。队员须来自同一学校，分校及跨校组队不符合要求。",
+        "education": [
+          "专科",
+          "本科",
+          "研究生"
+        ],
+        "participation_type": "team",
+        "team_size_min": 1,
+        "team_size_max": 3,
+        "registration_deadline": "2026-10-15",
+        "submission_deadline": "2026-10-15",
+        "registration_url": "https://www.aicomp.cn/"
+      },
+      "field_evidence": {
+        "eligibility": [
+          "verified-aic-eligibility"
+        ],
+        "education": [
+          "verified-aic-eligibility"
+        ],
+        "participation_type": [
+          "verified-aic-eligibility"
+        ],
+        "team_size_min": [
+          "verified-aic-eligibility"
+        ],
+        "team_size_max": [
+          "verified-aic-eligibility"
+        ],
+        "registration_deadline": [
+          "verified-aic-dates"
+        ],
+        "submission_deadline": [
+          "verified-aic-dates"
+        ],
+        "registration_url": [
+          "verified-aic-dates"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-dbedf8f872af0fa6cd6c",
+          "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+          "title": "AI+开源赛题与规则",
+          "quote": "",
+          "locator": "赛事介绍与通知正文",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "verified-aic-eligibility",
+          "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+          "title": "2026AIC·AI+开源算法主题赛赛题及竞赛规则",
+          "quote": "",
+          "locator": "三、参赛对象；四、参赛要求第1项",
+          "verified_at": "2026-10-04"
+        },
+        {
+          "id": "verified-aic-dates",
+          "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+          "title": "2026AIC·AI+开源算法主题赛赛题及竞赛规则",
+          "quote": "",
+          "locator": "七、赛程安排：报名、初赛",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "heading": "赛事介绍",
+          "text": "基于AI技术制作可运行作品或算法成果，需用演示、报告和测试说明自主贡献。",
+          "evidence_ids": [
+            "ev-dbedf8f872af0fa6cd6c"
+          ]
+        },
+        {
+          "id": "overview-1",
+          "heading": "赛事介绍",
+          "text": "接受AI应用及开源贡献，要求实质改进；单纯调用接口或界面包装不足。",
+          "evidence_ids": [
+            "ev-dbedf8f872af0fa6cd6c"
+          ]
+        },
+        {
+          "id": "verified-eligibility",
+          "heading": "参赛对象与组队",
+          "text": "在读专科生、本科生及研究生可参赛。每队1—3名学生，队员来自同一学校，分校不计为同一学校。",
+          "evidence_ids": [
+            "verified-aic-eligibility"
+          ]
+        },
+        {
+          "id": "verified-registration",
+          "heading": "报名与时间",
+          "text": "通过赛事官网注册队伍，选择AI+开源主题赛并完成缴费。报名及初赛作品提交均于2026年10月15日20:00截止。",
+          "evidence_ids": [
+            "verified-aic-dates"
+          ]
+        }
+      ],
+      "kind": "edition",
+      "review_status": "approved",
+      "publication_status": "published",
+      "content_hash": "115595e0ad4007ac881541a6475b1fe29390db9b4accc0f7049788cbfde9fdb6",
+      "category_evidence": [
+        "ev-dbedf8f872af0fa6cd6c"
+      ],
+      "alias_evidence": {
+        "AIC": [
+          "ev-dbedf8f872af0fa6cd6c"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-043c649bf54b3036e7b4",
+          "title": "AI+开源竞赛规则及作品提交要求",
+          "url": "https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B61_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E7%AB%9E%E8%B5%9B%E8%A7%84%E5%88%99%E5%8F%8A%E4%BD%9C%E5%93%81%E6%8F%90%E4%BA%A4%E8%A6%81%E6%B1%820812.pdf",
+          "summary": "按官方附件检查提交物、可核验成果及资源披露"
+        },
+        {
+          "id": "resource-65fc3624752a4d173997",
+          "title": "AI+开源技术报告参考大纲",
+          "url": "https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B62_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%E5%8F%82%E8%80%83%E5%A4%A7%E7%BA%B2260812.pdf",
+          "summary": "用官方结构组织问题、方案、实现、验证和自主工作说明"
+        },
+        {
+          "id": "resource-d1b37311ae9b586315f2",
+          "title": "Hugging Face大模型课程中文导读",
+          "url": "https://huggingface.co/learn/llm-course/zh-CN/chapter1/1",
+          "summary": "学习模型、数据及相关工具的基础概念"
+        }
+      ]
+    },
+    {
+      "id": "m89-2026034-overview",
+      "catalog_code": "2026034",
+      "catalog_codes": [
+        "2026034"
+      ],
+      "competition_id": null,
+      "code": "m89-2026034-overview",
+      "title": "第十二届全国大学生机械创新设计大赛",
+      "edition": "第十二届分2026常规赛与2027数字孪生挑战赛",
+      "category": "automation-and-robotics",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "赛事要求围绕指定主题进行机械创新设计，实物性能与设计资料按正式规则评审。",
+      "fields": {},
+      "field_evidence": {},
+      "sources": [
+        {
+          "id": "ev-4c167ba022e16b9be68c",
+          "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+          "title": "第十二届主题与内容第1号通知",
+          "quote": "",
+          "locator": "赛事介绍与通知正文",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "heading": "赛事介绍",
+          "text": "赛事要求围绕指定主题进行机械创新设计，实物性能与设计资料按正式规则评审。",
+          "evidence_ids": [
+            "ev-4c167ba022e16b9be68c"
+          ]
+        },
+        {
+          "id": "overview-1",
+          "heading": "赛事介绍",
+          "text": "第十二届分为2026年常规赛和2027年数字孪生挑战赛。",
+          "evidence_ids": [
+            "ev-4c167ba022e16b9be68c"
+          ]
+        }
+      ],
+      "kind": "overview",
+      "review_status": "approved",
+      "publication_status": "published",
+      "content_hash": "b588f6a8e68e404ab5b05e292a12eeccec00aacc3487a59708af106c67bf6ad5",
+      "category_evidence": [
+        "ev-4c167ba022e16b9be68c"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-044a92c984605c33accf",
+          "title": "第十二届常规赛参赛须知",
+          "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364785/page.htm",
+          "summary": "仿生等设计任务限制，并指向相应比赛手册"
+        },
+        {
+          "id": "resource-46272f615721836f6a81",
+          "title": "第十二届主题与内容说明",
+          "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+          "summary": "2026常规与2027数字孪生两类赛季"
+        }
+      ]
+    },
+    {
+      "id": "m89-2026047-overview",
+      "catalog_code": "2026047",
+      "catalog_codes": [
+        "2026047"
+      ],
+      "competition_id": null,
+      "code": "m89-2026047-overview",
+      "title": "中国大学生计算机设计大赛",
+      "edition": "2026年·第19届",
+      "category": "computer-science",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "2026年大赛分11个作品大类，面向在籍本科生，经校赛、省赛推选参加国赛。",
+      "fields": {},
+      "field_evidence": {},
+      "sources": [
+        {
+          "id": "ev-c8094f8f58f749d8a8b2",
+          "url": "https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+          "title": "2026中国大学生计算机设计大赛参赛要求",
+          "quote": "",
+          "locator": "赛事介绍与通知正文",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "heading": "赛事介绍",
+          "text": "2026年大赛分11个作品大类，面向在籍本科生，经校赛、省赛推选参加国赛。",
+          "evidence_ids": [
+            "ev-c8094f8f58f749d8a8b2"
+          ]
+        }
+      ],
+      "kind": "overview",
+      "review_status": "approved",
+      "publication_status": "published",
+      "content_hash": "f7b00c1afd27046912bbd3cb6bd9eb59fe8bb0922a0ff3be348346291fea76d0",
+      "category_evidence": [
+        "ev-c8094f8f58f749d8a8b2"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-43457a31d74ad1869f2f",
+          "title": "2026参赛要求与作品分类",
+          "url": "https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+          "summary": "2026年分11类作品；部分数字媒体作品类别采用指定文化主题"
+        },
+        {
+          "id": "resource-b5fad19d7e2c0fcacad6",
+          "title": "4C2026作品提交要求及文档模板",
+          "url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm",
+          "summary": "2026-04-17官方页面提供11大类模板的百度网盘入口"
+        }
+      ]
+    },
+    {
+      "id": "m89-2026074-overview",
+      "catalog_code": "2026074",
+      "catalog_codes": [
+        "2026074"
+      ],
+      "competition_id": null,
+      "code": "m89-2026074-overview",
+      "title": "全国大学生数学建模竞赛(2026)",
+      "edition": "2026年",
+      "category": "mathematical-modeling",
+      "level": "unknown",
+      "aliases": [
+        "全国大学生数学建模竞赛",
+        "数模"
+      ],
+      "summary": "以实际问题为背景进行数学建模、计算和论文表达，参赛者通过模型假设、求解与检验形成论文。",
+      "fields": {},
+      "field_evidence": {},
+      "sources": [
+        {
+          "id": "ev-19df9fd7fa084d3c974a",
+          "url": "https://www.mcm.edu.cn/",
+          "title": "全国大学生数学建模竞赛官网",
+          "quote": "",
+          "locator": "赛事介绍与通知正文",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "heading": "赛事介绍",
+          "text": "以实际问题为背景进行数学建模、计算和论文表达，参赛者通过模型假设、求解与检验形成论文。",
+          "evidence_ids": [
+            "ev-19df9fd7fa084d3c974a"
+          ]
+        }
+      ],
+      "kind": "overview",
+      "review_status": "approved",
+      "publication_status": "published",
+      "content_hash": "4d1cc3342ef4296961943ed8250565246b089a4d895be8f3742518da6018d474",
+      "category_evidence": [
+        "ev-19df9fd7fa084d3c974a"
+      ],
+      "alias_evidence": {
+        "全国大学生数学建模竞赛": [
+          "ev-19df9fd7fa084d3c974a"
+        ],
+        "数模": [
+          "ev-19df9fd7fa084d3c974a"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-ac1d13ebcdd49624fbd4",
+          "title": "2026年高教社杯赛题发布页",
+          "url": "https://www.mcm.edu.cn/html_cn/node/27b6e148f8113f09b0269f64a02629fb.html",
+          "summary": "2026年赛题与题目附件，可用于训练问题分析、模型假设、求解与论文表达"
+        }
+      ]
+    },
+    {
+      "id": "curated-c90-2026-1",
+      "catalog_code": "2026090",
+      "catalog_codes": [
+        "2026090"
+      ],
+      "competition_id": null,
+      "code": "curated-c90-2026-1",
+      "title": "第八届中华经典诵写讲大赛“诵读中国”经典诵读大赛",
+      "edition": "2026年第八届",
+      "category": "languages-and-humanities",
+      "level": "national",
+      "aliases": [],
+      "summary": "使用2026年新录制视频：3—6分钟、MP4、1920×1080横屏、700MB以内，同期声；不得后期配音或音频加工。",
+      "fields": {
+        "eligibility": "大学生组包含在校研究生，职业学校学生及在华留学生分组参赛。学生参赛者不得跨组别组队。",
+        "participation_type": "both",
+        "team_size_min": 2,
+        "team_size_max": 20,
+        "education": [
+          "本科",
+          "研究生"
+        ]
+      },
+      "field_evidence": {
+        "eligibility": [
+          "verified-recitation-eligibility"
+        ],
+        "participation_type": [
+          "verified-recitation-eligibility"
+        ],
+        "team_size_min": [
+          "verified-recitation-eligibility"
+        ],
+        "team_size_max": [
+          "verified-recitation-eligibility"
+        ],
+        "education": [
+          "verified-recitation-eligibility"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-d4578012bb8915928d48",
+          "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+          "title": "第八届中华经典诵写讲大赛四项方案",
+          "quote": "",
+          "locator": "附件1 三、作品要求",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "ev-254e8ffc33d12800194a",
+          "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+          "title": "第八届中华经典诵写讲大赛四项方案",
+          "quote": "",
+          "locator": "附件1 二、作品内容",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "verified-recitation-eligibility",
+          "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+          "title": "第八届中华经典诵写讲大赛经典诵读大赛方案",
+          "quote": "",
+          "locator": "一、参赛对象与组别；二、作品要求",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-2",
+          "heading": "作品要求",
+          "text": "使用2026年新录制视频：3—6分钟、MP4、1920×1080横屏、700MB以内，同期声；不得后期配音或音频加工。",
+          "evidence_ids": [
+            "ev-d4578012bb8915928d48"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "选文应为已公开出版至少2年的经典作品；不收网络、自编及改编作品，过渡文字总计不超过200字。",
+          "evidence_ids": [
+            "ev-254e8ffc33d12800194a"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "作品要求",
+          "text": "每人至多参加一件个人及一件团队作品；团队指导教师不超过2人。",
+          "evidence_ids": [
+            "ev-d4578012bb8915928d48"
+          ]
+        },
+        {
+          "id": "verified-eligibility",
+          "heading": "参赛对象与组队",
+          "text": "大学生组包括在校研究生；职业学校学生及在华留学生按独立组别参赛。可个人参赛，团队为2—20名诵读人员。学生不得跨组别组队，伴奏和摄像人员不计为参赛者。",
+          "evidence_ids": [
+            "verified-recitation-eligibility"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "4ca35426ac28a8cd48828c1fe30df759ee6448f4c5e8f34b7067355eba49c0e6",
+      "category_evidence": [
+        "ev-d4578012bb8915928d48"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-713c0313c52d8d04c8ec",
+          "title": "2026诵读中国参赛方案",
+          "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+          "summary": "比较组别、选文及同期声视频要求，建立上传前检查表"
+        },
+        {
+          "id": "resource-85e802eff7ecdff4389a",
+          "title": "2026诵读中国官方常见问题",
+          "url": "https://www.moe.gov.cn/jyb_xwfb/s271/202605/t20260528_1437994.html",
+          "summary": "补充组别、人数和录制规范等常见问题，与主方案对照"
+        },
+        {
+          "id": "resource-6921ea20d58e611b339f",
+          "title": "Audacity录音与编辑入门",
+          "url": "https://manual.audacityteam.org/quick_help.html",
+          "summary": "介绍导入、录音、选区、剪辑、效果处理与导出"
+        }
+      ]
+    },
+    {
+      "id": "curated-c92-2026-1",
+      "catalog_code": "2026092",
+      "catalog_codes": [
+        "2026092"
+      ],
+      "competition_id": null,
+      "code": "curated-c92-2026-1",
+      "title": "全国大学生广告艺术大赛·常规类别",
+      "edition": "2026年第十八届",
+      "category": "art-and-design",
+      "level": "national",
+      "aliases": [
+        "大广赛"
+      ],
+      "summary": "作品经学校、赛区、全国三级评选；全国不受理个人直接报送；不可一稿多投，作品须匿名原创。",
+      "fields": {
+        "eligibility": "全日制在校大学生和研究生可参加，包括港澳台籍学生和外籍留学生。允许同校跨专业组队，禁止跨校、跨赛区组队。",
+        "education": [
+          "本科",
+          "研究生"
+        ],
+        "registration_start": "2026-05-10",
+        "registration_deadline": "2026-06-12",
+        "submission_deadline": "2026-06-12"
+      },
+      "field_evidence": {
+        "eligibility": [
+          "verified-advertising-eligibility"
+        ],
+        "education": [
+          "verified-advertising-eligibility"
+        ],
+        "registration_start": [
+          "verified-advertising-dates"
+        ],
+        "registration_deadline": [
+          "verified-advertising-dates"
+        ],
+        "submission_deadline": [
+          "verified-advertising-dates"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-b5ec3950216c07d1a7be",
+          "url": "https://www.sun-ada.net/home/about_intrs2.html",
+          "title": "第18届大广赛参赛指南",
+          "quote": "",
+          "locator": "第一部分七、第二部分一与四",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "verified-advertising-eligibility",
+          "url": "https://www.sun-ada.net/home/about_intrs2.html",
+          "title": "第18届全国大学生广告艺术大赛参赛指南",
+          "quote": "",
+          "locator": "第一部分一、参赛资格；第二部分四、参赛注意事项第3项",
+          "verified_at": "2026-10-04"
+        },
+        {
+          "id": "verified-advertising-dates",
+          "url": "https://www.sun-ada.net/home/about_intrs2.html",
+          "title": "第18届全国大学生广告艺术大赛参赛指南",
+          "quote": "",
+          "locator": "第一部分六、作品提交及报送时间第1项；第二部分四第2项（提交同时完成报名）",
+          "verified_at": "2026-10-04"
+        },
+        {
+          "id": "verified-advertising-teams",
+          "url": "https://www.sun-ada.net/home/about_intrs2.html",
+          "title": "第18届全国大学生广告艺术大赛参赛指南",
+          "quote": "",
+          "locator": "第二部分二、作者与指导教师人数限制",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-4",
+          "heading": "作品要求",
+          "text": "作品经学校、赛区、全国三级评选；全国不受理个人直接报送；不可一稿多投，作品须匿名原创。",
+          "evidence_ids": [
+            "ev-b5ec3950216c07d1a7be"
+          ]
+        },
+        {
+          "id": "verified-eligibility",
+          "heading": "参赛对象",
+          "text": "全日制在校大学生和研究生可参加，包括港澳台籍学生及外籍留学生。队员须来自同一学校、同一赛区，可跨专业组队。",
+          "evidence_ids": [
+            "verified-advertising-eligibility"
+          ]
+        },
+        {
+          "id": "verified-registration",
+          "heading": "报名与时间",
+          "text": "常规类别线上作品提交期为2026年5月10日至6月12日16:00，提交作品的同时完成报名。营销创客单元采用独立赛程。",
+          "evidence_ids": [
+            "verified-advertising-dates"
+          ]
+        },
+        {
+          "id": "verified-team-rules",
+          "heading": "组队要求",
+          "text": "平面、文案类每组至多2人；短视频广告、互动、广播类每组至多3人；影视广告、微电影广告、动画、策划案、UI、科技类每组至多5人。",
+          "evidence_ids": [
+            "verified-advertising-teams"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "93e40f8963e73e4b3eb08c7bbc3a2dea613cdd9874f754dd5503592bd67a6b3f",
+      "category_evidence": [
+        "ev-b5ec3950216c07d1a7be"
+      ],
+      "alias_evidence": {
+        "大广赛": [
+          "ev-b5ec3950216c07d1a7be"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-0fda7f96f0018046f209",
+          "title": "2026大广赛参赛指南",
+          "url": "https://www.sun-ada.net/home/about_intrs2.html",
+          "summary": "按作品类别核对人数、画幅和提交时刻，避免跨校组队"
+        },
+        {
+          "id": "resource-4b2aa9bf45d9644b4792",
+          "title": "2026大广赛阿里云品牌命题",
+          "url": "https://www.sun-ada.net/home/zt_xqs3026.html",
+          "summary": "介绍具体创作目标、对象和作品方向，练习从真实命题提出创意"
+        },
+        {
+          "id": "resource-fd36300a92750946689b",
+          "title": "Illustrator官方入门与学习面板",
+          "url": "https://helpx.adobe.com/illustrator/desktop/get-started/learn-the-basics/homescreen-overview.html",
+          "summary": "说明新建文档、模板和应用内学习入口，适合组织矢量设计练习"
+        },
+        {
+          "id": "resource-fb9f9cf8584c1b60f068",
+          "title": "DaVinci Resolve官方训练",
+          "url": "https://www.blackmagicdesign.com/products/davinciresolve/training?hl=en-US",
+          "summary": "提供剪辑、调色、音频与视觉效果训练视频、教材和练习工程"
+        }
+      ]
+    },
+    {
+      "id": "curated-c100-2026-1",
+      "catalog_code": "2026100",
+      "catalog_codes": [
+        "2026100"
+      ],
+      "competition_id": null,
+      "code": "curated-c100-2026-1",
+      "title": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+      "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
+      "category": "artificial-intelligence",
+      "level": "national",
+      "aliases": [],
+      "summary": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+      "fields": {
+        "team_size_min": 3,
+        "team_size_max": 3,
+        "eligibility": "参赛学生在竞赛期间须为普通高校全日制在校本科生；学校须取得邀请或分区批准的参赛资格。",
+        "education": [
+          "本科"
+        ],
+        "participation_type": "team"
+      },
+      "field_evidence": {
+        "team_size_min": [
+          "verified-embedded-eligibility"
+        ],
+        "team_size_max": [
+          "verified-embedded-eligibility"
+        ],
+        "eligibility": [
+          "verified-embedded-eligibility"
+        ],
+        "education": [
+          "verified-embedded-eligibility"
+        ],
+        "participation_type": [
+          "verified-embedded-eligibility"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-5a2490e9a0e139b6b95f",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+          "title": "2026英特尔杯嵌入式AI通知",
+          "quote": "",
+          "locator": "二、四、五",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "verified-embedded-eligibility",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+          "title": "2026年英特尔杯大学生电子设计竞赛嵌入式AI专题赛通知",
+          "quote": "",
+          "locator": "二、参赛资格第1、3、4项",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-2",
+          "heading": "赛程安排",
+          "text": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+          "evidence_ids": [
+            "ev-5a2490e9a0e139b6b95f"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "基于规定Intel平台独立完成硬件、代码、调试和报告；中文报告约15000字、英文简报至多6页",
+          "evidence_ids": [
+            "ev-5a2490e9a0e139b6b95f"
+          ]
+        },
+        {
+          "id": "verified-eligibility",
+          "heading": "参赛对象与组队",
+          "text": "队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。",
+          "evidence_ids": [
+            "verified-embedded-eligibility"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "8b054717dc27bba74b9b2e5283bec378ef8d6bb922dfb52487544b0c3493f235",
+      "category_evidence": [
+        "ev-5a2490e9a0e139b6b95f"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-28669c4069dd8f927be3",
+          "title": "KiCad入门教程",
+          "url": "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+          "summary": "从原理图到PCB走线和规则检查，形成可复查的电子硬件设计文件"
+        },
+        {
+          "id": "resource-1e1420cad8bb9328e451",
+          "title": "2026嵌入式系统专题邀请赛通知",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+          "summary": "先核对嵌入式实现和赛项平台约束；具体报名按邀请学校执行"
+        },
+        {
+          "id": "resource-288e2e3f53bcaf3a2364",
+          "title": "OpenVINO官方示例仓库",
+          "url": "https://github.com/openvinotoolkit/openvino_notebooks",
+          "summary": "可运行的模型部署笔记本，涵盖推理、优化和设备选择"
+        },
+        {
+          "id": "resource-14b50b06c10747a9d968",
+          "title": "Python官方教程",
+          "url": "https://docs.python.org/3/tutorial/",
+          "summary": "介绍Python语法、数据结构、模块、文件读写与错误处理，可建立可复现的数据处理脚本"
+        }
+      ]
+    },
+    {
+      "id": "curated-c101-2026-1",
+      "catalog_code": "2026101",
+      "catalog_codes": [
+        "2026101"
+      ],
+      "competition_id": null,
+      "code": "curated-c101-2026-1",
+      "title": "全国大学生电子设计竞赛信息科技前沿专题赛（瑞萨杯）",
+      "edition": "2026年瑞萨杯信息科技前沿专题赛",
+      "category": "computer-science",
+      "level": "national",
+      "aliases": [],
+      "summary": "主题瑞萨MCU助力新兴产业和未来产业；初选RA6M5、决赛RA8P1，不得任意替换平台。",
+      "fields": {
+        "team_size_min": 3,
+        "team_size_max": 3,
+        "participation_type": "team",
+        "eligibility": "报名、竞赛和评审期间须为普通高校全日制在校本科生；参赛学校须具备分区初选资格或完成分区及组委会审批。",
+        "education": [
+          "本科"
+        ]
+      },
+      "field_evidence": {
+        "team_size_min": [
+          "verified-renesas-eligibility"
+        ],
+        "team_size_max": [
+          "verified-renesas-eligibility"
+        ],
+        "participation_type": [
+          "verified-renesas-eligibility"
+        ],
+        "eligibility": [
+          "verified-renesas-eligibility"
+        ],
+        "education": [
+          "verified-renesas-eligibility"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-e3e5f30714b7b369e028",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+          "title": "2026瑞萨杯通知",
+          "quote": "",
+          "locator": "二至五",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "verified-renesas-eligibility",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+          "title": "2026年瑞萨杯全国大学生电子设计竞赛信息科技前沿专题赛通知",
+          "quote": "",
+          "locator": "二、参赛资格第1、3、4项",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-2",
+          "heading": "作品要求",
+          "text": "主题瑞萨MCU助力新兴产业和未来产业；初选RA6M5、决赛RA8P1，不得任意替换平台。",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛程安排",
+          "text": "学校报名1月15日17时，初选报告3月20日17时，最终报告7月31日17时；决赛8月20—23日长春。",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "作品要求",
+          "text": "中文初选报告不超过10000字、决赛不超过15000字，需独立完成作品并附代码及测试依据。",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        },
+        {
+          "id": "verified-eligibility",
+          "heading": "参赛对象与组队",
+          "text": "队员在报名、竞赛与评审期间须为普通高校全日制在校本科生。每队3名学生，可配备1名指导教师；学校先取得初选资格或申请批准。",
+          "evidence_ids": [
+            "verified-renesas-eligibility"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "59792ded512e1954c09a38a059dfb6c985f15e80b49f89d277190744e7130822",
+      "category_evidence": [
+        "ev-e3e5f30714b7b369e028"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-28669c4069dd8f927be3",
+          "title": "KiCad入门教程",
+          "url": "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+          "summary": "从原理图到PCB走线和规则检查，形成可复查的电子硬件设计文件"
+        },
+        {
+          "id": "resource-39e149ad178677a962ad",
+          "title": "Analog Devices LTspice基础视频课程",
+          "url": "https://www.analog.com/en/resources/media-center/videos/series/ltspice-basics-video-series.html",
+          "summary": "用电路仿真检查模拟电路的工作点、瞬态和频率响应"
+        },
+        {
+          "id": "resource-fd348bb445f90bb4c664",
+          "title": "2026信息技术前沿专题邀请赛通知",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+          "summary": "按RA6M5/RA8P1平台与阶段作品要求组织开发；校赛需学校推荐"
+        },
+        {
+          "id": "resource-01ccbb6ed59fd330d0b2",
+          "title": "瑞萨Flexible Software Package官方仓库",
+          "url": "https://github.com/renesas/fsp",
+          "summary": "面向RA微控制器的软件包，含接口说明和工程支持，辅助理解指定开发板"
+        }
+      ]
+    },
+    {
+      "id": "curated-c108-2026-1",
+      "catalog_code": "2026108",
+      "catalog_codes": [
+        "2026108"
+      ],
+      "competition_id": null,
+      "code": "curated-c108-2026-1",
+      "title": "国际刑事法院模拟法庭竞赛（ICC）",
+      "edition": "2026年第十三届IBA ICCMCC",
+      "category": "politics-and-social-sciences",
+      "level": "international",
+      "aliases": [
+        "ICC Moot",
+        "ICC"
+      ],
+      "summary": "3名口辩选手，可另加2名研究员及2名教练；学生人数3—5，7人总数含教练。",
+      "fields": {
+        "team_size_min": 3,
+        "team_size_max": 5,
+        "eligibility": "在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。",
+        "education": [
+          "本科",
+          "硕士"
+        ],
+        "participation_type": "team"
+      },
+      "field_evidence": {
+        "team_size_min": [
+          "ev-e419b33f5417a04e671d"
+        ],
+        "team_size_max": [
+          "ev-e419b33f5417a04e671d"
+        ],
+        "eligibility": [
+          "ev-bd67e61ee71424ed8be5"
+        ],
+        "education": [
+          "ev-bd67e61ee71424ed8be5"
+        ],
+        "participation_type": [
+          "ev-72638f0533bc889651f7"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-e419b33f5417a04e671d",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "title": "2026 ICC Moot Rules of Procedure",
+          "quote": "",
+          "locator": "Art9，PDF第6页",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "ev-bd67e61ee71424ed8be5",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "title": "2026 ICC Moot Rules of Procedure",
+          "quote": "",
+          "locator": "Art10",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "ev-72638f0533bc889651f7",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "title": "2026 ICC Moot Rules of Procedure",
+          "quote": "",
+          "locator": "Art11、22",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "ev-477938f39ebb40ee1328",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "title": "2026 ICC Moot Rules of Procedure",
+          "quote": "",
+          "locator": "封面、Art22—30",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "组队要求",
+          "text": "3名口辩选手，可另加2名研究员及2名教练；学生人数3—5，7人总数含教练。",
+          "evidence_ids": [
+            "ev-e419b33f5417a04e671d"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "参赛对象",
+          "text": "在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。",
+          "evidence_ids": [
+            "ev-bd67e61ee71424ed8be5"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛程安排",
+          "text": "团队报名2025年11月17日17:00 CET截止；国际轮书状2026年3月18日17:00 CET，国家赛队由国家组织方统一转交。",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "国际赛2026年6月12—19日海牙；三方书状须Word和PDF并匿名",
+          "evidence_ids": [
+            "ev-477938f39ebb40ee1328"
+          ]
+        },
+        {
+          "id": "field-team_size_min",
+          "heading": "队伍最少人数",
+          "text": "3",
+          "evidence_ids": [
+            "ev-e419b33f5417a04e671d"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "5",
+          "evidence_ids": [
+            "ev-e419b33f5417a04e671d"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。",
+          "evidence_ids": [
+            "ev-bd67e61ee71424ed8be5"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "3fdf3703507271d20a2c4cb00471838ae975471e09948e7cbced1d4a880c91d0",
+      "category_evidence": [
+        "ev-e419b33f5417a04e671d"
+      ],
+      "alias_evidence": {
+        "ICC Moot": [
+          "ev-e419b33f5417a04e671d"
+        ],
+        "ICC": [
+          "ev-e419b33f5417a04e671d"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-e35af3bd3f965add03b4",
+          "title": "联合国国际法视听图书馆专题讲座",
+          "url": "https://legal.un.org/avl/ls/lectures.html",
+          "summary": "专题国际法讲座和参考材料，练习法律概念与英文论证表达"
+        },
+        {
+          "id": "resource-72780fe48116b7eeba7a",
+          "title": "ICC Moot 2026程序规则",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "summary": "对应控方、辩方、政府方分工，核对书状和庭辩要求"
+        },
+        {
+          "id": "resource-eabb2f26b786c41d3b36",
+          "title": "ICC Moot 2026修正赛题",
+          "url": "https://www.pace.edu/sites/default/files/2026-01/law-icc-moot-court-case-2026.pdf",
+          "summary": "18页公开修正案例，用于控方、辩方与政府方三角色训练"
+        }
+      ]
+    },
+    {
+      "id": "curated-c113-2026-1",
+      "catalog_code": "2026113",
+      "catalog_codes": [
+        "2026113"
+      ],
+      "competition_id": null,
+      "code": "curated-c113-2026-1",
+      "title": "全国大学生地质技能竞赛（2026）",
+      "edition": "2026年第八届",
+      "category": "environment-and-sustainability",
+      "level": "national",
+      "aliases": [],
+      "summary": "2026年8月26—28日在西南石油大学成都举办，领队团体账户注册8月15日截止，学生由高校领队代注册缴费。",
+      "fields": {
+        "team_size_min": 3,
+        "team_size_max": 3,
+        "participation_type": "team"
+      },
+      "field_evidence": {
+        "team_size_min": [
+          "ev-18142c418ed60dc0cb4f"
+        ],
+        "team_size_max": [
+          "ev-18142c418ed60dc0cb4f"
+        ],
+        "participation_type": [
+          "ev-18142c418ed60dc0cb4f"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-18142c418ed60dc0cb4f",
+          "url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+          "title": "第八届地质技能竞赛二号通知与2026修订章程",
+          "quote": "",
+          "locator": "PDF第2—3、6—31页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛程安排",
+          "text": "2026年8月26—28日在西南石油大学成都举办，领队团体账户注册8月15日截止，学生由高校领队代注册缴费。",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "组队要求",
+          "text": "地质相关本科和专科生（含留学生），按2026年8月在籍资格；每队3人，每校1—4队，含AI赛道最多4队。",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛事介绍",
+          "text": "考查综合应用、野外地质技能、标本鉴定与地学知识；野外传统赛道和AI赛道二选一。",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "作品要求",
+          "text": "指定成图软件为MapGIS6.7、AutoCAD2014、CorelDRAWX8、Section2021等",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "field-team_size_min",
+          "heading": "队伍最少人数",
+          "text": "3",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "3",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "73b509109b4a62993f946c08abf600a7a7ecd5f4fefed1009e1d4eee497ce9ec",
+      "category_evidence": [
+        "ev-18142c418ed60dc0cb4f"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-57f8ed3bb0906d465e16",
+          "title": "2026地质技能竞赛通知及修订章程",
+          "url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+          "summary": "对照地学知识、标本、野外传统/AI赛道做技能清单"
+        },
+        {
+          "id": "resource-467b89de81e83026b690",
+          "title": "QGIS官方培训手册",
+          "url": "https://docs.qgis.org/3.44/en/docs/training_manual/",
+          "summary": "包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习"
+        },
+        {
+          "id": "resource-6e5f1680cb32b5943bad",
+          "title": "开放矿物学教材与标本图",
+          "url": "https://opengeology.org/Mineralogy/",
+          "summary": "含矿物性质、鉴定与图像示例，辅助标本辨识和成因解释"
+        }
+      ]
+    },
+    {
+      "id": "curated-c135-17bb43de",
+      "catalog_code": "2026128",
+      "catalog_codes": [
+        "2026128",
+        "2026135"
+      ],
+      "competition_id": null,
+      "code": "curated-c135-17bb43de",
+      "title": "“SCIP+”绿色化学化工创新创业大赛",
+      "edition": "2026年",
+      "category": "chemistry-and-materials",
+      "level": "unknown",
+      "aliases": [
+        "SCIP+绿色化学化工创新创业大赛",
+        "SCIP+",
+        "SCIP"
+      ],
+      "summary": "2026分创业创新组和创业实践组。创新组面向高校及科研院所在读本科生、研究生、全日制非成人教育毕业生及高校青年教师，由项目负责人申报；实践组面向注册初创企业及团队，须有产品或技术原型及自有知识产权，由创始人、法定代表人或技术负责人申报。",
+      "fields": {
+        "eligibility": "2026分创业创新组和创业实践组。创新组面向高校及科研院所在读本科生、研究生、全日制非成人教育毕业生及高校青年教师，由项目负责人申报；实践组面向注册初创企业及团队，须有产品或技术原型及自有知识产权，由创始人、法定代表人或技术负责人申报。",
+        "education": [
+          "本科",
+          "研究生"
+        ]
+      },
+      "field_evidence": {
+        "eligibility": [
+          "ev-1ed5cab7ce725c88e6c1"
+        ],
+        "education": [
+          "ev-1ed5cab7ce725c88e6c1"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-1ed5cab7ce725c88e6c1",
+          "url": "https://makeable.cn/2026-scip-cn/scip-2026-event-registration-cn/",
+          "title": "2026 SCIP+大赛报名",
+          "quote": "",
+          "locator": "参赛对象及要求；报名截止",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-5acb068e8f08a7941bf0",
+          "url": "https://makeable.cn/2026-scip-cn/scip-2026-event-detail-cn/",
+          "title": "2026 SCIP+ 大赛详情",
+          "quote": "",
+          "locator": "主命题、指定命题、赛程安排、报名截止",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-bb67dafebf034af333e0",
+          "url": "https://makeable.cn/2026-scip-cn/scip-2026-event-registration-cn/",
+          "title": "2026 SCIP+大赛报名",
+          "quote": "",
+          "locator": "参赛对象、报名截止",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "参赛对象",
+          "text": "2026分创业创新组和创业实践组。创新组面向高校及科研院所在读本科生、研究生、全日制非成人教育毕业生及高校青年教师，由项目负责人申报；实践组面向注册初创企业及团队，须有产品或技术原型及自有知识产权，由创始人、法定代表人或技术负责人申报。",
+          "evidence_ids": [
+            "ev-1ed5cab7ce725c88e6c1"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "报名方式",
+          "text": "命题分未来材料、未来能源、未来环境，并列28项指定命题；流程为报名、初复赛、辅导优化、现场决赛和孵化。",
+          "evidence_ids": [
+            "ev-5acb068e8f08a7941bf0"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "报名方式",
+          "text": "未注册法人实体选择创业创新组；已经注册公司的初创团队选择创业实践组。",
+          "evidence_ids": [
+            "ev-bb67dafebf034af333e0"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "2026分创业创新组和创业实践组。创新组面向高校及科研院所在读本科生、研究生、全日制非成人教育毕业生及高校青年教师，由项目负责人申报；实践组面向注册初创企业及团队，须有产品或技术原型及自有知识产权，由创始人、法定代表人或技术负责人申报。",
+          "evidence_ids": [
+            "ev-1ed5cab7ce725c88e6c1"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "f8abc5676e4e8cdafb343a5b1c30ca483f7b9ed6d2ab16ad5def8458bb0a1180",
+      "category_evidence": [
+        "ev-1ed5cab7ce725c88e6c1"
+      ],
+      "alias_evidence": {
+        "SCIP+绿色化学化工创新创业大赛": [
+          "ev-1ed5cab7ce725c88e6c1"
+        ],
+        "SCIP+": [
+          "ev-1ed5cab7ce725c88e6c1"
+        ],
+        "SCIP": [
+          "ev-1ed5cab7ce725c88e6c1"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-26c1f4cca1c7b3c45524",
+          "title": "MIT科研海报与带注释案例",
+          "url": "https://mitcommlab.mit.edu/be/commkit/poster/",
+          "summary": "用具体研究海报和注释说明研究问题、核心图表、结论与口头讲解怎样相互配合"
+        },
+        {
+          "id": "resource-21a10842569745432c01",
+          "title": "OpenStax Chemistry 2e",
+          "url": "https://openstax.org/books/chemistry-2e/pages/1-introduction",
+          "summary": "系统复习物质、计量、热化学、平衡、电化学等基础；章节附例题与练习"
+        },
+        {
+          "id": "resource-c5bc664fb185fe1c5937",
+          "title": "SCIP+绿色化学化工创新创业大赛案例集（2019—2023）",
+          "url": "https://makeable.cn/wp-content/uploads/2024/10/SCIP-%E7%BB%BF%E8%89%B2%E5%8C%96%E5%AD%A6%E5%8C%96%E5%B7%A5%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E6%A1%88%E4%BE%8B%E9%9B%86_compressed.pdf",
+          "summary": "除了历年名单，还提供项目技术路线、产业化阶段和应用情况。包含天然产物生物制造、聚酯催化剂、连续流微反应等具体案例"
+        }
+      ]
+    },
+    {
+      "id": "curated-c141-1c63abb5",
+      "catalog_code": "2026141",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "competition_id": null,
+      "code": "curated-c141-1c63abb5",
+      "title": "Swift Student Challenge",
+      "edition": "2026年Swift Student Challenge",
+      "category": "computer-science",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "个人提交可在三分钟内体验的Swift应用作品；使用规定版本的Swift Playground或Xcode，提交.swiftpm压缩包不超过25MB，作品离线运行并使用英语。",
+      "fields": {
+        "eligibility": "中国大陆申请者通常须满14岁，非全职专业开发者；符合在校、毕业90天内、规定STEM课程或高中毕业待升学等至少一项资格。",
+        "participation_type": "individual",
+        "registration_method": "Apple开发者账号登录官方apply，上传作品、学籍证明并填写个人问答。",
+        "submission_deadline": "2026-02-28",
+        "registration_url": "https://developer.apple.com/swift-student-challenge/apply",
+        "education": [
+          "高中"
+        ]
+      },
+      "field_evidence": {
+        "eligibility": [
+          "ev-0a244e69ce5f4e20ad55"
+        ],
+        "participation_type": [
+          "ev-0a244e69ce5f4e20ad55"
+        ],
+        "registration_method": [
+          "ev-0a244e69ce5f4e20ad55"
+        ],
+        "submission_deadline": [
+          "ev-0a244e69ce5f4e20ad55"
+        ],
+        "registration_url": [
+          "ev-0a244e69ce5f4e20ad55"
+        ],
+        "education": [
+          "ev-0a244e69ce5f4e20ad55"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-aecb1d94c8a55d1baefe",
+          "url": "https://developer.apple.com/swift-student-challenge/eligibility/",
+          "title": "Apple",
+          "quote": "",
+          "locator": "正文相关段落",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-0a244e69ce5f4e20ad55",
+          "url": "https://developer.apple.com/swift-student-challenge/policy/",
+          "title": "Swift Student Challenge 2026 Terms and Conditions",
+          "quote": "",
+          "locator": "Deadlines；Submission Requirements；Judging",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "作品要求",
+          "text": "个人提交可在三分钟内体验的Swift应用作品；使用规定版本的Swift Playground或Xcode，提交.swiftpm压缩包不超过25MB，作品离线运行并使用英语。",
+          "evidence_ids": [
+            "ev-aecb1d94c8a55d1baefe"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "赛事介绍",
+          "text": "申请者须符合学生或近期毕业条件，中国大陆最低年龄为14岁。",
+          "evidence_ids": [
+            "ev-aecb1d94c8a55d1baefe"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "个人完成英文离线.swiftpm压缩包≤25MB，需在学籍证明有效期内提交；Swift Playground 4.6或Xcode26及以上。AI辅助须完整披露，问答文章必须本人撰写。",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "2026提交截止为2月28日23:59 PST；官网apply为唯一提交入口",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "中国大陆申请者通常须满14岁，非全职专业开发者；符合在校、毕业90天内、规定STEM课程或高中毕业待升学等至少一项资格。",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "个人参赛",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "Apple开发者账号登录官方apply，上传作品、学籍证明并填写个人问答。",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-02-28",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        },
+        {
+          "id": "field-registration_url",
+          "heading": "报名入口",
+          "text": "https://developer.apple.com/swift-student-challenge/apply",
+          "evidence_ids": [
+            "ev-0a244e69ce5f4e20ad55"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "cdddb906004b48feed073bd5eb6c156ea13cbdb529f06eb53c23a114b62e4739",
+      "category_evidence": [
+        "ev-aecb1d94c8a55d1baefe"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-c6e95ca6934d85889946",
+          "title": "Swift学生挑战赛2026提交与评审规则",
+          "url": "https://developer.apple.com/swift-student-challenge/policy/",
+          "summary": "确认个人资格、离线运行、AI披露与材料格式"
+        },
+        {
+          "id": "resource-b7079aa9ca597f65a434",
+          "title": "Develop in Swift官方教程",
+          "url": "https://developer.apple.com/tutorials/develop-in-swift",
+          "summary": "通过Xcode、Swift、SwiftUI与数据建模练习制作应用原型"
+        },
+        {
+          "id": "resource-d6657152ae26b8485678",
+          "title": "Swift Student Challenge备赛指南",
+          "url": "https://developer.apple.com/swift-student-challenge/get-ready/",
+          "summary": "官方准备入口将创意、学习工具和作品实践连接起来"
+        },
+        {
+          "id": "resource-7b9548694204ba477826",
+          "title": "2026 Swift Student Challenge获奖作品报道",
+          "url": "https://www.apple.com/ng/newsroom/2026/05/ai-meets-accessibility-in-this-years-swift-student-challenge/",
+          "summary": "官方介绍将AI与无障碍需求结合的学生作品，可分析问题发现和交互设计"
+        }
+      ]
+    },
+    {
+      "id": "curated-c156-3a53bb07",
+      "catalog_code": "2026156",
+      "catalog_codes": [
+        "2026156"
+      ],
+      "competition_id": null,
+      "code": "curated-c156-3a53bb07",
+      "title": "ULI Hines Student Competition",
+      "edition": "2025年ULI Hines亚太赛",
+      "category": "architecture-and-planning",
+      "level": "unknown",
+      "aliases": [
+        "ULI"
+      ],
+      "summary": "亚太赛提供真实城市地块案例，要求结合规划设计、市场分析和财务可行性形成开发方案。",
+      "fields": {
+        "submission_deadline": "2025-03-18"
+      },
+      "field_evidence": {
+        "submission_deadline": [
+          "ev-ec7e6e1ac1b1193c15b4"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-ec7e6e1ac1b1193c15b4",
+          "url": "https://asia.uli.org/wp-content/uploads/2025/04/2025-ULI-Hines-SC-AP-Competition-Brief.pdf",
+          "title": "Competition Brief",
+          "quote": "",
+          "locator": "正文相关段落",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛事介绍",
+          "text": "亚太赛提供真实城市地块案例，要求结合规划设计、市场分析和财务可行性形成开发方案。",
+          "evidence_ids": [
+            "ev-ec7e6e1ac1b1193c15b4"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "赛事介绍",
+          "text": "2025完整任务书可用来分析项目逻辑。",
+          "evidence_ids": [
+            "ev-ec7e6e1ac1b1193c15b4"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛程安排",
+          "text": "2025亚太赛以香港启德约16公顷场地做综合开发设计，提交总图、效果图、信息图与财务可行性；任务书列3月18日交稿。",
+          "evidence_ids": [
+            "ev-ec7e6e1ac1b1193c15b4"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2025-03-18",
+          "evidence_ids": [
+            "ev-ec7e6e1ac1b1193c15b4"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "152ee247cb5a49d7e5c4ec61a15c7c5cbb25b7b3190b52626134226affc0a8b6",
+      "category_evidence": [
+        "ev-ec7e6e1ac1b1193c15b4"
+      ],
+      "alias_evidence": {
+        "ULI": [
+          "ev-ec7e6e1ac1b1193c15b4"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-467b89de81e83026b690",
+          "title": "QGIS官方培训手册",
+          "url": "https://docs.qgis.org/3.44/en/docs/training_manual/",
+          "summary": "包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习"
+        },
+        {
+          "id": "resource-f34e9c13671252516434",
+          "title": "OpenStax社会研究方法",
+          "url": "https://openstax.org/books/introduction-sociology-3e/pages/2-2-research-methods",
+          "summary": "比较调查、实地研究、实验与二手资料分析的适用范围和局限"
+        },
+        {
+          "id": "resource-b3416a6c385acec2e8be",
+          "title": "StatsAPEC官方统计与政策研究",
+          "url": "https://statistics.apec.org/",
+          "summary": "提供经济体指标与政策研究入口，可支持亚太议题分析和跨经济体比较"
+        }
+      ]
+    },
+    {
+      "id": "curated-c173-1c6755e8",
+      "catalog_code": "2026173",
+      "catalog_codes": [
+        "2026173"
+      ],
+      "competition_id": null,
+      "code": "curated-c173-1c6755e8",
+      "title": "中国大学生电动方程式大赛（2026）",
+      "edition": "2026年FSEC",
+      "category": "transportation-and-automotive",
+      "level": "unknown",
+      "aliases": [
+        "FSEC"
+      ],
+      "summary": "学生车队自主设计并制造电动赛车，完成静态评审与动态性能测试。",
+      "fields": {
+        "participation_type": "team",
+        "registration_method": "学校车队经赛事官网提交报名申请及技术文件，缴费后按各类文件时间表报送。",
+        "registration_url": "https://formulastudent.sae-china.org/"
+      },
+      "field_evidence": {
+        "participation_type": [
+          "ev-78c2c9718162fbb93adc"
+        ],
+        "registration_method": [
+          "ev-78c2c9718162fbb93adc"
+        ],
+        "registration_url": [
+          "ev-78c2c9718162fbb93adc"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-9b8d71da7dc1b717840b",
+          "url": "https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+          "title": "2026中国大学生方程式系列赛事规则（最终版）",
+          "quote": "",
+          "locator": "PDF第13页（印刷页7），A4；A6、A7及对应EV/AV章节",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-78c2c9718162fbb93adc",
+          "url": "https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+          "title": "2026中国大学生方程式系列赛事规则（最终版）",
+          "quote": "",
+          "locator": "PDF第11—20页；A1—A8、A11",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛事介绍",
+          "text": "学生车队自主设计并制造电动赛车，完成静态评审与动态性能测试。",
+          "evidence_ids": [
+            "ev-9b8d71da7dc1b717840b"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "参赛对象",
+          "text": "每校每个类别限一队；一般学生≤29人，电动与无人驾驶合并参赛车队≤58人。全日制学生、毕业不超过7个月者适用，须满18岁，驾驶员另需驾照。",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "组队要求",
+          "text": "校方指定指导教师1—5人；学生自行设计制造，教师不得代做。",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "作品要求",
+          "text": "燃油/电动总分1000：商业75、设计150、成本100、直线75、绕环50、避障150、耐久300、效率100。",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "学校车队经赛事官网提交报名申请及技术文件，缴费后按各类文件时间表报送。",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        },
+        {
+          "id": "field-registration_url",
+          "heading": "报名入口",
+          "text": "https://formulastudent.sae-china.org/",
+          "evidence_ids": [
+            "ev-78c2c9718162fbb93adc"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "37adc58760059e4f2451f90f9f24d0ea5a3c78de996d991d2b4c788b6b30f52d",
+      "category_evidence": [
+        "ev-9b8d71da7dc1b717840b"
+      ],
+      "alias_evidence": {
+        "FSEC": [
+          "ev-9b8d71da7dc1b717840b"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-3a17315a5936574d0770",
+          "title": "FreeCAD参数化建模手册",
+          "url": "https://www.freecad.org/manual/a-freecad-manual.pdf",
+          "summary": "以参数化实体建模、工程对象和可制造模型为主线的官方历史手册"
+        },
+        {
+          "id": "resource-6b02487d1f84402d9ef3",
+          "title": "Simulink Onramp",
+          "url": "https://matlabacademy.mathworks.com/details/simulink-onramp/simulink",
+          "summary": "通过基础模型练习理解信号、模块、仿真和系统响应"
+        },
+        {
+          "id": "resource-f3c5f351c00d8d3a8863",
+          "title": "MIT结构力学习题与解答",
+          "url": "https://ocw.mit.edu/courses/2-080j-structural-mechanics-fall-2013/pages/assignments/",
+          "summary": "覆盖应力应变、梁挠度、板弯曲、能量法和稳定性，附课程练习与解答"
+        },
+        {
+          "id": "resource-c36206d2f84f42e45d5d",
+          "title": "2026方程式系列赛事规则与技术审查手册",
+          "url": "https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+          "summary": "含共用参赛条款及燃油、电动、无人驾驶分项规则"
+        }
+      ]
+    },
+    {
+      "id": "curated-c179-5ed57b4e",
+      "catalog_code": "2026179",
+      "catalog_codes": [
+        "2026179"
+      ],
+      "competition_id": null,
+      "code": "curated-c179-5ed57b4e",
+      "title": "戴森设计奖",
+      "edition": "2026年James Dyson Award",
+      "category": "art-and-design",
+      "level": "unknown",
+      "aliases": [
+        "James Dyson Award",
+        "戴森设计大奖"
+      ],
+      "summary": "2026征集于3月11日启动、7月15日截止，面向符合要求的设计和工程领域学生及近期毕业生，作品要提出可解决实际问题的发明方案。",
+      "fields": {
+        "eligibility": "设计与工程类在读生及近期毕业生",
+        "registration_method": "通过James Dyson Award官网提交作品。",
+        "submission_deadline": "2026-07-15",
+        "registration_url": "https://www.jamesdysonaward.org/"
+      },
+      "field_evidence": {
+        "eligibility": [
+          "ev-fe7082a7874bfcaffb13"
+        ],
+        "registration_method": [
+          "ev-fe7082a7874bfcaffb13"
+        ],
+        "submission_deadline": [
+          "ev-fe7082a7874bfcaffb13"
+        ],
+        "registration_url": [
+          "ev-fe7082a7874bfcaffb13"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-fe7082a7874bfcaffb13",
+          "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+          "title": "James Dyson Award 2026征集公告",
+          "quote": "",
+          "locator": "How to enter及2025 winners",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛程安排",
+          "text": "2026征集于3月11日启动、7月15日截止，面向符合要求的设计和工程领域学生及近期毕业生，作品要提出可解决实际问题的发明方案。",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "赛程安排",
+          "text": "2026年3月11日至7月15日接收设计与工程类在读和近期毕业生提交的问题解决方案；评审关注问题清晰、设计过程、原创与技术可行性。",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "设计与工程类在读生及近期毕业生",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "通过James Dyson Award官网提交作品。",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-07-15",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        },
+        {
+          "id": "field-registration_url",
+          "heading": "报名入口",
+          "text": "https://www.jamesdysonaward.org/",
+          "evidence_ids": [
+            "ev-fe7082a7874bfcaffb13"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "2e56b36b367943119967aa7780afe43f398eeabceb23b8c5d6531565c996fec2",
+      "category_evidence": [
+        "ev-fe7082a7874bfcaffb13"
+      ],
+      "alias_evidence": {
+        "James Dyson Award": [
+          "ev-fe7082a7874bfcaffb13"
+        ],
+        "戴森设计大奖": [
+          "ev-fe7082a7874bfcaffb13"
+        ]
+      },
+      "learning_resources": [
+        {
+          "id": "resource-3a17315a5936574d0770",
+          "title": "FreeCAD参数化建模手册",
+          "url": "https://www.freecad.org/manual/a-freecad-manual.pdf",
+          "summary": "以参数化实体建模、工程对象和可制造模型为主线的官方历史手册"
+        },
+        {
+          "id": "resource-26c1f4cca1c7b3c45524",
+          "title": "MIT科研海报与带注释案例",
+          "url": "https://mitcommlab.mit.edu/be/commkit/poster/",
+          "summary": "用具体研究海报和注释说明研究问题、核心图表、结论与口头讲解怎样相互配合"
+        },
+        {
+          "id": "resource-784f80734c43b6c8dc0c",
+          "title": "2026 James Dyson Award国家及地区获奖设计",
+          "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/introducing-our-james-dyson-award-2026-national-winners",
+          "summary": "展示无障碍、医疗、灾害应对与可持续设计等具体发明，适合分析需求、原型和验证证据"
+        },
+        {
+          "id": "resource-c4326d9cddc2f88ec2e7",
+          "title": "WaterSense与OnCue：2025戴森获奖设计方法",
+          "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+          "summary": "WaterSense以持续水质监测替代间歇采样；OnCue用触觉和视觉提示降低帕金森患者打字误差，页面可见装置图片和机制简介"
+        }
+      ]
+    },
+    {
+      "id": "curated-c244-4f33501b",
+      "catalog_code": "2026244",
+      "catalog_codes": [
+        "2026244"
+      ],
+      "competition_id": null,
+      "code": "curated-c244-4f33501b",
+      "title": "同济大学化学知识竞赛",
+      "edition": "2025年第十八届",
+      "category": "chemistry-and-materials",
+      "level": "university",
+      "aliases": [],
+      "summary": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
+      "fields": {
+        "eligibility": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
+        "education": [
+          "本科"
+        ]
+      },
+      "field_evidence": {
+        "eligibility": [
+          "ev-80978d39371db903bf3b"
+        ],
+        "education": [
+          "ev-80978d39371db903bf3b"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-80978d39371db903bf3b",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+          "title": "关于举办第十八届“国药杯”同济大学化学知识竞赛的通知",
+          "quote": "",
+          "locator": "PDF第1—2页",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-65b2df018faa7e56d4e1",
+          "url": "https://chemweb.tongji.edu.cn/info/1517/15553.htm",
+          "title": "第十八届“国药杯”同济大学化学知识竞赛顺利举行",
+          "quote": "",
+          "locator": "正文首段：实际日期、校区和主办承办关系",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-0791f2ef315783ad781b",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+          "title": "关于举办第十八届“国药杯”同济大学化学知识竞赛的通知",
+          "quote": "",
+          "locator": "PDF第2—3页：奖项设置细则",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛事介绍",
+          "text": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "赛程安排",
+          "text": "报名截止2025年11月16日23:55，使用学校创新创业平台。",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "闭卷笔试120分钟；单选、多选、填空、简答分析题；携带2B铅笔及橡皮。",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "原通知安排2025年11月29日9:35—11:35，四平路教学南楼。",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "fact-5",
+          "heading": "赛程安排",
+          "text": "赛后报道记载2025年12月6日在四平路和嘉定校区举行，与初始通知的日期和校区安排不同；主办为本科生院，化学科学与工程学院承办。",
+          "evidence_ids": [
+            "ev-65b2df018faa7e56d4e1"
+          ]
+        },
+        {
+          "id": "fact-6",
+          "heading": "赛事介绍",
+          "text": "初始通知的非专业组一、二、三等奖比例分别为0.5%、1.5%、3%，奖金500、300、100元；专业组三个等级分别3、6、11人，奖金同额。课程成绩奖励另有课程与期末成绩条件",
+          "evidence_ids": [
+            "ev-0791f2ef315783ad781b"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "577a402ad03d9dfdf1821d4a58ebf12a5aa57f3efe6e4577462290958cb4681a",
+      "category_evidence": [
+        "ev-80978d39371db903bf3b"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-21a10842569745432c01",
+          "title": "OpenStax Chemistry 2e",
+          "url": "https://openstax.org/books/chemistry-2e/pages/1-introduction",
+          "summary": "系统复习物质、计量、热化学、平衡、电化学等基础；章节附例题与练习"
+        },
+        {
+          "id": "resource-e499101451f7dc9ce42e",
+          "title": "MIT 5.111化学原理试题与答案",
+          "url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/resources/exams/",
+          "summary": "提供2014化学原理考试、练习考试及解答，用于定量计算和概念自测"
+        },
+        {
+          "id": "resource-6505727aea79bce6f402",
+          "title": "国药杯2025第十八届官方通知与考查范围",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+          "summary": "专业与非专业分组，考查基础化学与生活化学，采用120分钟闭卷形式"
+        }
+      ]
+    },
+    {
+      "id": "curated-c164-55584f08",
+      "catalog_code": "2026164",
+      "catalog_codes": [
+        "2026164"
+      ],
+      "competition_id": null,
+      "code": "curated-c164-55584f08",
+      "title": "中国自然资源学会“国地杯”第八届全国大学生自然资源科技作品大赛",
+      "edition": "2026年第八届",
+      "category": "environment-and-sustainability",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "中国自然资源学会国地杯第八届通知：报名至7月30日24时，作品提交至8月31日24时，决赛计划10月24—25日在长春举行，围绕人与自然和谐及科技赋能资源管理。",
+      "fields": {
+        "organizer": "中国自然资源学会",
+        "eligibility": "统招全日制在校本科、专科生；校内跨专业组队，每学院/系最多3项。",
+        "participation_type": "team",
+        "team_size_min": 1,
+        "team_size_max": 5,
+        "registration_method": "选送单位汇总报名表邮件发送zrzyds2026@163.com；作品提交前需导师及选送单位审查。",
+        "registration_deadline": "2026-07-30",
+        "submission_deadline": "2026-08-31",
+        "education": [
+          "本科",
+          "专科"
+        ]
+      },
+      "field_evidence": {
+        "organizer": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "eligibility": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "participation_type": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "team_size_min": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "team_size_max": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "registration_method": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "registration_deadline": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "submission_deadline": [
+          "ev-2de0788e76b7d80c237f"
+        ],
+        "education": [
+          "ev-2de0788e76b7d80c237f"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-2de0788e76b7d80c237f",
+          "url": "https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+          "title": "国地杯第八届全国大学生自然资源科技作品大赛第一号通知",
+          "quote": "",
+          "locator": "五、参赛对象；六、组织形式；四、时间；八、费用",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛程安排",
+          "text": "中国自然资源学会国地杯第八届通知：报名至7月30日24时，作品提交至8月31日24时，决赛计划10月24—25日在长春举行，围绕人与自然和谐及科技赋能资源管理。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "参赛对象",
+          "text": "面向全日制在校本专科学生；校内可跨学院、专业、年级组队，学生≤5人、教师≤2人；每人1队、每队1件，每个学院或系最多选送3件。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "作品为围绕人与自然和谐、科技赋能资源的原创科技论文或调查报告。禁止使用生成式AI直接生成参赛作品、将其列为共同完成人；获其他比赛奖项的作品不重复选送。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "学院汇总报名表发zrzyds2026@163.com，2026年7月30日24时截止；报告或论文、承诺书及知情书8月31日24时截止。决赛10月24—25日长春现场答辩；赛事不收费，差旅自理。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-organizer",
+          "heading": "主办单位",
+          "text": "中国自然资源学会",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "统招全日制在校本科、专科生；校内跨专业组队，每学院/系最多3项。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-team_size_min",
+          "heading": "队伍最少人数",
+          "text": "1",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "5",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "选送单位汇总报名表邮件发送zrzyds2026@163.com；作品提交前需导师及选送单位审查。",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-07-30",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-08-31",
+          "evidence_ids": [
+            "ev-2de0788e76b7d80c237f"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "ce77ed107c747b4e3c88db1013df8c39f7c060dbc4fd835264e41dea09137e46",
+      "category_evidence": [
+        "ev-2de0788e76b7d80c237f"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-467b89de81e83026b690",
+          "title": "QGIS官方培训手册",
+          "url": "https://docs.qgis.org/3.44/en/docs/training_manual/",
+          "summary": "包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习"
+        },
+        {
+          "id": "resource-03d57d7a09c23f2d41ce",
+          "title": "Purdue OWL研究论文写作起步",
+          "url": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/research_papers/where_do_i_begin.html",
+          "summary": "介绍从理解任务、检索资料到组织论证、起草和修订的研究写作过程"
+        },
+        {
+          "id": "resource-f34e9c13671252516434",
+          "title": "OpenStax社会研究方法",
+          "url": "https://openstax.org/books/introduction-sociology-3e/pages/2-2-research-methods",
+          "summary": "比较调查、实地研究、实验与二手资料分析的适用范围和局限"
+        },
+        {
+          "id": "resource-2fb66f5a03f7d6a7fad2",
+          "title": "2026国地杯科技论文与调查报告参赛规则",
+          "url": "https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+          "summary": "明确作品类型、AI使用边界、学院限额、两阶段材料及决赛答辩"
+        }
+      ]
+    },
+    {
+      "id": "curated-c148-79c641ae",
+      "catalog_code": "2026148",
+      "catalog_codes": [
+        "2026148"
+      ],
+      "competition_id": null,
+      "code": "curated-c148-79c641ae",
+      "title": "全国大学生软件创新大赛",
+      "edition": "2026年第十九届",
+      "category": "computer-science",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "面向普通高校在籍学生，含本科与研究生；学生队长1名、其他学生不超过3名，指导教师不超过2名，合计最多6人。可跨校、跨专业、跨学历组队，跨校队伍按队长学校归属。每位学生限1队，每队限1件软件作品。",
+      "fields": {
+        "eligibility": "普通高校在籍学生；可跨校、跨专业、跨学历，跨校队伍归属队长学校。",
+        "participation_type": "team",
+        "team_size_min": 1,
+        "team_size_max": 4,
+        "registration_method": "官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。",
+        "registration_deadline": "2026-02-02",
+        "submission_deadline": "2026-05-28",
+        "registration_url": "https://www.swcontest.com.cn"
+      },
+      "field_evidence": {
+        "eligibility": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "participation_type": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "team_size_min": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "team_size_max": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "registration_method": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "registration_deadline": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "submission_deadline": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "registration_url": [
+          "ev-7abc4924c99ba867c215"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-7abc4924c99ba867c215",
+          "url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+          "title": "第十九届全国大学生软件创新大赛通知",
+          "quote": "",
+          "locator": "参赛对象、赛制、报名、材料提交",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-2",
+          "heading": "参赛对象",
+          "text": "面向普通高校在籍学生，含本科与研究生；学生队长1名、其他学生不超过3名，指导教师不超过2名，合计最多6人。可跨校、跨专业、跨学历组队，跨校队伍按队长学校归属。每位学生限1队，每队限1件软件作品。",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛事介绍",
+          "text": "2026主题为AI无界，创见未来；须依该届指定题目开发，材料匿名，不出现学校和成员身份。比赛不收参赛费，交通食宿自理。",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "报名及初赛提交截止2026年2月2日18:00；复赛4月23日18:00；决赛材料5月28日18:00，现场决赛5月30—31日。",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "普通高校在籍学生；可跨校、跨专业、跨学历，跨校队伍归属队长学校。",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-team_size_min",
+          "heading": "队伍最少人数",
+          "text": "1",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "4",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-02-02",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-05-28",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "field-registration_url",
+          "heading": "报名入口",
+          "text": "https://www.swcontest.com.cn",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "589cfb7bfd81e663deacde07c93da6d761536430f3e04b3e965fc4afe7e85088",
+      "category_evidence": [
+        "ev-7abc4924c99ba867c215"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-15a8a948d5837f0f8f9f",
+          "title": "Krita数字绘画手册",
+          "url": "https://docs.krita.org/en/index.html",
+          "summary": "介绍笔刷、图层、绘画与动画等数字创作功能"
+        },
+        {
+          "id": "resource-26c1f4cca1c7b3c45524",
+          "title": "MIT科研海报与带注释案例",
+          "url": "https://mitcommlab.mit.edu/be/commkit/poster/",
+          "summary": "用具体研究海报和注释说明研究问题、核心图表、结论与口头讲解怎样相互配合"
+        },
+        {
+          "id": "resource-8b2a326e3417c22a3a5f",
+          "title": "MDN Web开发学习路径",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+          "summary": "围绕HTML、CSS、JavaScript和可访问性学习交互作品的实现"
+        },
+        {
+          "id": "resource-213a580cc9e007a9cac5",
+          "title": "第十九届软件创新大赛正式通知与附件入口",
+          "url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+          "summary": "包含学生和教师分别计数、跨校归属、匿名提交及阶段日期。附件接口暂需验证码"
+        }
+      ]
+    },
+    {
+      "id": "curated-c192-35ef9e26",
+      "catalog_code": "2026192",
+      "catalog_codes": [
+        "2026192"
+      ],
+      "competition_id": null,
+      "code": "curated-c192-35ef9e26",
+      "title": "“德语之星”全国高校德语演讲比赛",
+      "edition": "2026年第五届",
+      "category": "languages-and-humanities",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "第五届德语之星全国高校德语演讲比赛决赛暂定2026年11月1日在线下举行。",
+      "fields": {
+        "organizer": "同济大学外国语学院，德语系承办",
+        "eligibility": "德语专业本科生或德语主专业双学位学生；非德语母语，年级不限。",
+        "participation_type": "team",
+        "team_size_min": 2,
+        "team_size_max": 4,
+        "registration_method": "学校选1队及带队老师，报名表与初赛视频分阶段邮件提交tjde_yanjiang@163.com。",
+        "registration_deadline": "2026-09-30",
+        "submission_deadline": "2026-10-09",
+        "education": [
+          "本科"
+        ],
+        "majors": [
+          "德语"
+        ],
+        "grades": [
+          "不限年级"
+        ]
+      },
+      "field_evidence": {
+        "organizer": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "eligibility": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "participation_type": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "team_size_min": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "team_size_max": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "registration_method": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "registration_deadline": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "submission_deadline": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "education": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "majors": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "grades": [
+          "ev-47e0659627e28386b4c3"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-47e0659627e28386b4c3",
+          "url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+          "title": "第五届德语之星全国高校德语演讲比赛通知",
+          "quote": "",
+          "locator": "参赛资格、初赛及报名方式",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛程安排",
+          "text": "第五届德语之星全国高校德语演讲比赛决赛暂定2026年11月1日在线下举行。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "参赛对象",
+          "text": "在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "作品要求",
+          "text": "主题中德文化交流史；初赛3—5分钟德语视频，可用PPT但匿名、全程出镜且一镜到底，不剪辑加速或加特效。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "赛程安排",
+          "text": "学校报名2026年9月30日17:00截止；已报名队伍初赛视频10月9日17:00前交tjde_yanjiang@163.com。决赛11月1日为暂定。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-organizer",
+          "heading": "主办单位",
+          "text": "同济大学外国语学院，德语系承办",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "德语专业本科生或德语主专业双学位学生；非德语母语，年级不限。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-team_size_min",
+          "heading": "队伍最少人数",
+          "text": "2",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "4",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "学校选1队及带队老师，报名表与初赛视频分阶段邮件提交tjde_yanjiang@163.com。",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-09-30",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-10-09",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "10987bed158dc291494bf4b46c728f322e38a12406b497e15893125b4159374d",
+      "category_evidence": [
+        "ev-47e0659627e28386b4c3"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-6921ea20d58e611b339f",
+          "title": "Audacity录音与编辑入门",
+          "url": "https://manual.audacityteam.org/quick_help.html",
+          "summary": "介绍导入、录音、选区、剪辑、效果处理与导出"
+        },
+        {
+          "id": "resource-29968d97451ef24e5b92",
+          "title": "第五届德语之星全国高校德语演讲比赛通知｜备赛导读",
+          "url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+          "summary": "在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲"
+        },
+        {
+          "id": "resource-0b7cefc33fb4a7253b06",
+          "title": "Goethe-Institut免费德语练习",
+          "url": "https://www.goethe.de/de/spr/ueb.html",
+          "summary": "按水平和主题提供词汇、语法、阅读、听力及媒体练习"
+        },
+        {
+          "id": "resource-c409ba6a591fbfb24c1d",
+          "title": "柏林勃兰登堡科学院CLARIN语言资料",
+          "url": "https://fedora.dwds.de/de/",
+          "summary": "介绍德语历史语料、词典和资料库入口，供写作和语言研究查证"
+        }
+      ]
+    },
+    {
+      "id": "curated-c168-e87d918a",
+      "catalog_code": "2026168",
+      "catalog_codes": [
+        "2026168"
+      ],
+      "competition_id": null,
+      "code": "curated-c168-e87d918a",
+      "title": "全国大学生轨道交通科技创新大赛",
+      "edition": "2026年首届",
+      "category": "transportation-and-automotive",
+      "level": "unknown",
+      "aliases": [],
+      "summary": "官方赛事网站公布首届轨道交通科技创新赛安排：作品提交7月17日，筛选至7月31日，初赛8月10日，决赛8月28—30日。",
+      "fields": {
+        "organizer": "中国铁道学会",
+        "eligibility": "全国高校轨道交通相关专业方向的全日制在读本科生、专科生。",
+        "participation_type": "team",
+        "team_size_max": 5,
+        "registration_method": "学校发送盖章回执申请单位账户，再由学校推荐作品。",
+        "registration_deadline": "2026-05-31",
+        "submission_deadline": "2026-07-17",
+        "registration_url": "https://www.nicrails.com/",
+        "education": [
+          "本科",
+          "专科"
+        ]
+      },
+      "field_evidence": {
+        "organizer": [
+          "ev-924f4884463e94fce992"
+        ],
+        "eligibility": [
+          "ev-ae823e59ae28f4c41c2b"
+        ],
+        "participation_type": [
+          "ev-f213ca246ae530813c6d"
+        ],
+        "team_size_max": [
+          "ev-f213ca246ae530813c6d"
+        ],
+        "registration_method": [
+          "ev-f213ca246ae530813c6d"
+        ],
+        "registration_deadline": [
+          "ev-f213ca246ae530813c6d"
+        ],
+        "submission_deadline": [
+          "ev-924f4884463e94fce992"
+        ],
+        "registration_url": [
+          "ev-f213ca246ae530813c6d"
+        ],
+        "education": [
+          "ev-ae823e59ae28f4c41c2b"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-924f4884463e94fce992",
+          "url": "https://www.nicrails.com/",
+          "title": "2026首届轨道交通科技创新大赛日程",
+          "quote": "",
+          "locator": "赛事时间",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-f213ca246ae530813c6d",
+          "url": "https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+          "title": "首届轨道交通科技创新大赛参赛方式",
+          "quote": "",
+          "locator": "参赛报名、申报方式",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-ae823e59ae28f4c41c2b",
+          "url": "https://www.nicrails.com/Home/Page?colId=f29ca0e0-3b07-43b1-ab64-aa5bc5213968",
+          "title": "参赛对象",
+          "quote": "",
+          "locator": "参赛对象正文",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "fact-1",
+          "heading": "赛程安排",
+          "text": "官方赛事网站公布首届轨道交通科技创新赛安排：作品提交7月17日，筛选至7月31日，初赛8月10日，决赛8月28—30日。",
+          "evidence_ids": [
+            "ev-924f4884463e94fce992"
+          ]
+        },
+        {
+          "id": "fact-2",
+          "heading": "赛程安排",
+          "text": "学校于2026年5月31日前将盖章单位回执发nicrails@163.com，资格通过后开通单位账户；不接受个人直接申请。",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "fact-3",
+          "heading": "赛事介绍",
+          "text": "每项学生至多5人、教师至多2人；每生负责至多1项，参与总计至多2项，每位教师至多指导2项。",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "fact-4",
+          "heading": "参赛对象",
+          "text": "全国高校轨道交通相关专业方向的全日制在读本科生、专科生可参赛。",
+          "evidence_ids": [
+            "ev-ae823e59ae28f4c41c2b"
+          ]
+        },
+        {
+          "id": "field-organizer",
+          "heading": "主办单位",
+          "text": "中国铁道学会",
+          "evidence_ids": [
+            "ev-924f4884463e94fce992"
+          ]
+        },
+        {
+          "id": "field-eligibility",
+          "heading": "参赛对象",
+          "text": "全国高校轨道交通相关专业方向的全日制在读本科生、专科生。",
+          "evidence_ids": [
+            "ev-ae823e59ae28f4c41c2b"
+          ]
+        },
+        {
+          "id": "field-participation_type",
+          "heading": "参赛形式",
+          "text": "团队参赛",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "field-team_size_max",
+          "heading": "队伍最多人数",
+          "text": "5",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "field-registration_method",
+          "heading": "报名方式",
+          "text": "学校发送盖章回执申请单位账户，再由学校推荐作品。",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-05-31",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-07-17",
+          "evidence_ids": [
+            "ev-924f4884463e94fce992"
+          ]
+        },
+        {
+          "id": "field-registration_url",
+          "heading": "报名入口",
+          "text": "https://www.nicrails.com/",
+          "evidence_ids": [
+            "ev-f213ca246ae530813c6d"
+          ]
+        }
+      ],
+      "review_status": "approved",
+      "publication_status": "published",
+      "kind": "edition",
+      "content_hash": "a05bbde2bca433c971f017435f7c2fd4b88f4a8d310088465e0d86632c77fae4",
+      "category_evidence": [
+        "ev-924f4884463e94fce992"
+      ],
+      "alias_evidence": {},
+      "learning_resources": [
+        {
+          "id": "resource-14b50b06c10747a9d968",
+          "title": "Python官方教程",
+          "url": "https://docs.python.org/3/tutorial/",
+          "summary": "介绍Python语法、数据结构、模块、文件读写与错误处理，可建立可复现的数据处理脚本"
+        },
+        {
+          "id": "resource-467b89de81e83026b690",
+          "title": "QGIS官方培训手册",
+          "url": "https://docs.qgis.org/3.44/en/docs/training_manual/",
+          "summary": "包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习"
+        },
+        {
+          "id": "resource-8b0ae831bf83bfb134e9",
+          "title": "SUMO交通仿真教程",
+          "url": "https://eclipse.dev/sumo/docs/Tutorials/index.html",
+          "summary": "提供路网、交通需求、信号灯、公共交通和Python控制仿真的循序教程"
+        },
+        {
+          "id": "resource-72caec5140f93be02163",
+          "title": "首届轨道交通科技创新大赛参赛方式｜备赛导读",
+          "url": "https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+          "summary": "学校于2026年5月31日前将盖章单位回执发nicrails@163.com，资格通过后开通单位账户；不接受个人直接申请"
+        }
+      ]
+    }
+  ]
+}
