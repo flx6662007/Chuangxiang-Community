@@ -14,3 +14,6 @@ staticfiles/
 # Frontend generated files
 node_modules/
 dist/
+
+# macOS metadata
+.DS_Store
