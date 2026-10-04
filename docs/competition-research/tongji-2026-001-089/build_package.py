@@ -2,9 +2,12 @@
 import hashlib
 import json
 from pathlib import Path
+import sys
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / 'backend'))
+from curation.product import render_overview, render_resource
 PACKAGE_ID = 'tongji-2026-001-089-20261003'
 source = json.loads((HERE / '整理底稿.json').read_text(encoding='utf-8'))
 rows = source['entries']
@@ -37,13 +40,10 @@ for row in rows:
     metadata = {'content_type': 'manual_summary', 'contains_source_fulltext': False,
                 'checked_on': row['checked_on'], 'edition_note': row['edition_note'],
                 'source_status': source_state(row), 'gaps': row['gaps'], 'research_code': code}
-    paragraphs = ['人工整理摘要，非来源全文。', row['edition_note'], row['overview'], '赛事来源：']
     for s in row['competition_sources']:
-        paragraphs.append(f"{s['title']}\n{s['url']}\n提供方：{s['provider']}；核验程度：{levels[s['verified_by']]}\n{s['summary']}")
         ledger.append({'catalog_code': code, 'resource_group': 'competition', **s})
-    paragraphs.extend(['待补内容：', *row['gaps']])
     documents.append({'code': f'm89-{code}-overview', 'title': row['name'] + '｜赛事资料档案',
-                      'body': '\n\n'.join(paragraphs), 'edition': '',
+                      'body': render_overview(row), 'edition': '',
                       'catalog_codes': [code], 'competition_codes': [], 'resource_codes': [],
                       'sources': row['competition_sources'], 'attachments': [], 'metadata': metadata})
     for s in row['learning_resources']:
@@ -60,11 +60,10 @@ for row in rows:
         resource = resources[key]
         if code not in resource['catalog_codes']:
             resource['catalog_codes'].append(code)
-        context = (f"{row['code']} {row['name']}\n类型：{types[s['type']]}；难度：{s['level']}；访问：{s['access']}\n"
-                   f"核验程度：{levels[s['verified_by']]}\n适用：{s['applies_to']}\n用途：{s['why_useful']}\n{s['summary']}")
+        context = render_resource(s)
         resource['_contexts'].append(context)
         documents.append({'code': f'm89-{code}-learning-{identifier}', 'title': row['name'] + '｜' + s['title'],
-                          'body': '人工整理的学习导读，非资料原文。\n\n' + row['edition_note'] + '\n\n' + context,
+                          'body': context,
                           'edition': '', 'catalog_codes': [code], 'competition_codes': [],
                           'resource_codes': [resource_code], 'sources': [s], 'attachments': [],
                           'metadata': {**metadata, 'resource_type': s['type'], 'access': s['access'],

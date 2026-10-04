@@ -4,6 +4,10 @@ from collections import Counter, defaultdict
 import hashlib
 import json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'backend'))
+from curation.product import render_edition, render_resource
 
 
 STATUS = {'rules': '已取得规则或正式通知', 'partial': '细则有缺口',
@@ -21,11 +25,7 @@ def write_json(path, value):
 
 
 def resource_text(resource):
-    labels = {'summary': '中文摘要', 'audience': '适用对象', 'prerequisites': '基础要求',
-              'how_to_start': '入门顺序', 'language': '语言', 'access': '访问条件',
-              'scope': '适用范围', 'url': '来源链接', 'provider': '发布方',
-              'locator': '来源定位', 'checked_on': '核验日期'}
-    return resource['title'] + '\n' + '\n'.join(f'{label}：{resource[key]}' for key, label in labels.items())
+    return render_resource(resource)
 
 
 def resource_source(resource):
@@ -81,11 +81,7 @@ def build(filename, dependency=None):
             caveat = ('历史资料，不代表2026报名期限。' if edition['year'] and edition['year'] < 2026
                       else '只适用于所标届次；当届简讯与往届规则分开使用。')
             facts = '\n'.join(f"• {f['text']} [{f['source_id']}；{f['locator']}]" for f in edition['facts'])
-            body = (f"目录：{code} {entry['name']}\n目录年份：2026\n资料届次：{edition['label']}\n"
-                    f"{caveat}\n证据状态：{STATUS[edition['evidence_status']]}\n审核：草稿，待审核\n\n"
-                    f"整理正文：\n{facts}\n\n字段映射（未知留空）：\n"
-                    + json.dumps(edition['fields'], ensure_ascii=False, indent=2)
-                    + '\n\n缺口：\n' + '\n'.join(edition['gaps']))
+            body = render_edition(entry, edition)
             efolder = folder / edition['id']
             efolder.mkdir(exist_ok=True)
             (efolder / '赛事说明.txt').write_text(body, encoding='utf8')

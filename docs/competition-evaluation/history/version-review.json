@@ -1,0 +1,28 @@
+{
+  "reason": "Corrected edition 114 title, cross-edition rules link, and corresponding season theme; no tuning from test outcomes.",
+  "previous_version": "e0a771c357d83a62",
+  "current_version": "874ccd5c6dddf794",
+  "checks": {
+    "dev": {
+      "fixture_unchanged": true,
+      "parameters_unchanged": true,
+      "implementation_unchanged": true,
+      "evaluator_unchanged": true,
+      "accuracy_metrics_unchanged": true
+    },
+    "test": {
+      "fixture_unchanged": true,
+      "parameters_unchanged": true,
+      "implementation_unchanged": true,
+      "evaluator_unchanged": true,
+      "accuracy_metrics_unchanged": true
+    },
+    "probe": {
+      "fixture_unchanged": true,
+      "parameters_unchanged": true,
+      "implementation_unchanged": true,
+      "evaluator_unchanged": true,
+      "accuracy_metrics_unchanged": true
+    }
+  }
+}

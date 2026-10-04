@@ -1,0 +1,563 @@
+{
+  "purpose": "Development-only calibration history, including failed settings and no-topic probes. Final defaults are selected after both recall and empty-topic diagnostics.",
+  "runs": [
+    {
+      "file": "competition-evaluation-dev-keyword.json",
+      "corpus_version": "06c4ab078f5e172b",
+      "split": "dev",
+      "parameters": {},
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9444444444444444,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9222222222222223,
+          "hard_violation_count": 0,
+          "reason_count": 450,
+          "grounded_reason_count": 450,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 12.0055,
+            "p95": 22.514,
+            "max": 29.362
+          },
+          "passes_targets": true
+        }
+      }
+    },
+    {
+      "file": "dev-d45aa-threshold-055.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.55
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 457,
+          "grounded_reason_count": 457,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 15.586500000000001,
+            "p95": 19.187,
+            "max": 21.612
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.975,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 341,
+          "grounded_reason_count": 341,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 36.3115,
+            "p95": 46.206,
+            "max": 4586.313
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 1.0,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 1.0,
+          "gold_evidence_hit_rate": 0.9777777777777777,
+          "hard_violation_count": 0,
+          "reason_count": 458,
+          "grounded_reason_count": 458,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 36.4615,
+            "p95": 51.529,
+            "max": 63.329
+          },
+          "passes_targets": true
+        }
+      }
+    },
+    {
+      "file": "dev-d45aa-threshold-060.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.6
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 457,
+          "grounded_reason_count": 457,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 15.8635,
+            "p95": 18.64,
+            "max": 20.18
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9222222222222223,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.9,
+          "gold_evidence_hit_rate": 0.9111111111111111,
+          "hard_violation_count": 0,
+          "reason_count": 214,
+          "grounded_reason_count": 214,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 36.601,
+            "p95": 47.302,
+            "max": 4536.796
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9888888888888889,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.975,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 456,
+          "grounded_reason_count": 456,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 37.68,
+            "p95": 46.239,
+            "max": 50.311
+          },
+          "passes_targets": true
+        }
+      }
+    },
+    {
+      "file": "dev-d45aa-threshold-065.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.65
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 457,
+          "grounded_reason_count": 457,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 15.4395,
+            "p95": 18.303,
+            "max": 20.859
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.7666666666666667,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.65,
+          "gold_evidence_hit_rate": 0.7555555555555555,
+          "hard_violation_count": 0,
+          "reason_count": 114,
+          "grounded_reason_count": 114,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 36.303,
+            "p95": 47.392,
+            "max": 4572.433
+          },
+          "passes_targets": false
+        },
+        "hybrid": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9888888888888889,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.975,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 458,
+          "grounded_reason_count": 458,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 35.016,
+            "p95": 44.668,
+            "max": 48.414
+          },
+          "passes_targets": true
+        }
+      }
+    },
+    {
+      "file": "probes-d45aa-threshold-055.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev-probes",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.55
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 23.0,
+            "p95": 21.168,
+            "max": 24.832
+          },
+          "passes_targets": false
+        },
+        "semantic": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.5,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 2944.9875,
+            "p95": 60.809,
+            "max": 5829.166
+          },
+          "passes_targets": false
+        },
+        "hybrid": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 50.8975,
+            "p95": 50.549,
+            "max": 51.246
+          },
+          "passes_targets": false
+        }
+      }
+    },
+    {
+      "file": "probes-d45aa-threshold-060.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev-probes",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.6
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 22.466,
+            "p95": 20.475,
+            "max": 24.457
+          },
+          "passes_targets": false
+        },
+        "semantic": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 2929.005,
+            "p95": 59.636,
+            "max": 5798.374
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 54.5285,
+            "p95": 53.217,
+            "max": 55.84
+          },
+          "passes_targets": false
+        }
+      }
+    },
+    {
+      "file": "probes-d45aa-threshold-065.json",
+      "corpus_version": "d45aa47edf343f38",
+      "split": "dev-probes",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.65
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 23.698,
+            "p95": 21.574,
+            "max": 25.822
+          },
+          "passes_targets": false
+        },
+        "semantic": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 3065.261,
+            "p95": 57.733,
+            "max": 6072.789
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 0.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 10,
+          "grounded_reason_count": 10,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 51.2905,
+            "p95": 49.128,
+            "max": 53.453
+          },
+          "passes_targets": false
+        }
+      }
+    },
+    {
+      "file": "probes-365824-lexical-relevance.json",
+      "corpus_version": "365824ef40f48d06",
+      "split": "dev-probes",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.6
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 16.8445,
+            "p95": 17.997,
+            "max": 17.997
+          },
+          "passes_targets": true
+        }
+      }
+    },
+    {
+      "file": "dev-53684-keyword-relevance.json",
+      "corpus_version": "53684a56d94beba5",
+      "split": "dev",
+      "parameters": {
+        "limit": 5,
+        "semantic_threshold": 0.6
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 337,
+          "grounded_reason_count": 337,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 15.7035,
+            "p95": 21.263,
+            "max": 25.696
+          },
+          "passes_targets": true
+        }
+      }
+    }
+  ]
+}

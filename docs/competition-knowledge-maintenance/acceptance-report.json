@@ -1,0 +1,334 @@
+{
+  "as_of": "2026-10-04",
+  "corpus_version": "874ccd5c6dddf794",
+  "quality": {
+    "ok": true,
+    "corpus_version": "874ccd5c6dddf794",
+    "catalogs": 255,
+    "dispositions": {
+      "product": 188,
+      "internal": 67
+    },
+    "records": 198,
+    "samples": 20,
+    "chunks": 864,
+    "errors": []
+  },
+  "field_coverage": {
+    "records": 198,
+    "fields": {
+      "eligibility": 70,
+      "education": 45,
+      "participation_type": 63,
+      "team_size_min": 31,
+      "team_size_max": 44,
+      "registration_deadline": 24,
+      "submission_deadline": 35,
+      "registration_url": 38,
+      "registration_start": 1,
+      "tracks": 35,
+      "registration_method": 64,
+      "organizer": 5,
+      "majors": 3,
+      "grades": 1
+    },
+    "categorized": 193,
+    "with_aliases": 39,
+    "alias_count": 54
+  },
+  "rebuild": {
+    "files": 11,
+    "identical": true
+  },
+  "tests": {
+    "backend_regression": {
+      "count": 139,
+      "passed": 139,
+      "seconds": 10.098
+    },
+    "product_retrieval_real_import": {
+      "count": 61,
+      "passed": 61,
+      "seconds": 97.781,
+      "skipped": 0
+    },
+    "evaluation_integrity": {
+      "count": 17,
+      "passed": 17
+    }
+  },
+  "evaluation": {
+    "dev": {
+      "acceptance": {
+        "mode": "hybrid",
+        "passes": true,
+        "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9777777777777777,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.95,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 337,
+          "grounded_reason_count": 337,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 25.463,
+            "p95": 30.353,
+            "max": 35.981
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9222222222222223,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.9,
+          "gold_evidence_hit_rate": 0.9111111111111111,
+          "hard_violation_count": 0,
+          "reason_count": 213,
+          "grounded_reason_count": 213,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 56.966499999999996,
+            "p95": 135.598,
+            "max": 9918.165
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 100,
+          "positive_cases": 90,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.9888888888888889,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.975,
+          "gold_evidence_hit_rate": 0.9555555555555556,
+          "hard_violation_count": 0,
+          "reason_count": 353,
+          "grounded_reason_count": 353,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 50.0055,
+            "p95": 65.924,
+            "max": 76.328
+          },
+          "passes_targets": true
+        }
+      },
+      "comparison": {
+        "comparable": true,
+        "hybrid_hit_at_5_gain": 0.011111111111111183,
+        "semantic_subset_gain": 0.025000000000000022,
+        "hybrid_not_worse": true
+      }
+    },
+    "test": {
+      "acceptance": {
+        "mode": "hybrid",
+        "passes": true,
+        "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 50,
+          "positive_cases": 40,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 1.0,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 1.0,
+          "gold_evidence_hit_rate": 1.0,
+          "hard_violation_count": 0,
+          "reason_count": 179,
+          "grounded_reason_count": 179,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 26.237000000000002,
+            "p95": 41.469,
+            "max": 62.784
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 50,
+          "positive_cases": 40,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 0.8,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 0.65,
+          "gold_evidence_hit_rate": 0.775,
+          "hard_violation_count": 0,
+          "reason_count": 87,
+          "grounded_reason_count": 87,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 50.932,
+            "p95": 88.446,
+            "max": 9708.606
+          },
+          "passes_targets": false
+        },
+        "hybrid": {
+          "cases": 50,
+          "positive_cases": 40,
+          "empty_cases": 10,
+          "operational_errors": 0,
+          "hit_at_5": 1.0,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": 1.0,
+          "gold_evidence_hit_rate": 0.975,
+          "hard_violation_count": 0,
+          "reason_count": 184,
+          "grounded_reason_count": 184,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": 1.0,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 54.233,
+            "p95": 64.094,
+            "max": 72.873
+          },
+          "passes_targets": true
+        }
+      },
+      "comparison": {
+        "comparable": true,
+        "hybrid_hit_at_5_gain": 0.0,
+        "semantic_subset_gain": 0.0,
+        "hybrid_not_worse": true
+      }
+    },
+    "probe": {
+      "acceptance": {
+        "mode": "hybrid",
+        "passes": true,
+        "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+      },
+      "metrics": {
+        "keyword": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 32.187,
+            "p95": 36.122,
+            "max": 36.122
+          },
+          "passes_targets": true
+        },
+        "semantic": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 4736.754,
+            "p95": 9415.926,
+            "max": 9415.926
+          },
+          "passes_targets": true
+        },
+        "hybrid": {
+          "cases": 2,
+          "positive_cases": 0,
+          "empty_cases": 2,
+          "operational_errors": 0,
+          "hit_at_5": null,
+          "empty_accuracy": 1.0,
+          "semantic_hit_at_5": null,
+          "gold_evidence_hit_rate": null,
+          "hard_violation_count": 0,
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "hits_without_reason": 0,
+          "empty_explanation_coverage": 1.0,
+          "evidence_reference_coverage": null,
+          "unresolved_evidence_count": 0,
+          "latency_ms": {
+            "median": 49.8735,
+            "p95": 50.292,
+            "max": 50.292
+          },
+          "passes_targets": true
+        }
+      },
+      "comparison": {
+        "comparable": true,
+        "hybrid_not_worse": true
+      }
+    }
+  },
+  "registration_on_reference_date": {
+    "open": 0,
+    "closed": 22,
+    "upcoming": 0,
+    "unknown": 176
+  },
+  "source_access": {
+    "checked": 272,
+    "retrieved": 231
+  },
+  "artifact_csv_qa": {
+    "rows": 198,
+    "columns": 11,
+    "round_trip_identical": true,
+    "render_reviewed": true,
+    "helper_exit_code": 1,
+    "helper_exit_diagnostic": null
+  },
+  "database": "test_chuangxiang_dev",
+  "production_imported": false,
+  "committed": false,
+  "pushed": false
+}

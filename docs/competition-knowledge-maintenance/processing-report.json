@@ -1,0 +1,3564 @@
+{
+  "as_of": "2026-10-04",
+  "outcomes": [
+    {
+      "catalog_code": "2026001",
+      "title": "中国国际大学生创新大赛（2026）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026001-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "教育部通知附件尚未逐一展开；2026最终评审细则仍需补齐。"
+      ]
+    },
+    {
+      "catalog_code": "2026002",
+      "title": "“挑战杯”中国大学生创业计划竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026002-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚缺第十五届完整最终规则；模板与公众号笔记尚未全文核读。"
+      ]
+    },
+    {
+      "catalog_code": "2026003",
+      "title": "中国青年科技创新“揭榜挂帅”擂台赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026003-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "榜题附件包未解包；具体技术课程应在确定榜题后补充。"
+      ]
+    },
+    {
+      "catalog_code": "2026004",
+      "title": "全国大学生金相技能大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官网多次访问超时；制样PDF与当届细则待正文核对。",
+        "综合分析指南存在届次文字与年份不一致，暂不提取确定报名截止日。"
+      ]
+    },
+    {
+      "catalog_code": "2026005",
+      "title": "全国大学生测绘学科创新创业智能大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官网直接读取失败，当前为官方索引资料；需补2026附件正文及训练软件获取说明。"
+      ]
+    },
+    {
+      "catalog_code": "2026006",
+      "title": "iCAN大学生创新创业大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026006-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网动态正文尚未读出；已发现版本冲突，暂不写入确定的报名截止日期或评分权重。"
+      ]
+    },
+    {
+      "catalog_code": "2026007",
+      "title": "全国大学生创新年会",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026007-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济校内遴选通知需另行补充；作品详情尚未逐项展开。"
+      ]
+    },
+    {
+      "catalog_code": "2026008",
+      "title": "全国大学生工程实践与创新能力大赛（2026）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026008-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚需核实目录2026条目对应的校赛/省赛届次；不把其他高校校内报名时间用于同济。"
+      ]
+    },
+    {
+      "catalog_code": "2026009",
+      "title": "中国大学生机械工程创新创意大赛-智能制造赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026009-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "实际赛题包、培训录像和指定设备待补充。MuJoCo仅适用于相关方向，不是全赛项必需工具。"
+      ]
+    },
+    {
+      "catalog_code": "2026010",
+      "title": "“西门子杯”中国智能制造挑战赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026010-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已确认赛题入口，尚未逐份读完各方向资料；学习备赛页面未读取到有效课程正文。"
+      ]
+    },
+    {
+      "catalog_code": "2026011",
+      "title": "VEX机器人全国精英赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "当前全国大学组新届比赛通知待补；需从官方赛事平台重新确认可用中文报名入口。"
+      ]
+    },
+    {
+      "catalog_code": "2026012",
+      "title": "大学生新一代信息通信科技大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026012-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "培训正文需参赛账号；未取得可公开再分发的完整题库。"
+      ]
+    },
+    {
+      "catalog_code": "2026013",
+      "title": "国际大学生智能农业装备创新大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官方页面访问受限，附件正文待获取；第十二届主题与评分细则不能从第十一届直接继承。"
+      ]
+    },
+    {
+      "catalog_code": "2026014",
+      "title": "华为ICT大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026014-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚需补当届具体赛道考纲；学习空间可能更新内容，不能默认与第十届手册一致。"
+      ]
+    },
+    {
+      "catalog_code": "2026015",
+      "title": "全国大学生电子设计竞赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "培训网及PDF直接读取暂失败；尚未逐题保存正文，课程播放与附件权限需复核。"
+      ]
+    },
+    {
+      "catalog_code": "2026016",
+      "title": "全国大学生集成电路创新创业大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "企业软件许可、数据与培训群内容依命题开放，未作为公开可下载内容收录。"
+      ]
+    },
+    {
+      "catalog_code": "2026017",
+      "title": "全国大学生嵌入式芯片与系统设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026017-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚需选定具体赛道及命题企业后补板卡手册和示例代码；模板附件直连失败。"
+      ]
+    },
+    {
+      "catalog_code": "2026018",
+      "title": "全国大学生物联网设计竞赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官方站点403导致2026章程及命题未完整展开；不采纳只有2026网页标题、正文却是往届的页面。"
+      ]
+    },
+    {
+      "catalog_code": "2026019",
+      "title": "全国大学生智能汽车竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026019-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚缺室外赛最终规则及具体组别训练资料；不能用初稿计算报名或计分结论。"
+      ]
+    },
+    {
+      "catalog_code": "2026020",
+      "title": "全球校园人工智能算法精英大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026020-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "这里仅深入整理两个与平台项目相关的赛题，其他赛题须从官方赛题目录再选择。"
+      ]
+    },
+    {
+      "catalog_code": "2026021",
+      "title": "睿抗机器人开发者大赛（RAICOM）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026021-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "完整赛题附件和各赛项账号资源待补齐。大模型赛项依据：https://jiaowu.web.hebust.edu.cn/cxcy/xkjs/2fab3cfa48a844829a32c207706d6cce.htm（官方高校索引，直读超时）。"
+      ]
+    },
+    {
+      "catalog_code": "2026022",
+      "title": "中国高校智能机器人创意大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026022-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "主题二、主题三及专项赛的完整规则待补；早期高校通知存在年份笔误，未提取为报名日期。"
+      ]
+    },
+    {
+      "catalog_code": "2026023",
+      "title": "中国机器人大赛暨RoboCup机器人世界杯中国赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026023-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已核验规则索引，未逐份阅读全文；尚未筛选与具体参赛赛项对应的技术教程。"
+      ]
+    },
+    {
+      "catalog_code": "2026024",
+      "title": "中国机器人及人工智能大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "规则包下载与访问权限尚未验证，不能将发布页当作已读规则全文。",
+        "未找到本次可核验的第二份具体官方学习资料；后续按所选赛项补培训材料。"
+      ]
+    },
+    {
+      "catalog_code": "2026025",
+      "title": "SAMPE 2026 Student Bridge Contest",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026025-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026规则PDF未成功读取；已保留官网规则入口。",
+        "UW海报已核验公开索引，未逐份评估技术质量。"
+      ]
+    },
+    {
+      "catalog_code": "2026026",
+      "title": "第十八届SAMPE国际超轻复合材料桥梁/机翼学生竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026026-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网关于竞赛页当前可检索版本仍是2025；2026第十八届完整规则及机翼图纸未取得。",
+        "尚未核验第二份独立且具体的学习材料；不以获奖新闻充作技术案例。"
+      ]
+    },
+    {
+      "catalog_code": "2026027",
+      "title": "全国大学生化工设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026027-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "任务书与评分细则已确认官方发布入口，未将附件全文导入。",
+        "课程仅登记简介与链接，选课范围及学习权限以平台为准。"
+      ]
+    },
+    {
+      "catalog_code": "2026028",
+      "title": "全国大学生化工实验大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026028-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "主赛最新技术方案、评分表与可公开训练题库尚未取得。",
+        "没有把2025第八届规则或其他学校校内日期写成2026全国安排。"
+      ]
+    },
+    {
+      "catalog_code": "2026029",
+      "title": "上海大学生化学实验竞赛暨实验创新设计竟赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026029-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未取得本届完整试题及评分细则。",
+        "讲义已核验高校下载入口，未逐篇读取附件；2018讲义的旧仪器参数不直接作为现行操作依据。"
+      ]
+    },
+    {
+      "catalog_code": "2026030",
+      "title": "全国大学生能源经济学术创意大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026030-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未取得官方优秀作品全文或可直接观看的完整培训课程。",
+        "IEA免费公开可视化已核验；不承诺全部细分数据可免费批量下载。"
+      ]
+    },
+    {
+      "catalog_code": "2026031",
+      "title": "全国三维数字化创新设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026031-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已取得具体要求，尚未核验可独立下载的样题模型包和训练视频；不能称为完整备赛课程。"
+      ]
+    },
+    {
+      "catalog_code": "2026032",
+      "title": "一带一路暨金砖国家技能发展与技术创新大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026032-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "技术创新国际赛页面仅有官方搜索索引，不能计作已读规则；项目申报附件待验证。",
+        "尚缺其他技能赛项独立技术手册和训练资源，不能将代表性两赛项材料套用全系列。"
+      ]
+    },
+    {
+      "catalog_code": "2026033",
+      "title": "第二十五届全国大学生机器人大赛ROBOMASTER",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026033-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未逐份验证2026资料中心所有附件及课程播放状态。",
+        "旧C板示例需要与实际硬件和工具链核对，不能承诺直接适用当前机器人。"
+      ]
+    },
+    {
+      "catalog_code": "2026034",
+      "title": "第十二届全国大学生机械创新设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026034-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "选题问答正文待展开核读；未取得公开优秀作品完整技术报告，不以获奖名单代替案例。"
+      ]
+    },
+    {
+      "catalog_code": "2026035",
+      "title": "第十九届全国大学生先进成图技术与产品信息建模创新大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026035-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "第一轮与后续公开通知赛程不一致，未据早期PDF写报名状态。",
+        "未取得2026完整公开真题包；教程视频已核验索引，未逐个试播，软件授权另行确认。"
+      ]
+    },
+    {
+      "catalog_code": "2026036",
+      "title": "全国大学生节能减排社会实践与科技竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026036-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未取得2026各赛道完整技术评分表及公开完整获奖报告。"
+      ]
+    },
+    {
+      "catalog_code": "2026037",
+      "title": "中国大学生机械工程创新创意大赛-工业工程与精益管理创新赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026037-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未读取赛项官网最新培训、完整评分表和应用报告模板；案例库仅核验平台说明及登录入口，未取得具体案例全文。"
+      ]
+    },
+    {
+      "catalog_code": "2026038",
+      "title": "中国大学生机械工程创新创意大赛-机械产品数字化设计赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026038-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未找到可直接访问的本届官方建模培训或完整优秀作品；已有两项资料均为命题/规则，不冒充实操课程。"
+      ]
+    },
+    {
+      "catalog_code": "2026039",
+      "title": "中国大学生机械工程创新创意大赛-物流技术创意赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026039-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未完整读取官方实施方案中的场地尺寸及评分细则；未取得本届机器人完整开源实现。"
+      ]
+    },
+    {
+      "catalog_code": "2026040",
+      "title": "“中国软件杯”大学生软件设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026040-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "主赛事网站本次直连超时；仅A8资料较完整，其他赛题的专属学习材料未逐题覆盖。",
+        "模型及培训文件只核验官方索引与目标文件页，未验证下载权限或实际可运行性。"
+      ]
+    },
+    {
+      "catalog_code": "2026041",
+      "title": "ACM-ICPC国际大学生程序设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026041-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未逐一整理2026各区域站邀请函细则；报名资格、名额和环境以具体站点通知为准。"
+      ]
+    },
+    {
+      "catalog_code": "2026042",
+      "title": "百度之星·程序设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026042-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未读取需验证码的2026章程附件；未核实最新决赛安排。",
+        "练习题入口由高校通知核验，目标站直连失败；未验证每年真题覆盖范围与账户后权限。"
+      ]
+    },
+    {
+      "catalog_code": "2026043",
+      "title": "全国大学生计算机系统能力大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026043-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未完整核验2026编译系统、CPU等其他赛项的技术方案与配套教程，不能称全赛项学习资料齐全。",
+        "动态竞赛平台未成功读取；OS组织页大部分详细内容仍标2025，不能直接当2026最终规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026044",
+      "title": "全国大学生信息安全竞赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官方公告仅搜索索引可访问，标为search_result；需补读官方2026指南及命题附件。",
+        "未核实完整2026创新实践赛技术文件、往届官方题包和作品源代码；现有技术教材只覆盖Web/API方向。"
+      ]
+    },
+    {
+      "catalog_code": "2026045",
+      "title": "全国大学生信息安全与对抗技术竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026045-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "ISCC常态化实践平台本次打开失败；未登记为可直接使用的题库。",
+        "未找到可完整核查的2026官方公开赛题解析合集。"
+      ]
+    },
+    {
+      "catalog_code": "2026046",
+      "title": "中国大学生服务外包创新创业大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026046-overview"
+      ],
+      "reasons": [],
+      "original_gaps": []
+    },
+    {
+      "catalog_code": "2026047",
+      "title": "中国大学生计算机设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026047-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "网盘下载可能需要登录，未逐一核验模板附件；不使用2023版模板替代2026版。"
+      ]
+    },
+    {
+      "catalog_code": "2026048",
+      "title": "中国高校计算机大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "C4总站本次访问超时，移动应用站为动态空页；未确认八个赛项的完整2026规则。",
+        "移动应用教程仅覆盖一个赛项；其余赛项的赛题、课程和数据集待按赛项补充。"
+      ]
+    },
+    {
+      "catalog_code": "2026049",
+      "title": "2026同济大学国际建造节",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026049-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未找到2026完整公开任务书或逐队获奖作品详解；现有2026实况不替代工程安全与施工指导。"
+      ]
+    },
+    {
+      "catalog_code": "2026050",
+      "title": "UIA 世界大学生建筑设计竞赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "专题页和评审报告本次读取不稳定；评审报告、答疑仅按官方搜索结果登记，未冒充全文核验。"
+      ]
+    },
+    {
+      "catalog_code": "2026051",
+      "title": "UIA-霍普杯国际大学生建筑设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026051-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网下载与回顾栏目本次只有导航，未获得可核查的2026范例作品或模板附件。"
+      ]
+    },
+    {
+      "catalog_code": "2026052",
+      "title": "WUPENICITY城市可持续调研报告国际竞赛（智慧低碳交通）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "identity_or_edition_scope"
+      ],
+      "original_gaps": [
+        "WUPEN官网本次超时，未读到2026原始任务书、评分细则及人数要求。",
+        "尚未证实“智慧低碳交通”是2026限定赛题；不得将其他调研主题排除。"
+      ]
+    },
+    {
+      "catalog_code": "2026053",
+      "title": "WUPENICITY城市设计学生作业国际竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026053-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "WUPEN总入口超时；未获得2026任务书原文和完整提交规格，不能由新闻推断规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026054",
+      "title": "全国大学生花园设计建造竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026054-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本条仅覆盖社区花园赛道；不将它的报名时间、材料或人数规则用于其他花园赛道。"
+      ]
+    },
+    {
+      "catalog_code": "2026055",
+      "title": "全国数字建筑创新应用大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026055-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "比赛平台本次未成功打开，未取得具体免费课程或练习题深链接；不把平台首页当成已读课程。",
+        "参赛收费与软件授权条件见官方指南；免费阅读资料不代表参赛免费。"
+      ]
+    },
+    {
+      "catalog_code": "2026056",
+      "title": "亚洲建筑师协会学生设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026056-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026规则PDF尚未完整读取；不填主题、人数和截止时间。",
+        "2020/2023资源明确为往届参考，不代表2026规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026057",
+      "title": "第十届全国大学生物流设计大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "identity_or_edition_scope"
+      ],
+      "original_gaps": [
+        "第十届全国赛的年份、规则、赛题和报名截止尚未核实；不能用第九届信息替代。",
+        "赛事报名平台本轮访问超时；未确认第十届官方培训课程或获奖方案全文。"
+      ]
+    },
+    {
+      "catalog_code": "2026058",
+      "title": "第十届全国高校智能交通创新与创业大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026058-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "通知图片正文未逐页核查，因此未填报名期限、队伍人数等细节。",
+        "官方附件下载接口返回错误；作品说明书只确认为官方列出的资料入口。",
+        "未核实第十届完整培训录像或公开优秀作品全文。"
+      ]
+    },
+    {
+      "catalog_code": "2026059",
+      "title": "全国大学生电子商务“创新、创意及创业”挑战赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官网动态内容本轮未能直接读取；2026获奖状态依据官方搜索索引，已明确证据级别。",
+        "未核实下一届完整规则；未找到可直接阅读的本届官方训练课程与获奖商业计划书全文。"
+      ]
+    },
+    {
+      "catalog_code": "2026060",
+      "title": "全国大学生市场调查与分析大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026060-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "中国商业统计学会官网栏目本轮超时，全国附件未能读取全文。",
+        "高校通知存在不同阶段日期叙述差异，本轮不据此生成全国统一截止日。",
+        "专家课程是未来安排，未当作已能学习的视频资源；未确认公开优秀调研报告全文。"
+      ]
+    },
+    {
+      "catalog_code": "2026061",
+      "title": "全国大学生机器人大赛-Robocon",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "两份关键材料已确认官方入口，但本轮未能读取其附件全文，均未标成page_read。",
+        "未核实可直接学习的官方公开课程或完整机器人开源代码；不以新闻照片代替技术资料。"
+      ]
+    },
+    {
+      "catalog_code": "2026062",
+      "title": "日本大学生电动方程式汽车大赛（2026）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026062-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本条已明确EV组；未进一步收集完整电气系统开发课程或车队开源设计。",
+        "本地补充规则不能代替所引用的基础Formula SAE规则；目前未把2027更新混入2026资料。"
+      ]
+    },
+    {
+      "catalog_code": "2026063",
+      "title": "日本大学生方程式汽车大赛（2026）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "identity_or_edition_scope"
+      ],
+      "original_gaps": [
+        "学校目录将电动方程式单列，但本条名称没有明确ICV；不得擅自把所有内容标成燃油组。",
+        "官方已有2026结果；2027赛季资料需另行建档，不覆盖2026历史记录。",
+        "本轮收集的是赛制及规则，未取得完整车队设计课程或制造代码库。"
+      ]
+    },
+    {
+      "catalog_code": "2026064",
+      "title": "IF设计奖（IF Design Award）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "identity_or_edition_scope"
+      ],
+      "original_gaps": [
+        "目录未注明专业奖还是学生奖，需先确认校内认定，不能默默替换赛事。",
+        "iF动态网页多次403；已用官方PDF核验专业奖，学生奖信息仅标search_result。",
+        "案例页未读到正文，未将其描述成已分析的完整优秀作品；2027学生奖指南PDF尚未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026065",
+      "title": "红点设计大奖（Red Dot Design Award）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026065-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "学校目录没有指定红点具体赛事，本轮保留三类区别，不生成统一截止日。",
+        "2027 Design Concept入口显示下一轮安排，但本轮不将其等同已开放；完整新年度提交规则仍需在申报时确认。",
+        "案例为作品说明，未取得制造图纸或完整设计过程报告。"
+      ]
+    },
+    {
+      "catalog_code": "2026066",
+      "title": "两岸新锐设计竞赛华灿奖",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026066-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "中国高等教育学会专题页本轮无法读取；官方入口由两所高校通知相互佐证。",
+        "2026章程附件进入下载过渡页，未取得全文；16项定向主题完整任务书尚未核验。",
+        "未找到本轮能直接读取的高质量完整获奖方案或公开教学课；不以获奖新闻冒充训练资料。"
+      ]
+    },
+    {
+      "catalog_code": "2026067",
+      "title": "全国工业设计大赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "identity_or_edition_scope"
+      ],
+      "original_gaps": [
+        "必须由目录负责人确认全国工业设计大赛与全国大学生工业设计大赛是否对应。",
+        "候选官网为动态页面，高校材料要求仅核对到搜索摘要；未核实本目录赛事独立作品库。"
+      ]
+    },
+    {
+      "catalog_code": "2026068",
+      "title": "未来设计师·全国高校数字艺术设计大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026068-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未把教师教学创新大赛NDTC资源混入本学生赛事。",
+        "本轮未逐份阅读所有命题附件或核验公开完整优秀作品。"
+      ]
+    },
+    {
+      "catalog_code": "2026069",
+      "title": "中美青年创客大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026069-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "技术培训目录已核实，但未核验每节视频的登录条件。"
+      ]
+    },
+    {
+      "catalog_code": "2026070",
+      "title": "国际遗传工程机器大赛（IGEM）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "三个学习页本轮未读取到可渲染正文，均如实标search_result；需在普通浏览器逐页核验细项。",
+        "未将报名收费或实验操作成本误写为学习资料免费。"
+      ]
+    },
+    {
+      "catalog_code": "2026071",
+      "title": "全国大学生生命科学竞赛（创新创业类）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "官方站动态内容及通知PDF未能直接展开；本项依据官方/高校搜索摘要，尚需浏览器复核完整评审附件。",
+        "未查到无需登录的当届完整获奖论文集。"
+      ]
+    },
+    {
+      "catalog_code": "2026072",
+      "title": "全国大学生生命科学竞赛（科学探究类）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026072-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "模板及系统手册仅核实到高校搜索索引，附件全文仍待复核；校内报名安排不能套用同济。"
+      ]
+    },
+    {
+      "catalog_code": "2026073",
+      "title": "第十八届全国大学生数学竞赛",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "当届PDF未成功展开，具体考试范围需从官方通知附件再次核对。",
+        "真题目录已核验，但未逐份打开全部题目附件。"
+      ]
+    },
+    {
+      "catalog_code": "2026074",
+      "title": "全国大学生数学建模竞赛(2026)",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026074-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "没有把其他五一赛、美国赛或培训机构题库误列为本赛事官方题库。",
+        "尚未逐份核验2026附件及课程播放权限。"
+      ]
+    },
+    {
+      "catalog_code": "2026075",
+      "title": "全国大学生统计建模大赛（2026）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "赛事站直接访问超时；赛事与培训资料依据官方索引，视频权限需再核验。",
+        "未获取当届优秀论文完整开放集合。"
+      ]
+    },
+    {
+      "catalog_code": "2026076",
+      "title": "美国ASCE大学生土木工程竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026076-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未明确同济目录实际报名的是哪个ASCE子赛项。",
+        "2027规则不能回填成2026报名条件。"
+      ]
+    },
+    {
+      "catalog_code": "2026077",
+      "title": "全国大学生结构设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026077-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "全国官网本轮未获取稳定正文，采用高校公开的全国赛题入口。",
+        "赛题PDF下载页面尚未展开；云南大学模板仅作学习结构参考。"
+      ]
+    },
+    {
+      "catalog_code": "2026078",
+      "title": "全国高校BIM毕业设计创新大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026078-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "当前官网为动态页；第十三届章程、参赛模块和培训课程未读取到完整正文。",
+        "历史页面含更早内容，不将其旧截止时间、软件版本和队伍要求用于当前届。"
+      ]
+    },
+    {
+      "catalog_code": "2026079",
+      "title": "“外研社·国才杯”“理解当代中国”全国大学生外语能力大赛（德语组）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "德语样题内容为网页未展开部分，本次未核对完整题目及答案。",
+        "尚未核对同济选拔及上海赛区具体安排。"
+      ]
+    },
+    {
+      "catalog_code": "2026080",
+      "title": "“外研社·国才杯”“理解当代中国”全国大学生外语能力大赛（日语组）",
+      "batch": "001-089",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "no_supported_event_introduction"
+      ],
+      "original_gaps": [
+        "日语样题完整题目及答案尚未展开读取。",
+        "未核对同济选拔安排；基础日语教材不是赛事指定教材。"
+      ]
+    },
+    {
+      "catalog_code": "2026081",
+      "title": "“外研社·国才杯”“理解当代中国”全国大学生外语能力大赛（英语组）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026081-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "其他赛项及本校、省赛报名安排仍需分别核对。"
+      ]
+    },
+    {
+      "catalog_code": "2026082",
+      "title": "第31届“21世纪杯”全国英语演讲比赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026082-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未获取可核对内容的本届选手演讲视频或完整优秀演讲稿。",
+        "ESU手册正文仅搜索索引可读，下载访问待确认。"
+      ]
+    },
+    {
+      "catalog_code": "2026083",
+      "title": "第九届“外教社杯”全国高校学生跨文化能力大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026083-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未逐一播放往届视频或下载全部研修附件。"
+      ]
+    },
+    {
+      "catalog_code": "2026084",
+      "title": "全国大学生英语竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026084-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网为动态页面，本次未取得2026完整样题与配套听力。",
+        "部分高校通知沿用旧题型描述，与调整提醒存在差异，暂不整理成唯一2026题型表。"
+      ]
+    },
+    {
+      "catalog_code": "2026085",
+      "title": "全国大学生光电设计竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026085-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未取得可公开阅读的本届完整培训视频或优秀设计报告。",
+        "平台主页为动态页面，最终赛程变更仍需查询后续官方通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026086",
+      "title": "全国大学生物理实验竞赛（创新）（2026）",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026086-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本次没有取得可核对的2026完整优秀作品报告或培训回放。",
+        "大学生物理实验讲课类别的完整细则需另行补齐，不能以命题类规则代替。"
+      ]
+    },
+    {
+      "catalog_code": "2026087",
+      "title": "第三届全国大学生职业规划大赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026087-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "第三届已属于历史赛季，后续参赛须等待并核对新一届通知。",
+        "成长赛道PDF正文访问超时；本次未取得可公开核对的完整获奖展示PPT。"
+      ]
+    },
+    {
+      "catalog_code": "2026088",
+      "title": "全国大学生医学创新大赛暨“一带一路”国际竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026088-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网直接访问超时，最新更正和后续届次需另行核对。",
+        "未取得可公开核对的完整优秀医学参赛作品及本届培训回放。"
+      ]
+    },
+    {
+      "catalog_code": "2026089",
+      "title": "大学生数字媒体科技作品及创意竞赛",
+      "batch": "001-089",
+      "result": "product",
+      "record_ids": [
+        "m89-2026089-overview"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未取得本届参赛指南附件的完整可读内容，不能仅凭首页推断全部赛道细则。",
+        "优秀案例未提供可核对的公开源码；Blender手册直接访问待确认。"
+      ]
+    },
+    {
+      "catalog_code": "2026090",
+      "title": "第八届中华经典诵写讲大赛“诵读中国”经典诵读大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c90-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济校内组织、推荐名额与截止日期未找到。"
+      ]
+    },
+    {
+      "catalog_code": "2026091",
+      "title": "米兰设计周-中国高校设计学科师生优秀作品展及专项赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c91-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "统一精确截止时刻、各赛道作者人数和同济安排仍待对应分赛区通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026092",
+      "title": "全国大学生广告艺术大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c92-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "上海赛区与同济校内收件期限未核定。"
+      ]
+    },
+    {
+      "catalog_code": "2026093",
+      "title": "中国好创意暨全国数字艺术设计大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c93-2025-2",
+        "curated-c93-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "第20届正式简章附件链接尚未完整取得；具体赛道评分、上海截止时间未核定。",
+        "回溯到2025第19届全国简章和官方Q&A；2026未来包装专项另存学习附件，专项截止不能套给2026常规赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026094",
+      "title": "全国大学生微结构摄影大赛（上海赛区）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c94-2022-2"
+      ],
+      "reasons": [
+        "c94-2024-1:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026及2025正式细则未找到；2024公开通知仅为其他学校选拔。",
+        "上海赛区及同济组织办法仍缺；2024校内规则与2022全国规则分档，人数不混用。"
+      ]
+    },
+    {
+      "catalog_code": "2026095",
+      "title": "上海市先进材料创新创意大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c95-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "旧名称与新名称衔接有历史记录，但明确更名公告未取得；发布前需确认目录身份。"
+      ]
+    },
+    {
+      "catalog_code": "2026096",
+      "title": "VEX机器人亚洲公开赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c96-2025-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026—2027亚洲公开赛高校组详细通知未找到；2025页面付款日期误显示2024，不写成事实。"
+      ]
+    },
+    {
+      "catalog_code": "2026097",
+      "title": "高校电气电子工程创新大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c97-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济组织与校内选拔截止未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026098",
+      "title": "国际青年人工智能大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c98-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "上海赛区报名与同济校内期限、部分专项评分和材料规格待发布或补读。"
+      ]
+    },
+    {
+      "catalog_code": "2026099",
+      "title": "国际先进机器人及仿真技术大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c99-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026章程和各赛项评分附件未完整取得，官网为动态页面。",
+        "已检索上一届，但当前网页404，赛项技术评分附件尚未取得；不宣称完整技术细则。"
+      ]
+    },
+    {
+      "catalog_code": "2026100",
+      "title": "全国大学生电子设计竞赛嵌入式系统专题赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c100-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济名额、校内选拔与平台领取安排未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026101",
+      "title": "全国大学生电子设计竞赛信息技术前沿专题赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c101-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同一正文的决赛选题期限出现4月15日与4月30日两种说法，不写成唯一截止；须后续通知核对。"
+      ]
+    },
+    {
+      "catalog_code": "2026102",
+      "title": "全球人工智能技术创新大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c102-2024-2"
+      ],
+      "reasons": [
+        "c102-2025-1:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "未找到2026完整通知；2025官网证书链失败，公开正式报道没有给报名资格、人数及评分。",
+        "2024评估协议、队伍人数和模型提交限制仍未完整读取，不能将算法赛规则用于2025硬件赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026103",
+      "title": "智能无人系统应用挑战赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c103-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "各赛项人数、设备及评审以专用版本为准；已归档无人车避障3.0规则，不推广到全部项目。"
+      ]
+    },
+    {
+      "catalog_code": "2026104",
+      "title": "中国智能机器人格斗及竞技大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c104-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "具体赛项的技术规则和评分须在官网选对应项目；时间标为拟定。"
+      ]
+    },
+    {
+      "catalog_code": "2026105",
+      "title": "FDI模拟投资仲裁竞赛（FDI Moot）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c105-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本机官网PDF下载403；关键条款曾通过官网网页读取，完整2026中国资格、人数和截止须补充确认。",
+        "通用规则修订日期为2024-11-25，不按下载时间改写；已回溯2025届联合国官方备赛目录与赛程。"
+      ]
+    },
+    {
+      "catalog_code": "2026106",
+      "title": "国际公法模拟法庭竞赛（Phillip C. Jessup）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c106-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "中国赛区补充规则及确切报名/书状期限未完整复核，不借用2027期限。"
+      ]
+    },
+    {
+      "catalog_code": "2026107",
+      "title": "国际商事模拟仲裁庭辩论赛（Vis Moot）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c107-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济选拔及Vis East参赛选择未确定；完整作者资格与人数以该届规则为准。"
+      ]
+    },
+    {
+      "catalog_code": "2026108",
+      "title": "国际刑事法院模拟法庭竞赛（ICC）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c108-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "中国赛区与同济选拔的书状截止和报名安排未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026109",
+      "title": "红十字国际人道法模拟法庭比赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c109-2025-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已搜索2026第20届中国通知，未找到详细规则；采用最近已读完整的2025届。"
+      ]
+    },
+    {
+      "catalog_code": "2026110",
+      "title": "全国法律英语大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c110-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "全国1号通知、完整参赛资格及评分标准未全部读到。"
+      ]
+    },
+    {
+      "catalog_code": "2026111",
+      "title": "上海市大学生模拟法庭",
+      "batch": "090-130",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c111-2025-1:identity_or_core_evidence",
+        "c111-2024-2:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026细则未找到；2025、2024市赛搜索仍以报道为主，未取得完整市赛规则。2017上政杯为校内选拔，只留备赛参考。",
+        "本轮仅找到2份与本赛直接相关且可说明内容的学习资料；未用无关课程凑数。",
+        "已检索实际上一届2024第九届，仍仅找到报道，未取得市赛完整案件包与评分规程；2017上政杯仅相关校赛参考。"
+      ]
+    },
+    {
+      "catalog_code": "2026112",
+      "title": "全国大学生地球物理知识竞赛（2026）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c112-2019-2"
+      ],
+      "reasons": [
+        "c112-2026-1:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "已检索2025第十届、2024第九届、2023第八届；可见公开报道，未取得最新完整赛务附件。",
+        "该附件本机未下载成功，关键流程通过官方PDF阅读；最新报名、人数、题库及同济安排仍缺。"
+      ]
+    },
+    {
+      "catalog_code": "2026113",
+      "title": "全国大学生地质技能竞赛（2026）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c113-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济选拔、推荐团队和校内材料截止未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026114",
+      "title": "全国大学生海洋知识竞赛（2026）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c114-2026-1",
+        "curated-c114-2024-2"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "大学生专项细则、人数和报名截止未取得；原附件扩展名docx但内容为DOC，已保留原件并转换文本。",
+        "回溯第14届仍是一般活动通知，未取得大学生专项细则；不拿海洋大学第14届校赛冒充全国第14届。"
+      ]
+    },
+    {
+      "catalog_code": "2026115",
+      "title": "2026“上纬杯”第十一届全国大学生复合材料设计与制作大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c115-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "第3—5页具体测试与评分仍以留存原件为准，提取文本尚未逐页校对；同济选拔未找到。"
+      ]
+    },
+    {
+      "catalog_code": "2026116",
+      "title": "2026国际空间科学与载荷大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c116-2025-2",
+        "curated-c116-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026最终人数、评审、精确截止缺；已回溯2025官方Guideline链接，但本机TLS失败，不能声称已全文留存。",
+        "上一届指南访问受限，完整材料要求及实际终版赛程未复核。"
+      ]
+    },
+    {
+      "catalog_code": "2026117",
+      "title": "2026年教育部本科毕业设计成果展（航空专业）",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c117-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "目录写教育部成果展，正式主办为航空航天类专业教指委；同济推荐名单和校内期限未找到。"
+      ]
+    },
+    {
+      "catalog_code": "2026118",
+      "title": "2026年上海市未来飞行器设计大赛",
+      "batch": "090-130",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c118-identity-1:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026与上一届上海市未来飞行器正式细则未找到；2018第8届及2023第12届线索均为同济校赛，且2023附件含2022日期，分开保留。"
+      ]
+    },
+    {
+      "catalog_code": "2026119",
+      "title": "2026中国大学生飞行器设计创新大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c119-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "精确东部赛区与全国报名截止在关联公众号通知，尚未完整读取；不凭系统入口推断开放状态。"
+      ]
+    },
+    {
+      "catalog_code": "2026120",
+      "title": "第七届国际大学生工程力学竞赛（亚洲赛区）",
+      "batch": "090-130",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c120-2026-1:no_supported_public_fact",
+        "c120-2025-2:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026一号通知原件未取得；已检索2025第六届及承办方入口，公开资料仍以校内选拔及结果为主。",
+        "上一届全国完整评分和报名附件未取得，不能将宁波校赛规则包装为总决赛规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026121",
+      "title": "第七届力学超材料大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c121-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "人数原文为一般不超过，不填硬性全赛人数上限；同济汇总安排未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026122",
+      "title": "第七届上海市大学生力学竞赛个人赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-shanghai-mechanics-2026-7"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "两目录关联同一个赛事届次；团体人数3不套给个人赛，同济校内截止尚未找到。"
+      ]
+    },
+    {
+      "catalog_code": "2026123",
+      "title": "第七届上海市大学生力学竞赛团体赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-shanghai-mechanics-2026-7"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "两目录关联同一个赛事届次；团体人数3不套给个人赛，同济校内截止尚未找到。"
+      ]
+    },
+    {
+      "catalog_code": "2026124",
+      "title": "第十届“光威杯”中国复合材料学会大学生科技创新竞赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c124-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "确切截止时刻与后续赛区/决赛补充通知待补，不能猜6月30日。"
+      ]
+    },
+    {
+      "catalog_code": "2026125",
+      "title": "第五届国际奥林匹克互联网学科竞赛“材料力学”",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c125-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济选拔与是否统一报名未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026126",
+      "title": "第五届国际奥林匹克互联网学科竞赛“理论力学”",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c126-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "未获得同济选拔及各轮精确时段、报名表留存附件。"
+      ]
+    },
+    {
+      "catalog_code": "2026127",
+      "title": "中国大学生机械工程创新创意大赛-“欧波同杯”失效分析赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c127-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "首轮扫描通知未给全部最终报名日期；官网出现后续日程，须对应赛区通知，未混为同济截止。"
+      ]
+    },
+    {
+      "catalog_code": "2026128",
+      "title": "“SCIP+”绿色化学化工创新创业大赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c135-fe3f1f98",
+        "curated-c135-17bb43de"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "目录第128与135是同一赛事，复用已入库届次，不新建。"
+      ]
+    },
+    {
+      "catalog_code": "2026129",
+      "title": "全国大学生电化学测量技术竞赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c129-2026-1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "最终决赛具体日期须以后续通知为准；初轮区间与官网日期分别保留，不当报名期限。"
+      ]
+    },
+    {
+      "catalog_code": "2026130",
+      "title": "全国大学生化学实验竞赛",
+      "batch": "090-130",
+      "result": "product",
+      "record_ids": [
+        "curated-c130-2024-2"
+      ],
+      "reasons": [
+        "c130-2026-1:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026章程链接本机TLS失败，未获得可完整读取的2026总赛通知；实际上一届为2024第十三届，不是2025。",
+        "完整2024规程PDF下载TLS失败，采用公开命题作者论文补充备赛；精确资格人数与同济选拔仍需原规程。"
+      ]
+    },
+    {
+      "catalog_code": "2026131",
+      "title": "全国化学类专业大学生科技活动交流",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c131-7ac66d1d"
+      ],
+      "reasons": [
+        "c131-e547b01c:campus_selection_only"
+      ],
+      "original_gaps": [
+        "2026仅取得外校选拔通知；回溯2025第九届仍为同校遴选，报名表标题误写第八届。全国报名及同济名额、墙报规格仍缺。"
+      ]
+    },
+    {
+      "catalog_code": "2026132",
+      "title": "上海市大学生化学化工优秀毕业论文（设计）大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c132-022f9bc6:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026、2025报道及2024历届入口已查；未取得推荐文件、评审表、论文模板和同济校内期限。"
+      ]
+    },
+    {
+      "catalog_code": "2026133",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（环境设计类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c133-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "4月6日与4月7日日期冲突、展板附件尺寸与格式冲突保留；同济内部提交安排未知。"
+      ]
+    },
+    {
+      "catalog_code": "2026134",
+      "title": "DWA全球高校挑战赛中国选拔赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c134-506ac9fd:no_supported_public_fact",
+        "c134-533052b6:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026新届已有正式赛后报道；2025亦仅取得任务说明，缺推荐资格、报名表及评分细目。"
+      ]
+    },
+    {
+      "catalog_code": "2026135",
+      "title": "SCIP+绿色化学化工创新创业大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c135-fe3f1f98",
+        "curated-c135-17bb43de"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "人数上限和详细评分表未获得；指定命题公众号正文未完整读取，不能推测其限制。"
+      ]
+    },
+    {
+      "catalog_code": "2026136",
+      "title": "全国大学生市政环境类创新实践能力大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c136-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本科生全国规则、材料和评分已读；产业、国际各自详细评分仍待读取。同济具体校选组织安排及决赛后续通知需补。"
+      ]
+    },
+    {
+      "catalog_code": "2026137",
+      "title": "全国环境友好科技竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c137-e16589fc:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "评分附件、官方指导手册与完整赛程图片尚需留存；未在报名系统登录核验或提交。"
+      ]
+    },
+    {
+      "catalog_code": "2026138",
+      "title": "世界技能大赛上海选拔赛（水处理技术）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c138-df78af99:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "公开取得的是2024上海预报名安排，非2026决赛报名。水处理项目技术文件及同济推荐仍未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026139",
+      "title": "长三角大学生可持续水处理竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "教学简介仅说明大学生水处理科技竞赛推广，缺少与长三角可持续水处理赛事的同一身份材料。"
+      ],
+      "original_gaps": [
+        "已检索2026、2025、2024及全名；未找到独立章程。长三角低碳水系统创新大赛名称不同，未合并。"
+      ],
+      "recheck": {
+        "catalog_code": "2026139",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "教学简介仅说明大学生水处理科技竞赛推广，缺少与长三角可持续水处理赛事的同一身份材料。",
+        "sources": [
+          {
+            "url": "https://sese.tongji.edu.cn/szdw/zyjs/js/L/ll1/jxky.htm",
+            "access_status": "retrieved",
+            "snapshot": "d5adee93cefb70843da3a98f279d24d7c9ab883cee3e6be8e5e0c3dd05190b80.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026140",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（互联网+文创类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c140-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济收件方式和校内截止未取得；外校校选日期跨年错误未有更正依据；市赛评分及通用材料原件仍待补。"
+      ]
+    },
+    {
+      "catalog_code": "2026141",
+      "title": "Apple WWDC Students Scholarship",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c141-1c63abb5"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026评分不公开分值；来年规则与入口开放时间需新通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026142",
+      "title": "CCF大数据与计算智能大赛（BDCI）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c142-a39e8c55:identity_or_core_evidence",
+        "c142-81adbd0d:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026系列页直接访问未取得赛题正文；2025官方总结亦未附逐题规则，人数、数据许可、指标与提交截止按具体赛题待补。"
+      ]
+    },
+    {
+      "catalog_code": "2026143",
+      "title": "CCF大学生计算机系统与程序设计竞赛（CCSP）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c143-17bb43de"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "9月14日赛场携物新规已单独关联，优先于旧版手册；报名资格仍须在个人账户中确认。"
+      ]
+    },
+    {
+      "catalog_code": "2026144",
+      "title": "CCPC全国大学生程序设计竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c144-c32e1208",
+        "curated-c144-5cb711d6"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "总决赛邀请函不含全年各站资格和题目评测细则；2026新赛季站点须另建届次，不能共用该历史截止。"
+      ]
+    },
+    {
+      "catalog_code": "2026145",
+      "title": "蓝桥杯全国软件和信息技术专业人才大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c145-ffad5fb2"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已取得赛规附件入口；未逐项读完全部20个附件，同济报名截止和缴费安排未核得。"
+      ]
+    },
+    {
+      "catalog_code": "2026146",
+      "title": "码蹄杯全国大学生程序设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c146-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官方报名页面跳转2026专题，但正文需动态加载；全国最终报名期限、决赛规程未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026147",
+      "title": "强网杯全国网络安全挑战赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c147-7ac66d1d"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026未取得正式细则；2025公告不含人数、环境和精确报名截止。继续保留为部分信息，不冒充完整规程。"
+      ]
+    },
+    {
+      "catalog_code": "2026148",
+      "title": "全国大学生软件创新大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c148-79c641ae"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "规则PDF与赛题ZIP下载接口出现验证码，尚未留存附件；正文规则可读，命题详细技术约束须继续取可读正式附件。"
+      ]
+    },
+    {
+      "catalog_code": "2026149",
+      "title": "上海市大学生程序设计竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c149-fe3f1f98:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026年7月26日新届可由学院新闻列表确认，但缺详细规则；2025往届同样仅有报道。不能套用华东师大早年常规程序设计赛人数与题制。"
+      ]
+    },
+    {
+      "catalog_code": "2026150",
+      "title": "上海市大学生计算机应用能力大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c150-53afeab2:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "同济通知搜索索引正文可读，源页直连404；四份附件暂未留存，十一类细则与评分按市赛附件继续核对。"
+      ]
+    },
+    {
+      "catalog_code": "2026151",
+      "title": "上海市大学生网络安全大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c151-160c7017"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "3人/4人队伍与4月20日报名出现在上海海事校选段，暂不提升为全国或同济条件；2026正式规程仍缺。"
+      ]
+    },
+    {
+      "catalog_code": "2026152",
+      "title": "网鼎杯网络安全大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c152-6384ce25"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026新届未检得详细通知；第四届团队人数、赛题与半决赛细则仍需官网附件，直接页未返回可读正文。"
+      ]
+    },
+    {
+      "catalog_code": "2026153",
+      "title": "“天作奖”国际大学生建筑设计竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c153-fe3f1f98:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "作品展不能证明2026征稿启动；2025也未取得主办原件，暂不生成具体届次。"
+      ]
+    },
+    {
+      "catalog_code": "2026154",
+      "title": "ASLA 学生竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c154-b18754c5"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "注册系统未登录；需选定具体类别后核对该类别全部材料，不把一般设计类规格套给研究或传播类。"
+      ]
+    },
+    {
+      "catalog_code": "2026155",
+      "title": "IFLA 国际学生竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c155-ffcfd903"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026机制变化另存；采用2025完整任务书作历史备赛。FAQ与主页GMT/CET写法不一致，不换算单一截止时刻。"
+      ]
+    },
+    {
+      "catalog_code": "2026156",
+      "title": "ULI Hines Student Competition",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c156-3a53bb07"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026介绍不含完整题书；2025资格、图板规格和报名平台全文未确认，不套用美国赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026157",
+      "title": "WUPENICITY城市可持续调研报告国际竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "目录为城市可持续调研报告赛，现有核心事实与人数、图纸要求实际属于同一联合通知的城市设计赛道；缺少调研赛对应段落的可靠映射。"
+      ],
+      "original_gaps": [
+        "2026当届及2025国际正式报名入口仍需补；已读2025完整外校赛道转发规则，不采用其校内邮箱和日期。"
+      ]
+    },
+    {
+      "catalog_code": "2026158",
+      "title": "第六届全国城乡建成遗产保护设计优秀作业评选",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c158-38525312"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "通知正文自称第五届，与目录届次口径需审核；以2026通告保存，不自行改成第六届。同济选送安排及报名表原件需补。"
+      ]
+    },
+    {
+      "catalog_code": "2026159",
+      "title": "国际绿点大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c159-890ba8a8:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2019为可读举办证据，不代表最近一届；缺独立征稿、题目、资格及报名。"
+      ]
+    },
+    {
+      "catalog_code": "2026160",
+      "title": "中国城市规划学会科技奖优秀科技论文专项奖（求是）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "学会首页含科技奖和论文导航，没有求是优秀科技论文专项奖规程。"
+      ],
+      "original_gaps": [
+        "2026和2025的官方检索均未取得具体规程；暂不将论坛征文当作该专项奖规则，不编造届次。"
+      ],
+      "recheck": {
+        "catalog_code": "2026160",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "学会首页含科技奖和论文导航，没有求是优秀科技论文专项奖规程。",
+        "sources": [
+          {
+            "url": "https://www.planning.org.cn/",
+            "access_status": "retrieved",
+            "snapshot": "e271f0766bd16efc465a4b23f9fde841601426afc86db6314904e9ebc7b92cfd.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026161",
+      "title": "中国风景园林教育大会毕业设计作品",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c161-544ac327"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "发布者为《风景园林》杂志署名账号，图文提供CHSLA教育工作委员会；主办原件未取得，2026细则未获。"
+      ]
+    },
+    {
+      "catalog_code": "2026162",
+      "title": "中国风景园林学会大学生设计竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c162-08c109ee:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026延期通知仅第三方线索；2025作品报道不含完整资格、人数、格式与报名。"
+      ]
+    },
+    {
+      "catalog_code": "2026163",
+      "title": "中国人居环境设计学年奖",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c163-2d154259:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "方案跳转未读；xuenianjiang.com超时，2025只有第三方征集线索，日期与入口不列已核。"
+      ]
+    },
+    {
+      "catalog_code": "2026164",
+      "title": "中国自然资源学会“国地杯”第八届全国大学生自然资源科技作品大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c164-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "附件1—6通过二维码提供，尚未留存模板；同济学院推荐和校内提前截止待核。"
+      ]
+    },
+    {
+      "catalog_code": "2026165",
+      "title": "中日韩风景园林学生竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "来源正文为2023年日中韩景观学术会议与学生Fieldworks工作坊，不能识别为目录学生竞赛。"
+      ],
+      "original_gaps": [
+        "已检索2026、2025和历史中英文名称；不把台湾学生景观竞图或学术工作坊强行绑定为目录赛事。"
+      ],
+      "recheck": {
+        "catalog_code": "2026165",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "来源正文为2023年日中韩景观学术会议与学生Fieldworks工作坊，不能识别为目录学生竞赛。",
+        "sources": [
+          {
+            "url": "https://www.jila-zouen.org/ja-cn-kr/15688",
+            "access_status": "retrieved",
+            "snapshot": "fa17b5d8d4ea676f548ea92e2beb12e7578b5381f4ec6808b005f256d2e70bdd.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026166",
+      "title": "OnSite自动驾驶算法挑战赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c166-d0088f2e"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "10个赛道须分别核对，公路类不可套船舶规则；2026及2025完整接口、人数、提交平台和常态打榜期限未获得。"
+      ]
+    },
+    {
+      "catalog_code": "2026167",
+      "title": "第二十一届全国大学生交通运输科技大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c167-e16589fc"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已取得全国承办方实施方案，替换外校校赛作为主要规则依据；同济具体收件及平台账户仍待补。"
+      ]
+    },
+    {
+      "catalog_code": "2026168",
+      "title": "全国大学生轨道交通科技创新大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c168-e87d918a"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "参赛方式和对象已核实；大赛办法PDF嵌入页未读成功，细评分待补。同济具体推荐流程未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026169",
+      "title": "中国城市轨道交通科技创新创业大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c169-058c7be4"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026及2025未获新规则；2021原文官网URL缺失，旧公众号导航当前可用性未知；2017规则另存。"
+      ]
+    },
+    {
+      "catalog_code": "2026170",
+      "title": "口腔健康科普展示与交流活动",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c170-15a3d671"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "页面更新2025但明确为2023活动；新届未获，作品时长、人数、分值未列。"
+      ]
+    },
+    {
+      "catalog_code": "2026171",
+      "title": "口腔形态技能大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c171-e2b6a304",
+        "curated-c171-f29f92cd"
+      ],
+      "reasons": [
+        "两届交流营通知均列出营内技能比赛日程，作为2025/2026历史知识概览；不将入营申请期限映射为独立竞赛报名。"
+      ],
+      "original_gaps": [
+        "2026及2025通知均未给出比赛牙种、操作时长、指定工具和评分细则；2026网页时间与落款相差4天。两年的营活动均写第十届，未据此推断竞赛届数。"
+      ],
+      "recheck": {
+        "catalog_code": "2026171",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "两届交流营通知均列出营内技能比赛日程，作为2025/2026历史知识概览；不将入营申请期限映射为独立竞赛报名。",
+        "sources": [
+          {
+            "url": "https://dent.tongji.edu.cn/info/1191/11769.htm",
+            "access_status": "retrieved",
+            "snapshot": "b469d8d87210b0963dd78d057d06f25a1214b24cad9479dd1791a1b7617ede15.txt"
+          },
+          {
+            "url": "https://dent.tongji.edu.cn/info/1191/11879.htm",
+            "access_status": "retrieved",
+            "snapshot": "f9165befc9cb811760771d7a9f7de65dace03df83ffc7682bf9d5ac60902079c.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026172",
+      "title": "壳牌汽车环保马拉松亚洲站",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c172-8fc1b357"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "目录亚洲站与卡塔尔站的校方认定仍需审核；2026报名截止未核，当前官网已转2027。"
+      ]
+    },
+    {
+      "catalog_code": "2026173",
+      "title": "中国大学生电动方程式大赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c173-1c6755e8"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "具体报名和技术文件截止需配套时间表；同济车队内部招募不等于官方参赛报名。"
+      ]
+    },
+    {
+      "catalog_code": "2026174",
+      "title": "中国大学生方程式汽车大赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c174-b6d15f41"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "具体报名和技术文件截止需配套时间表；同济车队内部招募不等于官方参赛报名。"
+      ]
+    },
+    {
+      "catalog_code": "2026175",
+      "title": "中国大学生无人驾驶方程式大赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c175-6d639dfb"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "具体报名和技术文件截止需配套时间表；同济车队内部招募不等于官方参赛报名。"
+      ]
+    },
+    {
+      "catalog_code": "2026176",
+      "title": "中国汽车工程学会巴哈大赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c176-3183118f"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026已举办；本轮未取得报名及各项技术报告截止公告。",
+        "A4会员条款与A6表述须结合组委会解释，未填写个人会员为普遍强制条件。"
+      ]
+    },
+    {
+      "catalog_code": "2026177",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（产品设计类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c177-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "学校组织及市级平台阶段已区分；同济校选截止与推荐安排尚未取得，不套用上海海洋大学校内日期。"
+      ]
+    },
+    {
+      "catalog_code": "2026178",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（视觉传达设计类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c178-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已区分常规与XR专项；常规全国/市级截止、同济选送及终评实际开放仍待核实。"
+      ]
+    },
+    {
+      "catalog_code": "2026179",
+      "title": "戴森设计奖",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c179-5ed57b4e"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网详细条款本轮跳转未读成功；团队人数、毕业年限与文件规格仍需规则页核实。"
+      ]
+    },
+    {
+      "catalog_code": "2026180",
+      "title": "全球生物设计挑战赛（Bio Design Challenge）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c180-d68adca6"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "尚未取得2026学校加入费用、队伍人数上限与正式报名截止；通用评价页独立标注核验日，避免后续更新覆盖年度规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026181",
+      "title": "水晶客舱奖（Crystal Cabin Award）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c181-10664df9:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026、2025报名规程原件仍缺，申请平台现已转2027。"
+      ]
+    },
+    {
+      "catalog_code": "2026182",
+      "title": "第十七届丘成桐大学生数学竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c182-ffad5fb2"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网两份历年真题包已留存；包含不同年题目与部分解析，不将全部真题标为均有答案。"
+      ]
+    },
+    {
+      "catalog_code": "2026183",
+      "title": "美国大学生数学建模竞赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c183-9c6e3b15"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026部分题目链接回到结果页；主页转2027，2026通用规则未完整恢复。优秀论文全文可能需会员。"
+      ]
+    },
+    {
+      "catalog_code": "2026184",
+      "title": "全国大学生创新体验竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c184-5346ce75"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "通知、章程已归档并补全分主题要求；同济联络与内部截止未取得，主题申报模板需按学校分发版本确认。"
+      ]
+    },
+    {
+      "catalog_code": "2026185",
+      "title": "国际大学生混凝土龙舟邀请赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c185-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "完整赛题已留存；前言写端午节前、表格写6月26—28日且部分场地文字沿用旧版，需保留内部冲突；尚未取得最终秩序册。"
+      ]
+    },
+    {
+      "catalog_code": "2026186",
+      "title": "海峡两岸青少年创客大赛-结构挑战",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c186-160c7017:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026未获细则，已查2025及2023总通知；结构挑战分赛道完整尺寸、材料、加载及评分要求仍未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026187",
+      "title": "全国大学生“茅以升公益桥—小桥工程”创新设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c187-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "全国报名及交件节点已与外校选拔分开；实施方案附件下载返回503，仍缺桥址技术约束及正式秘书处交件地址。"
+      ]
+    },
+    {
+      "catalog_code": "2026188",
+      "title": "全国大学生加筋挡土墙设计竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c188-48672326:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "全国模型材料、尺寸和评分附件未读；外校4月15日与5月10日不可用作同济期限。"
+      ]
+    },
+    {
+      "catalog_code": "2026189",
+      "title": "全国高等学校木结构设计竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c189-160c7017:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2025第十届12月13日决赛已核；2026未获新届，仍缺完整题书、人数、报名与格式。"
+      ]
+    },
+    {
+      "catalog_code": "2026190",
+      "title": "上海市大学生“创造杯”大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c190-17bb43de:campus_selection_only"
+      ],
+      "original_gaps": [
+        "现有为外校校选，资格、人数和市赛安排需与全市章程再核；同济报名组织和日期未知。"
+      ]
+    },
+    {
+      "catalog_code": "2026191",
+      "title": "世界大学生桥梁设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c191-56b1e125"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已读19页全国通知含完整赛题与评分，待归档并核验关键图表；同济内部盖章和收件安排未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026192",
+      "title": "“德语之星”全国高校德语演讲比赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c192-35ef9e26"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "正式初赛条件和两阶段日期已齐；决赛具体安排以后续通知为准。"
+      ]
+    },
+    {
+      "catalog_code": "2026193",
+      "title": "“卡西欧杯”中国日语专业本科生·研究生演讲辩论大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c193-53afeab2"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "初赛通知将本硕博合并描述，未说明分组差异，不编造分组；同济选拔及决赛辩论规则待补。"
+      ]
+    },
+    {
+      "catalog_code": "2026194",
+      "title": "“人民中国杯”日语国际翻译大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c194-fd6103ee"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026、2025未取得主办新规；第五届报名门户不是完整章程，采用可读的第四届详细规则并保留原记录供纠错审计。"
+      ]
+    },
+    {
+      "catalog_code": "2026195",
+      "title": "“外教社·词达人杯”全国大学生英语词汇能力大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c195-c9ee3e33"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已明确报名平台与训练入口，同济专属二维码、校赛时间及精确人数晋级依据仍需同济或全赛章程。"
+      ]
+    },
+    {
+      "catalog_code": "2026196",
+      "title": "“扎雅杯”全国德语配音比赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c196-c9ee3e33"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "直接网页提取为空，本轮从同一官方站搜索索引读得完整细则；当前上传登录状态未测试，历史届次已结束。"
+      ]
+    },
+    {
+      "catalog_code": "2026197",
+      "title": "可持续发展全国青年德语风采大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c197-7ac66d1d:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026未检得完整征集；回溯2025第九届和2024第八届仍主要为报道，缺报名、人数上限及评分量表。"
+      ]
+    },
+    {
+      "catalog_code": "2026198",
+      "title": "全国大学生“用日语讲好中国故事”微视频大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c198-787fbf0f"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026未检得新届完整规则；2025决赛为暂定日期，缺第三号更新通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026199",
+      "title": "全国大学生日语演讲比赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c199-113fbbe7"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "更正：首届通知和决赛均为2024年，原“2024—2025”范围无依据。",
+        "2026、2025新届征集未取得，采用首届完整通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026200",
+      "title": "全国德语写作比赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "原高校PDF目前返回404，旧资料只有目录身份线索，无正式赛事通知。"
+      ],
+      "original_gaps": [
+        "2026、2025及不限定年份的检索均未得到全国赛事正式通知；不与外研社德语综合能力赛混同，不编造届次。"
+      ],
+      "recheck": {
+        "catalog_code": "2026200",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "原高校PDF目前返回404，旧资料只有目录身份线索，无正式赛事通知。",
+        "sources": [
+          {
+            "url": "https://waiyu.usst.edu.cn/_upload/article/files/c3/0d/55ef147c4dcca83e7c8459ba366e/83167ab2-de90-4ad4-8e08-8c932f1afc5a.pdf",
+            "access_status": "unavailable",
+            "snapshot": null
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026201",
+      "title": "全国高校本科生德语配音大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c201-55584f08"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "初赛资格人数时长与邮件节点已齐；决赛日期与方案另行通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026202",
+      "title": "全国高校德语专业本科生学术创新大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c202-c9ee3e33:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026及2025完整征稿未取得；报道确认赛道和案例，不能推出每队最多3人或统一报名期限。"
+      ]
+    },
+    {
+      "catalog_code": "2026203",
+      "title": "全国高校德语专业大学生德语辩论赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c203-d1d687c9",
+        "curated-c203-a22ec89f"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026未检得新通知，采用2025完整规则。",
+        "同济校内选拔与截止时间未公开核得。"
+      ]
+    },
+    {
+      "catalog_code": "2026204",
+      "title": "全国医学英语词汇竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c204-1081cbf2:identity_or_core_evidence",
+        "c204-9eeb799e:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026及2025征集细则未取得；新增2025第四届正式举办报道，不能把学术英语词汇赛或外文奖规则混入。",
+        "比赛用词表、题型、报名平台及同济安排仍待原始通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026205",
+      "title": "上海市第二届学术英语演讲比赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c205-42ac972d"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "启动通知已补学校名额与报名路径；附件中的演讲时长、组别评审要求还需补，不能沿用5分钟科研赛或3MT时限。"
+      ]
+    },
+    {
+      "catalog_code": "2026206",
+      "title": "笹川杯全国高校日本知识大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c206-3f07de37"
+      ],
+      "reasons": [
+        "c206-c098e854:edition_unspecified"
+      ],
+      "original_gaps": [
+        "2026、2025未取得完整征集；2024举办资料已查。当前2015附件仅包含比赛流程，不含报名资格、完整题库或报名入口。",
+        "不能把日本研究论文赛的对象、投稿办法写入本知识赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026207",
+      "title": "笹川杯日本研究论文大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c207-82616517:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026、2025征稿细则未取得，保留2025第八届报道。",
+        "主办项目页、研究论文、知识赛及品书征文分别核对；暂不将其他笹川杯报名邮箱移用。"
+      ]
+    },
+    {
+      "catalog_code": "2026208",
+      "title": "亚太青年模拟APEC大会",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c208-304abee4:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026/2025完整全国招募规则未取得；采用2024正式校选说明了解赛制，外校问卷不可当作同济入口。"
+      ]
+    },
+    {
+      "catalog_code": "2026209",
+      "title": "中国大学生5分钟科研英语演讲大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c209-c3b5abfc"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "研究成果、视频时长和平台已补；同济赛区及截止、后续赛程和评分细表待补。"
+      ]
+    },
+    {
+      "catalog_code": "2026210",
+      "title": "中国人日语作文大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c210-22a31aed"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "本轮主办2026入口502；2025/2024细则未取得。21/22届混写、全国提交地址与截止待核，保留部分信息。"
+      ]
+    },
+    {
+      "catalog_code": "2026211",
+      "title": "中华全国日语演讲比赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c211-2f05c3c1"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "华东及同济报名材料与截止未取得；西北10月15日、WPS收件表和赛区资格不可套用。"
+      ]
+    },
+    {
+      "catalog_code": "2026212",
+      "title": "国际大学生物理竞赛（2026）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c212-78484d8c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026专页开赛时区及现行AI规则已核对；未执行支付或注册。普通规则为常驻页，后续更新应另存版本。"
+      ]
+    },
+    {
+      "catalog_code": "2026213",
+      "title": "全国部分地区大学生物理竞赛（上海赛区）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c213-50e3f7aa"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026、2025公开搜索仍未得到同济新通知；原文报名四组但奖励称三组，保留文字差异。"
+      ]
+    },
+    {
+      "catalog_code": "2026214",
+      "title": "中国大学生物理学术竞赛（2026）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c214-f538f2a3:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "上海师大校选页2月15日截止早于3月8日发布，且属于外校；同济人数、材料与期限仍待正式招募。"
+      ]
+    },
+    {
+      "catalog_code": "2026215",
+      "title": "全国大学生智能技术应用大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c215-55584f08:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "全国通知附件下载要求验证码，未读取；桂林8月2日校选和人数条件不能确认为同济或全国规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026216",
+      "title": "医学虚拟仿真实验创新大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c216-6334b09e:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026、2025及2023检索未找到能够确认同一赛事的新届细则；最近可读材料仍为首届报道。",
+        "缺报名、团队人数、仿真作品规范和评分；国家虚拟仿真实验教学项目认定不等于本竞赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026217",
+      "title": "“半夏的纪念”北京国际大学生影像展",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c217-4445a551"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026/2025/2024未取得更新完整征片，继续采用2023规则；不把北影节其他短视频单元误认为本赛事。"
+      ]
+    },
+    {
+      "catalog_code": "2026218",
+      "title": "“国青杯”高校艺术设计作品展评",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c218-674deeac"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026秋期仅检得第三方征集线索，未取得正式原件；春期规则不套用秋期。",
+        "作品登记表的可编辑原文件尚缺。"
+      ]
+    },
+    {
+      "catalog_code": "2026219",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（数媒、动画类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c219-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已保存类别通知及压缩包；公告提及的完整作品要求、汇总表和报名表尚需对应市级版本补齐。",
+        "同济校内报送邮箱、遴选条件和截止日期未核定。"
+      ]
+    },
+    {
+      "catalog_code": "2026220",
+      "title": "ACP世界大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c220-a77d9cc4"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "参赛主题与评分表为图像，本轮未逐项人工提取；年龄计算日和晋级认证条件需完整竞赛章程进一步核对。"
+      ]
+    },
+    {
+      "catalog_code": "2026221",
+      "title": "白玉兰国际音乐节",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c221-a02b2513"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026全国章程未取得；2025宁波赛区页本轮404，不能将地区规则作为所有赛区统一规则。",
+        "组别、年龄、曲目、费用及同济报名资格未完成核定。"
+      ]
+    },
+    {
+      "catalog_code": "2026222",
+      "title": "北京国际电影节“游戏•动漫•电影单元”高校动画短片、漫画作品评选",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c222-02b30697"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "网盘内报名表未读取，邮件文件命名和单文件大小尚未核得；本活动免费但赴现场交通食宿自理。"
+      ]
+    },
+    {
+      "catalog_code": "2026223",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（戏剧舞蹈类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c223-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "同济推荐截止待核；附件要求片段及完整版却限1个视频，提交组合方式存在歧义，不能擅自合并解释。"
+      ]
+    },
+    {
+      "catalog_code": "2026224",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（音乐艺术类）",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c224-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已保存类别通知及压缩包；公告提及的完整作品要求、汇总表和报名表尚需对应市级版本补齐。",
+        "同济校内报送邮箱、遴选条件和截止日期未核定。"
+      ]
+    },
+    {
+      "catalog_code": "2026225",
+      "title": "第十一届“汇创青春”——大学生文化创意作品展示活动（综合类（影视））",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c225-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "正式附件与影视报名表已归档；市级最终征集截止尚未取得，视频类与剧本类身份要求分别解释。"
+      ]
+    },
+    {
+      "catalog_code": "2026226",
+      "title": "法国巴黎音乐艺术大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "来源为PMAC/CIMAP中国区获奖报道，缺少主办规程及目录名称对应证据。"
+      ],
+      "original_gaps": [
+        "2026、2025及赛事全名检索未取得主办方正式章程，名称/组别尚待确认，不生成可报名赛事记录。"
+      ],
+      "recheck": {
+        "catalog_code": "2026226",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "来源为PMAC/CIMAP中国区获奖报道，缺少主办规程及目录名称对应证据。",
+        "sources": [
+          {
+            "url": "https://www.jfdaily.com/sgh/detail?id=1719354",
+            "access_status": "retrieved",
+            "snapshot": "7ba65e1196df0477925303fb0511a6440a0bdcb4493311dffe794643d1b98f0b.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026227",
+      "title": "华为影像 · 金鸡手机电影计划",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c227-5d6833eb"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "申报页面需要JavaScript，本轮未读到章程弹窗；时长、拍摄设备素材比例和文件编码不能凭其他手机赛事推断。"
+      ]
+    },
+    {
+      "catalog_code": "2026228",
+      "title": "金犊奖国际竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c228-c9a92ff4"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "具体命题策略单、作品版面规格图片仍须按选题逐项阅读；不得将通用规则替代各命题要求。"
+      ]
+    },
+    {
+      "catalog_code": "2026229",
+      "title": "蓝桥杯大赛视觉艺术设计赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c229-ffad5fb2"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "高校通知对4月27日系统关闭时刻有12:00与14:00两种表述；同济校内期限与全国最终公告未核定，未写统一时刻。",
+        "参赛费须按科目系统核对，不将软件赛收费套入设计赛。"
+      ]
+    },
+    {
+      "catalog_code": "2026230",
+      "title": "李斯特国际青少年钢琴大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c230-c765ed3a:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "官网出现第八届线索，但页面无法稳定读取；第七届具体年份亦未核得。",
+        "已回溯第七届入口，未取得带届次、日期的完整章程；同名国外李斯特比赛不作替代。"
+      ]
+    },
+    {
+      "catalog_code": "2026231",
+      "title": "睿抗机器人开发者大赛CAIA数字文化创意赛道",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c231-377d1d51:no_supported_public_fact"
+      ],
+      "original_gaps": [
+        "2026辽宁通知明确为省级选拔；省平台和渤海校内报名不适用于同济。",
+        "已查全国赛事入口及2025回溯，CAIA对应子赛项完整技术规则和上海/同济报名安排未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026232",
+      "title": "上海大学生国际广告节",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c232-d2024c1a:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026第25届已启动，但启动新闻未列完整征集细则；官网连接失败。",
+        "已实际检索2025第24届，所得细则转载与官方举办报道尚无法交叉确认完整原文，保留为线索。"
+      ]
+    },
+    {
+      "catalog_code": "2026233",
+      "title": "中国大学生创意节",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c233-b8987b7d"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "专项页未给年龄、在籍条件、团队上限及具体登录提交按钮；不能用其替代常规赛规则，先保留专项信息。"
+      ]
+    },
+    {
+      "catalog_code": "2026234",
+      "title": "中国大学生广告艺术节学院奖",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c234-6638ef91"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "通用团队上限6人不适用于文案（限3）；品牌策略单二维码正文未逐个读取，命题特定尺寸与素材授权仍须另核。"
+      ]
+    },
+    {
+      "catalog_code": "2026235",
+      "title": "中国高等院校影视协会年度推优暨“学院奖”大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c235-a372e39c",
+        "curated-c235-a50bab84"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "通知开头称11月1日线上展映，后文日程与第五部分称10月26日，存在内部日程不一致；投稿截止无此冲突。",
+        "原文提供提取码psky，但所见页面未给出可用的表格下载链接，表格附件未留存。"
+      ]
+    },
+    {
+      "catalog_code": "2026236",
+      "title": "中国国际动漫节“金猴奖”",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c236-22a31aed"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026英文正式规则已读，中文常驻页仍为旧届；原文规定中文优先，争议须2026中文规则核定。同济具体收件未取得。"
+      ]
+    },
+    {
+      "catalog_code": "2026237",
+      "title": "中国品牌设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c237-7850adcd"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "已读取官网当前通用规则图，但图片未标所属届次与发布日期，不能认定为第四届或2026最新条款。",
+        "2025—2026第四届举办报道已查；带日期的该届征集通知、截止与费用仍缺。"
+      ]
+    },
+    {
+      "catalog_code": "2026238",
+      "title": "中国青少年音乐比赛•蜂鸟音乐奖",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c238-bf7fe8bc"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026第十一届有第三方章程转载，已读并尝试回到官网，但官网超时；未将转载提升为已核2026规则。",
+        "2025第十届及2026举办记录已查，当前保留2021可核全文作历史训练依据；科目循环和年龄年界不可照搬。"
+      ]
+    },
+    {
+      "catalog_code": "2026239",
+      "title": "中国数据新闻大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c239-5f970c2c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "上海赛区/同济截止和参赛通道仍须该赛区通知确认；海南日期不可直接适用。",
+        "数据新闻与AIGC赛分别收费，金额按通知类别和实际平台核定；本包未进行缴费。"
+      ]
+    },
+    {
+      "catalog_code": "2026240",
+      "title": "博睿杯“我是外交官”全国大学生外交风采大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c240-d8035ecc:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026第16届决赛报道已阅读，但未取得征集通知、选拔范围、人数和评分表。",
+        "已回溯2025第15届及厦大主办方页面，仍无完整公开报名细则。"
+      ]
+    },
+    {
+      "catalog_code": "2026241",
+      "title": "全国土木工程材料作品设计大赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c241-3db361c3:identity_or_core_evidence",
+        "c241-e547b01c:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026第十届及2025回溯未取得完整征集与量化评审表；报名资格、人数、提交期限不从获奖报道推断。"
+      ]
+    },
+    {
+      "catalog_code": "2026242",
+      "title": "上海市土木工程材料知识竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c242-2e9a3463"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2024落款与文内2023比赛日冲突，考试具体日期未确认；2026与2025未获新通知。"
+      ]
+    },
+    {
+      "catalog_code": "2026243",
+      "title": "第14届同济大学应用力学创新竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c243-f7e899af:edition_unspecified"
+      ],
+      "original_gaps": [
+        "网页材料领取写2014但星期与既有2015届标签不一致，年份不宜作为精确期限；仅保存第五届历史练习，不能替代目录第14届。"
+      ]
+    },
+    {
+      "catalog_code": "2026244",
+      "title": "同济大学化学知识竞赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c244-2191d337",
+        "curated-c244-4f33501b"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026第十九届通知未取得；2025原通知与实际比赛日期变化已分开记录，缺正式改期通知和真题。"
+      ]
+    },
+    {
+      "catalog_code": "2026245",
+      "title": "“建环杯”人工环境健康度智能诊断竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "已读2021首届建环杯报道，题目是舒适空调服设计制作，与人工环境健康度智能诊断身份不一致。"
+      ],
+      "original_gaps": [
+        "已检索2026、2025、赛事全名和别名；详情页读取失败，缺正式赛题和身份对应证据。"
+      ],
+      "recheck": {
+        "catalog_code": "2026245",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "已读2021首届建环杯报道，题目是舒适空调服设计制作，与人工环境健康度智能诊断身份不一致。",
+        "sources": [
+          {
+            "url": "https://mefaculty.tongji.edu.cn/info/1022/1654.htm",
+            "access_status": "retrieved",
+            "snapshot": "5b4b9d1f0430ad11181813b7043c5bf1e946cc28340f6fda9e2b31c927944e33.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026246",
+      "title": "济时开讲",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c246-1ad19ead",
+        "curated-c246-184cb976"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2023二维码未验证当前可用；2024以后仅有线索未取得完整新规则。"
+      ]
+    },
+    {
+      "catalog_code": "2026247",
+      "title": "使命与担当",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c247-13811aac",
+        "curated-c247-1467df86"
+      ],
+      "reasons": [
+        "2018与2020官方通知正文可读，收录对应历史届次，保留同济在读本科生等真实院校资格。"
+      ],
+      "original_gaps": [
+        "更近届次细则未取得；第九届考场附件需校内访问。2020资格、题型及课程加分只适用于历史届次。"
+      ],
+      "recheck": {
+        "catalog_code": "2026247",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "2018与2020官方通知正文可读，收录对应历史届次，保留同济在读本科生等真实院校资格。",
+        "sources": [
+          {
+            "url": "https://news.tongji.edu.cn/info/1008/20247.htm",
+            "access_status": "retrieved",
+            "snapshot": "39f3c68a41f11a73a8a726f69687821b022552b9e4a56a024ba8f6f068bb1639.txt"
+          },
+          {
+            "url": "https://tjwm.tongji.edu.cn/info/1005/1176.htm",
+            "access_status": "retrieved",
+            "snapshot": "fbf6e93cbee9ec5de4012fcb4091afeb0712f4c71cd6f42a31918aa82158bd7c.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026248",
+      "title": "“学院杯”中国室内与环境设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c248-b0062f21",
+        "curated-c248-02da82ac"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "官网未给出评分分项权重与截止具体时刻；2025 AIGC专题另存，不并入本届主赛道。"
+      ]
+    },
+    {
+      "catalog_code": "2026249",
+      "title": "中国设计智造奖",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c249-69b5bd4c"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026具体寄件地址和材料格式图未逐项提取；新旧免费截止文字并存，已记录延期栏依据。"
+      ]
+    },
+    {
+      "catalog_code": "2026250",
+      "title": "上海市大学生日语才能演示大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c250-7e926a4a"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "2026未检得详细通知；2025第37届举办报道与主办方服务手册已查。",
+        "手册中的惯例日期不是2026确定赛程；缺同济推荐名额、报名邮箱和截止。"
+      ]
+    },
+    {
+      "catalog_code": "2026251",
+      "title": "同济大学新生德语能力竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c251-c9ee3e33:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026及2025参赛通知和报名二维码未取得，采用德语系2026报道补充赛制线索。",
+        "初赛笔试、决赛朗读口译不等于完整题型与评分细则；德语专业新生是否纳入须以征集通知为准。"
+      ]
+    },
+    {
+      "catalog_code": "2026252",
+      "title": "同济大学创新物理实验设计竞赛（2026）",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "c252-9f176865:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026与2025通知未检得；当前公开页是2024第五届获奖公示而非完整章程。",
+        "页面指向校内私网竞赛平台，不能作为公网报名入口；需校内访问条件，未访问或推断平台内容。"
+      ]
+    },
+    {
+      "catalog_code": "2026253",
+      "title": "同济大学医学院2026年医学生临床综合技能竞赛",
+      "batch": "131-255",
+      "result": "internal",
+      "record_ids": [],
+      "reasons": [
+        "医院2025赛况可证明2021级临床医学对象及综合考核组成，缺少目录2026届参赛规则。"
+      ],
+      "original_gaps": [
+        "2026未找到细则；2025报道不含各站评分量表和权重，需医学院教学通知，不外推其他年级资格。"
+      ],
+      "recheck": {
+        "catalog_code": "2026253",
+        "reviewed_on": "2026-10-04",
+        "conclusion": "医院2025赛况可证明2021级临床医学对象及综合考核组成，缺少目录2026届参赛规则。",
+        "sources": [
+          {
+            "url": "https://www.tongjihospital.com.cn/news/intro/id/162/pid/27264.html",
+            "access_status": "retrieved",
+            "snapshot": "33fdaeda4097e97f223a68f85853ad6b2ee1ea0b86f8050c603eb9b78a5d911a.txt"
+          }
+        ]
+      }
+    },
+    {
+      "catalog_code": "2026254",
+      "title": "“卓越杯”全球治理与中国方案——青年国际胜任力案例设计大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c254-98fbebe0"
+      ],
+      "reasons": [
+        "c254-47df38bb:identity_or_core_evidence"
+      ],
+      "original_gaps": [
+        "2026未检得详细通知；已回溯2025第三届、2024第二届报道，采用2023首届完整细则作历史依据。",
+        "2023规则不可用于推断新一届资格或名额。"
+      ]
+    },
+    {
+      "catalog_code": "2026255",
+      "title": "“汇川杯”全国智能自动化创新大赛",
+      "batch": "131-255",
+      "result": "product",
+      "record_ids": [
+        "curated-c255-5c6cc3b0"
+      ],
+      "reasons": [],
+      "original_gaps": [
+        "FAQ含部分预计考试日期与旧段落，正式区域赛规则优先；总人数上限和各赛项评分表尚待下载规程，不由研究生限制反推。"
+      ]
+    }
+  ]
+}

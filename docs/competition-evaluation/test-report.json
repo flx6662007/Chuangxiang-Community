@@ -1,0 +1,3856 @@
+{
+  "schema_version": 1,
+  "split": "test",
+  "corpus_version": "874ccd5c6dddf794",
+  "run_started_at": "2026-10-04T14:40:05.251707+00:00",
+  "parameters": {
+    "limit": 5,
+    "semantic_threshold": 0.6
+  },
+  "fixture_sha256": "04885659d5a631de3660c4db5f5c2e7a1611b4191c6e3d109af72f3698d061a9",
+  "evaluator_sha256": "1ffa7c6ba65d212785eec4300654785477ec4bc4f34e373cda57de028192f707",
+  "implementation_sha256": {
+    "competition_search.py": "a255a4b9daaa18c07a50ba354ce603c086a870f94c197ecc3190c650e2496501",
+    "semantic.py": "9dd8ebe39ecf940e295eec47837cf714dbb394c5437d8e58edeb5b3252afe372"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "system": "Windows",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "torch": "2.14.1",
+      "sentence-transformers": "6.1.0"
+    }
+  },
+  "index": {
+    "corpus_version": "874ccd5c6dddf794",
+    "model_id": "BAAI/bge-small-zh-v1.5",
+    "model_revision": "7999e1d3359715c523056ef9478215996d62a620",
+    "schema_version": 1
+  },
+  "evidence_metric_note": "Coverage validates source references. Whether a cited passage entails every reason still requires evidence review.",
+  "modes": {
+    "keyword": {
+      "metrics": {
+        "cases": 50,
+        "positive_cases": 40,
+        "empty_cases": 10,
+        "operational_errors": 0,
+        "hit_at_5": 1.0,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": 1.0,
+        "gold_evidence_hit_rate": 1.0,
+        "hard_violation_count": 0,
+        "reason_count": 179,
+        "grounded_reason_count": 179,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": 1.0,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 26.237000000000002,
+          "p95": 41.469,
+          "max": 62.784
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "test-2026228-knowledge-1",
+          "group": "2026228-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c228-c9a92ff4",
+            "curated-c234-6638ef91",
+            "curated-c229-ffad5fb2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 62.784
+        },
+        {
+          "id": "test-2026228-knowledge-2",
+          "group": "2026228-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c228-c9a92ff4",
+            "curated-c178-5f970c2c",
+            "curated-c223-5f970c2c",
+            "curated-c127-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 35.504
+        },
+        {
+          "id": "test-2026236-knowledge-1",
+          "group": "2026236-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c236-22a31aed",
+            "curated-c92-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 25.408
+        },
+        {
+          "id": "test-2026236-knowledge-2",
+          "group": "2026236-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c236-22a31aed",
+            "curated-c92-2026-1",
+            "curated-c177-5f970c2c",
+            "curated-c225-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 38.712
+        },
+        {
+          "id": "test-2026234-knowledge-1",
+          "group": "2026234-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c177-5f970c2c",
+            "curated-c222-02b30697",
+            "curated-c248-b0062f21",
+            "m89-2026020-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 41.469
+        },
+        {
+          "id": "test-2026234-knowledge-2",
+          "group": "2026234-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c229-ffad5fb2",
+            "curated-c212-78484d8c",
+            "curated-c100-2026-1",
+            "curated-c136-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 37.864
+        },
+        {
+          "id": "test-2026030-knowledge-1",
+          "group": "2026030-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026030-overview",
+            "curated-c127-2026-1",
+            "curated-c93-2025-2",
+            "curated-c93-2026-1",
+            "curated-c95-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 27.616
+        },
+        {
+          "id": "test-2026030-knowledge-2",
+          "group": "2026030-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026030-overview",
+            "curated-c136-55584f08",
+            "curated-c209-c3b5abfc"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 29.766
+        },
+        {
+          "id": "test-2026036-knowledge-1",
+          "group": "2026036-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026036-overview",
+            "m89-2026008-overview",
+            "curated-c247-13811aac",
+            "curated-c187-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 23.827
+        },
+        {
+          "id": "test-2026036-knowledge-2",
+          "group": "2026036-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026036-overview",
+            "curated-c187-55584f08",
+            "m89-2026058-overview",
+            "curated-c247-13811aac"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 29.985
+        },
+        {
+          "id": "test-2026038-knowledge-1",
+          "group": "2026038-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026038-overview",
+            "curated-c177-5f970c2c",
+            "m89-2026031-overview",
+            "m89-2026034-overview",
+            "m89-2026068-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 29.467
+        },
+        {
+          "id": "test-2026038-knowledge-2",
+          "group": "2026038-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026038-overview",
+            "m89-2026034-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 26.834
+        },
+        {
+          "id": "test-2026043-knowledge-1",
+          "group": "2026043-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "curated-c143-17bb43de",
+            "m89-2026008-overview",
+            "curated-c136-55584f08",
+            "curated-c195-c9ee3e33"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 27.712
+        },
+        {
+          "id": "test-2026043-knowledge-2",
+          "group": "2026043-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "curated-c143-17bb43de",
+            "curated-c180-d68adca6",
+            "m89-2026017-overview",
+            "curated-c177-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 30.09
+        },
+        {
+          "id": "test-2026222-knowledge-1",
+          "group": "2026222-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c217-4445a551",
+            "curated-c136-55584f08",
+            "curated-c225-5f970c2c",
+            "curated-c100-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 42.793
+        },
+        {
+          "id": "test-2026222-knowledge-2",
+          "group": "2026222-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c225-5f970c2c",
+            "curated-c100-2026-1",
+            "curated-c136-55584f08",
+            "curated-c177-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 39.261
+        },
+        {
+          "id": "test-2026091-knowledge-1",
+          "group": "2026091-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1",
+            "curated-c218-674deeac",
+            "m89-2026068-overview",
+            "m89-2026078-overview",
+            "curated-c178-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 25.92
+        },
+        {
+          "id": "test-2026091-knowledge-2",
+          "group": "2026091-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1",
+            "m89-2026038-overview",
+            "m89-2026089-overview",
+            "m89-2026068-overview",
+            "curated-c93-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 27.784
+        },
+        {
+          "id": "test-2026099-knowledge-1",
+          "group": "2026099-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 16.254
+        },
+        {
+          "id": "test-2026099-knowledge-2",
+          "group": "2026099-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 22.429
+        },
+        {
+          "id": "test-2026105-knowledge-1",
+          "group": "2026105-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c105-2026-1",
+            "curated-c107-2026-1",
+            "curated-c110-2026-1",
+            "curated-c212-78484d8c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 21.548
+        },
+        {
+          "id": "test-2026105-knowledge-2",
+          "group": "2026105-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c105-2026-1",
+            "curated-c107-2026-1",
+            "curated-c106-2026-1",
+            "curated-c141-1c63abb5"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 35.666
+        },
+        {
+          "id": "test-2026107-knowledge-1",
+          "group": "2026107-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 24.386
+        },
+        {
+          "id": "test-2026107-knowledge-2",
+          "group": "2026107-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1",
+            "curated-c105-2026-1",
+            "curated-c108-2026-1",
+            "curated-c109-2025-1",
+            "curated-c155-ffcfd903"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 31.758
+        },
+        {
+          "id": "test-2026109-knowledge-1",
+          "group": "2026109-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1",
+            "curated-c106-2026-1",
+            "curated-c108-2026-1",
+            "curated-c105-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 27.844
+        },
+        {
+          "id": "test-2026109-knowledge-2",
+          "group": "2026109-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1",
+            "curated-c105-2026-1",
+            "curated-c106-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 23.536
+        },
+        {
+          "id": "test-2026119-knowledge-1",
+          "group": "2026119-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1",
+            "m89-2026078-overview",
+            "curated-c187-55584f08",
+            "m89-2026088-overview",
+            "m89-2026031-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 30.657
+        },
+        {
+          "id": "test-2026119-knowledge-2",
+          "group": "2026119-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1",
+            "curated-c177-5f970c2c",
+            "curated-c100-2026-1",
+            "curated-c133-5f970c2c",
+            "curated-c178-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 29.869
+        },
+        {
+          "id": "test-2026155-knowledge-1",
+          "group": "2026155-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c155-ffcfd903"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 27.959
+        },
+        {
+          "id": "test-2026155-knowledge-2",
+          "group": "2026155-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c155-ffcfd903"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 25.892
+        },
+        {
+          "id": "test-2026179-knowledge-1",
+          "group": "2026179-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c179-5ed57b4e",
+            "m89-2026051-overview",
+            "m89-2026053-overview",
+            "curated-c100-2026-1",
+            "curated-c101-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 20.703
+        },
+        {
+          "id": "test-2026179-knowledge-2",
+          "group": "2026179-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c179-5ed57b4e",
+            "curated-c133-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c",
+            "curated-c115-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 29.942
+        },
+        {
+          "id": "test-2026184-knowledge-1",
+          "group": "2026184-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c184-5346ce75",
+            "curated-c127-2026-1",
+            "curated-c95-2026-1",
+            "m89-2026009-overview",
+            "m89-2026037-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 26.554
+        },
+        {
+          "id": "test-2026184-knowledge-2",
+          "group": "2026184-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c184-5346ce75"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 23.481
+        },
+        {
+          "id": "test-2026218-knowledge-1",
+          "group": "2026218-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c140-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c219-5f970c2c",
+            "curated-c222-02b30697"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 22.138
+        },
+        {
+          "id": "test-2026218-knowledge-2",
+          "group": "2026218-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c",
+            "curated-c224-5f970c2c",
+            "curated-c229-ffad5fb2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 32.64
+        },
+        {
+          "id": "test-2026229-knowledge-1",
+          "group": "2026229-knowledge",
+          "scenario": "multi_filter",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2",
+            "curated-c100-2026-1",
+            "curated-c164-55584f08",
+            "curated-c101-2026-1",
+            "curated-c115-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 15,
+          "grounded_reason_count": 15,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 14.564
+        },
+        {
+          "id": "test-2026229-knowledge-2",
+          "group": "2026229-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2",
+            "curated-c158-38525312",
+            "curated-c100-2026-1",
+            "curated-c101-2026-1",
+            "curated-c115-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 15,
+          "grounded_reason_count": 15,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 12.109
+        },
+        {
+          "id": "test-2026248-knowledge-1",
+          "group": "2026248-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21",
+            "curated-c133-5f970c2c",
+            "curated-c158-38525312",
+            "curated-c187-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 20.006
+        },
+        {
+          "id": "test-2026248-knowledge-2",
+          "group": "2026248-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21",
+            "m89-2026053-overview",
+            "curated-c101-2026-1",
+            "curated-c116-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 32.239
+        },
+        {
+          "id": "test-2026091-constraints-1",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：报名状态：报名正在进行；赛事目录：2026091。",
+            "conditions": [
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              },
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 5.634
+        },
+        {
+          "id": "test-2026091-constraints-2",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026091；报名状态：报名正在进行。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 4.959
+        },
+        {
+          "id": "test-2026105-constraints-1",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 6.167
+        },
+        {
+          "id": "test-2026105-constraints-2",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 6.517
+        },
+        {
+          "id": "test-2026109-constraints-1",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 6.681
+        },
+        {
+          "id": "test-2026109-constraints-2",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 7.164
+        },
+        {
+          "id": "test-2026155-constraints-1",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 6.824
+        },
+        {
+          "id": "test-2026155-constraints-2",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 6.519
+        },
+        {
+          "id": "test-2026248-constraints-1",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 4.583
+        },
+        {
+          "id": "test-2026248-constraints-2",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 3.269
+        }
+      ]
+    },
+    "semantic": {
+      "metrics": {
+        "cases": 50,
+        "positive_cases": 40,
+        "empty_cases": 10,
+        "operational_errors": 0,
+        "hit_at_5": 0.8,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": 0.65,
+        "gold_evidence_hit_rate": 0.775,
+        "hard_violation_count": 0,
+        "reason_count": 87,
+        "grounded_reason_count": 87,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": 1.0,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 50.932,
+          "p95": 88.446,
+          "max": 9708.606
+        },
+        "passes_targets": false
+      },
+      "cases": [
+        {
+          "id": "test-2026228-knowledge-1",
+          "group": "2026228-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c228-c9a92ff4"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 9708.606
+        },
+        {
+          "id": "test-2026228-knowledge-2",
+          "group": "2026228-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91"
+          ],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 122.569
+        },
+        {
+          "id": "test-2026236-knowledge-1",
+          "group": "2026236-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c236-22a31aed"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.727
+        },
+        {
+          "id": "test-2026236-knowledge-2",
+          "group": "2026236-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c225-5f970c2c",
+            "curated-c222-02b30697",
+            "curated-c219-5f970c2c",
+            "curated-c236-22a31aed",
+            "curated-c217-4445a551"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 88.446
+        },
+        {
+          "id": "test-2026234-knowledge-1",
+          "group": "2026234-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c178-5f970c2c",
+            "curated-c220-a77d9cc4",
+            "curated-c225-5f970c2c",
+            "curated-c219-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 55.304
+        },
+        {
+          "id": "test-2026234-knowledge-2",
+          "group": "2026234-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c229-ffad5fb2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 69.899
+        },
+        {
+          "id": "test-2026030-knowledge-1",
+          "group": "2026030-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026030-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.318
+        },
+        {
+          "id": "test-2026030-knowledge-2",
+          "group": "2026030-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.895
+        },
+        {
+          "id": "test-2026036-knowledge-1",
+          "group": "2026036-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026036-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 44.088
+        },
+        {
+          "id": "test-2026036-knowledge-2",
+          "group": "2026036-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.489
+        },
+        {
+          "id": "test-2026038-knowledge-1",
+          "group": "2026038-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026038-overview",
+            "curated-c101-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.556
+        },
+        {
+          "id": "test-2026038-knowledge-2",
+          "group": "2026038-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 56.14
+        },
+        {
+          "id": "test-2026043-knowledge-1",
+          "group": "2026043-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "m89-2026021-overview",
+            "m89-2026017-overview",
+            "curated-c143-17bb43de",
+            "curated-c100-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.549
+        },
+        {
+          "id": "test-2026043-knowledge-2",
+          "group": "2026043-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "m89-2026017-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 48.545
+        },
+        {
+          "id": "test-2026222-knowledge-1",
+          "group": "2026222-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c217-4445a551",
+            "curated-c225-5f970c2c",
+            "curated-c234-6638ef91"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.045
+        },
+        {
+          "id": "test-2026222-knowledge-2",
+          "group": "2026222-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c225-5f970c2c",
+            "curated-c234-6638ef91"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 66.586
+        },
+        {
+          "id": "test-2026091-knowledge-1",
+          "group": "2026091-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 49.284
+        },
+        {
+          "id": "test-2026091-knowledge-2",
+          "group": "2026091-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1",
+            "m89-2026089-overview",
+            "m89-2026068-overview",
+            "curated-c93-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 67.438
+        },
+        {
+          "id": "test-2026099-knowledge-1",
+          "group": "2026099-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1",
+            "curated-c98-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 48.53
+        },
+        {
+          "id": "test-2026099-knowledge-2",
+          "group": "2026099-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.619
+        },
+        {
+          "id": "test-2026105-knowledge-1",
+          "group": "2026105-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 46.193
+        },
+        {
+          "id": "test-2026105-knowledge-2",
+          "group": "2026105-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c105-2026-1",
+            "curated-c107-2026-1",
+            "curated-c106-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 58.444
+        },
+        {
+          "id": "test-2026107-knowledge-1",
+          "group": "2026107-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 45.287
+        },
+        {
+          "id": "test-2026107-knowledge-2",
+          "group": "2026107-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1",
+            "curated-c106-2026-1",
+            "curated-c105-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.294
+        },
+        {
+          "id": "test-2026109-knowledge-1",
+          "group": "2026109-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 49.625
+        },
+        {
+          "id": "test-2026109-knowledge-2",
+          "group": "2026109-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 55.828
+        },
+        {
+          "id": "test-2026119-knowledge-1",
+          "group": "2026119-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1",
+            "curated-c97-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 58.579
+        },
+        {
+          "id": "test-2026119-knowledge-2",
+          "group": "2026119-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.662
+        },
+        {
+          "id": "test-2026155-knowledge-1",
+          "group": "2026155-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c155-ffcfd903",
+            "curated-c154-b18754c5",
+            "curated-c144-5cb711d6",
+            "curated-c126-2026-1",
+            "curated-c255-5c6cc3b0"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 56.007
+        },
+        {
+          "id": "test-2026155-knowledge-2",
+          "group": "2026155-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.872
+        },
+        {
+          "id": "test-2026179-knowledge-1",
+          "group": "2026179-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c179-5ed57b4e"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 43.178
+        },
+        {
+          "id": "test-2026179-knowledge-2",
+          "group": "2026179-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026069-overview"
+          ],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.271
+        },
+        {
+          "id": "test-2026184-knowledge-1",
+          "group": "2026184-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c184-5346ce75",
+            "curated-c140-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c",
+            "curated-c223-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 43.739
+        },
+        {
+          "id": "test-2026184-knowledge-2",
+          "group": "2026184-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [],
+          "hit_at_5": false,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 53.942
+        },
+        {
+          "id": "test-2026218-knowledge-1",
+          "group": "2026218-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c219-5f970c2c",
+            "curated-c224-5f970c2c",
+            "curated-c254-98fbebe0"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 40.259
+        },
+        {
+          "id": "test-2026218-knowledge-2",
+          "group": "2026218-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c178-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c91-2026-1",
+            "curated-c93-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 62.612
+        },
+        {
+          "id": "test-2026229-knowledge-1",
+          "group": "2026229-knowledge",
+          "scenario": "multi_filter",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2",
+            "curated-c100-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 6,
+          "grounded_reason_count": 6,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.179
+        },
+        {
+          "id": "test-2026229-knowledge-2",
+          "group": "2026229-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 46.672
+        },
+        {
+          "id": "test-2026248-knowledge-1",
+          "group": "2026248-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 50.593
+        },
+        {
+          "id": "test-2026248-knowledge-2",
+          "group": "2026248-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.391
+        },
+        {
+          "id": "test-2026091-constraints-1",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：报名状态：报名正在进行；赛事目录：2026091。",
+            "conditions": [
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              },
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 32.961
+        },
+        {
+          "id": "test-2026091-constraints-2",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026091；报名状态：报名正在进行。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 35.215
+        },
+        {
+          "id": "test-2026105-constraints-1",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 32.773
+        },
+        {
+          "id": "test-2026105-constraints-2",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 37.325
+        },
+        {
+          "id": "test-2026109-constraints-1",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 34.881
+        },
+        {
+          "id": "test-2026109-constraints-2",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 35.152
+        },
+        {
+          "id": "test-2026155-constraints-1",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 34.808
+        },
+        {
+          "id": "test-2026155-constraints-2",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 30.511
+        },
+        {
+          "id": "test-2026248-constraints-1",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 33.41
+        },
+        {
+          "id": "test-2026248-constraints-2",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 38.42
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "cases": 50,
+        "positive_cases": 40,
+        "empty_cases": 10,
+        "operational_errors": 0,
+        "hit_at_5": 1.0,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": 1.0,
+        "gold_evidence_hit_rate": 0.975,
+        "hard_violation_count": 0,
+        "reason_count": 184,
+        "grounded_reason_count": 184,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": 1.0,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 54.233,
+          "p95": 64.094,
+          "max": 72.873
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "test-2026228-knowledge-1",
+          "group": "2026228-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c228-c9a92ff4",
+            "curated-c234-6638ef91",
+            "curated-c229-ffad5fb2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 48.714
+        },
+        {
+          "id": "test-2026228-knowledge-2",
+          "group": "2026228-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c228-c9a92ff4",
+            "curated-c178-5f970c2c",
+            "curated-c223-5f970c2c",
+            "curated-c127-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 51.01
+        },
+        {
+          "id": "test-2026236-knowledge-1",
+          "group": "2026236-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c236-22a31aed",
+            "curated-c92-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 43.954
+        },
+        {
+          "id": "test-2026236-knowledge-2",
+          "group": "2026236-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c225-5f970c2c",
+            "curated-c236-22a31aed",
+            "curated-c219-5f970c2c",
+            "curated-c92-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 50.614
+        },
+        {
+          "id": "test-2026234-knowledge-1",
+          "group": "2026234-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c248-b0062f21",
+            "curated-c225-5f970c2c",
+            "curated-c136-55584f08",
+            "curated-c235-a50bab84"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 57.118
+        },
+        {
+          "id": "test-2026234-knowledge-2",
+          "group": "2026234-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c234-6638ef91",
+            "curated-c229-ffad5fb2",
+            "curated-c212-78484d8c",
+            "curated-c100-2026-1",
+            "curated-c136-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 57.953
+        },
+        {
+          "id": "test-2026030-knowledge-1",
+          "group": "2026030-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026030-overview",
+            "curated-c127-2026-1",
+            "curated-c93-2025-2",
+            "curated-c93-2026-1",
+            "curated-c95-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.311
+        },
+        {
+          "id": "test-2026030-knowledge-2",
+          "group": "2026030-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026030-overview",
+            "curated-c136-55584f08",
+            "curated-c209-c3b5abfc"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.239
+        },
+        {
+          "id": "test-2026036-knowledge-1",
+          "group": "2026036-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026036-overview",
+            "m89-2026008-overview",
+            "curated-c247-13811aac",
+            "curated-c187-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.354
+        },
+        {
+          "id": "test-2026036-knowledge-2",
+          "group": "2026036-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026036-overview",
+            "curated-c187-55584f08",
+            "m89-2026058-overview",
+            "curated-c247-13811aac"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 63.472
+        },
+        {
+          "id": "test-2026038-knowledge-1",
+          "group": "2026038-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026038-overview",
+            "curated-c101-2026-1",
+            "curated-c177-5f970c2c",
+            "m89-2026031-overview",
+            "m89-2026034-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 52.051
+        },
+        {
+          "id": "test-2026038-knowledge-2",
+          "group": "2026038-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026038-overview",
+            "m89-2026034-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.249
+        },
+        {
+          "id": "test-2026043-knowledge-1",
+          "group": "2026043-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "curated-c143-17bb43de",
+            "m89-2026047-overview",
+            "m89-2026008-overview",
+            "m89-2026058-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 72.873
+        },
+        {
+          "id": "test-2026043-knowledge-2",
+          "group": "2026043-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026043-overview",
+            "m89-2026017-overview",
+            "curated-c143-17bb43de",
+            "curated-c180-d68adca6",
+            "curated-c177-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 61.366
+        },
+        {
+          "id": "test-2026222-knowledge-1",
+          "group": "2026222-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c217-4445a551",
+            "curated-c225-5f970c2c",
+            "curated-c234-6638ef91",
+            "curated-c136-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.513
+        },
+        {
+          "id": "test-2026222-knowledge-2",
+          "group": "2026222-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c222-02b30697",
+            "curated-c225-5f970c2c",
+            "curated-c234-6638ef91",
+            "curated-c100-2026-1",
+            "curated-c136-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 64.094
+        },
+        {
+          "id": "test-2026091-knowledge-1",
+          "group": "2026091-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1",
+            "curated-c218-674deeac",
+            "m89-2026068-overview",
+            "m89-2026078-overview",
+            "curated-c178-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 53.079
+        },
+        {
+          "id": "test-2026091-knowledge-2",
+          "group": "2026091-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c91-2026-1",
+            "m89-2026089-overview",
+            "m89-2026068-overview",
+            "curated-c93-2025-2",
+            "m89-2026038-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 61.618
+        },
+        {
+          "id": "test-2026099-knowledge-1",
+          "group": "2026099-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1",
+            "curated-c98-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 2,
+          "grounded_reason_count": 2,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.227
+        },
+        {
+          "id": "test-2026099-knowledge-2",
+          "group": "2026099-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c99-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.063
+        },
+        {
+          "id": "test-2026105-knowledge-1",
+          "group": "2026105-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c105-2026-1",
+            "curated-c107-2026-1",
+            "curated-c110-2026-1",
+            "curated-c212-78484d8c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.356
+        },
+        {
+          "id": "test-2026105-knowledge-2",
+          "group": "2026105-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c105-2026-1",
+            "curated-c107-2026-1",
+            "curated-c106-2026-1",
+            "curated-c141-1c63abb5"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 61.962
+        },
+        {
+          "id": "test-2026107-knowledge-1",
+          "group": "2026107-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 50.617
+        },
+        {
+          "id": "test-2026107-knowledge-2",
+          "group": "2026107-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c107-2026-1",
+            "curated-c105-2026-1",
+            "curated-c106-2026-1",
+            "curated-c108-2026-1",
+            "curated-c109-2025-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.564
+        },
+        {
+          "id": "test-2026109-knowledge-1",
+          "group": "2026109-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1",
+            "curated-c106-2026-1",
+            "curated-c108-2026-1",
+            "curated-c105-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 4,
+          "grounded_reason_count": 4,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 53.354
+        },
+        {
+          "id": "test-2026109-knowledge-2",
+          "group": "2026109-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c109-2025-1",
+            "curated-c105-2026-1",
+            "curated-c106-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 3,
+          "grounded_reason_count": 3,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 55.881
+        },
+        {
+          "id": "test-2026119-knowledge-1",
+          "group": "2026119-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1",
+            "curated-c97-2026-1",
+            "m89-2026078-overview",
+            "curated-c187-55584f08",
+            "m89-2026088-overview"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 56.934
+        },
+        {
+          "id": "test-2026119-knowledge-2",
+          "group": "2026119-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c119-2026-1",
+            "curated-c177-5f970c2c",
+            "curated-c100-2026-1",
+            "curated-c133-5f970c2c",
+            "curated-c178-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 58.187
+        },
+        {
+          "id": "test-2026155-knowledge-1",
+          "group": "2026155-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c155-ffcfd903",
+            "curated-c154-b18754c5",
+            "curated-c144-5cb711d6",
+            "curated-c126-2026-1",
+            "curated-c255-5c6cc3b0"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 54.703
+        },
+        {
+          "id": "test-2026155-knowledge-2",
+          "group": "2026155-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c155-ffcfd903"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.939
+        },
+        {
+          "id": "test-2026179-knowledge-1",
+          "group": "2026179-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c179-5ed57b4e",
+            "m89-2026051-overview",
+            "m89-2026053-overview",
+            "curated-c100-2026-1",
+            "curated-c101-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.629
+        },
+        {
+          "id": "test-2026179-knowledge-2",
+          "group": "2026179-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "m89-2026069-overview",
+            "curated-c179-5ed57b4e",
+            "curated-c133-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.536
+        },
+        {
+          "id": "test-2026184-knowledge-1",
+          "group": "2026184-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c184-5346ce75",
+            "curated-c140-5f970c2c",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c",
+            "curated-c133-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.149
+        },
+        {
+          "id": "test-2026184-knowledge-2",
+          "group": "2026184-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c184-5346ce75"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 1,
+          "grounded_reason_count": 1,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 57.639
+        },
+        {
+          "id": "test-2026218-knowledge-1",
+          "group": "2026218-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c219-5f970c2c",
+            "curated-c224-5f970c2c",
+            "curated-c140-5f970c2c",
+            "curated-c177-5f970c2c"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 44.518
+        },
+        {
+          "id": "test-2026218-knowledge-2",
+          "group": "2026218-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c218-674deeac",
+            "curated-c177-5f970c2c",
+            "curated-c178-5f970c2c",
+            "curated-c91-2026-1",
+            "curated-c93-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 71.203
+        },
+        {
+          "id": "test-2026229-knowledge-1",
+          "group": "2026229-knowledge",
+          "scenario": "multi_filter",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2",
+            "curated-c100-2026-1",
+            "curated-c164-55584f08",
+            "curated-c101-2026-1",
+            "curated-c115-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 15,
+          "grounded_reason_count": 15,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 47.478
+        },
+        {
+          "id": "test-2026229-knowledge-2",
+          "group": "2026229-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c229-ffad5fb2",
+            "curated-c158-38525312",
+            "curated-c100-2026-1",
+            "curated-c101-2026-1",
+            "curated-c115-2026-1"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 15,
+          "grounded_reason_count": 15,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 49.318
+        },
+        {
+          "id": "test-2026248-knowledge-1",
+          "group": "2026248-knowledge",
+          "scenario": "exact",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21",
+            "curated-c133-5f970c2c",
+            "curated-c158-38525312",
+            "curated-c187-55584f08"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 53.017
+        },
+        {
+          "id": "test-2026248-knowledge-2",
+          "group": "2026248-knowledge",
+          "scenario": "semantic",
+          "expect_empty": false,
+          "returned_ids": [
+            "curated-c248-02da82ac",
+            "curated-c248-b0062f21",
+            "m89-2026053-overview",
+            "curated-c101-2026-1",
+            "curated-c116-2025-2"
+          ],
+          "hit_at_5": true,
+          "empty_correct": null,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": true,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 61.35
+        },
+        {
+          "id": "test-2026091-constraints-1",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：报名状态：报名正在进行；赛事目录：2026091。",
+            "conditions": [
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              },
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 35.817
+        },
+        {
+          "id": "test-2026091-constraints-2",
+          "group": "2026091-constraints",
+          "scenario": "historical",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026091；报名状态：报名正在进行。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026091"
+                ],
+                "display_value": "2026091",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "registration_status",
+                "label": "报名状态",
+                "value": "open",
+                "display_value": "报名正在进行",
+                "matched": 0,
+                "unmatched": 22,
+                "unknown": 176
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 37.648
+        },
+        {
+          "id": "test-2026105-constraints-1",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 37.672
+        },
+        {
+          "id": "test-2026105-constraints-2",
+          "group": "2026105-constraints",
+          "scenario": "missing_data",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026105；团队人数：50。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026105"
+                ],
+                "display_value": "2026105",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 50,
+                "display_value": "50",
+                "matched": 0,
+                "unmatched": 31,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 37.197
+        },
+        {
+          "id": "test-2026109-constraints-1",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 56.119
+        },
+        {
+          "id": "test-2026109-constraints-2",
+          "group": "2026109-constraints",
+          "scenario": "qualification_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026109；学历：博士。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026109"
+                ],
+                "display_value": "2026109",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "education",
+                "label": "学历",
+                "value": "博士",
+                "display_value": "博士",
+                "matched": 22,
+                "unmatched": 23,
+                "unknown": 153
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 47.205
+        },
+        {
+          "id": "test-2026155-constraints-1",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 38.056
+        },
+        {
+          "id": "test-2026155-constraints-2",
+          "group": "2026155-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026155；团队人数：6。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026155"
+                ],
+                "display_value": "2026155",
+                "matched": 1,
+                "unmatched": 197,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 6,
+                "display_value": "6",
+                "matched": 6,
+                "unmatched": 25,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 35.868
+        },
+        {
+          "id": "test-2026248-constraints-1",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 30.724
+        },
+        {
+          "id": "test-2026248-constraints-2",
+          "group": "2026248-constraints",
+          "scenario": "hard_filter_conflict",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_condition_match",
+            "message": "没有找到同时满足以下条件的赛事：赛事目录：2026248；团队人数：5。",
+            "conditions": [
+              {
+                "field": "catalog_codes",
+                "label": "赛事目录",
+                "value": [
+                  "2026248"
+                ],
+                "display_value": "2026248",
+                "matched": 2,
+                "unmatched": 196,
+                "unknown": 0
+              },
+              {
+                "field": "team_size",
+                "label": "团队人数",
+                "value": 5,
+                "display_value": "5",
+                "matched": 14,
+                "unmatched": 17,
+                "unknown": 167
+              }
+            ]
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 31.187
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "comparable": true,
+    "hybrid_hit_at_5_gain": 0.0,
+    "semantic_subset_gain": 0.0,
+    "hybrid_not_worse": true
+  },
+  "acceptance": {
+    "mode": "hybrid",
+    "passes": true,
+    "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+  }
+}

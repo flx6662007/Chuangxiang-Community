@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "corpus_version": "53684a56d94beba5",
+  "questions_sha256": "4705591c5640a77ea9536c861e2a2e9c17c13f62597298e264bbd40142306334",
+  "files": {
+    "dev.jsonl": {
+      "sha256": "43674726a6e9cdd67bb7628858ed31cde0dd880619c1fb2cdcfa805f5bc48c5d",
+      "count": 100
+    },
+    "test.jsonl": {
+      "sha256": "04885659d5a631de3660c4db5f5c2e7a1611b4191c6e3d109af72f3698d061a9",
+      "count": 50
+    }
+  },
+  "series_count": 60,
+  "scenarios": {
+    "exact": 56,
+    "semantic": 60,
+    "multi_filter": 13,
+    "qualification_conflict": 4,
+    "time_boundary": 2,
+    "hard_filter_conflict": 9,
+    "missing_data": 4,
+    "historical": 2
+  },
+  "gold_origin": "Independently authored from source facts; search is never called during fixture creation.",
+  "frozen_test_policy": "Test is for final reporting. Calibration uses dev only; fixture edits require evidence review."
+}

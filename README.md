@@ -11,6 +11,7 @@
 | 怎么安装和启动 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) |
 | 前后端怎么对接 | [赛事与账号 API](docs/api.md) · [组队 API](docs/api-teams.md) |
 | 查赛事资料与学习资源 | [人工赛事资料](docs/competition-research/README.md) · [目录 1—89](docs/competition-research/tongji-2026-001-089/README.md) |
+| 赛事知识系统第一版交付 | [三个交付包](deliverables/competition-knowledge-v1/README.md) · [接入说明](docs/competition-delivery.md) |
 | 查其他说明 | [文档导航](docs/README.md) |
 
 ## 目前能做什么

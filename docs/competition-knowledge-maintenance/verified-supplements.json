@@ -1,0 +1,41 @@
+{
+  "checked_on": "2026-10-04",
+  "records": [
+    {
+      "catalog_code": "2026020", "code": "m89-2026020-overview", "edition": "2026第八届·AI+开源主题赛",
+      "title": "全球校园人工智能算法精英大赛·AI+开源",
+      "fields": {"eligibility": "面向具有正式学籍的在读专科生、本科生及研究生。队员须来自同一学校，分校及跨校组队不符合要求。", "education": ["专科", "本科", "研究生"], "participation_type": "team", "team_size_min": 1, "team_size_max": 3, "registration_deadline": "2026-10-15", "submission_deadline": "2026-10-15", "registration_url": "https://www.aicomp.cn/"},
+      "sources": [{"id": "verified-aic-eligibility", "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html", "title": "2026AIC·AI+开源算法主题赛赛题及竞赛规则", "quote": "", "locator": "三、参赛对象；四、参赛要求第1项", "verified_at": "2026-10-04"}, {"id": "verified-aic-dates", "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html", "title": "2026AIC·AI+开源算法主题赛赛题及竞赛规则", "quote": "", "locator": "七、赛程安排：报名、初赛", "verified_at": "2026-10-04"}],
+      "field_evidence": {"eligibility": ["verified-aic-eligibility"], "education": ["verified-aic-eligibility"], "participation_type": ["verified-aic-eligibility"], "team_size_min": ["verified-aic-eligibility"], "team_size_max": ["verified-aic-eligibility"], "registration_deadline": ["verified-aic-dates"], "submission_deadline": ["verified-aic-dates"], "registration_url": ["verified-aic-dates"]},
+      "sections": [{"id": "verified-eligibility", "heading": "参赛对象与组队", "text": "在读专科生、本科生及研究生可参赛。每队1—3名学生，队员来自同一学校，分校不计为同一学校。", "evidence_ids": ["verified-aic-eligibility"]}, {"id": "verified-registration", "heading": "报名与时间", "text": "通过赛事官网注册队伍，选择AI+开源主题赛并完成缴费。报名及初赛作品提交均于2026年10月15日20:00截止。", "evidence_ids": ["verified-aic-dates"]}]
+    },
+    {
+      "catalog_code": "2026090", "code": "curated-c90-2026-1", "edition": "2026年第八届",
+      "fields": {"eligibility": "大学生组包含在校研究生，职业学校学生及在华留学生分组参赛。学生参赛者不得跨组别组队。", "education": ["本科", "研究生"], "participation_type": "both", "team_size_min": 2, "team_size_max": 20},
+      "sources": [{"id": "verified-recitation-eligibility", "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx", "title": "第八届中华经典诵写讲大赛经典诵读大赛方案", "quote": "", "locator": "一、参赛对象与组别；二、作品要求", "verified_at": "2026-10-04"}],
+      "field_evidence": {"eligibility": ["verified-recitation-eligibility"], "education": ["verified-recitation-eligibility"], "participation_type": ["verified-recitation-eligibility"], "team_size_min": ["verified-recitation-eligibility"], "team_size_max": ["verified-recitation-eligibility"]},
+      "sections": [{"id": "verified-eligibility", "heading": "参赛对象与组队", "text": "大学生组包括在校研究生；职业学校学生及在华留学生按独立组别参赛。可个人参赛，团队为2—20名诵读人员。学生不得跨组别组队，伴奏和摄像人员不计为参赛者。", "evidence_ids": ["verified-recitation-eligibility"]}]
+    },
+    {
+      "catalog_code": "2026092", "code": "curated-c92-2026-1", "edition": "2026年第十八届", "title": "全国大学生广告艺术大赛·常规类别",
+      "fields": {"eligibility": "全日制在校大学生和研究生可参加，包括港澳台籍学生和外籍留学生。允许同校跨专业组队，禁止跨校、跨赛区组队。", "education": ["本科", "研究生"], "registration_start": "2026-05-10", "registration_deadline": "2026-06-12", "submission_deadline": "2026-06-12"},
+      "sources": [{"id": "verified-advertising-eligibility", "url": "https://www.sun-ada.net/home/about_intrs2.html", "title": "第18届全国大学生广告艺术大赛参赛指南", "quote": "", "locator": "第一部分一、参赛资格；第二部分四、参赛注意事项第3项", "verified_at": "2026-10-04"}, {"id": "verified-advertising-dates", "url": "https://www.sun-ada.net/home/about_intrs2.html", "title": "第18届全国大学生广告艺术大赛参赛指南", "quote": "", "locator": "第一部分六、作品提交及报送时间第1项；第二部分四第2项（提交同时完成报名）", "verified_at": "2026-10-04"}, {"id": "verified-advertising-teams", "url": "https://www.sun-ada.net/home/about_intrs2.html", "title": "第18届全国大学生广告艺术大赛参赛指南", "quote": "", "locator": "第二部分二、作者与指导教师人数限制", "verified_at": "2026-10-04"}],
+      "field_evidence": {"eligibility": ["verified-advertising-eligibility"], "education": ["verified-advertising-eligibility"], "registration_start": ["verified-advertising-dates"], "registration_deadline": ["verified-advertising-dates"], "submission_deadline": ["verified-advertising-dates"]},
+      "sections": [{"id": "verified-eligibility", "heading": "参赛对象", "text": "全日制在校大学生和研究生可参加，包括港澳台籍学生及外籍留学生。队员须来自同一学校、同一赛区，可跨专业组队。", "evidence_ids": ["verified-advertising-eligibility"]}, {"id": "verified-registration", "heading": "报名与时间", "text": "常规类别线上作品提交期为2026年5月10日至6月12日16:00，提交作品的同时完成报名。营销创客单元采用独立赛程。", "evidence_ids": ["verified-advertising-dates"]}, {"id": "verified-team-rules", "heading": "组队要求", "text": "平面、文案类每组至多2人；短视频广告、互动、广播类每组至多3人；影视广告、微电影广告、动画、策划案、UI、科技类每组至多5人。", "evidence_ids": ["verified-advertising-teams"]}]
+    },
+    {
+      "catalog_code": "2026100", "code": "curated-c100-2026-1", "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
+      "fields": {"eligibility": "参赛学生在竞赛期间须为普通高校全日制在校本科生；学校须取得邀请或分区批准的参赛资格。", "education": ["本科"], "participation_type": "team", "team_size_min": 3, "team_size_max": 3},
+      "sources": [{"id": "verified-embedded-eligibility", "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344", "title": "2026年英特尔杯大学生电子设计竞赛嵌入式AI专题赛通知", "quote": "", "locator": "二、参赛资格第1、3、4项", "verified_at": "2026-10-04"}],
+      "field_evidence": {"eligibility": ["verified-embedded-eligibility"], "education": ["verified-embedded-eligibility"], "participation_type": ["verified-embedded-eligibility"], "team_size_min": ["verified-embedded-eligibility"], "team_size_max": ["verified-embedded-eligibility"]},
+      "sections": [{"id": "verified-eligibility", "heading": "参赛对象与组队", "text": "队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。", "evidence_ids": ["verified-embedded-eligibility"]}]
+    },
+    {
+      "catalog_code": "2026101", "code": "curated-c101-2026-1", "edition": "2026年瑞萨杯信息科技前沿专题赛",
+      "fields": {"eligibility": "报名、竞赛和评审期间须为普通高校全日制在校本科生；参赛学校须具备分区初选资格或完成分区及组委会审批。", "education": ["本科"], "participation_type": "team", "team_size_min": 3, "team_size_max": 3},
+      "sources": [{"id": "verified-renesas-eligibility", "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342", "title": "2026年瑞萨杯全国大学生电子设计竞赛信息科技前沿专题赛通知", "quote": "", "locator": "二、参赛资格第1、3、4项", "verified_at": "2026-10-04"}],
+      "field_evidence": {"eligibility": ["verified-renesas-eligibility"], "education": ["verified-renesas-eligibility"], "participation_type": ["verified-renesas-eligibility"], "team_size_min": ["verified-renesas-eligibility"], "team_size_max": ["verified-renesas-eligibility"]},
+      "sections": [{"id": "verified-eligibility", "heading": "参赛对象与组队", "text": "队员在报名、竞赛与评审期间须为普通高校全日制在校本科生。每队3名学生，可配备1名指导教师；学校先取得初选资格或申请批准。", "evidence_ids": ["verified-renesas-eligibility"]}]
+    }
+  ]
+}
