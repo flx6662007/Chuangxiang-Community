@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "package_id": "competition-knowledge-v1-131-255",
+  "package_id": "competition-knowledge-standalone-v1-131-255",
   "review": {
     "status": "pending"
   },
@@ -868,9 +868,7 @@
       "catalog_codes": [
         "2026131"
       ],
-      "competition_codes": [
-        "curated-c131-7ac66d1d"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -967,9 +965,7 @@
       "catalog_codes": [
         "2026133"
       ],
-      "competition_codes": [
-        "curated-c133-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -1074,9 +1070,7 @@
       "catalog_codes": [
         "2026136"
       ],
-      "competition_codes": [
-        "curated-c136-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -1313,9 +1307,7 @@
       "catalog_codes": [
         "2026140"
       ],
-      "competition_codes": [
-        "curated-c140-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -1510,9 +1502,7 @@
       "catalog_codes": [
         "2026141"
       ],
-      "competition_codes": [
-        "curated-c141-1c63abb5"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -1717,9 +1707,7 @@
       "catalog_codes": [
         "2026143"
       ],
-      "competition_codes": [
-        "curated-c143-17bb43de"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -1896,9 +1884,7 @@
       "catalog_codes": [
         "2026144"
       ],
-      "competition_codes": [
-        "curated-c144-c32e1208"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2001,9 +1987,7 @@
       "catalog_codes": [
         "2026144"
       ],
-      "competition_codes": [
-        "curated-c144-5cb711d6"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2208,9 +2192,7 @@
       "catalog_codes": [
         "2026145"
       ],
-      "competition_codes": [
-        "curated-c145-ffad5fb2"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2357,9 +2339,7 @@
       "catalog_codes": [
         "2026146"
       ],
-      "competition_codes": [
-        "curated-c146-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2529,9 +2509,7 @@
       "catalog_codes": [
         "2026147"
       ],
-      "competition_codes": [
-        "curated-c147-7ac66d1d"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2664,9 +2642,7 @@
       "catalog_codes": [
         "2026148"
       ],
-      "competition_codes": [
-        "curated-c148-79c641ae"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -2877,9 +2853,7 @@
       "catalog_codes": [
         "2026151"
       ],
-      "competition_codes": [
-        "curated-c151-160c7017"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3014,9 +2988,7 @@
       "catalog_codes": [
         "2026152"
       ],
-      "competition_codes": [
-        "curated-c152-6384ce25"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3171,9 +3143,7 @@
       "catalog_codes": [
         "2026154"
       ],
-      "competition_codes": [
-        "curated-c154-b18754c5"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3358,9 +3328,7 @@
       "catalog_codes": [
         "2026155"
       ],
-      "competition_codes": [
-        "curated-c155-ffcfd903"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3549,9 +3517,7 @@
       "catalog_codes": [
         "2026156"
       ],
-      "competition_codes": [
-        "curated-c156-3a53bb07"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3678,9 +3644,7 @@
       "catalog_codes": [
         "2026158"
       ],
-      "competition_codes": [
-        "curated-c158-38525312"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -3893,9 +3857,7 @@
       "catalog_codes": [
         "2026161"
       ],
-      "competition_codes": [
-        "curated-c161-544ac327"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4038,9 +4000,7 @@
       "catalog_codes": [
         "2026164"
       ],
-      "competition_codes": [
-        "curated-c164-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4266,9 +4226,7 @@
       "catalog_codes": [
         "2026166"
       ],
-      "competition_codes": [
-        "curated-c166-d0088f2e"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4375,9 +4333,7 @@
       "catalog_codes": [
         "2026167"
       ],
-      "competition_codes": [
-        "curated-c167-e16589fc"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4596,9 +4552,7 @@
       "catalog_codes": [
         "2026168"
       ],
-      "competition_codes": [
-        "curated-c168-e87d918a"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4840,9 +4794,7 @@
       "catalog_codes": [
         "2026169"
       ],
-      "competition_codes": [
-        "curated-c169-058c7be4"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -4985,9 +4937,7 @@
       "catalog_codes": [
         "2026170"
       ],
-      "competition_codes": [
-        "curated-c170-15a3d671"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -5350,9 +5300,7 @@
       "catalog_codes": [
         "2026172"
       ],
-      "competition_codes": [
-        "curated-c172-8fc1b357"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -5507,9 +5455,7 @@
       "catalog_codes": [
         "2026173"
       ],
-      "competition_codes": [
-        "curated-c173-1c6755e8"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -5690,9 +5636,7 @@
       "catalog_codes": [
         "2026174"
       ],
-      "competition_codes": [
-        "curated-c174-b6d15f41"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -5873,9 +5817,7 @@
       "catalog_codes": [
         "2026175"
       ],
-      "competition_codes": [
-        "curated-c175-6d639dfb"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6056,9 +5998,7 @@
       "catalog_codes": [
         "2026176"
       ],
-      "competition_codes": [
-        "curated-c176-3183118f"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6266,9 +6206,7 @@
       "catalog_codes": [
         "2026177"
       ],
-      "competition_codes": [
-        "curated-c177-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6429,9 +6367,7 @@
       "catalog_codes": [
         "2026178"
       ],
-      "competition_codes": [
-        "curated-c178-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6616,9 +6552,7 @@
       "catalog_codes": [
         "2026179"
       ],
-      "competition_codes": [
-        "curated-c179-5ed57b4e"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6799,9 +6733,7 @@
       "catalog_codes": [
         "2026180"
       ],
-      "competition_codes": [
-        "curated-c180-d68adca6"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -6966,9 +6898,7 @@
       "catalog_codes": [
         "2026182"
       ],
-      "competition_codes": [
-        "curated-c182-ffad5fb2"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -7193,9 +7123,7 @@
       "catalog_codes": [
         "2026183"
       ],
-      "competition_codes": [
-        "curated-c183-9c6e3b15"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -7300,9 +7228,7 @@
       "catalog_codes": [
         "2026184"
       ],
-      "competition_codes": [
-        "curated-c184-5346ce75"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -7501,9 +7427,7 @@
       "catalog_codes": [
         "2026185"
       ],
-      "competition_codes": [
-        "curated-c185-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -7736,9 +7660,7 @@
       "catalog_codes": [
         "2026187"
       ],
-      "competition_codes": [
-        "curated-c187-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -7956,9 +7878,7 @@
       "catalog_codes": [
         "2026191"
       ],
-      "competition_codes": [
-        "curated-c191-56b1e125"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -8171,9 +8091,7 @@
       "catalog_codes": [
         "2026192"
       ],
-      "competition_codes": [
-        "curated-c192-35ef9e26"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -8410,9 +8328,7 @@
       "catalog_codes": [
         "2026193"
       ],
-      "competition_codes": [
-        "curated-c193-53afeab2"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -8607,9 +8523,7 @@
       "catalog_codes": [
         "2026194"
       ],
-      "competition_codes": [
-        "curated-c194-fd6103ee"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -8776,9 +8690,7 @@
       "catalog_codes": [
         "2026195"
       ],
-      "competition_codes": [
-        "curated-c195-c9ee3e33"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -8925,9 +8837,7 @@
       "catalog_codes": [
         "2026196"
       ],
-      "competition_codes": [
-        "curated-c196-c9ee3e33"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -9142,9 +9052,7 @@
       "catalog_codes": [
         "2026198"
       ],
-      "competition_codes": [
-        "curated-c198-787fbf0f"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -9291,9 +9199,7 @@
       "catalog_codes": [
         "2026199"
       ],
-      "competition_codes": [
-        "curated-c199-113fbbe7"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -9480,9 +9386,7 @@
       "catalog_codes": [
         "2026201"
       ],
-      "competition_codes": [
-        "curated-c201-55584f08"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -9687,9 +9591,7 @@
       "catalog_codes": [
         "2026203"
       ],
-      "competition_codes": [
-        "curated-c203-d1d687c9"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -9802,9 +9704,7 @@
       "catalog_codes": [
         "2026203"
       ],
-      "competition_codes": [
-        "curated-c203-a22ec89f"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10011,9 +9911,7 @@
       "catalog_codes": [
         "2026205"
       ],
-      "competition_codes": [
-        "curated-c205-42ac972d"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10183,9 +10081,7 @@
       "catalog_codes": [
         "2026206"
       ],
-      "competition_codes": [
-        "curated-c206-3f07de37"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10328,9 +10224,7 @@
       "catalog_codes": [
         "2026209"
       ],
-      "competition_codes": [
-        "curated-c209-c3b5abfc"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10524,9 +10418,7 @@
       "catalog_codes": [
         "2026210"
       ],
-      "competition_codes": [
-        "curated-c210-22a31aed"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10651,9 +10543,7 @@
       "catalog_codes": [
         "2026211"
       ],
-      "competition_codes": [
-        "curated-c211-2f05c3c1"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10788,9 +10678,7 @@
       "catalog_codes": [
         "2026212"
       ],
-      "competition_codes": [
-        "curated-c212-78484d8c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -10993,9 +10881,7 @@
       "catalog_codes": [
         "2026213"
       ],
-      "competition_codes": [
-        "curated-c213-50e3f7aa"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11168,9 +11054,7 @@
       "catalog_codes": [
         "2026217"
       ],
-      "competition_codes": [
-        "curated-c217-4445a551"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11341,9 +11225,7 @@
       "catalog_codes": [
         "2026218"
       ],
-      "competition_codes": [
-        "curated-c218-674deeac"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11518,9 +11400,7 @@
       "catalog_codes": [
         "2026219"
       ],
-      "competition_codes": [
-        "curated-c219-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11617,9 +11497,7 @@
       "catalog_codes": [
         "2026220"
       ],
-      "competition_codes": [
-        "curated-c220-a77d9cc4"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11800,9 +11678,7 @@
       "catalog_codes": [
         "2026221"
       ],
-      "competition_codes": [
-        "curated-c221-a02b2513"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -11893,9 +11769,7 @@
       "catalog_codes": [
         "2026222"
       ],
-      "competition_codes": [
-        "curated-c222-02b30697"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12098,9 +11972,7 @@
       "catalog_codes": [
         "2026223"
       ],
-      "competition_codes": [
-        "curated-c223-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12309,9 +12181,7 @@
       "catalog_codes": [
         "2026224"
       ],
-      "competition_codes": [
-        "curated-c224-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12424,9 +12294,7 @@
       "catalog_codes": [
         "2026225"
       ],
-      "competition_codes": [
-        "curated-c225-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12599,9 +12467,7 @@
       "catalog_codes": [
         "2026227"
       ],
-      "competition_codes": [
-        "curated-c227-5d6833eb"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12770,9 +12636,7 @@
       "catalog_codes": [
         "2026228"
       ],
-      "competition_codes": [
-        "curated-c228-c9a92ff4"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -12987,9 +12851,7 @@
       "catalog_codes": [
         "2026229"
       ],
-      "competition_codes": [
-        "curated-c229-ffad5fb2"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -13224,9 +13086,7 @@
       "catalog_codes": [
         "2026233"
       ],
-      "competition_codes": [
-        "curated-c233-b8987b7d"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -13389,9 +13249,7 @@
       "catalog_codes": [
         "2026234"
       ],
-      "competition_codes": [
-        "curated-c234-6638ef91"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -13566,9 +13424,7 @@
       "catalog_codes": [
         "2026235"
       ],
-      "competition_codes": [
-        "curated-c235-a372e39c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -13721,9 +13577,7 @@
       "catalog_codes": [
         "2026235"
       ],
-      "competition_codes": [
-        "curated-c235-a50bab84"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -13888,9 +13742,7 @@
       "catalog_codes": [
         "2026236"
       ],
-      "competition_codes": [
-        "curated-c236-22a31aed"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14081,9 +13933,7 @@
       "catalog_codes": [
         "2026237"
       ],
-      "competition_codes": [
-        "curated-c237-7850adcd"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14216,9 +14066,7 @@
       "catalog_codes": [
         "2026238"
       ],
-      "competition_codes": [
-        "curated-c238-bf7fe8bc"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14377,9 +14225,7 @@
       "catalog_codes": [
         "2026239"
       ],
-      "competition_codes": [
-        "curated-c239-5f970c2c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14582,9 +14428,7 @@
       "catalog_codes": [
         "2026242"
       ],
-      "competition_codes": [
-        "curated-c242-2e9a3463"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14741,9 +14585,7 @@
       "catalog_codes": [
         "2026244"
       ],
-      "competition_codes": [
-        "curated-c244-2191d337"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -14858,9 +14700,7 @@
       "catalog_codes": [
         "2026244"
       ],
-      "competition_codes": [
-        "curated-c244-4f33501b"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -15027,9 +14867,7 @@
       "catalog_codes": [
         "2026246"
       ],
-      "competition_codes": [
-        "curated-c246-1ad19ead"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -15219,9 +15057,7 @@
       "catalog_codes": [
         "2026246"
       ],
-      "competition_codes": [
-        "curated-c246-184cb976"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -15546,9 +15382,7 @@
       "catalog_codes": [
         "2026248"
       ],
-      "competition_codes": [
-        "curated-c248-b0062f21"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -15752,9 +15586,7 @@
       "catalog_codes": [
         "2026248"
       ],
-      "competition_codes": [
-        "curated-c248-02da82ac"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -15971,9 +15803,7 @@
       "catalog_codes": [
         "2026249"
       ],
-      "competition_codes": [
-        "curated-c249-69b5bd4c"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -16184,9 +16014,7 @@
       "catalog_codes": [
         "2026250"
       ],
-      "competition_codes": [
-        "curated-c250-7e926a4a"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -16299,9 +16127,7 @@
       "catalog_codes": [
         "2026254"
       ],
-      "competition_codes": [
-        "curated-c254-98fbebe0"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -16476,9 +16302,7 @@
       "catalog_codes": [
         "2026255"
       ],
-      "competition_codes": [
-        "curated-c255-5c6cc3b0"
-      ],
+      "competition_codes": [],
       "resource_codes": [],
       "metadata": {
         "search_record": {
@@ -16644,712 +16468,7 @@
     }
   ],
   "references": {
-    "competitions": [
-      {
-        "code": "curated-c131-7ac66d1d",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "7a8e201bb316c1d2e95bd48872385bb02a8fbed78da518f12d710b9ca3bf8043",
-        "catalog_codes": [
-          "2026131"
-        ]
-      },
-      {
-        "code": "curated-c133-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4fbe56dcefde5abbb4659fd3dbe71333befe42597f4daecf053d1d9a1d10303c",
-        "catalog_codes": [
-          "2026133"
-        ]
-      },
-      {
-        "code": "curated-c136-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4068e1282b4e4647fafa7750cc0c681a7855e0482fa8da5a59812ebf95596b6e",
-        "catalog_codes": [
-          "2026136"
-        ]
-      },
-      {
-        "code": "curated-c140-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4ce2002aaa328b54e94502a8fbef683727ab35c0e07aed2568f19685e73672c1",
-        "catalog_codes": [
-          "2026140"
-        ]
-      },
-      {
-        "code": "curated-c141-1c63abb5",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "d9e1ee8a992a94a61ad104f9c0f906434333700b67f7d143b8f2d6f3207325ac",
-        "catalog_codes": [
-          "2026141"
-        ]
-      },
-      {
-        "code": "curated-c143-17bb43de",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "8c8bb65ad6cf3495a5f00d9ed9f5d1d965a49ac9afb627cca10a9d5544ccba3e",
-        "catalog_codes": [
-          "2026143"
-        ]
-      },
-      {
-        "code": "curated-c144-c32e1208",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "ffcf75d21cc665adc98bcd1525edf4e32a27b041d4c8936b0d032b8fe7be0567",
-        "catalog_codes": [
-          "2026144"
-        ]
-      },
-      {
-        "code": "curated-c144-5cb711d6",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "5a837c631d976d7c144fb7cd1b6bee1fa55c71ad99ab8de987ab6f01973340d6",
-        "catalog_codes": [
-          "2026144"
-        ]
-      },
-      {
-        "code": "curated-c145-ffad5fb2",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "ece36cfc1b04f59f6c5714a5f5bec4421097ccf195a071f6041658d81d74bdd0",
-        "catalog_codes": [
-          "2026145"
-        ]
-      },
-      {
-        "code": "curated-c146-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "ef5db9c2cf6cd238a24e45d35384458e49932427de8fee53632f9ef7831675f3",
-        "catalog_codes": [
-          "2026146"
-        ]
-      },
-      {
-        "code": "curated-c147-7ac66d1d",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e6d5fd36108a6d39440ae8327b5afa01145288e2f81597afd2395e6ceeea5a6f",
-        "catalog_codes": [
-          "2026147"
-        ]
-      },
-      {
-        "code": "curated-c148-79c641ae",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "0725951576bdc8d6c420da222d08773b72bf89b4d3ef5f0d22774cbd1710a3ec",
-        "catalog_codes": [
-          "2026148"
-        ]
-      },
-      {
-        "code": "curated-c151-160c7017",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4f63d90eedcaca802bea331679b6929458e2828da0650a444ba401e46d7895a7",
-        "catalog_codes": [
-          "2026151"
-        ]
-      },
-      {
-        "code": "curated-c152-6384ce25",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e8b71f56d7ae11e2bfb518b030de07f4bf2a9a2f1e20b52c7667347446411c92",
-        "catalog_codes": [
-          "2026152"
-        ]
-      },
-      {
-        "code": "curated-c154-b18754c5",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "50e4f73f5eff39b5aa8c849e087bc66f30167b9272f4a5874b04027e1dcc58e1",
-        "catalog_codes": [
-          "2026154"
-        ]
-      },
-      {
-        "code": "curated-c155-ffcfd903",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "6339c950ea276002ae39f063da8422d725741931676a74eb6594d3320418ab4a",
-        "catalog_codes": [
-          "2026155"
-        ]
-      },
-      {
-        "code": "curated-c156-3a53bb07",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "0d8d4a207852f2cb79ac493a754389f191922f66bad1fae5a8962f253eaafad2",
-        "catalog_codes": [
-          "2026156"
-        ]
-      },
-      {
-        "code": "curated-c158-38525312",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "34df086fe840e363ab006d1c9b19457d04a61c668c2449bb732c2dfd6d146ad9",
-        "catalog_codes": [
-          "2026158"
-        ]
-      },
-      {
-        "code": "curated-c161-544ac327",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "a0dd92c6313e9c8069459badb66133597346a5aeab067b3192c5b3b4dfbaeefc",
-        "catalog_codes": [
-          "2026161"
-        ]
-      },
-      {
-        "code": "curated-c164-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "743d808f5aff04116dc942e48bc1f726a2d33a2f6b7dbe12f51bc9eadaa18d0e",
-        "catalog_codes": [
-          "2026164"
-        ]
-      },
-      {
-        "code": "curated-c166-d0088f2e",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "c63af6fb82b0f10c1c8feec8f9474e21f2470c6b894f71f6ac31b1d7bbd42484",
-        "catalog_codes": [
-          "2026166"
-        ]
-      },
-      {
-        "code": "curated-c167-e16589fc",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e055a2fefce02aab4590a100d5fa2f57ab5b2d5a9e834907e0a2fb4631179cda",
-        "catalog_codes": [
-          "2026167"
-        ]
-      },
-      {
-        "code": "curated-c168-e87d918a",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "006ea9a9b08790f950888376e3c555a5d1d88ca6ce08264d6c9ae6444c384c43",
-        "catalog_codes": [
-          "2026168"
-        ]
-      },
-      {
-        "code": "curated-c169-058c7be4",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "14f85839e92a35b2c225d153a6ce0e3585655886d516f12cc48ef507b479daf0",
-        "catalog_codes": [
-          "2026169"
-        ]
-      },
-      {
-        "code": "curated-c170-15a3d671",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1bd42c2c9d45ddf5e0af974160d2381d65ea70c2a3512c1b56deb671caaacf95",
-        "catalog_codes": [
-          "2026170"
-        ]
-      },
-      {
-        "code": "curated-c172-8fc1b357",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1c6d22ff8e0dd91d66f4c12da17c7e11d3727967276d30d7283fbabf810da509",
-        "catalog_codes": [
-          "2026172"
-        ]
-      },
-      {
-        "code": "curated-c173-1c6755e8",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "80775b7109e30f7d95720d6f2921caf1766851a0287f7164ed3de41061e3092a",
-        "catalog_codes": [
-          "2026173"
-        ]
-      },
-      {
-        "code": "curated-c174-b6d15f41",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e0d38a8928ff48e280c3c2d681a5f7c6a2174bd9df67b09dc87c26fc590f5fc6",
-        "catalog_codes": [
-          "2026174"
-        ]
-      },
-      {
-        "code": "curated-c175-6d639dfb",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "bb98d7e0b0562df0a2db45aa11d02fe5c62c7cc492e9add58ec8b6c32411e525",
-        "catalog_codes": [
-          "2026175"
-        ]
-      },
-      {
-        "code": "curated-c176-3183118f",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "2a6f2ef23eb5a902803a2980a5c66b50a2d53a1f5d13f4def6a8af7838703fd9",
-        "catalog_codes": [
-          "2026176"
-        ]
-      },
-      {
-        "code": "curated-c177-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "10c163c5852c8f06ca0bc1e043ee74f1147daef61b4987275348963eb06778f6",
-        "catalog_codes": [
-          "2026177"
-        ]
-      },
-      {
-        "code": "curated-c178-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "f7a5b1903019f54aeb1e5d641e4e5add9c0b37ec7c7877050bb32bd5ec0e8800",
-        "catalog_codes": [
-          "2026178"
-        ]
-      },
-      {
-        "code": "curated-c179-5ed57b4e",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "170a058ca106268e263c8423a863428ebc8f781386db866dde6421d6f3e883d1",
-        "catalog_codes": [
-          "2026179"
-        ]
-      },
-      {
-        "code": "curated-c180-d68adca6",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "04c45975f8237580e3b9c62dfe5ac55d6b24c83fe98be5ecdd541a9a345eea0b",
-        "catalog_codes": [
-          "2026180"
-        ]
-      },
-      {
-        "code": "curated-c182-ffad5fb2",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "d67ffa8e43bb9c20194adabb38d46620739687c4055d5716a3485a348a9ed99f",
-        "catalog_codes": [
-          "2026182"
-        ]
-      },
-      {
-        "code": "curated-c183-9c6e3b15",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1fff921ef8a1cff576f691db51f7b555c1253e74653d73fc175e70f575df79ab",
-        "catalog_codes": [
-          "2026183"
-        ]
-      },
-      {
-        "code": "curated-c184-5346ce75",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "c0c87bec174bd184ae9f57885cff15ca7cdb6587cccfa0f82a2bc4dc153b74c1",
-        "catalog_codes": [
-          "2026184"
-        ]
-      },
-      {
-        "code": "curated-c185-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "766f9aa3be4a61ae424503b035cf24d7272f0f50fec3b8fad61acb7e9a113ea3",
-        "catalog_codes": [
-          "2026185"
-        ]
-      },
-      {
-        "code": "curated-c187-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1268bbfc038b86795181184d79936e9ed87e9f3e21d5e1f4c580079e9f58412c",
-        "catalog_codes": [
-          "2026187"
-        ]
-      },
-      {
-        "code": "curated-c191-56b1e125",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "62015014b036fffea68c8107a381d63c66c29c26f7513eb754e991af733ed3e9",
-        "catalog_codes": [
-          "2026191"
-        ]
-      },
-      {
-        "code": "curated-c192-35ef9e26",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "6b4de70506162c70ec24024ba53e3f1e18215fb833d91545a97c31d233afa191",
-        "catalog_codes": [
-          "2026192"
-        ]
-      },
-      {
-        "code": "curated-c193-53afeab2",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "888fa8037a77e44bfe33cb0da11aed4d2b65474d1b9d4242d1f84907edd7ed75",
-        "catalog_codes": [
-          "2026193"
-        ]
-      },
-      {
-        "code": "curated-c194-fd6103ee",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "68145b71a8e73c44012b958ad7ea14ae6a7823faf799bab030854aeca37302cf",
-        "catalog_codes": [
-          "2026194"
-        ]
-      },
-      {
-        "code": "curated-c195-c9ee3e33",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "6baa74134b8ebad548a21af1e90bd602e709bc84f9435e9ee04aa67d05780776",
-        "catalog_codes": [
-          "2026195"
-        ]
-      },
-      {
-        "code": "curated-c196-c9ee3e33",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "23040c2c0f9f879c3ce44f083a4959af64fcf3206c8856020a9d323f29ae7866",
-        "catalog_codes": [
-          "2026196"
-        ]
-      },
-      {
-        "code": "curated-c198-787fbf0f",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "0cbd32a4ff53fe98a576b28e8a7b96ef3ca9469338bf053dce680ac8e7038c70",
-        "catalog_codes": [
-          "2026198"
-        ]
-      },
-      {
-        "code": "curated-c199-113fbbe7",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "b5615994a8800dfdaaa46bbf8abfd94547b3e5cdb49092a8b50d442714f94e31",
-        "catalog_codes": [
-          "2026199"
-        ]
-      },
-      {
-        "code": "curated-c201-55584f08",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "47ec6b1d2f8bb2da249dbb8883ba19a84601247fc0ede26029e95d335ea995dd",
-        "catalog_codes": [
-          "2026201"
-        ]
-      },
-      {
-        "code": "curated-c203-d1d687c9",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "00e99b66d131e0ead943e520cbb5a49388471c6e9cf6b5854a2f0c9fdfdf580f",
-        "catalog_codes": [
-          "2026203"
-        ]
-      },
-      {
-        "code": "curated-c203-a22ec89f",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "89caec010c21966568801eba8a993b721b7d709f4b6db5d129a22fb063a052d4",
-        "catalog_codes": [
-          "2026203"
-        ]
-      },
-      {
-        "code": "curated-c205-42ac972d",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "d90789646e635a96caddfae95b027b0d4873f239bab06155c5e2b504bbb689c2",
-        "catalog_codes": [
-          "2026205"
-        ]
-      },
-      {
-        "code": "curated-c206-3f07de37",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1c1981e51bdb4f1f18cf212b502e0f7ce41ccb82871425b5bc3174a9b902c98f",
-        "catalog_codes": [
-          "2026206"
-        ]
-      },
-      {
-        "code": "curated-c209-c3b5abfc",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1a75741a4f1b128cd24284010380121b5180a59586d71060d00d591850d5fc1b",
-        "catalog_codes": [
-          "2026209"
-        ]
-      },
-      {
-        "code": "curated-c210-22a31aed",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e2d3fb1e001946f66cebe193a042663d32ac081580e607d465d489b23931099a",
-        "catalog_codes": [
-          "2026210"
-        ]
-      },
-      {
-        "code": "curated-c211-2f05c3c1",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "39250245fb2a7357695dc0d0f5d0546907105ed8beea17c34eb64ff678e3c4ca",
-        "catalog_codes": [
-          "2026211"
-        ]
-      },
-      {
-        "code": "curated-c212-78484d8c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "9455ef42f0742f613cfcf6215718e6ed47b9c49feec790e7958085108137c3cc",
-        "catalog_codes": [
-          "2026212"
-        ]
-      },
-      {
-        "code": "curated-c213-50e3f7aa",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "da5178696b662df9927e50d7eb9b15096dc9da30295372bde395ae2a5a12430d",
-        "catalog_codes": [
-          "2026213"
-        ]
-      },
-      {
-        "code": "curated-c217-4445a551",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "e4beae3bfcefbd55c38aa02d89b136e09cb7f3e77df5de6472dd18bfef5dfe87",
-        "catalog_codes": [
-          "2026217"
-        ]
-      },
-      {
-        "code": "curated-c218-674deeac",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "47ecdaac7bbd6643f686aec5a0fbbde6690303f69c73ee9b64056e6062e2b61a",
-        "catalog_codes": [
-          "2026218"
-        ]
-      },
-      {
-        "code": "curated-c219-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "2bf36ee8170520f35ed4008ba71610cc2183030c294fc14c288ac6cdd18c5797",
-        "catalog_codes": [
-          "2026219"
-        ]
-      },
-      {
-        "code": "curated-c220-a77d9cc4",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "3bb6bb65c658daccca4efa6afac459f9c42e96be3f0dbdb24e7f20e3598f6f66",
-        "catalog_codes": [
-          "2026220"
-        ]
-      },
-      {
-        "code": "curated-c221-a02b2513",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "f87a0014b4909099c85a1a866a5a1bc2719554baf4f9753273cfffc51e9cf6e1",
-        "catalog_codes": [
-          "2026221"
-        ]
-      },
-      {
-        "code": "curated-c222-02b30697",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "a48bcb10feae93a90369dd628582c39e96ae6a3028104e66b3ec6b03dbec36a1",
-        "catalog_codes": [
-          "2026222"
-        ]
-      },
-      {
-        "code": "curated-c223-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "8bd0825fcc6a260e10d7e62e74b2e783f452aae9928f172618ca914b1efb5279",
-        "catalog_codes": [
-          "2026223"
-        ]
-      },
-      {
-        "code": "curated-c224-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "0a32327f9c9f81692103188133e3bf4260605ba510823c5adcf32ca0991a3562",
-        "catalog_codes": [
-          "2026224"
-        ]
-      },
-      {
-        "code": "curated-c225-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "116e6b269be2383ca48c875121179a5973e5de444509b54c0568cc78ae83fc76",
-        "catalog_codes": [
-          "2026225"
-        ]
-      },
-      {
-        "code": "curated-c227-5d6833eb",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "2d3ac1933f064b881cb1672082e0faf96bc150a4b2936a25d1d8af7a0267f0ba",
-        "catalog_codes": [
-          "2026227"
-        ]
-      },
-      {
-        "code": "curated-c228-c9a92ff4",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "cd89ac91921658ea04b800cdd08661b718bed910f32221173166376003cc4275",
-        "catalog_codes": [
-          "2026228"
-        ]
-      },
-      {
-        "code": "curated-c229-ffad5fb2",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "d499f26c55d83d1373545035e3e3e9e46dec734b6e558d27c4da219ea9a117b2",
-        "catalog_codes": [
-          "2026229"
-        ]
-      },
-      {
-        "code": "curated-c233-b8987b7d",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "f4869e1295b250bdc21e18c993f684ef7943b98a66cbf7ce91bcc90fd3409b16",
-        "catalog_codes": [
-          "2026233"
-        ]
-      },
-      {
-        "code": "curated-c234-6638ef91",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "ca80d36a0d5655bd59fcda1d1b40add46aa80f15dd72226acebbd462e4946493",
-        "catalog_codes": [
-          "2026234"
-        ]
-      },
-      {
-        "code": "curated-c235-a372e39c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "70d3ba70378ceb2b2595f9f3c3e030d5205c27e981e0548c3d9c6a85fe6151c9",
-        "catalog_codes": [
-          "2026235"
-        ]
-      },
-      {
-        "code": "curated-c235-a50bab84",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "43da42792480f47d8a4099a0ddbd82b3a32e7755d761a28e0772306df8fd4654",
-        "catalog_codes": [
-          "2026235"
-        ]
-      },
-      {
-        "code": "curated-c236-22a31aed",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4589f013bb5cae55b24375536f99cdab7d0bfbae4fc4e2b9de4124aef87087fe",
-        "catalog_codes": [
-          "2026236"
-        ]
-      },
-      {
-        "code": "curated-c237-7850adcd",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "0cead0c5ed9a18f4c7a14102be6e2700eb5ba201613ab3f16faed0747b1964f1",
-        "catalog_codes": [
-          "2026237"
-        ]
-      },
-      {
-        "code": "curated-c238-bf7fe8bc",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "bb1547c272f353909077146557b495212f8be39ee0ab8acf327ef84148fa0607",
-        "catalog_codes": [
-          "2026238"
-        ]
-      },
-      {
-        "code": "curated-c239-5f970c2c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "1d4541672db1de7abb0af0cad6061edfffc941d6c3d475fa76267ac868d99164",
-        "catalog_codes": [
-          "2026239"
-        ]
-      },
-      {
-        "code": "curated-c242-2e9a3463",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "edf3c3a33bceed723d0366737b538f402c1d2d1142c75d76f9b3da2bcbd5e0dd",
-        "catalog_codes": [
-          "2026242"
-        ]
-      },
-      {
-        "code": "curated-c244-2191d337",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "be6baf74b193a91c5f5c51d21695b86c6ff81ab7d77828683cf208c09e01e6e3",
-        "catalog_codes": [
-          "2026244"
-        ]
-      },
-      {
-        "code": "curated-c244-4f33501b",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "9d91514efc207a1261a5a92b62ff15c93310306c612db96ceaa1331931e4b44a",
-        "catalog_codes": [
-          "2026244"
-        ]
-      },
-      {
-        "code": "curated-c246-1ad19ead",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "89f522e93a0ec2b1bfb0a8056eb7716fbea992b90d4227bd0b7b1b9d006e30f3",
-        "catalog_codes": [
-          "2026246"
-        ]
-      },
-      {
-        "code": "curated-c246-184cb976",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "fee2360a352922064352d4d3433a402870971ba026b672cfef2954cddb45aff2",
-        "catalog_codes": [
-          "2026246"
-        ]
-      },
-      {
-        "code": "curated-c248-b0062f21",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "402d6192e4b652fe898e7d1350f28fec7ce70c3e5888edbc919409b3d5b4369c",
-        "catalog_codes": [
-          "2026248"
-        ]
-      },
-      {
-        "code": "curated-c248-02da82ac",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "8763e67da88cfc122b4ecba4bfabbaba0534e1e2db007c4b998c5717c1a64d1c",
-        "catalog_codes": [
-          "2026248"
-        ]
-      },
-      {
-        "code": "curated-c249-69b5bd4c",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "ee6330482fefd133eecd78c2bfb3a927035e76c1d459db420080adbdc22a9e34",
-        "catalog_codes": [
-          "2026249"
-        ]
-      },
-      {
-        "code": "curated-c250-7e926a4a",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "4bb69d056a2f0f63ed208949d6933a86fa8c798b94eee8276d6c350871101142",
-        "catalog_codes": [
-          "2026250"
-        ]
-      },
-      {
-        "code": "curated-c254-98fbebe0",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "b622d2f09f17974125339d3a2f9e934fcf7b1c97ce3cee2d94db9ead9a5fa854",
-        "catalog_codes": [
-          "2026254"
-        ]
-      },
-      {
-        "code": "curated-c255-5c6cc3b0",
-        "package_id": "tongji-2026-131-255",
-        "payload_hash": "465de3ac65b070bb7c1f0c7e73e8b1e763d70609a1f0351b413abb171aa55ca7",
-        "catalog_codes": [
-          "2026255"
-        ]
-      }
-    ],
+    "competitions": [],
     "resources": []
   },
   "corpus_version": "874ccd5c6dddf794"

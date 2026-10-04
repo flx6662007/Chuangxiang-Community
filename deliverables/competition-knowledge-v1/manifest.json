@@ -73,14 +73,29 @@
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         {
+          "path": "backend/curation/knowledge_loader.py",
+          "bytes": 11984,
+          "sha256": "34cfbf764519b274e50e47d1fea3faf491ffa62116310a97e1e5d2f7184c4c6f"
+        },
+        {
+          "path": "backend/curation/management/commands/load_competition_knowledge.py",
+          "bytes": 1713,
+          "sha256": "24a300954b66beaf4892c5a5b8e62411919f20bf52aa5ddfcca7b75b9b44df6d"
+        },
+        {
           "path": "backend/curation/product.py",
           "bytes": 39401,
           "sha256": "397ff539e0b975b13adee8ddd536dfce80938f6b39488b998e77982977b276d9"
         },
         {
           "path": "backend/curation/test_knowledge_delivery.py",
-          "bytes": 11100,
-          "sha256": "0bd30fed204837e205aa5a75f483ae88874a71a3e89b191074b86d8eb6b4f62b"
+          "bytes": 6626,
+          "sha256": "75e386ea6806377915013f1664f03ef55078028397d8b4d9ca1e767fc6902631"
+        },
+        {
+          "path": "backend/curation/test_knowledge_loader.py",
+          "bytes": 14141,
+          "sha256": "8d0028ee958206384cbfa0e786888075f38843e047a350c41bf450c24e3c8dd5"
         },
         {
           "path": "backend/curation/test_product.py",
@@ -114,8 +129,8 @@
         },
         {
           "path": "docs/competition-delivery.md",
-          "bytes": 3887,
-          "sha256": "647016f33447e13c17d3dda5281de71b2b0a848d8a8b79ff91b61827111cda00"
+          "bytes": 3153,
+          "sha256": "9d6cc66b4b82a3fe0505efc31ccabb87c7ea171f62ca657a7093acb49cd11414"
         },
         {
           "path": "docs/competition-evaluation/README.md",
@@ -283,6 +298,31 @@
           "sha256": "04885659d5a631de3660c4db5f5c2e7a1611b4191c6e3d109af72f3698d061a9"
         },
         {
+          "path": "docs/competition-knowledge-maintenance/imports/import-001-089.json",
+          "bytes": 252808,
+          "sha256": "aca8e9f9d7cf31fd9adbcd1447c8357bb0fe66d74df499697357fb0090b7ef7b"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/imports/import-090-130.json",
+          "bytes": 266357,
+          "sha256": "61845d73a81f275424a6b2740ca48c4fd1087efab07dea344942cb77ad1e495a"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/imports/import-131-255.json",
+          "bytes": 738108,
+          "sha256": "b577d1f545e8fb3a79c4a7a2ceaa84798792d9f5534355b5b989e6a96e688921"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/independent-import-report.json",
+          "bytes": 3009,
+          "sha256": "600e429c3d0c8f5b04aeb2192b6fe944f497c679e64fcfd955a7fb0cb9a88d49"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/independent-import-report.md",
+          "bytes": 2920,
+          "sha256": "447aaf0f79f1239e3c6acb05d8a6492b2578d9974b26c05d2c3a86170a982d1e"
+        },
+        {
           "path": "docs/competition-knowledge/20项样本.md",
           "bytes": 35283,
           "sha256": "1edcded9f7fb353347a1670495744ce1c39c7cbfd8e71058b972a4b7b3a98275"
@@ -344,8 +384,8 @@
         },
         {
           "path": "docs/competition-search-handoff.md",
-          "bytes": 14050,
-          "sha256": "7abd28471148e2c7fb282be38a7ef22c4db91ea4d6c8b43b5e8b9edaffcec631"
+          "bytes": 12713,
+          "sha256": "5dd7fd63b241521852686951bcff87630683adb3c5babde0f519879d31001126"
         },
         {
           "path": "scripts/audit-competition-sources.py",
@@ -369,8 +409,8 @@
         },
         {
           "path": "scripts/build-knowledge-imports.py",
-          "bytes": 6518,
-          "sha256": "a4c35c8e43c15ed48e20014541b53bc5a31ffe4b8751eebad3f94ed2b20d2848"
+          "bytes": 3654,
+          "sha256": "897110122f17b23e8574a8cc5494d315c4cadf52cb015faacf743f75ab691dc6"
         },
         {
           "path": "scripts/build-research-package.py",
@@ -399,8 +439,8 @@
         },
         {
           "path": "scripts/package-competition-delivery.py",
-          "bytes": 5446,
-          "sha256": "9b71858ece89e57be40740c2d83b888820ae98635df8d00ae8149d84ceecbe33"
+          "bytes": 5800,
+          "sha256": "f8e11c61002ecc07f6b98fbd5b59b1bbcaa2e8df0dc5518ec0ded72b9565a770"
         },
         {
           "path": "scripts/prepare-competition-model.py",
@@ -413,8 +453,8 @@
           "sha256": "58384e643e45318d019334315357fc14c4bef8a0344baa9cd28d7c160023dfbd"
         }
       ],
-      "bytes": 876762,
-      "sha256": "26be5f46edeaf848bebb5e1aeabafe4e0a360fe1bad8e0d418ac5fbafa5a53dd"
+      "bytes": 1054193,
+      "sha256": "04fbbc61d204fa4f5e53bfc58ff51477bb0df15b6638b8396ccc4984a7ceba8f"
     },
     {
       "file": "competition-maintenance-v1-874ccd5c6dddf794.zip",
@@ -456,18 +496,28 @@
         },
         {
           "path": "docs/competition-knowledge-maintenance/imports/import-001-089.json",
-          "bytes": 252797,
-          "sha256": "d17e9a1cd62c248b0734269e641eb1a477ea669225f96fc91edd2f0afbb73a85"
+          "bytes": 252808,
+          "sha256": "aca8e9f9d7cf31fd9adbcd1447c8357bb0fe66d74df499697357fb0090b7ef7b"
         },
         {
           "path": "docs/competition-knowledge-maintenance/imports/import-090-130.json",
-          "bytes": 278525,
-          "sha256": "ef9480796144552d942eb7657c5db5d7309b74882c950ac869e63f6a12657062"
+          "bytes": 266357,
+          "sha256": "61845d73a81f275424a6b2740ca48c4fd1087efab07dea344942cb77ad1e495a"
         },
         {
           "path": "docs/competition-knowledge-maintenance/imports/import-131-255.json",
-          "bytes": 764590,
-          "sha256": "f9437408aa4115ac4c702b12ca737619a9c2bbb5c9c2f321ebbbe88bec6e2253"
+          "bytes": 738108,
+          "sha256": "b577d1f545e8fb3a79c4a7a2ceaa84798792d9f5534355b5b989e6a96e688921"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/independent-import-report.json",
+          "bytes": 3009,
+          "sha256": "600e429c3d0c8f5b04aeb2192b6fe944f497c679e64fcfd955a7fb0cb9a88d49"
+        },
+        {
+          "path": "docs/competition-knowledge-maintenance/independent-import-report.md",
+          "bytes": 2920,
+          "sha256": "447aaf0f79f1239e3c6acb05d8a6492b2578d9974b26c05d2c3a86170a982d1e"
         },
         {
           "path": "docs/competition-knowledge-maintenance/processing-report.json",
@@ -560,21 +610,6 @@
           "sha256": "b4e679e22dc9521e9c695d967f1624395a3d85d25d5c4740e6eac504e20d28dc"
         },
         {
-          "path": "docs/competition-knowledge-maintenance/standalone-imports/import-001-089.json",
-          "bytes": 252808,
-          "sha256": "aca8e9f9d7cf31fd9adbcd1447c8357bb0fe66d74df499697357fb0090b7ef7b"
-        },
-        {
-          "path": "docs/competition-knowledge-maintenance/standalone-imports/import-090-130.json",
-          "bytes": 266357,
-          "sha256": "61845d73a81f275424a6b2740ca48c4fd1087efab07dea344942cb77ad1e495a"
-        },
-        {
-          "path": "docs/competition-knowledge-maintenance/standalone-imports/import-131-255.json",
-          "bytes": 738108,
-          "sha256": "b577d1f545e8fb3a79c4a7a2ceaa84798792d9f5534355b5b989e6a96e688921"
-        },
-        {
           "path": "docs/competition-knowledge-maintenance/title-edition-review.json",
           "bytes": 855,
           "sha256": "3c082b7fce85038bf04c32f201e243faeac110a0ca98abfea8e410b7289bd006"
@@ -585,8 +620,8 @@
           "sha256": "ac606c2f1437e2a59f22da4a809da892029cb2d50d0eac1e4382373c02c83c89"
         }
       ],
-      "bytes": 1547683,
-      "sha256": "1b63d758a4412deafc691c0c26a4f045f7500d60e21269bc43a09a3d0a7ab908"
+      "bytes": 1373815,
+      "sha256": "572fd976a60fed71cfe9b6a839fd3547cad137b020e19dc2b3a4132270fa761a"
     }
   ]
 }

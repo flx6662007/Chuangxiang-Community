@@ -12,6 +12,8 @@ EXCLUDED_MAINTENANCE = {'git-status.txt', 'git-diff-stat.txt'}
 CODE = [
     'backend/curation/__init__.py', 'backend/curation/product.py',
     'backend/curation/test_product.py', 'backend/curation/test_knowledge_delivery.py',
+    'backend/curation/knowledge_loader.py', 'backend/curation/test_knowledge_loader.py',
+    'backend/curation/management/commands/load_competition_knowledge.py',
     'backend/information_library/__init__.py', 'backend/information_library/competition_search.py',
     'backend/information_library/semantic.py', 'backend/information_library/test_competition_search.py',
     'backend/requirements-retrieval.txt',
@@ -24,6 +26,8 @@ CODE = [
     'scripts/package-competition-delivery.py',
     'docs/competition-research/tongji-2026-001-089/build_package.py',
     'docs/competition-search-handoff.md', 'docs/competition-delivery.md',
+    'docs/competition-knowledge-maintenance/independent-import-report.md',
+    'docs/competition-knowledge-maintenance/independent-import-report.json',
 ]
 
 
@@ -71,7 +75,7 @@ def main():
     groups = {
         'competition-materials': [(p, p.relative_to(ROOT / PUBLIC).as_posix()) for p in files_under(PUBLIC)],
         'competition-integration': [(p, p.relative_to(ROOT).as_posix()) for p in
-                                   [*(ROOT / p for p in CODE), *files_under(PUBLIC),
+                                   [*(ROOT / p for p in CODE), *files_under(PUBLIC), *files_under(MAINTENANCE / 'imports'),
                                     *files_under(Path('docs/competition-evaluation'))]],
         'competition-maintenance': [(p, p.relative_to(ROOT).as_posix()) for p in files_under(MAINTENANCE)
                                    if p.name not in EXCLUDED_MAINTENANCE],

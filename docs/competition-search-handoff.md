@@ -1,40 +1,63 @@
-# 赛事知识与检索接入
+# 新版赛事知识导入与检索
 
-本模块提供资料成品、Python 检索函数、导入包和可复现评测。问答 API、自然语言条件解析和聊天界面由接入方调用本模块实现。
+新版资料通过一个命令独立入库，再由 Python 检索接口向 AI 提供正文、匹配理由和来源。数据版本为 `874ccd5c6dddf794`，共 198 条文档、864 个段落。旧版资料保留现状。
 
-## 交付目录
+## 准备环境
 
-| 路径 | 用途 |
-| --- | --- |
-| `docs/competition-knowledge/index.html` | 可直接打开的赛事阅读版，支持本地关键词查找 |
-| `docs/competition-knowledge/赛事指南.md`、`20项样本.md` | 按赛事与届次组织的正文 |
-| `docs/competition-knowledge/competitions.csv` | UTF-8 BOM 总表；空单元格表示未收录该字段 |
-| `docs/competition-knowledge/corpus.json` | 独立检索使用的版本化数据 |
-| `docs/competition-knowledge/chunks.jsonl` | 带赛事、章节、来源和内容哈希的段落 |
-| `docs/competition-knowledge/sources.json`、`version.json` | 来源定位和数据版本 |
-| `docs/competition-knowledge/learning-resources.json` | 学习资料与所属赛事关系 |
-| `docs/competition-knowledge-maintenance/` | 处理结论、原始资料快照、补核事实、导入包和验收记录；仅维护使用 |
-| `docs/competition-evaluation/` | 100 道开发题、50 道冻结验收题与三模式报告 |
-
-模型上下文使用检索返回的 `hits` / `knowledge_results` 及其 `passages`、`evidence`。原始底稿、处理清单和导入包中的目录背景不进入模型上下文。
-
-## 安装与独立演示
-
-以下 PowerShell 命令在仓库根目录执行，使用 Python 3.13。语义依赖安装到独立环境；关键词计算使用 Python 标准库，Windows 下自动取得上海日期还需要 `tzdata`（后端依赖已包含）。也可以显式传入 `as_of`。数据库模式另需后端依赖。
+以下 PowerShell 命令均在仓库根目录执行，使用 Python 3.13。数据库连接与 Django 配置写入 `backend/.env`，配置方法见[后端开发说明](backend-development.md)。数据库使用项目现有模型与迁移。
 
 ```powershell
 python -m venv .local/retrieval-venv
-.local/retrieval-venv/Scripts/python.exe -m pip install -r backend/requirements-retrieval.txt
 .local/retrieval-venv/Scripts/python.exe -m pip install -r backend/requirements.txt
-.local/retrieval-venv/Scripts/python.exe scripts/prepare-competition-model.py
-.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py --build-index
-.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py '机器人设计与编程' --mode hybrid --as-of 2026-10-04
-backend/.venv/Scripts/python.exe scripts/competition-search.py '诵读中国' --mode keyword --filters '{"team_size":3}' --as-of 2026-10-04
+.local/retrieval-venv/Scripts/python.exe backend/manage.py migrate
 ```
 
-模型固定为 `BAAI/bge-small-zh-v1.5`，revision 为 `7999e1d3359715c523056ef9478215996d62a620`。准备模型时需要网络；查询时强制本地加载，使用 CPU，不执行远程模型代码。默认模型目录为 `.local/models/bge-small-zh-v1.5`，索引为 `.local/competition-search/index.npz`。二者均为本地缓存，不纳入 Git。
+后续命令使用项目中的有效管理员账号。导入与审核权限为 `curation.add_importrun`、`curation.add_knowledgedocument`、`curation.change_knowledgedocument`、`curation.add_documentreview`，以及既有导入服务使用的赛事、来源和资源维护权限。已有超级管理员可直接执行。
 
-依赖的精确版本见 `backend/requirements-retrieval.txt`。[模型说明](https://huggingface.co/BAAI/bge-small-zh-v1.5)标注 MIT 许可，准备脚本同时保存该 revision 的说明和许可文件。运行环境和真实耗时见评测报告；首次模型载入耗时与后续查询分别理解。
+## 统一导入
+
+导入文件固定放在 `docs/competition-knowledge-maintenance/imports/`，三包分别包含 65、41、92 条文档。每包自带目录信息、正文、字段、来源及版本，业务赛事关联为空。
+
+```powershell
+$actorId = [int](Read-Host '管理员用户 ID')
+.local/retrieval-venv/Scripts/python.exe backend/manage.py load_competition_knowledge --actor-id $actorId --apply --reason '启用赛事知识版本 874ccd5c6dddf794'
+```
+
+`load_competition_knowledge` 在一个事务内读取三包、保存文档版本、记录管理员审核并启用检索。审核人来自指定账号，审核日期来自执行日期，`--reason` 保存本次操作依据。JSON 中的初始 `pending` 状态由这次操作完成审核。
+
+首次完整执行后，报告显示 198 条可检索文档。报告同时给出资料版本、数据库语料版本和新增、更新、复用、撤下的数量。再次导入相同内容复用现有版本；更新正文时生成新版本并保留历史记录。已撤下文档维持撤下状态。
+
+需要查看执行结果时，使用相同命令并将 `--apply` 改为 `--preview`；预演执行整条流程后回滚。默认不指定这两个参数时也执行预演。
+
+## 数据库检索
+
+导入完成后直接查询：
+
+```powershell
+.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py '英特尔杯' --database --mode keyword --as-of 2026-10-04
+.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py '诵读中国' --database --mode keyword --filters '{"team_size":3}' --as-of 2026-10-04
+```
+
+`--database` 使用数据库当前已审核文档。返回的 `knowledge_results` 包含赛事名称、届次、匹配理由、正文片段与来源；`corpus_version` 标识本次检索版本。独立知识数据作为问答证据返回。
+
+资料阅读与离线演示可直接使用 `docs/competition-knowledge/corpus.json`；省略 `--database` 时，查询脚本读取此文件。
+
+## 语义与混合检索
+
+关键词流程完成后，准备中文语义模型和数据库索引：
+
+```powershell
+.local/retrieval-venv/Scripts/python.exe -m pip install -r backend/requirements-retrieval.txt
+.local/retrieval-venv/Scripts/python.exe scripts/prepare-competition-model.py
+$env:COMPETITION_EMBEDDING_MODEL_PATH=(Resolve-Path .local/models/bge-small-zh-v1.5).Path
+$env:COMPETITION_SEMANTIC_INDEX=(Join-Path (Get-Location) '.local/competition-search/database-index.npz')
+.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py --database --build-index --index $env:COMPETITION_SEMANTIC_INDEX
+.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py '机器人设计与编程' --database --mode hybrid --index $env:COMPETITION_SEMANTIC_INDEX --as-of 2026-10-04
+```
+
+向量模型为 `BAAI/bge-small-zh-v1.5`，固定 revision `7999e1d3359715c523056ef9478215996d62a620`，精确依赖见 `backend/requirements-retrieval.txt`。模型首次准备后保存在本地，查询使用 CPU 和本地索引。模型说明及 MIT 许可随模型准备脚本保存。
+
+后端服务进程设置同样的 `COMPETITION_EMBEDDING_MODEL_PATH` 和 `COMPETITION_SEMANTIC_INDEX`。语料更新后重新执行数据库索引构建命令。离线 `corpus.json` 的演示索引与数据库索引分别构建。
 
 ## Python 接口
 
@@ -63,7 +86,7 @@ $env:COMPETITION_SEMANTIC_INDEX=(Join-Path (Get-Location) '.local/competition-se
 .local/retrieval-venv/Scripts/python.exe scripts/competition-search.py --database --build-index --index $env:COMPETITION_SEMANTIC_INDEX
 ```
 
-离线语料与数据库公开语料拥有不同的版本标识；分别构建索引。非法参数抛出 `ValueError`，接入方应转换为参数错误响应。
+离线语料与数据库语料分别构建索引，版本随查询结果返回。非法参数抛出 `ValueError`，接入方转换为参数提示。
 
 ### 输入字段
 
@@ -94,89 +117,70 @@ $env:COMPETITION_SEMANTIC_INDEX=(Join-Path (Get-Location) '.local/competition-se
 
 支持文本列表的条件按同一键内 OR 处理。`both` 表示赛事同时允许个人与团队；过滤 `team` 或 `individual` 都可命中这样的赛事。`education=master` 可以命中明确接受研究生的赛事。
 
-参赛专业不能从赛事学科类别推断；缺少年级或专业限制证据不能解释为“不限”。人数匹配需上下界及两者证据齐全。通过所传字段仅表示这些条件有依据地满足，其他邀请、院校推荐、赛区等限制仍保留在资格正文中。
+专业与年级按官方明确公布的限制匹配；缺少证据的字段记为信息不足。人数匹配使用有证据的上下界。邀请、院校推荐及赛区限制保留在资格正文中。
 
-本地自然语言解释只提供有限的主题和偏好提取。接入方将用户明确提出的硬条件映射到 `filters`，不要依靠本地解释器完成复杂意图解析。
+接入方将用户明确提出的条件映射到 `filters`，将兴趣、技能等映射到 `preferences`。本地解释器辅助提取主题与偏好。
 
 ### 输出字段
 
 | 字段 | 用途 |
 | --- | --- |
-| `interpretation` | 兼容现有前端的专业、年级、兴趣与参赛形式解析 |
+| `interpretation` | 专业、年级、兴趣与参赛形式的结构化解释 |
 | `hits` | 按排名组织的统一命中列表，包括赛事代码、届次、字段、理由、正文片段、来源和内容版本 |
 | `results` | 有真实已发布 Competition 对象的卡片；保留 `competition`、`matchReason` |
-| `knowledge_results` | 只有目录知识的证据；接入问答，不生成虚构赛事详情链接 |
+| `knowledge_results` | 新版独立知识结果，供 AI 问答使用 |
 | `mode_used`、`warnings` | 实际模式与降级原因；调用方应记录诊断 |
 | `empty_result` | 无结果原因与条件诊断 |
 | `corpus_version`、`as_of` | 本次使用的数据版本与参考日期 |
 
-`evidence` 中的 `quote` 仅保存经过核对的逐字引文。当前来源主要是原文位置与整理摘要，空 `quote` 不等同于缺失来源。`passages.text` 是公开赛事正文，不应向用户标为官方逐字引文。
+`passages.text` 保存整理后的赛事正文。`evidence` 保存官方链接、原文位置和适用届次；`quote` 有值时为已经核对的官方引文。
 
 完整实测请求和返回值见 [接口样例](competition-knowledge-maintenance/api-examples.json)：本科三人队查找英特尔杯，以及指定参考日查询仍可报名的赛事。后者的空结果保留逐项条件诊断。
 
-现有 Vue 聊天组件只消费卡片 `results`。接入同学需增加 `knowledge_results` 的证据展示及 `empty_result` 的条件提示；本次保留既有页面入口，没有更换问答接口或修改聊天组件。离线语料的 `competition_id` 均为空，独立演示返回知识证据；数据库适配器才从真实关联取得业务对象。
+当前 Vue 聊天组件调用 `/api/v1/ai/chat/`，请求为 `messages`，响应为 `message.role/content`；详见 [AI 聊天说明](ai-chat.md)。聊天接入同学在这条调用链中调用 `search_competitions()`，读取 `knowledge_results` 或 `hits`。
+
+接入方将返回的正文片段和证据加入模型上下文，并按产品需要展示来源与无结果条件。本次独立知识链路以 `knowledge_results` 提供问答依据，`results` 保留为赛事卡片适配字段。
 
 ## 检索规则与更新
 
-先按字段筛选，再进行名称、简称、别名和关键词召回，以及 BGE 向量召回。混合模式采用 RRF（常数 60），符合条件的精确名称优先。长查询的普通关键词召回要求至少两个词项命中和最低覆盖率，避免凭一个泛词返回不相关赛事。主题相似度只参与相关性排序，不能替代资格证据。
+先按字段筛选，再进行名称、简称、别名和关键词召回，以及 BGE 向量召回。混合模式采用 RRF（常数 60），符合条件的精确名称优先。长查询的关键词召回要求至少两个词项命中和最低覆盖率。主题相似度参与排序，资格结论来自字段证据。
 
-当前语义阈值为 `0.60`，来自开发集及库外主题探针的比较，可通过 `COMPETITION_SEMANTIC_THRESHOLD` 配置；调整后重新运行开发集和探针。排名分数不是资格满足概率。超过模型实际 token 上限的查询明确降级，不静默截断问题。
+语义阈值为 `0.60`，可通过 `COMPETITION_SEMANTIC_THRESHOLD` 配置，调整后运行开发集和主题探针。排名分数表达相关性。超过模型 token 上限的查询使用关键词模式，并返回运行诊断。
 
-报名窗口按日期闭区间判断；仅有结束日期时不推断已经开放。官方已发布的精确时刻保留在正文，当前 `as_of` 接口为日期粒度，不承担截止日内小时级实时判断。历史资料按原届次返回。
+报名窗口按日期闭区间判断，开始日期缺失时记为信息不足。`as_of` 为日期粒度，官方精确时刻保留在正文。报名截止和作品截止分别判断，历史资料按所属届次返回。
 
-向量索引保存模型标识、revision、语料版本、记录哈希、实际内容指纹和段落证据。内容更新、审核撤下、关联赛事撤下或索引损坏时，旧索引不继续参与排序。数据库正文与版本元数据不一致的文档停止返回。不可用语义索引会显式降级为关键词模式，评测将降级记为运行错误，不计为混合成功。
+向量索引保存模型标识、revision、语料版本、内容哈希和段落证据。文档撤下后立即退出数据库检索。内容更新、索引过期或模型不可用时，检索使用关键词模式，在 `mode_used` 和 `warnings` 中记录实际状态；更新后重新构建索引即可恢复混合检索。
 
-资料维护顺序：修改原始底稿或具有来源定位的 `verified-supplements.json` → 重建知识包 → 重新生成导入包 → 导入并完成原有审核流程 → 重建对应公开语料索引。不要只修改 HTML、CSV 或 NPZ。
+资料维护顺序：更新底稿或补核事实 → 重建知识包与导入包 → 执行统一导入命令 → 重建数据库索引。
 
-## 重建与导入
+## 数据更新
 
-首次在队友环境导入知识，使用交付的独立知识包。它们包含全部 198 条文档，不依赖原资料包附件，也不创建实际赛事卡片：
+先更新来源底稿或维护目录中的补核事实，再执行：
 
 ```powershell
-python scripts/build-knowledge-imports.py --standalone
-cd backend
-.venv/Scripts/python.exe manage.py import_curated_competitions ../docs/competition-knowledge-maintenance/standalone-imports/import-001-089.json
-.venv/Scripts/python.exe manage.py import_curated_competitions ../docs/competition-knowledge-maintenance/standalone-imports/import-090-130.json
-.venv/Scripts/python.exe manage.py import_curated_competitions ../docs/competition-knowledge-maintenance/standalone-imports/import-131-255.json
+.local/retrieval-venv/Scripts/python.exe scripts/build-competition-knowledge.py
+.local/retrieval-venv/Scripts/python.exe scripts/build-knowledge-imports.py
+.local/retrieval-venv/Scripts/python.exe backend/manage.py load_competition_knowledge --actor-id $actorId --apply --reason '更新赛事正文与来源'
+.local/retrieval-venv/Scripts/python.exe scripts/competition-search.py --database --build-index --index $env:COMPETITION_SEMANTIC_INDEX
 ```
 
-以上命令验证格式；资料包审核、`--preview`、`--apply` 和文档审核继续使用现有流程。独立包导入后为草稿，审核后以问答证据返回。独立模式与下方关联已有赛事模式择一使用；相同文档代码属于不同资料包时，导入器会拒绝混用。已采用一种模式的数据库应继续使用该模式。
+生成器默认输出三份独立包。每条文档使用稳定的 `final-<record_id>`，内容变化保存新版本；新版移除的文档自动撤下，历史正文保留。命令记录操作者、执行依据和导入结果，检索结果携带新的数据库语料版本。已撤下文档维持撤下状态。
 
-重建公开资料，或为已具备原始完整父包的数据库重建关联文档：
+撤下单篇文档时，使用现有审核命令记录当前版本和原因：
 
 ```powershell
-backend/.venv/Scripts/python.exe scripts/build-competition-knowledge.py
-backend/.venv/Scripts/python.exe scripts/build-knowledge-imports.py --original docs/competition-knowledge-maintenance/source-snapshots/001-089/导入清单.json --original docs/competition-knowledge-maintenance/source-snapshots/090-130/导入清单.json --original docs/competition-knowledge-maintenance/source-snapshots/131-255/导入清单.json
+.local/retrieval-venv/Scripts/python.exe backend/manage.py review_curated_document 文档代码 --revision 当前版本号 --status withdrawn --reason 撤下原因 --actor-id $actorId
 ```
 
-知识构建命令默认读取本仓库交付的三批 `source-snapshots`，无需原作者的 D 盘资料库。通过 `--package-1`、`--package-2`、`--package-3` 可以指定其他输入目录。要在另一个目录复现，使用 `--maintenance` 指定新的维护输出目录，并复制 `verified-supplements.json`、`rechecked-supplements.json`、`recheck-review.json`、`public-text-revisions.json` 四个输入，使用 `--supplements` 指向其中的 `verified-supplements.json`。
+## 验证与评测
 
-以下命令自动使用交付快照和四个维护输入，在 `.local` 内重建并比较全部公开文件的字节及 SHA-256，无需原资料库目录：
-
-```powershell
-backend/.venv/Scripts/python.exe scripts/check-knowledge-rebuild.py --output docs/competition-knowledge-maintenance/rebuild-report.json
-backend/.venv/Scripts/python.exe scripts/check-competition-knowledge.py --output docs/competition-knowledge-maintenance/quality-report.json
-```
-
-关联导入包位于维护目录 `imports/`。它们通过来源包和 payload hash 引用已有届次；使用这一模式必须先取得并导入原有完整依赖包，再处理覆盖文档。交付的 `source-snapshots` 是重建输入，未包含原始附件二进制，不能代替完整父包。新环境使用上方 `standalone-imports/` 即可导入全部知识。
+独立导入测试覆盖空库全量加载、关键词查询、重复执行、版本更新、撤下、事务回滚和原数据保留。数据库测试在项目的隔离 PostgreSQL 测试库执行：
 
 ```powershell
-cd backend
-.venv/Scripts/python.exe manage.py import_curated_competitions ../docs/competition-knowledge-maintenance/imports/import-001-089.json
-```
-
-此命令仅验证。原有 `--preview` 在事务内预演并回滚；`--apply` 将经过资料包审核的内容导入为文档草稿。资料包审核与文档版本审核仍按现有 curation 流程处理，关联赛事也需已发布。交付文件中的离线可检索标记不会越过数据库审核边界。
-
-## 回归与验收
-
-```powershell
-.local/retrieval-venv/Scripts/python.exe scripts/build-competition-evaluation.py --check
+.local/retrieval-venv/Scripts/python.exe backend/manage.py test curation.test_product curation.test_knowledge_delivery curation.test_knowledge_loader information_library.test_competition_search --settings=config.postgres_test_settings --keepdb --noinput
 .local/retrieval-venv/Scripts/python.exe scripts/test-competition-evaluation.py
-$env:COMPETITION_EMBEDDING_MODEL_PATH=(Resolve-Path .local/models/bge-small-zh-v1.5).Path
-.local/retrieval-venv/Scripts/python.exe scripts/evaluate-competition-search.py --split dev --index .local/competition-search/index.npz --output docs/competition-evaluation/dev-report.json
-.local/retrieval-venv/Scripts/python.exe scripts/evaluate-competition-search.py --split test --index .local/competition-search/index.npz --output docs/competition-evaluation/test-report.json
+.local/retrieval-venv/Scripts/python.exe scripts/check-competition-knowledge.py
+.local/retrieval-venv/Scripts/python.exe scripts/package-competition-delivery.py --verify
 ```
 
-题集分组、证据标注、冻结流程、错误和各指标的计算规则见 `competition-evaluation/README.md`。开发集用于调参，验收集用于方案确定后的报告。报告绑定语料版本、题集哈希和运行环境。
-
-数据库测试使用 `config.postgres_test_settings` 与预建的 `test_chuangxiang_dev`，加 `--keepdb --noinput`。真实资料包测试通过 `KNOWLEDGE_DELIVERY_PACKAGE_90`、`KNOWLEDGE_DELIVERY_PACKAGE_131` 显式指定两批原始导入文件；所有写入均在测试库事务内。
+检索评测使用固定的 100 道开发题和 50 道冻结题。语料、题集、模型和结果版本记录见[评测说明](competition-evaluation/README.md)与[评测报告](competition-evaluation/REPORT.md)。独立导入的最新执行记录见[独立导入验收](competition-knowledge-maintenance/independent-import-report.md)。

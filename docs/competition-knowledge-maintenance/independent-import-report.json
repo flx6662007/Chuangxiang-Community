@@ -1,0 +1,104 @@
+{
+  "database": "test_chuangxiang_dev",
+  "checks": {
+    "test_database_restored": true
+  },
+  "search": [
+    {
+      "mode": "keyword",
+      "mode_used": "keyword",
+      "query": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+      "hits": 5,
+      "record_ids": [
+        "curated-c100-2026-1",
+        "curated-c101-2026-1",
+        "curated-c145-ffad5fb2",
+        "m89-2026017-overview",
+        "curated-c177-5f970c2c"
+      ],
+      "evidence_present": true,
+      "seconds": 0.066
+    },
+    {
+      "mode": "semantic",
+      "mode_used": "semantic",
+      "query": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+      "hits": 5,
+      "record_ids": [
+        "curated-c100-2026-1",
+        "m89-2026017-overview",
+        "curated-c101-2026-1",
+        "m89-2026020-overview",
+        "curated-c145-ffad5fb2"
+      ],
+      "evidence_present": true,
+      "seconds": 0.065
+    },
+    {
+      "mode": "hybrid",
+      "mode_used": "hybrid",
+      "query": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+      "hits": 5,
+      "record_ids": [
+        "curated-c100-2026-1",
+        "curated-c101-2026-1",
+        "m89-2026017-overview",
+        "curated-c145-ffad5fb2",
+        "curated-c248-b0062f21"
+      ],
+      "evidence_present": true,
+      "seconds": 0.067
+    }
+  ],
+  "import": {
+    "corpus_version": "874ccd5c6dddf794",
+    "counts": {
+      "catalogs_created": 187,
+      "documents_created": 198,
+      "documents_retired": 0,
+      "documents_reviewed": 198,
+      "documents_unchanged": 0,
+      "documents_updated": 0,
+      "documents_withdrawn": 0
+    },
+    "database_corpus_version": "7b460308e5bf0580423384a9b9a64728ea47f2fa3684045c6bfba7e8be533dda",
+    "documents": 198,
+    "mode": "apply",
+    "ok": true,
+    "packages": [
+      "competition-knowledge-standalone-v1-001-089",
+      "competition-knowledge-standalone-v1-090-130",
+      "competition-knowledge-standalone-v1-131-255"
+    ],
+    "searchable_documents": 198
+  },
+  "index": {
+    "records": 198,
+    "chunks": 864,
+    "model_id": "BAAI/bge-small-zh-v1.5",
+    "model_revision": "7999e1d3359715c523056ef9478215996d62a620"
+  },
+  "repeat": {
+    "corpus_version": "874ccd5c6dddf794",
+    "counts": {
+      "catalogs_created": 0,
+      "documents_created": 0,
+      "documents_retired": 0,
+      "documents_reviewed": 0,
+      "documents_unchanged": 198,
+      "documents_updated": 0,
+      "documents_withdrawn": 0
+    },
+    "database_corpus_version": "7b460308e5bf0580423384a9b9a64728ea47f2fa3684045c6bfba7e8be533dda",
+    "documents": 198,
+    "mode": "apply",
+    "ok": true,
+    "packages": [
+      "competition-knowledge-standalone-v1-001-089",
+      "competition-knowledge-standalone-v1-090-130",
+      "competition-knowledge-standalone-v1-131-255"
+    ],
+    "searchable_documents": 198
+  },
+  "seconds": 15.662
+}
