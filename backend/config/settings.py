@@ -263,3 +263,14 @@ AI_SERVICES = {
     'TIMEOUT_SECONDS': os.getenv('AI_TIMEOUT_SECONDS', '30'),
     'MAX_OUTPUT_TOKENS': os.getenv('AI_MAX_OUTPUT_TOKENS', '2048'),
 }
+
+# 首页聊天独立配置，不启用原有通知提取/快讯生成；密钥只由后端读取。
+AI_CHAT = {
+    'ENABLED': True,
+    'PROVIDER': 'deepseek',
+    'BASE_URL': os.getenv('DEEPSEEK_BASE_URL', 'https://api.deepseek.com'),
+    'API_KEY': os.getenv('DEEPSEEK_API_KEY', ''),
+    'MODEL': os.getenv('DEEPSEEK_MODEL', 'deepseek-flash'),
+    'TIMEOUT_SECONDS': os.getenv('DEEPSEEK_TIMEOUT_SECONDS', '60'),
+    'MAX_OUTPUT_TOKENS': os.getenv('DEEPSEEK_MAX_OUTPUT_TOKENS', '2048'),
+}

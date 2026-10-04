@@ -8,6 +8,7 @@ from .views import HealthView
 urlpatterns = [
     path('', RedirectView.as_view(url='/api/v1/health/', permanent=False)),
     path('api/v1/health/', HealthView.as_view(), name='health'),
+    path('api/v1/ai/', include('ai_services.urls')),
     path('api/v1/competitions/', include('competitions.urls')),
     path('api/v1/accounts/', include('accounts.urls')),
     path('api/v1/', include('teams.urls')),

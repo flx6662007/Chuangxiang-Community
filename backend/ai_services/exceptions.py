@@ -37,6 +37,11 @@ class AIAuthenticationError(AIServiceError):
     default_message = "AI 服务认证失败，请管理员检查密钥和权限。"
 
 
+class AIBalanceError(AIServiceError):
+    code = "ai_insufficient_balance"
+    default_message = "AI 服务余额不足，请联系管理员。"
+
+
 class AIRateLimitError(AIServiceError):
     code = "ai_rate_limit"
     retryable = True

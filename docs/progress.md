@@ -1,5 +1,15 @@
 # 团队进度
 
+## 2026-10-04：DeepSeek 基础聊天（工作区待人工验收）
+
+- 首页保留既有 AI 区版式，改为真实聊天请求；支持近期多轮、Enter / Shift+Enter、中文输入法、等待防重复、错误重试和自动滚动。
+- 新增 `/api/v1/ai/chat/`，复用 Django/DRF、Axios、HTTPX 和 `ai_services`，服务器管理 System Prompt；没有新增依赖、模型迁移或下一阶段检索功能。配置步骤见 [AI 聊天说明](ai-chat.md)。
+- 当前官方配置为 `https://api.deepseek.com` / `deepseek-flash`，非思考、非流式。真实 Key 由本人填写到已忽略的 `backend/.env`，本轮没有写入 Key。
+- 验证：Django `check` 无问题；`manage.py test ai_services config --settings=config.test_settings` 共 39 项通过；`npm test` 共 50 项通过；`npm run build` 通过。真实本机 Django/Vite 启动及浏览器无 Key 错误路径通过；离线浏览器三轮聊天、输入控制、滚动和 390px 布局通过。赛事、项目、组队、资源、账号页面冒烟检查无 JS 异常。
+- 安全：CSRF、输入白名单、基础限流、固定错误提示与响应过滤测试通过；真实 `.env` 未跟踪。扫描本地 Git 历史 942 个文件版本，未发现常见格式密钥或真实 `.env` 历史。
+- 限制：没有真实 Key，官方 API 成功响应、模型实际多轮表现、余额与延迟仍待本人验证。没有 commit / push / merge。
+
+
 ## 2026-10-03：目录 1—89 人工资料适配
 
 新增[人工资料包](competition-research/tongji-2026-001-089/README.md)，保存89项赛事档案、121条赛事来源、212条学习资料，共267个不同链接。底稿保留适用届次、核验程度和缺项：73项来源对应已确认，5项范围/名称待确认，11项来源对应尚未充分核验。另有15项尚无已读赛事来源页面，与来源对应分类口径不同。内容以人工摘要和外链为主，没有将未下载附件计作原文。

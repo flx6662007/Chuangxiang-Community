@@ -27,11 +27,11 @@ class AIConfig:
     max_output_tokens: int = 2048
 
     @classmethod
-    def from_django(cls):
+    def from_django(cls, setting_name="AI_SERVICES"):
         # 避免模块导入阶段访问设置，也不在代码中固定最终模型名称。
         from django.conf import settings
 
-        values = getattr(settings, "AI_SERVICES", {})
+        values = getattr(settings, setting_name, {})
         if not isinstance(values, Mapping):
             raise AIConfigurationError() from None
         enabled = values.get("ENABLED", False)
@@ -66,7 +66,7 @@ class AIConfig:
         if (
             self.enabled is not True
             or not isinstance(self.provider, str)
-            or self.provider not in {"qwen", "openai_compatible"}
+            or self.provider not in {"qwen", "deepseek", "openai_compatible"}
         ):
             raise AIConfigurationError() from None
         for value in (self.base_url, self.api_key, self.model):

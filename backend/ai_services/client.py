@@ -7,7 +7,7 @@ import httpx
 
 from .config import AIConfig
 from .exceptions import (
-    AIAuthenticationError, AIConfigurationError, AIConnectionError,
+    AIAuthenticationError, AIBalanceError, AIConfigurationError, AIConnectionError,
     AIInputError, AIRateLimitError, AIResponseError, AITimeoutError,
     AIUpstreamError,
 )
@@ -55,6 +55,12 @@ class OpenAICompatibleClient:
         self._transport = transport
 
     def complete_json(self, messages: list[dict[str, str]]) -> dict:
+        return _parse_json_object(self._complete(messages, json_output=True))
+
+    def complete_text(self, messages: list[dict[str, str]]) -> str:
+        return self._complete(messages, json_output=False)
+
+    def _complete(self, messages, *, json_output):
         config = self._config if self._config is not None else AIConfig.from_django()
         if not isinstance(config, AIConfig):
             raise AIConfigurationError() from None
@@ -75,11 +81,14 @@ class OpenAICompatibleClient:
             "model": config.model,
             "messages": messages,
             "stream": False,
-            "response_format": {"type": "json_object"},
             "max_tokens": config.max_output_tokens,
         }
+        if json_output:
+            payload["response_format"] = {"type": "json_object"}
         if config.provider == "qwen":
             payload["enable_thinking"] = False
+        elif config.provider == "deepseek":
+            payload["thinking"] = {"type": "disabled"}
 
         try:
             # 每次调用释放连接；所有阶段都有超时，密钥不随重定向发送。
@@ -96,6 +105,8 @@ class OpenAICompatibleClient:
                 ) as response:
                     if response.status_code in (401, 403):
                         raise AIAuthenticationError() from None
+                    if response.status_code == 402:
+                        raise AIBalanceError() from None
                     if response.status_code == 429:
                         raise AIRateLimitError() from None
                     if response.status_code >= 500:
@@ -131,4 +142,4 @@ class OpenAICompatibleClient:
         content = message.get("content")
         if not isinstance(content, str) or not content.strip():
             raise AIResponseError() from None
-        return _parse_json_object(content)
+        return content

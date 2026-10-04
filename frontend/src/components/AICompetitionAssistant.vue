@@ -1,16 +1,14 @@
 <script setup>
-import { onBeforeUnmount, ref } from 'vue'
+import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
 import AppIcon from './AppIcon.vue'
-import CompetitionCard from './CompetitionCard.vue'
-import { searchCompetitionsByAI } from '../services/aiCompetitionSearch.js'
+import { requestAIChat } from '../api/ai'
+import { useAIChat } from '../composables/useAIChat.js'
 
-const examples = ['近期可报名', 'AI 相关', '适合大二学生', '科研创新类']
+const examples = ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类']
 const query = ref('')
-const phase = ref('idle')
-const response = ref(null)
 const validation = ref('')
-let controller
-let requestNumber = 0
+const conversation = ref(null)
+const { messages, pending, error, failed, submit, dispose } = useAIChat(requestAIChat)
 
 function addExample(example) {
   const current = query.value.trim()
@@ -18,37 +16,37 @@ function addExample(example) {
   validation.value = ''
 }
 
-async function submitSearch() {
+function submitChat() {
+  if (pending.value) return
   const text = query.value.trim()
   if (!text) {
-    requestNumber++
-    controller?.abort()
-    phase.value = 'idle'
-    response.value = null
-    validation.value = '请先描述你想参加的竞赛。'
+    validation.value = '请先输入你的问题。'
     return
   }
-  const request = ++requestNumber
-  controller?.abort()
-  controller = new AbortController()
+  if (text.length > 2000) {
+    validation.value = '每条问题最多 2000 字，请缩短后发送。'
+    return
+  }
+  query.value = ''
   validation.value = ''
-  phase.value = 'loading'
-  response.value = null
-  try {
-    const data = await searchCompetitionsByAI(text, { signal: controller.signal })
-    if (request !== requestNumber) return
-    response.value = data
-    phase.value = 'success'
-  } catch (error) {
-    if (request !== requestNumber || error.name === 'AbortError') return
-    phase.value = 'error'
+  void submit(text)
+}
+
+function onKeydown(event) {
+  // 中文输入法确认候选时不发送；Shift + Enter 保留换行。
+  if (event.key === 'Enter' && !event.shiftKey && !event.isComposing && event.keyCode !== 229) {
+    event.preventDefault()
+    submitChat()
   }
 }
 
-onBeforeUnmount(() => {
-  requestNumber++
-  controller?.abort()
+watch(() => [messages.value.length, pending.value, error.value], async () => {
+  await nextTick()
+  const panel = conversation.value
+  if (panel) panel.scrollTop = panel.scrollHeight
 })
+
+onBeforeUnmount(dispose)
 </script>
 
 <template>
@@ -57,73 +55,67 @@ onBeforeUnmount(() => {
       <div>
         <h2 id="ai-assistant-title">不知道参加什么？<br /><span>告诉我你会什么。</span></h2>
       </div>
-      <span class="editorial-label">前端功能演示</span>
+      <span class="editorial-label">科创 AI 助手</span>
     </div>
     <p class="ai-assistant-intro">把你的专业、技能和兴趣写下来，从一个方向开始探索。</p>
     <div class="ai-assistant-panel">
-      <form class="ai-assistant-form" role="search" aria-label="AI 竞赛搜索" @submit.prevent="submitSearch">
-        <label for="ai-competition-query">你的参赛需求</label>
+      <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0">
+        <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
+          <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
+          <p>{{ message.content }}</p>
+        </article>
+        <p v-if="pending" class="ai-chat-status" role="status">正在思考你的问题，请稍候……</p>
+        <div v-if="error" class="ai-chat-error" role="alert">
+          <p>{{ error }}</p>
+          <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true })">重试这条消息</button>
+        </div>
+      </div>
+      <form class="ai-assistant-form" aria-label="科创 AI 对话" @submit.prevent="submitChat">
+        <label for="ai-competition-query">你的问题</label>
         <textarea
           id="ai-competition-query"
           v-model="query"
-          maxlength="500"
+          maxlength="2000"
+          :disabled="pending"
           rows="3"
-          placeholder="我是物理专业大二学生，会一点 Python，对人工智能感兴趣，希望找一个近期可以报名、适合组队的比赛……"
+          placeholder="我是物理专业大二学生，会一点 Python，对人工智能感兴趣，想了解适合自己的竞赛方向和准备方法……"
           :aria-invalid="Boolean(validation)"
           :aria-describedby="validation ? 'ai-query-validation' : undefined"
           @input="validation = ''"
+          @keydown="onKeydown"
         />
         <div class="ai-assistant-actions">
           <div class="ai-example-list" aria-label="快捷输入">
             <span>试试：</span>
-            <button v-for="example in examples" :key="example" type="button" class="ai-example" @click="addExample(example)">
+            <button v-for="example in examples" :key="example" type="button" class="ai-example" :disabled="pending" @click="addExample(example)">
               {{ example }}
             </button>
           </div>
-          <button class="action-button ai-submit" type="submit">
-            <AppIcon name="search" :size="17" />AI 搜索
+          <button class="action-button ai-submit" type="submit" :disabled="pending || !query.trim()">
+            <AppIcon name="spark" :size="17" />{{ pending ? '正在回复…' : '发送' }}
           </button>
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <p class="ai-demo-note">当前为模拟匹配，以下赛事均为虚构演示数据；报名状态和参赛资格不代表真实赛事。</p>
+      <p class="ai-demo-note">当前尚未接入平台实时数据和联网检索，具体赛事信息请以官方来源为准。Enter 发送，Shift + Enter 换行。对话仅保留在当前页面，每次最多参考最近 20 轮（约 6 万字符）。</p>
     </div>
 
-    <div v-if="phase === 'loading'" class="state-panel ai-search-state" role="status" aria-live="polite">
-      正在理解你的需求……
-    </div>
-    <div v-else-if="phase === 'error'" class="state-panel ai-search-state" role="alert">
-      <p>模拟搜索暂时失败，请重试或换个描述。</p>
-      <button class="action-button secondary" type="button" @click="submitSearch">重新搜索</button>
-    </div>
-    <div v-else-if="phase === 'success'" class="ai-search-results" aria-live="polite">
-      <div class="ai-interpretation">
-        <h3>AI 对需求的理解 <span>模拟解析</span></h3>
-        <dl>
-          <div><dt>专业</dt><dd>{{ response.interpretation.major || '未提及' }}</dd></div>
-          <div><dt>年级</dt><dd>{{ response.interpretation.grade || '未提及' }}</dd></div>
-          <div><dt>兴趣方向</dt><dd>{{ response.interpretation.interests.join('、') || '未提及' }}</dd></div>
-          <div><dt>参赛形式</dt><dd>{{ response.interpretation.participationType === 'team' ? '希望组队' : response.interpretation.participationType === 'individual' ? '个人参加' : '未提及' }}</dd></div>
-          <div><dt>报名状态</dt><dd>{{ response.interpretation.registrationStatus === 'open' ? '希望报名截止未到' : '未提及' }}</dd></div>
-        </dl>
-      </div>
-      <h3 class="ai-result-count">为你找到 {{ response.results.length }} 个相关赛事 <span>本地模拟结果</span></h3>
-      <div v-if="!response.results.length" class="state-panel ai-search-state" role="status">
-        <p>没有找到符合这段描述的演示赛事。</p>
-        <p>可以换个方向，或点击上方快捷输入后重新搜索。</p>
-      </div>
-      <div v-else class="competition-grid ai-result-list">
-        <div v-for="result in response.results" :key="result.competition.id" class="ai-result-item">
-          <CompetitionCard
-            :competition="result.competition"
-            :detail-enabled="Number.isSafeInteger(result.competition.id) && result.competition.id > 0"
-          />
-          <p class="ai-match-reason"><AppIcon name="spark" :size="15" /><span>匹配理由：{{ result.matchReason }}</span></p>
-        </div>
-      </div>
-    </div>
-    <button class="text-button ai-error-demo" type="button" @click="query = '模拟错误'; submitSearch()">
-      体验模拟错误状态
-    </button>
   </section>
 </template>
+
+<style scoped>
+.ai-conversation {
+  max-height: 480px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: grid;
+  gap: 20px;
+  color: var(--text-primary, #f4f2ee);
+}
+.ai-chat-message { min-width: 0; }
+.ai-chat-message strong { color: var(--text-secondary, #a4b1c0); font-size: var(--type-small); }
+.ai-chat-message p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: var(--leading-body); }
+.ai-chat-message.is-user { padding-left: 16px; border-left: 2px solid var(--accent, #6da5ff); }
+.ai-chat-status { margin: 0; color: var(--text-secondary, #a4b1c0); }
+.ai-chat-error p { margin: 0 0 12px; }
+</style>

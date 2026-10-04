@@ -1,13 +1,13 @@
 # AI 服务
 
-`backend/ai_services/` 集中管理模型调用、提示词、结果校验和异常。它是后端内部服务包，不是 Django 应用，不创建数据库表或 HTTP 接口，也不自动采集、入库或发布。当前已具备基础代码与离线测试；真实模型连接、效果和费用尚未验证。
+`backend/ai_services/` 集中管理模型调用、提示词、结果校验和异常。它不是 Django 数据库应用，不创建表，也不自动采集、入库或发布。原有内部草稿服务保留；2026-10-04 新增首页基础聊天接口，见 [DeepSeek 聊天配置与验收](ai-chat.md)。真实模型连接、效果和费用尚未验证。
 
 ## 文件职责
 
 | 文件 | 职责 |
 | --- | --- |
 | `config.py` | 读取并检查服务端模型配置 |
-| `client.py` | 通过 HTTPX 调用兼容 Chat Completions 的服务，要求 JSON 输出 |
+| `client.py` | 通过 HTTPX 调用兼容 Chat Completions 的服务，支持文本聊天和内部 JSON 输出 |
 | `prompts.py` | 通知提取、快讯生成两类提示词 |
 | `validators.py` | 检查字段、引文、缺失值和来源映射 |
 | `exceptions.py` | 定义配置、输入、网络、上游响应和校验异常 |
@@ -16,12 +16,12 @@
 
 ## 配置
 
-参数写在本机 `backend/.env`，由 Django 的 `settings.AI_SERVICES` 读取。配置样例见 [`backend/.env.example`](../backend/.env.example)。不修改队友的本地配置，不提交真实密钥。
+以下参数用于原有内部草稿服务；首页聊天使用独立 `DEEPSEEK_*` 变量，详见 [聊天说明](ai-chat.md)。参数写在本机 `backend/.env`，由 Django 的 `settings.AI_SERVICES` 读取。配置样例见 [`backend/.env.example`](../backend/.env.example)。不修改队友的本地配置，不提交真实密钥。
 
 | 参数 | 默认值 | 含义 |
 | --- | --- | --- |
 | `AI_ENABLED` | `0` | 设为 `1` 后才允许真实模型调用 |
-| `AI_PROVIDER` | `qwen` | 支持 `qwen`、`openai_compatible`；Qwen 请求关闭思考模式 |
+| `AI_PROVIDER` | `qwen` | 支持 `qwen`、`deepseek`、`openai_compatible`；Qwen / DeepSeek 请求关闭思考模式 |
 | `AI_BASE_URL` | 空 | HTTPS 兼容接口基础地址，按服务控制台填写 |
 | `AI_API_KEY` | 空 | 服务端密钥，须与服务区域和地址匹配 |
 | `AI_MODEL` | 空 | 控制台支持的模型名，当前没有确定最终模型 |
