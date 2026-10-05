@@ -32,7 +32,7 @@ const sourceUrl = computed(() => safeExternalUrl(props.item.sourceUrl))
         :aria-label="`查看${item.title}的官方说明`"
         >官方说明 ↗</a
       >
-      <span v-else>官方链接待核对</span>
+      <span v-else>暂无来源链接</span>
     </div>
   </article>
 </template>

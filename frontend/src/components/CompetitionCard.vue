@@ -83,7 +83,8 @@ const detailLink = computed(() => ({
       </div>
       <footer class="competition-card__source">
         <span>原文发布：{{ sourcePublishedAt === '未注明' ? officialUnknown : sourcePublishedAt }}</span>
-        <span>最近核验：{{ competition.last_verified_at ? formatUpdatedAt(competition.last_verified_at) : '尚未记录' }}</span
+        <span v-if="competition.last_verified_at">最近核验：{{ formatUpdatedAt(competition.last_verified_at) }}</span>
+        <span v-else>资料更新：{{ formatUpdatedAt(competition.updated_at) }}</span
         ><a
           v-if="sourceUrl"
           :href="sourceUrl"

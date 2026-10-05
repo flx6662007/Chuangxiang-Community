@@ -6,6 +6,9 @@ import {
   listCompetitionCategories,
 } from '../api/competitions'
 import CompetitionCard from '../components/CompetitionCard.vue'
+import CatalogCard from '../components/CatalogCard.vue'
+import { listCatalogEntries } from '../api/catalog'
+import { libraryQuery, paginatedLibrary } from '../utils/library'
 import {
   competitionTimeOptions,
   normalizeTimeStatus,
@@ -15,6 +18,9 @@ import AppIcon from '../components/AppIcon.vue'
 
 const route = useRoute()
 const router = useRouter()
+const view = computed(() => route.query.view === 'editions' || (!route.query.view && (route.query.category || route.query.time_status)) ? 'editions' : 'catalog')
+const isCatalog = computed(() => view.value === 'catalog')
+const grade = computed(() => ['A+', 'A', 'B', 'C'].includes(route.query.grade) ? route.query.grade : '')
 const items = ref([])
 const count = ref(0)
 const loading = ref(false)
@@ -46,7 +52,9 @@ async function load() {
   items.value = []
   count.value = 0
   try {
-    const data = await listCompetitions(
+    const data = isCatalog.value ? await listCatalogEntries({
+      page: page.value, page_size: pageSize, search: search.value || undefined, grade: grade.value || undefined,
+    }, controller.signal) : await listCompetitions(
       {
         page: page.value,
         page_size: pageSize,
@@ -57,12 +65,7 @@ async function load() {
       controller.signal,
     )
     if (request !== requestNumber) return
-    if (
-      !Array.isArray(data.results) ||
-      !Number.isInteger(data.count) ||
-      data.count < 0
-    )
-      throw new Error('Invalid response')
+    paginatedLibrary(data)
     items.value = data.results
     count.value = data.count
   } catch (err) {
@@ -79,12 +82,12 @@ async function load() {
 function changePage(next) {
   router.push({
     name: 'competitions',
-    query: competitionListQuery({
+    query: isCatalog.value ? libraryQuery({ view: 'catalog', search: search.value, grade: grade.value, page: next > 1 ? next : undefined }) : { view: 'editions', ...competitionListQuery({
       search: search.value,
       category: category.value,
       timeStatus: timeStatus.value,
       page: next,
-    }),
+    }) },
   })
 }
 
@@ -93,27 +96,27 @@ function submitSearch() {
   if (nextSearch === search.value && page.value === 1) return load()
   router.push({
     name: 'competitions',
-    query: competitionListQuery({
+    query: isCatalog.value ? libraryQuery({ view: 'catalog', search: nextSearch, grade: grade.value }) : { view: 'editions', ...competitionListQuery({
       search: nextSearch,
       category: category.value,
       timeStatus: timeStatus.value,
-    }),
+    }) },
   })
 }
 
 function selectTimeStatus(value) {
   router.push({
     name: 'competitions',
-    query: competitionListQuery({
+    query: { view: 'editions', ...competitionListQuery({
       search: search.value,
       category: category.value,
       timeStatus: value,
-    }),
+    }) },
   })
 }
 
 watch(
-  () => [page.value, search.value, category.value, timeStatus.value],
+  () => [page.value, search.value, category.value, timeStatus.value, view.value, grade.value],
   () => {
     searchInput.value = search.value
     load()
@@ -131,12 +134,18 @@ async function loadCategories() {
 function selectCategory(value) {
   router.push({
     name: 'competitions',
-    query: competitionListQuery({
+    query: { view: 'editions', ...competitionListQuery({
       search: search.value,
       category: value,
       timeStatus: timeStatus.value,
-    }),
+    }) },
   })
+}
+function selectView(value) {
+  router.push({ name: 'competitions', query: libraryQuery({ view: value, search: search.value }) })
+}
+function selectGrade(value) {
+  router.push({ name: 'competitions', query: libraryQuery({ view: 'catalog', search: search.value, grade: value }) })
 }
 onMounted(loadCategories)
 onBeforeUnmount(() => {
@@ -151,7 +160,11 @@ onBeforeUnmount(() => {
       <div>
         <h2 id="competition-title">探索赛事</h2>
       </div>
-      <p>名称、方向、时间与来源，一起看清这场比赛是否适合你。</p>
+      <p>查找赛事、参赛要求与学习资料。</p>
+    </div>
+    <div class="category-tabs" role="group" aria-label="赛事视图">
+      <button :class="{ selected: isCatalog }" :aria-pressed="isCatalog" @click="selectView('catalog')">赛事目录</button>
+      <button :class="{ selected: !isCatalog }" :aria-pressed="!isCatalog" @click="selectView('editions')">届次通知</button>
     </div>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
       <AppIcon name="search" :size="19" /><label
@@ -164,11 +177,18 @@ onBeforeUnmount(() => {
         v-model="searchInput"
         type="search"
         maxlength="200"
-        placeholder="搜索赛事名称、关键词、主办单位…"
+        :placeholder="isCatalog ? '搜索赛事名称或目录编号…' : '搜索赛事名称、关键词、主办单位…'"
       />
       <button class="action-button" type="submit">搜索</button>
     </form>
-    <div v-reveal class="competition-filters">
+    <div v-if="isCatalog" class="competition-filters">
+      <div class="filter-heading"><strong>按目录等级筛选</strong></div>
+      <div class="category-tabs" role="group" aria-label="目录等级">
+        <button :class="{ selected: !grade }" @click="selectGrade('')">全部等级</button>
+        <button v-for="value in ['A+', 'A', 'B', 'C']" :key="value" :class="{ selected: grade === value }" @click="selectGrade(value)">{{ value }}</button>
+      </div>
+    </div>
+    <div v-else class="competition-filters">
       <div class="filter-heading"><strong>按方向筛选</strong></div>
       <div class="category-tabs competition-category-tabs" aria-label="赛事分类">
         <button :class="{ selected: !category }" @click="selectCategory('')">
@@ -199,22 +219,19 @@ onBeforeUnmount(() => {
           {{ option.name }}
         </button>
       </div>
-      <p class="competition-filter-note">
-        当前赛事包括未明确截止的赛事；时间未知不代表正在报名。历史赛事保留官方信息与既有组队记录。
-      </p>
     </div>
     <div v-reveal class="competition-content">
       <div class="competition-results">
         <div class="list-summary">
           <span
             >{{
-              search
+              isCatalog ? (search ? `“${search}” 的目录搜索结果` : '学校赛事目录') : search
                 ? `“${search}” 的搜索结果`
                 : competitionTimeOptions.find(
                     (option) => option.code === timeStatus,
                   )?.name + '赛事'
             }}
-            · 按截止状态及来源发布日期排序</span
+            · {{ isCatalog ? '按目录编号排序' : '按截止状态及来源发布日期排序' }}</span
           ><span v-if="!loading && !error"
             >共 <strong>{{ count }}</strong> 项赛事</span
           >
@@ -246,9 +263,12 @@ onBeforeUnmount(() => {
             {{
               search
                 ? '换个关键词试试，或调整分类和时效筛选。'
-                : '可切换历史或全部查看已有记录，新赛事发布后会显示在这里。'
+                : isCatalog ? '暂无匹配的目录记录，可调整关键词或等级。' : '可切换历史或全部查看已有记录，新赛事发布后会显示在这里。'
             }}
           </p>
+        </div>
+        <div v-else-if="isCatalog" class="competition-grid">
+          <CatalogCard v-for="item in items" :key="item.code" :item="item" :detail-query="route.query" />
         </div>
         <div v-else class="competition-grid">
           <CompetitionCard

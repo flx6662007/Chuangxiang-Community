@@ -321,7 +321,7 @@ onBeforeUnmount(() => {
               step="1"
               required /></label>
         </div>
-        <p class="field-hint">已有成员数包含发起人；线下成员无需逐个注册平台账号。此数字用于核对队伍规模，不公开成员资料。</p>
+        <p class="field-hint">填写含发起人的成员总数，线下成员也计入；此处仅展示人数。</p>
         <OptionPicker
           v-model="form.current_skills"
           :options="dictionaries.skills"
@@ -402,7 +402,7 @@ onBeforeUnmount(() => {
           label="招募有效期"
           required
         />
-        <p v-if="!editing" class="field-hint">可选 3／7／14 天；实际到期以服务端预览为准，若赛事招募截止更早则提前结束。</p>
+        <p v-if="!editing" class="field-hint">可选 3／7／14 天；最晚于赛事招募截止时结束。具体到期时间见下方预览。</p>
         <p v-if="editing" class="notice-text">
           编辑不延长有效期。本卡实际到期：{{
             formatUpdatedAt(recruitmentDeadline(record))
@@ -414,7 +414,7 @@ onBeforeUnmount(() => {
         <p>
           实际到期：{{
             formatUpdatedAt(recruitmentDeadline(preview))
-          }}。若赛事招募截止更早，以该时间为准。
+          }}。若赛事招募截止更早，将提前结束。
         </p>
       </div>
       <label v-if="editing || preview" class="consent-row"

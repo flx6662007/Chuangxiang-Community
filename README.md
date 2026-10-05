@@ -1,5 +1,7 @@
 # 创享平台 · Chuangxiang Community
 
+当前前端已连接赛事目录、学习资源、知识正文、科研和快讯接口，界面统一使用霞鹜文楷 GB。拉取本轮代码后需执行数据库迁移；启动与接口说明见 [团队进度](docs/progress.md) 和 [资料库接口](docs/api-library.md)。
+
 面向学生的科创信息与参赛组队网站。前端使用 Vue，后端使用 Django / DRF，数据库使用 PostgreSQL。
 
 ## 先从这里看

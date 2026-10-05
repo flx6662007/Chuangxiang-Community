@@ -1,4 +1,4 @@
-"""Read only public, verified platform records; never use frontend mock data."""
+"""Read current public platform records, including directly published material."""
 
 from information_library.selectors import collect_records, public_text, safe_source_url
 from resources.models import Resource
@@ -41,21 +41,24 @@ def retrieve_platform(question, route, *, limit=5):
                 '_score': score,
             })
     if 'resource' in route.domains:
-        rows = Resource.objects.filter(publication_status='published', availability='available',
-                                       last_verified_at__isnull=False).order_by('-last_verified_at')[:100]
+        rows = Resource.objects.filter(publication_status='published', availability='available').exclude(
+            code__startswith='demo-').exclude(title__contains='【虚构样例】').order_by('-updated_at', 'pk')
         for row in rows:
             url = safe_source_url(row.access_url)
             if not url or row.title.startswith('【虚构样例】') or row.code.startswith('demo-'):
                 continue
-            score = _score(row.title + ' ' + row.description, terms)
+            text = public_text(row.description)
+            title = public_text(row.title)
+            score = _score(title + ' ' + text, terms)
             if terms and not score:
                 continue
             items.append({
                 'kind': 'resource', 'entity_id': str(row.pk), 'version': str(row.content_version),
-                'title': public_text(row.title), 'url': url, 'internal_url': None,
-                'text': public_text(row.description)[:1800],
-                'verified_at': row.last_verified_at.isoformat(), 'published_on': None,
-                'status': 'available', 'status_note': '资源链接已核验；可用性以原站当前状态为准。',
+                'title': title, 'url': url, 'internal_url': None,
+                'text': text[:1800],
+                'verified_at': row.last_verified_at.isoformat() if row.last_verified_at else None,
+                'published_on': None,
+                'status': 'available', 'status_note': '学习资源',
                 '_score': score,
             })
     items.sort(key=lambda item: (item['_score'], item['verified_at'] or ''), reverse=True)

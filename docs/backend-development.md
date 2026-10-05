@@ -2,7 +2,7 @@
 
 ## 当前范围
 
-已接入 Django/DRF、PostgreSQL、账号、赛事、组队、举报申诉和后台信息库。赛事采集按学校 2026 版目录覆盖全部学科：通用采集保存后台原文，专用适配器提取并校验公开卡片。本机开发版邮件输出到终端，AI 默认关闭；尚未真实邮件投递或公网部署。
+已接入 Django/DRF、PostgreSQL、账号、赛事、组队、举报申诉和后台信息库。当前赛事资料以人工整理、离线入库与直接发布为主线；历史采集代码保留。本机开发版邮件输出到终端，AI 默认关闭；尚未真实邮件投递或公网部署。
 
 完整状态见 [团队进度](progress.md)，接口见 [API 说明](api.md)，页面操作见 [人工验收](manual-checks.md)。[数据库交付说明](database-handoff.md) 保留同学交付时的模型、迁移、约束和样例记录；其中“接口待实现”等历史状态由本轮进度替代，字段规则不因此改变。
 
@@ -115,6 +115,37 @@ test -f .env || cp .env.example .env
 
 ## 日常启动与联调
 
+### Windows 一条命令启动
+
+首次依赖安装、数据库配置和迁移完成后，保持 PostgreSQL 运行，在**仓库根目录**执行：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1
+```
+
+脚本后台启动 Django 与 Vite，不另弹终端。默认网站为 <http://127.0.0.1:5173/>，后端为 <http://127.0.0.1:8000/>。它优先使用当前仓库的 `backend/.venv/Scripts/python.exe`，从 PATH 查找 `node.exe`；不安装依赖、不改数据库和 `.env`。
+
+本轮联调使用 `5174/8001` 时：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -FrontendPort 5174 -BackendPort 8001
+```
+
+虚拟环境位于其他位置时，追加 `-PythonPath "已有虚拟环境\Scripts\python.exe"`；Node 不在 PATH 时，追加 `-NodePath "Node安装目录\node.exe"`。路径由各自电脑决定。
+
+脚本会同步设置前端代理、后端站点地址和 CSRF 可信来源。网站固定使用所选端口；端口占用时直接提示，不会偷偷切到另一个端口或停止已有服务。手动启动在相同端口的服务需先在原终端停止。
+
+查看或停止这一组服务时使用相同端口参数：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -Action status -FrontendPort 5174 -BackendPort 8001
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -Action stop -FrontendPort 5174 -BackendPort 8001
+```
+
+日志和进程记录保存在 `.local/dev/5174-8001/`（默认端口对应 `5173-8000`）。`backend.out.log` 包含开发邮件和验证码，`backend.err.log` 记录后端运行情况；前端对应 `frontend.out.log`、`frontend.err.log`。该目录已被 Git 忽略，不作为共享资料。排查时只提供相关报错。后端使用 `--noreload`，修改 Python 代码后停止并重新启动；前端仍支持热更新。
+
+### 分别在终端启动
+
 保持 PostgreSQL 运行，在 `backend` 启动：
 
 ```powershell
@@ -171,7 +202,7 @@ npm.cmd run dev
 | `competitions/serializers.py`、`views.py` | 公开字段白名单、分页筛选和详情 |
 | `competitions/services.py`、`admin.py` | 草稿、来源核验、发布与下架的事务操作及后台表单 |
 | `templates/account/email/` | 核验和密码找回邮件模板 |
-| `ai_services/` | 后端内部 AI 调用，无独立 HTTP 接口 |
+| `ai_services/` | 模型调用、聊天、资料检索与状态接口；`/api/v1/ai/` |
 | `scripts/check_environment.py` | 只读验证实际数据库连接 |
 
 数据库字段表与迁移继续作为基线；本轮没有另建一套用户、赛事或验证状态。后续接口改变字段含义时，先核对 [用户](database-fields.md#accounts)、[赛事](database-fields.md#competitions) 和 [队伍](database-fields.md#teams) 规则，再共同修改模型、迁移、接口与文档。

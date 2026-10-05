@@ -16,7 +16,7 @@ function revisitAi() {
     class="app-shell"
     :class="{
       'is-home': $route.name === 'home',
-      'is-editorial-page': ['competitions', 'research-projects', 'resources', 'resource-detail', 'teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
+      'is-editorial-page': ['competitions', 'catalog-detail', 'research-projects', 'resources', 'resource-detail', 'teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
       'is-team-page': ['teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit'].includes($route.name),
       'is-account-page': ['account', 'my-teams', 'notifications', 'governance'].includes($route.name),
     }"
@@ -34,7 +34,7 @@ function revisitAi() {
           <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi">AI</RouterLink>
           <RouterLink
             :to="{ name: 'competitions' }"
-            :class="{ 'is-active': $route.name === 'competitions' || $route.name === 'competition-detail' }"
+            :class="{ 'is-active': ['competitions', 'catalog-detail', 'competition-detail'].includes($route.name) }"
           >
             赛事
           </RouterLink>
@@ -61,10 +61,10 @@ function revisitAi() {
     </el-main>
     <footer class="app-footer">
       <div>
-        <span class="footer-brand">创享 · 让好想法找到起点</span
+        <span class="footer-brand">创享 · 竞赛与科研信息</span
         ><span>创新俱乐部</span>
       </div>
-      <p>赛事与项目参与要求以官方说明为准</p>
+      <p>比赛通知 · 学习资料 · 组队招募</p>
     </footer>
   </el-container>
 </template>

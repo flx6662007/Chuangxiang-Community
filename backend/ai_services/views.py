@@ -73,3 +73,41 @@ class ChatView(APIView):
         response = super().finalize_response(request, response, *args, **kwargs)
         response['Cache-Control'] = 'no-store'
         return response
+
+
+from .search import search_catalog
+
+class AssistantSearchThrottle(SimpleRateThrottle):
+    scope = 'assistant_search'
+    rate = '60/min'
+
+    def get_cache_key(self, request, view):
+        ident = f'user-{request.user.pk}' if request.user.is_authenticated else self.get_ident(request)
+        return self.cache_format % {'scope': self.scope, 'ident': ident}
+
+
+class AssistantSearchView(APIView):
+    permission_classes = (AllowAny,)
+    throttle_classes = (AssistantSearchThrottle,)
+
+    def get(self, request):
+        response = Response(search_catalog(request.query_params.get('q', '')))
+        response['Cache-Control'] = 'private, no-store'
+        return response
+
+
+class AssistantStatusView(APIView):
+    authentication_classes = []
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        from .config import AIConfig
+        from .exceptions import AIConfigurationError
+        try:
+            AIConfig.from_django("AI_CHAT").validate()
+            configured = True
+        except AIConfigurationError:
+            configured = False
+        response = Response({"chat_configured": configured, "catalog_search": True})
+        response["Cache-Control"] = "no-store"
+        return response

@@ -115,7 +115,7 @@ watch(
     <AccountPageHeader
       title="举报与"
       accent="申诉。"
-      description="仅显示本人记录。登录后即可使用，邮箱未核验或账号受限不影响提交。"
+      description="登录后提交举报与申诉，查看本人记录和处理进展。"
     />
     <div class="account-content account-subpage-content">
     <div class="account-subpage-intro">
@@ -153,7 +153,7 @@ watch(
     </div>
     <div v-else-if="!profile" class="state-panel">
       <h2>登录后查看本人记录</h2>
-      <p>举报内容与申诉说明不会公开展示。</p>
+      <p>举报与申诉内容仅本人和处理人员可见。</p>
       <RouterLink class="action-button" to="/account">去登录</RouterLink>
     </div>
     <template v-else>
@@ -163,7 +163,7 @@ watch(
         <section class="team-panel">
           <h2>选择需要复核的事项</h2>
           <p>
-            可申诉本人账号限制、招募处置及已处理的举报结果。申诉成立不等于已解除限制或恢复招募，以实际处理反馈为准。
+            选择账号限制、招募处置或举报结果，填写申诉理由；处理后可在反馈中查看账号与招募状态。
           </p>
           <p v-if="!items.length" class="muted">暂无可申诉事项。</p>
           <form v-else class="governance-form" @submit.prevent="submit">

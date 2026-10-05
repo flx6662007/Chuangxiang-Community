@@ -1,13 +1,35 @@
 <script setup>
-import { nextTick, onBeforeUnmount, ref, watch } from 'vue'
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AppIcon from './AppIcon.vue'
-import { requestAIChat } from '../api/ai'
+import { getAIStatus, requestAIChat } from '../api/ai'
 import { useAIChat } from '../composables/useAIChat.js'
+import CatalogSearch from './CatalogSearch.vue'
 
 const examples = ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类']
 const query = ref('')
 const validation = ref('')
 const conversation = ref(null)
+const configured = ref(false)
+const statusLoading = ref(true)
+const statusError = ref(false)
+let statusController
+async function loadStatus() {
+  statusController?.abort()
+  const controller = statusController = new AbortController()
+  statusLoading.value = true
+  statusError.value = false
+  try {
+    const status = await getAIStatus(controller.signal)
+    if (controller !== statusController) return
+    if (typeof status.chat_configured !== 'boolean') throw new Error('Invalid AI status')
+    configured.value = status.chat_configured
+  } catch (err) {
+    if (controller === statusController && err.code !== 'ERR_CANCELED') statusError.value = true
+  } finally {
+    if (controller === statusController) statusLoading.value = false
+  }
+}
+onMounted(loadStatus)
 const { messages, pending, error, failed, submit, dispose } = useAIChat(requestAIChat)
 
 function addExample(example) {
@@ -46,18 +68,21 @@ watch(() => [messages.value.length, pending.value, error.value], async () => {
   if (panel) panel.scrollTop = panel.scrollHeight
 })
 
-onBeforeUnmount(dispose)
+onBeforeUnmount(() => { statusController?.abort(); dispose() })
 </script>
 
 <template>
-  <section class="ai-assistant" aria-labelledby="ai-assistant-title">
+  <div v-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
+  <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
+  <CatalogSearch v-else-if="!configured" />
+  <section v-else class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">不知道参加什么？<br /><span>告诉我你会什么。</span></h2>
+        <h2 id="ai-assistant-title">竞赛和科研问题，<br /><span>问问 AI 助手。</span></h2>
       </div>
       <span class="editorial-label">科创 AI 助手</span>
     </div>
-    <p class="ai-assistant-intro">把你的专业、技能和兴趣写下来，从一个方向开始探索。</p>
+    <p class="ai-assistant-intro">可以问比赛怎么选、如何准备，也可以说说你的专业和经验。</p>
     <div class="ai-assistant-panel">
       <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0">
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
@@ -75,10 +100,10 @@ onBeforeUnmount(dispose)
               </li>
             </ol>
           </div>
-          <small v-if="message.retrieval?.knowledge === 'no_approved_knowledge'" class="ai-chat-coverage">暂无已审核知识资料。</small>
-          <small v-if="['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">本次未取得可用官网通知；联网覆盖仅限已登记站点。</small>
+          <small v-if="['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
+          <small v-if="['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
         </article>
-        <p v-if="pending" class="ai-chat-status" role="status">正在思考你的问题，请稍候……</p>
+        <p v-if="pending" class="ai-chat-status" role="status">正在回复…</p>
         <div v-if="error" class="ai-chat-error" role="alert">
           <p>{{ error }}</p>
           <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true })">重试这条消息</button>
@@ -92,7 +117,7 @@ onBeforeUnmount(dispose)
           maxlength="2000"
           :disabled="pending"
           rows="3"
-          placeholder="我是物理专业大二学生，会一点 Python，对人工智能感兴趣，想了解适合自己的竞赛方向和准备方法……"
+          placeholder="例如：我是大二学生，会一点 Python，可以参加哪些比赛？需要怎么准备？"
           :aria-invalid="Boolean(validation)"
           :aria-describedby="validation ? 'ai-query-validation' : undefined"
           @input="validation = ''"
@@ -111,7 +136,7 @@ onBeforeUnmount(dispose)
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <p class="ai-demo-note">AI 会查询已发布的站内资料；官网读取仅限已登记入口，结果请以官方原文为准。Enter 发送，Shift + Enter 换行。对话仅保留在当前页面，每次最多参考最近 20 轮（约 6 万字符）。</p>
+      <p class="ai-demo-note">回答参考站内资料和已登记的官网页面，请以官方原文为准。Enter 发送，Shift + Enter 换行。对话仅在当前页面保留，最多参考最近 20 轮（约 6 万字符）。</p>
     </div>
 
   </section>

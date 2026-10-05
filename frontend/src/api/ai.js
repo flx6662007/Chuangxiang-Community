@@ -2,6 +2,10 @@ import http from './http'
 import { ensureCsrf } from './accounts'
 import { parseAIReply } from './aiResponse.js'
 
+export async function getAIStatus(signal) {
+  return (await http.get('/ai/status/', { signal })).data
+}
+
 export async function requestAIChat(messages, { signal } = {}) {
   await ensureCsrf()
   const { data } = await http.post('/ai/chat/', { messages }, {

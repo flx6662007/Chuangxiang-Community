@@ -16,7 +16,7 @@ export const participationLabels = {
   both: '个人或团队',
 }
 
-export const officialUnknown = '暂未收录，请查阅原文'
+export const officialUnknown = '未收录'
 
 export function officialText(value) {
   return typeof value === 'string' && value.trim() ? value.trim() : officialUnknown
@@ -81,7 +81,7 @@ export function formatDeadline(record, field) {
   const day = formatDate(record[field])
   const instant = record[`${field}_at`]
   const zone = record[`${field}_timezone`]
-  if (!instant) return day === '未注明' ? officialUnknown : `${day}（时刻以原文为准）`
+  if (!instant) return day === '未注明' ? officialUnknown : day
   const date = new Date(instant)
   if (Number.isNaN(date.getTime())) return `${day}（时刻待核实）`
   if (zone) {

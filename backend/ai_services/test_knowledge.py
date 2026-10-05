@@ -1,12 +1,14 @@
 from hashlib import sha256
+from unittest.mock import patch
 
 from django.contrib.auth import get_user_model
+from django.db import ProgrammingError
 from django.test import TestCase, override_settings
 from django.utils import timezone
 
 from competition_catalog.models import CatalogBinding, CatalogEntry
 from competitions.models import Competition, CompetitionTaxonomy
-from curation.models import DocumentLink, DocumentRevision, KnowledgeChunk, KnowledgeDocument
+from curation.models import DocumentLink, DocumentReview, DocumentRevision, KnowledgeChunk, KnowledgeDocument
 
 from .knowledge import DIMENSION, rebuild_index, retrieve_knowledge
 
@@ -42,7 +44,7 @@ class KnowledgeIndexTests(TestCase):
 
     def test_empty_index_and_approval_boundary(self):
         self.assertEqual(rebuild_index(), 0)
-        self.assertEqual(retrieve_knowledge('机器人')[1], 'no_approved_knowledge')
+        self.assertEqual(retrieve_knowledge('机器人')[1], 'no_published_knowledge')
         doc, _ = self.document(status='draft')
         self.assertEqual(rebuild_index(), 0)
         self.assertFalse(KnowledgeChunk.objects.exists())
@@ -56,6 +58,33 @@ class KnowledgeIndexTests(TestCase):
         self.assertEqual(retrieve_knowledge('robot', encoder=FakeEncoder())[0], [])
         self.assertEqual(rebuild_index(), 0)
         self.assertFalse(KnowledgeChunk.objects.exists())
+
+    def test_direct_publication_is_indexed_without_claiming_verification(self):
+        doc, revision = self.document(status='published')
+        DocumentReview.objects.create(document=doc, revision=revision, status='published',
+                                      actor=self.actor, reason='直接发布')
+        self.assertEqual(rebuild_index(encoder=FakeEncoder()), 1)
+        rows, status = retrieve_knowledge('机器人', encoder=FakeEncoder())
+        self.assertEqual(status, 'ready')
+        self.assertEqual(rows[0]['status'], 'published')
+        self.assertIsNone(rows[0]['verified_at'])
+        self.assertEqual(rows[0]['status_note'], '公开知识资料')
+
+    def test_verified_timestamp_comes_only_from_current_revision_review(self):
+        doc, revision = self.document()
+        review = DocumentReview.objects.create(document=doc, revision=revision, status='approved',
+                                              actor=self.actor, reason='来源核验')
+        rebuild_index(encoder=FakeEncoder())
+        self.assertEqual(retrieve_knowledge('机器人', encoder=FakeEncoder())[0][0]['verified_at'],
+                         review.created_at.isoformat())
+
+    def test_public_documents_without_optional_index_return_unavailable(self):
+        self.document(status='published')
+        self.assertEqual(retrieve_knowledge('机器人')[1], 'index_unavailable')
+        with patch('ai_services.knowledge.KnowledgeChunk.objects.filter',
+                   side_effect=ProgrammingError('optional index table absent')):
+            self.assertEqual(retrieve_knowledge('机器人'), ([], 'index_unavailable'))
+        self.assertEqual(KnowledgeDocument.objects.count(), 1)
 
     def test_new_revision_and_linked_draft_invalidate_old_vectors(self):
         doc, revision = self.document()

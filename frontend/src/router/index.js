@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { publicResourceQuery } from '../utils/library'
 
 import AppLayout from '../layouts/AppLayout.vue'
 import WelcomeView from '../views/WelcomeView.vue'
@@ -28,7 +29,10 @@ const router = createRouter({
         {
           path: 'competitions',
           component: InformationCenterView,
-          children: [{ path: '', name: 'competitions', component: CompetitionListView }],
+          children: [
+            { path: '', name: 'competitions', component: CompetitionListView },
+            { path: 'catalog/:code', name: 'catalog-detail', component: () => import('../views/CatalogDetailView.vue') },
+          ],
         },
         {
           path: 'research',
@@ -120,6 +124,12 @@ const router = createRouter({
       ],
     },
   ],
+})
+
+router.beforeEach((to) => {
+  if (['resources', 'resource-detail'].includes(to.name) && Object.hasOwn(to.query, 'preview')) {
+    return { name: to.name, params: to.params, query: publicResourceQuery(to.query), hash: to.hash, replace: true }
+  }
 })
 
 export default router

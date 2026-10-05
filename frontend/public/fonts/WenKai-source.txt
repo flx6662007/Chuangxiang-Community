@@ -1,0 +1,10 @@
+Interface font: LXGW WenKai GB 1.522, regular (400) and medium (500)
+Glyph design: Mainland Chinese standard forms (G-source), not the TC inherited forms.
+Upstream: https://github.com/lxgw/LxgwWenKaiGB
+License: OFL 1.1 (see OFL-LXGWWenKaiGB.txt); package wrapper license does not replace the font license.
+Webfont package: lxgw-wenkai-gb-web@1.522.0
+Package source: https://github.com/CMBill/lxgw-wenkai-gb-web
+Package integrity: sha512-aklciHOJfGOY2s/csLcNUwVnZ5JziCi8xrnW0PWI9cDVFDl8qTiKOQFDBuVLMCQtZFZkUDrhNWmkhuPa4VjnJg==
+Only non-monospace regular/medium WOFF2 subsets are included. CSS maps both to the same family with their real weights.
+Unicode subsets are self-hosted in src/assets/fonts/wenkai-gb and declared in src/styles/fonts.css.
+Only subsets needed by visible text are loaded. No external font request is made by the browser.

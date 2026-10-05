@@ -31,13 +31,13 @@ test('外部链接只开放 HTTP(S)，拒绝脚本、相对地址和含凭据地
   }
 })
 
-test('未记录精确时刻时保持日历日期并提示查阅原文，不假定午夜或 23:59', () => {
+test('未记录精确时刻时仅显示已有日历日期，不假定午夜或 23:59', () => {
   assert.equal(
     formatDeadline(
       { registration_deadline: '2026-10-15' },
       'registration_deadline',
     ),
-    '2026-10-15（时刻以原文为准）',
+    '2026-10-15',
   )
   assert.equal(
     formatDeadline(
@@ -47,7 +47,7 @@ test('未记录精确时刻时保持日历日期并提示查阅原文，不假�
       },
       'registration_deadline',
     ),
-    '2026-10-15（时刻以原文为准）',
+    '2026-10-15',
   )
   assert.equal(formatDeadline({}, 'registration_deadline'), officialUnknown)
 })
@@ -85,7 +85,7 @@ test('卡片始终优先报名截止，不能被更晚作品日期覆盖', () =>
     }),
     {
       label: '报名截止日期',
-      value: '2020-01-01（时刻以原文为准）',
+      value: '2020-01-01',
     },
   )
   assert.deepEqual(
@@ -108,7 +108,7 @@ test('只有作品投稿日期时用准确标签和原日期，不虚构报名�
     }),
     {
       label: '作品提交截止日期',
-      value: '2026-09-30（时刻以原文为准）',
+      value: '2026-09-30',
     },
   )
   assert.deepEqual(
@@ -121,8 +121,8 @@ test('只有作品投稿日期时用准确标签和原日期，不虚构报名�
   assert.deepEqual(summaryDeadline({}), { label: '截止时间', value: officialUnknown })
 })
 
-test('缺失字段说明本站暂未收录，不断言官方通知没有写', () => {
-  assert.equal(officialUnknown, '暂未收录，请查阅原文')
+test('缺失字段显示未收录，不断言官方通知没有写', () => {
+  assert.equal(officialUnknown, '未收录')
   for (const value of [undefined, null, '', '  \n ', 0])
     assert.equal(officialText(value), officialUnknown)
   assert.equal(officialText('  限在校本科生\n可跨专业  '), '限在校本科生\n可跨专业')

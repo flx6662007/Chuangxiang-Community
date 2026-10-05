@@ -1,4 +1,4 @@
-"""Local E5 embedding and exact small-corpus search over current approved revisions."""
+"""Local E5 embedding and exact small-corpus search over current public revisions."""
 
 from functools import lru_cache
 import hashlib
@@ -7,7 +7,7 @@ import math
 import os
 import re
 
-from django.db import transaction
+from django.db import OperationalError, ProgrammingError, transaction
 
 from curation.models import DocumentReview, KnowledgeChunk
 from curation.retrieval import student_visible_documents
@@ -109,9 +109,16 @@ def rebuild_index(*, encoder=None):
 
 def retrieve_knowledge(question, *, limit=4, encoder=None):
     visible = {doc.pk: doc for doc in student_visible_documents().select_related('current_revision')}
-    chunks = list(KnowledgeChunk.objects.filter(document_id__in=visible, model_id=MODEL_ID,
-                                                model_revision=MODEL_REVISION, dimension=DIMENSION)
-                  .order_by('pk')[:2000])
+    if not visible:
+        return [], 'no_published_knowledge'
+    try:
+        # An optional index may not be installed yet; preserve outer transactions on PostgreSQL.
+        with transaction.atomic():
+            chunks = list(KnowledgeChunk.objects.filter(document_id__in=visible, model_id=MODEL_ID,
+                                                       model_revision=MODEL_REVISION, dimension=DIMENSION)
+                          .order_by('pk')[:2000])
+    except (OperationalError, ProgrammingError):
+        return [], 'index_unavailable'
     candidates = []
     current = {}
     for chunk in chunks:
@@ -126,7 +133,7 @@ def retrieve_knowledge(question, *, limit=4, encoder=None):
             continue
         candidates.append((chunk, doc, revision))
     if not candidates:
-        return [], 'no_approved_knowledge' if not visible else 'index_unavailable'
+        return [], 'index_unavailable'
     try:
         encoder = encoder or local_encoder()
         query_vector = _vectors(encoder, [question[:500]], query=True)[0]
@@ -146,12 +153,13 @@ def retrieve_knowledge(question, *, limit=4, encoder=None):
     scored.sort(key=lambda row: row[0], reverse=True)
     result = []
     for _, chunk, doc, revision in scored[:limit]:
-        review = DocumentReview.objects.filter(document=doc, revision=revision, status='approved').order_by('-created_at').first()
+        review = (DocumentReview.objects.filter(document=doc, revision=revision, status='approved')
+                  .order_by('-created_at').first() if doc.review_status == 'approved' else None)
         result.append({'kind': 'knowledge', 'entity_id': str(doc.pk), 'version': str(revision.version),
                        'title': public_text(revision.title), 'url': chunk.source_url, 'internal_url': None,
                        'text': chunk.text, 'verified_at': review.created_at.isoformat() if review else None,
                        'published_on': None,
-                       'status': 'approved', 'status_note': '已审核资料；请核对来源原文及适用届次。',
+                       'status': doc.review_status, 'status_note': '公开知识资料',
                        'locator': chunk.locator or None, 'edition': revision.edition or None,
                        'content_hash': chunk.content_hash})
     return result, 'ready' if result else 'no_match'

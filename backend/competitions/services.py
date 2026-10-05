@@ -169,16 +169,44 @@ def publish_competition(competition_id, *, actor):
     _validate_public_relations(competition)
     now = timezone.now()
     competition.publication_status = Competition.PublicationStatus.PUBLISHED
+    competition.publication_method = Competition.PublicationMethod.VERIFIED
     competition.published_at = competition.published_at or now
     competition.last_verified_at = now
     competition.full_clean()
     if previous == Competition.PublicationStatus.PUBLISHED:
         # 仅重新核验不冒充内容更新。
-        competition.save(update_fields=['last_verified_at'])
+        competition.save(update_fields=['last_verified_at', 'publication_method'])
     else:
         competition.updated_by = actor
         competition.save()
     _audit(competition, actor, 'publish' if previous != 'published' else 'verify', before=previous)
+    return competition
+
+
+@transaction.atomic
+def publish_competition_direct(competition_id, *, actor, category=None, reason='按项目决定直接发布'):
+    """发布已整理的届次，不把发布动作记作来源核验，也不启用站内招募。"""
+    require_editor(actor)
+    competition = Competition.objects.select_for_update().get(pk=competition_id)
+    if competition.publication_status == Competition.PublicationStatus.PUBLISHED:
+        return competition
+    if competition.publication_status == Competition.PublicationStatus.WITHDRAWN:
+        raise ValidationError('已下架赛事不能批量直接重新发布。')
+    if not isinstance(reason, str) or not reason.strip() or len(reason.strip()) > 500:
+        raise ValidationError('请填写 1 至 500 字的发布说明。')
+    if competition.category_id is None and category is not None:
+        competition.category = category
+    if competition.category_id:
+        CompetitionTaxonomy.objects.select_for_update().get(pk=competition.category_id)
+    _validate_public_relations(competition)
+    competition.publication_status = Competition.PublicationStatus.PUBLISHED
+    competition.publication_method = Competition.PublicationMethod.DIRECT
+    competition.published_at = timezone.now()
+    competition.updated_by = actor
+    # full_clean 保留字段、日期、分类、来源及招募规则，不补造缺失事实。
+    competition.full_clean()
+    competition.save()
+    _audit(competition, actor, 'publish', reason=reason.strip(), before='draft', fields=['publication_method'])
     return competition
 
 

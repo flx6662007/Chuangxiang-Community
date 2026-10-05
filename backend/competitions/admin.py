@@ -9,7 +9,7 @@ from django.db.models import Q
 
 from .models import Competition, CompetitionSource, CompetitionTaxonomy
 from .services import (
-    publish_competition, save_competition, save_source, validate_tags,
+    publish_competition, publish_competition_direct, save_competition, save_source, validate_tags,
     verify_source, withdraw_competition,
 )
 
@@ -46,13 +46,13 @@ class CompetitionForm(forms.ModelForm):
 class CompetitionAdmin(admin.ModelAdmin):
     form = CompetitionForm
     action_form = CompetitionActionForm
-    actions = ('verify_and_publish', 'withdraw_selected')
-    list_display = ('title', 'edition', 'publication_status', 'category', 'updated_at')
-    list_filter = ('publication_status', 'category', 'participation_type')
+    actions = ('publish_directly', 'verify_and_publish', 'withdraw_selected')
+    list_display = ('title', 'edition', 'publication_status', 'publication_method', 'category', 'updated_at')
+    list_filter = ('publication_status', 'publication_method', 'category', 'participation_type')
     search_fields = ('title', 'code', 'organizer')
     filter_horizontal = ('tags',)
     readonly_fields = (
-        'publication_status', 'published_at', 'last_verified_at', 'withdrawal_reason',
+        'publication_status', 'publication_method', 'published_at', 'last_verified_at', 'withdrawal_reason',
         'created_at', 'updated_at', 'created_by', 'updated_by',
     )
     save_on_top = True
@@ -70,6 +70,17 @@ class CompetitionAdmin(admin.ModelAdmin):
     def save_related(self, request, form, formsets, change):
         # tags 已由统一服务校验并保存；不再执行一个独立的 M2M 写入。
         pass
+
+    @admin.action(description='直接发布所选草稿（不记录为已核验）', permissions=['change'])
+    def publish_directly(self, request, queryset):
+        for pk in queryset.values_list('pk', flat=True):
+            try:
+                result = publish_competition_direct(pk, actor=request.user)
+            except ValidationError as exc:
+                self.message_user(request, f'赛事 {pk}：' + '；'.join(exc.messages), messages.ERROR)
+            else:
+                self.log_change(request, result, '直接发布；保留来源核验状态')
+                self.message_user(request, f'已公开：{result.title}', messages.SUCCESS)
 
     @admin.action(description='确认已核验全部内容并发布（或更新核验时间）', permissions=['change'])
     def verify_and_publish(self, request, queryset):

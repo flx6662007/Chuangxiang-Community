@@ -87,7 +87,7 @@ watch(() => [props.targetType, props.targetId], access.refresh)
 <template>
   <section class="team-panel governance-panel" aria-label="举报信息">
     <h2>信息有问题？</h2>
-    <p class="muted">举报由管理员核实后处理，提交举报不会自动下架内容。</p>
+    <p class="muted">提交后由管理员处理，可在“我的举报”查看进展。</p>
     <p v-if="checking" role="status">正在检查登录状态…</p>
     <div v-else-if="sessionError" role="alert">
       <p>{{ sessionError }}</p>

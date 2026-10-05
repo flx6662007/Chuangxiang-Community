@@ -454,7 +454,7 @@ onBeforeUnmount(() => {
         <el-card id="contact-details" class="detail-section account-detail-section" shadow="never">
           <h2>联系方式</h2>
           <p class="muted">
-            微信号或手机号至少补充一项，用于后续组队联系。游客赛事页面不会展示这里的资料。
+            微信号或手机号至少填写一项，用于双方授权后的组队联系。
           </p>
           <form
             class="account-form contact-form"
@@ -485,7 +485,7 @@ onBeforeUnmount(() => {
         <el-card id="account-status" class="detail-section account-detail-section" shadow="never">
           <h2>账号状态</h2>
           <p v-if="user.account_eligibility?.eligible">
-            邮箱和联系方式已完善，账号当前满足新增发布与申请的基础条件。
+            邮箱与联系方式已完善，可按赛事与队伍条件发布或申请。
           </p>
           <ul v-else-if="user.account_eligibility?.reasons?.length" class="account-reasons">
             <li
@@ -502,14 +502,14 @@ onBeforeUnmount(() => {
             }}
           </p>
           <p class="muted">
-            发布和申请还需符合赛事、队伍和名额条件；具体允许操作以最新状态为准。
+            在招募页面查看赛事要求、队伍条件与剩余名额。
           </p>
           <div class="stack-links">
             <RouterLink class="action-button secondary" to="/account/governance"
               >我的举报与申诉</RouterLink
             >
             <p class="field-hint">
-              邮箱待核验或账号受限时，仍可查看记录并提交申诉。
+              查看记录与提交申诉只需登录。
             </p>
           </div>
           <button class="text-button" :disabled="!!busy" @click="loadSession">

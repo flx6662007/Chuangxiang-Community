@@ -50,7 +50,7 @@ class PublicCompetitionMixin:
         ).exclude(DEMO_PREFIX, title__startswith='【虚构样例】').select_related('category').prefetch_related(
             'tags',
             Prefetch('sources', queryset=CompetitionSource.objects.filter(
-                last_verified_at__isnull=False,
+                Q(last_verified_at__isnull=False) | Q(competition__publication_method=Competition.PublicationMethod.DIRECT),
             ), to_attr='public_sources'),
         )
         return annotate_timeliness(queryset).annotate(

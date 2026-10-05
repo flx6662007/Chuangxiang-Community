@@ -1,6 +1,6 @@
 # 创享平台前端
 
-电脑端 Vue 3 工程，沿用 Vite、Vue Router、Axios、Element Plus。赛事和组队页面调用真实后端；接口失败显示错误，不自动填充模拟数据。未引入额外 UI 框架或前端全局状态库。
+电脑端 Vue 3 工程，沿用 Vite、Vue Router、Axios、Element Plus。赛事目录、届次通知、学习资料和组队页面调用真实后端；接口失败显示错误，不自动填充模拟数据。未引入额外 UI 框架或前端全局状态库。科研、快讯也通过后端接口加载。首页助手无模型配置时使用真实资料检索，有配置时调用聊天接口。
 
 ## 启动
 
@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-先按[后端启动说明](../docs/backend-development.md)启动数据库与 Django。默认页面地址为 `http://localhost:5173/`，`/api` 由 Vite 代理至 `http://127.0.0.1:8000`。修改代理时复制 `.env.example` 为 `.env.local`，设置 `DEV_PROXY_TARGET`。本机配置不提交。
+先按[后端启动说明](../docs/backend-development.md)启动数据库与 Django。默认页面地址为 `http://127.0.0.1:5173/`，`/api` 由 Vite 代理至 `http://127.0.0.1:8000`。修改代理时复制 `.env.example` 为 `.env.local`，设置 `DEV_PROXY_TARGET`。本机配置不提交。
 
 ```powershell
 npm test
@@ -25,9 +25,12 @@ npm run build
 | 路由                     | 用途                                                               |
 | ------------------------ | ------------------------------------------------------------------ |
 | `/`                      | 首页、赛事搜索、最新公开赛事和栏目入口                             |
-| `/information/competitions` | 赛事搜索、分类字典筛选、分页                                    |
-| `/information/competitions/:id` | 要求、日期、官方来源、关联招募入口                          |
-| `/information/projects` | 官方项目招募线索、关键词搜索与原文链接                             |
+| `/competitions` | 赛事目录搜索、等级筛选、分页；`?view=editions` 查看届次通知             |
+| `/competitions/catalog/:code` | 目录详情、关联届次、整理资料正文、学习资源入口                 |
+| `/competitions/:id` | 已发布届次的要求、日期、官方来源、关联招募入口                        |
+| `/resources` | 后端学习资源列表；支持搜索、类型、方向、目录编号和分页                       |
+| `/resources/:code` | 资源说明、来源原文与关联赛事目录                                       |
+| `/research` | 官方项目招募线索、关键词搜索与原文链接                                     |
 | `/teams`                 | 团队广场，按赛事、角色、技能、协作方式、校区、招募状态筛选         |
 | `/teams/publish`         | 固定模板、实际有效期预校验、确认发布；`team_id` 指定原队新一轮招募 |
 | `/teams/:id`             | 公开招募详情、登录后申请                                           |
@@ -37,7 +40,9 @@ npm run build
 | `/account/notifications` | 系统消息、未读筛选、已读和最新对象入口                             |
 | `/account/governance`    | 本人举报、反馈与申诉                                               |
 
-旧 `/competitions` 会保留查询条件并跳转；旧 `/competitions/:id` 仍兼容。
+旧 `/information/competitions`、`/information/competitions/:id`、`/information/projects` 和 `/information/resources` 保留查询条件跳转至上述路径。
+
+目录收录不代表当届正在报名。资源中心和资源详情无需登录或管理权限，搜索、分类及分页均读取公开资源；旧资源链接中的 `preview` 参数会自动移除。目录详情的内部知识草稿仍仅允许授权管理员主动预览，后端校验权限；内部正文以纯文本呈现，离开页面或切换账号会清空预览。
 
 没有自由发帖、自我介绍、附件、即时聊天或任意标签输入。公开卡片不读取联系方式。所有发布、申请、确认操作继续接受后端账号与业务权限检查。
 
@@ -46,6 +51,7 @@ npm run build
 第一次阅读先看[代码导读](../docs/code-guide.md)，其中按顺序连接了页面、请求、后端和数据库。
 
 - `src/api/`：按账号、赛事、组队、通知划分请求。写操作先取得 CSRF，每次读取当前 Cookie，避免登录轮换后使用旧令牌。
+- `src/api/catalog.js`：目录和知识文档的只读接口；`src/services/resources.js`：学习资源真实 API，已移除旧资源 Mock。
 - `src/components/`：卡片、字段选择器、招募条件、申请处理和队伍处理组件。
 - `src/views/`：页面、URL 筛选、加载／错误／空状态；新增组队路由懒加载。
 - `src/utils/teams.js`：中文状态、表单白名单、双版本令牌、业务错误、通知站内跳转和停用词条展示。

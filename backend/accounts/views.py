@@ -9,6 +9,7 @@ from rest_framework import serializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from curation.api_permissions import can_preview_library
 
 from .models import User
 from .permissions import account_eligibility, school_email_verified
@@ -31,6 +32,7 @@ def profile_data(user):
             'contact_updated_at': user.contact_updated_at,
             'school_email_verified': school_email_verified(user),
             'has_contact_details': user.has_contact_details,
+            'can_preview_library': can_preview_library(user),
             'account_eligibility': account_eligibility(user)}
 
 

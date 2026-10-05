@@ -144,7 +144,7 @@ onBeforeUnmount(() => {
     </div>
     <div v-else-if="initialized && !profile" class="state-panel">
       <h2>登录后查看本人记录</h2>
-      <p>他人的申请与联系资料不会公开展示。</p>
+      <p>登录后管理自己的申请与组队联系方式。</p>
       <RouterLink class="action-button" to="/account">去登录</RouterLink>
     </div>
     <template v-else

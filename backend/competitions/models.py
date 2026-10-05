@@ -122,6 +122,10 @@ class Competition(CleanFieldsModel):
         PUBLISHED = 'published', '已公开'
         WITHDRAWN = 'withdrawn', '已下架'
 
+    class PublicationMethod(models.TextChoices):
+        VERIFIED = 'verified', '核验后发布'
+        DIRECT = 'direct', '直接发布'
+
     code = models.SlugField('稳定编码', max_length=80, unique=True, validators=[validate_code])
     title = models.CharField('赛事名称', max_length=200)
     edition = models.CharField('年度或届次', max_length=80)
@@ -173,6 +177,10 @@ class Competition(CleanFieldsModel):
     publication_status = models.CharField(
         '发布状态', max_length=20, choices=PublicationStatus.choices, default=PublicationStatus.DRAFT,
     )
+    publication_method = models.CharField(
+        '发布方式', max_length=20, choices=PublicationMethod.choices,
+        default=PublicationMethod.VERIFIED, editable=False,
+    )
     published_at = models.DateTimeField('首次发布时间', null=True, blank=True, editable=False)
     withdrawal_reason = models.CharField('最近下架原因', max_length=500, blank=True, default='')
     last_verified_at = models.DateTimeField('整条核验时间', null=True, blank=True, editable=False)
@@ -213,6 +221,9 @@ class Competition(CleanFieldsModel):
                 'draft', 'published', 'withdrawn',
             ]), name='comp_status_valid'),
             models.CheckConstraint(
+                condition=Q(publication_method__in=['verified', 'direct']), name='comp_publication_method_valid',
+            ),
+            models.CheckConstraint(
                 condition=Q(team_size_min__isnull=True) | Q(team_size_min__gte=1), name='comp_team_min_positive',
             ),
             models.CheckConstraint(
@@ -234,8 +245,9 @@ class Competition(CleanFieldsModel):
             ),
             models.CheckConstraint(
                 condition=~Q(publication_status='published') | Q(
-                    summary__regex=r'\S', description__regex=r'\S', category__isnull=False, last_verified_at__isnull=False,
-                ), name='comp_published_fields_present',
+                    summary__regex=r'\S', description__regex=r'\S', category__isnull=False,
+                ) & (Q(publication_method='direct') | Q(last_verified_at__isnull=False)),
+                name='comp_published_fields_present',
             ),
             models.CheckConstraint(
                 condition=~Q(publication_status='withdrawn') | Q(withdrawal_reason__regex=r'\S'),
@@ -303,7 +315,9 @@ class Competition(CleanFieldsModel):
                 errors['category'] = '不能新增选择停用分类。'
 
         if self.publication_status == self.PublicationStatus.PUBLISHED:
-            for field in ('summary', 'description', 'published_at', 'last_verified_at'):
+            direct = self.publication_method == self.PublicationMethod.DIRECT
+            required = ('summary', 'description', 'published_at') + (() if direct else ('last_verified_at',))
+            for field in required:
                 if not getattr(self, field):
                     errors[field] = '发布前必须填写或完成核验。'
             if category is None:
@@ -311,11 +325,18 @@ class Competition(CleanFieldsModel):
             elif (not previous or previous.publication_status != self.PublicationStatus.PUBLISHED) and not category.is_active:
                 errors['category'] = '发布前必须选择启用的主分类。'
             if self._state.adding or self.sources.filter(is_primary=True).count() != 1:
-                errors['__all__'] = '请先保存草稿，再设置恰好一个已核验主来源后发布。'
-            elif self.sources.filter(last_verified_at__isnull=True).exists():
+                errors['__all__'] = '请先保存草稿，再设置恰好一个主来源后发布。'
+            elif not direct and self.sources.filter(last_verified_at__isnull=True).exists():
                 errors['__all__'] = '公开来源必须全部经过核验。'
             elif self.campus_arrangements and not self.sources.filter(source_type='campus').exists():
                 errors['campus_arrangements'] = '校内安排必须有校内官方来源。'
+            if direct:
+                # 来源无需人工核验，但公开链接不能携带凭据或指向本机等内部地址。
+                from information_library.selectors import safe_source_url
+                if self.pk and any(not safe_source_url(url) for url in self.sources.values_list('source_url', flat=True)):
+                    errors['__all__'] = '公开来源必须使用无凭据的公网 HTTP(S) 链接。'
+                if self.registration_url and not safe_source_url(self.registration_url):
+                    errors['registration_url'] = '报名入口必须使用无凭据的公网 HTTP(S) 链接。'
 
         enabling = self.recruitment_enabled and (
             not previous or not previous.recruitment_enabled
@@ -363,7 +384,12 @@ class CompetitionSource(CleanFieldsModel):
 
     def clean(self):
         super().clean()
-        if self.competition_id and Competition.objects.filter(
+        method = Competition.objects.filter(
             pk=self.competition_id, publication_status=Competition.PublicationStatus.PUBLISHED,
-        ).exists() and self.last_verified_at is None:
+        ).values_list('publication_method', flat=True).first() if self.competition_id else None
+        if method == Competition.PublicationMethod.VERIFIED and self.last_verified_at is None:
             raise ValidationError({'last_verified_at': '公开赛事的来源必须经过核验。'})
+        if method == Competition.PublicationMethod.DIRECT:
+            from information_library.selectors import safe_source_url
+            if not safe_source_url(self.source_url):
+                raise ValidationError({'source_url': '公开来源必须使用无凭据的公网 HTTP(S) 链接。'})

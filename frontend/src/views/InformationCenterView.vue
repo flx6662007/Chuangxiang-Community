@@ -11,11 +11,11 @@ const page = computed(() => {
   }
   if (['resources', 'resource-detail'].includes(route.name)) return {
     first: '查找', second: '学习与工具资源。',
-    description: '按方向与类型查找资源。当前清单为前端示例，内容及来源请逐项核对。',
+    description: '规则、赛题、教程与工具，按赛事集中查阅。',
   }
   return {
     first: '发现', second: '值得参加的赛事。',
-    description: '从真实收录的赛事出发，找到值得投入的下一步。',
+    description: '浏览赛事目录、届次通知与学习资料。',
   }
 })
 </script>

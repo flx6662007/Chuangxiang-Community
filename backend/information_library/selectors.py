@@ -123,7 +123,8 @@ def _record(kind, identifier, title, text, status, urls, source_dates=None, veri
 
 
 def _competition(item):
-    sources = [s for s in item.library_sources if s.last_verified_at and safe_source_url(s.source_url)]
+    sources = [s for s in item.library_sources
+               if (s.last_verified_at or item.publication_method == 'direct') and safe_source_url(s.source_url)]
     precise = item.registration_deadline_at or (item.submission_deadline_at if not item.registration_deadline else None)
     day = item.registration_deadline or item.submission_deadline
     expired = precise <= timezone.now() if precise else bool(day and day < timezone.localdate())
@@ -140,7 +141,7 @@ def _competition(item):
         '\n'.join(filter(None, body)),
         item.publication_status, [s.source_url for s in sources],
         [{'url': safe_source_url(s.source_url), 'published_on': iso(s.source_published_on)} for s in sources],
-        verified_at=item.last_verified_at or max((s.last_verified_at for s in sources), default=None),
+        verified_at=item.last_verified_at or max((s.last_verified_at for s in sources if s.last_verified_at), default=None),
         updated_at=item.updated_at, published_at=item.published_at,
         dates={'registration_deadline': iso(item.registration_deadline), 'registration_deadline_at': iso(item.registration_deadline_at),
                'registration_deadline_timezone': item.registration_deadline_timezone or None,

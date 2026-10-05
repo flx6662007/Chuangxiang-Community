@@ -1,199 +1,115 @@
 <script setup>
-import { computed, onBeforeUnmount, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
 import ResourceCard from '../components/ResourceCard.vue'
-import {
-  listResources,
-  normalizeResourceCategory,
-  normalizeResourceDirection,
-  resourceCategories,
-  resourceDirections,
-} from '../services/resources'
+import { listResources, listResourceTaxonomies } from '../services/resources'
+import { libraryPage, libraryQuery, libraryText, resourceIcon } from '../utils/library'
 
-const route = useRoute()
-const router = useRouter()
-const items = ref([])
-const count = ref(0)
-const loading = ref(true)
-const error = ref('')
-const searchInput = ref('')
-let requestNumber = 0
-
-const search = computed(() =>
-  typeof route.query.search === 'string' ? route.query.search.trim().slice(0, 200) : '',
-)
-const direction = computed(() => normalizeResourceDirection(route.query.direction))
-const category = computed(() => normalizeResourceCategory(route.query.category))
-const activeFilters = computed(() => Boolean(search.value || direction.value || category.value))
-const currentQuery = computed(() => ({
-  ...(search.value ? { search: search.value } : {}),
-  ...(direction.value ? { direction: direction.value } : {}),
-  ...(category.value ? { category: category.value } : {}),
+const route = useRoute(), router = useRouter()
+const items = ref([]), count = ref(0), loading = ref(true), error = ref(''), searchInput = ref('')
+const taxonomies = ref({ categories: [], directions: [] }), taxonomyError = ref('')
+const pageSize = 20
+const search = computed(() => libraryText(route.query.search))
+const direction = computed(() => libraryText(route.query.direction))
+const category = computed(() => libraryText(route.query.category))
+const catalogCode = computed(() => libraryText(route.query.catalog_code))
+const page = computed(() => libraryPage(route.query.page))
+const currentQuery = computed(() => libraryQuery({
+  search: search.value, direction: direction.value, category: category.value,
+  catalog_code: catalogCode.value, page: page.value > 1 ? page.value : undefined,
 }))
-const featuredItems = computed(() => items.value.filter((item) => item.featured))
+let requestNumber = 0, taxonomyRequest = 0, controller, taxonomyController
 
 async function load() {
   const request = ++requestNumber
+  controller?.abort()
+  controller = new AbortController()
   loading.value = true
   error.value = ''
+  items.value = []
+  count.value = 0
   try {
-    const data = await listResources({
-      search: search.value,
-      direction: direction.value,
-      category: category.value,
-    })
-    if (request === requestNumber) {
-      items.value = data.results
-      count.value = data.count
-    }
-  } catch {
-    if (request === requestNumber) {
-      items.value = []
-      count.value = 0
-      error.value = '资源暂时无法加载，请稍后重试。'
-    }
+    const data = await listResources({ ...currentQuery.value, page: page.value, page_size: pageSize }, controller.signal)
+    if (request !== requestNumber) return
+    items.value = data.results
+    count.value = data.count
+  } catch (err) {
+    if (request !== requestNumber || err.code === 'ERR_CANCELED') return
+    error.value = err.response?.status === 404 ? '这一页不存在，请返回第一页。' : '资源暂时无法加载，请稍后重试。'
   } finally {
     if (request === requestNumber) loading.value = false
   }
 }
-
-function navigate({ nextSearch = search.value, nextDirection = direction.value, nextCategory = category.value, hash = '' } = {}) {
-  router.push({
-    name: 'resources',
-    query: {
-      ...(nextSearch ? { search: nextSearch } : {}),
-      ...(nextDirection ? { direction: nextDirection } : {}),
-      ...(nextCategory ? { category: nextCategory } : {}),
-    },
-    hash,
-  })
+async function loadTaxonomies() {
+  const request = ++taxonomyRequest
+  taxonomyController?.abort()
+  taxonomyController = new AbortController()
+  taxonomies.value = { categories: [], directions: [] }
+  taxonomyError.value = ''
+  try {
+    const data = await listResourceTaxonomies({}, taxonomyController.signal)
+    if (request === taxonomyRequest) taxonomies.value = data
+  } catch (err) {
+    if (request === taxonomyRequest && err.code !== 'ERR_CANCELED') taxonomyError.value = '分类暂时无法加载；仍可搜索资源。'
+  }
 }
-
+function navigate(changes = {}) {
+  router.push({ name: 'resources', query: libraryQuery({ ...currentQuery.value, page: undefined, ...changes }) })
+}
 function submitSearch() {
-  navigate({ nextSearch: searchInput.value.trim().slice(0, 200) })
+  const next = libraryText(searchInput.value)
+  if (next === search.value && page.value === 1) load()
+  else navigate({ search: next })
 }
-
-function clearSearch() {
-  searchInput.value = ''
-  navigate({ nextSearch: '' })
-}
-
 function clearFilters() {
   searchInput.value = ''
-  navigate({ nextSearch: '', nextDirection: '', nextCategory: '' })
+  navigate({ search: '', direction: '', category: '', catalog_code: '' })
 }
-
-watch(search, (value) => { searchInput.value = value }, { immediate: true })
-watch(() => [search.value, direction.value, category.value], load, { immediate: true })
-onBeforeUnmount(() => { requestNumber++ })
+watch(search, value => { searchInput.value = value }, { immediate: true })
+watch(() => [search.value, direction.value, category.value, catalogCode.value, page.value], load, { immediate: true })
+onMounted(loadTaxonomies)
+onBeforeUnmount(() => { requestNumber++; taxonomyRequest++; controller?.abort(); taxonomyController?.abort() })
 </script>
 
 <template>
   <section class="resource-page" aria-labelledby="resource-title">
     <div class="section-heading">
-      <div>
-        <h2 id="resource-title">资源中心</h2>
-      </div>
-
+      <div><h2 id="resource-title">资源中心</h2></div>
     </div>
-    <p class="editorial-intro">
-      按方向和资源类型查找竞赛、科研与技能学习资料。未来由管理员维护；当前先展示前端示例清单。
-    </p>
+    <p v-if="catalogCode" class="notice-text">仅查看目录 {{ catalogCode }} 的学习资料。 <RouterLink :to="{ name: 'catalog-detail', params: { code: catalogCode } }">返回赛事目录详情 →</RouterLink></p>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">
-      <AppIcon name="search" :size="19" />
-      <label class="sr-only" for="resource-search">搜索资源标题、简介和标签</label>
-      <input
-        id="resource-search"
-        v-model="searchInput"
-        type="search"
-        maxlength="200"
-        placeholder="搜索资源标题、简介或标签…"
-      />
+      <AppIcon name="search" :size="19" /><label class="sr-only" for="resource-search">搜索资源标题、简介和来源</label>
+      <input id="resource-search" v-model="searchInput" type="search" maxlength="200" placeholder="搜索赛题、教程、工具或来源…" />
       <button class="action-button" type="submit">搜索</button>
-      <button v-if="search || searchInput" class="text-button" type="button" @click="clearSearch">
-        清空搜索
-      </button>
     </form>
-
-    <div class="category-tabs" role="group" aria-label="资源方向筛选">
-      <button
-        v-for="option in resourceDirections"
-        :key="option.value || 'all'"
-        type="button"
-        :class="{ selected: direction === option.value }"
-        :aria-pressed="direction === option.value"
-        @click="navigate({ nextDirection: option.value })"
-      >{{ option.label }}</button>
+    <div v-if="taxonomies.directions?.length || direction" class="category-tabs" role="group" aria-label="资源方向筛选">
+      <button type="button" :class="{ selected: !direction }" @click="navigate({ direction: '' })">全部方向</button>
+      <button v-for="option in taxonomies.directions" :key="option.code" type="button" :class="{ selected: direction === option.code }" :aria-pressed="direction === option.code" @click="navigate({ direction: option.code })">{{ option.name }}</button>
     </div>
-
-    <section class="resource-category-section" aria-labelledby="resource-categories-title">
-      <div class="section-heading resource-category-heading">
-        <div>
-          <h2 id="resource-categories-title">按资源类型查找</h2>
-        </div>
-        <button
-          type="button"
-          class="text-button"
-          :aria-pressed="!category"
-          @click="navigate({ nextCategory: '', hash: '#resource-list' })"
-        >查看全部类型</button>
-      </div>
+    <section v-if="taxonomies.categories?.length > 1 || taxonomies.has_unclassified || category" class="resource-category-section" aria-labelledby="resource-categories-title">
+      <div class="section-heading resource-category-heading"><h2 id="resource-categories-title">按资源类型查找</h2><button class="text-button" type="button" @click="navigate({ category: '' })">查看全部类型</button></div>
       <div class="resource-category-grid" role="group" aria-label="资源类型筛选">
-        <button
-          v-for="option in resourceCategories"
-          :key="option.value"
-          type="button"
-          class="resource-category-card"
-          :class="{ selected: category === option.value }"
-          :aria-pressed="category === option.value"
-          @click="navigate({ nextCategory: option.value, hash: '#resource-list' })"
-        >
-          <span class="resource-category-icon"><AppIcon :name="option.icon" :size="24" /></span>
-          <strong>{{ option.label }}</strong>
-          <span>{{ option.description }}</span>
+        <button v-for="option in taxonomies.categories" :key="option.code" type="button" class="resource-category-card" :class="{ selected: category === option.code }" :aria-pressed="category === option.code" @click="navigate({ category: option.code })">
+          <span class="resource-category-icon"><AppIcon :name="resourceIcon(option)" :size="24" /></span><strong>{{ option.name }}</strong>
         </button>
+        <button v-if="taxonomies.has_unclassified" type="button" class="resource-category-card" :class="{ selected: category === 'unclassified' }" @click="navigate({ category: 'unclassified' })"><span class="resource-category-icon"><AppIcon name="book" :size="24" /></span><strong>待分类资料</strong></button>
       </div>
     </section>
-
-    <p class="notice-text resource-notice">
-      当前为前端 Mock 示例资源，尚未接入管理员审核与发布。示例清单不是当期报名通知，具体要求请以相应原文为准。
-    </p>
-
-    <section v-if="!activeFilters && !loading && !error && featuredItems.length" class="resource-featured" aria-labelledby="resource-featured-title">
-      <div class="section-heading">
-        <div>
-          <h2 id="resource-featured-title">先看这些示例</h2>
-        </div>
-      </div>
-      <div class="editorial-grid">
-        <ResourceCard v-for="item in featuredItems" :key="item.id" :item="item" :detail-query="currentQuery" id-prefix="featured-resource" />
-      </div>
-    </section>
-
-    <section id="resource-list" class="resource-results" aria-labelledby="resource-list-title">
-      <div class="section-heading">
-        <div>
-          <h2 id="resource-list-title">资源列表</h2>
-        </div>
-      </div>
-      <div class="list-summary" role="status" aria-live="polite">
-        <span>{{ activeFilters ? '当前筛选结果' : '全部示例资源' }}</span>
-        <span v-if="!loading && !error">共 <strong>{{ count }}</strong> 条资源</span>
-      </div>
+    <p v-if="taxonomyError" class="notice-text" role="alert">{{ taxonomyError }} <button class="text-button" @click="loadTaxonomies">重试</button></p>
+    <section class="resource-results" aria-labelledby="resource-list-title">
+      <div class="section-heading"><div><h2 id="resource-list-title">资源列表</h2></div></div>
+      <div class="list-summary" role="status" aria-live="polite"><span>学习资料</span><span v-if="!loading && !error">共 <strong>{{ count }}</strong> 条资源</span></div>
       <div v-if="loading" class="state-panel compact-state" role="status">正在加载资源…</div>
       <div v-else-if="error" class="state-panel compact-state" role="alert">
-        <p>{{ error }}</p>
-        <button class="action-button secondary" type="button" @click="load">重新加载</button>
+        <p>{{ error }}</p><button class="action-button secondary" type="button" @click="load">重新加载</button>
+        <button v-if="page > 1" class="text-button" @click="navigate({ page: undefined })">返回第一页</button>
       </div>
       <div v-else-if="!items.length" class="state-panel compact-state">
-        <h3>没有找到匹配资源</h3>
-        <p>试试其他关键词，或调整方向与资源类型。</p>
-        <button class="action-button secondary" type="button" @click="clearFilters">清空筛选</button>
+        <h3>暂无匹配的资源</h3><p>可调整筛选条件，或换个关键词试试。</p><button class="action-button secondary" type="button" @click="clearFilters">清空筛选</button>
       </div>
-      <div v-else class="editorial-grid">
-        <ResourceCard v-for="item in items" :key="item.id" :item="item" :detail-query="currentQuery" />
-      </div>
+      <div v-else class="editorial-grid"><ResourceCard v-for="item in items" :key="item.id" :item="item" :detail-query="currentQuery" /></div>
+      <el-pagination v-if="!loading && !error && count > pageSize" class="competition-pagination" :current-page="page" :page-size="pageSize" :total="count" layout="prev, pager, next" prev-text="上一页" next-text="下一页" background aria-label="资源分页" @update:current-page="value => navigate({ page: value })" />
     </section>
   </section>
 </template>

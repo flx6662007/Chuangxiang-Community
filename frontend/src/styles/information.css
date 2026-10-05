@@ -142,7 +142,18 @@
 .is-editorial-page .research-opportunity-action span { color: var(--text-secondary, #78858d); font-size: var(--type-caption); }
 .is-editorial-page .state-panel { border-color: var(--border, #d5dbdd); background: var(--surface, #fbfaf7); color: var(--text-secondary, #5a6976); }
 
-/* Resource examples use the same editorial surface without implying publication approval. */
+/* Catalog and resources share the existing editorial surface. */
+.library-preview-controls { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin: 12px 0 22px; }
+.knowledge-document { padding: 24px 0; border-bottom: 1px solid var(--border, #d5dbd9); }
+.knowledge-document:last-child { border-bottom: 0; }
+.knowledge-document h3 { overflow-wrap: anywhere; }
+.knowledge-summary { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.resource-learning-facts { margin-top: 24px; }
+.resource-learning-facts > div { align-items: start; }
+.resource-learning-facts dd { line-height: 1.7; }
+.knowledge-body { margin: 18px 0; padding: 18px 20px; background: var(--bg-secondary, #f2f4f2); border-left: 2px solid var(--border-accent, #8aaed2); overflow-wrap: anywhere; }
+.catalog-card .competition-card-body { flex: 1; min-width: 0; }
+.resource-page .resource-card .resource-description { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .is-editorial-page .resource-page .section-heading h2 { color: var(--text-primary, #1d2d3d); letter-spacing: -.025em; }
 .is-editorial-page .resource-page .editorial-intro { color: var(--text-secondary, #5e6d77); font-size: var(--type-small); line-height: var(--leading-loose); }
 .is-editorial-page .resource-page .resource-category-card,

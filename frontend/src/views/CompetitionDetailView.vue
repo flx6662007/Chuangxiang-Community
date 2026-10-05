@@ -145,7 +145,7 @@ onBeforeUnmount(() => {
                   {{ officialLink.label }} ↗
                 </a>
               </p>
-              <p v-else class="muted">暂未收录独立报名网址，请按原文中的报名方式办理。</p>
+              <p v-else class="muted">报名入口见赛事通知。</p>
               <dl class="detail-facts">
                 <div>
                   <dt>报名截止日期</dt>
@@ -162,7 +162,6 @@ onBeforeUnmount(() => {
               </dl>
               <h3>时间说明</h3>
               <p class="notice-text preserve-lines">{{ officialText(item.deadline_notes) }}</p>
-              <p class="muted">报名、作品提交和校内选拔可能使用不同期限。只有日期而没有完整时区信息时，具体时刻以官方原文为准；截止尚未到不代表报名已经开放。</p>
               <h3>校内安排</h3>
               <p class="preserve-lines">
                 {{ officialText(item.campus_arrangements) }}
@@ -180,21 +179,20 @@ onBeforeUnmount(() => {
                   rel="noopener noreferrer"
                   ><AppIcon name="link" :size="14" />
                   {{ source.source_name || '通知原文' }} ↗</a
-                ><span v-else>{{ source.source_name || '来源网址待核实' }}</span
+                ><span v-else>{{ source.source_name || '赛事通知' }}</span
                 ><span class="muted"
                   >原文发布日期：{{
                     source.source_published_on ? formatDate(source.source_published_on) : officialUnknown
                   }}</span
                 >
                 <span v-if="source.source_updated_on" class="muted">原文更新日期：{{ formatDate(source.source_updated_on) }}</span>
-                <span class="muted">该来源最近核验：{{ source.last_verified_at ? formatUpdatedAt(source.last_verified_at) : '尚未记录' }}</span>
+                <span v-if="source.last_verified_at" class="muted">该来源最近核验：{{ formatUpdatedAt(source.last_verified_at) }}</span>
               </li>
             </ul>
-            <p v-else class="muted">暂无可展示的已核验来源。</p>
+            <p v-else class="muted">来源链接暂未收录。</p>
             <p class="timestamp">
-              平台内容更新：{{ formatUpdatedAt(item.updated_at) }}<br />最近核验：{{
-                item.last_verified_at ? formatUpdatedAt(item.last_verified_at) : '尚未记录'
-              }}
+              资料更新：{{ formatUpdatedAt(item.updated_at) }}
+              <template v-if="item.last_verified_at"><br />最近核验：{{ formatUpdatedAt(item.last_verified_at) }}</template>
             </p></el-card
           >
         </div>
@@ -216,7 +214,7 @@ onBeforeUnmount(() => {
                 >为本赛事发布招募 →</RouterLink
               >
               <p v-else class="muted">本赛事当前未开放平台招募。</p>
-              <p v-if="item.is_recruitment_open && item.recruitment_deadline" class="muted">平台招募截止：{{ formatUpdatedAt(item.recruitment_deadline) }}。此期限用于站内组队，不代替官方报名期限。</p>
+              <p v-if="item.is_recruitment_open && item.recruitment_deadline" class="muted">平台招募截止：{{ formatUpdatedAt(item.recruitment_deadline) }}。组队后请前往赛事官网报名。</p>
             </div>
           </section>
           <el-card class="detail-section" shadow="never"

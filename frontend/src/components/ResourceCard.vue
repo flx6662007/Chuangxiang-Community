@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
-import { formatDate, safeExternalUrl } from '../utils/competition'
-import { resourceCategories, resourceDirections } from '../services/resources'
+import { formatUpdatedAt, safeExternalUrl } from '../utils/competition'
+import { resourceIcon } from '../utils/library'
 import AppIcon from './AppIcon.vue'
 
 const props = defineProps({
@@ -9,16 +9,14 @@ const props = defineProps({
   detailQuery: { type: Object, default: () => ({}) },
   idPrefix: { type: String, default: 'resource' },
 })
-const category = computed(() => resourceCategories.find((option) => option.value === props.item.category))
-const direction = computed(() => resourceDirections.find((option) => option.value === props.item.direction))
-const sourceUrl = computed(() => safeExternalUrl(props.item.url))
+const sourceUrl = computed(() => props.item.availability === 'unavailable' ? '' : safeExternalUrl(props.item.source_url))
 </script>
 
 <template>
   <article class="editorial-card resource-card" :aria-labelledby="`${idPrefix}-${item.id}-title`">
     <p class="editorial-meta">
-      <AppIcon :name="category?.icon || 'book'" :size="17" />
-      {{ category?.label || '资源' }}
+      <AppIcon :name="resourceIcon(item.category)" :size="17" />
+      {{ item.facts?.kind || item.category?.name || '学习资料' }}
     </p>
     <h3 :id="`${idPrefix}-${item.id}-title`">
       <RouterLink :to="{ name: 'resource-detail', params: { id: item.id }, query: detailQuery }">
@@ -26,12 +24,16 @@ const sourceUrl = computed(() => safeExternalUrl(props.item.url))
       </RouterLink>
     </h3>
     <div class="tag-row">
-      <span class="tag">{{ direction?.label || '资源' }}</span>
-      <span v-for="tag in item.tags" :key="tag" class="tag neutral">{{ tag }}</span>
+      <span v-if="item.facts?.difficulty" class="tag">{{ item.facts.difficulty }}</span>
+      <span v-if="item.facts?.language" class="tag neutral">{{ item.facts.language }}</span>
+      <span v-if="item.facts?.access" class="tag neutral">{{ item.facts.access }}</span>
+      <span v-for="direction in item.directions" :key="direction.code" class="tag">{{ direction.name }}</span>
+      <span v-for="tag in item.tags" :key="tag.code" class="tag neutral">{{ tag.name }}</span>
+      <span v-if="item.availability === 'unavailable'" class="tag warm">链接暂不可用</span>
     </div>
-    <p class="resource-description">{{ item.description }}</p>
+    <p v-if="item.description" class="resource-description">{{ item.description }}</p>
     <p class="resource-card-source">
-      {{ item.source }} · 整理于 {{ formatDate(item.updatedAt) }}
+      <template v-if="item.provider">{{ item.provider }} · </template>整理于 {{ formatUpdatedAt(item.updated_at) }}
     </p>
     <div class="resource-card-actions">
       <RouterLink class="more-link" :to="{ name: 'resource-detail', params: { id: item.id }, query: detailQuery }">

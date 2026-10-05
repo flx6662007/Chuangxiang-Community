@@ -61,14 +61,30 @@ class ResourceRetrieverTests(TestCase):
             withdrawal_reason='已撤下' if status == 'withdrawn' else '',
         )
 
-    def test_only_real_published_verified_available_resources(self):
+    def test_only_real_published_available_resources_with_actual_verification_times(self):
         route = route_query('机器人资源')
         self.assertEqual(retrieve_platform('机器人资源', route), [])
         public = self.resource('机器人公开课程', 'published')
         self.resource('机器人草稿课程', 'draft')
         self.resource('机器人下架课程', 'withdrawn')
         self.resource('机器人不可用课程', 'published', available='unavailable')
-        self.resource('机器人未核验课程', 'published', verified=False)
+        direct = self.resource('机器人直接发布课程', 'published', verified=False)
         rows = retrieve_platform('机器人资源', route)
-        self.assertEqual([row['entity_id'] for row in rows], [str(public.pk)])
-        self.assertIsNone(rows[0]['internal_url'])  # Frontend resource detail is still mock-backed.
+        self.assertEqual({row['entity_id'] for row in rows}, {str(public.pk), str(direct.pk)})
+        by_id = {row['entity_id']: row for row in rows}
+        self.assertEqual(by_id[str(public.pk)]['verified_at'], public.last_verified_at.isoformat())
+        self.assertIsNone(by_id[str(direct.pk)]['verified_at'])
+        self.assertEqual(by_id[str(direct.pk)]['status_note'], '学习资源')
+
+    def test_match_is_not_limited_to_newest_hundred_resources(self):
+        older = self.resource('天文学课程', 'published', verified=False)
+        for index in range(101):
+            self.resource(f'机器人课程{index}', 'published', verified=False)
+        rows = retrieve_platform('天文学资源', route_query('天文学资源'))
+        self.assertEqual([row['entity_id'] for row in rows], [str(older.pk)])
+
+    def test_private_contact_line_does_not_create_a_search_match(self):
+        row = self.resource('公开课程', 'published', verified=False)
+        row.description = '学习说明\n联系人：秘密联系词'
+        row.save()
+        self.assertEqual(retrieve_platform('秘密联系词资源', route_query('秘密联系词资源')), [])

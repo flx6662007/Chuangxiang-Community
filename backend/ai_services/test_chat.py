@@ -15,11 +15,18 @@ from .test_client import completion
 
 CONFIG = AIConfig(enabled=True, provider='deepseek', base_url='https://api.deepseek.com',
                   api_key='offline-test-token', model='deepseek-flash', timeout_seconds=60)
+CHAT_SETTINGS = {
+    'ENABLED': CONFIG.enabled, 'PROVIDER': CONFIG.provider, 'BASE_URL': CONFIG.base_url,
+    'API_KEY': CONFIG.api_key, 'MODEL': CONFIG.model, 'TIMEOUT_SECONDS': CONFIG.timeout_seconds,
+    'MAX_OUTPUT_TOKENS': CONFIG.max_output_tokens,
+}
 QUESTION = {'role': 'user', 'content': '你好，你是谁？'}
 URL = '/api/v1/ai/chat/'
 
 
+@override_settings(AI_CHAT=CHAT_SETTINGS)
 class ChatTests(SimpleTestCase):
+    # chat 在创建客户端前检查配置；上游错误测试同时提供有效的离线配置和 MockTransport。
     def setUp(self):
         cache.clear()
 
@@ -63,11 +70,19 @@ class ChatTests(SimpleTestCase):
 
     @override_settings(AI_CHAT={})
     def test_unconfigured_returns_safe_error_without_network(self):
-        with patch('httpx.Client') as client:
-            response = self.post()
+        with patch('httpx.Client') as client, \
+                patch('ai_services.chat.retrieve_platform') as platform, \
+                patch('ai_services.chat.retrieve_knowledge') as knowledge, \
+                patch('ai_services.chat.retrieve_official_web') as web:
+            for question in (QUESTION, {'role': 'user', 'content': '机器人比赛规则官网最新通知'}):
+                with self.subTest(question=question['content']):
+                    response = self.post([question])
+                    self.assertEqual(response.status_code, 503)
+                    self.assertEqual(response.json()['code'], 'ai_configuration_error')
         client.assert_not_called()
-        self.assertEqual(response.status_code, 503)
-        self.assertEqual(response.json()['code'], 'ai_configuration_error')
+        platform.assert_not_called()
+        knowledge.assert_not_called()
+        web.assert_not_called()
 
     def test_upstream_statuses_are_safe_without_retry(self):
         for status, expected, code in [

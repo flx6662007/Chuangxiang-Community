@@ -1,38 +1,49 @@
 <script setup>
-import { computed, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { laboratories } from '../data/editorial'
+import { listResearch } from '../api/editorial'
+import { libraryPage, libraryQuery } from '../utils/library'
 import AppIcon from '../components/AppIcon.vue'
 import ProjectOpportunityCard from '../components/ProjectOpportunityCard.vue'
 
 const route = useRoute()
 const router = useRouter()
 const searchInput = ref('')
+const items = ref([]), count = ref(0), loading = ref(true), error = ref('')
+const pageSize = 12
+const page = computed(() => libraryPage(route.query.page))
+let requestNumber = 0, controller
 const search = computed(() =>
   typeof route.query.search === 'string'
     ? route.query.search.trim().slice(0, 200)
     : '',
 )
-const items = computed(() => {
-  const words = search.value.toLocaleLowerCase().split(/\s+/).filter(Boolean)
-  if (!words.length) return laboratories
-  return laboratories.filter((item) => {
-    const text = [
-      item.title,
-      item.unit,
-      item.direction,
-      item.summary,
-      item.participation,
-      item.evidenceNote,
-    ]
-      .filter((value) => typeof value === 'string')
-      .join(' ')
-      .toLocaleLowerCase()
-    return words.every((word) => text.includes(word))
-  })
-})
+async function load() {
+  const request = ++requestNumber
+  controller?.abort()
+  controller = new AbortController()
+  loading.value = true
+  error.value = ''
+  items.value = []
+  count.value = 0
+  try {
+    const data = await listResearch({ search: search.value, page: page.value, page_size: pageSize }, controller.signal)
+    if (request !== requestNumber) return
+    items.value = data.results
+    count.value = data.count
+  } catch (err) {
+    if (request !== requestNumber || err.code === 'ERR_CANCELED') return
+    error.value = err.response?.status === 404 ? '这一页不存在，请返回第一页。' : '科研线索暂时无法加载，请重试。'
+  } finally {
+    if (request === requestNumber) loading.value = false
+  }
+}
+function navigate(value = 1) {
+  router.push({ name: 'research-projects', query: libraryQuery({ search: search.value, page: value > 1 ? value : undefined }) })
+}
 function submitSearch() {
   const value = searchInput.value.trim().slice(0, 200)
+  if (value === search.value && page.value === 1) { load(); return }
   router.push({
     name: 'research-projects',
     query: value ? { search: value } : {},
@@ -49,6 +60,8 @@ watch(
   },
   { immediate: true },
 )
+watch(() => [search.value, page.value], load, { immediate: true })
+onBeforeUnmount(() => { requestNumber++; controller?.abort() })
 </script>
 
 <template>
@@ -78,17 +91,22 @@ watch(
       </button>
     </form>
     <p class="notice-text">
-      收录内容包含历史招募和长期参与说明，不代表当前已有项目名额。请通过官方页面确认具体课题、参与条件与时间安排。
+      浏览实验室研究方向、招募记录与本科生参与方式。
     </p>
     <div class="list-summary" role="status" aria-live="polite">
       <span>{{
         search ? '“' + search + '” 的搜索结果' : '全部科研线索'
       }}</span>
-      <span
-        >共 <strong>{{ items.length }}</strong> 条线索</span
+      <span v-if="!loading && !error"
+        >共 <strong>{{ count }}</strong> 条线索</span
       >
     </div>
-    <div v-if="items.length" v-reveal class="research-editorial-list">
+    <div v-if="loading" class="state-panel compact-state" role="status">正在加载科研线索…</div>
+    <div v-else-if="error" class="state-panel compact-state" role="alert">
+      <p>{{ error }}</p><button class="action-button secondary" type="button" @click="load">重新加载</button>
+      <button v-if="page > 1" class="text-button" type="button" @click="navigate()">返回第一页</button>
+    </div>
+    <div v-else-if="items.length" class="research-editorial-list">
       <ProjectOpportunityCard
         v-for="item in items"
         :key="item.id"
@@ -101,7 +119,7 @@ watch(
         {{
           search
             ? '换个关键词试试，或清空搜索查看全部线索。'
-            : '核对本科生参与说明后，会在此展示。'
+            : '实验室与本科生科研参与信息将在这里展示。'
         }}
       </p>
       <button
@@ -112,5 +130,6 @@ watch(
         清空搜索
       </button>
     </div>
+    <el-pagination v-if="!loading && !error && count > pageSize" class="competition-pagination" :current-page="page" :page-size="pageSize" :total="count" layout="prev, pager, next" prev-text="上一页" next-text="下一页" background aria-label="科研线索分页" @update:current-page="navigate" />
   </section>
 </template>

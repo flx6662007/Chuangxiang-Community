@@ -13,7 +13,7 @@ class KnowledgeDocument(DomainModel):
     code = models.SlugField(max_length=100, unique=True)
     title = models.CharField(max_length=300)
     review_status = models.CharField(max_length=12, default='draft', choices=[
-        ('draft', '待审核'), ('approved', '已审核'), ('withdrawn', '已撤下'),
+        ('draft', '草稿'), ('published', '已发布'), ('approved', '已核验'), ('withdrawn', '已撤下'),
     ])
     current_revision = models.ForeignKey('DocumentRevision', on_delete=models.PROTECT,
                                          null=True, blank=True, related_name='+')
@@ -23,12 +23,12 @@ class KnowledgeDocument(DomainModel):
         super().clean()
         if self.current_revision_id and self.current_revision.document_id != self.pk:
             raise ValidationError('当前版本必须属于本文档。')
-        if self.review_status == 'approved' and not self.current_revision_id:
-            raise ValidationError('无正文版本的文档不能通过审核。')
+        if self.review_status in ('approved', 'published') and not self.current_revision_id:
+            raise ValidationError('无正文版本的文档不能公开。')
 
     class Meta:
         constraints = [models.CheckConstraint(
-            condition=Q(review_status__in=['draft', 'approved', 'withdrawn']), name='curation_review_status')]
+            condition=Q(review_status__in=['draft', 'published', 'approved', 'withdrawn']), name='curation_review_status')]
 
 
 class DocumentRevision(DomainModel):
@@ -73,7 +73,7 @@ class DocumentLink(DomainModel):
 
 
 class KnowledgeChunk(models.Model):
-    """Rebuildable exact-search vectors for an approved document revision."""
+    """当前公开文档版本的可重建检索向量。"""
 
     document = models.ForeignKey(KnowledgeDocument, on_delete=models.CASCADE, related_name='search_chunks')
     revision = models.ForeignKey(DocumentRevision, on_delete=models.CASCADE, related_name='+')
