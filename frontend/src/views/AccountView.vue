@@ -212,7 +212,7 @@ onBeforeUnmount(() => {
   <section class="account-page-shell">
     <AccountPageHeader
       title="我的"
-      accent="账号。"
+      accent="账号"
       description="管理校园身份，也为下一次合作做好准备。"
       :show-nav="!!user && !initializing"
     />
@@ -357,7 +357,7 @@ onBeforeUnmount(() => {
           </div>
         </el-card>
         <aside class="account-intro">
-          <h2>连接校园，<br /><span>从一个好想法开始。</span></h2>
+          <h2>连接校园，<br /><span>从一个好想法开始</span></h2>
           <p>使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。</p>
           <RouterLink class="more-link" :to="{ name: 'competitions' }"
             >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>

@@ -206,7 +206,7 @@ onBeforeUnmount(() => {
     <header class="information-hero recruitment-editor-hero">
       <div class="information-hero-inner">
         <RouterLink class="back-link" to="/teams">← 返回团队广场</RouterLink>
-        <h1>{{ editing ? '核对' : '发布' }}<span>{{ editing ? '招募条件。' : '一份新招募。' }}</span></h1>
+        <h1>{{ editing ? '核对' : '发布' }}<span>{{ editing ? '招募条件' : '一份新招募' }}</span></h1>
         <p>{{ editing ? '当前版本仍可编辑原卡；更换公开条件时，建议关闭本轮并发布新卡。' : '选择已收录且开放招募的赛事，填写固定条件，预览后再发布。' }}</p>
       </div>
     </header>

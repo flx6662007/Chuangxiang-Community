@@ -55,7 +55,7 @@ onBeforeUnmount(() => {
   <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">查阅比赛和资料</h2>
+        <h2 id="ai-assistant-title">查阅比赛资料</h2>
       </div>
       <span class="editorial-label">关键词搜索</span>
     </div>

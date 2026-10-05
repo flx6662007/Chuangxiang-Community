@@ -114,7 +114,7 @@ watch(
   <section class="account-subpage">
     <AccountPageHeader
       title="举报与"
-      accent="申诉。"
+      accent="申诉"
       description="登录后提交举报与申诉，查看本人记录和处理进展。"
     />
     <div class="account-content account-subpage-content">

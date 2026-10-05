@@ -6,15 +6,15 @@ import EditorialHeroVisual from '../components/EditorialHeroVisual.vue'
 const route = useRoute()
 const page = computed(() => {
   if (route.name === 'research-projects') return {
-    first: '走进', second: '真正的研究。',
+    first: '走进', second: '真正的研究',
     description: '从官方科研线索出发，探索适合自己的研究方向。',
   }
   if (['resources', 'resource-detail'].includes(route.name)) return {
-    first: '查找', second: '学习与工具资源。',
+    first: '查找', second: '学习与工具资源',
     description: '规则、赛题、教程与工具，按赛事集中查阅。',
   }
   return {
-    first: '发现', second: '值得参加的赛事。',
+    first: '发现', second: '值得参加的赛事',
     description: '浏览赛事目录、届次通知与学习资料。',
   }
 })

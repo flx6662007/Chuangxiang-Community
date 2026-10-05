@@ -67,7 +67,7 @@ onBeforeUnmount(() => { requestNumber++; controller?.abort() })
 <template>
   <section class="project-page" aria-labelledby="projects-title">
     <div v-reveal class="project-intro">
-      <h2 id="projects-title">把好奇心带进实验室。</h2>
+      <h2 id="projects-title">把好奇心带进实验室</h2>
       <p>阅读真实来源，找到与你的兴趣相交的研究方向。</p>
     </div>
     <form class="search-bar" role="search" @submit.prevent="submitSearch">

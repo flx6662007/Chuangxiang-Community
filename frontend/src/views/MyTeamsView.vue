@@ -110,7 +110,7 @@ onBeforeUnmount(() => {
   <section class="account-subpage">
     <AccountPageHeader
       title="我的"
-      accent="组队。"
+      accent="组队"
       description="处理申请、核对条件，记录每一次正式确认。"
     />
     <div class="account-content account-subpage-content">

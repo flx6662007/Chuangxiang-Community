@@ -78,7 +78,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
   <section v-else class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">竞赛和科研问题，<br /><span>问问 AI 助手。</span></h2>
+        <h2 id="ai-assistant-title">竞赛和科研问题，<br /><span>问问 AI 助手</span></h2>
       </div>
       <span class="editorial-label">科创 AI 助手</span>
     </div>

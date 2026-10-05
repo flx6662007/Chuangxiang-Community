@@ -84,7 +84,7 @@ onBeforeUnmount(() => {
   <section class="account-subpage">
     <AccountPageHeader
       title="系统"
-      accent="通知。"
+      accent="通知"
       description="查看最新进展，前往对应页面处理申请。"
     />
     <div class="account-content account-subpage-content">

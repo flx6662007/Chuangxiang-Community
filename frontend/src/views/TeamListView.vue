@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
         <EditorialHeroVisual variant="team" />
         <div class="team-hero-grid">
           <div>
-            <h1 id="team-title">寻找一起<br /><span>参赛的伙伴。</span></h1>
+            <h1 id="team-title">寻找一起<br /><span>参赛的伙伴</span></h1>
             <p class="team-hero-lead">围绕同一场赛事，让不同的能力走到一起。</p>
           </div>
         </div>
@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
     </header>
     <div class="team-content">
     <section class="team-filter-surface" aria-labelledby="team-filter-title">
-      <div class="team-section-heading"><h2 id="team-filter-title">从你能带来的不同开始。</h2></div>
+      <div class="team-section-heading"><h2 id="team-filter-title">从你能带来的不同开始</h2></div>
     <form class="search-bar" role="search" @submit.prevent="changeFilters">
       <AppIcon name="search" :size="19" /><label
         class="sr-only"
