@@ -72,6 +72,28 @@ class DocumentLink(DomainModel):
         ]
 
 
+class KnowledgeChunk(models.Model):
+    """Rebuildable exact-search vectors for an approved document revision."""
+
+    document = models.ForeignKey(KnowledgeDocument, on_delete=models.CASCADE, related_name='search_chunks')
+    revision = models.ForeignKey(DocumentRevision, on_delete=models.CASCADE, related_name='+')
+    position = models.PositiveIntegerField()
+    text = models.TextField()
+    source_url = models.URLField(max_length=2048)
+    locator = models.CharField(max_length=300, blank=True)
+    content_hash = models.CharField(max_length=64)
+    text_hash = models.CharField(max_length=64)
+    model_id = models.CharField(max_length=160)
+    model_revision = models.CharField(max_length=40)
+    dimension = models.PositiveSmallIntegerField()
+    vector = models.JSONField()
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=['document', 'revision', 'position', 'model_id', 'model_revision'],
+                                               name='curation_chunk_version_unique')]
+        indexes = [models.Index(fields=['document', 'revision'], name='curation_chunk_current_idx')]
+
+
 class ImportedObject(models.Model):
     """记录上次导入状态，识别后台人工编辑与底稿之间的冲突。"""
     kind = models.CharField(max_length=16)

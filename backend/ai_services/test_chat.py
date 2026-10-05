@@ -54,7 +54,7 @@ class ChatTests(SimpleTestCase):
                 response = self.post(history)
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(response['Cache-Control'], 'no-store')
-                self.assertEqual(set(response.json()), {'message'})
+                self.assertEqual(set(response.json()), {'message', 'sources', 'route', 'retrieval'})
                 self.assertNotIn(CONFIG.api_key.encode(), response.content)
                 history.append(response.json()['message'])
         self.assertEqual([len(p['messages']) for p in payloads], [2, 4, 6])

@@ -49,7 +49,9 @@ class ChatView(APIView):
         try:
             if not isinstance(request.data, dict) or set(request.data) != {'messages'}:
                 raise AIInputError()
-            return Response({'message': chat(request.data['messages'])})
+            result = chat(request.data['messages'], details=True)
+            # Test doubles and legacy internal callers may still return the V1 message object.
+            return Response(result if 'message' in result else {'message': result})
         except AIServiceError as error:
             status, detail = ERRORS.get(error.code, (502, 'AI 服务暂时无法完成处理。'))
             return Response({'code': error.code, 'detail': detail}, status=status)

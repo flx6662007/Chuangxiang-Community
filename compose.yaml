@@ -48,6 +48,8 @@ services:
     build:
       context: .
       dockerfile: deploy/backend.Dockerfile
+      args:
+        AI_EMBEDDING_INSTALL: ${AI_EMBEDDING_INSTALL:-0}
     restart: unless-stopped
     init: true
     read_only: true
@@ -82,11 +84,18 @@ services:
       AI_MODEL: ${AI_MODEL:-}
       AI_TIMEOUT_SECONDS: ${AI_TIMEOUT_SECONDS:-30}
       AI_MAX_OUTPUT_TOKENS: ${AI_MAX_OUTPUT_TOKENS:-2048}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_BASE_URL: ${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
+      DEEPSEEK_TIMEOUT_SECONDS: ${DEEPSEEK_TIMEOUT_SECONDS:-60}
+      DEEPSEEK_MAX_OUTPUT_TOKENS: ${DEEPSEEK_MAX_OUTPUT_TOKENS:-2048}
+      AI_EMBEDDING_MODEL_PATH: /app/models/multilingual-e5-small
       COMPETITION_CATALOG_ONLY: ${COMPETITION_CATALOG_ONLY:-1}
       CATALOG_AUTO_PUBLISH: ${CATALOG_AUTO_PUBLISH:-0}
       CATALOG_PUBLISH_ACTOR_ID: ${CATALOG_PUBLISH_ACTOR_ID:-}
     volumes:
       - django_static:/app/staticfiles
+      - ${AI_EMBEDDING_MODEL_DIR:-./deploy/models}:/app/models:ro
     networks: [proxy, data]
     depends_on:
       db:

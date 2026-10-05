@@ -13,6 +13,7 @@ from django.urls import include, path, reverse
 from django.utils import timezone
 
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
+from competition_catalog.models import CatalogBinding, CatalogEntry
 from newsletters.models import Newsletter, NewsletterRevision, NewsletterItem
 from research.models import ResearchOpportunity
 
@@ -58,6 +59,18 @@ class LibraryTests(TestCase):
                                          source_url=f'https://www.aicomp.cn/{code}', is_primary=True,
                                          last_verified_at=timezone.now() if verified else None)
         return item
+
+    @override_settings(COMPETITION_CATALOG_ONLY=True)
+    def test_public_retrieval_obeys_catalog_scope(self):
+        item = self.competition(code='outside-catalog')
+        self.assertFalse(any(row['id'] == f'db-{item.pk}' for row in search_knowledge('算法', kinds=['competition'])))
+        entry = CatalogEntry.objects.create(code='2026001', name='算法设计赛事', grade='A', levels='全国',
+                                            source_url='https://www.tongji.edu.cn/catalog', is_active=True)
+        CatalogBinding.objects.create(entry=entry, competition=item, basis='测试关联')
+        self.assertTrue(any(row['id'] == f'db-{item.pk}' for row in search_knowledge('算法', kinds=['competition'])))
+        entry.is_active = False
+        entry.save(update_fields=['is_active'])
+        self.assertFalse(any(row['id'] == f'db-{item.pk}' for row in search_knowledge('算法', kinds=['competition'])))
 
     def research(self, code='library-research', status='published', **values):
         data = dict(code=code, title='机器人研究机会', summary='科研实践', description='公开研究内容',

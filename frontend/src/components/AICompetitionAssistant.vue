@@ -63,6 +63,20 @@ onBeforeUnmount(dispose)
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
           <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
           <p>{{ message.content }}</p>
+          <div v-if="message.sources?.length" class="ai-chat-sources" aria-label="回答来源">
+            <span>参考来源</span>
+            <ol>
+              <li v-for="source in message.sources" :key="source.id">
+                <RouterLink v-if="source.internal_url" :to="source.internal_url">[{{ source.id }}] {{ source.title }}</RouterLink>
+                <a v-else :href="source.url" target="_blank" rel="noopener noreferrer">[{{ source.id }}] {{ source.title }}</a>
+                <small>{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
+                <small v-if="source.status_note">{{ source.status_note }}</small>
+                <a v-if="source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">官方原文</a>
+              </li>
+            </ol>
+          </div>
+          <small v-if="message.retrieval?.knowledge === 'no_approved_knowledge'" class="ai-chat-coverage">暂无已审核知识资料。</small>
+          <small v-if="['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">本次未取得可用官网通知；联网覆盖仅限已登记站点。</small>
         </article>
         <p v-if="pending" class="ai-chat-status" role="status">正在思考你的问题，请稍候……</p>
         <div v-if="error" class="ai-chat-error" role="alert">
@@ -97,7 +111,7 @@ onBeforeUnmount(dispose)
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <p class="ai-demo-note">当前尚未接入平台实时数据和联网检索，具体赛事信息请以官方来源为准。Enter 发送，Shift + Enter 换行。对话仅保留在当前页面，每次最多参考最近 20 轮（约 6 万字符）。</p>
+      <p class="ai-demo-note">AI 会查询已发布的站内资料；官网读取仅限已登记入口，结果请以官方原文为准。Enter 发送，Shift + Enter 换行。对话仅保留在当前页面，每次最多参考最近 20 轮（约 6 万字符）。</p>
     </div>
 
   </section>
@@ -118,4 +132,10 @@ onBeforeUnmount(dispose)
 .ai-chat-message.is-user { padding-left: 16px; border-left: 2px solid var(--accent, #6da5ff); }
 .ai-chat-status { margin: 0; color: var(--text-secondary, #a4b1c0); }
 .ai-chat-error p { margin: 0 0 12px; }
+.ai-chat-sources { margin-top: 12px; padding: 12px; border: 1px solid var(--border, #344357); border-radius: 8px; font-size: var(--type-small); }
+.ai-chat-sources ol { margin: 8px 0 0; padding-left: 22px; }
+.ai-chat-sources li { margin: 7px 0; overflow-wrap: anywhere; }
+.ai-chat-sources small { display: block; color: var(--text-secondary, #a4b1c0); }
+.ai-chat-sources a { color: var(--accent, #6da5ff); }
+.ai-chat-coverage { display: block; margin-top: 8px; color: var(--text-secondary, #a4b1c0); }
 </style>

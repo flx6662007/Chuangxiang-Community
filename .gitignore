@@ -8,6 +8,7 @@ __pycache__/
 .env.*
 !.env.example
 .local/
+deploy/models/
 *.sqlite3
 staticfiles/
 

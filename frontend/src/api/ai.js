@@ -1,5 +1,6 @@
 import http from './http'
 import { ensureCsrf } from './accounts'
+import { parseAIReply } from './aiResponse.js'
 
 export async function requestAIChat(messages, { signal } = {}) {
   await ensureCsrf()
@@ -7,9 +8,5 @@ export async function requestAIChat(messages, { signal } = {}) {
     signal,
     timeout: 130000,
   })
-  const message = data?.message
-  if (message?.role !== 'assistant' || typeof message.content !== 'string' || !message.content.trim()) {
-    throw new Error('Invalid AI response')
-  }
-  return { role: 'assistant', content: message.content }
+  return parseAIReply(data)
 }

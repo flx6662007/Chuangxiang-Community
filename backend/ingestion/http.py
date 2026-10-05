@@ -58,11 +58,12 @@ class Document:
 
 class OfficialClient:
     """每页最多三次请求、三跳重定向、2 MB 解压后正文，站点间隔一秒。"""
-    def __init__(self, hosts, *, transport=None, resolve=True, interval=1):
+    def __init__(self, hosts, *, transport=None, resolve=True, interval=1, timeout=15, attempts=3):
         self.hosts, self.resolve, self.interval = set(hosts), resolve, interval
+        self.attempts = attempts
         self.client = httpx.Client(
             headers={'User-Agent': USER_AGENT, 'Accept': 'text/html,text/plain;q=0.8'},
-            timeout=httpx.Timeout(15, connect=5), follow_redirects=False,
+            timeout=httpx.Timeout(timeout, connect=min(5, timeout)), follow_redirects=False,
             transport=transport, trust_env=False,
             limits=httpx.Limits(max_keepalive_connections=0),
         )
@@ -103,7 +104,7 @@ class OfficialClient:
         return self.addresses[host]
 
     def _get(self, url, *, robots=False, document=False):
-        for attempt in range(3):
+        for attempt in range(self.attempts):
             current = url
             try:
                 for hop in range(4):
@@ -167,7 +168,7 @@ class OfficialClient:
                 error = exc
                 if exc.status not in (408, 429, 500, 502, 503, 504):
                     raise
-            if attempt < 2:
+            if attempt < self.attempts - 1:
                 time.sleep(attempt + 1)
         raise error
 

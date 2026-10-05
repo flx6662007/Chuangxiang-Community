@@ -14,6 +14,7 @@ from django.utils import timezone
 from django.utils.html import strip_tags
 
 from competitions.models import Competition, CompetitionSource
+from competitions.scope import apply_competition_scope
 from newsletters.models import Newsletter, NewsletterItem, NewsletterRevision
 from research.models import ResearchOpportunity, ResearchSource
 
@@ -252,7 +253,7 @@ def collect_records(kinds=None, *, include_unpublished=False):
     if 'competition' in needed:
         queryset = Competition.objects.exclude(Q(code__startswith='demo-') | Q(title__contains='【虚构样例】'))
         if not include_unpublished:
-            queryset = queryset.filter(publication_status='published')
+            queryset = apply_competition_scope(queryset.filter(publication_status='published'))
         for item in queryset.prefetch_related(Prefetch('sources', queryset=CompetitionSource.objects.all(), to_attr='library_sources')):
             row = _competition(item)
             public_records[('competition', row['id'])] = row
