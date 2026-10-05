@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "split": "dev-probes",
+  "corpus_version": "365824ef40f48d06",
+  "run_started_at": "2026-10-04T14:15:59.194933+00:00",
+  "parameters": {
+    "limit": 5,
+    "semantic_threshold": 0.6
+  },
+  "fixture_sha256": "616996aa299f415ba5262e03061e11859d50391beb52512a27b34a83972fb7d9",
+  "evaluator_sha256": "9cac5d183177d36f8d7e6be02f305e7e2b7953f3bfe4620bddc847dcd2100b88",
+  "implementation_sha256": {
+    "competition_search.py": "86be1d614afb9950217fbf621e921e98dff0e31b192e96c7c6b84d75dd22619f",
+    "semantic.py": "9318440e7ccdb22fe57b8adef19a0402c2eeb862b715d748482a149439327082"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "system": "Windows",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "torch": "2.14.1",
+      "sentence-transformers": "6.1.0"
+    }
+  },
+  "index": null,
+  "evidence_metric_note": "Coverage validates source references. Whether a cited passage entails every reason still requires evidence review.",
+  "modes": {
+    "keyword": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 0,
+        "grounded_reason_count": 0,
+        "hits_without_reason": 0,
+        "evidence_reference_coverage": null,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 16.8445,
+          "p95": 17.997,
+          "max": 17.997
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 17.997
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 15.692
+        }
+      ]
+    }
+  },
+  "acceptance": {
+    "mode": "keyword",
+    "passes": true,
+    "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+  }
+}

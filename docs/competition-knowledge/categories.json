@@ -1,0 +1,87 @@
+[
+  {
+    "code": "chemistry-and-materials",
+    "name": "化学与材料",
+    "sort_order": 10
+  },
+  {
+    "code": "environment-and-sustainability",
+    "name": "环境与可持续发展",
+    "sort_order": 20
+  },
+  {
+    "code": "computer-science",
+    "name": "计算机与信息技术",
+    "sort_order": 30
+  },
+  {
+    "code": "artificial-intelligence",
+    "name": "人工智能",
+    "sort_order": 40
+  },
+  {
+    "code": "art-and-design",
+    "name": "艺术与设计",
+    "sort_order": 50
+  },
+  {
+    "code": "architecture-and-planning",
+    "name": "建筑、规划与景观",
+    "sort_order": 60
+  },
+  {
+    "code": "transportation-and-automotive",
+    "name": "交通与汽车工程",
+    "sort_order": 70
+  },
+  {
+    "code": "medicine-and-health",
+    "name": "医学与健康",
+    "sort_order": 80
+  },
+  {
+    "code": "mathematics-and-physics",
+    "name": "数学与物理",
+    "sort_order": 90
+  },
+  {
+    "code": "mathematical-modeling",
+    "name": "数学建模",
+    "sort_order": 100
+  },
+  {
+    "code": "civil-engineering",
+    "name": "土木与工程结构",
+    "sort_order": 110
+  },
+  {
+    "code": "languages-and-humanities",
+    "name": "语言与人文",
+    "sort_order": 120
+  },
+  {
+    "code": "innovation-and-entrepreneurship",
+    "name": "创新与创业",
+    "sort_order": 130
+  },
+  {
+    "code": "media-and-communication",
+    "name": "传媒与影视",
+    "sort_order": 140
+  },
+  {
+    "code": "music-and-performing-arts",
+    "name": "音乐与表演艺术",
+    "sort_order": 150
+  },
+  {
+    "code": "politics-and-social-sciences",
+    "name": "政治与社会科学",
+    "sort_order": 160
+  },
+  {
+    "code": "automation-and-robotics",
+    "name": "智能技术与自动化",
+    "sort_order": 170
+  }
+]

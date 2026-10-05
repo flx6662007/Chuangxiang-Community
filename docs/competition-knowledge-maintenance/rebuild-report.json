@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "corpus_version": "874ccd5c6dddf794",
+  "inputs": [
+    "verified-supplements.json",
+    "rechecked-supplements.json",
+    "recheck-review.json",
+    "public-text-revisions.json"
+  ],
+  "files": [
+    {
+      "file": "20项样本.md",
+      "identical": true,
+      "sha256": "1edcded9f7fb353347a1670495744ce1c39c7cbfd8e71058b972a4b7b3a98275"
+    },
+    {
+      "file": "categories.json",
+      "identical": true,
+      "sha256": "11d042f9d9a01b76dbe12e75d9514e8a0f2de5eb6bf619a08259d2797a0c143b"
+    },
+    {
+      "file": "chunks.jsonl",
+      "identical": true,
+      "sha256": "5b8128b4a93e839ab4e0ecf2d07955b905c8f921d514a5736ea6f4230a3581d7"
+    },
+    {
+      "file": "competitions.csv",
+      "identical": true,
+      "sha256": "0847b01d48cc8fd652a9c7f4c214a1614d5598cc92e41c5b0db3f5498348366c"
+    },
+    {
+      "file": "corpus.json",
+      "identical": true,
+      "sha256": "ff266f2c07c1bee08fbade0d9821ac6e46e1e49a01a66944291e55b7f7e63fb5"
+    },
+    {
+      "file": "index.html",
+      "identical": true,
+      "sha256": "44556ebd927e9b9ce174129fccd47d3a387bc28afe995b59085d81b4c1b33df0"
+    },
+    {
+      "file": "learning-resources.json",
+      "identical": true,
+      "sha256": "8991fb172c74ea56cacace5daff6b079077ec3d21640f4059c11c3a3248cbae4"
+    },
+    {
+      "file": "samples.json",
+      "identical": true,
+      "sha256": "489d36ed41a7792ed4e4051da210afa49f3e25a5d62cbffd619b9b7c5f4e9177"
+    },
+    {
+      "file": "sources.json",
+      "identical": true,
+      "sha256": "755efbf329c0a91faa6aaacc15b10dc047c1f08d31411f039c803f5613566712"
+    },
+    {
+      "file": "version.json",
+      "identical": true,
+      "sha256": "8cbc1a19d92c9d214676345af667e144c578378002eaac78dbede1f2edff6365"
+    },
+    {
+      "file": "赛事指南.md",
+      "identical": true,
+      "sha256": "4f7c2e91b3a13a9f6920cda1dc18a234301ea188a6624c79b0d596e216737472"
+    }
+  ]
+}

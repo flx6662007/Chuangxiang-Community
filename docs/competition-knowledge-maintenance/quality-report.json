@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "corpus_version": "874ccd5c6dddf794",
+  "catalogs": 255,
+  "dispositions": {
+    "product": 188,
+    "internal": 67
+  },
+  "records": 198,
+  "samples": 20,
+  "chunks": 864,
+  "errors": []
+}

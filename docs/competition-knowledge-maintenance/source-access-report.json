@@ -1,0 +1,3202 @@
+{
+  "checked_on": "2026-10-04",
+  "check": "source_accessibility",
+  "total": 272,
+  "completed": 272,
+  "retrieved": 231,
+  "rows": [
+    {
+      "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+      "catalog_codes": [
+        "2026090"
+      ],
+      "title": "第八届中华经典诵写讲大赛四项方案",
+      "status": "retrieved",
+      "final_url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+      "bytes": 289224,
+      "sha256": "5596163deca02667d1ae0f208b36870a61ca5b43905281b6954a59ee0759f6ea",
+      "snapshot": "48d0f8d27815a7f0d91b01f7722764972722adfb07045cb3a775641c189a24e4.docx"
+    },
+    {
+      "url": "http://www.robo-maker.org/new/announcement/115.html",
+      "catalog_codes": [
+        "2026104"
+      ],
+      "title": "第十届机器人格斗及竞技大赛通知",
+      "status": "retrieved",
+      "final_url": "http://www.robo-maker.org/new/announcement/115.html",
+      "bytes": 1990,
+      "sha256": "2f582a358f618542e3bcc91a92c3a71895c268d7de42aa27e22cd796bc1dee80",
+      "snapshot": "dee5da25dbaafdde7728ea6a7fc668a64017b4a21cffdd796e178a0f7a92e4c8.txt"
+    },
+    {
+      "url": "http://www.sstam.org.cn/show.aspx?flag=11&info_id=846&info_lb=11",
+      "catalog_codes": [
+        "2026122",
+        "2026123"
+      ],
+      "title": "第七届上海市力学竞赛第二轮通知",
+      "status": "retrieved",
+      "final_url": "http://www.sstam.org.cn/show.aspx?flag=11&info_id=846&info_lb=11",
+      "bytes": 5693,
+      "sha256": "f8f7a4ed0e3697bfa716d88a6aaf73d6907c8f7e1b44f30bc66680f6adfa7d50",
+      "snapshot": "34b02e5b0997b34311e34675d14c9bb3cb60f9fb05f03158d0642221af1b36a6.txt"
+    },
+    {
+      "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+      "catalog_codes": [
+        "2026034"
+      ],
+      "title": "第十二届主题与内容第1号通知",
+      "status": "retrieved",
+      "final_url": "https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+      "bytes": 11741,
+      "sha256": "c4027507ef14f4c388acf3c4bc7dece3a36979c00b8e0cecb51512f9c60c1421",
+      "snapshot": "af69268dd2f79af1db5e2e0ae0636de4a287efc4a82a615e65b01199e46f4279.txt"
+    },
+    {
+      "url": "https://24391852.s21i.faiusr.com/61/ABUIABA9GAAggtvH1QYozKy96gQ.pdf",
+      "catalog_codes": [
+        "2026098"
+      ],
+      "title": "第八届国际青年人工智能大赛通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 400
+    },
+    {
+      "url": "https://3dds.3ddl.net/index.php?ctl=Informationlist&id=696&met=details",
+      "catalog_codes": [
+        "2026031"
+      ],
+      "title": "关于举办2026第19届全国3D大赛的通知",
+      "status": "retrieved",
+      "final_url": "https://3dds.3ddl.net/index.php?ctl=Informationlist&id=696&met=details",
+      "bytes": 6362,
+      "sha256": "57b31c2138020ffb4e4238ec308e564dc9f05df6d29c794a5b5b5cd42588dba7",
+      "snapshot": "5a7b97de827e710b18b15a9ee213bbc3a193508225f78692d7f36ab71f18e829.txt"
+    },
+    {
+      "url": "https://aao.nuaa.edu.cn/_upload/article/files/c2/3f/75fcfd92431abb3f4392fbbb5488/225639e1-81d4-48d3-8fe6-8410a9b3f4f7.docx",
+      "catalog_codes": [
+        "2026116"
+      ],
+      "title": "ISSSP2026首次公告",
+      "status": "retrieved",
+      "final_url": "https://aao.nuaa.edu.cn/_upload/article/files/c2/3f/75fcfd92431abb3f4392fbbb5488/225639e1-81d4-48d3-8fe6-8410a9b3f4f7.docx",
+      "bytes": 17095,
+      "sha256": "c89b5407ba5a1bdaed4783bef9cd9ce237162cb1fa89a6ee4402b0e33b9c1ad2",
+      "snapshot": "1c83e913a6465ee604db683791ddb82efb775094c0e423830cc53285dce5d9a6.docx"
+    },
+    {
+      "url": "https://aero-mech.tongji.edu.cn/11/4c/c22241a201036/page.htm",
+      "catalog_codes": [
+        "2026118"
+      ],
+      "title": "同济大学未来飞行器设计大赛信息",
+      "status": "retrieved",
+      "final_url": "https://aero-mech.tongji.edu.cn/11/4c/c22241a201036/page.htm",
+      "bytes": 1916,
+      "sha256": "74fbda2d9a3ba8ecdc8f8301f4fd363e65fdd478d4c10b77f8c2d024759f910b",
+      "snapshot": "23cdae32f474eb34679fc7ffb62e6cff4238aee22e723e557c6ef1890eab36de.txt"
+    },
+    {
+      "url": "https://aero-mech.tongji.edu.cn/aa/6c/c3354a43628/page.htm",
+      "catalog_codes": [
+        "2026243"
+      ],
+      "title": "第五届同济大学应用力学创新竞赛",
+      "status": "retrieved",
+      "final_url": "https://aero-mech.tongji.edu.cn/aa/6c/c3354a43628/page.htm",
+      "bytes": 4444,
+      "sha256": "a03dd1f294398fac72978eefa306248dc9c6f094229ddc874798cae4a32c2b29",
+      "snapshot": "b6233ff3a2b1028297b35ef81ac82851aa67cad9e32d61ed3ee90435e0c946db.txt"
+    },
+    {
+      "url": "https://aero.nuaa.edu.cn/_upload/article/files/1e/f4/5617aa0a4e6f916ba9b23f5f9246/da998135-7e4e-4c7e-b578-2a22fc47ec9d.pdf",
+      "catalog_codes": [
+        "2026117"
+      ],
+      "title": "第七届本科毕业设计成果交流会一号通知",
+      "status": "retrieved",
+      "final_url": "https://aero.nuaa.edu.cn/_upload/article/files/1e/f4/5617aa0a4e6f916ba9b23f5f9246/da998135-7e4e-4c7e-b578-2a22fc47ec9d.pdf",
+      "bytes": 886670,
+      "sha256": "7d343c0aec1ce281f59929eeb34da6abf949aee5ad7ffa60771cc9a5e141bc5e",
+      "snapshot": "45391bbb75049425b5f187d653a4b25079ed528d5c9bc329de5b960df7d0d6ab.pdf"
+    },
+    {
+      "url": "https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/fd6b4a7b-f576-45f2-a1e2-b23b7d01918b.pdf",
+      "catalog_codes": [
+        "2026121"
+      ],
+      "title": "第七届超材料力学大赛一轮通知",
+      "status": "retrieved",
+      "final_url": "https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/fd6b4a7b-f576-45f2-a1e2-b23b7d01918b.pdf",
+      "bytes": 275691,
+      "sha256": "fad807c950259f9f6b82c2da9af0d43a0cc12a5a16d5e702822e21b30caa0213",
+      "snapshot": "f15aaf2b51354c963e41ceed3a389fe7bc8c7f19160b471569e17aff1eae7b38.pdf"
+    },
+    {
+      "url": "https://amap.csgpc.org/detail/27080.html",
+      "catalog_codes": [
+        "2026005"
+      ],
+      "title": "2026一号通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://arcasia.org/arcasia-student-design-competition/",
+      "catalog_codes": [
+        "2026056"
+      ],
+      "title": "ARCASIA学生建筑设计竞赛官方栏目",
+      "status": "retrieved",
+      "final_url": "https://arcasia.org/arcasia-student-design-competition/",
+      "bytes": 1352,
+      "sha256": "94080016935fbee83fb8027aedd1dd9c85393886411aa7a59b480677bd9066cb",
+      "snapshot": "e043e96262cad6eb8d532fc6c381d3b7766b0f5a6739c59d3cafd5e523cfa472.txt"
+    },
+    {
+      "url": "https://asia.uli.org/wp-content/uploads/2025/04/2025-ULI-Hines-SC-AP-Competition-Brief.pdf",
+      "catalog_codes": [
+        "2026156"
+      ],
+      "title": "Competition Brief",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 403
+    },
+    {
+      "url": "https://assets.ctfassets.net/9el74s703hin/3LisaU32dIdDzCjhL4V8r2/9c007f552f1cbbfa1dc9ecaea88b84a5/iF_DESIGN_AWARD_2027_-_Registration_Guide_-_English.pdf",
+      "catalog_codes": [
+        "2026064"
+      ],
+      "title": "iF DESIGN AWARD 2027报名指南",
+      "status": "retrieved",
+      "final_url": "https://assets.ctfassets.net/9el74s703hin/3LisaU32dIdDzCjhL4V8r2/9c007f552f1cbbfa1dc9ecaea88b84a5/iF_DESIGN_AWARD_2027_-_Registration_Guide_-_English.pdf",
+      "bytes": 182783,
+      "sha256": "7d68a798ca02c73e667316ee8a2b9c2709a3c1b8ac6cdab0c31d79b9557be11a",
+      "snapshot": "57abc15a0a3694ed51d6abde18b907a2b381461c994bc2dc1fa24f67d4fa967f.pdf"
+    },
+    {
+      "url": "https://ast.hfut.edu.cn/2024/1223/c2825a309399/page.htm",
+      "catalog_codes": [
+        "2026094"
+      ],
+      "title": "第八届微结构摄影大赛校内选拔通知",
+      "status": "retrieved",
+      "final_url": "https://ast.hfut.edu.cn/2024/1223/c2825a309399/page.htm",
+      "bytes": 5774,
+      "sha256": "8d565b5440441749bd18b8666a97a8a8171410918e88dbe5e46f8ad388502d61",
+      "snapshot": "502f5325d783cf87e6bf669a254f40c1051f3da04472ea98d8cfd9df64d1bc8b.txt"
+    },
+    {
+      "url": "https://bksy.cug.edu.cn/info/1504/18594.htm",
+      "catalog_codes": [
+        "2026084"
+      ],
+      "title": "2026年全国大学生英语竞赛报名通知",
+      "status": "retrieved",
+      "final_url": "https://bksy.cug.edu.cn/info/1504/18594.htm",
+      "bytes": 5907,
+      "sha256": "d29df8843fcd129811fd4a251261038d56a23207098d5324cd5f15ff786a0174",
+      "snapshot": "8dd043a2db2efa2b653e1375b52c0a7f5c5eb268c15f58755164c8d574cbc0e8.txt"
+    },
+    {
+      "url": "https://blog.heywhale.com/gaiic2024/",
+      "catalog_codes": [
+        "2026102"
+      ],
+      "title": "2024GAIIC算法挑战赛组织说明",
+      "status": "retrieved",
+      "final_url": "https://blog.heywhale.com/gaiic2024/",
+      "bytes": 4230,
+      "sha256": "652bd1e4b44785b6c114b1eb78e1eddb68954eee92e96f56fe54fb79b3a0c667",
+      "snapshot": "964f72dd2f87f1293b2c7e963f3d20e1d1e34667a42876fa46a78ab1ecdf2f45.txt"
+    },
+    {
+      "url": "https://caup.tongji.edu.cn/a2/c8/c33362a369352/page.htm",
+      "catalog_codes": [
+        "2026049"
+      ],
+      "title": "2026同济大学国际建造节启动通知",
+      "status": "retrieved",
+      "final_url": "https://caup.tongji.edu.cn/a2/c8/c33362a369352/page.htm",
+      "bytes": 5264,
+      "sha256": "7ac52874fb63a7e6abe07bae053b7be528d5e51656d965bb57143297898a7b3b",
+      "snapshot": "91e27546226bd73773097f7439ca40dfc9387d281a5e1fa51cca8a7ae9e603dd.txt"
+    },
+    {
+      "url": "https://cbs.cau.edu.cn/module/download/downfile.jsp?classid=0&filename=c088354256534e789eefde0370b9d2d4.pdf",
+      "catalog_codes": [
+        "2026071"
+      ],
+      "title": "第十一届创新创业类报名通知（高校公开附件）",
+      "status": "unavailable",
+      "error": "unsupported_content",
+      "http_status": 200
+    },
+    {
+      "url": "https://ccbm.ecut.edu.cn/8d/fa/c7122a101882/page.htm",
+      "catalog_codes": [
+        "2026094"
+      ],
+      "title": "第七届全国大学生微结构摄影大赛全国通知",
+      "status": "retrieved",
+      "final_url": "https://ccbm.ecut.edu.cn/8d/fa/c7122a101882/page.htm",
+      "bytes": 7313,
+      "sha256": "ec8d8bfca82aa2e15313ecc72179b48631152394d3f39e5b84a6c371467d7e1b",
+      "snapshot": "da3e0f6b80ad2488badfaa41fef61bee9ce854c3178149a3670f8da4c46c6913.txt"
+    },
+    {
+      "url": "https://ccpc.io/event",
+      "catalog_codes": [
+        "2026144"
+      ],
+      "title": "赛事-中国大学生程序设计竞赛",
+      "status": "retrieved",
+      "final_url": "https://ccpc.io/event",
+      "bytes": 46,
+      "sha256": "2a4ae66523d07f3674e61181ba883046afdfbb61bd8aaf73c9406ce0ceefbc1e",
+      "snapshot": "b194269d157788bf647f467931a96744c91fb5f22683fd6ac99d3348bc578b35.txt"
+    },
+    {
+      "url": "https://ccpc.io/uploads/20260317/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%80%BB%E5%86%B3%E8%B5%9B%E9%82%80%E8%AF%B7%E5%87%BD_%E7%9B%96%E7%AB%A0%E7%89%88.pdf",
+      "catalog_codes": [
+        "2026144"
+      ],
+      "title": "第十一届中国大学生程序设计竞赛总决赛邀请函",
+      "status": "retrieved",
+      "final_url": "https://ccpc.io/uploads/20260317/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%80%BB%E5%86%B3%E8%B5%9B%E9%82%80%E8%AF%B7%E5%87%BD_%E7%9B%96%E7%AB%A0%E7%89%88.pdf",
+      "bytes": 259624,
+      "sha256": "7eb64690e0ac883e028951b2cc9c814101eba5594a3bddeb2badc992702b1174",
+      "snapshot": "5322e31ac20f802c32b8fbd6414c8644de3d97b57a4a50d239f46b6ecaa215df.pdf"
+    },
+    {
+      "url": "https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+      "catalog_codes": [
+        "2026143"
+      ],
+      "title": "2026年CCF大学生计算机系统与程序设计竞赛报名通知",
+      "status": "retrieved",
+      "final_url": "https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+      "bytes": 8663,
+      "sha256": "e2113e238fbd42ade5cb1c72210dbffc0ee17b0e96bf308357cf922669375d19",
+      "snapshot": "d6190c9740a8fbb76df31b9418377baba2d8ac353a6f5b68264a17ba1c250c52.txt"
+    },
+    {
+      "url": "https://cdi.zust.edu.cn/info/1143/3301.htm",
+      "catalog_codes": [
+        "2026197"
+      ],
+      "title": "可持续发展全国青年德语风采大赛资料入口（原页标题待核）",
+      "status": "retrieved",
+      "final_url": "https://cdi.zust.edu.cn/info/1143/3301.htm",
+      "bytes": 4171,
+      "sha256": "84d0fac8e44190adfd3937b3420db95c4939aaf4edc0d0e44ffb4e6f93f77c9b",
+      "snapshot": "f4eb9dc452e26cb70d5ff4f76a40f5d8ef67612beae375136a36340a225566c2.txt"
+    },
+    {
+      "url": "https://cec.fudan.edu.cn/83/12/c23080a754450/page.htm",
+      "catalog_codes": [
+        "2026205"
+      ],
+      "title": "上海市第二届学术英语演讲比赛启动通知",
+      "status": "retrieved",
+      "final_url": "https://cec.fudan.edu.cn/83/12/c23080a754450/page.htm",
+      "bytes": 2616,
+      "sha256": "44ddf66fd7a26c03e966a64dde525ab6a8f9ecfb16d9bcffb3aa0c2ab23f722e",
+      "snapshot": "c2319a0b9d9ba65d6606612064a38fd04af98ea430def1a582a01f7fdf965de6.txt"
+    },
+    {
+      "url": "https://cese.bjut.edu.cn/system/_content/download.jsp?owner=2010203365&urltype=news.DownloadAttachUrl&wbfileid=AE3772C9F76CACCE4FAD3AFEA537EAC2",
+      "catalog_codes": [
+        "2026136"
+      ],
+      "title": "第八届市政环境AI+创新实践能力大赛—本科生赛道",
+      "status": "unavailable",
+      "error": "unsupported_content",
+      "http_status": 200
+    },
+    {
+      "url": "https://cetc.nwu.edu.cn/info/1008/2535.htm",
+      "catalog_codes": [
+        "2026152"
+      ],
+      "title": "关于组织参加第四届网鼎杯网络安全大赛的通知",
+      "status": "retrieved",
+      "final_url": "https://cetc.nwu.edu.cn/info/1008/2535.htm",
+      "bytes": 5981,
+      "sha256": "5f49711e572a81a9a5462228f2bd1c19c0694d018a2029bdff03f9bb77eb959d",
+      "snapshot": "bfba3babc4740dd2c90731ab9b9b2eed89a0d2e3f187f8a2ca180fa8ea105f2a.txt"
+    },
+    {
+      "url": "https://ch3.whu.edu.cn/document/ueditor/file/20190711/1562805942854086571.pdf",
+      "catalog_codes": [
+        "2026112"
+      ],
+      "title": "第五届全国大学生地球物理知识竞赛通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://chem.dlut.edu.cn/info/1029/10169.htm",
+      "catalog_codes": [
+        "2026131"
+      ],
+      "title": "关于报名参加2025年化学研讨会暨第九届全国化学类专业大学生科技活动交流会的通知",
+      "status": "retrieved",
+      "final_url": "https://chem.dlut.edu.cn/info/1029/10169.htm",
+      "bytes": 4217,
+      "sha256": "b434806cc1f3fb6b713e50e0e26e9f5eee1aacb0e2456e0852c7d4e317833a01",
+      "snapshot": "3c5cdbf2a436cbb0fda50474219101843a3b309551571fe855b41d67c3a1ffaa.txt"
+    },
+    {
+      "url": "https://chem.dlut.edu.cn/info/1029/13550.htm",
+      "catalog_codes": [
+        "2026131"
+      ],
+      "title": "关于报名参加第十届全国化学类专业大学生科技活动交流会暨2026年“基础学科拔尖学生培养计划”化学研讨会的通知-大连理工大学化学学院",
+      "status": "retrieved",
+      "final_url": "https://chem.dlut.edu.cn/info/1029/13550.htm",
+      "bytes": 4254,
+      "sha256": "1e6b7b26ece19d5b31bd316c396c75eaffc0aff7265c101bed923fb871f6651b",
+      "snapshot": "2cbd0e2a00312ab0b4a23b8ec9e940bb22366ad89c1009d3415cd11b0443fdb8.txt"
+    },
+    {
+      "url": "https://chemlab.shu.edu.cn/info/1004/4152.htm",
+      "catalog_codes": [
+        "2026029"
+      ],
+      "title": "第二十届上海大学生化学实验竞赛第二轮通知",
+      "status": "retrieved",
+      "final_url": "https://chemlab.shu.edu.cn/info/1004/4152.htm",
+      "bytes": 5570,
+      "sha256": "ec3c3206505492e8b84ad4815c3aa809ab6488805a6276f44b0423f070fbdef2",
+      "snapshot": "c57c884f98c2d2fc35f6b3f3fd1e7668ab94f53d71fe55328a0616d9a6e931d2.txt"
+    },
+    {
+      "url": "https://chinaus-maker.cscse.edu.cn/chinaus-maker/gyds/csyq22/index.html",
+      "catalog_codes": [
+        "2026069"
+      ],
+      "title": "2026中美青年创客大赛参赛要求",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://chxy.usst.edu.cn/2026/0717/c17378a368877/page.htm",
+      "catalog_codes": [
+        "2026095"
+      ],
+      "title": "第十三届国际大学生新材料创新创意大赛通知",
+      "status": "retrieved",
+      "final_url": "https://chxy.usst.edu.cn/2026/0717/c17378a368877/page.htm",
+      "bytes": 10530,
+      "sha256": "0f969afec93e315fd0d594757fb0322199133d9e74c38a852301f99ac595c4e7",
+      "snapshot": "2861b5223efadff7eae2f895176d02d37a238cfdf17cecd54a6ca1e3f791da16.txt"
+    },
+    {
+      "url": "https://civil.swjtu.edu.cn/info/1055/70612.htm",
+      "catalog_codes": [
+        "2026187"
+      ],
+      "title": "第八届茅以升公益桥创新设计大赛通知转发",
+      "status": "retrieved",
+      "final_url": "https://civil.swjtu.edu.cn/info/1055/70612.htm",
+      "bytes": 5298,
+      "sha256": "537811f5051e25e568d38b1f61baa8a230845345145613b3d5880a3ab1b217ee",
+      "snapshot": "74fc5326e11f0848b1da683504758eaab8aaec5c1bcf65aa29216080e51cf0be.txt"
+    },
+    {
+      "url": "https://cjournal.hep.com.cn/1000-8438/CN/PDF/1210526181738115465",
+      "catalog_codes": [
+        "2026130"
+      ],
+      "title": "第13届全国化学实验竞赛总决赛及理论试题分析",
+      "status": "unavailable",
+      "error": "unsafe_url",
+      "http_status": null
+    },
+    {
+      "url": "https://cmee.upc.edu.cn/2026/0329/c21211a486315/page.htm",
+      "catalog_codes": [
+        "2026009"
+      ],
+      "title": "2026智能制造赛通知",
+      "status": "retrieved",
+      "final_url": "https://cmee.upc.edu.cn/2026/0329/c21211a486315/page.htm",
+      "bytes": 5841,
+      "sha256": "b1088511c2f437a066b58ec0cbfc7904b6ca1813b9a5541063abec067c90b999",
+      "snapshot": "598827f86ab8cd2ad0cb1eab1d7a2413e8f90e2f7c84a29a85c75b51e86cde1f.txt"
+    },
+    {
+      "url": "https://competition.igem.org/",
+      "catalog_codes": [
+        "2026070"
+      ],
+      "title": "iGEM Competition 2026官方入口",
+      "status": "retrieved",
+      "final_url": "https://competition.igem.org/",
+      "bytes": 46,
+      "sha256": "69eca09463a751c3ee7f6188f3583eb93a2ba4dcdfa2da29a68c53c6fb4bc954",
+      "snapshot": "e796cd8053d3ecf309915f5ce0894219ba6e70b29f1d3e9f8f0425a91750dd60.txt"
+    },
+    {
+      "url": "https://contest.i21st.cn/college/article/6990.html",
+      "catalog_codes": [
+        "2026082"
+      ],
+      "title": "中国日报社“21世纪杯”全国英语演讲比赛章程",
+      "status": "retrieved",
+      "final_url": "https://contest.i21st.cn/college/article/6990.html",
+      "bytes": 2562,
+      "sha256": "371ed28aaf559ab51288b74adfa8876c905579130347fb54ede5899a682677a1",
+      "snapshot": "cfe38eb5b7d3f9a4f0f4edbd906a2c964c5a9971ac09fd73107a5ac9fe3b81f9.txt"
+    },
+    {
+      "url": "https://cs.tongji.edu.cn/info/1054/3911.htm",
+      "catalog_codes": [
+        "2026150"
+      ],
+      "title": "关于校内选拔作品参加2026年上海市大学生计算机应用能力大赛的通知",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 404
+    },
+    {
+      "url": "https://cuidc.net/default.aspx",
+      "catalog_codes": [
+        "2026067"
+      ],
+      "title": "全国大学生工业设计大赛官网（候选）",
+      "status": "retrieved",
+      "final_url": "https://cuidc.net/default.aspx",
+      "bytes": 163,
+      "sha256": "1ba95d09356d9e343c5980240d15015e0171520b7f122bb1da5bf1ddb50e7c4f",
+      "snapshot": "84f8ea8fbe2b2a9b99c5fa44206daf8341507cc58e2724f64185dd9696dc66fc.txt"
+    },
+    {
+      "url": "https://cxcygl.bhu.edu.cn/comp/front/comp/info?id=MjA5Ny05YWM2YWM",
+      "catalog_codes": [
+        "2026231"
+      ],
+      "title": "2026年辽宁省睿抗机器人开发者大赛暨第十二届睿抗机器人开发者大赛辽宁省级选拔赛 - 渤海大学创新创业管理系统",
+      "status": "retrieved",
+      "final_url": "https://cxcygl.bhu.edu.cn/comp/front/comp/info?id=MjA5Ny05YWM2YWM",
+      "bytes": 11148,
+      "sha256": "0e9b42f48da260c99b499e9f1f2bd265854d71bf7e2921e1c51d776fe5792517",
+      "snapshot": "d94c443414da19598517beda6ca7729d0aec5c9f9e242fe502680297a9e7c1c3.txt"
+    },
+    {
+      "url": "https://cxcyxy.cdu.edu.cn/info/1019/4390.htm",
+      "catalog_codes": [
+        "2026066"
+      ],
+      "title": "关于举办2026新锐设计竞赛·华灿奖的通知",
+      "status": "retrieved",
+      "final_url": "https://cxcyxy.cdu.edu.cn/info/1019/4390.htm",
+      "bytes": 8435,
+      "sha256": "0842009c208cf982335d3fc2f0cbb7283c3143dea6c3ea6a95bf10630bd34d1e",
+      "snapshot": "a966b4fd5ac7bf4a86f78069344c0322f49e2534e9a78d650acd890467d7fd9d.txt"
+    },
+    {
+      "url": "https://cxcyxy.ntu.edu.cn/_upload/article/files/ae/b2/69ae7f2a48b28142aa0a3a7134fb/c6b06bf1-7e24-4ee1-ad53-960429135ad5.pdf",
+      "catalog_codes": [
+        "2026218"
+      ],
+      "title": "2026春期国青杯高校艺术设计作品征集通知",
+      "status": "retrieved",
+      "final_url": "https://cxcyxy.ntu.edu.cn/_upload/article/files/ae/b2/69ae7f2a48b28142aa0a3a7134fb/c6b06bf1-7e24-4ee1-ad53-960429135ad5.pdf",
+      "bytes": 1839125,
+      "sha256": "c3d60f240fbe5b062d5ef880aaee89fcc5d5c97a68be59ff406f70794f36d2ff",
+      "snapshot": "fb593f49293c80b28371542c639e13f1bd1043c067e3839a03244af3c411dc74.pdf"
+    },
+    {
+      "url": "https://cxxy.lntu.edu.cn/info/1134/4785.htm",
+      "catalog_codes": [
+        "2026077"
+      ],
+      "title": "2026结构设计竞赛及全国赛题附件入口",
+      "status": "retrieved",
+      "final_url": "https://cxxy.lntu.edu.cn/info/1134/4785.htm",
+      "bytes": 3088,
+      "sha256": "011620c55bf977541d56567ff79797a3a3c0a4fe0560596396e12ebea7d04b70",
+      "snapshot": "5a96694a889134d5b70fa7bccfb274ac8e8976c92d6b4b5bfb881657847157c9.txt"
+    },
+    {
+      "url": "https://dcem.tongji.edu.cn/info/1062/2320.htm",
+      "catalog_codes": [
+        "2026241"
+      ],
+      "title": "“城建星材杯”第八届全国土木工程材料作品设计创意大赛胜利举办-同济大学材料科学与工程学院土木工程材料系",
+      "status": "retrieved",
+      "final_url": "https://dcem.tongji.edu.cn/info/1062/2320.htm",
+      "bytes": 9330,
+      "sha256": "feaa58f2f2586026f6119b05fd18e388713cb0984365923f29698be551022c74",
+      "snapshot": "53ddd2813f1a7205f167bc1316313f014f3d0f269a36ca1890ababd7b7613b0b.txt"
+    },
+    {
+      "url": "https://dcem.tongji.edu.cn/info/1062/2391.htm",
+      "catalog_codes": [
+        "2026241"
+      ],
+      "title": "第十届全国土木工程材料作品设计创意大赛举办",
+      "status": "retrieved",
+      "final_url": "https://dcem.tongji.edu.cn/info/1062/2391.htm",
+      "bytes": 4869,
+      "sha256": "244b469713aea6d9b10ca1814d8686ab6680233a7e51b68cecb06a655e4dfe46",
+      "snapshot": "cebc57096354d86036643c2375152a07b35b490f044249aeb6ebe6f0a0a6c7ee.txt"
+    },
+    {
+      "url": "https://de.bfsu.edu.cn/info/1066/7733.htm",
+      "catalog_codes": [
+        "2026201"
+      ],
+      "title": "第八届全国高校本科生德语配音大赛初赛通知",
+      "status": "retrieved",
+      "final_url": "https://de.bfsu.edu.cn/info/1066/7733.htm",
+      "bytes": 5080,
+      "sha256": "d75c696a4844c036f293264f123de9fca8acf65c16c8c4f4702a574aa51d5db9",
+      "snapshot": "01e3129fd246a9f76f36a516737b9f04203629b00f8dfdd8ccb8adc528e8f6ca.txt"
+    },
+    {
+      "url": "https://de.bfsu.edu.cn/info/1086/2690.htm",
+      "catalog_codes": [
+        "2026203"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://de.bfsu.edu.cn/info/1086/2690.htm",
+      "bytes": 3986,
+      "sha256": "68345bfcf1867bf1e2d477abd2d5f3c764064c1a23faca290c846262b5b85867",
+      "snapshot": "a6fd5604a14ecc6e2a4183f8577c8e55b96bf738a76025fee35cebb3e5ced5c4.txt"
+    },
+    {
+      "url": "https://dent.tongji.edu.cn/info/1191/11769.htm",
+      "catalog_codes": [
+        "2026171"
+      ],
+      "title": "同济大学口腔医学院2025年优秀大学生暑期夏令营通知",
+      "status": "retrieved",
+      "final_url": "https://dent.tongji.edu.cn/info/1191/11769.htm",
+      "bytes": 6029,
+      "sha256": "e451a9c3a33fe58eeab9be8b1c64ea7a031c4f83d3645e8888d90731e31ed447",
+      "snapshot": "b469d8d87210b0963dd78d057d06f25a1214b24cad9479dd1791a1b7617ede15.txt"
+    },
+    {
+      "url": "https://dent.tongji.edu.cn/info/1191/11879.htm",
+      "catalog_codes": [
+        "2026171"
+      ],
+      "title": "同济大学口腔医学院2026年优秀大学生暑期交流营通知-同济大学口腔医学院",
+      "status": "retrieved",
+      "final_url": "https://dent.tongji.edu.cn/info/1191/11879.htm",
+      "bytes": 4915,
+      "sha256": "93806173dff0e72c2ee238cfdf372e03ed0b5cac53858968e28e28ea979a2979",
+      "snapshot": "f9165befc9cb811760771d7a9f7de65dace03df83ffc7682bf9d5ac60902079c.txt"
+    },
+    {
+      "url": "https://deutsch.tongji.edu.cn/info/1040/1340.htm",
+      "catalog_codes": [
+        "2026251"
+      ],
+      "title": "2026年同济大学新生德语能力竞赛圆满落幕",
+      "status": "retrieved",
+      "final_url": "https://deutsch.tongji.edu.cn/info/1040/1340.htm",
+      "bytes": 4320,
+      "sha256": "a1320b3500d5f3f40e4913cca4a630757d646c9557506c732ca1e506b9d89d1a",
+      "snapshot": "52868527c52bbd526f29ce0b4ffca61182688ffd6709ea33e5f1061f6496e617.txt"
+    },
+    {
+      "url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+      "catalog_codes": [
+        "2026192"
+      ],
+      "title": "第五届德语之星全国高校德语演讲比赛通知",
+      "status": "retrieved",
+      "final_url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+      "bytes": 6169,
+      "sha256": "ff16bf659b9e75f0a5efead03e2f96ab38d2720f0d0843ea7e6385f26e9b792d",
+      "snapshot": "dc29efac3f4f60d6726d83ed691f963902af031c6e82c2e707b83fa9472ee99e.txt"
+    },
+    {
+      "url": "https://developer.apple.com/swift-student-challenge/policy/",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "title": "Swift Student Challenge 2026 Terms and Conditions",
+      "status": "retrieved",
+      "final_url": "https://developer.apple.com/swift-student-challenge/policy/",
+      "bytes": 11763,
+      "sha256": "209392333c54e8ce91a9cd193040f6a17b5f93a858aa9b491d86b27a5cef6ae9",
+      "snapshot": "97c11e338ff17cbd645fa964e9de1fabfca4e5b5522629bf545e1970b21fc03a.txt"
+    },
+    {
+      "url": "https://dtcup.dtxiaotangren.com/",
+      "catalog_codes": [
+        "2026012"
+      ],
+      "title": "信科赛官网与平台维护公告",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://eeeic.ces.org.cn/AboutCompetition/A2-6",
+      "catalog_codes": [
+        "2026097"
+      ],
+      "title": "高校电气电子工程创新大赛参赛章程",
+      "status": "retrieved",
+      "final_url": "https://eeeic.ces.org.cn/AboutCompetition/A2-6",
+      "bytes": 9151,
+      "sha256": "740d02b8bcc499a3e26f659ff89b7a585d8f183b191093bf63702c98c5747368",
+      "snapshot": "f529b72334a841ff491ed3013626c90a1b59d867bb0cce9afc4ff82e189cef77.txt"
+    },
+    {
+      "url": "https://en.jsae.or.jp/formula/fsaej/official_announce/",
+      "catalog_codes": [
+        "2026062",
+        "2026063"
+      ],
+      "title": "Formula SAE Japan 2026官方公告",
+      "status": "retrieved",
+      "final_url": "https://en.jsae.or.jp/formula/fsaej/official_announce/",
+      "bytes": 4140,
+      "sha256": "7d2a09b6846ec9aa214b43fad86601d03210d5b47c6988ac6505d2dc5aad841c",
+      "snapshot": "d876cb8b60273697999411baa2b42661ddaffccedec651a6934973f047afe918.txt"
+    },
+    {
+      "url": "https://eng.nbu.edu.cn/info/1432/45513.htm",
+      "catalog_codes": [
+        "2026120"
+      ],
+      "title": "第六届工程力学赛选拔通知",
+      "status": "retrieved",
+      "final_url": "https://eng.nbu.edu.cn/info/1432/45513.htm",
+      "bytes": 8401,
+      "sha256": "f0d07d1d7e8688b1d2a1d8fd490326b415990d04b03989328926aaaef9584979",
+      "snapshot": "b3cac4b269b27e73754da76ce00589964ceb5856a9078cdeeeec8ae9ab734072.txt"
+    },
+    {
+      "url": "https://eng.nbu.edu.cn/info/1432/59753.htm",
+      "catalog_codes": [
+        "2026120"
+      ],
+      "title": "第七届亚洲工程力学竞赛选拔通知",
+      "status": "retrieved",
+      "final_url": "https://eng.nbu.edu.cn/info/1432/59753.htm",
+      "bytes": 8399,
+      "sha256": "764f6d7ef65a7687a92fe71a702c3d1ec2215e6134546785fba4dd5a2bff8d98",
+      "snapshot": "1ba101b16ede31cfec7d2724e7ff8bb2d7fd7500f7af69c76e271ac071b93898.txt"
+    },
+    {
+      "url": "https://events.vex.com/robot-competitions/college-competition/RE-VURC-25-0707.html",
+      "catalog_codes": [
+        "2026096"
+      ],
+      "title": "VEX Asia Open Signature Event VEX U",
+      "status": "retrieved",
+      "final_url": "https://events.vex.com/robot-competitions/college-competition/RE-VURC-25-0707.html",
+      "bytes": 5256,
+      "sha256": "df80578e5d7e5e48c9a21029592b21824fb8293a2867c27f5c6916ae37f289e6",
+      "snapshot": "0f97d3fa72c1fb3a700261f92204cf508515875933bf3a05e377886d9e43cc60.txt"
+    },
+    {
+      "url": "https://fdimoot.org/Rules.pdf",
+      "catalog_codes": [
+        "2026105"
+      ],
+      "title": "FDI Moot Rules（官网关联通用规则）",
+      "status": "retrieved",
+      "final_url": "https://fdimoot.org/Rules.pdf",
+      "bytes": 716292,
+      "sha256": "012f0747fb9e0c26b776ff5964e09dc18d0d5c27a1de738b052b5ce3140ebcff",
+      "snapshot": "2347b3b0e97f5e5c6f12905b9c3142efd086c930968939402b056829e9145038.pdf"
+    },
+    {
+      "url": "https://files.sciconf.cn/gs_pdf/2026/08/17/20260817142749143335.pdf",
+      "catalog_codes": [
+        "2026103"
+      ],
+      "title": "第六届挑战赛正式通知",
+      "status": "retrieved",
+      "final_url": "https://files.sciconf.cn/gs_pdf/2026/08/17/20260817142749143335.pdf",
+      "bytes": 172714,
+      "sha256": "ce5b193c7d74de967ebc6c9eaa151479d158c6dd7014d02307f05ebb745ea8c5",
+      "snapshot": "2b55224a7c9f95044b0f89b4c86ff36057509d546764bd93d8d8df6effe30345.pdf"
+    },
+    {
+      "url": "https://foreign.jlu.edu.cn/__local/0/3A/B3/B87AEF7CA6E98FDCB8FC464EB0D_8A4DC532_4DAF7.pdf?e=.pdf",
+      "catalog_codes": [
+        "2026206"
+      ],
+      "title": "2015笹川杯全国高校日本知识大赛比赛细则",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 403
+    },
+    {
+      "url": "https://gcxl.dlut.edu.cn/new/",
+      "catalog_codes": [
+        "2026008"
+      ],
+      "title": "组委会赛事主页",
+      "status": "retrieved",
+      "final_url": "https://gcxl.dlut.edu.cn/new/",
+      "bytes": 2437,
+      "sha256": "154c20a49e4c4d487d70ef611be7aa50617a5fb6ab20c0535e49bdb3fd11ef67",
+      "snapshot": "2fe05f8c88e8d0531eab390f456de6f5ce5432bf6ff00d9a2492a7ee8d095223.txt"
+    },
+    {
+      "url": "https://gcxy.shou.edu.cn/2026/0813/c11246a354771/page.htm",
+      "catalog_codes": [
+        "2026190"
+      ],
+      "title": "2026上海市大学生创造杯大赛通知",
+      "status": "retrieved",
+      "final_url": "https://gcxy.shou.edu.cn/2026/0813/c11246a354771/page.htm",
+      "bytes": 3076,
+      "sha256": "469b2d42d2ee5e9a398d3a8e31cc5aa9321829181373ee6af1e787470237a5d9",
+      "snapshot": "caf86ffee02c2508f193e9ca0d425bbcae6aa4bbcecb74717c06bb4a93b82f59.txt"
+    },
+    {
+      "url": "https://github.com/oscomp",
+      "catalog_codes": [
+        "2026043"
+      ],
+      "title": "全国大学生操作系统比赛官方协作仓库",
+      "status": "retrieved",
+      "final_url": "https://github.com/oscomp",
+      "bytes": 7085,
+      "sha256": "c318fd268aea0e628e6cf3c835cb6fcdec427b5d466efd4376858276a1cc4c3b",
+      "snapshot": "8316a5c32e76f0af22e5cc9e6dee00f973c876c8bc7b301fa0d0c8107d27c43e.txt"
+    },
+    {
+      "url": "https://gjjl.wfnc.edu.cn/info/1179/1359.htm",
+      "catalog_codes": [
+        "2026204"
+      ],
+      "title": "全国医学英语词汇竞赛获奖报道",
+      "status": "retrieved",
+      "final_url": "https://gjjl.wfnc.edu.cn/info/1179/1359.htm",
+      "bytes": 2638,
+      "sha256": "9c4022d1e9aba91a309366e86b0c4b2e95a6778a6f1bc7c2589ce05b922346a4",
+      "snapshot": "a1a1eca8fcf71d9b91e15cfb1533e5419df34564d516b11a262a8815cc4ddce0.txt"
+    },
+    {
+      "url": "https://gs.wtu.edu.cn/info/1023/12602.htm",
+      "catalog_codes": [
+        "2026209"
+      ],
+      "title": "第九届全国大学生5分钟科研英语演讲大赛通知",
+      "status": "retrieved",
+      "final_url": "https://gs.wtu.edu.cn/info/1023/12602.htm",
+      "bytes": 4763,
+      "sha256": "d67ff3e23e74fc84819861a5d6cee6f0b05c0213984e92e3bc29b8e8eb655b63",
+      "snapshot": "7fb9a901f89df376d7b664f7d4a25e0aadb02018caad30432ff20c01dbb85392.txt"
+    },
+    {
+      "url": "https://gxbsxs.glodonedu.com/",
+      "catalog_codes": [
+        "2026078"
+      ],
+      "title": "BIM毕业设计大赛官网",
+      "status": "retrieved",
+      "final_url": "https://gxbsxs.glodonedu.com/",
+      "bytes": 45,
+      "sha256": "f7132df99e00d004f177fd65d4529db0062dfcfbc8fd281063e6ee6c7ffca9ea",
+      "snapshot": "f7de4bdcc3a40351bf960a9e4778e09c7073552f34975d90d1a3dd896e0e736e.txt"
+    },
+    {
+      "url": "https://h5.bajasaechina.com/assets/docs/rules-manual.pdf",
+      "catalog_codes": [
+        "2026176"
+      ],
+      "title": "2026中国大学生巴哈大赛规则 V1.2（2026-06-26）",
+      "status": "unavailable",
+      "error": "document_too_large",
+      "http_status": null
+    },
+    {
+      "url": "https://hgxy.hfut.edu.cn/_upload/article/files/2a/a3/90f6475b45d3a88778a739e48679/48601720-aee0-42d4-beb5-535c3023d396.pdf",
+      "catalog_codes": [
+        "2026028"
+      ],
+      "title": "关于举办第九届全国大学生化工实验大赛的通知",
+      "status": "retrieved",
+      "final_url": "https://hgxy.hfut.edu.cn/_upload/article/files/2a/a3/90f6475b45d3a88778a739e48679/48601720-aee0-42d4-beb5-535c3023d396.pdf",
+      "bytes": 176887,
+      "sha256": "e721bf764e2db2646a0a76b884c750eeb43621c481ddc6439b8af6a1fef7c010",
+      "snapshot": "b659c1957b7b00a2c39f6aa24cebb1b949914c9c718a72b50a42541d087d1d7f.pdf"
+    },
+    {
+      "url": "https://honors.shisu.edu.cn/_upload/article/files/bb/95/ea51d40546f9ae002acf6f4eed16/e341642c-7edf-4ef0-8e77-773baebcd7c6.pdf",
+      "catalog_codes": [
+        "2026254"
+      ],
+      "title": "首届卓越杯全球治理与中国方案报名通知",
+      "status": "retrieved",
+      "final_url": "https://honors.shisu.edu.cn/_upload/article/files/bb/95/ea51d40546f9ae002acf6f4eed16/e341642c-7edf-4ef0-8e77-773baebcd7c6.pdf",
+      "bytes": 104996,
+      "sha256": "1e945c8927012633281bc049c95d678db2c5ba7a62867132891c9a2c6c0d6cb1",
+      "snapshot": "c1c5627756e605274e9db2f70771cc72fc1d397d6c6340fbb5e92e4718e59512.pdf"
+    },
+    {
+      "url": "https://honors.shisu.edu.cn/c2/5d/c5748a180829/page.htm",
+      "catalog_codes": [
+        "2026208"
+      ],
+      "title": "报名 | 2024 MODEL APEC上海外国语大学校园选拔赛",
+      "status": "retrieved",
+      "final_url": "https://honors.shisu.edu.cn/c2/5d/c5748a180829/page.htm",
+      "bytes": 6869,
+      "sha256": "5814cd1b6be2d18d93eec2ef908f8ebad7e6ec9f977c03a99ee6ac2be0b42d90",
+      "snapshot": "b9b1fc3cc4dca913dad17060c0b2ee2a0f02a3770b99be020403138ec4f875d1.txt"
+    },
+    {
+      "url": "https://hudong.moe.gov.cn/srcsite/A15/s7063/202510/t20251021_1417550.html",
+      "catalog_codes": [
+        "2026087"
+      ],
+      "title": "教育部关于举办第三届全国大学生职业规划大赛的通知",
+      "status": "retrieved",
+      "final_url": "https://hudong.moe.gov.cn/srcsite/A15/s7063/202510/t20251021_1417550.html",
+      "bytes": 10332,
+      "sha256": "9bc680cd30a1e828d0c44e40b8b06dfa52c7b43cd7e473124a9c86b3d5bf88a3",
+      "snapshot": "037fc336936e41baa6dfaa549b7fd78ebb6790952080025b3bc936bfc446ba3a.txt"
+    },
+    {
+      "url": "https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=39",
+      "catalog_codes": [
+        "2026051"
+      ],
+      "title": "霍普杯2026竞赛规则",
+      "status": "retrieved",
+      "final_url": "https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=39",
+      "bytes": 2876,
+      "sha256": "f1b0a2d2ba59ec658c66581c60e060e788de6903440c6477d761432369e4cff1",
+      "snapshot": "02ddffc11ceefcf0bb13f8f8c0eb821836c3834ce6cc2ad68291551b8f7969cb.txt"
+    },
+    {
+      "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+      "catalog_codes": [
+        "2026108"
+      ],
+      "title": "2026 ICC Moot Rules of Procedure",
+      "status": "retrieved",
+      "final_url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+      "bytes": 832111,
+      "sha256": "22a6a9fb43099b12c82ef222b1d0597cf1bace3b58861c854815479ba35c167c",
+      "snapshot": "afc0aba01459eb4fccfcbf1bc735595de498febee11b20b32c1f8aec031d416b.pdf"
+    },
+    {
+      "url": "https://iche.zju.edu.cn/",
+      "catalog_codes": [
+        "2026027"
+      ],
+      "title": "全国大学生化工设计竞赛官网",
+      "status": "retrieved",
+      "final_url": "https://iche.zju.edu.cn/",
+      "bytes": 4613,
+      "sha256": "5a32ac9db4b7ec6df5f948707f0baaf0bf1e8ce40ca432336e2199c611cbb0e8",
+      "snapshot": "ca96c54ce8a1ae9848ccf310768da7109829058d1315efc69c9804b2fa852b28.txt"
+    },
+    {
+      "url": "https://icpc.pku.edu.cn/tzgg/12450f30353743ccaa302be16a7a1d85.htm",
+      "catalog_codes": [
+        "2026041"
+      ],
+      "title": "2026 ICPC Asia EC网络预选赛报名通知",
+      "status": "retrieved",
+      "final_url": "https://icpc.pku.edu.cn/tzgg/12450f30353743ccaa302be16a7a1d85.htm",
+      "bytes": 2315,
+      "sha256": "a8bfa60d4f38f96b39e1b870dd4053ce69b065af65544b2a6c382153a57f3c4f",
+      "snapshot": "9500dfce80ec0b9340d2de0f9b50ab9d7911c9b9b50f6d2bde0c649fb67eccf8.txt"
+    },
+    {
+      "url": "https://ictvd.oss-cn-beijing.aliyuncs.com/uploadfile/2026/0401/20260401041236519.pdf",
+      "catalog_codes": [
+        "2026083"
+      ],
+      "title": "第九届全国高校学生跨文化能力大赛章程",
+      "status": "retrieved",
+      "final_url": "https://ictvd.oss-cn-beijing.aliyuncs.com/uploadfile/2026/0401/20260401041236519.pdf",
+      "bytes": 618930,
+      "sha256": "0ef93dfd702a213861a389b42b95757f032984ce3548fbb3baa25b7c64698378",
+      "snapshot": "dfd9e272a3ab9834932e436d71b924dcd7e3b11f53c4c0e22c73697c75f4c333.pdf"
+    },
+    {
+      "url": "https://icup.inovance.com/helper",
+      "catalog_codes": [
+        "2026255"
+      ],
+      "title": "“汇川杯”全国智能自动化创新大赛",
+      "status": "retrieved",
+      "final_url": "https://icup.inovance.com/helper",
+      "bytes": 24216,
+      "sha256": "a84586b1c1c89562179495c69215b673132015191d8f8c8b1b3475935a6e16f2",
+      "snapshot": "c6dba24bf2b44837271ed88627013f74ff756bcb93884d857420c28cd5342ed0.txt"
+    },
+    {
+      "url": "https://ie.cufe.edu.cn/info/1069/7376.htm",
+      "catalog_codes": [
+        "2026145"
+      ],
+      "title": "第十七届蓝桥杯报名及附件入口",
+      "status": "retrieved",
+      "final_url": "https://ie.cufe.edu.cn/info/1069/7376.htm",
+      "bytes": 6963,
+      "sha256": "e87607f1ca05e16ff77e435e30cc4ee34e34b46ad63144b17889d6c0e3e5ad77",
+      "snapshot": "1fe049bef274d20f7e258b3ad259575c46a2f0d6250cd2e7d7a6396c5c4fff65.txt"
+    },
+    {
+      "url": "https://ieep.upc.edu.cn/2025/1010/c15488a473002/page.htm",
+      "catalog_codes": [
+        "2026030"
+      ],
+      "title": "第十二届全国大学生能源经济学术创意大赛第1号通知",
+      "status": "retrieved",
+      "final_url": "https://ieep.upc.edu.cn/2025/1010/c15488a473002/page.htm",
+      "bytes": 6619,
+      "sha256": "bc32f7b5865083c4e617636988713ebc9c1d2823e8b391327a010299e3f927c6",
+      "snapshot": "cd161a4a67651e0e15a12eda0bf79619aa83ee26e7d3bea76fd63112658c7abd.txt"
+    },
+    {
+      "url": "https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "catalog_codes": [
+        "2026219",
+        "2026224"
+      ],
+      "title": "第十一届汇创青春活动通知及数字媒体与动画附件",
+      "status": "retrieved",
+      "final_url": "https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "bytes": 1731,
+      "sha256": "7656e24c94d2c355b477b879e833e92dc5f6bf61db1b2f2ab4cc0c1d2f63d506",
+      "snapshot": "3b383324df27a3e3cd4449e051f4df9241c8c7ab16c27c67e1e44636dc1c8031.txt"
+    },
+    {
+      "url": "https://ien.shou.edu.cn/_upload/article/files/18/fd/6840f0d34c0989d7806b54e59333/acdeb91d-0b07-4ce0-864e-242f830f722f.zip",
+      "catalog_codes": [
+        "2026225"
+      ],
+      "title": "第十一届汇创青春综合类作品报送要求—影视",
+      "status": "unavailable",
+      "error": "unsupported_content",
+      "http_status": 200
+    },
+    {
+      "url": "https://ifla2025.com/media/pages/student-activities/student-competition/bb89078064-1745825477/ifla-2025_student-competition_brief-v2.pdf",
+      "catalog_codes": [
+        "2026155"
+      ],
+      "title": "IFLA 2025 Student Competition Brief v2",
+      "status": "retrieved",
+      "final_url": "https://ifla2025.com/media/pages/student-activities/student-competition/bb89078064-1745825477/ifla-2025_student-competition_brief-v2.pdf",
+      "bytes": 4236148,
+      "sha256": "35f63e4e359472f53ef4d0427ccd560d5059a8425db1db8bf21e47ce5b07f00a",
+      "snapshot": "49c260baaf9f14b33b7bf1c72d3225f583097cfd48b929c7d8e5d284dfd77273.pdf"
+    },
+    {
+      "url": "https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+      "catalog_codes": [
+        "2026173",
+        "2026174",
+        "2026175"
+      ],
+      "title": "2026中国大学生方程式系列赛事规则（最终版）",
+      "status": "unavailable",
+      "error": "document_too_large",
+      "http_status": null
+    },
+    {
+      "url": "https://info.shisu.edu.cn/aa/96/c177a43670/page.htm",
+      "catalog_codes": [
+        "2026254"
+      ],
+      "title": "第三届“卓越杯”全球治理与中国方案——青年国际胜任力案例设计大赛举办",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://iot.sjtu.edu.cn/ueditor/net/upload/file/20260326/6391013243710844328303068.pdf",
+      "catalog_codes": [
+        "2026018"
+      ],
+      "title": "2026竞赛通知与赛程文件",
+      "status": "retrieved",
+      "final_url": "https://iot.sjtu.edu.cn/ueditor/net/upload/file/20260326/6391013243710844328303068.pdf",
+      "bytes": 2204694,
+      "sha256": "65676231f78dc9f007fcf8a6dc7eca7f8281c2c5c6251654dff4ef5cec9fe492",
+      "snapshot": "7795cdbc61a295f545dcc3e1c4d11e4d5f4c45c29e9bfe7ab6d4708497bbb40e.pdf"
+    },
+    {
+      "url": "https://isssp.bit.edu.cn/en/upload/files/2025-04-22/2025%20ISSSP%20Guideline.pdf",
+      "catalog_codes": [
+        "2026116"
+      ],
+      "title": "2025 ISSSP Guideline",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://japan.bfsu.edu.cn/info/1070/5202.htm",
+      "catalog_codes": [
+        "2026207"
+      ],
+      "title": "北外日语学子在全国性重要赛事中获得殊荣-日语学院",
+      "status": "retrieved",
+      "final_url": "https://japan.bfsu.edu.cn/info/1070/5202.htm",
+      "bytes": 3726,
+      "sha256": "1f4e40e632e95a3a3ff29f18cb561c8f87be117a96a85a2a8d674669b48e343b",
+      "snapshot": "aa01f195c06dbd6b106c47c2b5943ca582d1437da859bc63a24bc0935c588874.txt"
+    },
+    {
+      "url": "https://jcsysx.shmtu.edu.cn/2026/0414/c12467a289949/page.htm",
+      "catalog_codes": [
+        "2026099"
+      ],
+      "title": "关于举办“第十九届先进机器人及仿真技术大赛”校内赛的通知",
+      "status": "retrieved",
+      "final_url": "https://jcsysx.shmtu.edu.cn/2026/0414/c12467a289949/page.htm",
+      "bytes": 3956,
+      "sha256": "9db0116d324304e97b39e349bdbccd8db784d7fa561068cb37866610df9d56b0",
+      "snapshot": "38a821ec9a7184e5b74f3b6f6ce97acf5b9bb3395a56cc2cfc607bdf72670c4b.txt"
+    },
+    {
+      "url": "https://jcsysx.shmtu.edu.cn/2026/0420/c12467a290204/page.htm",
+      "catalog_codes": [
+        "2026048"
+      ],
+      "title": "2026中国高校计算机大赛校内组织通知",
+      "status": "retrieved",
+      "final_url": "https://jcsysx.shmtu.edu.cn/2026/0420/c12467a290204/page.htm",
+      "bytes": 3262,
+      "sha256": "a4a8ec6d6becc129af4423e8353bae02d2a43ad6ad28170937c5da4d9b3c075a",
+      "snapshot": "4d4862eb9dee831da7027b6c5818411285f99481537e2e28c1285ebe6b3a31a9.txt"
+    },
+    {
+      "url": "https://jhj.cicaf.com/en/articles/62.html",
+      "catalog_codes": [
+        "2026236"
+      ],
+      "title": "Rules and Regulations 2026 The 22nd CICAF “Golden Monkey King Awards” Contest Call for Entries- Monkey-Kingawards",
+      "status": "retrieved",
+      "final_url": "https://jhj.cicaf.com/en/articles/62.html",
+      "bytes": 10809,
+      "sha256": "a4f32f2afc15a4f9e8b3a2b655ffbbe800b66f5d4954156d0549a899e7e0dbdc",
+      "snapshot": "4ba6a700b8b9f2602ced3bc4a33ade7e8634258e9b7fcfb2fc0fae64e160989e.txt"
+    },
+    {
+      "url": "https://jky.yangtzeu.edu.cn/info/1395/5709.htm",
+      "catalog_codes": [
+        "2026099"
+      ],
+      "title": "第十八届RST大赛通知（网页检索存档）",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 404
+    },
+    {
+      "url": "https://jsj.suse.edu.cn/2026/0108/c3314a205573/page.htm",
+      "catalog_codes": [
+        "2026146"
+      ],
+      "title": "2026年第八届码蹄杯全国大学生程序设计大赛通知",
+      "status": "retrieved",
+      "final_url": "https://jsj.suse.edu.cn/2026/0108/c3314a205573/page.htm",
+      "bytes": 4250,
+      "sha256": "19a407b21c8ad19005996a85ca555ab68ace36a3cf77d20e939c7eecd39ac2bf",
+      "snapshot": "497b5bc5d92d6fe298143428b077415128de82291f451008d0652fde107f0cf8.txt"
+    },
+    {
+      "url": "https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+      "catalog_codes": [
+        "2026047"
+      ],
+      "title": "2026中国大学生计算机设计大赛参赛要求",
+      "status": "retrieved",
+      "final_url": "https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+      "bytes": 6799,
+      "sha256": "511631bbdc93ed83e2e1618fe64462cbf31198325f2da094d7d9799c2d3cb33f",
+      "snapshot": "24e7a6b162d463497e16ccf92e39a1e1e11dcdc8460e4e9589ebd1b4c2046f94.txt"
+    },
+    {
+      "url": "https://jwc.bbmu.edu.cn/info/1040/3256.htm",
+      "catalog_codes": [
+        "2026204"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://jwc.bbmu.edu.cn/info/1040/3256.htm",
+      "bytes": 2589,
+      "sha256": "eaa7627341810d6a9a90b24ca3962f0dd8e5978bd2f012a45cc5238c6368a88f",
+      "snapshot": "98f660a49f4f66f553ea50c41deaec18e41a385898b9e6e6b2cb51838e97f01b.txt"
+    },
+    {
+      "url": "https://jwc.cugb.edu.cn/c/2026-03-18/845660.shtml",
+      "catalog_codes": [
+        "2026093"
+      ],
+      "title": "教务处",
+      "status": "retrieved",
+      "final_url": "https://jwc.cugb.edu.cn/c/2026-03-18/845660.shtml",
+      "bytes": 4513,
+      "sha256": "beecfa59257842738d2cebe58e3e70b85cf25068931cd73ace2d4aed05ea9afb",
+      "snapshot": "68dd431550b466baba68a67d8b0c4035c32a616ea02bc712f3cb4b82b7f58e1c.txt"
+    },
+    {
+      "url": "https://jwc.hutb.edu.cn/upload/bksybkjxpgzx/contentmanage/article/file/2026/03/03/202603031658001606.pdf",
+      "catalog_codes": [
+        "2026229"
+      ],
+      "title": "第十七届蓝桥杯视觉艺术设计赛竞赛规则及说明",
+      "status": "retrieved",
+      "final_url": "https://jwc.hutb.edu.cn/upload/bksybkjxpgzx/contentmanage/article/file/2026/03/03/202603031658001606.pdf",
+      "bytes": 332406,
+      "sha256": "60858a95eedca2f260eabe1a79cd4acd8fe2792111020213bca6442461731358",
+      "snapshot": "be0914897723be0d76bcf6981dc89d5a894d3821eb47effb2022b5475619bc3a.pdf"
+    },
+    {
+      "url": "https://jwc.huznu.edu.cn/2026/0408/c3160a248831/page.htm",
+      "catalog_codes": [
+        "2026210"
+      ],
+      "title": "关于湖州师范大学2026年度日语作文大赛暨“第二十二届全中国日语作文大赛”作文征稿的通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.huznu.edu.cn/2026/0408/c3160a248831/page.htm",
+      "bytes": 3809,
+      "sha256": "db30b99c95d48702272873f56190453fa8d38971a72c0dbd4b0dc4377e47f696",
+      "snapshot": "fd367afd267a4a9630bb8ad2c6e906315bb78128a3e666e94155cf4090fe6019.txt"
+    },
+    {
+      "url": "https://jwc.nbu.edu.cn/info/1126/18026.htm",
+      "catalog_codes": [
+        "2026060"
+      ],
+      "title": "关于举办宁波大学2027年大学生市场调查与分析大赛的通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 403
+    },
+    {
+      "url": "https://jwc.njucm.edu.cn/_upload/article/files/55/1e/2dc96cc0439cbb1e00e19c2efd1d/bc70b9e0-1159-4e6e-a50d-da41780dc199.pdf",
+      "catalog_codes": [
+        "2026088"
+      ],
+      "title": "第十二届全国大学生医学创新大赛暨“一带一路”国际竞赛第一轮通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.njucm.edu.cn/_upload/article/files/55/1e/2dc96cc0439cbb1e00e19c2efd1d/bc70b9e0-1159-4e6e-a50d-da41780dc199.pdf",
+      "bytes": 643474,
+      "sha256": "9cd41120569a766407fbe517c346560016212c2cd1d72f18fca4a1487fdbe465",
+      "snapshot": "06c22bc7cab8d23afe7a99d348247407de22d0bf6cb32de677df5b83c764e3de.pdf"
+    },
+    {
+      "url": "https://jwc.shmtu.edu.cn/2025/0410/c8546a242921/page.htm",
+      "catalog_codes": [
+        "2026151"
+      ],
+      "title": "第十届上海网络安全大赛校选与市赛说明",
+      "status": "retrieved",
+      "final_url": "https://jwc.shmtu.edu.cn/2025/0410/c8546a242921/page.htm",
+      "bytes": 7142,
+      "sha256": "d99802de627896b5ff2af722251ccb311f553522af75f673d3c566ad5e7e2956",
+      "snapshot": "6230c0e0dcd4d2531a4f27f5edc932bc1c5ab6745501aa568d86a29e1e3dd9d0.txt"
+    },
+    {
+      "url": "https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "catalog_codes": [
+        "2026177",
+        "2026178",
+        "2026223"
+      ],
+      "title": "第十一届汇创青春作品报送要求—产品设计",
+      "status": "retrieved",
+      "final_url": "https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "bytes": 487789,
+      "sha256": "fc1a6a3ffbdcdd13be5fc4b5e6f0adb9274eabab43d012d22b9bc59937304ae1",
+      "snapshot": "d804f2abe6f1b8f69c8be8be9b35d862431171fb3f599c4aa430e648dd3f447a.docx"
+    },
+    {
+      "url": "https://jwc.sta.edu.cn/e9/6c/c665a125292/page.htm",
+      "catalog_codes": [
+        "2026133"
+      ],
+      "title": "第十一届汇创青春环境设计通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.sta.edu.cn/e9/6c/c665a125292/page.htm",
+      "bytes": 4993,
+      "sha256": "aeaa6efeb3db27cf11db686a4b76474d020a9dfdfcd2d8a31d057e6784b50b02",
+      "snapshot": "b3b8ec9d157aaf308912b531c0769363445fb96e31376a48c9bf004eef6769e7.txt"
+    },
+    {
+      "url": "https://jwc.tongji.edu.cn/00/3b/c30359a327739/page.htm",
+      "catalog_codes": [
+        "2026213"
+      ],
+      "title": "第39届全国部分地区大学生物理竞赛通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.tongji.edu.cn/00/3b/c30359a327739/page.htm",
+      "bytes": 3899,
+      "sha256": "dd7018c4fe66db9f35dc2562041577fbb71fa2e23268f073cea6a97f1a50bda2",
+      "snapshot": "0b3079ea9c9416a1e20f6540fb294d36f4298711c448cde8277452c92519f3b1.txt"
+    },
+    {
+      "url": "https://jwc.tongji.edu.cn/81/01/c30536a295169/page.htm",
+      "catalog_codes": [
+        "2026246"
+      ],
+      "title": "同济大学第二届“济时开讲”大学生讲思政课比赛活动通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.tongji.edu.cn/81/01/c30536a295169/page.htm",
+      "bytes": 7854,
+      "sha256": "b6e8b63d9fad81e7879eed474b0198dfddf5dd8c49ea01e4fed56b5a27296d01",
+      "snapshot": "29d0e4b3d2910c5fcbaaa782b16d93cd5f7e03eeadea2e8a20957b181e95f1b4.txt"
+    },
+    {
+      "url": "https://jwc.ustb.edu.cn/docs/2026-03/ce7f8929264847f5b89a67e54d9117c5.pdf",
+      "catalog_codes": [
+        "2026086"
+      ],
+      "title": "第十二届全国大学生物理实验竞赛（创新）第一轮通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.ustb.edu.cn/docs/2026-03/ce7f8929264847f5b89a67e54d9117c5.pdf",
+      "bytes": 5213765,
+      "sha256": "2583636484651ea8781a593ed314815cb827d46c33b9be8773cb653a74a0fe74",
+      "snapshot": "59e87534a367a600948b177deaf664d3714a30358437b37ae298019117770815.pdf"
+    },
+    {
+      "url": "https://jwc.ustb.edu.cn/tztg/7a4552245dcb452b987023876778037b.htm",
+      "catalog_codes": [
+        "2026021"
+      ],
+      "title": "2026赛事与赛道通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.ustb.edu.cn/tztg/7a4552245dcb452b987023876778037b.htm",
+      "bytes": 2294,
+      "sha256": "1be46de8dfa75b64e90ee7d49cb0d7229bf133bffa4f3cbdce200dfa4fbad4bb",
+      "snapshot": "e580792ee80609af179af2dd2a85e1ddc7b244e4408f01debcbe3c336d1bdca6.txt"
+    },
+    {
+      "url": "https://jwc.ynu.edu.cn/info/1009/4331.htm",
+      "catalog_codes": [
+        "2026042"
+      ],
+      "title": "2026第二十二届百度之星程序设计大赛通知",
+      "status": "retrieved",
+      "final_url": "https://jwc.ynu.edu.cn/info/1009/4331.htm",
+      "bytes": 4777,
+      "sha256": "f1f87859cf6a28816a3e0c0c03c2400be67f353dab9d23211dd1a2ab72c68333",
+      "snapshot": "4f2373fa6b02ca1fe3e5767684167f2e9b5909792561b117096550191ccd530d.txt"
+    },
+    {
+      "url": "https://jzss.cbpt.cnki.net/portal/journal/portal/client/index",
+      "catalog_codes": [
+        "2026153"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://jzss.cbpt.cnki.net/portal/journal/portal/client/index",
+      "bytes": 31638,
+      "sha256": "0687ec1df2543907bda90d8297d9fff89ee03272022cddd963ba3ad017026998",
+      "snapshot": "4fcbe0b0addb54eecf80d62f11fee7e84a6d9027fed572a740081d3e831f4947.txt"
+    },
+    {
+      "url": "https://jzxy.bucea.edu.cn/xyxx/xwxx/1c04fde13b854d75a397afd8d4718276.htm",
+      "catalog_codes": [
+        "2026158"
+      ],
+      "title": "2026建成遗产优秀作业评选通告",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://jzxy.bucea.edu.cn/xyxx/xwxx/38130714bed04fa6bb06b35ded00da04.htm",
+      "catalog_codes": [
+        "2026162"
+      ],
+      "title": "北京建筑大学建筑与城市规划学院",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://jzxy.bucea.edu.cn/xyxx/xwxx/406ddd84682d47ada32b7e8bb69d80c5.htm",
+      "catalog_codes": [
+        "2026052"
+      ],
+      "title": "2026 WUPENiCity两类竞赛获奖与作品展示",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://jzygh.syucu.edu.cn/info/1132/12872.htm",
+      "catalog_codes": [
+        "2026157"
+      ],
+      "title": "2025 WUPENiCity城市设计学生作业国际竞赛校选通知",
+      "status": "retrieved",
+      "final_url": "https://jzygh.syucu.edu.cn/info/1132/12872.htm",
+      "bytes": 10572,
+      "sha256": "db744c512b5c580e585ecc297ec570de823c95bf75b6f22c942e01d1fbb42cac",
+      "snapshot": "32c20835af0f38d2a981b5175493bf2afcf019c01df3a0472dd9a8af4811710b.txt"
+    },
+    {
+      "url": "https://kzgc.neuq.edu.cn/info/1081/5715.htm",
+      "catalog_codes": [
+        "2026022"
+      ],
+      "title": "2026主题一参赛说明",
+      "status": "retrieved",
+      "final_url": "https://kzgc.neuq.edu.cn/info/1081/5715.htm",
+      "bytes": 8601,
+      "sha256": "3a5e04ddb868bbadfac7c70b2246b29e88e8747fc9d443982dd9e04174c3c4ed",
+      "snapshot": "c3dd8236f22ae51b1bb733c3c03a342c9027d5e559cc2e2419b247ddcbec5354.txt"
+    },
+    {
+      "url": "https://landscape-caup.tongji.edu.cn/c8/f4/c10586a379124/page.htm",
+      "catalog_codes": [
+        "2026054"
+      ],
+      "title": "2026社区花园赛道竞赛通知",
+      "status": "retrieved",
+      "final_url": "https://landscape-caup.tongji.edu.cn/c8/f4/c10586a379124/page.htm",
+      "bytes": 13632,
+      "sha256": "9395320e763c5029c5d6ffe3093b956b123c372762a7531b5739ee32efd6fc3e",
+      "snapshot": "f67098f26fd0db0342022e91175a21937220a4faf4af46d710516a5349912d34.txt"
+    },
+    {
+      "url": "https://law.tongji.edu.cn/info/1355/8537.htm",
+      "catalog_codes": [
+        "2026110"
+      ],
+      "title": "第十五届全国法律英语大赛华东赛区通知",
+      "status": "retrieved",
+      "final_url": "https://law.tongji.edu.cn/info/1355/8537.htm",
+      "bytes": 3527,
+      "sha256": "e09b4fa647bc365d7d047679ae2a8eecd7cbfbf2e7db9fac03fe2d5e4ccb4d8a",
+      "snapshot": "8d06fdf97db8257450c763c31cf830bdf58cdf9e582ad5eaff564fa75f38363a.txt"
+    },
+    {
+      "url": "https://legal.un.org/avl/moot_courts/FDI_2025.html",
+      "catalog_codes": [
+        "2026105"
+      ],
+      "title": "FDI Moot 2025官方备赛资料专题",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://m.sohu.com/a/915182836_100098692",
+      "catalog_codes": [
+        "2026161"
+      ],
+      "title": "优秀毕业设计作品征集 | 第十四届中国风景园林教育大会优秀本科/研究生毕业设计作品征集_搜狐网",
+      "status": "unavailable",
+      "error": "robots_disallowed",
+      "http_status": null
+    },
+    {
+      "url": "https://makeable.cn/2025-scip/2025-scip-%E5%A4%A7%E8%B5%9B%E8%AF%A6%E6%83%85/",
+      "catalog_codes": [
+        "2026128",
+        "2026135"
+      ],
+      "title": "2025 SCIP+ 大赛详情",
+      "status": "retrieved",
+      "final_url": "https://makeable.cn/2025-scip/2025-scip-%E5%A4%A7%E8%B5%9B%E8%AF%A6%E6%83%85/",
+      "bytes": 5411,
+      "sha256": "47711de9a51f04d7abe7f3b2005466b8d70d0887ce623adde8d9cfdb646cac32",
+      "snapshot": "3c8a824cd990c633e9a376a7291e09591e35c8857271816d1d27900b8ba931ed.txt"
+    },
+    {
+      "url": "https://makeable.cn/2026-scip-cn/scip-2026-event-registration-cn/",
+      "catalog_codes": [
+        "2026128",
+        "2026135"
+      ],
+      "title": "2026 SCIP+大赛报名",
+      "status": "retrieved",
+      "final_url": "https://makeable.cn/2026-scip-cn/scip-2026-event-registration-cn/",
+      "bytes": 1152,
+      "sha256": "a802764b8e0e812652cd3fee7a46546a1759b91b871e97a2a9e4633e246d3008",
+      "snapshot": "e9ba6d552e42cec0e14907635dbd1f8d74b75f01158fc340b7360914d792f837.txt"
+    },
+    {
+      "url": "https://med.tongji.edu.cn/info/1322/7908.htm",
+      "catalog_codes": [
+        "2026216"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://med.tongji.edu.cn/info/1322/7908.htm",
+      "bytes": 3916,
+      "sha256": "2092a6ce20df49bcca046abbb9e8c7ba512fd740ae9bf18c7746c367f4972028",
+      "snapshot": "427b87931a0c015dc24ea8e0bc5ca0c6874d71ffd42de3e7c048c343e62f3c7d.txt"
+    },
+    {
+      "url": "https://mefaculty.tongji.edu.cn/info/1022/1654.htm",
+      "catalog_codes": [
+        "2026245"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://mefaculty.tongji.edu.cn/info/1022/1654.htm",
+      "bytes": 2074,
+      "sha256": "defa4da0d617ca1ebefc7e9f5fb18fc81cd575848452a661004b10d5dd00ef8c",
+      "snapshot": "5b4b9d1f0430ad11181813b7043c5bf1e946cc28340f6fda9e2b31c927944e33.txt"
+    },
+    {
+      "url": "https://mohub.net/competition/5/detail",
+      "catalog_codes": [
+        "2026040"
+      ],
+      "title": "第十五届中国软件杯A8官方合作方专区",
+      "status": "retrieved",
+      "final_url": "https://mohub.net/competition/5/detail",
+      "bytes": 5994,
+      "sha256": "d4b277a925eb03ef9a16346d7b8b34bba2bf94318cbd76d515bba465536a5474",
+      "snapshot": "67114fd754adcd8c80a0063086eb5d011012cb271f905d0cd36f78d0d40a6193.txt"
+    },
+    {
+      "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+      "catalog_codes": [
+        "2026244"
+      ],
+      "title": "关于举办第十八届“国药杯”同济大学化学知识竞赛的通知",
+      "status": "unavailable",
+      "error": "robots_disallowed",
+      "http_status": null
+    },
+    {
+      "url": "https://mphylab.tongji.edu.cn/page/home/info23362_INFO",
+      "catalog_codes": [
+        "2026252"
+      ],
+      "title": "2024年第五届同济大学创新物理实验设计竞赛获奖公示",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://my.tongji.edu.cn/index/tzgg.htm",
+      "catalog_codes": [
+        "2026246"
+      ],
+      "title": "通知公告-马克思主义学院",
+      "status": "retrieved",
+      "final_url": "https://my.tongji.edu.cn/index/tzgg.htm",
+      "bytes": 2278,
+      "sha256": "42063129ebaa459b3496991515a944afd6629ebd9f67bea0097cd0bbc3be9f2a",
+      "snapshot": "3454a88a37f78defbcc85f700fe090cc945d12a05b5b5bdb0c73c6ec5a931600.txt"
+    },
+    {
+      "url": "https://nanyang.xmu.edu.cn/info/1019/38271.htm",
+      "catalog_codes": [
+        "2026240"
+      ],
+      "title": "第十六届“博睿杯”我是外交官全国大学生外交风采大赛决赛圆满落幕-厦门大学东南亚研究中心",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://news.bnu.edu.cn/zx/zhxw/2f1fd28c730840c09c65aaff0d8bc0cb.htm",
+      "catalog_codes": [
+        "2026130"
+      ],
+      "title": "第十四届全国大学生化学实验竞赛总决赛报道",
+      "status": "retrieved",
+      "final_url": "https://news.bnu.edu.cn/zx/zhxw/2f1fd28c730840c09c65aaff0d8bc0cb.htm",
+      "bytes": 4665,
+      "sha256": "93edfd10545f7a6580293ddfac60071030fcd17734b9b188bfa2b5e57ce4f6bb",
+      "snapshot": "0499a1dc4d0b7a362a0fa4acdc24ef2d844fa860aa091fb4bb84a326fe751600.txt"
+    },
+    {
+      "url": "https://news.ecupl.edu.cn/2024/0527/c672a214553/page.htm",
+      "catalog_codes": [
+        "2026111"
+      ],
+      "title": "2024日盈杯第九届模拟法庭赛事与备赛报道",
+      "status": "retrieved",
+      "final_url": "https://news.ecupl.edu.cn/2024/0527/c672a214553/page.htm",
+      "bytes": 2631,
+      "sha256": "2faae2a1e90b4a735dde3b699495b72c81cefbbc5b73882c312a5175089017ab",
+      "snapshot": "60402c8ade14217281d49e7c4cd542198a49455bfa5b1cd3f44c19237b1d07f7.txt"
+    },
+    {
+      "url": "https://news.hqu.edu.cn/info/1019/435542.htm",
+      "catalog_codes": [
+        "2026053"
+      ],
+      "title": "2026 WUPENiCity城市设计赛主题与获奖",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://news.tongji.edu.cn/info/1002/91706.htm",
+      "catalog_codes": [
+        "2026186"
+      ],
+      "title": "海峡两岸青少年同场比拼创意，共绘新未来-同济大学新闻网",
+      "status": "retrieved",
+      "final_url": "https://news.tongji.edu.cn/info/1002/91706.htm",
+      "bytes": 8123,
+      "sha256": "93aea12dba3eb248ad449a11816a01d70500fe60e6b7b03e93970a851d74be62",
+      "snapshot": "3096830194e6bf97b7746f0e6f62b2b412635a8e9d608c13f85186bad4009870.txt"
+    },
+    {
+      "url": "https://news.tongji.edu.cn/info/1003/90705.htm",
+      "catalog_codes": [
+        "2026134"
+      ],
+      "title": "同济学子获2025年全球高校挑战赛中国选拔赛冠军-同济大学新闻网",
+      "status": "retrieved",
+      "final_url": "https://news.tongji.edu.cn/info/1003/90705.htm",
+      "bytes": 4513,
+      "sha256": "d405fae36718e8beea4164f8f76abeaad1230f21715b4323b82700baa5cb9d16",
+      "snapshot": "f6541943f2d61fd3c927e94f10c8144faef2421a1a40fbd742b97ad67fedeb0c.txt"
+    },
+    {
+      "url": "https://news.tongji.edu.cn/info/1008/20247.htm",
+      "catalog_codes": [
+        "2026247"
+      ],
+      "title": "第四届同济大学“使命与担当”社会实践与创新竞赛通知-同济大学新闻网",
+      "status": "retrieved",
+      "final_url": "https://news.tongji.edu.cn/info/1008/20247.htm",
+      "bytes": 6050,
+      "sha256": "fa64bafd63953608c1873569202f4fc0a718151999deeb34f3925f33be6165b1",
+      "snapshot": "39f3c68a41f11a73a8a726f69687821b022552b9e4a56a024ba8f6f068bb1639.txt"
+    },
+    {
+      "url": "https://peiyin.zhayadeutsch.cn/",
+      "catalog_codes": [
+        "2026196"
+      ],
+      "title": "第六届扎雅杯全国德语配音比赛",
+      "status": "retrieved",
+      "final_url": "https://peiyin.zhayadeutsch.cn/",
+      "bytes": 48,
+      "sha256": "147d227a344816f572338045466b476878a337c3169ac36f52c3e4deba6743cd",
+      "snapshot": "f3e37f655e46dfbc85ab36269880a2e366cc1150ddee413899d7f36714d8ece4.txt"
+    },
+    {
+      "url": "https://physics.tongji.edu.cn/info/1066/4647.htm",
+      "catalog_codes": [
+        "2026214"
+      ],
+      "title": "首届同济TJPT作为CUPT校内选拔通道",
+      "status": "retrieved",
+      "final_url": "https://physics.tongji.edu.cn/info/1066/4647.htm",
+      "bytes": 4193,
+      "sha256": "127102f2d42ec3613c5742c41a7b4ef1ac0b92d1bd8d8a7c14e472f49beb0181",
+      "snapshot": "b79e412e6492af0ddb54e1847602c38d16afe5051e9ea007e39b87dfcaf2097d.txt"
+    },
+    {
+      "url": "https://pnr.sz.gov.cn/xxgk/gggs/content/post_11011760.html",
+      "catalog_codes": [
+        "2026114"
+      ],
+      "title": "第14届全国海洋知识竞赛活动通知",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 412
+    },
+    {
+      "url": "https://polymer.tongji.edu.cn/__local/D/50/94/EAF6228AAC76F3CC03FF762EAB5_A37EE8C3_46AB3.pdf",
+      "catalog_codes": [
+        "2026242"
+      ],
+      "title": "关于举办“城建星材杯” 上海市第九届土木工程材料知识",
+      "status": "retrieved",
+      "final_url": "https://polymer.tongji.edu.cn/__local/D/50/94/EAF6228AAC76F3CC03FF762EAB5_A37EE8C3_46AB3.pdf",
+      "bytes": 289459,
+      "sha256": "b09013b4e529d4f18fe9d6871f2e31150469c71384592fee1bdb1d683bdda9a8",
+      "snapshot": "9572173fec5d9c8193dc80d2d9ea6422a595f3f02ab9a586ecdd60cf92f4bd37.pdf"
+    },
+    {
+      "url": "https://rcccaa.drct-caa.org.cn/",
+      "catalog_codes": [
+        "2026023"
+      ],
+      "title": "赛事官方通知平台",
+      "status": "retrieved",
+      "final_url": "https://rcccaa.drct-caa.org.cn/",
+      "bytes": 8172,
+      "sha256": "bccfdc74b9b9f648158a723ae5188235fcaf933eec628f5b224ae5723cae1f4a",
+      "snapshot": "51f880fc4f60fc0c6efbebf0f6db105898729caece71407674dd6da1d112e97d.txt"
+    },
+    {
+      "url": "https://res.nuedc-training.com.cn/s/pdf/2025/12/04/file202512048402.pdf",
+      "catalog_codes": [
+        "2026015"
+      ],
+      "title": "2026电子设计竞赛专题赛安排",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 403
+    },
+    {
+      "url": "https://robocon.org.cn/h-col-104.html",
+      "catalog_codes": [
+        "2026061"
+      ],
+      "title": "ROBOCON官方通知与规则目录",
+      "status": "retrieved",
+      "final_url": "https://robocon.org.cn/h-col-104.html",
+      "bytes": 3326,
+      "sha256": "dfd5c6db2e8cda3c3aea33a43f65adf696181dea73c0d1705821c578ff27a389",
+      "snapshot": "9a175b289bf6031fa475e73ca406c59c7b61d1bb0d606c96989ddd7385b9f1ec.txt"
+    },
+    {
+      "url": "https://rwxy.xisu.edu.cn/info/1129/5487.htm",
+      "catalog_codes": [
+        "2026211"
+      ],
+      "title": "关于举办第十九届中华全国日语演讲比赛西北地区决赛的通知-西安外国语大学日本文化经济学院",
+      "status": "retrieved",
+      "final_url": "https://rwxy.xisu.edu.cn/info/1129/5487.htm",
+      "bytes": 5720,
+      "sha256": "bb7157f60f15b66c518a5086ccbfe67a0558fff4a89908fe46c76a5be60df689",
+      "snapshot": "de447354334c91bffd103788e5bd74c93182846389037de44bf530468ad6f9c3.txt"
+    },
+    {
+      "url": "https://sese.tongji.edu.cn/info/1236/9608.htm",
+      "catalog_codes": [
+        "2026134"
+      ],
+      "title": "2026年全球高校挑战赛中国选拔赛顺利举办",
+      "status": "retrieved",
+      "final_url": "https://sese.tongji.edu.cn/info/1236/9608.htm",
+      "bytes": 4764,
+      "sha256": "4008dc2bd87d807bd274240a23e879978bea182bd53c2f606755108a57f9fabb",
+      "snapshot": "c8c9a359920ca9c7edb16f969f2331011f525456771074fd669974dc14f0f850.txt"
+    },
+    {
+      "url": "https://sese.tongji.edu.cn/szdw/zyjs/js/L/ll1/jxky.htm",
+      "catalog_codes": [
+        "2026139"
+      ],
+      "title": "教学科研-同济大学环境科学与工程学院",
+      "status": "retrieved",
+      "final_url": "https://sese.tongji.edu.cn/szdw/zyjs/js/L/ll1/jxky.htm",
+      "bytes": 12940,
+      "sha256": "1fe97fec02a4e47c02ecbc7482830053100ec21e3b8e5b9fa4f2be6b0fd1c438",
+      "snapshot": "d5adee93cefb70843da3a98f279d24d7c9ab883cee3e6be8e5e0c3dd05190b80.txt"
+    },
+    {
+      "url": "https://sfl.pku.edu.cn/xsyd/xwdt/69c90a4ed927430caf9f9d5695ef0ece.htm",
+      "catalog_codes": [
+        "2026202"
+      ],
+      "title": "北京大学外国语学院德语系学生参加第六届“全国高校德语专业本科生学术创新大赛”并获佳绩",
+      "status": "retrieved",
+      "final_url": "https://sfl.pku.edu.cn/xsyd/xwdt/69c90a4ed927430caf9f9d5695ef0ece.htm",
+      "bytes": 7140,
+      "sha256": "b254ba92c62904a458d94d6833d612b5a0794a4c1b81eedbe45d9e6a3136d450",
+      "snapshot": "9df7da71d5c414358d0b41f991737d71d90095fc89c12316a70ef08982d7ad96.txt"
+    },
+    {
+      "url": "https://sfl.sjtu.edu.cn/En/Data/View/9718",
+      "catalog_codes": [
+        "2026250"
+      ],
+      "title": "综合新闻丨第37届上海市大学生日语才能演示大赛在交大外院举办 - 综合新闻 - 上海交通大学外国语学院",
+      "status": "retrieved",
+      "final_url": "https://sfl.sjtu.edu.cn/En/Data/View/9718",
+      "bytes": 3053,
+      "sha256": "91acb6242a9205ee17172d2de525eeb0b67cf1254a054f6334e6a520c298097b",
+      "snapshot": "f4c84cafb390b29c2fadded9197f4bd6b709412c0bce14565b18bb0782fae040.txt"
+    },
+    {
+      "url": "https://sino-german-dialogue.tongji.edu.cn/b9/25/c7120a178469/page.htm",
+      "catalog_codes": [
+        "2026238"
+      ],
+      "title": "2021第六届蜂鸟音乐奖章程",
+      "status": "retrieved",
+      "final_url": "https://sino-german-dialogue.tongji.edu.cn/b9/25/c7120a178469/page.htm",
+      "bytes": 15572,
+      "sha256": "24e30a935e8792ea64d353c063d70c776c373d1d00c50a8e4450a68b5f43d209",
+      "snapshot": "e9e46e17aaadec7c183303cbc63a02ca01a0f0b001f532315f3f5941c4ebd178.txt"
+    },
+    {
+      "url": "https://sjs.shisu.edu.cn/1a/22/c2709a203298/page.htm",
+      "catalog_codes": [
+        "2026193"
+      ],
+      "title": "第十八届CASIO杯中国日语专业本科生研究生演讲辩论大赛初赛通知",
+      "status": "retrieved",
+      "final_url": "https://sjs.shisu.edu.cn/1a/22/c2709a203298/page.htm",
+      "bytes": 4263,
+      "sha256": "b668403d49bf069bad11265fbe47a1a433b9aeae970573aa7b12c2af2b851402",
+      "snapshot": "c37a8c33ec487b11b384af543223ca2e193d69c25280b616b693b2f7dabf3172.txt"
+    },
+    {
+      "url": "https://sky.yangtzeu.edu.cn/__local/E/24/1B/85D922800D61F0CC331CE340B1D_93B0E90E_977FA.pdf",
+      "catalog_codes": [
+        "2026072"
+      ],
+      "title": "第十一届科学探究类官方通知PDF",
+      "status": "retrieved",
+      "final_url": "https://sky.yangtzeu.edu.cn/__local/E/24/1B/85D922800D61F0CC331CE340B1D_93B0E90E_977FA.pdf",
+      "bytes": 620538,
+      "sha256": "a08df94089a952ea6811d490aaeaa56933c19970db9bf2303fba7bd22b3ca777",
+      "snapshot": "62b22f9bec2848ecf931f03bb8692857919545d443c0d7ef2b4ed97f2c195700.pdf"
+    },
+    {
+      "url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+      "catalog_codes": [
+        "2026148"
+      ],
+      "title": "第十九届全国大学生软件创新大赛通知",
+      "status": "retrieved",
+      "final_url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+      "bytes": 7618,
+      "sha256": "ba2818a8b06b8275439dd3f5c2cf4d5114e023962b3607198bd24c331e58f6c3",
+      "snapshot": "a3af2cbc5dee32cbaf513d657a8f18cbc7c7b907e2cc862d6874d1a5c7a61bf2.txt"
+    },
+    {
+      "url": "https://sthj.shou.edu.cn/_t1960/2026/0408/c8789a351735/page.htm",
+      "catalog_codes": [
+        "2026137"
+      ],
+      "title": "2026年第二十一届全国环境友好科技竞赛校内报名通知",
+      "status": "retrieved",
+      "final_url": "https://sthj.shou.edu.cn/_t1960/2026/0408/c8789a351735/page.htm",
+      "bytes": 8179,
+      "sha256": "b06a8885b03c395161ee9a378bd9d2a99428975e0965549206fa4c1c7ad18d5c",
+      "snapshot": "53919b2e81d69378904d5ca762b4452dad39f8503bce3e8236d34e05342ea062.txt"
+    },
+    {
+      "url": "https://storage.cdec.org.cn/hcy/2024/11/20241106104540586-vqn8.pdf",
+      "catalog_codes": [
+        "2026093"
+      ],
+      "title": "第19届全国参赛简章",
+      "status": "retrieved",
+      "final_url": "https://storage.cdec.org.cn/hcy/2024/11/20241106104540586-vqn8.pdf",
+      "bytes": 215990,
+      "sha256": "c6b3bd4642a9a51a391ee052276d3b17fe04ec2d4d9b5833f602c0aa6eb691fa",
+      "snapshot": "328fb425745a0ffeafdcc4d3d514c8605bfb63f166759915acdb4f4fbc68d0c4.pdf"
+    },
+    {
+      "url": "https://structure.tongji.edu.cn/info/1004/7225.htm",
+      "catalog_codes": [
+        "2026189"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://structure.tongji.edu.cn/info/1004/7225.htm",
+      "bytes": 6782,
+      "sha256": "528390d1ad3e1229a5e8c88be50ec79024b390434f509d51d35ff0f5359eafae",
+      "snapshot": "642ba08fe4e39b4192cd607c28bb52e52e228819885b24db14dbfd1278d36a38.txt"
+    },
+    {
+      "url": "https://tc.ccf.org.cn/tcdb/news/2025-12-19/918824.shtml",
+      "catalog_codes": [
+        "2026142"
+      ],
+      "title": "新闻动态-第二届CCF中国数据大会精彩回顾",
+      "status": "retrieved",
+      "final_url": "https://tc.ccf.org.cn/tcdb/news/2025-12-19/918824.shtml",
+      "bytes": 12414,
+      "sha256": "401ae9c493bb91418e3b70dca3bd03a9d64f7de1962123e5525081b077c0e47b",
+      "snapshot": "7629c68e6c974dcc883678714c3b82bedc34026fd2ecb0ebf858cfbd16193a19.txt"
+    },
+    {
+      "url": "https://tdbgi.edu.tm/en/notice/581",
+      "catalog_codes": [
+        "2026125"
+      ],
+      "title": "第五届材料力学奥赛邀请通知",
+      "status": "retrieved",
+      "final_url": "https://tdbgi.edu.tm/en/notice/581",
+      "bytes": 2482,
+      "sha256": "3f131474c90ccac97cf0ea649c4d70942e301aba8b4f6c52c4ecdbb3dd7fd9d3",
+      "snapshot": "9f25b6639139a51101356642afb6d4aefecb5068d4a1dd2e22592576cee795a5.txt"
+    },
+    {
+      "url": "https://tjjt.tongji.edu.cn/info/1588/11295.htm",
+      "catalog_codes": [
+        "2026057"
+      ],
+      "title": "第九届全国大学生物流设计大赛同济校内选拔通知",
+      "status": "retrieved",
+      "final_url": "https://tjjt.tongji.edu.cn/info/1588/11295.htm",
+      "bytes": 1877,
+      "sha256": "8f45db02434ddc3a165c6fce3a755e9a9baed117d61b66449a2ab526eb92d2d7",
+      "snapshot": "45788cb6389e74cb5426617a7104086ceaca8439b3f8ec7069e1ddbaccbf83c1.txt"
+    },
+    {
+      "url": "https://tjwm.tongji.edu.cn/info/1005/1176.htm",
+      "catalog_codes": [
+        "2026247"
+      ],
+      "title": "第六届同济大学“使命与担当”社会实践与创新竞赛通知-同济大学精神文明网",
+      "status": "retrieved",
+      "final_url": "https://tjwm.tongji.edu.cn/info/1005/1176.htm",
+      "bytes": 4681,
+      "sha256": "b591167c04a5e28a4cc8385d31bb3a6a88d104924833c109b86645dc64ffab54",
+      "snapshot": "fbf6e93cbee9ec5de4012fcb4091afeb0712f4c71cd6f42a31918aa82158bd7c.txt"
+    },
+    {
+      "url": "https://tops.tongji.edu.cn/info/1002/2726.htm",
+      "catalog_codes": [
+        "2026166"
+      ],
+      "title": "2026第四届OnSite自动驾驶算法挑战赛上海场线下交流会举行-TOPS课题组-同济大学",
+      "status": "retrieved",
+      "final_url": "https://tops.tongji.edu.cn/info/1002/2726.htm",
+      "bytes": 6164,
+      "sha256": "4da6c058fc376399b5dbcc2e12722df751e3b36a73cc091c7f120b1a9d990365",
+      "snapshot": "7ab21f6c004c62919dca91ba26edb5cec0fbc302d2df23ad40761b94121c5ba9.txt"
+    },
+    {
+      "url": "https://trans.dlut.edu.cn/info/1021/2300.htm",
+      "catalog_codes": [
+        "2026169"
+      ],
+      "title": "第三届中国城市轨道交通科技创新创业大赛报名通知-交通学院",
+      "status": "retrieved",
+      "final_url": "https://trans.dlut.edu.cn/info/1021/2300.htm",
+      "bytes": 4377,
+      "sha256": "c9b494c11e97f3dd66eb73273e7e094357996e65c8176ba111d1ab0e9de6f30d",
+      "snapshot": "b149c531a89040d1b88c6b2f1201f9eb095c4220053c7ae14b6dbfb83b74d2f7.txt"
+    },
+    {
+      "url": "https://tumu.bucea.edu.cn/xyxw/0a70a22cd0ff4da6842af9c31e7a7068.htm",
+      "catalog_codes": [
+        "2026167"
+      ],
+      "title": "第二十一届交通运输科技大赛实施方案",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://turkmenistan.gov.tm/en/post/102661/energy-institute-turkmenistan-invites-students-5th-international-olympiad-theoretical-mechanics",
+      "catalog_codes": [
+        "2026126"
+      ],
+      "title": "第五届理论力学奥赛邀请",
+      "status": "retrieved",
+      "final_url": "https://turkmenistan.gov.tm/en/post/102661/energy-institute-turkmenistan-invites-students-5th-international-olympiad-theoretical-mechanics",
+      "bytes": 3538,
+      "sha256": "1d8a79f0aecac3b5a2caa66a7274ca028ff4838040a3498dc1085ef4d5776482",
+      "snapshot": "91695f2bc02d06320ae9a2d98425281b72a08d394f0ae8ed82504c6fe1d5fabe.txt"
+    },
+    {
+      "url": "https://tvs.cuc.edu.cn/2023/0306/c240a202526/pagem.htm",
+      "catalog_codes": [
+        "2026217"
+      ],
+      "title": "“半夏”将至，第二十届“半夏”征片正式开启",
+      "status": "retrieved",
+      "final_url": "https://tvs.cuc.edu.cn/2023/0306/c240a202526/pagem.htm",
+      "bytes": 9313,
+      "sha256": "131c5f35f0bc690db20159b4e91b8e2e671ac5cdd3826b4678ee812b268a34f1",
+      "snapshot": "d721434ebb550396000b43edbd3486260dfe6d707aa9420654c8205574dc1bbe.txt"
+    },
+    {
+      "url": "https://ucc.fltrp.com/c/2026-03-27/541272.shtml",
+      "catalog_codes": [
+        "2026081"
+      ],
+      "title": "2026英语组国际传播综合能力赛项样题及评分标准",
+      "status": "retrieved",
+      "final_url": "https://ucc.fltrp.com/c/2026-03-27/541272.shtml",
+      "bytes": 50514,
+      "sha256": "d9c92bc918b28a6f8bf708c6632c8de8105125f61f07fbac0a9f4f5f4b3d7998",
+      "snapshot": "c9b225124314b2a21734cb4e4bf3ef28d23e7818cb1b933f2133ca8f15fd4694.txt"
+    },
+    {
+      "url": "https://ucc.fltrp.com/c/2026-09-04/519783.shtml",
+      "catalog_codes": [
+        "2026079"
+      ],
+      "title": "2026德语组比赛样题（省赛）",
+      "status": "retrieved",
+      "final_url": "https://ucc.fltrp.com/c/2026-09-04/519783.shtml",
+      "bytes": 637,
+      "sha256": "da3fc0eb75a5061af037eaf8f5904f4119d9db96042f68ad1239097455cebbf6",
+      "snapshot": "e35f7f4e95f92ae951ea107c2391fb0cc053ab188b6ce7e4399b705d38dd69e4.txt"
+    },
+    {
+      "url": "https://ucc.fltrp.com/c/2026-09-04/519795.shtml",
+      "catalog_codes": [
+        "2026080"
+      ],
+      "title": "2026日语组比赛样题（省赛）",
+      "status": "retrieved",
+      "final_url": "https://ucc.fltrp.com/c/2026-09-04/519795.shtml",
+      "bytes": 636,
+      "sha256": "d53d3ba752dfb1d0a20c8c11f921fbddbc650cd018f28e8c62ba85f439ac21c5",
+      "snapshot": "c0c5cfe101b5a3e60c44b5d7470d1bdb8c7558223deeffd7e2677fc25b87675d.txt"
+    },
+    {
+      "url": "https://uia2026bcn.org/international-student-competition/",
+      "catalog_codes": [
+        "2026050"
+      ],
+      "title": "UIA2026国际学生竞赛专题",
+      "status": "retrieved",
+      "final_url": "https://uia2026bcn.org/international-student-competition/",
+      "bytes": 27480,
+      "sha256": "e5af4aa0c5ba3d7fcc7b5f964df605af8d2083f99e13fecdf43ff579734e029a",
+      "snapshot": "c497a198bcc48bf8f6a7d4c734f731cc43557fbbe071eff0109bdf73da08877b.txt"
+    },
+    {
+      "url": "https://uiaec.ujs.edu.cn/news_show.php?id=234",
+      "catalog_codes": [
+        "2026013"
+      ],
+      "title": "第十二届办赛通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": 483
+    },
+    {
+      "url": "https://univ.ciciec.com/nr.jsp?_np=0_407_1&m31pageno=2",
+      "catalog_codes": [
+        "2026016"
+      ],
+      "title": "第十届赛事及企业命题通知列表",
+      "status": "retrieved",
+      "final_url": "https://univ.ciciec.com/nr.jsp?_np=0_407_1&m31pageno=2",
+      "bytes": 164177,
+      "sha256": "4a590459c8298f4bbdc5b03044b64c8840f8cafda9316f122bc70bee50c0267e",
+      "snapshot": "76d982ddf73be8caf902474088679c7fc759cb81b7c5a1fb8c415b4bcd75b093.txt"
+    },
+    {
+      "url": "https://waiyu.usst.edu.cn/_upload/article/files/c3/0d/55ef147c4dcca83e7c8459ba366e/83167ab2-de90-4ad4-8e08-8c932f1afc5a.pdf",
+      "catalog_codes": [
+        "2026200"
+      ],
+      "title": "<table id=\"e1\">",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 404
+    },
+    {
+      "url": "https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/1033eff1-a5c0-49c4-badb-991b00bf2633.pdf",
+      "catalog_codes": [
+        "2026085"
+      ],
+      "title": "关于举办第十四届全国大学生光电设计竞赛的通知",
+      "status": "retrieved",
+      "final_url": "https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/1033eff1-a5c0-49c4-badb-991b00bf2633.pdf",
+      "bytes": 402914,
+      "sha256": "389ff23a80ff9d0fcbc69beff697901627462fa2d238148db5edf912e2869d95",
+      "snapshot": "836edd1b5c4218e3b00d29f2fb18b6633fbe588979c741e20e23eb49e85a7975.pdf"
+    },
+    {
+      "url": "https://webplus.hainnu.edu.cn/_s58/2026/0515/c2514a165201/page.psp",
+      "catalog_codes": [
+        "2026239"
+      ],
+      "title": "第十一届中国数据新闻大赛暨第二届AIGC应用大赛通知",
+      "status": "retrieved",
+      "final_url": "https://webplus.hainnu.edu.cn/_s58/2026/0515/c2514a165201/page.psp",
+      "bytes": 33283,
+      "sha256": "cdfc292f2bfd990342b9d3f3bc1a81a6596658b6e2d52f9dc98043b7ee83080f",
+      "snapshot": "271f1ac2ffdb3f5fcbf96586a6fc4643264b3086ac58f77a685afac050f96173.txt"
+    },
+    {
+      "url": "https://www.3chuang.net/",
+      "catalog_codes": [
+        "2026059"
+      ],
+      "title": "三创赛官方平台及第十六届赛事动态",
+      "status": "retrieved",
+      "final_url": "https://www.3chuang.net/",
+      "bytes": 9,
+      "sha256": "07391048d81293b6d274b0bad0ce9b3a9708dc24c30fe8c218b3926ea28d5d37",
+      "snapshot": "449fa75fb9b01ecf93ecd85952177f500843926321118de71430d4512c803af6.txt"
+    },
+    {
+      "url": "https://www.5iidea.com/contents/47748",
+      "catalog_codes": [
+        "2026234"
+      ],
+      "title": "创意星球 - 〖重要通知〗大学生广告艺术节学院奖2026春季征集大赛上传通道正式开启！这些事项必看→",
+      "status": "retrieved",
+      "final_url": "https://www.5iidea.com/contents/47748",
+      "bytes": 5075,
+      "sha256": "2ee2f249f8953d959d397a8f27f5bb51d24b49d973767d3edf0358b9ec5c8063",
+      "snapshot": "13e1d22cfa5621dcde5b25c4787c1d86e4c88323537754360e7cb28208fd5ab1.txt"
+    },
+    {
+      "url": "https://www.ad-young.com/Home/PublicArticleContent?id=A20260311134538&liname=1&year=2026&ba=5",
+      "catalog_codes": [
+        "2026228"
+      ],
+      "title": "2026第三十五届时报金犊奖参赛办法",
+      "status": "retrieved",
+      "final_url": "https://www.ad-young.com/Home/PublicArticleContent?id=A20260311134538&liname=1&year=2026&ba=5",
+      "bytes": 2468,
+      "sha256": "df65be9df8df3561dc6cccbea687a9ff1acc486183abef238228695285bc8a28",
+      "snapshot": "24c3e039368e09dd84f6a844dfb0541a7703aa95eb8c8382276b787a70eaf580.txt"
+    },
+    {
+      "url": "https://www.adobeacp.com/content/news?id=1761116432915444",
+      "catalog_codes": [
+        "2026220"
+      ],
+      "title": "2026 ACP世界大赛中国赛区海选开始！",
+      "status": "retrieved",
+      "final_url": "https://www.adobeacp.com/content/news?id=1761116432915444",
+      "bytes": 3525,
+      "sha256": "135a5ba423a6553df4529ff11f505575151b8914fa141d0bd960843182df957b",
+      "snapshot": "9c9256df6ef931fe3286280c291072f3d2c3dc56447241121a707a39721d4d41.txt"
+    },
+    {
+      "url": "https://www.ahpu.edu.cn/ysxy/2185/list.htm",
+      "catalog_codes": [
+        "2026163"
+      ],
+      "title": "2026第十二届人居环境设计学年奖方案列表",
+      "status": "retrieved",
+      "final_url": "https://www.ahpu.edu.cn/ysxy/2185/list.htm",
+      "bytes": 2233,
+      "sha256": "26b3e9776e01ac754be1550de37fa8a64641c572b3bc3fb5c1dfab18f30d94b6",
+      "snapshot": "f9c6ae46b49a5567f884710077866ad56a6489895a02c5673bbf3a6795072be1.txt"
+    },
+    {
+      "url": "https://www.ai-learning.net/dstz/37119.jhtml",
+      "catalog_codes": [
+        "2026075"
+      ],
+      "title": "2026年第十二届统计建模大赛通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+      "catalog_codes": [
+        "2026020"
+      ],
+      "title": "AI+开源赛题与规则",
+      "status": "retrieved",
+      "final_url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+      "bytes": 9567,
+      "sha256": "e9d1a47a6bca28d0618690add2c9302d2d2d15fd5dc5030ca1fe9ea176bbc1c9",
+      "snapshot": "3147583004c547c62435a237629cdf6e2e2d2707ae351c614974b06c0db630e5.txt"
+    },
+    {
+      "url": "https://www.asce.org/communities/student-members/conferences/asce-civil-engineering-student-championships",
+      "catalog_codes": [
+        "2026076"
+      ],
+      "title": "ASCE Civil Engineering Student Championships",
+      "status": "retrieved",
+      "final_url": "https://www.asce.org/communities/student-members/conferences/asce-civil-engineering-student-championships",
+      "bytes": 1706,
+      "sha256": "70a260cbb1109f957cd674af4ada06777b91ecc8fcc7b0c7479c727200beeda0",
+      "snapshot": "cd2c93f467a5a87801434225dc2f9d3d6e110e0d929569e2253885dedf34a8c8.txt"
+    },
+    {
+      "url": "https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2026-student-cfe",
+      "catalog_codes": [
+        "2026154"
+      ],
+      "title": "2026 ASLA Student Awards Call for Entries",
+      "status": "retrieved",
+      "final_url": "https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2026-student-cfe",
+      "bytes": 44963,
+      "sha256": "b87f979a8224d9788502524ab05b5aaae08ab44ce837ade29f87284eda459395",
+      "snapshot": "cab9deaf1b602a8724f6bea6f86ccbac67321c00be73d11bbd0fa0abf7889f90.txt"
+    },
+    {
+      "url": "https://www.biodesignchallenge.org/judging",
+      "catalog_codes": [
+        "2026180"
+      ],
+      "title": "BDC评审机制与量表",
+      "status": "retrieved",
+      "final_url": "https://www.biodesignchallenge.org/judging",
+      "bytes": 10678,
+      "sha256": "f9306a49553d8e80ef990bd2130313cdb98ee9e4474b93da55b553fa2ba136c1",
+      "snapshot": "58eee9764ec18347b85c25f100150afb70e80572e6b3e5721929249b2eeda8f0.txt"
+    },
+    {
+      "url": "https://www.bjiff.com/xghd/xqdy/kmlt/202512/t20251224_188579_ext.html",
+      "catalog_codes": [
+        "2026222"
+      ],
+      "title": "北京国际电影节",
+      "status": "retrieved",
+      "final_url": "https://www.bjiff.com/xghd/xqdy/kmlt/202512/t20251224_188579_ext.html",
+      "bytes": 6655,
+      "sha256": "108091e1b781063aa6305c7092cace2dca1c885277213ec0042fa90f28758d38",
+      "snapshot": "609841440dcd40050172af510bc9006ed183e3663ea3e8fe1e33240f46452cbf.txt"
+    },
+    {
+      "url": "https://www.caa.org.cn/article/207/1368.html",
+      "catalog_codes": [
+        "2026159"
+      ],
+      "title": "中国科协关于举办第二十一届中国科协年会的通知-中国自动化学会",
+      "status": "retrieved",
+      "final_url": "https://www.caa.org.cn/article/207/1368.html",
+      "bytes": 11919,
+      "sha256": "e498f72b1a046ebcec3c078b65ba4636c79a9c8c626cd9279221f46b684a378c",
+      "snapshot": "38150008a123b75a072b5e916909556b5bacb1379980a90980305662b9be7c51.txt"
+    },
+    {
+      "url": "https://www.caairobot.com/post/notification-shengjicengcixuanbasai-craic2026/",
+      "catalog_codes": [
+        "2026024"
+      ],
+      "title": "第二十八届省级层次选拔赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.caairobot.com/post/notification-shengjicengcixuanbasai-craic2026/",
+      "bytes": 788,
+      "sha256": "2195cbc9d5139d8c687591a56f88671c4faa4274ef8b0e62511cfd9b393ed5a6",
+      "snapshot": "ec133426fc647a6be86c65a26a178a0f88a6f92a88f0883b1915c81fa60c3ec6.txt"
+    },
+    {
+      "url": "https://www.cac.gov.cn/2025-09/09/c_1759136409566616.htm",
+      "catalog_codes": [
+        "2026147"
+      ],
+      "title": "第九届强网杯正式启动",
+      "status": "retrieved",
+      "final_url": "https://www.cac.gov.cn/2025-09/09/c_1759136409566616.htm",
+      "bytes": 2318,
+      "sha256": "9d779872c8ef823f359a87b64ea3091e06b8d2a7d20fc58cf3ff0898ee20a12d",
+      "snapshot": "5840c2925b9b6ab894243551880f289bfdb62953b3b182591fdcfec2bf27fcc3.txt"
+    },
+    {
+      "url": "https://www.cast.org.cn/xw/qgxh/XSJL/art/2025/art_7870e66f1c654904b539a13828b911eb.html",
+      "catalog_codes": [
+        "2026102"
+      ],
+      "title": "2025全球人工智能技术创新大赛硬件挑战赛收官",
+      "status": "retrieved",
+      "final_url": "https://www.cast.org.cn/xw/qgxh/XSJL/art/2025/art_7870e66f1c654904b539a13828b911eb.html",
+      "bytes": 3000,
+      "sha256": "bdb0a01874adcd7d8d72a599ae2309fd5bc82be18879ea0c6011ee54dc338581",
+      "snapshot": "a057f7848a28d567120b431ee112c15a75d8a7de37591c43cae4e3dca51c1af3.txt"
+    },
+    {
+      "url": "https://www.ccava.cn/newsinfo/11226640.html",
+      "catalog_codes": [
+        "2026235"
+      ],
+      "title": "2026年度全国高校影视作品联合展映活动作品征集通知",
+      "status": "retrieved",
+      "final_url": "https://www.ccava.cn/newsinfo/11226640.html",
+      "bytes": 101,
+      "sha256": "c8a4110f1920a769831028a4380289e779cc401a9282a678421f1079a1cb9281",
+      "snapshot": "6228097963bda39df7896f27983e03a65a61079449f2f6f101b0a873aaf4005e.txt"
+    },
+    {
+      "url": "https://www.ccava.cn/newsinfo/8472199.html",
+      "catalog_codes": [
+        "2026235"
+      ],
+      "title": "2025年度全国高校影视作品联合展映征集通知",
+      "status": "retrieved",
+      "final_url": "https://www.ccava.cn/newsinfo/8472199.html",
+      "bytes": 131,
+      "sha256": "4c6cadc54b8c7ac6c944b08d7446dc2d84c3f493a19ecabf91e0d570111d00d5",
+      "snapshot": "30439ea12f75609dba229efbac579f3fc312e62dbd1ad6a21db3eb663c75ac6d.txt"
+    },
+    {
+      "url": "https://www.ccen.com.cn/info/1150/5937.htm",
+      "catalog_codes": [
+        "2026055"
+      ],
+      "title": "2026全国数字建筑创新应用大赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.ccen.com.cn/info/1150/5937.htm",
+      "bytes": 7614,
+      "sha256": "1dc9e6d3f32f37328e7e7c465aa3cf55c0632ac6abfb552fdfe4cf1f7c9606a4",
+      "snapshot": "ca053320d2feea30d3c06d4762dd2c19b3d26710b83e234918a68342c4e75126.txt"
+    },
+    {
+      "url": "https://www.ccfcs.cn/index/pages/yxs",
+      "catalog_codes": [
+        "2026233"
+      ],
+      "title": "中创节",
+      "status": "retrieved",
+      "final_url": "https://www.ccfcs.cn/index/pages/yxs",
+      "bytes": 8438,
+      "sha256": "92391271845bf350d0c085a51f28d372d033b53750e4e721913e45c9839091e1",
+      "snapshot": "ec9e6584d59533d91eced9d83ff638c3ba0be38b48ddb2e5c4daa855711c4912.txt"
+    },
+    {
+      "url": "https://www.cdcm.uestc.edu.cn/info/1055/1865.htm",
+      "catalog_codes": [
+        "2026032"
+      ],
+      "title": "2026金砖未来科幻创作创新赛项通知",
+      "status": "retrieved",
+      "final_url": "https://www.cdcm.uestc.edu.cn/info/1055/1865.htm",
+      "bytes": 22768,
+      "sha256": "aa4d649282b3e61b284bf4e22444224cfddacd12ecf1faa6e4b14c8138ec733a",
+      "snapshot": "e67ff26c523d3e9d1f273fa5527be931f5efb14e8acb173b4b1443bfabb30f86.txt"
+    },
+    {
+      "url": "https://www.cgrhfff.com/forum/mobile-image-project/?lang=en",
+      "catalog_codes": [
+        "2026227"
+      ],
+      "title": "金鸡手机电影计划 - 金鸡百花电影节",
+      "status": "retrieved",
+      "final_url": "https://www.cgrhfff.com/forum/mobile-image-project/?lang=en",
+      "bytes": 3039,
+      "sha256": "0f002e051382e665ca4b6cee4241132ed6c21eed1558921d225ff0bd421ccaf6",
+      "snapshot": "20c2be4400d2741a10adad4820590bc2e29e3207325a4716571c7ff6725bc646.txt"
+    },
+    {
+      "url": "https://www.cgs.org.cn/",
+      "catalog_codes": [
+        "2026112"
+      ],
+      "title": "第十一届创新杯地球物理知识竞赛报道",
+      "status": "retrieved",
+      "final_url": "https://www.cgs.org.cn/",
+      "bytes": 9926,
+      "sha256": "2be145ca765c9212ca7841560e6006d465206cc9805eea6e13b248c7c94439fb",
+      "snapshot": "44e7de93a6dd3929dd351fa306cc312a20bab28ad111538caa118fa5c6280edf.txt"
+    },
+    {
+      "url": "https://www.chinaccsis.com/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/全国大学生创新体验竞赛章程_已签章.pdf",
+      "catalog_codes": [
+        "2026184"
+      ],
+      "title": "全国大学生创新体验竞赛章程（第九届通知附件）",
+      "status": "retrieved",
+      "final_url": "https://www.chinaccsis.com/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/全国大学生创新体验竞赛章程_已签章.pdf",
+      "bytes": 339591,
+      "sha256": "a76d965e492e1b681f756e28c8102348925f3afb43e9625f0c25b38316ec507f",
+      "snapshot": "9885dde1bbf741ebe93d263a3e2349b14e208b45ad6aeb573440237b985f6a9e.pdf"
+    },
+    {
+      "url": "https://www.chinacompositesexpo.com/cn/news-detail-128-17488.html",
+      "catalog_codes": [
+        "2026115"
+      ],
+      "title": "2026 CCE杯第十一届通知",
+      "status": "retrieved",
+      "final_url": "https://www.chinacompositesexpo.com/cn/news-detail-128-17488.html",
+      "bytes": 7673,
+      "sha256": "c34dcb8e836c3490c3e7d3af3e0951d6c6685c02e37c6834ab792658ff247a9b",
+      "snapshot": "759305fad8504c5f465ea42dbc7e4d3c0d959b8804ee2ee9c463434844e125bc.txt"
+    },
+    {
+      "url": "https://www.chts.cn/xs/TZGG/art/2026/art_4ba927087a724d6b998e56fc7725d06a.html",
+      "catalog_codes": [
+        "2026191"
+      ],
+      "title": "2026世界大学生桥梁设计大赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.chts.cn/xs/TZGG/art/2026/art_4ba927087a724d6b998e56fc7725d06a.html",
+      "bytes": 7668,
+      "sha256": "df093795ec65efe16954bd015e5c9d06bacc1b24368438f4bafecb51e1033930",
+      "snapshot": "8666e3925d93cd1376b9633f150b1037f2529868103457d062b396cf540389f7.txt"
+    },
+    {
+      "url": "https://www.ciscn.cn/index.php/announcement?page=2",
+      "catalog_codes": [
+        "2026044"
+      ],
+      "title": "第十九届信息安全竞赛官方公告索引",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://www.cmes.org/notice/010c5f85554e440e99d702008b58a26f.html",
+      "catalog_codes": [
+        "2026037",
+        "2026038",
+        "2026039"
+      ],
+      "title": "2026年中国大学生机械工程创新创意大赛赛事公告",
+      "status": "retrieved",
+      "final_url": "https://www.cmes.org/notice/010c5f85554e440e99d702008b58a26f.html",
+      "bytes": 6930,
+      "sha256": "10f17e0c6823c32c549051838fc1cdb5e7f5f0fccfbd85fb8304058c62f9384f",
+      "snapshot": "722d4806282da7e896a071b436959893e37eb6feaa9a3f34955e924dc76cc7d2.txt"
+    },
+    {
+      "url": "https://www.cmit.cn/html/tongzhigonggao/show-144-45826-1.html",
+      "catalog_codes": [
+        "2026089"
+      ],
+      "title": "关于举办2026年第十四届全国大学生数字媒体科技作品及创意竞赛的通知",
+      "status": "retrieved",
+      "final_url": "https://www.cmit.cn/html/tongzhigonggao/show-144-45826-1.html",
+      "bytes": 11887,
+      "sha256": "6325e82a85c3ec5b047bf18561191130fcbc72d3fa4536243d72347dd1d678a0",
+      "snapshot": "527feeefceb75d0a75fc2b804cd24d9204dd0291b588a8e5c22d510e49a41e42.txt"
+    },
+    {
+      "url": "https://www.cms.org.cn/Home/comp/comp_details/id/1449.html",
+      "catalog_codes": [
+        "2026073"
+      ],
+      "title": "关于举办第十八届全国大学生数学竞赛的通知",
+      "status": "retrieved",
+      "final_url": "https://www.cms.org.cn/Home/comp/comp_details/id/1449.html",
+      "bytes": 6030,
+      "sha256": "27c4b5b9dc175d6b0003b642cfb8906a2e896abc77fa42b640bff4239786f291",
+      "snapshot": "b276f3adb45c4bd1502fc37319e738d92a712020e8da635bb34626bc8f3a1c0d.txt"
+    },
+    {
+      "url": "https://www.concretedragon.org/wp-content/uploads/2026ICDBC-国际大学生混凝土龙舟邀请赛赛题-1.pdf",
+      "catalog_codes": [
+        "2026185"
+      ],
+      "title": "2026第八届国际大学生混凝土龙舟邀请赛赛题",
+      "status": "retrieved",
+      "final_url": "https://www.concretedragon.org/wp-content/uploads/2026ICDBC-国际大学生混凝土龙舟邀请赛赛题-1.pdf",
+      "bytes": 1045167,
+      "sha256": "ab8ea593129a2b293a855f26978b24767e76d96b87af5ca70bcec5b221887e68",
+      "snapshot": "56f31cd3338a27f0391c7588cced056033e18cbc927c2be32eff7695dfa5b3ee.pdf"
+    },
+    {
+      "url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2026/results/index.html",
+      "catalog_codes": [
+        "2026183"
+      ],
+      "title": "The Mathematical Contest in Modeling",
+      "status": "retrieved",
+      "final_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2026/results/index.html",
+      "bytes": 4967,
+      "sha256": "085c086df75b5f2789f0f5173a3d733d7a1cad429e21eb6f610e4c9b1676d9a6",
+      "snapshot": "37bd413fcc9d86d1aad51a497d815219061fc422f709e6c7e01958ac809b9bdc.txt"
+    },
+    {
+      "url": "https://www.crystal-cabin-award.com/winners",
+      "catalog_codes": [
+        "2026181"
+      ],
+      "title": "CRYSTAL CABIN AWARD - Winners",
+      "status": "retrieved",
+      "final_url": "https://www.crystal-cabin-award.com/winners",
+      "bytes": 2821,
+      "sha256": "14d988e3e1b0d8e12cfd121f9d01ad338ed8224c17d8915d40ea6f8081176684",
+      "snapshot": "9b86bccdc7aef42663f2266d8028502403d190095a87b4730f3efed15a7429af.txt"
+    },
+    {
+      "url": "https://www.csfcm.org.cn/site/content/4191.html",
+      "catalog_codes": [
+        "2026124"
+      ],
+      "title": "第十届光威杯启动申报通知",
+      "status": "retrieved",
+      "final_url": "https://www.csfcm.org.cn/site/content/4191.html",
+      "bytes": 8138,
+      "sha256": "fcd337da2f7d6f4bc2fa8fe2d204ba31b9e03ac89164314f949a37c312b0e3a1",
+      "snapshot": "662d34efbabb8420db95c8f9497a48c8cce7e5e72a83728477ad48f9ee4b7460.txt"
+    },
+    {
+      "url": "https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+      "catalog_codes": [
+        "2026164"
+      ],
+      "title": "国地杯第八届全国大学生自然资源科技作品大赛第一号通知",
+      "status": "retrieved",
+      "final_url": "https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+      "bytes": 10565,
+      "sha256": "bfc6cc653dd2e6d2d66bff7c29a81939e91a9bc9323ee7a00479852b346e185b",
+      "snapshot": "5ff4c156d80363888ab140cb9e755e4dc277a861ba4212ccb39ecd15b7d333c7.txt"
+    },
+    {
+      "url": "https://www.cuadc.cn/upload/20260508155652f.pdf",
+      "catalog_codes": [
+        "2026119"
+      ],
+      "title": "2026 CUADC竞赛规则 Ver20260330",
+      "status": "retrieved",
+      "final_url": "https://www.cuadc.cn/upload/20260508155652f.pdf",
+      "bytes": 2361851,
+      "sha256": "34edb9727737bd4c3495a1502b2672f6f2242998c6110577f136335c42e199e2",
+      "snapshot": "72fb4d9dc879127093f532fb609b590833254302e96b7fee6837f028cd326623.pdf"
+    },
+    {
+      "url": "https://www.di-award.org/zh/rules.html",
+      "catalog_codes": [
+        "2026249"
+      ],
+      "title": "赛事规则 - 中国设计智造大奖（DIA）官方网站 - Design Intelligence Award",
+      "status": "retrieved",
+      "final_url": "https://www.di-award.org/zh/rules.html",
+      "bytes": 22110,
+      "sha256": "378f31ba84f659e1e3372fab5e36cc50f8b71d7344ff0f8d343d001fb0f9435d",
+      "snapshot": "2e9d2e7ad8ae302305d3f8891d8eaaa907b1040b1daa804711358d7fd968ff5b.txt"
+    },
+    {
+      "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+      "catalog_codes": [
+        "2026179"
+      ],
+      "title": "James Dyson Award 2026征集公告",
+      "status": "retrieved",
+      "final_url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+      "bytes": 4655,
+      "sha256": "307dfbf80d79013c22d3dd342ac66a6593166b099453f76cad29fc5cc79c9c88",
+      "snapshot": "cfd8977ab59d210bf64659a1e243aabaff583075f1caae47b1ea3a7ebb3d88c4.txt"
+    },
+    {
+      "url": "https://www.franzliszt.com.cn/col.jsp?id=134",
+      "catalog_codes": [
+        "2026230"
+      ],
+      "title": "李斯特国际青少年钢琴大赛 - 我的网站",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://www.fwwb.org.cn/",
+      "catalog_codes": [
+        "2026046"
+      ],
+      "title": "第十七届服创大赛官方门户",
+      "status": "retrieved",
+      "final_url": "https://www.fwwb.org.cn/",
+      "bytes": 4879,
+      "sha256": "84a9e34a703092650413346692fa1798506023d7dfc0109969d53632fe6df1de",
+      "snapshot": "1879ed25d780a494150fb4ef65fa5094cca92e366d3dccc150748af4287b9576.txt"
+    },
+    {
+      "url": "https://www.g-ican.com/news/details?id=234",
+      "catalog_codes": [
+        "2026006"
+      ],
+      "title": "第二十届iCAN官网通知",
+      "status": "retrieved",
+      "final_url": "https://www.g-ican.com/news/details?id=234",
+      "bytes": 107,
+      "sha256": "60dfa24b7bd9da4dd10472d2cdd771a9a80185fdbee3a55087be76189e51d299",
+      "snapshot": "5f166d29149a222923f33d0eed3c77a79dc752a4bb2796a0c6b328edf7101ef9.txt"
+    },
+    {
+      "url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+      "catalog_codes": [
+        "2026113"
+      ],
+      "title": "第八届地质技能竞赛二号通知与2026修订章程",
+      "status": "retrieved",
+      "final_url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+      "bytes": 1194086,
+      "sha256": "887c88770a1af9bcadb66564bfc53cbbe2311534319b6491f62589f4dac5f776",
+      "snapshot": "01ae71b611d40ee80b66b248caeaa0255d5ddc9c186f62b9fa9eefd2a4e2df86.pdf"
+    },
+    {
+      "url": "https://www.gjcxcy.cn/PublicColumn/Notice/ea09170e-3609-4ca3-9b9d-aaa79fc04d68",
+      "catalog_codes": [
+        "2026007"
+      ],
+      "title": "第十九届年会准备工作通知",
+      "status": "retrieved",
+      "final_url": "https://www.gjcxcy.cn/PublicColumn/Notice/ea09170e-3609-4ca3-9b9d-aaa79fc04d68",
+      "bytes": 4887,
+      "sha256": "36bbab6d2c62e75d485298bd215009919efb35483330b09c90e604b38c3de0ce",
+      "snapshot": "0946d5e31c8eaaedc8a22f1b2620acf48cd939466b8bd5dc8a3b9627308ec1b3.txt"
+    },
+    {
+      "url": "https://www.glmu.edu.cn/jwc/info/1242/6682.htm",
+      "catalog_codes": [
+        "2026215"
+      ],
+      "title": "关于举行第八届全国大学生智能技术应用大赛校级选拔赛的通知-桂林医科大学教务处",
+      "status": "retrieved",
+      "final_url": "https://www.glmu.edu.cn/jwc/info/1242/6682.htm",
+      "bytes": 5351,
+      "sha256": "e27d1c5281e7f79f5d26708db8a9c7a6f271dedc0680652fd155a94b084e3605",
+      "snapshot": "291949ab01c4fd621d5175c5f027b200d19a7993d3eaaf0863da6c7a7e338a72.txt"
+    },
+    {
+      "url": "https://www.goethe.de/ins/cn/de/m/spr/eng/debattierwettbewerb-/15-debattierwettbewerb.html",
+      "catalog_codes": [
+        "2026203"
+      ],
+      "title": "2025第十五届全国高校德语辩论赛通知",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 403
+    },
+    {
+      "url": "https://www.gzcc.edu.cn/sjjxzx/upload/files/2025/11/4be560d9fc410536.pdf",
+      "catalog_codes": [
+        "2026091"
+      ],
+      "title": "第十届米兰设计周高校设计优秀作品展通知",
+      "status": "retrieved",
+      "final_url": "https://www.gzcc.edu.cn/sjjxzx/upload/files/2025/11/4be560d9fc410536.pdf",
+      "bytes": 388924,
+      "sha256": "d1defaff6756f743f1793f17ae2163bdcfc4a8d911588fcf599c161bdfe20382",
+      "snapshot": "63b295170d7b6923b0f4ce5e0fd3a7b76c8796729238071780a53741bfa580ef.pdf"
+    },
+    {
+      "url": "https://www.huawei.com/minisite/ict-competition-2025-2026-global/cn/",
+      "catalog_codes": [
+        "2026014"
+      ],
+      "title": "2025—2026全球总决赛专题",
+      "status": "retrieved",
+      "final_url": "https://www.huawei.com/minisite/ict-competition-2025-2026-global/cn/",
+      "bytes": 17706,
+      "sha256": "50d92f863c09a0d4f58db3700427146aaaad9a7a37fe174548164495d63fca36",
+      "snapshot": "01b8f5ad24cc4f611a8910d8f409e0ab37f3ace9e6083f7eff0ec684cd72027f.txt"
+    },
+    {
+      "url": "https://www.hunan.gov.cn/zqt/zcsd/202506/t20250611_33706249.html",
+      "catalog_codes": [
+        "2026114"
+      ],
+      "title": "第十五届全国大学生海洋知识竞赛通知",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Court_Rules-final.pdf",
+      "catalog_codes": [
+        "2026109"
+      ],
+      "title": "2025中国人道法模拟法庭比赛规则",
+      "status": "retrieved",
+      "final_url": "https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Court_Rules-final.pdf",
+      "bytes": 330452,
+      "sha256": "3a57cdfedf32e7b2e712a201ef4bc89b4210ecbe4d10c66aafbe52477ef7eb73",
+      "snapshot": "778035d2e45527c1c42ad3c9bd62858c47fc25cf8bad41674c266e5b54c0376e.pdf"
+    },
+    {
+      "url": "https://www.ilsa.org/History/Jessup%202026/Rules.pdf",
+      "catalog_codes": [
+        "2026106"
+      ],
+      "title": "2026 Jessup Official Rules",
+      "status": "retrieved",
+      "final_url": "https://www.ilsa.org/History/Jessup%202026/Rules.pdf",
+      "bytes": 665605,
+      "sha256": "0164daa3bcaa6838f750542688e65af79c28172101d0637f21019a8dfa2d564d",
+      "snapshot": "7836a3cf654022f18dfc65b83df9aca3b74b6996d5a2eb55ac7c78c25e95dc86.pdf"
+    },
+    {
+      "url": "https://www.isclab.org.cn/2026/04/21/2026年第23届信息安全与对抗技术竞赛通知【更新版】/",
+      "catalog_codes": [
+        "2026045"
+      ],
+      "title": "ISCC2026线上挑战赛更新通知",
+      "status": "retrieved",
+      "final_url": "https://www.isclab.org.cn/2026/04/21/2026年第23届信息安全与对抗技术竞赛通知【更新版】/",
+      "bytes": 6915,
+      "sha256": "2f0847b8cacc3050acc946194eb126087725d808fdeed7c26a2eb4242855ff55",
+      "snapshot": "b5f1b37c97f9cd5a134014d8ad6aad8442913f49e5d5b82b22c9d31e7f8406bc.txt"
+    },
+    {
+      "url": "https://www.itsnet.cn/cd/185.html",
+      "catalog_codes": [
+        "2026058"
+      ],
+      "title": "第十届全国高校智能交通创新与创业大赛比赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.itsnet.cn/cd/185.html",
+      "bytes": 500,
+      "sha256": "b82a770667a8180ae1f026233799b748ba83ec9922cdb7d9396ca0571e8f9264",
+      "snapshot": "0fbbfc683f683222376fe3074ce25be190ef50906d657e1fd831648746225a6f.txt"
+    },
+    {
+      "url": "https://www.jfdaily.com/sgh/detail?id=1719354",
+      "catalog_codes": [
+        "2026226"
+      ],
+      "title": "厉害！徐汇青年乐团喜提“中国区银奖”_上观新闻",
+      "status": "retrieved",
+      "final_url": "https://www.jfdaily.com/sgh/detail?id=1719354",
+      "bytes": 5905,
+      "sha256": "8ae6cfb5a4f9543def70c7624914421f033099cda5228d85ca280de81d737198",
+      "snapshot": "7ba65e1196df0477925303fb0511a6440a0bdcb4493311dffe794643d1b98f0b.txt"
+    },
+    {
+      "url": "https://www.jienengjianpai.org/",
+      "catalog_codes": [
+        "2026036"
+      ],
+      "title": "全国大学生节能减排竞赛官网",
+      "status": "retrieved",
+      "final_url": "https://www.jienengjianpai.org/",
+      "bytes": 2849,
+      "sha256": "f6cb8eaeafdc2252b59910a45fbf7b66ea2bce55702c23e2c025eb881459b3dd",
+      "snapshot": "340b65ddc5a108ae43f6a01f27537b3a8a9eea94583bd833d502a0da58921969.txt"
+    },
+    {
+      "url": "https://www.jila-zouen.org/ja-cn-kr/15688",
+      "catalog_codes": [
+        "2026165"
+      ],
+      "title": "The 18th International Landscape Architectural Symposium of Japan, China and Korea – 日本造園学会,　Japanese Institute of Landscape Architecture",
+      "status": "retrieved",
+      "final_url": "https://www.jila-zouen.org/ja-cn-kr/15688",
+      "bytes": 15282,
+      "sha256": "0ea0929b1edebf291d20b883da459c039322c50ac0565c956287a7ae654f5714",
+      "snapshot": "fa17b5d8d4ea676f548ea92e2beb12e7578b5381f4ec6808b005f256d2e70bdd.txt"
+    },
+    {
+      "url": "https://www.jpworld.cn/match/article_detail/68",
+      "catalog_codes": [
+        "2026194"
+      ],
+      "title": "第四届人民中国杯开赛公告",
+      "status": "retrieved",
+      "final_url": "https://www.jpworld.cn/match/article_detail/68",
+      "bytes": 4915,
+      "sha256": "91c387ad0a2b1d141f319aacd3cdf7ba963cfc5a8f27d110ff057c1392d6fc92",
+      "snapshot": "9cbb6eb2e054679b78906e48931dd6f90dfc1d9ea74c855eb09780d029e56c38.txt"
+    },
+    {
+      "url": "https://www.jss.or.jp/ch/itn/kouryu/",
+      "catalog_codes": [
+        "2026206"
+      ],
+      "title": "中日共创未来项目 | 公益財団法人 日本科学協会",
+      "status": "retrieved",
+      "final_url": "https://www.jss.or.jp/ch/itn/kouryu/",
+      "bytes": 4862,
+      "sha256": "121db2370aad870450203bf412e30b973480d3c2f531846594483ec0eaaf6076",
+      "snapshot": "ac79841f17451565b35e3a8cf6074e1db583915e432c7ef85a8ea00ef909f571.txt"
+    },
+    {
+      "url": "https://www.jxds.tech/dangjie-shiyan-zhinan",
+      "catalog_codes": [
+        "2026004"
+      ],
+      "title": "实验技能赛道参赛指南",
+      "status": "unavailable",
+      "error": "robots_unavailable",
+      "http_status": null
+    },
+    {
+      "url": "https://www.mcm.edu.cn/",
+      "catalog_codes": [
+        "2026074"
+      ],
+      "title": "全国大学生数学建模竞赛官网",
+      "status": "retrieved",
+      "final_url": "https://www.mcm.edu.cn/",
+      "bytes": 2306,
+      "sha256": "78208cfe6a65deb71e747563f055a189e4ee06c8524ca437a10cd6d064398747",
+      "snapshot": "566823863eef6529c0f443690dd864c73a258cbbd255505ba2b757651ad833e8.txt"
+    },
+    {
+      "url": "https://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+      "catalog_codes": [
+        "2026001"
+      ],
+      "title": "教育部2026年办赛通知",
+      "status": "retrieved",
+      "final_url": "http://www.moe.gov.cn/srcsite/A08/s5672/202607/t20260731_1445670.html",
+      "bytes": 15574,
+      "sha256": "03e6653e7c3dfb8e2cf0c81b36f569a74a282e391e58af4b658b7542be30b592",
+      "snapshot": "5ef94f997eea76bcf90c0a2bb3dd2cbaf9de48bde76831122ef4c41e3476c1d8.txt"
+    },
+    {
+      "url": "https://www.ncda.org.cn/dsjs/dssz/",
+      "catalog_codes": [
+        "2026068"
+      ],
+      "title": "NCDA竞赛办法",
+      "status": "retrieved",
+      "final_url": "https://www.ncda.org.cn/dsjs/dssz/",
+      "bytes": 6177,
+      "sha256": "27b9e5a8af3a226d6cbaa8618fb5958e7a7b5024d786d2f95aed815e802a6ca3",
+      "snapshot": "20643fdf24559baa019cf014fb67d7ad59ae4dd6b35daf1a77cf2148992c1dd5.txt"
+    },
+    {
+      "url": "https://www.ncmc.nbtv.cn/xwdsg/nb/40273247.shtml",
+      "catalog_codes": [
+        "2026221"
+      ],
+      "title": "章程丨2025白玉兰国际音乐节宁波赛区·声乐",
+      "status": "unavailable",
+      "error": "robots_disallowed",
+      "http_status": null
+    },
+    {
+      "url": "https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+      "catalog_codes": [
+        "2026168"
+      ],
+      "title": "首届轨道交通科技创新大赛参赛方式",
+      "status": "retrieved",
+      "final_url": "https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+      "bytes": 2017,
+      "sha256": "03bd08321b740c8c77b964aaf9657fb09e6ba7a30c120ee6c542f11a87120193",
+      "snapshot": "519cfbff28f7965b447ad4b74384fe03c92f13eee0642091f06e5b848e2975bc.txt"
+    },
+    {
+      "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+      "catalog_codes": [
+        "2026101"
+      ],
+      "title": "2026瑞萨杯通知",
+      "status": "retrieved",
+      "final_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+      "bytes": 17996,
+      "sha256": "60303443ff827124173c68e40fce26ee1853da53e63b2fb56a357d8bfa0acd17",
+      "snapshot": "82f107a2b888112f406db42a173c1f2d3fcea2a80bcfbe3bf4d5f2c5065f7d46.txt"
+    },
+    {
+      "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+      "catalog_codes": [
+        "2026100"
+      ],
+      "title": "2026英特尔杯嵌入式AI通知",
+      "status": "retrieved",
+      "final_url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+      "bytes": 16253,
+      "sha256": "e6183b24f0d2a82b92860dc0b8cc2d53ba211d21fd647c5b364019f1114cad7c",
+      "snapshot": "68dd5a8f71b88a00bfd4df826257c383105213d515cf8603ef6ecff2c8647823.txt"
+    },
+    {
+      "url": "https://www.planning.org.cn/",
+      "catalog_codes": [
+        "2026160"
+      ],
+      "title": "资料入口（标题待核）",
+      "status": "retrieved",
+      "final_url": "https://www.planning.org.cn/",
+      "bytes": 14090,
+      "sha256": "07d813430f1ac6b7843992d390653e35d0a0e550d166976677643ae0a7c8c485",
+      "snapshot": "e271f0766bd16efc465a4b23f9fde841601426afc86db6314904e9ebc7b92cfd.txt"
+    },
+    {
+      "url": "https://www.red-dot.org/award",
+      "catalog_codes": [
+        "2026065"
+      ],
+      "title": "红点奖官方赛事总览",
+      "status": "retrieved",
+      "final_url": "https://www.red-dot.org/award",
+      "bytes": 1438,
+      "sha256": "4d8cbcf94639197dbbc576fa89612374759df604783f8cf5814f941c64b9452a",
+      "snapshot": "cd05a189071953bb71cd96084b7413bebe4c75c0317ee9a6c13a09fd28fbdac2.txt"
+    },
+    {
+      "url": "https://www.robomaster.com/zh-CN/robo/rm?type=rm-process",
+      "catalog_codes": [
+        "2026033"
+      ],
+      "title": "RoboMaster 2026超级对抗赛介绍与参赛流程",
+      "status": "retrieved",
+      "final_url": "https://www.robomaster.com/zh-CN/robo/rm?type=rm-process",
+      "bytes": 6947,
+      "sha256": "c4d72cd340f72ee847e061c1f104981d4841a91c72df9a3f8ac84df8ce65b9ab",
+      "snapshot": "538c89c0b7f265cd06ebeec0644e8f8ea8ab773416fcb3af2cfe7338892bdca6.txt"
+    },
+    {
+      "url": "https://www.robotevents.com/lv/robot-competitions/college-competition/RE-VURC-25-0840.html",
+      "catalog_codes": [
+        "2026011"
+      ],
+      "title": "全国VEX精英赛VURC大学组",
+      "status": "unavailable",
+      "error": "http_error",
+      "http_status": 404
+    },
+    {
+      "url": "https://www.sampeamerica.org/student-bridge-competition",
+      "catalog_codes": [
+        "2026025"
+      ],
+      "title": "Student Bridge Competition",
+      "status": "retrieved",
+      "final_url": "https://www.sampeamerica.org/student-bridge-competition",
+      "bytes": 865,
+      "sha256": "40191f03b604c9c68261b126c48ceca888c6bc9b636bb4fac90ca3a2e08ca219",
+      "snapshot": "f24921b73f44f273ffb8781586d94db5ca918c1222ae11bf6c5a2b4db9ca4deb.txt"
+    },
+    {
+      "url": "https://www.shellecomarathon.com/about/global-rules/_jcr_content/root/main/section/simple/simple/call_to_action_21097_660967135/links/item0.stream/1761572838035/fa584ff1033457115168ca571c861e07d22a5775/shell-eco-marathon-qatar-2026-chapter-ii-rules.pdf",
+      "catalog_codes": [
+        "2026172"
+      ],
+      "title": "Qatar 2026 Chapter II",
+      "status": "retrieved",
+      "final_url": "https://www.shellecomarathon.com/about/global-rules/_jcr_content/root/main/section/simple/simple/call_to_action_21097_660967135/links/item0.stream/1761572838035/fa584ff1033457115168ca571c861e07d22a5775/shell-eco-marathon-qatar-2026-chapter-ii-rules.pdf",
+      "bytes": 1056036,
+      "sha256": "6a636514f8471dd43b652bac738a21d537c590ff82ef1495ac1bdaa125cb3c74",
+      "snapshot": "64aceb2220dcf5e803dec1e63d2d599e9df67f6696b93e6a45106f89e2443ac9.pdf"
+    },
+    {
+      "url": "https://www.shiep.edu.cn/_upload/article/files/c9/0e/a4c976534696aff535bcec09172a/ad2d727e-ddc5-44fc-b133-351a94ffbfd5.pdf",
+      "catalog_codes": [
+        "2026129"
+      ],
+      "title": "第五届电化学测量技术竞赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.shiep.edu.cn/_upload/article/files/c9/0e/a4c976534696aff535bcec09172a/ad2d727e-ddc5-44fc-b133-351a94ffbfd5.pdf",
+      "bytes": 265846,
+      "sha256": "68bfa20efbd220af9832a6d9a56c342a911d3f94905ddcf9ccd3fcaa73c48cfb",
+      "snapshot": "e0923469fc3f7f963ea3d38d3323f6a98da61edc053acab21341bf4ba62e1d18.pdf"
+    },
+    {
+      "url": "https://www.shixiaofenxisai.com/uploader/2026/04/20260423115356.pdf",
+      "catalog_codes": [
+        "2026127"
+      ],
+      "title": "第十一届欧波同杯失效分析赛一轮通知",
+      "status": "retrieved",
+      "final_url": "https://www.shixiaofenxisai.com/uploader/2026/04/20260423115356.pdf",
+      "bytes": 2132888,
+      "sha256": "656699fd839ccdcee9468a6e9cf9ab630062a3f36482cec7d88ff1c14b91a384",
+      "snapshot": "fc88ba83176cddcb49c4a2aa639796bedcf6a3e197e40a9d276fd3448ef73da7.pdf"
+    },
+    {
+      "url": "https://www.shstomatology.org.cn/html/web/xinwendongtai/tongzhigonggao/1922125798742921217.html",
+      "catalog_codes": [
+        "2026170"
+      ],
+      "title": "2023上海口腔健康科普展示与交流活动正式启动-上海口腔医学会",
+      "status": "retrieved",
+      "final_url": "https://www.shstomatology.org.cn/html/web/xinwendongtai/tongzhigonggao/1922125798742921217.html",
+      "bytes": 4391,
+      "sha256": "444caa7e77109958877f6cfb97510615b142906c3b89c41af6d6e5034e155dac",
+      "snapshot": "34d81a7295370c244f329f3f3d25ed8b100a5ee096a86218c7803e443f8edd0f.txt"
+    },
+    {
+      "url": "https://www.shu.edu.cn/info/1056/378595.htm",
+      "catalog_codes": [
+        "2026149"
+      ],
+      "title": "“华为智联杯”无线程序设计大赛暨2025年上海市大学生程序设计竞赛顺利举行-上海大学",
+      "status": "retrieved",
+      "final_url": "https://www.shu.edu.cn/info/1056/378595.htm",
+      "bytes": 7868,
+      "sha256": "3d6b78bcd48a1fad61d1692eede3c12d7b2c01f8b08290c16c1cd24dfe74344d",
+      "snapshot": "540dff3a1361ef8d234610e2cbed6bd935a07f9f46feb16c24eb680c36f51529.txt"
+    },
+    {
+      "url": "https://www.shu.edu.cn/info/1056/399325.htm",
+      "catalog_codes": [
+        "2026232"
+      ],
+      "title": "“FUN·开·造” & “FUN·开·AI”——第25届上海国际大学生广告节暨中国（浦东）青年AI创享节盛大启幕-上海大学",
+      "status": "retrieved",
+      "final_url": "https://www.shu.edu.cn/info/1056/399325.htm",
+      "bytes": 16715,
+      "sha256": "efec280dd5427eb4e64ddde76627e8d004fe74b49f982a7eac6a3350ebd6a946",
+      "snapshot": "d7fb83b7b74fe18577d688f335bf51e15b7d61683d536e02d3e77b456fcd84c9.txt"
+    },
+    {
+      "url": "https://www.shupl.edu.cn/xssfxy/2025/1124/c110a144717/page.htm",
+      "catalog_codes": [
+        "2026111"
+      ],
+      "title": "第十届日盈杯上海市模拟法庭赛事报道",
+      "status": "retrieved",
+      "final_url": "https://www.shupl.edu.cn/xssfxy/2025/1124/c110a144717/page.htm",
+      "bytes": 4183,
+      "sha256": "f7eb018c0e3eef07e819d16f36e14b31f0b2bfceb279049d1e794a2a48d45699",
+      "snapshot": "5b94591e2cb28748979a78ada481372d668c3326b729397b96195f0895677029.txt"
+    },
+    {
+      "url": "https://www.siemenscup-cimc.org.cn/notice/NoticeDetail?id=2431",
+      "catalog_codes": [
+        "2026010"
+      ],
+      "title": "2026第二十届办赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.siemenscup-cimc.org.cn/notice/NoticeDetail?id=2431",
+      "bytes": 2958,
+      "sha256": "f2b477784f77ed9b7b6e0ef744fcc029fef0b1a6bfa4dfe5c9a52ed1a826aafd",
+      "snapshot": "264302e8fe3983675a2642acb0cf41f4ced21c2f46c8e3fb15338f92dcaee283.txt"
+    },
+    {
+      "url": "https://www.socchina.net/details?id=9e287fdec96946ecb378ebe4297db8bb&value=2",
+      "catalog_codes": [
+        "2026017"
+      ],
+      "title": "2026应用赛道报名通知",
+      "status": "retrieved",
+      "final_url": "https://www.socchina.net/details?id=9e287fdec96946ecb378ebe4297db8bb&value=2",
+      "bytes": 1436,
+      "sha256": "51e980ec927ad6db8b3420238c24b9eb0feade078d3f9a8832bb02f0214ea27f",
+      "snapshot": "a7264f9a8bb74ae03786b514fc6ce2b305ab7c032a10d4b74fd3ff2a3f1b31e6.txt"
+    },
+    {
+      "url": "https://www.sscci.org/personnel/shownews.php?id=791",
+      "catalog_codes": [
+        "2026132"
+      ],
+      "title": "第29届上海市大学生化学化工优秀论文（设计）大赛顺利举行-上海市化学化工学会",
+      "status": "retrieved",
+      "final_url": "https://www.sscci.org/personnel/shownews.php?id=791",
+      "bytes": 3898,
+      "sha256": "8bff96fe56b04324539abc3e3bf38283b79a8386b8bfd4fef64853bbf7cfb6cd",
+      "snapshot": "aa400a922c3429b02b29a4740dc60900181b1dba32b8bfecc1163cc2fedf0e7b.txt"
+    },
+    {
+      "url": "https://www.sues.edu.cn/85/1b/c26790a296219/page.htm",
+      "catalog_codes": [
+        "2026019"
+      ],
+      "title": "第二十一届竞赛及规则入口说明",
+      "status": "retrieved",
+      "final_url": "https://www.sues.edu.cn/85/1b/c26790a296219/page.htm",
+      "bytes": 7945,
+      "sha256": "5311189cae8aa7e70b99180f6492f37a246668a62977bd3fb793badb5d149297",
+      "snapshot": "52503ccba81f2a30127a703d70f6441761c9c503e10413079bc1eaed437b5414.txt"
+    },
+    {
+      "url": "https://www.sues.edu.cn/_t703/7d/5a/c271a294234/page.htm",
+      "catalog_codes": [
+        "2026140"
+      ],
+      "title": "第十一届汇创青春互联网+文创类征稿通知",
+      "status": "unavailable",
+      "error": "unsafe_url",
+      "http_status": null
+    },
+    {
+      "url": "https://www.sun-ada.net/home/about_intrs2.html",
+      "catalog_codes": [
+        "2026092"
+      ],
+      "title": "第18届大广赛参赛指南",
+      "status": "retrieved",
+      "final_url": "https://www.sun-ada.net/home/about_intrs2.html",
+      "bytes": 19444,
+      "sha256": "97ecb4b6a7cd358201d962c496e762b9235336c91ba8f1e38aaeb4f94efedbc6",
+      "snapshot": "2c712fae1cf00278ebbe177aeef6c000459504d92d5e739b715f0843fd0abbb8.txt"
+    },
+    {
+      "url": "https://www.tiangong.edu.cn/2026/0617/c634a115872/pagem.htm",
+      "catalog_codes": [
+        "2026026"
+      ],
+      "title": "第十八届SAMPE参赛情况",
+      "status": "retrieved",
+      "final_url": "https://www.tiangong.edu.cn/2026/0617/c634a115872/pagem.htm",
+      "bytes": 3970,
+      "sha256": "ea019b051573ef7a84e85b8bf4a0e44554ab53d9606847900a1bed61acb52052",
+      "snapshot": "01488b6f207fdbf7ff521fc34d230cd4caff27ee5dbc4bfbf4db81a9967daef0.txt"
+    },
+    {
+      "url": "https://www.tiaozhanbei.net/?ID=2",
+      "catalog_codes": [
+        "2026002"
+      ],
+      "title": "挑战杯官方网站及2026培训动态",
+      "status": "retrieved",
+      "final_url": "https://www.tiaozhanbei.net/?ID=2",
+      "bytes": 6351,
+      "sha256": "4fd2f202327dcc2b9c100035b0e676e66e46f3e728eb97bc84e8e4be0e0c2975",
+      "snapshot": "8c5e1ed090fe6341758110713113411d76d820533f9e78870d1c4fc12a510ff0.txt"
+    },
+    {
+      "url": "https://www.tjcu.edu.cn/info/1080/25485.htm",
+      "catalog_codes": [
+        "2026195"
+      ],
+      "title": "第六届词达人杯报名及竞赛规则转发",
+      "status": "retrieved",
+      "final_url": "https://www.tjcu.edu.cn/info/1080/25485.htm",
+      "bytes": 6847,
+      "sha256": "9f8b5f366f7aa73bc11e40759519fca3af0208e82d42ba7a9e635f00ddf23d6d",
+      "snapshot": "0fe78ed10cd873b339fed218d77b78711e3c84dc34609d2d70159f84f19cde2f.txt"
+    },
+    {
+      "url": "https://www.tongji.edu.cn/info/1032/1968.htm",
+      "catalog_codes": [
+        "2026244"
+      ],
+      "title": "关于举办第一届“同济大学化学知识竞赛”的通知-同济大学",
+      "status": "retrieved",
+      "final_url": "https://www.tongji.edu.cn/info/1032/1968.htm",
+      "bytes": 3761,
+      "sha256": "9af3995ed613a8fce0cf10f0f35838d5a9a024e09b224646315d9c7dbcfd3b65",
+      "snapshot": "1c7eea3b0edc71afac7727ef10cb4521432ba533ff380a9f94aa831de54fb5a8.txt"
+    },
+    {
+      "url": "https://www.tongjihospital.com.cn/news/intro/id/162/pid/27264.html",
+      "catalog_codes": [
+        "2026253"
+      ],
+      "title": "-〖喜报〗团体第一名！同济大学附属同济医院在同济大学医学院2025年医学生临床综合技能竞赛中荣获佳绩",
+      "status": "retrieved",
+      "final_url": "https://www.tongjihospital.com.cn/news/intro/id/162/pid/27264.html",
+      "bytes": 5573,
+      "sha256": "fe2657316100053cf36e3cd7abd99a001a4150bda44eb5ded799b8abd3ab33b5",
+      "snapshot": "33fdaeda4097e97f223a68f85853ad6b2ee1ea0b86f8050c603eb9b78a5d911a.txt"
+    },
+    {
+      "url": "https://www.uphysicsc.com/contestrules.html",
+      "catalog_codes": [
+        "2026212"
+      ],
+      "title": "University Physics Competition Contest Rules",
+      "status": "retrieved",
+      "final_url": "https://www.uphysicsc.com/contestrules.html",
+      "bytes": 8776,
+      "sha256": "5bd1c675369c3382b876c0a50b94a6a21334a58f20297fe83168cb26dd6db18e",
+      "snapshot": "3a9815178a6c728e49c9c3a0f6a22de6f22e7189621725bfef3839af4149ba9c.txt"
+    },
+    {
+      "url": "https://www.vismoot.org/wp-content/uploads/2025/08/33rd-Vis-Moot-Rules_FINAL.pdf",
+      "catalog_codes": [
+        "2026107"
+      ],
+      "title": "33rd Vis Moot Rules",
+      "status": "retrieved",
+      "final_url": "https://www.vismoot.org/wp-content/uploads/2025/08/33rd-Vis-Moot-Rules_FINAL.pdf",
+      "bytes": 811655,
+      "sha256": "81ccbc49f2de0a7196da341efaf93e2d8bfe3a0bb98f40946d6576b1c62d9e6d",
+      "snapshot": "111cf19b43d1e2f9f12a0cf468cbb1f9f226ce1a25f838d0ade67956408f9100.pdf"
+    },
+    {
+      "url": "https://www.xdsisu.edu.cn/2026/0609/c905a57283/page.htm",
+      "catalog_codes": [
+        "2026237"
+      ],
+      "title": "〖喜报〗艺术与传媒学院师生在第四届中国品牌设计大赛中斩获佳绩！",
+      "status": "retrieved",
+      "final_url": "https://www.xdsisu.edu.cn/2026/0609/c905a57283/page.htm",
+      "bytes": 1969,
+      "sha256": "d3d5d5ac7235956ef00154830b16aea65e108e19f21316c5c3fc488b4476fecd",
+      "snapshot": "8a498bd99c199b17826cf4435870892c7ad2140d3fb472334573ffaf758199d9.txt"
+    },
+    {
+      "url": "https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+      "catalog_codes": [
+        "2026198"
+      ],
+      "title": "第5届全国大学生“用日语讲好中国故事”微视频大赛通知（第1号）",
+      "status": "retrieved",
+      "final_url": "https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+      "bytes": 2033794,
+      "sha256": "78f35069aa05980ebf1c699764ae89f2aa440d3e09481bbef8794df20e9e6cb7",
+      "snapshot": "01b103d01f98d8e9d5b11238a1367b03b0dac544bb67b2c273a16ec9252a56dd.pdf"
+    },
+    {
+      "url": "https://www.xir.cn/competition/races/BDCI2026/expert",
+      "catalog_codes": [
+        "2026142"
+      ],
+      "title": "2026 CCF大数据与计算智能大赛系列赛",
+      "status": "retrieved",
+      "final_url": "https://www.xir.cn/competition/races/BDCI2026/expert",
+      "bytes": 41,
+      "sha256": "1b236cad44e9ab43f5fc08fd97508a81eda9cbfa17d84300d9ccfe4cc2553983",
+      "snapshot": "e7c5cd40a81df6665f9e81f6f1b1e1fdede225e7fe2d02005fed60cfdea1e842.txt"
+    },
+    {
+      "url": "https://www.yau-contest.com/show-86-85.html",
+      "catalog_codes": [
+        "2026182"
+      ],
+      "title": "2026丘成桐大学生数学竞赛全球报名开启（更新）",
+      "status": "retrieved",
+      "final_url": "https://www.yau-contest.com/show-86-85.html",
+      "bytes": 6415,
+      "sha256": "600c211f77c37191fbea1a43cf5b846fb82e2d78fa0551f562ba94a458fb9ee6",
+      "snapshot": "835cdd0cd723fce9185896a5741db6e15df2ab21e96ae2c080b3f6c4e5b94a3b.txt"
+    },
+    {
+      "url": "https://www.zjminghaojy.com/News/202412728.html",
+      "catalog_codes": [
+        "2026199"
+      ],
+      "title": "第一届全国大学生日语演讲比赛通知",
+      "status": "retrieved",
+      "final_url": "https://www.zjminghaojy.com/News/202412728.html",
+      "bytes": 7549,
+      "sha256": "2f3c9a5d644a6806bd1937c01d75bef769647605bfeb5524a4594a81b8d69032",
+      "snapshot": "22a734529ac0401f91819604dea4dcb324d959cfe19eeed8405c003270ae06ac.txt"
+    },
+    {
+      "url": "https://xagdjg.xatu.edu.cn/info/1061/4391.htm",
+      "catalog_codes": [
+        "2026188"
+      ],
+      "title": "关于举办“第六届全国大学生加筋土挡墙设计大赛（现代杯）”校内选拔赛的通知-建筑工程学院",
+      "status": "retrieved",
+      "final_url": "https://xagdjg.xatu.edu.cn/info/1061/4391.htm",
+      "bytes": 6081,
+      "sha256": "29ecabc77709d51e49a49006552cb434acf919c79a0bc6902ed4d6ff52588723",
+      "snapshot": "c73eed4061e17ea4fdcdf8808d163a60d6e180bc5507321a0bb4490a57b6ec2e.txt"
+    },
+    {
+      "url": "https://xueyuanbei.com/zsd/219.html",
+      "catalog_codes": [
+        "2026248"
+      ],
+      "title": "2026学院杯主赛道竞赛方案",
+      "status": "retrieved",
+      "final_url": "https://xueyuanbei.com/zsd/219.html",
+      "bytes": 5923,
+      "sha256": "1a51a3d5e852d4ff8275028a44c2f96f2db83090ae5b3bcd99aedd81291e289b",
+      "snapshot": "e7584e5b9df50ece2ceb7d178d382aea3743629b883733e4f9b3b039dab58569.txt"
+    },
+    {
+      "url": "https://xueyuanbei.com/ztsd/221.html",
+      "catalog_codes": [
+        "2026248"
+      ],
+      "title": "学院杯 中国室内与环境设计大赛-学院杯中国室内与环境设计大赛",
+      "status": "retrieved",
+      "final_url": "https://xueyuanbei.com/ztsd/221.html",
+      "bytes": 5484,
+      "sha256": "bdb34a731a976fa8620e770fef11f053eadc3d5c5678a55774743a493a614116",
+      "snapshot": "25275ffed6167e83d5097a0f4d2e2f70533c1e4cd4105d6ff06f9f3061ddb7d3.txt"
+    },
+    {
+      "url": "https://xxgk.shbsq.gov.cn/article.html?infoid=8d45b395-f1c2-4834-b298-79cf84afa0bc",
+      "catalog_codes": [
+        "2026138"
+      ],
+      "title": "世界技能大赛上海选拔赛（水处理技术）资料入口（原页标题待核）",
+      "status": "retrieved",
+      "final_url": "https://xxgk.shbsq.gov.cn/article.html?infoid=8d45b395-f1c2-4834-b298-79cf84afa0bc",
+      "bytes": 4983,
+      "sha256": "d470a69e7089d4f9bbb4edf83f3d6d0c242b466d1dde78b2dfd58f3a406038be",
+      "snapshot": "675efd306f21a9fef41b474d991550a40d9890deb2520236eb5b9c62f8150a30.txt"
+    },
+    {
+      "url": "https://youth.cau.edu.cn/art/2026/5/15/art_45078_1113491.html",
+      "catalog_codes": [
+        "2026003"
+      ],
+      "title": "2026擂台赛通知与榜题目录",
+      "status": "retrieved",
+      "final_url": "https://youth.cau.edu.cn/art/2026/5/15/art_45078_1113491.html",
+      "bytes": 20583,
+      "sha256": "fff7acf8b668476e77dc509a5b7b92294e1672b29180e54660f0240c75501892",
+      "snapshot": "bf6eb84152cfe5ecd781fab269e536239d50ead7d051dd97e55cbbe504b907fc.txt"
+    },
+    {
+      "url": "https://zhxy.nwsuaf.edu.cn/docs/2026-03/771f859d3f8d43e18ae9d8c155891444.pdf",
+      "catalog_codes": [
+        "2026035"
+      ],
+      "title": "第十九届第一轮通知PDF",
+      "status": "retrieved",
+      "final_url": "https://zhxy.nwsuaf.edu.cn/docs/2026-03/771f859d3f8d43e18ae9d8c155891444.pdf",
+      "bytes": 360193,
+      "sha256": "1b9007d75d41701713661efb634d01c47c03fd9caa26ca98454b4b9137588a80",
+      "snapshot": "e8986748fbcb4f344f1419b731169041de9ffe82dfc8a84556ba998a165786c1.pdf"
+    }
+  ]
+}

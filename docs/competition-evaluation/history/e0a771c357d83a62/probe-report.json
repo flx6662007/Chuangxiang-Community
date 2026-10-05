@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "split": "dev-probes",
+  "corpus_version": "e0a771c357d83a62",
+  "run_started_at": "2026-10-04T14:33:04.535216+00:00",
+  "parameters": {
+    "limit": 5,
+    "semantic_threshold": 0.6
+  },
+  "fixture_sha256": "616996aa299f415ba5262e03061e11859d50391beb52512a27b34a83972fb7d9",
+  "evaluator_sha256": "1ffa7c6ba65d212785eec4300654785477ec4bc4f34e373cda57de028192f707",
+  "implementation_sha256": {
+    "competition_search.py": "a255a4b9daaa18c07a50ba354ce603c086a870f94c197ecc3190c650e2496501",
+    "semantic.py": "9dd8ebe39ecf940e295eec47837cf714dbb394c5437d8e58edeb5b3252afe372"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "system": "Windows",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "torch": "2.14.1",
+      "sentence-transformers": "6.1.0"
+    }
+  },
+  "index": {
+    "corpus_version": "e0a771c357d83a62",
+    "model_id": "BAAI/bge-small-zh-v1.5",
+    "model_revision": "7999e1d3359715c523056ef9478215996d62a620",
+    "schema_version": 1
+  },
+  "evidence_metric_note": "Coverage validates source references. Whether a cited passage entails every reason still requires evidence review.",
+  "modes": {
+    "keyword": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 0,
+        "grounded_reason_count": 0,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": null,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 29.0735,
+          "p95": 34.369,
+          "max": 34.369
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“我想带宠物犬参加敏捷障碍赛，找按犬只年龄和体型分组的线下赛事。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 34.369
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“寻找职业扑克选手参加的德州扑克现金赛，我要查看买入额、盲注级别和奖金池安排。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 23.778
+        }
+      ]
+    },
+    "semantic": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 0,
+        "grounded_reason_count": 0,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": null,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 2428.346,
+          "p95": 4807.407,
+          "max": 4807.407
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“我想带宠物犬参加敏捷障碍赛，找按犬只年龄和体型分组的线下赛事。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 4807.407
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“寻找职业扑克选手参加的德州扑克现金赛，我要查看买入额、盲注级别和奖金池安排。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 49.285
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 0,
+        "grounded_reason_count": 0,
+        "hits_without_reason": 0,
+        "empty_explanation_coverage": 1.0,
+        "evidence_reference_coverage": null,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 44.8935,
+          "p95": 45.796,
+          "max": 45.796
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“我想带宠物犬参加敏捷障碍赛，找按犬只年龄和体型分组的线下赛事。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 43.991
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "empty_explanation": {
+            "code": "no_topic_match",
+            "message": "没有找到与“寻找职业扑克选手参加的德州扑克现金赛，我要查看买入额、盲注级别和奖金池安排。”匹配的赛事。",
+            "conditions": []
+          },
+          "empty_explanation_valid": true,
+          "latency_ms": 45.796
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "comparable": true,
+    "hybrid_not_worse": true
+  },
+  "acceptance": {
+    "mode": "hybrid",
+    "passes": true,
+    "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+  }
+}

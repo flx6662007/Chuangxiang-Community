@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "split": "dev-probes",
+  "corpus_version": "d45aa47edf343f38",
+  "run_started_at": "2026-10-04T14:08:43.605147+00:00",
+  "parameters": {
+    "limit": 5,
+    "semantic_threshold": 0.6
+  },
+  "fixture_sha256": "616996aa299f415ba5262e03061e11859d50391beb52512a27b34a83972fb7d9",
+  "implementation_sha256": {
+    "competition_search.py": "927fa52fff1b7744153521dd1397825e8873d122c0e5ce5d6d5bf47fc1f63f60",
+    "semantic.py": "5653ef26c0bbf90f08a75d111359b61cfffc5e4ee1bd441199f14180f47de8e8"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "system": "Windows",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+    "packages": {
+      "numpy": "2.5.3",
+      "torch": "2.14.1",
+      "sentence-transformers": "6.1.0"
+    }
+  },
+  "index": {
+    "corpus_version": "d45aa47edf343f38",
+    "model_id": "BAAI/bge-small-zh-v1.5",
+    "model_revision": "7999e1d3359715c523056ef9478215996d62a620",
+    "schema_version": 1
+  },
+  "evidence_metric_note": "Coverage validates source references. Whether a cited passage entails every reason still requires evidence review.",
+  "modes": {
+    "keyword": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 0.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 10,
+        "grounded_reason_count": 10,
+        "hits_without_reason": 0,
+        "evidence_reference_coverage": 1.0,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 22.466,
+          "p95": 20.475,
+          "max": 24.457
+        },
+        "passes_targets": false
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [
+            "curated-c194-fd6103ee",
+            "curated-c238-bf7fe8bc",
+            "curated-c103-2026-1",
+            "curated-c127-2026-1",
+            "curated-c141-1c63abb5"
+          ],
+          "hit_at_5": null,
+          "empty_correct": false,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 24.457
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [
+            "m89-2026087-overview",
+            "curated-c126-2026-1",
+            "curated-c244-4f33501b",
+            "curated-c105-2026-1",
+            "curated-c108-2026-1"
+          ],
+          "hit_at_5": null,
+          "empty_correct": false,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 20.475
+        }
+      ]
+    },
+    "semantic": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 1.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 0,
+        "grounded_reason_count": 0,
+        "hits_without_reason": 0,
+        "evidence_reference_coverage": null,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 2929.005,
+          "p95": 59.636,
+          "max": 5798.374
+        },
+        "passes_targets": true
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 5798.374
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [],
+          "hit_at_5": null,
+          "empty_correct": true,
+          "hard_violations": [],
+          "reason_count": 0,
+          "grounded_reason_count": 0,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 59.636
+        }
+      ]
+    },
+    "hybrid": {
+      "metrics": {
+        "cases": 2,
+        "positive_cases": 0,
+        "empty_cases": 2,
+        "operational_errors": 0,
+        "hit_at_5": null,
+        "empty_accuracy": 0.0,
+        "semantic_hit_at_5": null,
+        "gold_evidence_hit_rate": null,
+        "hard_violation_count": 0,
+        "reason_count": 10,
+        "grounded_reason_count": 10,
+        "hits_without_reason": 0,
+        "evidence_reference_coverage": 1.0,
+        "unresolved_evidence_count": 0,
+        "latency_ms": {
+          "median": 54.5285,
+          "p95": 53.217,
+          "max": 55.84
+        },
+        "passes_targets": false
+      },
+      "cases": [
+        {
+          "id": "dev-probe-dog-agility",
+          "group": "out-of-corpus-dog-agility",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [
+            "curated-c194-fd6103ee",
+            "curated-c238-bf7fe8bc",
+            "curated-c103-2026-1",
+            "curated-c127-2026-1",
+            "curated-c141-1c63abb5"
+          ],
+          "hit_at_5": null,
+          "empty_correct": false,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 53.217
+        },
+        {
+          "id": "dev-probe-professional-poker",
+          "group": "out-of-corpus-professional-poker",
+          "scenario": "no_topic_match",
+          "expect_empty": true,
+          "returned_ids": [
+            "m89-2026087-overview",
+            "curated-c126-2026-1",
+            "curated-c244-4f33501b",
+            "curated-c105-2026-1",
+            "curated-c108-2026-1"
+          ],
+          "hit_at_5": null,
+          "empty_correct": false,
+          "hard_violations": [],
+          "reason_count": 5,
+          "grounded_reason_count": 5,
+          "gold_evidence_hit": false,
+          "unresolved_evidence_ids": [],
+          "hits_without_reason": 0,
+          "latency_ms": 55.84
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "comparable": true,
+    "hybrid_not_worse": true
+  },
+  "acceptance": {
+    "mode": "hybrid",
+    "passes": false,
+    "baseline_policy": "Keyword and semantic-only scores are reported as comparisons; the hybrid target governs a three-mode run."
+  }
+}

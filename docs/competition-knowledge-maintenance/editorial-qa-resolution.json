@@ -1,0 +1,637 @@
+{
+  "reviewed_on": "2026-10-04",
+  "corpus_version": "874ccd5c6dddf794",
+  "candidate_count": 77,
+  "summary": {
+    "preserved_fact_or_learning_instruction": 30,
+    "revised_or_removed_editorial_clause": 42,
+    "retained_content_with_cleaner_presentation": 5
+  },
+  "records": [
+    {
+      "candidate_id": "editorial-001",
+      "original_text": "计算机系统能力大赛考查系统实现能力；操作系统赛包含内核实现与功能挑战方向，CPU设计赛考查处理器设计。",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026043"
+      ]
+    },
+    {
+      "candidate_id": "editorial-002",
+      "original_text": "内核实现赛道参考实例与教程",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026043"
+      ]
+    },
+    {
+      "candidate_id": "editorial-003",
+      "original_text": "官方仓库整理的参考信息，含多种硬件和教学OS；主要链接源自2025准备资料，需对照2026要求",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026043"
+      ]
+    },
+    {
+      "candidate_id": "editorial-004",
+      "original_text": "属于日本站本地补充规则，不是整个EV设计课程",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026062"
+      ]
+    },
+    {
+      "candidate_id": "editorial-005",
+      "original_text": "本组要求实体工程笔记本与现场评审；中小学生其他组别规则不能替代VEX U。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026096"
+      ]
+    },
+    {
+      "candidate_id": "editorial-006",
+      "original_text": "第33届报名表截止2025年11月13日23:30维也纳时间；费用截止12月12日，申请方书状12月11日；不要与2027第34届混用。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026107"
+      ]
+    },
+    {
+      "candidate_id": "editorial-007",
+      "original_text": "报名截止4月10日24:00，华东预赛4月25日，全国决赛5月30日北京；决赛不是在同济举行。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026110"
+      ]
+    },
+    {
+      "candidate_id": "editorial-008",
+      "original_text": "第5届于2019年8月24—25日举行，固体、地震测井、重磁电三个专业方向；这是历史规则，不替换2026四赛道。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026112"
+      ]
+    },
+    {
+      "candidate_id": "editorial-009",
+      "original_text": "需求、设计、验证和确认的系统工程流程，适合载荷方案与毕设组织",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026116",
+        "2026117"
+      ]
+    },
+    {
+      "candidate_id": "editorial-010",
+      "original_text": "将研究目标、材料结构和验证结果整理为申报书",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026121"
+      ]
+    },
+    {
+      "candidate_id": "editorial-011",
+      "original_text": "报名3月15日前，比赛3月24—28日期间；具体个人/团体时段需主办方安排，不猜某日。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026126"
+      ]
+    },
+    {
+      "candidate_id": "editorial-012",
+      "original_text": "创新为未公开原创案例，创意可分析他人公开案例并引用，能力为组委会指定案例；口辩10分钟、问答5分钟。",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026127"
+      ]
+    },
+    {
+      "candidate_id": "editorial-013",
+      "original_text": "2025主命题为未来材料、未来能源、未来环境，另列22项指定命题。历史报名截止9月30日，初复赛10月9日至11月30日，决赛安排12月。仅用于理解往届命题与流程。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026128"
+      ]
+    },
+    {
+      "candidate_id": "editorial-014",
+      "original_text": "我院学子在第九届全国化学类大学生科技活动交流会中荣获佳绩",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026131"
+      ]
+    },
+    {
+      "candidate_id": "editorial-015",
+      "original_text": "晋级队通过官方报名系统注册；不能以此邀请函直接报名全年CCPC。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026144"
+      ]
+    },
+    {
+      "candidate_id": "editorial-016",
+      "original_text": "公开习题、解答和相关讲解入口，适合补齐微积分推导基础",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026182",
+        "2026212",
+        "2026213"
+      ]
+    },
+    {
+      "candidate_id": "editorial-017",
+      "original_text": "关于举办第十九届中华全国日语演讲比赛西北地区决赛的通知-西安外国语大学日本文化经济学院",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026211"
+      ]
+    },
+    {
+      "candidate_id": "editorial-018",
+      "original_text": "第十一届汇创青春综合类附件中包含影视，应独立保存影视作品要求和提交材料。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026225"
+      ]
+    },
+    {
+      "candidate_id": "editorial-019",
+      "original_text": "官网或蜂鸟音乐奖官方公众号统一报名及缴费；分赛区不直接报名。",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026238"
+      ]
+    },
+    {
+      "candidate_id": "editorial-020",
+      "original_text": "仅官网或官方公众号统一报名，分赛区不直接接收；两首曲目须符合时期或中外作品搭配要求，原作有伴奏的须带伴奏，不能演奏节选。",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": [
+        "2026238"
+      ]
+    },
+    {
+      "candidate_id": "editorial-021",
+      "original_text": "Energy Statistics Data Browser\n170余个国家和地区、16类能源主题的统计图表入口，标明CC BY 4.0\n访问方式：免费公开\n适用范围：能源生产、消费与结构比较类研究；自选研究题目\n学习用途：提供可追溯的跨国家能源统计，支持事实核查及研究选题\n来源：https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-022",
+      "original_text": "Competitive Programmer's Handbook\n作者公开英文教材\n访问方式：免费公开\n适用范围：算法竞赛基础与进阶学习\n学习用途：系统补齐复杂度、动态规划、图论和数据结构，为真实赛题训练打基础\n来源：https://cses.fi/book/book.pdf",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-023",
+      "original_text": "Competitive Programmer's Handbook算法教材\n作者免费公开教材\n访问方式：免费公开\n适用范围：百度之星算法与数据结构准备\n学习用途：用于补齐动态规划、图和数学算法，再回到百度之星真题练习\n来源：https://cses.fi/book/book.pdf",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-024",
+      "original_text": "内核实现赛道参考实例与教程\n官方仓库整理的参考信息，含多种硬件和教学OS；主要链接源自2025准备资料，需对照2026要求\n访问方式：免费公开\n适用范围：操作系统内核实现赛道\n学习用途：按比赛技术方向选择硬件平台与OS实例，建立学习路线\n来源：https://github.com/oscomp/os-competition-info/blob/main/ref-info.md",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-025",
+      "original_text": "4C2026作品提交要求及文档模板\n2026-04-17官方页面提供11大类模板的百度网盘入口\n适用范围：2026作品材料准备\n学习用途：按相应大类模板整理说明文档、演示和提交材料\n来源：https://jsjds.blcu.edu.cn/info/1045/2013.htm",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-026",
+      "original_text": "QGIS基础制图实训\nQGIS 3.44官方训练手册具体章节，含跟做任务及练习\n访问方式：免费公开\n适用范围：城市调研与场地分析通用工具；非竞赛指定课程\n学习用途：学习加载空间数据、图层组织和地图符号表达，为调研证据制图\n来源：https://docs.qgis.org/3.44/en/docs/training_manual/basic_map/index.html",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-027",
+      "original_text": "2026 FSAEJ本地规则（第4版）\n属于日本站本地补充规则，不是整个EV设计课程\n访问方式：免费公开\n适用范围：2026 EV组及日本站补充要求\n学习用途：把日本站要求与基础Formula SAE规则对照，形成设计检查清单\n来源：https://en.jsae.or.jp/files_publish/page/519/2026_FSAEJ_LocalRule_4th_20260616.pdf",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-028",
+      "original_text": "2027专业奖报名指南：区分奖项与材料要求\n学习资料本身免费；专业奖参赛另有报名、评审及获奖费用，不能由资源的免费访问状态推断参赛免费\n访问方式：免费公开\n适用范围：目录所称iF专业奖；学生需先核对是否应参加学生奖\n学习用途：先弄清作品类型、资格和提交材料，避免使用错误奖项规则\n来源：https://assets.ctfassets.net/9el74s703hin/3LisaU32dIdDzCjhL4V8r2/9c007f552f1cbbfa1dc9ecaea88b84a5/iF_DESIGN_AWARD_2027_-_Registration_Guide_-_English.pdf",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-029",
+      "original_text": "学习资料本身免费；专业奖参赛另有报名、评审及获奖费用，不能由资源的免费访问状态推断参赛免费",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-030",
+      "original_text": "第九届华灿奖参赛选手操作手册（往届）\n含流程图和常见问题。明确为第九届旧平台手册\n访问方式：免费公开\n适用范围：往届报名与投稿流程学习；不直接作为2026操作指令\n学习用途：提前了解组队、确认成员、报名材料和作品提交的整体步骤\n来源：https://jwc.swjtu.edu.cn/download/ueditor/jsp/upload/file/20240517/1715908451425086147.pdf",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-031",
+      "original_text": "Arduino Learn\n官方学习目录涵盖入门、编程、电子与通信\n访问方式：免费公开\n适用范围：需要传感器、执行器或嵌入式原型的项目\n学习用途：补齐输入输出、通信和硬件调试基础\n来源：https://docs.arduino.cc/learn/",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-032",
+      "original_text": "MIT单变量微积分公开课18.01SC\n公开课程含教学资源与练习；英语授课，属通用基础\n访问方式：免费公开\n适用范围：微积分基础补强，不能替代本届竞赛大纲\n学习用途：结合讲解、例题和练习补齐导数、积分等基础\n来源：https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-033",
+      "original_text": "An Introduction to R\nR官方入门手册，含数据对象、统计模型和图形基础\n访问方式：免费公开\n适用范围：统计数据整理、模型拟合与绘图的通用技能\n学习用途：用可复现代码完成分析并记录处理步骤\n来源：https://cran.r-project.org/doc/manuals/r-release/R-intro.html",
+      "resolution": "retained_content_with_cleaner_presentation",
+      "reason": "保留真实规则或学习内容；所在资源去除重复描述或核查提示，按成品格式重写。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-034",
+      "original_text": "Goethe-Institut 免费德语练习\n官方免费练习入口覆盖不同水平\n访问方式：免费公开\n适用范围：德语语法、词汇、阅读和听力基础\n学习用途：按水平补齐语言能力，可配合赛事样题练习\n来源：https://www.goethe.de/de/spr/ueb.html",
+      "resolution": "retained_content_with_cleaner_presentation",
+      "reason": "保留真实规则或学习内容；所在资源去除重复描述或核查提示，按成品格式重写。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-035",
+      "original_text": "いろどり 生活の日本語\n覆盖入门、初级和初中级生活日语；不能替代大赛专题与高级翻译训练\n访问方式：免费公开\n适用范围：日语基础薄弱者的听说、词汇和语法补习\n学习用途：提供教材、音频和配套练习，可用于基础训练\n来源：https://www.irodori.jpf.go.jp/",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-036",
+      "original_text": "覆盖入门、初级和初中级生活日语；不能替代大赛专题与高级翻译训练",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-037",
+      "original_text": "Krita数字绘画手册\n介绍笔刷、图层、绘画与动画等数字创作功能\n适用对象：插画、视觉传达、分镜和概念设计作者\n基础要求：基本绘画或设计基础\n学习顺序：先做图层和笔刷练习，再完成一页分镜或主视觉，保留源文件和创作过程\n语言：英语；含多语言文档\n访问方式：免费开源文档；第三方素材授权需独立核对\n适用范围：通用备赛资料\n来源：https://docs.krita.org/en/index.html",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-038",
+      "original_text": "Illustrator官方入门与学习面板\n说明新建文档、模板和应用内学习入口，适合组织矢量设计练习\n适用对象：平面设计、品牌与ACP参赛学生\n基础要求：基础设计知识\n学习顺序：新建对应尺寸文档，从Learn面板做图形与文字练习；比赛软件与证书要求另核\n语言：英语\n访问方式：网页免费；实际软件需有效许可；本页是入门导航而非完整课程\n适用范围：通用备赛资料\n来源：https://helpx.adobe.com/illustrator/desktop/get-started/learn-the-basics/homescreen-overview.html",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-039",
+      "original_text": "DaVinci Resolve官方训练\n提供剪辑、调色、音频与视觉效果训练视频、教材和练习工程\n适用对象：微电影、动画后期、配音及视频作品作者\n基础要求：基础计算机操作；初学可从剪辑开始\n学习顺序：先学剪辑和音频基础，用自己的素材完成一分钟叙事片，再做调色与字幕检查\n语言：英语；部分教材有其他语言\n访问方式：训练资料公开；软件有免费版和Studio付费版，特定练习需核对版本\n适用范围：通用备赛资料\n来源：https://www.blackmagicdesign.com/products/davinciresolve/training?hl=en-US",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-040",
+      "original_text": "2022微结构摄影大赛全国通知\n先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：2022年全国微结构摄影赛历史规则；2024只找到高校校赛通知，不合并成2024全国规则\n来源：https://ccbm.ecut.edu.cn/8d/fa/c7122a101882/page.htm",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-041",
+      "original_text": "Simulink Onramp\n通过基础模型练习理解信号、模块、仿真和系统响应\n适用对象：赛车控制、自动化和交通系统团队\n基础要求：基础数学；控制概念有帮助\n学习顺序：先搭建简单动态系统，再比较不同参数下响应；赛事规定的控制器和工具需另核\n语言：英语；有中文入口\n访问方式：入门课程免费，需账号；专业模块许可另核\n适用范围：通用备赛资料\n来源：https://matlabacademy.mathworks.com/details/simulink-onramp/simulink",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-042",
+      "original_text": "联合国国际法视听图书馆专题讲座\n专题国际法讲座和参考材料，练习法律概念与英文论证表达\n基础要求：基础国际法和英语听力\n学习顺序：先选与赛题相符的一节讲座，整理英文论证提纲\n语言：英语及其他语言\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://legal.un.org/avl/ls/lectures.html",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-043",
+      "original_text": "ICC Moot 2026修正赛题\n18页公开修正案例，用于控方、辩方与政府方三角色训练\n学习顺序：按上诉议题整理事实和法源，再分角色准备书状\n语言：英语\n适用范围：2026届修正版；虚构案例，无标准答案\n来源：https://www.pace.edu/sites/default/files/2026-01/law-icc-moot-court-case-2026.pdf",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-044",
+      "original_text": "Cornell Wex法律英语术语词典\n用法律英语定义辨析诉讼、证据和论证词汇\n学习顺序：按备赛文章抽取术语，写英文定义和自己的例句\n语言：英语\n访问方式：公开页面或可读取附件\n适用范围：偏美国法术语\n来源：https://www.law.cornell.edu/wex",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-045",
+      "original_text": "NASA系统工程手册\n需求、设计、验证和确认的系统工程流程，适合载荷方案与毕设组织\n基础要求：工程项目基础及英语\n学习顺序：围绕一项载荷建立需求矩阵，再写验证计划和风险清单\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.nasa.gov/reference/systems-engineering-handbook/",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-046",
+      "original_text": "第七届超材料力学大赛申报模板\n将研究目标、材料结构和验证结果整理为申报书\n学习顺序：按栏目建立证据清单，再完成结构设计与性能对比\n语言：中文\n访问方式：在线阅读\n适用范围：2026第七届官方模板\n来源：https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/10bd571f-b242-472e-a723-b4ef0ad312e3.docx",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-047",
+      "original_text": "SCIP+绿色化学化工创新创业大赛案例集（2019—2023）\n除了历年名单，还提供项目技术路线、产业化阶段和应用情况。可读天然产物生物制造、聚酯催化剂、连续流微反应等具体案例\n适用对象：绿色化工、材料与能源创新团队\n基础要求：基础化学及工程知识，能理解研发与中试的区别\n学习顺序：先读PDF第16—19页的技术与应用叙述，分别整理问题、方案、验证证据和产业化条件，再用同样框架检查自己的项目。不要把获奖名单直接当作品内容\n语言：中文\n访问方式：34页PDF已归档；案例信息对应书中年代\n来源：https://makeable.cn/wp-content/uploads/2024/10/SCIP-%E7%BB%BF%E8%89%B2%E5%8C%96%E5%AD%A6%E5%8C%96%E5%B7%A5%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E6%A1%88%E4%BE%8B%E9%9B%86_compressed.pdf",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-048",
+      "original_text": "Gamry循环伏安法原理与分析教程\n官方应用笔记中检索循环伏安和阻抗测试，理解仪器参数与实验解释\n基础要求：电化学及基本实验操作\n学习顺序：选CV/EIS入门文章，整理参比电极、扫描速率和误差控制\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.gamry.com/electrochemistry-applications/cv-cyclic-voltammetry/",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-049",
+      "original_text": "2026化学科研报告与墙报准备参考\n外校推荐说明明确口头报告和独立墙报形式，可用于准备研究结果呈现\n学习顺序：先整理研究问题、实验与结果，再练习8分钟汇报；报名资格需另看同济安排\n语言：中文\n访问方式：公开阅读\n适用范围：2026外校遴选参考，不能代替同济资格通知\n来源：https://chem.dlut.edu.cn/info/1029/13550.htm",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-050",
+      "original_text": "EPA EPANET供水管网模拟资料\n提供管网水力、水质建模软件及手册，可练习泵、管线和水池系统分析\n适用对象：给排水和水系统竞赛团队\n基础要求：管网和流体力学基础\n学习顺序：先做小型供水管网，检查流量压力和单位，再改变泵工况比较结果\n语言：英语\n访问方式：官方公开资料；工具是否能带入赛场另核\n适用范围：通用备赛资料\n来源：https://www.epa.gov/water-research/epanet",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-051",
+      "original_text": "scikit-learn官方入门\n介绍模型拟合、预处理、评估与交叉验证，适合建立数据赛可复现基线\n适用对象：数据挖掘、智能技术与算法团队\n学习顺序：先跑通示例，再将预处理封装进Pipeline，用独立验证集检查数据泄漏\n语言：英语\n访问方式：免费文档；开源库；赛题数据授权另核\n适用范围：通用备赛资料\n来源：https://scikit-learn.org/stable/getting_started.html",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-052",
+      "original_text": "2026CCSP通知及赛场新规导读\n说明CSP成绩门槛、个人赛形式及时间；结合9月14日携物规定准备赛场清单\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先查CSP资格，再安排12小时5题模拟；打印资料不等于允许携带电子存储介质\n语言：中文\n访问方式：公开网页；附件或报名系统另以访问说明为准\n适用范围：对应通知届次；不作其他年份规则\n来源：https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-053",
+      "original_text": "2026 ASLA学生奖类别与材料指南\n官方分组要求可用于建立英文作品叙述及图像规格清单\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先读Eligibility，再只读拟报名类别的Submission Requirements；整理场地计划、图像和项目说明\n语言：英语\n访问方式：公开网页；附件或报名系统另以访问说明为准\n适用范围：对应通知届次；不作其他年份规则\n来源：https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2026-student-cfe",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-054",
+      "original_text": "IFLA 2025任务书与三类评价要点\n将场地分析、研究方法与设计方案形成证据链；三类评价侧重不同\n学习顺序：先确定类别和场地，再按分析—设计关联整理两张展板；资料为英文\n语言：中文\n访问方式：公开阅读或附件\n来源：https://ifla2025.com/media/pages/student-activities/student-competition/bb89078064-1745825477/ifla-2025_student-competition_brief-v2.pdf",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-055",
+      "original_text": "SUMO交通仿真教程\n提供路网、交通需求、信号灯、公共交通和Python控制仿真的循序教程\n适用对象：交通运输创新与城市系统研究团队\n基础要求：基础计算机操作；进阶需Python\n学习顺序：先做Hello World路网，再构造对照情景比较拥堵或运行效率\n语言：英语\n访问方式：免费开源文档；数据使用需核对来源许可\n适用范围：通用备赛资料\n来源：https://eclipse.dev/sumo/docs/Tutorials/index.html",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-056",
+      "original_text": "2023口腔科普作品通知与回执\n面向大众的医学知识转译和报送要求\n学习顺序：先选择一个科普问题，核实权威医学依据后写通俗脚本\n语言：中文\n访问方式：公开阅读\n来源：https://www.shstomatology.org.cn/html/web/xinwendongtai/tongzhigonggao/1922125798742921217.html",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-057",
+      "original_text": "WHO口腔健康资料\n提供口腔健康公共卫生概念、问题范围及报告入口，可核对科普作品背景\n适用对象：口腔健康科普作者\n基础要求：基本医学常识\n学习顺序：先界定面向公众的问题，再回到原报告核实数字、年份与适用地区\n语言：英语；部分资料有中文\n访问方式：公开官方资料\n适用范围：通用备赛资料\n来源：https://www.who.int/health-topics/oral-health/oral-health",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-058",
+      "original_text": "2026汇创青春产品设计材料与模板导读\n正式附件给出展板、模型照片、设计说明和不得重复投赛的要求\n学习顺序：先检查作品参赛历史，再按附件模板整理模型照片、创新点和技术过程\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-059",
+      "original_text": "MIT单变量微积分类题与解答\n公开习题、解答和相关讲解入口，适合补齐微积分推导基础\n适用对象：数学、物理和建模参赛者\n基础要求：高中数学\n学习顺序：先独立做题并写推导，再对照解答；高级竞赛仍需补对应分科知识\n语言：英语\n访问方式：免费课程，题目与解答分文件；不是丘赛真题\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/resources/problem-sets/",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-060",
+      "original_text": "MATLAB Onramp\n交互式学习数组、数据分析、可视化和MATLAB基本操作\n适用对象：建模、实验数据和控制团队\n基础要求：基础数学\n学习顺序：先完成课程练习，再把一组实际测量数据导入并画误差或拟合图\n语言：英语；有中文入口\n访问方式：入门课程免费；需账号；完整软件与工具箱许可另核\n适用范围：通用备赛资料\n来源：https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-061",
+      "original_text": "2026混凝土龙舟赛题及七项评分\n覆盖船模尺寸、材料比例、动力、论文与各测试评分，无标准设计答案\n学习顺序：先列硬性尺寸和材料约束，再做浮力、承载、控制和制作试验，最后按七项权重整理报告\n语言：中文\n访问方式：公开阅读\n来源：https://www.concretedragon.org/wp-content/uploads/2026ICDBC-国际大学生混凝土龙舟邀请赛赛题-1.pdf",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-062",
+      "original_text": "上海外国语大学日本文化经济学院",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-063",
+      "original_text": "Web Japan日本美术事实资料\n概述日本绘画、浮世绘等美术发展，可为日本知识和文化研究建立时间线\n适用对象：日本知识赛与文化研究学生\n基础要求：基础英语及日本史常识\n学习顺序：整理时期、艺术形式与代表特征，再回到日语资料核对专有名词\n语言：英语\n访问方式：公开PDF；内容年代较早，现代统计与新情况需另核\n适用范围：通用备赛资料\n来源：https://web-japan.org/factsheet/en/pdf/e24_art.pdf",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-064",
+      "original_text": "德语学术创新案例：卡夫卡《塞壬的沉默》\n介绍由文本矛盾提出问题、引入布鲁门贝格理论、修改论文及协同答辩的备赛路径\n学习顺序：再将课程论文改为可答辩的问题链\n语言：中文\n访问方式：公开阅读\n适用范围：2026文学类案例，不是论文全文或统一资格规则\n来源：https://sfl.pku.edu.cn/xsyd/xwdt/69c90a4ed927430caf9f9d5695ef0ece.htm",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-065",
+      "original_text": "上海市第二届学术英语演讲比赛启动通知｜备赛导读\n上海高校本科及研究生可参加科研英语、通用学术英语两个组别；每校每组1名，承办学校每组可2名，国籍不限，导师1—2名\n学习顺序：根据自己的成果选择科研或通用学术组，整理英文摘要、数据依据和非专业听众可理解的解释\n语言：中文\n访问方式：公开阅读\n来源：https://cec.fudan.edu.cn/83/12/c23080a754450/page.htm",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-066",
+      "original_text": "联合国模拟联合国研究资料入口\n汇集模拟会议与官方文件、术语、研究指南入口，帮助准备有证据的立场材料\n适用对象：模拟外交与全球治理学生\n基础要求：英语阅读和基本国际关系知识\n学习顺序：先查议题背景及相关机构职责，再写立场与证据表；联合国议事程序不直接套用APEC赛制\n语言：英语\n访问方式：官方公开入口；具体文献按原站条件\n适用范围：通用备赛资料\n来源：https://www.un.org/en/node/44556",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-067",
+      "original_text": "西安外国语大学日本文化经济学院",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-068",
+      "original_text": "第三十九届物理竞赛同济分组与命题原则\n供理解按修读课程分组及实际物理问题训练范围；无历届试题答案\n学习顺序：先识别所修课程对应组别，再练基础知识建模应用；历史年级限制不套用今年\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.tongji.edu.cn/00/3b/c30359a327739/page.htm",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-069",
+      "original_text": "智能技术作品开发与展示材料参考\n先明确解决的问题与智能方法，复现实验后整理开发文档和演示\n语言：中文\n访问方式：公开阅读\n来源：https://www.glmu.edu.cn/jwc/info/1242/6682.htm",
+      "resolution": "retained_content_with_cleaner_presentation",
+      "reason": "保留真实规则或学习内容；所在资源去除重复描述或核查提示，按成品格式重写。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-070",
+      "original_text": "先明确解决的问题与智能方法，复现实验后整理开发文档和演示",
+      "resolution": "retained_content_with_cleaner_presentation",
+      "reason": "保留真实规则或学习内容；所在资源去除重复描述或核查提示，按成品格式重写。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-071",
+      "original_text": "学院奖2026春季上传与原创规范\n集中说明AI声明、素材授权、团队人数和防重复提交要求\n学习顺序：先读所选品牌策略单，整理AI与素材使用清单，再上传匿名作品\n语言：中文\n访问方式：公开阅读\n来源：https://www.5iidea.com/contents/47748",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-072",
+      "original_text": "2025学院杯AIGC专题制作要求\n图像与动态影像规格分别列出，另要求保留AI关键词与过程图\n学习顺序：先选择静态或动态类别，整理生成过程和设计解释，再输出匿名成果\n语言：中文\n访问方式：公开阅读\n来源：https://xueyuanbei.com/ztsd/221.html",
+      "resolution": "preserved_fact_or_learning_instruction",
+      "reason": "真实赛事规则、资源教学内容或来源机构名称，人工复核后保留。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-073",
+      "original_text": "WHO多专业患者安全课程指南\n2011教学指南提供患者安全教育框架和11个主题，可用于沟通协作与安全意识复盘\n适用对象：临床技能赛接受专业教学的学生\n基础要求：医学课程基础\n学习顺序：从团队协作与沟通主题开始，对模拟站表现做结构化复盘\n语言：英语\n访问方式：公开教育指南；须由教师结合现行规范教学\n适用范围：通用备赛资料\n来源：https://www.who.int/publications/i/item/9789241501958",
+      "resolution": "retained_content_with_cleaner_presentation",
+      "reason": "保留真实规则或学习内容；所在资源去除重复描述或核查提示，按成品格式重写。",
+      "catalog_codes": []
+    },
+    {
+      "candidate_id": "editorial-074",
+      "original_text": "2026年9月10日前学校统一报送，电子邮件BHA2026@126.COM接收网盘链接，亦可邮寄数字介质，不收纸质作品。原创与版权条款较具体，应在提交前逐项阅读。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026158"
+      ]
+    },
+    {
+      "candidate_id": "editorial-075",
+      "original_text": "经学校遴选报送，不接受将外校学院联系人作为同济入口。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026177"
+      ]
+    },
+    {
+      "candidate_id": "editorial-076",
+      "original_text": "报名表随作品一同提交，不提前单独报名。第一参赛学校或院系盖章，设计册和PPT匿名；同济属南部赛区，邮箱515555429@qq.com。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026191"
+      ]
+    },
+    {
+      "candidate_id": "editorial-077",
+      "original_text": "盖章报名表与作品压缩包同时发送至第一学校所属赛区，同济为南部赛区515555429@qq.com。",
+      "resolution": "revised_or_removed_editorial_clause",
+      "reason": "核查过程、学校自指或泛化防御句已清理；赛事实质事实和真实资格约束保留。",
+      "catalog_codes": [
+        "2026191"
+      ]
+    }
+  ],
+  "manual_factual_resolutions": {
+    "2026008": "根据已读2027年赛事预通知改为2027年第十届，标题移除目录默认2026。",
+    "2026020": "AI+开源与AI+软件创新来源拆开；产品仅引用AI+开源来源和规则。",
+    "2026119": "按项目展示2、3、4、5或8人的上限，移除全局人数上下界。",
+    "2026157": "核心证据实际属于城市设计赛道，与目录调研报告赛不符，移内部。",
+    "2026234": "保留文案至多3人、其他类别至多6人，移除全局team_size_max。",
+    "2026187": "读2026-10-04缓存原文：7月3日为交件截止，7月10日为初赛评审；改正错误简介。",
+    "2026122/2026123": "两底稿事实相同并均覆盖个人和团体；合并标题为第七届上海市大学生力学竞赛，项目名作别名。",
+    "2026177/2026191": "删除指向项目所属学校的入口、赛区与联系人陈述；保留学校统一报送和按所属赛区报送规则。",
+    "2026249": "证书署名上限保持为证书规则，不映射团队人数。",
+    "2026100/2026154": "保留真实以邮戳为准、PST等来源要求。"
+  },
+  "institution_review": "真实主办、承办、课程提供单位、来源标题和特定校赛资格均保留；项目学校自指及比较性防御句已删除。",
+  "locator_review": "正文为空且仅搜索结果可见的来源不进入产品；可读文章使用正文或具体章节位置，quote不由改写内容填充。",
+  "unresolved_candidates": [],
+  "final_sweep": {
+    "reviewed": "正文、字段、来源标题与locator、学习资源全部属性逐项复核；学习中的技术检索、真实禁令、邮戳要求与来源机构名称保留。",
+    "further_resolutions": {
+      "105": "删除日程末尾不写成全球统一作品截止；保留各报名和提交环节的准确名称与时间。",
+      "99-2025": "仅有检索摘记，当前唯一源404且所谓其他核对来源未给链接，历史版本移内部；2026版保留。",
+      "97/151/237": "移除来源定位中的检索或处理笔记，保留实际章节、图片位置。",
+      "116-2025": "将资料检索描述改成载荷设计评比事实。"
+    },
+    "template": [
+      "赛事简介",
+      "参赛对象",
+      "赛道与作品要求",
+      "组队要求",
+      "报名方式",
+      "重要时间",
+      "学习资料",
+      "官方来源"
+    ]
+  },
+  "title_edition_followup": "title-edition-review.json"
+}

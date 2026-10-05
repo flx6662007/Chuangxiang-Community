@@ -1,0 +1,302 @@
+{
+  "corpus_version": "874ccd5c6dddf794",
+  "examples": [
+    {
+      "description": "本科三人队查找英特尔杯",
+      "request": {
+        "query": "英特尔杯",
+        "filters": {
+          "education": "undergraduate",
+          "team_size": 3
+        },
+        "mode": "keyword",
+        "as_of": "2026-10-04",
+        "limit": 5
+      },
+      "response": {
+        "interpretation": {
+          "major": null,
+          "grade": null,
+          "interests": [],
+          "participationType": null,
+          "registrationStatus": null
+        },
+        "results": [],
+        "knowledge_results": [
+          {
+            "record_id": "curated-c100-2026-1",
+            "code": "curated-c100-2026-1",
+            "catalog_code": "2026100",
+            "catalog_codes": [
+              "2026100"
+            ],
+            "title": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+            "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
+            "summary": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+            "category": {
+              "code": "artificial-intelligence",
+              "name": "artificial-intelligence"
+            },
+            "level": "national",
+            "score": 105.0,
+            "match_status": "matched",
+            "match_reasons": [
+              {
+                "text": "参赛学历：本科",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              },
+              {
+                "text": "参赛团队人数为 3—3 人，符合 3 人组队需求",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              }
+            ],
+            "evidence": [
+              {
+                "id": "ev-5a2490e9a0e139b6b95f",
+                "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+                "title": "2026英特尔杯嵌入式AI通知",
+                "quote": "",
+                "locator": "二、四、五",
+                "verified_at": "2026-10-03"
+              },
+              {
+                "id": "verified-embedded-eligibility",
+                "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+                "title": "2026年英特尔杯大学生电子设计竞赛嵌入式AI专题赛通知",
+                "quote": "",
+                "locator": "二、参赛资格第1、3、4项",
+                "verified_at": "2026-10-04"
+              }
+            ],
+            "fields": {
+              "eligibility": "参赛学生在竞赛期间须为普通高校全日制在校本科生；学校须取得邀请或分区批准的参赛资格。",
+              "education": [
+                "本科"
+              ],
+              "grades": [],
+              "majors": [],
+              "participation_type": "team",
+              "organizer": null,
+              "tracks": null,
+              "registration_method": null,
+              "team_size_min": 3,
+              "team_size_max": 3,
+              "registration_start": null,
+              "registration_deadline": null,
+              "submission_deadline": null,
+              "registration_url": null,
+              "registration_status": null,
+              "status_as_of": null
+            },
+            "content_hash": "8b054717dc27bba74b9b2e5283bec378ef8d6bb922dfb52487544b0c3493f235",
+            "passages": [
+              {
+                "id": "fact-2",
+                "heading": "赛程安排",
+                "text": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+                "evidence_ids": [
+                  "ev-5a2490e9a0e139b6b95f"
+                ]
+              },
+              {
+                "id": "fact-3",
+                "heading": "作品要求",
+                "text": "基于规定Intel平台独立完成硬件、代码、调试和报告；中文报告约15000字、英文简报至多6页",
+                "evidence_ids": [
+                  "ev-5a2490e9a0e139b6b95f"
+                ]
+              },
+              {
+                "id": "verified-eligibility",
+                "heading": "参赛对象与组队",
+                "text": "队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              }
+            ],
+            "condition_checks": [
+              {
+                "field": "education",
+                "role": "filter",
+                "value": "undergraduate",
+                "state": "matched"
+              },
+              {
+                "field": "team_size",
+                "role": "filter",
+                "value": 3,
+                "state": "matched"
+              }
+            ]
+          }
+        ],
+        "hits": [
+          {
+            "record_id": "curated-c100-2026-1",
+            "code": "curated-c100-2026-1",
+            "catalog_code": "2026100",
+            "catalog_codes": [
+              "2026100"
+            ],
+            "title": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+            "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
+            "summary": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+            "category": {
+              "code": "artificial-intelligence",
+              "name": "artificial-intelligence"
+            },
+            "level": "national",
+            "score": 105.0,
+            "match_status": "matched",
+            "match_reasons": [
+              {
+                "text": "参赛学历：本科",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              },
+              {
+                "text": "参赛团队人数为 3—3 人，符合 3 人组队需求",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              }
+            ],
+            "evidence": [
+              {
+                "id": "ev-5a2490e9a0e139b6b95f",
+                "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+                "title": "2026英特尔杯嵌入式AI通知",
+                "quote": "",
+                "locator": "二、四、五",
+                "verified_at": "2026-10-03"
+              },
+              {
+                "id": "verified-embedded-eligibility",
+                "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+                "title": "2026年英特尔杯大学生电子设计竞赛嵌入式AI专题赛通知",
+                "quote": "",
+                "locator": "二、参赛资格第1、3、4项",
+                "verified_at": "2026-10-04"
+              }
+            ],
+            "fields": {
+              "eligibility": "参赛学生在竞赛期间须为普通高校全日制在校本科生；学校须取得邀请或分区批准的参赛资格。",
+              "education": [
+                "本科"
+              ],
+              "grades": [],
+              "majors": [],
+              "participation_type": "team",
+              "organizer": null,
+              "tracks": null,
+              "registration_method": null,
+              "team_size_min": 3,
+              "team_size_max": 3,
+              "registration_start": null,
+              "registration_deadline": null,
+              "submission_deadline": null,
+              "registration_url": null,
+              "registration_status": null,
+              "status_as_of": null
+            },
+            "content_hash": "8b054717dc27bba74b9b2e5283bec378ef8d6bb922dfb52487544b0c3493f235",
+            "passages": [
+              {
+                "id": "fact-2",
+                "heading": "赛程安排",
+                "text": "学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。",
+                "evidence_ids": [
+                  "ev-5a2490e9a0e139b6b95f"
+                ]
+              },
+              {
+                "id": "fact-3",
+                "heading": "作品要求",
+                "text": "基于规定Intel平台独立完成硬件、代码、调试和报告；中文报告约15000字、英文简报至多6页",
+                "evidence_ids": [
+                  "ev-5a2490e9a0e139b6b95f"
+                ]
+              },
+              {
+                "id": "verified-eligibility",
+                "heading": "参赛对象与组队",
+                "text": "队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。",
+                "evidence_ids": [
+                  "verified-embedded-eligibility"
+                ]
+              }
+            ],
+            "condition_checks": [
+              {
+                "field": "education",
+                "role": "filter",
+                "value": "undergraduate",
+                "state": "matched"
+              },
+              {
+                "field": "team_size",
+                "role": "filter",
+                "value": 3,
+                "state": "matched"
+              }
+            ]
+          }
+        ],
+        "mode_used": "keyword",
+        "warnings": [],
+        "corpus_version": "874ccd5c6dddf794",
+        "as_of": "2026-10-04",
+        "empty_result": null
+      }
+    },
+    {
+      "description": "查询有依据确认仍可报名的赛事",
+      "request": {
+        "query": "",
+        "filters": {
+          "registration_status": "open"
+        },
+        "mode": "keyword",
+        "as_of": "2026-10-04",
+        "limit": 5
+      },
+      "response": {
+        "interpretation": {
+          "major": null,
+          "grade": null,
+          "interests": [],
+          "participationType": null,
+          "registrationStatus": null
+        },
+        "results": [],
+        "knowledge_results": [],
+        "hits": [],
+        "mode_used": "keyword",
+        "warnings": [],
+        "corpus_version": "874ccd5c6dddf794",
+        "as_of": "2026-10-04",
+        "empty_result": {
+          "code": "no_condition_match",
+          "message": "没有找到同时满足以下条件的赛事：报名状态：报名正在进行。",
+          "conditions": [
+            {
+              "field": "registration_status",
+              "label": "报名状态",
+              "value": "open",
+              "display_value": "报名正在进行",
+              "matched": 0,
+              "unmatched": 22,
+              "unknown": 176
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

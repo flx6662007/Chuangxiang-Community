@@ -1,0 +1,22 @@
+{
+  "corpus_version": "874ccd5c6dddf794",
+  "reviewed_on": "2026-10-04",
+  "record_count": 198,
+  "cause": "届次标签清理删除了含历史资料的括号，原标题清理仅检查标签中是否存在年份；第十四届标签无年份时漏过目录2026。现以稳定届次ID中的明确年份补充判断，不把随机hash当作年份。",
+  "changed_record_ids": [
+    "curated-c114-2026-1",
+    "curated-c114-2024-2"
+  ],
+  "remaining_title_year_conflicts": [],
+  "resource_review": {
+    "record_id": "curated-c114-2024-2",
+    "removed_resource_ids": [
+      "resource-af530cf24885ad3ca910"
+    ],
+    "retained_resource_ids": [
+      "resource-7cd8f618c0b095d8d038",
+      "resource-792d2c9d59d87a860489"
+    ]
+  },
+  "scope": "仅修此赛事的届次正文与资源关联；其余记录逐项比较未改变。"
+}

@@ -1,0 +1,122 @@
+{
+  "records": [
+    {
+      "catalog_code": "2026139",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "教学简介仅说明大学生水处理科技竞赛推广，缺少与长三角可持续水处理赛事的同一身份材料。",
+      "sources": [
+        {
+          "url": "https://sese.tongji.edu.cn/szdw/zyjs/js/L/ll1/jxky.htm",
+          "access_status": "retrieved",
+          "snapshot": "d5adee93cefb70843da3a98f279d24d7c9ab883cee3e6be8e5e0c3dd05190b80.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026160",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "学会首页含科技奖和论文导航，没有求是优秀科技论文专项奖规程。",
+      "sources": [
+        {
+          "url": "https://www.planning.org.cn/",
+          "access_status": "retrieved",
+          "snapshot": "e271f0766bd16efc465a4b23f9fde841601426afc86db6314904e9ebc7b92cfd.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026165",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "来源正文为2023年日中韩景观学术会议与学生Fieldworks工作坊，不能识别为目录学生竞赛。",
+      "sources": [
+        {
+          "url": "https://www.jila-zouen.org/ja-cn-kr/15688",
+          "access_status": "retrieved",
+          "snapshot": "fa17b5d8d4ea676f548ea92e2beb12e7578b5381f4ec6808b005f256d2e70bdd.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026171",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "两届交流营通知均列出营内技能比赛日程，作为2025/2026历史知识概览；不将入营申请期限映射为独立竞赛报名。",
+      "sources": [
+        {
+          "url": "https://dent.tongji.edu.cn/info/1191/11769.htm",
+          "access_status": "retrieved",
+          "snapshot": "b469d8d87210b0963dd78d057d06f25a1214b24cad9479dd1791a1b7617ede15.txt"
+        },
+        {
+          "url": "https://dent.tongji.edu.cn/info/1191/11879.htm",
+          "access_status": "retrieved",
+          "snapshot": "f9165befc9cb811760771d7a9f7de65dace03df83ffc7682bf9d5ac60902079c.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026200",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "原高校PDF目前返回404，旧资料只有目录身份线索，无正式赛事通知。",
+      "sources": [
+        {
+          "url": "https://waiyu.usst.edu.cn/_upload/article/files/c3/0d/55ef147c4dcca83e7c8459ba366e/83167ab2-de90-4ad4-8e08-8c932f1afc5a.pdf",
+          "access_status": "unavailable",
+          "snapshot": null
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026226",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "来源为PMAC/CIMAP中国区获奖报道，缺少主办规程及目录名称对应证据。",
+      "sources": [
+        {
+          "url": "https://www.jfdaily.com/sgh/detail?id=1719354",
+          "access_status": "retrieved",
+          "snapshot": "7ba65e1196df0477925303fb0511a6440a0bdcb4493311dffe794643d1b98f0b.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026245",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "已读2021首届建环杯报道，题目是舒适空调服设计制作，与人工环境健康度智能诊断身份不一致。",
+      "sources": [
+        {
+          "url": "https://mefaculty.tongji.edu.cn/info/1022/1654.htm",
+          "access_status": "retrieved",
+          "snapshot": "5b4b9d1f0430ad11181813b7043c5bf1e946cc28340f6fda9e2b31c927944e33.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026247",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "2018与2020官方通知正文可读，收录对应历史届次，保留同济在读本科生等真实院校资格。",
+      "sources": [
+        {
+          "url": "https://news.tongji.edu.cn/info/1008/20247.htm",
+          "access_status": "retrieved",
+          "snapshot": "39f3c68a41f11a73a8a726f69687821b022552b9e4a56a024ba8f6f068bb1639.txt"
+        },
+        {
+          "url": "https://tjwm.tongji.edu.cn/info/1005/1176.htm",
+          "access_status": "retrieved",
+          "snapshot": "fbf6e93cbee9ec5de4012fcb4091afeb0712f4c71cd6f42a31918aa82158bd7c.txt"
+        }
+      ]
+    },
+    {
+      "catalog_code": "2026253",
+      "reviewed_on": "2026-10-04",
+      "conclusion": "医院2025赛况可证明2021级临床医学对象及综合考核组成，缺少目录2026届参赛规则。",
+      "sources": [
+        {
+          "url": "https://www.tongjihospital.com.cn/news/intro/id/162/pid/27264.html",
+          "access_status": "retrieved",
+          "snapshot": "33fdaeda4097e97f223a68f85853ad6b2ee1ea0b86f8050c603eb9b78a5d911a.txt"
+        }
+      ]
+    }
+  ]
+}

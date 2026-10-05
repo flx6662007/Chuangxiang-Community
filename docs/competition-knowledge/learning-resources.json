@@ -1,0 +1,4086 @@
+{
+  "schema_version": 1,
+  "resources": [
+    {
+      "id": "resource-e7545843f7eccdad299c",
+      "title": "国赛系统学生操作手册2026",
+      "url": "https://cxcy.cczu.edu.cn/_upload/article/files/b3/a9/5f559ed043d5870607476f26468f/3aa2efe0-f4a0-4e7e-8483-d6f8a5503247.pdf",
+      "text": "国赛系统学生操作手册2026\n介绍学生账号、团队项目填写及各赛道报名流程\n访问方式：免费公开\n适用范围：2026报名及项目填报\n来源：https://cxcy.cczu.edu.cn/_upload/article/files/b3/a9/5f559ed043d5870607476f26468f/3aa2efe0-f4a0-4e7e-8483-d6f8a5503247.pdf",
+      "summary": "介绍学生账号、团队项目填写及各赛道报名流程",
+      "catalog_codes": [
+        "2026001"
+      ],
+      "provider": "全国大学生创业服务网；常州大学转载",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-f1a1a6f3d0c0c908eda2",
+      "title": "榜题目录与需求说明",
+      "url": "https://youth.cau.edu.cn/art/2026/5/15/art_45078_1113491.html",
+      "text": "榜题目录与需求说明\n先根据榜题的技术需求判断团队能力、成果类型与匹配方向\n访问方式：免费公开\n适用范围：2026榜题选题\n来源：https://youth.cau.edu.cn/art/2026/5/15/art_45078_1113491.html",
+      "summary": "先根据榜题的技术需求判断团队能力、成果类型与匹配方向",
+      "catalog_codes": [
+        "2026003"
+      ],
+      "provider": "中国农业大学团委转载",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-144e1cf3eba9fb18a9de",
+      "title": "第十九届成果准备及遴选要求",
+      "url": "https://www.gjcxcy.cn/PublicColumn/Notice/ea09170f-2f01-4f7f-b34d-ec11441b4779",
+      "text": "第十九届成果准备及遴选要求\n按成果类型准备论文、展示和项目简介\n访问方式：免费公开\n适用范围：2026论文、展板和创业项目材料\n来源：https://www.gjcxcy.cn/PublicColumn/Notice/ea09170f-2f01-4f7f-b34d-ec11441b4779",
+      "summary": "按成果类型准备论文、展示和项目简介",
+      "catalog_codes": [
+        "2026007"
+      ],
+      "provider": "全国大学生创新年会平台",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e431dd8c9ade8b06be1b",
+      "title": "MuJoCo Python官方文档",
+      "url": "https://mujoco.readthedocs.io/en/stable/python.html",
+      "text": "MuJoCo Python官方文档\n学习Python仿真接口和模型运行；辽宁工程技术大学赛项说明明确列出Python版MuJoCo\n访问方式：免费公开\n适用范围：智能装备与产线开发方向的仿真实践\n来源：https://mujoco.readthedocs.io/en/stable/python.html",
+      "summary": "学习Python仿真接口和模型运行；辽宁工程技术大学赛项说明明确列出Python版MuJoCo",
+      "catalog_codes": [
+        "2026009"
+      ],
+      "provider": "MuJoCo项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-86509cc3e2e16de1e94d",
+      "title": "信科赛五周备赛规划",
+      "url": "https://xxgcxy.kfvc.edu.cn/2026/0107/c206a8320/pagem.htm",
+      "text": "信科赛五周备赛规划\n公开页面列出分模块复习和测验计划\n访问方式：免费公开\n适用范围：通信基础复习安排参考\n来源：https://xxgcxy.kfvc.edu.cn/2026/0107/c206a8320/pagem.htm",
+      "summary": "公开页面列出分模块复习和测验计划",
+      "catalog_codes": [
+        "2026012"
+      ],
+      "provider": "开封职业学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-043c649bf54b3036e7b4",
+      "title": "AI+开源竞赛规则及作品提交要求",
+      "url": "https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B61_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E7%AB%9E%E8%B5%9B%E8%A7%84%E5%88%99%E5%8F%8A%E4%BD%9C%E5%93%81%E6%8F%90%E4%BA%A4%E8%A6%81%E6%B1%820812.pdf",
+      "text": "AI+开源竞赛规则及作品提交要求\n按官方附件检查提交物、可核验成果及资源披露\n访问方式：免费公开\n适用范围：2026AI+开源\n来源：https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B61_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E7%AB%9E%E8%B5%9B%E8%A7%84%E5%88%99%E5%8F%8A%E4%BD%9C%E5%93%81%E6%8F%90%E4%BA%A4%E8%A6%81%E6%B1%820812.pdf",
+      "summary": "按官方附件检查提交物、可核验成果及资源披露",
+      "catalog_codes": [
+        "2026020"
+      ],
+      "provider": "AIC大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-65fc3624752a4d173997",
+      "title": "AI+开源技术报告参考大纲",
+      "url": "https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B62_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%E5%8F%82%E8%80%83%E5%A4%A7%E7%BA%B2260812.pdf",
+      "text": "AI+开源技术报告参考大纲\n用官方结构组织问题、方案、实现、验证和自主工作说明\n访问方式：免费公开\n适用范围：2026AI+开源报告\n来源：https://www.aicomp.cn/wp-content/uploads/2026/08/%E9%99%84%E4%BB%B62_AIC%C2%B7AI%E5%BC%80%E6%BA%90%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%E5%8F%82%E8%80%83%E5%A4%A7%E7%BA%B2260812.pdf",
+      "summary": "用官方结构组织问题、方案、实现、验证和自主工作说明",
+      "catalog_codes": [
+        "2026020"
+      ],
+      "provider": "AIC大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d1b37311ae9b586315f2",
+      "title": "Hugging Face大模型课程中文导读",
+      "url": "https://huggingface.co/learn/llm-course/zh-CN/chapter1/1",
+      "text": "Hugging Face大模型课程中文导读\n学习模型、数据及相关工具的基础概念\n访问方式：免费公开\n适用范围：开源模型应用基础\n来源：https://huggingface.co/learn/llm-course/zh-CN/chapter1/1",
+      "summary": "学习模型、数据及相关工具的基础概念",
+      "catalog_codes": [
+        "2026020"
+      ],
+      "provider": "Hugging Face",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-537f4baf6593a92e4d12",
+      "title": "Hugging Face大模型课程",
+      "url": "https://huggingface.co/learn/llm-course/zh-CN/chapter1/1",
+      "text": "Hugging Face大模型课程\n作为模型应用学习补充\n访问方式：免费公开\n适用范围：大模型与智能体应用赛项基础\n来源：https://huggingface.co/learn/llm-course/zh-CN/chapter1/1",
+      "summary": "作为模型应用学习补充",
+      "catalog_codes": [
+        "2026021"
+      ],
+      "provider": "Hugging Face",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-fbc86d754ad9ca13506d",
+      "title": "家用机器人主题设计与材料要求",
+      "url": "https://kzgc.neuq.edu.cn/info/1081/5715.htm",
+      "text": "家用机器人主题设计与材料要求\n学习创意说明、原理样机演示及AI辅助过程材料的组织方式\n访问方式：免费公开\n适用范围：2026主题一\n来源：https://kzgc.neuq.edu.cn/info/1081/5715.htm",
+      "summary": "学习创意说明、原理样机演示及AI辅助过程材料的组织方式",
+      "catalog_codes": [
+        "2026022"
+      ],
+      "provider": "东北大学秦皇岛分校控制工程学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3b050f7a77be4501713c",
+      "title": "2026中国机器人大赛赛区规则集合（9月11日更新）",
+      "url": "https://rcccaa.drct-caa.org.cn/article_info.php?id=138",
+      "text": "2026中国机器人大赛赛区规则集合（9月11日更新）\n含视觉识别、自动分拣、服务、医疗、四足等赛项规则下载\n访问方式：免费公开\n适用范围：中国机器人大赛赛区，各具体赛项\n学习用途：先据赛项规则确定机器人形态、任务和测试目标\n来源：https://rcccaa.drct-caa.org.cn/article_info.php?id=138",
+      "summary": "含视觉识别、自动分拣、服务、医疗、四足等赛项规则下载",
+      "catalog_codes": [
+        "2026023"
+      ],
+      "provider": "中国自动化学会机器人竞赛与培训部",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5f128c056620a69158e4",
+      "title": "2026 RoboCup赛区规则集合",
+      "url": "https://rcccaa.drct-caa.org.cn/article_info.php?id=113",
+      "text": "2026 RoboCup赛区规则集合\n足球仿真2D/3D、类人、小型、救援仿真与@Home等PDF\n访问方式：免费公开\n适用范围：RoboCup足球、救援、@Home及相关赛项\n学习用途：按选定赛项了解比赛环境与评价要求，避免使用其他赛区规则\n来源：https://rcccaa.drct-caa.org.cn/article_info.php?id=113",
+      "summary": "足球仿真2D/3D、类人、小型、救援仿真与@Home等PDF",
+      "catalog_codes": [
+        "2026023"
+      ],
+      "provider": "中国自动化学会机器人竞赛与培训部",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-944ba62ac7aba7b7bd0f",
+      "title": "SAMPE UW 2026桥梁设计海报",
+      "url": "https://students.washington.edu/sampe10/projects.html",
+      "text": "SAMPE UW 2026桥梁设计海报\n2026八类桥梁设计海报PDF，包括I梁、箱梁、再生碳纤维与夹层结构\n访问方式：免费公开\n适用范围：SAMPE北美桥梁赛；2026碳纤维、玻纤、天然纤维与夹层等类别\n学习用途：参考真实参赛团队如何组织方案、材料类别和技术海报\n来源：https://students.washington.edu/sampe10/projects.html",
+      "summary": "2026八类桥梁设计海报PDF，包括I梁、箱梁、再生碳纤维与夹层结构",
+      "catalog_codes": [
+        "2026025"
+      ],
+      "provider": "University of Washington SAMPE学生分会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-afc6e5d244acd8e9e8fb",
+      "title": "Student Contest FAQ",
+      "url": "https://www.sampeamerica.org/student-contest-faq",
+      "text": "Student Contest FAQ\nSAMPE官方学生竞赛常见问题页面\n访问方式：免费公开\n适用范围：SAMPE学生竞赛的通用参赛准备\n来源：https://www.sampeamerica.org/student-contest-faq",
+      "summary": "SAMPE官方学生竞赛常见问题页面",
+      "catalog_codes": [
+        "2026025"
+      ],
+      "provider": "SAMPE North America",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d544ffa86a9cb4caf715",
+      "title": "第十七届SAMPE中国桥梁学生竞赛规则（2025历史资料）",
+      "url": "https://qihang.hrbeu.edu.cn/_upload/article/files/71/58/4fd80fe947cd87d205780c8f41f2/e8d1269f-68f5-4777-9b3e-a570284bea3e.pdf",
+      "text": "第十七届SAMPE中国桥梁学生竞赛规则（2025历史资料）\n碳纤维与天然纤维桥梁、制作约束、测试流程和海报/视频说明要求\n访问方式：免费公开\n适用范围：中国赛桥梁组，2025历史学习\n学习用途：学习桥梁材料、几何约束、载荷测试以及技术海报应说明的内容\n来源：https://qihang.hrbeu.edu.cn/_upload/article/files/71/58/4fd80fe947cd87d205780c8f41f2/e8d1269f-68f5-4777-9b3e-a570284bea3e.pdf",
+      "summary": "碳纤维与天然纤维桥梁、制作约束、测试流程和海报/视频说明要求",
+      "catalog_codes": [
+        "2026026"
+      ],
+      "provider": "SAMPE中国大陆总会；哈尔滨工程大学公开存档",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7ce04d92770724072953",
+      "title": "浙江大学《化工设计》课程",
+      "url": "https://coursehome.zhihuishu.com/courseHome/1000069974",
+      "text": "浙江大学《化工设计》课程\n赛事官网直接链接；课程介绍覆盖现代设计方法、工作程序、文档编制及化工厂设计实践\n访问方式：需登录\n适用范围：化工设计流程、设计文档与仿真工具学习\n学习用途：为任务书对应的工厂设计与文档编制补系统知识\n来源：https://coursehome.zhihuishu.com/courseHome/1000069974",
+      "summary": "赛事官网直接链接；课程介绍覆盖现代设计方法、工作程序、文档编制及化工厂设计实践",
+      "catalog_codes": [
+        "2026027"
+      ],
+      "provider": "浙江大学／智慧树",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a3c27d54be61a35ea394",
+      "title": "第九届全国大学生化工实验大赛通知及参赛基本规则",
+      "url": "https://hgxy.hfut.edu.cn/_upload/article/files/2a/a3/90f6475b45d3a88778a739e48679/48601720-aee0-42d4-beb5-535c3023d396.pdf",
+      "text": "第九届全国大学生化工实验大赛通知及参赛基本规则\n介绍学校推选、参赛资格与组队条件\n访问方式：免费公开\n适用范围：2026化工实验大赛主赛\n学习用途：先确认参赛资格、学校推选流程与组队条件\n来源：https://hgxy.hfut.edu.cn/_upload/article/files/2a/a3/90f6475b45d3a88778a739e48679/48601720-aee0-42d4-beb5-535c3023d396.pdf",
+      "summary": "介绍学校推选、参赛资格与组队条件",
+      "catalog_codes": [
+        "2026028"
+      ],
+      "provider": "中国化工教育协会；合肥工业大学存档",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e10bd1350db2944daa72",
+      "title": "2026制药赛道第一轮通知",
+      "url": "https://cxcy.tust.edu.cn/scfhzx/jsgg/5b3b176e5cd34f4cae62e1bc1f44636a.htm",
+      "text": "2026制药赛道第一轮通知\n三阶段比赛方式及组队要求\n访问方式：免费公开\n适用范围：2026新增制药赛道，仅适用于该赛道\n学习用途：了解基础知识、数字模拟实验、线下操作与答辩的训练方向\n来源：https://cxcy.tust.edu.cn/scfhzx/jsgg/5b3b176e5cd34f4cae62e1bc1f44636a.htm",
+      "summary": "三阶段比赛方式及组队要求",
+      "catalog_codes": [
+        "2026028"
+      ],
+      "provider": "中国化工教育协会；天津科技大学转载",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-aff5a32dea8354f5477e",
+      "title": "第十二届创意作品参赛要求",
+      "url": "https://ieep.upc.edu.cn/2025/1010/c15488a473002/page.htm",
+      "text": "第十二届创意作品参赛要求\n创意作品竞赛的作品类别与匿名提交规范，帮助确定研究成果的呈现形式\n访问方式：免费公开\n适用范围：第十二届创意作品竞赛\n学习用途：用于明确作品类别、匿名提交等规范，先确定研究交付形式\n来源：https://ieep.upc.edu.cn/2025/1010/c15488a473002/page.htm",
+      "summary": "创意作品竞赛的作品类别与匿名提交规范，帮助确定研究成果的呈现形式",
+      "catalog_codes": [
+        "2026030"
+      ],
+      "provider": "赛事组委会；中国石油大学转载",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-9b8afa9c7e8f46c7abb7",
+      "title": "Energy Statistics Data Browser",
+      "url": "https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser",
+      "text": "Energy Statistics Data Browser\n170余个国家和地区、16类能源主题的统计图表入口，标明CC BY 4.0\n访问方式：免费公开\n适用范围：能源生产、消费与结构比较类研究；自选研究题目\n学习用途：提供可追溯的跨国家能源统计，支持事实核查及研究选题\n来源：https://www.iea.org/data-and-statistics/data-tools/energy-statistics-data-browser",
+      "summary": "170余个国家和地区、16类能源主题的统计图表入口，标明CC BY 4.0",
+      "catalog_codes": [
+        "2026030"
+      ],
+      "provider": "国际能源署 IEA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b37fb0e68f4defac11a6",
+      "title": "2026开放赛项报名及作品提交说明",
+      "url": "https://3dds.3ddl.net/index.php?ctl=Informationlist&id=712&met=details",
+      "text": "2026开放赛项报名及作品提交说明\n说明3DShow承载材料、模型上传与过程展示要求\n访问方式：免费公开\n适用范围：2026开放赛项\n学习用途：按要求组织设计思路、技术路线、创作过程和3D模型，减少交付遗漏\n来源：https://3dds.3ddl.net/index.php?ctl=Informationlist&id=712&met=details",
+      "summary": "说明3DShow承载材料、模型上传与过程展示要求",
+      "catalog_codes": [
+        "2026031"
+      ],
+      "provider": "全国3D大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-ec91c17bf2a0e39d1090",
+      "title": "2026数马&华教杯增减材复合制造及数字孪生赛项通知",
+      "url": "https://3dds.3ddl.net/index.php?ctl=Informationlist&id=699&met=details",
+      "text": "2026数马&华教杯增减材复合制造及数字孪生赛项通知\n具体任务涉及单桨叶水面航行器，要求模型、图纸、技术方案和相关工程文件\n访问方式：免费公开\n适用范围：2026增减材复合制造及数字孪生赛项\n学习用途：明确从三维设计到CAM、仿真验证、实物装配的任务链\n来源：https://3dds.3ddl.net/index.php?ctl=Informationlist&id=699&met=details",
+      "summary": "具体任务涉及单桨叶水面航行器，要求模型、图纸、技术方案和相关工程文件",
+      "catalog_codes": [
+        "2026031"
+      ],
+      "provider": "全国3D大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c2881afd666b4aa3a5d6",
+      "title": "金砖未来科幻创作赛项技术要求及规程入口",
+      "url": "https://www.cdcm.uestc.edu.cn/info/1055/1865.htm",
+      "text": "金砖未来科幻创作赛项技术要求及规程入口\n联合承办方完整通知附技术规程，青年创新组明确原创要求，AI赛道另要求创作使用记录报告\n访问方式：免费公开\n适用范围：2026金砖未来科幻创作赛，尤其大学生青年创新组\n学习用途：按选定组别核对主题、体裁和交付格式；青年创新与AI赛道的AI使用要求不同\n来源：https://www.cdcm.uestc.edu.cn/info/1055/1865.htm",
+      "summary": "联合承办方完整通知附技术规程，青年创新组明确原创要求，AI赛道另要求创作使用记录报告",
+      "catalog_codes": [
+        "2026032"
+      ],
+      "provider": "电子科技大学数字文化与传媒研究中心／赛事组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d88f74c6ff5323bf9b89",
+      "title": "RoboMaster开发板C型例程与教程",
+      "url": "https://github.com/RoboMaster/Development-Board-C-Examples",
+      "text": "RoboMaster开发板C型例程与教程\n官方仓库含嵌入式软件教程PDF和例程\n访问方式：免费公开\n适用范围：使用RoboMaster开发板C型的嵌入式基础学习\n学习用途：用配套例程练习硬件驱动与电控开发，建立能运行的实验工程\n来源：https://github.com/RoboMaster/Development-Board-C-Examples",
+      "summary": "官方仓库含嵌入式软件教程PDF和例程",
+      "catalog_codes": [
+        "2026033"
+      ],
+      "provider": "RoboMaster官方GitHub组织",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-044a92c984605c33accf",
+      "title": "第十二届常规赛参赛须知",
+      "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364785/page.htm",
+      "text": "第十二届常规赛参赛须知\n仿生等设计任务限制，并指向相应比赛手册\n访问方式：免费公开\n适用范围：第十二届2026常规赛\n学习用途：阅读设计对象、实物约束与评价要求后再确定方案\n来源：https://12umic.hit.edu.cn/2025/0321/c20012a364785/page.htm",
+      "summary": "仿生等设计任务限制，并指向相应比赛手册",
+      "catalog_codes": [
+        "2026034"
+      ],
+      "provider": "大赛组委会／哈尔滨工业大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-46272f615721836f6a81",
+      "title": "第十二届主题与内容说明",
+      "url": "https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+      "text": "第十二届主题与内容说明\n2026常规与2027数字孪生两类赛季\n访问方式：免费公开\n适用范围：第十二届主题选题\n学习用途：用于判断方案是否符合规定内容和赛季\n来源：https://12umic.hit.edu.cn/2025/0321/c20012a364782/page.htm",
+      "summary": "2026常规与2027数字孪生两类赛季",
+      "catalog_codes": [
+        "2026034"
+      ],
+      "provider": "大赛组委会／哈尔滨工业大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5c5c1a14823a0e5cdf2c",
+      "title": "第十九届第一轮通知与竞赛类别",
+      "url": "https://zhxy.nwsuaf.edu.cn/docs/2026-03/771f859d3f8d43e18ae9d8c155891444.pdf",
+      "text": "第十九届第一轮通知与竞赛类别\n介绍机械、建筑等类别与赛道设置\n访问方式：免费公开\n适用范围：2026赛事类别与基础要求\n学习用途：了解机械、建筑等类别与赛道设置\n来源：https://zhxy.nwsuaf.edu.cn/docs/2026-03/771f859d3f8d43e18ae9d8c155891444.pdf",
+      "summary": "介绍机械、建筑等类别与赛道设置",
+      "catalog_codes": [
+        "2026035"
+      ],
+      "provider": "全国大学生先进成图大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-eb5f2d2184a9fb66658c",
+      "title": "竞赛章程（2025年修订）",
+      "url": "https://www.jienengjianpai.org/h-col-161.html",
+      "text": "竞赛章程（2025年修订）\n全文说明赛事组织、作品申报及展示方式\n访问方式：免费公开\n适用范围：节能减排竞赛通用参赛准备\n学习用途：先了解申报、展示、组织和异议程序\n来源：https://www.jienengjianpai.org/h-col-161.html",
+      "summary": "全文说明赛事组织、作品申报及展示方式",
+      "catalog_codes": [
+        "2026036"
+      ],
+      "provider": "竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-20f89702d08e0cedbc58",
+      "title": "第十届特等奖作品简介（2017）",
+      "url": "https://www.jienengjianpai.org/sys-nd/332.html",
+      "text": "第十届特等奖作品简介（2017）\n学习从具体能耗问题到技术原理、样机及效果指标的写法\n访问方式：免费公开\n适用范围：科技作品选题与节能效果论证\n来源：https://www.jienengjianpai.org/sys-nd/332.html",
+      "summary": "学习从具体能耗问题到技术原理、样机及效果指标的写法",
+      "catalog_codes": [
+        "2026036"
+      ],
+      "provider": "竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-165252f87f25c8c311dd",
+      "title": "2026参赛作品要求与评分维度",
+      "url": "https://www.sues.edu.cn/8a/36/c26790a297526/page.htm",
+      "text": "2026参赛作品要求与评分维度\n说明案例需有实际应用，报告及演示材料需呈现效果\n访问方式：免费公开\n适用范围：工业工程与精益管理案例报告\n学习用途：用科学规范、选题、内容、应用效果、协作和答辩等维度检查案例\n来源：https://www.sues.edu.cn/8a/36/c26790a297526/page.htm",
+      "summary": "说明案例需有实际应用，报告及演示材料需呈现效果",
+      "catalog_codes": [
+        "2026037"
+      ],
+      "provider": "上海工程技术大学转述赛项要求",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-db141f8ec58686508ccf",
+      "title": "中国工业工程应用案例库",
+      "url": "https://www2.ie.tsinghua.edu.cn/ciecb/index.php",
+      "text": "中国工业工程应用案例库\n案例与数据共享机制并提供会员入口\n访问方式：需登录\n适用范围：生产流程、物流及精益改善案例学习\n学习用途：集中寻找有数据支撑的工业工程案例，学习如何组织事实与分析\n来源：https://www2.ie.tsinghua.edu.cn/ciecb/index.php",
+      "summary": "案例与数据共享机制并提供会员入口",
+      "catalog_codes": [
+        "2026037"
+      ],
+      "provider": "清华大学工业工程系",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-956cfd9484ea64b11d6d",
+      "title": "2026机械产品数字化设计赛公告、命题与评分标准",
+      "url": "https://cmee.upc.edu.cn/_upload/article/files/77/e3/8e5b629b4f438ad4039ebb0013df/506893e0-f59f-424d-9bcb-a882bb947e75.pdf",
+      "text": "2026机械产品数字化设计赛公告、命题与评分标准\n37页公告附件，包含设计类与数字孪生类的命题和评分说明\n访问方式：免费公开\n适用范围：数字设计类、数字孪生类\n学习用途：依据真实命题和评审要求准备模型、分析与提交材料\n来源：https://cmee.upc.edu.cn/_upload/article/files/77/e3/8e5b629b4f438ad4039ebb0013df/506893e0-f59f-424d-9bcb-a882bb947e75.pdf",
+      "summary": "37页公告附件，包含设计类与数字孪生类的命题和评分说明",
+      "catalog_codes": [
+        "2026038"
+      ],
+      "provider": "赛项执委会（中国石油大学公开附件）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-17b10f44cc5de6f8c0d0",
+      "title": "2026华东区域赛第一号公告",
+      "url": "https://cmee.upc.edu.cn/_upload/article/files/77/e3/8e5b629b4f438ad4039ebb0013df/1adf5ad9-1b34-43ff-95cc-d591bea4f2cc.pdf",
+      "text": "2026华东区域赛第一号公告\n同济大学承办，内容与全国技术要求一致；属于区域流程资料\n访问方式：免费公开\n适用范围：华东地区参赛组织与材料检查\n来源：https://cmee.upc.edu.cn/_upload/article/files/77/e3/8e5b629b4f438ad4039ebb0013df/1adf5ad9-1b34-43ff-95cc-d591bea4f2cc.pdf",
+      "summary": "同济大学承办，内容与全国技术要求一致；属于区域流程资料",
+      "catalog_codes": [
+        "2026038"
+      ],
+      "provider": "华东区域赛执委会（中国石油大学公开附件）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e4844ee4ef152eb6fce9",
+      "title": "2026物流技术创意赛任务与实施方案入口",
+      "url": "https://notice.ysu.edu.cn/info/2264/25623.htm",
+      "text": "2026物流技术创意赛任务与实施方案入口\n散料搬运机器人任务要求自动识别、装卸与自主运行，可据此设计机构和控制系统\n访问方式：免费公开\n适用范围：散料货物搬运机器人\n学习用途：先明确自动识别、装卸和自主运行的任务边界再设计机构与控制系统\n来源：https://notice.ysu.edu.cn/info/2264/25623.htm",
+      "summary": "散料搬运机器人任务要求自动识别、装卸与自主运行，可据此设计机构和控制系统",
+      "catalog_codes": [
+        "2026039"
+      ],
+      "provider": "燕山大学转发赛事方案",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5274501a9bb2098ed93d",
+      "title": "OpenCV图像阈值分割教程",
+      "url": "https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html",
+      "text": "OpenCV图像阈值分割教程\n官方教程附Python示例和结果比较\n访问方式：免费公开\n适用范围：物流赛散料视觉识别的分割基线\n学习用途：可用简单阈值、自适应阈值和Otsu实现前景分割，再结合现场光照做实验\n来源：https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html",
+      "summary": "官方教程附Python示例和结果比较",
+      "catalog_codes": [
+        "2026039"
+      ],
+      "provider": "OpenCV项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-be69d62cdf6c261162a5",
+      "title": "A8赛题任务及量化评价说明",
+      "url": "https://mohub.net/competition/5/detail",
+      "text": "A8赛题任务及量化评价说明\n动力学、电驱、传感器与基础控制模型，以及控制优化和性能比较任务\n访问方式：免费公开\n适用范围：2026 A8控制系统设计与优化\n学习用途：把控制目标转成超调、稳态误差、轨迹误差和扰动测试的实验计划\n来源：https://mohub.net/competition/5/detail",
+      "summary": "动力学、电驱、传感器与基础控制模型，以及控制优化和性能比较任务",
+      "catalog_codes": [
+        "2026040"
+      ],
+      "provider": "同元软控MoHub",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-fa79e271d2bdbe1d56c6",
+      "title": "2025 ICPC世界总决赛完整题集",
+      "url": "https://worldfinals.icpc.global/problems/2025/finals/problems/problemset.pdf",
+      "text": "2025 ICPC世界总决赛完整题集\n24页题集，包含题意、输入输出、样例和限制；属于往届题\n访问方式：免费公开\n适用范围：ICPC高级算法与限时组队训练\n学习用途：以真实决赛题训练读题、复杂度分析和团队分题\n来源：https://worldfinals.icpc.global/problems/2025/finals/problems/problemset.pdf",
+      "summary": "24页题集，包含题意、输入输出、样例和限制；属于往届题",
+      "catalog_codes": [
+        "2026041"
+      ],
+      "provider": "ICPC Foundation",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-18b775ef7799a6b5e8b9",
+      "title": "2025 ICPC World Finals解题思路",
+      "url": "https://icpc.global/worldfinals/problems/2025-ICPC-World-Finals/2025-ICPC-Solutions.pdf",
+      "text": "2025 ICPC World Finals解题思路\n2025年决赛题的解题思路，适合对照题目分析算法与复杂度\n访问方式：免费公开\n适用范围：2025决赛题复盘\n来源：https://icpc.global/worldfinals/problems/2025-ICPC-World-Finals/2025-ICPC-Solutions.pdf",
+      "summary": "2025年决赛题的解题思路，适合对照题目分析算法与复杂度",
+      "catalog_codes": [
+        "2026041"
+      ],
+      "provider": "Bruce Merry等作者，ICPC官网托管",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-0d1f2e98f1925f0541cc",
+      "title": "Competitive Programmer's Handbook",
+      "url": "https://cses.fi/book/book.pdf",
+      "text": "Competitive Programmer's Handbook\n作者公开英文教材\n访问方式：免费公开\n适用范围：算法竞赛基础与进阶学习\n学习用途：系统补齐复杂度、动态规划、图论和数据结构，为真实赛题训练打基础\n来源：https://cses.fi/book/book.pdf",
+      "summary": "作者公开英文教材",
+      "catalog_codes": [
+        "2026041"
+      ],
+      "provider": "Antti Laaksonen／CSES",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-05e7c0a09e280d026bcf",
+      "title": "CSES分类算法练习题",
+      "url": "https://cses.fi/problemset/",
+      "text": "CSES分类算法练习题\n可公开读题\n访问方式：需登录\n适用范围：ICPC基础专项训练\n学习用途：先按排序搜索、动态规划、图论等专题练习，再做整场真题\n来源：https://cses.fi/problemset/",
+      "summary": "可公开读题",
+      "catalog_codes": [
+        "2026041"
+      ],
+      "provider": "CSES",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-0284901328817547a76e",
+      "title": "2026赛事说明与章程附件入口",
+      "url": "https://jwc.ynu.edu.cn/info/1009/4331.htm",
+      "text": "2026赛事说明与章程附件入口\n了解百度之星初赛、决赛、个人参赛与支持语言\n访问方式：章程附件需要验证码\n适用范围：百度之星参赛准备\n学习用途：区分初赛与决赛、个人参赛及支持语言，再进行计时练习\n来源：https://jwc.ynu.edu.cn/info/1009/4331.htm",
+      "summary": "了解百度之星初赛、决赛、个人参赛与支持语言",
+      "catalog_codes": [
+        "2026042"
+      ],
+      "provider": "云南大学转发主办方通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b92b98f91a2b987583a7",
+      "title": "Competitive Programmer's Handbook算法教材",
+      "url": "https://cses.fi/book/book.pdf",
+      "text": "Competitive Programmer's Handbook算法教材\n作者免费公开教材\n访问方式：免费公开\n适用范围：百度之星算法与数据结构准备\n学习用途：用于补齐动态规划、图和数学算法，再回到百度之星真题练习\n来源：https://cses.fi/book/book.pdf",
+      "summary": "作者免费公开教材",
+      "catalog_codes": [
+        "2026042"
+      ],
+      "provider": "Antti Laaksonen／CSES",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-90d878cd7c5cf7d8abf9",
+      "title": "内核实现赛道参考实例与教程",
+      "url": "https://github.com/oscomp/os-competition-info/blob/main/ref-info.md",
+      "text": "内核实现赛道参考实例与教程\n包含多种硬件平台与教学操作系统的参考实例，可用于搭建内核实现的学习路线\n访问方式：免费公开\n适用范围：2025年内核实现参考资料\n适用范围：操作系统内核实现赛道\n学习用途：按比赛技术方向选择硬件平台与OS实例，建立学习路线\n来源：https://github.com/oscomp/os-competition-info/blob/main/ref-info.md",
+      "summary": "包含多种硬件平台与教学操作系统的参考实例，可用于搭建内核实现的学习路线",
+      "catalog_codes": [
+        "2026043"
+      ],
+      "provider": "oscomp",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b0d8801dd41b47d893ec",
+      "title": "rCore-Tutorial-Book第三版",
+      "url": "https://rcore-os.cn/rCore-Tutorial-Book-v3/",
+      "text": "rCore-Tutorial-Book第三版\n循序渐进编写类Unix内核，含实验环境与习题\n访问方式：免费公开\n适用范围：操作系统赛Rust／RISC-V内核方向\n学习用途：从执行环境开始实现任务、地址空间、进程、文件系统与I/O\n来源：https://rcore-os.cn/rCore-Tutorial-Book-v3/",
+      "summary": "循序渐进编写类Unix内核，含实验环境与习题",
+      "catalog_codes": [
+        "2026043"
+      ],
+      "provider": "rCoreOS开源社区",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6781b124c4515d06ffc9",
+      "title": "2021—2025内核赛道获奖开源作品索引",
+      "url": "https://github.com/oscomp/os-competition-info/blob/main/os-kernel-winners.md",
+      "text": "2021—2025内核赛道获奖开源作品索引\n官方索引列出年份、奖项和项目链接\n访问方式：免费公开\n适用范围：操作系统内核设计与工程结构复盘\n学习用途：比较往届队伍的实现和文档，学习系统组织及测试方式\n来源：https://github.com/oscomp/os-competition-info/blob/main/os-kernel-winners.md",
+      "summary": "官方索引列出年份、奖项和项目链接",
+      "catalog_codes": [
+        "2026043"
+      ],
+      "provider": "oscomp",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-1978ed8ee724d5b64b87",
+      "title": "公开课：信息系统安全与对抗理论",
+      "url": "https://www.isclab.org.cn/2019/09/02/公开课-《信息系统安全与对抗理论》/",
+      "text": "公开课：信息系统安全与对抗理论\n2019年官方课程介绍附北京高校优质课程和中国大学慕课入口\n适用范围：安全基础、ISCC相关知识准备\n学习用途：学习信息安全对抗核心概念，建立专业基础知识体系\n来源：https://www.isclab.org.cn/2019/09/02/公开课-《信息系统安全与对抗理论》/",
+      "summary": "2019年官方课程介绍附北京高校优质课程和中国大学慕课入口",
+      "catalog_codes": [
+        "2026045"
+      ],
+      "provider": "北京理工大学信息系统及安全对抗实验中心",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-bcfecddb78aeec4e306a",
+      "title": "Web Security Academy 学习路径",
+      "url": "https://portswigger.net/web-security/learning-paths",
+      "text": "Web Security Academy 学习路径\n官方学习路径按漏洞专题组织理论和实验\n访问方式：需登录\n适用范围：Web安全方向训练\n学习用途：按专题阅读并在平台授权实验环境练习Web安全问题\n来源：https://portswigger.net/web-security/learning-paths",
+      "summary": "官方学习路径按漏洞专题组织理论和实验",
+      "catalog_codes": [
+        "2026045"
+      ],
+      "provider": "PortSwigger",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3f7f715c714535e37d2c",
+      "title": "第17届官方赛题目录",
+      "url": "https://www.fwwb.org.cn/topic/index",
+      "text": "第17届官方赛题目录\n目录提供A类与D类具体赛题；每个赛题有独立要求\n访问方式：免费公开\n适用范围：第17届各企业命题\n学习用途：先比较任务难度和交付物，选择与团队技术积累匹配的题目\n来源：https://www.fwwb.org.cn/topic/index",
+      "summary": "目录提供A类与D类具体赛题；每个赛题有独立要求",
+      "catalog_codes": [
+        "2026046"
+      ],
+      "provider": "服创大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-04a3878c42b34db7b7a7",
+      "title": "A23 大语言模型文档理解与多源数据融合",
+      "url": "https://www.fwwb.org.cn/topic/show/6ea580dc-cdde-41de-9e9a-a804f0df2112",
+      "text": "A23 大语言模型文档理解与多源数据融合\n任务涉及自然语言文档操作、信息提取及表格填充，要求提供可运行Demo和方案\n访问方式：免费公开\n适用范围：文档处理、AI知识库应用方向\n学习用途：可参考其模块划分、测试数据要求和准确率/响应时间评估方式\n来源：https://www.fwwb.org.cn/topic/show/6ea580dc-cdde-41de-9e9a-a804f0df2112",
+      "summary": "任务涉及自然语言文档操作、信息提取及表格填充，要求提供可运行Demo和方案",
+      "catalog_codes": [
+        "2026046"
+      ],
+      "provider": "组委会／金陵科技学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-eed757a62358b132e0b7",
+      "title": "A01 桌面微缩剧场多智能体演绎系统",
+      "url": "https://www.fwwb.org.cn/topic/show/7b467afe-8216-40ba-9506-0415edb5d9fe",
+      "text": "A01 桌面微缩剧场多智能体演绎系统\n官方命题页给出任务背景、开发与交付要求\n访问方式：免费公开\n适用范围：多智能体、飞桨与文心应用方向\n学习用途：学习从具体场景拆解AI系统需求，而非仅调用一个聊天接口\n来源：https://www.fwwb.org.cn/topic/show/7b467afe-8216-40ba-9506-0415edb5d9fe",
+      "summary": "官方命题页给出任务背景、开发与交付要求",
+      "catalog_codes": [
+        "2026046"
+      ],
+      "provider": "组委会／百度",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-43457a31d74ad1869f2f",
+      "title": "2026参赛要求与作品分类",
+      "url": "https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+      "text": "2026参赛要求与作品分类\n2026年分11类作品；部分数字媒体作品类别采用指定文化主题\n访问方式：免费公开\n适用范围：2026全部作品大类\n学习用途：明确资格、主题和原创要求后再定项目范围\n来源：https://jsjds.blcu.edu.cn/gyds1/csyq.htm",
+      "summary": "2026年分11类作品；部分数字媒体作品类别采用指定文化主题",
+      "catalog_codes": [
+        "2026047"
+      ],
+      "provider": "中国大学生计算机设计大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b5fad19d7e2c0fcacad6",
+      "title": "4C2026作品提交要求及文档模板",
+      "url": "https://jsjds.blcu.edu.cn/info/1045/2013.htm",
+      "text": "4C2026作品提交要求及文档模板\n2026-04-17官方页面提供11大类模板的百度网盘入口\n适用范围：2026作品材料准备\n学习用途：按相应大类模板整理说明文档、演示和提交材料\n来源：https://jsjds.blcu.edu.cn/info/1045/2013.htm",
+      "summary": "2026-04-17官方页面提供11大类模板的百度网盘入口",
+      "catalog_codes": [
+        "2026047"
+      ],
+      "provider": "中国大学生计算机设计大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d3e033da25a76a26aa29",
+      "title": "2026建造节现场与材料实践",
+      "url": "https://caup.tongji.edu.cn/c6/db/c33318a378587/page.htm",
+      "text": "2026建造节现场与材料实践\n在4米×3米空间内，以竹竿和纸板进行10小时建造，配有现场照片\n访问方式：免费公开\n适用范围：2026建造实践复盘\n学习用途：了解真实材料、限时协作与空间尺度如何共同约束设计\n来源：https://caup.tongji.edu.cn/c6/db/c33318a378587/page.htm",
+      "summary": "在4米×3米空间内，以竹竿和纸板进行10小时建造，配有现场照片",
+      "catalog_codes": [
+        "2026049"
+      ],
+      "provider": "同济大学建筑与城市规划学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e1019ddd9d67d74ecb81",
+      "title": "《显·隐》作品材料、节点与预制分析",
+      "url": "https://caup.tongji.edu.cn/b9/fa/c33419a309754/page.htm",
+      "text": "《显·隐》作品材料、节点与预制分析\n作者分析板材套盒、线连接及空间体验\n访问方式：免费公开\n适用范围：往届设计建造方法参考\n学习用途：通过具体作品学习材料试验、节点连接和预制装配思考\n来源：https://caup.tongji.edu.cn/b9/fa/c33419a309754/page.htm",
+      "summary": "作者分析板材套盒、线连接及空间体验",
+      "catalog_codes": [
+        "2026049"
+      ],
+      "provider": "同济大学建筑与城市规划学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-03fb10ac130eaae23edc",
+      "title": "2026竞赛题目与设计背景",
+      "url": "https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=33",
+      "text": "2026竞赛题目与设计背景\n主题说明讨论城市、郊区、乡村中的共同生活与在地表达\n访问方式：免费公开\n适用范围：2026何以栖居主题\n学习用途：先用任务书界定设计问题、社区尺度及生态与社会目标\n来源：https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=33",
+      "summary": "主题说明讨论城市、郊区、乡村中的共同生活与在地表达",
+      "catalog_codes": [
+        "2026051"
+      ],
+      "provider": "霍普杯／UED",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-085a18bf58e3d6e97909",
+      "title": "2026图纸与作品提交规格",
+      "url": "https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=41",
+      "text": "2026图纸与作品提交规格\n页面明确3幅横向A1图纸、英文表达与原创声明等要求\n访问方式：免费公开\n适用范围：2026作品表达与交付\n学习用途：根据A1图纸、影片和说明要求安排表达材料\n来源：https://hypcup.uedmagazine.net/index.php?a=index&c=Lists&m=home&tid=41",
+      "summary": "页面明确3幅横向A1图纸、英文表达与原创声明等要求",
+      "catalog_codes": [
+        "2026051"
+      ],
+      "provider": "霍普杯／UED",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6882ac8f852f82aa76ca",
+      "title": "QGIS基础制图实训",
+      "url": "https://docs.qgis.org/3.44/en/docs/training_manual/basic_map/index.html",
+      "text": "QGIS基础制图实训\nQGIS 3.44官方训练手册具体章节，含跟做任务及练习\n访问方式：免费公开\n适用范围：城市调研与场地分析制图\n学习用途：学习加载空间数据、图层组织和地图符号表达，为调研证据制图\n来源：https://docs.qgis.org/3.44/en/docs/training_manual/basic_map/index.html",
+      "summary": "QGIS 3.44官方训练手册具体章节，含跟做任务及练习",
+      "catalog_codes": [
+        "2026052",
+        "2026053"
+      ],
+      "provider": "QGIS项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-980b8cc646016a826227",
+      "title": "北京建筑大学2026城市设计作品展示",
+      "url": "https://jzxy.bucea.edu.cn/xyxx/xwxx/406ddd84682d47ada32b7e8bb69d80c5.htm",
+      "text": "北京建筑大学2026城市设计作品展示\n文章含杨柳青等方案设计说明与图示\n访问方式：免费公开\n适用范围：2026城市设计单元\n学习用途：参考文化资源、生态系统与智慧治理如何形成设计逻辑\n来源：https://jzxy.bucea.edu.cn/xyxx/xwxx/406ddd84682d47ada32b7e8bb69d80c5.htm",
+      "summary": "文章含杨柳青等方案设计说明与图示",
+      "catalog_codes": [
+        "2026053"
+      ],
+      "provider": "北京建筑大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3949288f937c07498d0f",
+      "title": "滨海片区HAI家园设计教学案例",
+      "url": "https://news.hqu.edu.cn/info/1019/435542.htm",
+      "text": "滨海片区HAI家园设计教学案例\n大学官方报道说明两项获奖作品来源与课程实施方向\n访问方式：免费公开\n适用范围：2026滨海更新与智慧城市设计\n学习用途：了解课程项目如何结合环境更新、生态修复及数字技术\n来源：https://news.hqu.edu.cn/info/1019/435542.htm",
+      "summary": "大学官方报道说明两项获奖作品来源与课程实施方向",
+      "catalog_codes": [
+        "2026053"
+      ],
+      "provider": "华侨大学建筑学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3d2b027aba1dab417530",
+      "title": "2026社区花园任务与成果要求",
+      "url": "https://landscape-caup.tongji.edu.cn/c8/f4/c10586a379124/page.htm",
+      "text": "2026社区花园任务与成果要求\n任务要求真实设计建造、持续运维，成果含展板、汇报、视频和照片\n访问方式：免费公开\n适用范围：2026社区花园赛道\n学习用途：依据材料、运维、展板和汇报要求制定实践与记录计划\n来源：https://landscape-caup.tongji.edu.cn/c8/f4/c10586a379124/page.htm",
+      "summary": "任务要求真实设计建造、持续运维，成果含展板、汇报、视频和照片",
+      "catalog_codes": [
+        "2026054"
+      ],
+      "provider": "社区花园赛道组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-bdb34e809496d3a696bf",
+      "title": "2025社区花园获奖作品及评语",
+      "url": "https://landscape-caup.tongji.edu.cn/9d/77/c10586a367991/page.htm",
+      "text": "2025社区花园获奖作品及评语\n2026年1月发布的2025赛事作品展示，含12组获奖方案及获奖理由\n访问方式：免费公开\n适用范围：往届社区营造方法\n学习用途：学习居民参与、植物配置、生态教育和运维机制的评价角度\n来源：https://landscape-caup.tongji.edu.cn/9d/77/c10586a367991/page.htm",
+      "summary": "2026年1月发布的2025赛事作品展示，含12组获奖方案及获奖理由",
+      "catalog_codes": [
+        "2026054"
+      ],
+      "provider": "同济大学景观学系／竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d76318f04b9308d2d55c",
+      "title": "2026竞赛内容与官方备赛安排",
+      "url": "https://www.ccen.com.cn/info/1150/5937.htm",
+      "text": "2026竞赛内容与官方备赛安排\n通知明确官网提供课程、答疑和练习题，软件需报名审核后授权\n访问方式：免费公开\n适用范围：2026三个赛项\n学习用途：确定报考科目，按官方学练资源安排准备对应软件操作\n来源：https://www.ccen.com.cn/info/1150/5937.htm",
+      "summary": "通知明确官网提供课程、答疑和练习题，软件需报名审核后授权",
+      "catalog_codes": [
+        "2026055"
+      ],
+      "provider": "中国建设教育协会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d565b17bbbb38467f83f",
+      "title": "2026报名与软件授权操作指南",
+      "url": "https://static-cdn.glodonedu.com/dasai/xs/2026-xs/建教协2026-32号_附件5：2026年全国数字建筑创新应用大赛报名指南[1].pdf",
+      "text": "2026报名与软件授权操作指南\n说明教师建队、学生信息完善、审核及软件云锁\n访问方式：免费公开\n适用范围：2026报名和备赛环境准备\n学习用途：了解团队、学生信息及云加密锁发放步骤，提前准备合法软件环境\n来源：https://static-cdn.glodonedu.com/dasai/xs/2026-xs/建教协2026-32号_附件5：2026年全国数字建筑创新应用大赛报名指南[1].pdf",
+      "summary": "说明教师建队、学生信息完善、审核及软件云锁",
+      "catalog_codes": [
+        "2026055"
+      ],
+      "provider": "中国建设教育协会／广联达",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-cda265125388575ccdd4",
+      "title": "2023学生设计竞赛获奖作品",
+      "url": "https://arcasia.org/awards/winners-arcasia-student-design-competition-2023-sdc2023/",
+      "text": "2023学生设计竞赛获奖作品\n比较社区图书馆、村落、城市农场等题材的获奖项目\n访问方式：免费公开\n适用范围：往届学生建筑设计参考\n来源：https://arcasia.org/awards/winners-arcasia-student-design-competition-2023-sdc2023/",
+      "summary": "比较社区图书馆、村落、城市农场等题材的获奖项目",
+      "catalog_codes": [
+        "2026056"
+      ],
+      "provider": "ARCASIA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-bf69d5a2f9e99fe4b932",
+      "title": "2020学生竞赛获奖作品电子书入口",
+      "url": "https://arcasia.org/awards/2020-student-competition-winners-ebook-a-compendium-of-resilience-by-design/",
+      "text": "2020学生竞赛获奖作品电子书入口\n通过获奖作品集理解建筑韧性方案表达\n适用范围：韧性设计方法与往届方案参考\n来源：https://arcasia.org/awards/2020-student-competition-winners-ebook-a-compendium-of-resilience-by-design/",
+      "summary": "通过获奖作品集理解建筑韧性方案表达",
+      "catalog_codes": [
+        "2026056"
+      ],
+      "provider": "ARCASIA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-38f3c115baccb2ae176f",
+      "title": "SUMO：Hello World交通仿真入门",
+      "url": "https://sumo.dlr.de/docs/Tutorials/Hello_World.html",
+      "text": "SUMO：Hello World交通仿真入门\n官方逐步教程介绍构建简单道路网络、定义车辆路线、配置并运行交通仿真\n访问方式：免费公开\n适用范围：交通仿真、路口控制等方向\n学习用途：用最小路网理解车辆、路线和仿真配置如何配合\n来源：https://sumo.dlr.de/docs/Tutorials/Hello_World.html",
+      "summary": "官方逐步教程介绍构建简单道路网络、定义车辆路线、配置并运行交通仿真",
+      "catalog_codes": [
+        "2026058"
+      ],
+      "provider": "Eclipse SUMO／德国航空航天中心",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6e42cc7e61a0e110838b",
+      "title": "pandas：筛选表格数据教程",
+      "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html",
+      "text": "pandas：筛选表格数据教程\n教程演示按列、条件及位置选取数据，涉及缺失值筛选；是通用数据处理基础\n访问方式：免费公开\n适用范围：商务数据分析方向\n学习用途：学习筛选用户、订单或调查记录，为项目分析准备数据\n来源：https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html",
+      "summary": "教程演示按列、条件及位置选取数据，涉及缺失值筛选；是通用数据处理基础",
+      "catalog_codes": [
+        "2026059",
+        "2026060"
+      ],
+      "provider": "pandas官方文档",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-9449d1d2b350663bd70d",
+      "title": "第十七届竞赛环节与备赛说明（高校通知）",
+      "url": "https://jwc.nbu.edu.cn/info/1126/18026.htm",
+      "text": "第十七届竞赛环节与备赛说明（高校通知）\n个人知识赛与团队实践赛，并预告2026年11月至2027年2月专家授课\n访问方式：免费公开\n适用范围：第十七届规则初步学习\n学习用途：了解知识准备、组队调研和报告环节之间的关系\n来源：https://jwc.nbu.edu.cn/info/1126/18026.htm",
+      "summary": "个人知识赛与团队实践赛，并预告2026年11月至2027年2月专家授课",
+      "catalog_codes": [
+        "2026060"
+      ],
+      "provider": "宁波大学教务处",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d412614ca945d3d8b9e6",
+      "title": "statsmodels：回归诊断示例",
+      "url": "https://www.statsmodels.org/stable/examples/notebooks/generated/regression_diagnostics.html",
+      "text": "statsmodels：回归诊断示例\n官方notebook提供残差、异方差等诊断方法及代码示例，可支持统计分析结果的解释\n访问方式：免费公开\n适用范围：需要回归分析的调研报告\n学习用途：理解模型诊断而非只输出回归系数\n来源：https://www.statsmodels.org/stable/examples/notebooks/generated/regression_diagnostics.html",
+      "summary": "官方notebook提供残差、异方差等诊断方法及代码示例，可支持统计分析结果的解释",
+      "catalog_codes": [
+        "2026060"
+      ],
+      "provider": "statsmodels官方文档",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-90561948d1acbbd8dcfb",
+      "title": "2026 FSAEJ本地规则（第4版）",
+      "url": "https://en.jsae.or.jp/files_publish/page/519/2026_FSAEJ_LocalRule_4th_20260616.pdf",
+      "text": "2026 FSAEJ本地规则（第4版）\n日本站2026年本地补充规则，用于确定车辆要求与参赛流程\n访问方式：免费公开\n适用范围：2026 EV组及日本站补充要求\n学习用途：把日本站要求与基础Formula SAE规则对照，形成设计检查清单\n来源：https://en.jsae.or.jp/files_publish/page/519/2026_FSAEJ_LocalRule_4th_20260616.pdf",
+      "summary": "日本站2026年本地补充规则，用于确定车辆要求与参赛流程",
+      "catalog_codes": [
+        "2026062",
+        "2026063"
+      ],
+      "provider": "日本汽车技术会（JSAE）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c46a8e7a878ffc692a85",
+      "title": "2026 FSAEJ参赛规则（第3版英文）",
+      "url": "https://en.jsae.or.jp/files_publish/page/519/2026_FSAEJ_ParticpationRules_3rd_EN_20260616.pdf",
+      "text": "2026 FSAEJ参赛规则（第3版英文）\n须与技术规则配合使用\n访问方式：免费公开\n适用范围：2026电动车队组织与参赛流程\n学习用途：了解车队资格、报名及提交材料等组织要求\n来源：https://en.jsae.or.jp/files_publish/page/519/2026_FSAEJ_ParticpationRules_3rd_EN_20260616.pdf",
+      "summary": "须与技术规则配合使用",
+      "catalog_codes": [
+        "2026062",
+        "2026063"
+      ],
+      "provider": "日本汽车技术会（JSAE）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-0e7fb6ea14d494f687b7",
+      "title": "Student Formula赛事与考核项目说明",
+      "url": "https://en.jsae.or.jp/formula/student-formula/outline/",
+      "text": "Student Formula赛事与考核项目说明\n官网介绍学生自主设计制造车辆及静态、动态考核构成\n访问方式：免费公开\n适用范围：方程式赛车队新人；涵盖EV与ICV通用部分\n学习用途：先理解设计、成本与动态项目等考核目标，再安排车队学习\n来源：https://en.jsae.or.jp/formula/student-formula/outline/",
+      "summary": "官网介绍学生自主设计制造车辆及静态、动态考核构成",
+      "catalog_codes": [
+        "2026062",
+        "2026063"
+      ],
+      "provider": "日本汽车技术会（JSAE）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-2468c5e113d1f3e21f0b",
+      "title": "Design Concept官方评审标准",
+      "url": "https://www.red-dot.org/design-concept/jury/",
+      "text": "Design Concept官方评审标准\n官方分别说明概念类和临近上市类评审依据，包括创新或差异、审美、实现可能性、功能等\n访问方式：免费公开\n适用范围：设计概念、原型及Ready For Market方向\n学习用途：把创新、功能和可实施性转化为自查问题，避免仅做视觉包装\n来源：https://www.red-dot.org/design-concept/jury/",
+      "summary": "官方分别说明概念类和临近上市类评审依据，包括创新或差异、审美、实现可能性、功能等",
+      "catalog_codes": [
+        "2026065"
+      ],
+      "provider": "Red Dot",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a2d4cfd5b46d40c6ff62",
+      "title": "Product Design 2027提交与送审指南（FAQ）",
+      "url": "https://www.red-dot.org/pd/faq",
+      "text": "Product Design 2027提交与送审指南（FAQ）\n详细FAQ涵盖产品资格、图像视频、送审与费用。页面可免费阅读，参赛与获奖套餐另计费用\n访问方式：免费公开\n适用范围：已满足产品设计奖资格的项目\n学习用途：确认展示材料、实物与费用要求是否与团队条件匹配\n来源：https://www.red-dot.org/pd/faq",
+      "summary": "详细FAQ涵盖产品资格、图像视频、送审与费用。页面可免费阅读，参赛与获奖套餐另计费用",
+      "catalog_codes": [
+        "2026065"
+      ],
+      "provider": "Red Dot",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-644d316db6ce34d924dc",
+      "title": "2026案例：Clair Bois无障碍餐桌",
+      "url": "https://head.hesge.ch/en/project/clair-bois-inclusive-table-winner-red-dot-award-2026",
+      "text": "2026案例：Clair Bois无障碍餐桌\n高校项目页介绍获奖餐桌的参与式设计、手摇升降和本地木材制作，说明无障碍目标如何落到方案中\n访问方式：免费公开\n适用范围：包容性设计与产品设计方向\n学习用途：学习如何从真实使用者需求连接结构、材料与审美决策\n来源：https://head.hesge.ch/en/project/clair-bois-inclusive-table-winner-red-dot-award-2026",
+      "summary": "高校项目页介绍获奖餐桌的参与式设计、手摇升降和本地木材制作，说明无障碍目标如何落到方案中",
+      "catalog_codes": [
+        "2026065"
+      ],
+      "provider": "日内瓦艺术设计学院HEAD",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-42ce79c61d11f60446a9",
+      "title": "2026赛道、作品组织与路演要求",
+      "url": "https://cxcyxy.cdu.edu.cn/info/1019/4390.htm",
+      "text": "2026赛道、作品组织与路演要求\n通知介绍设计领域、赛制、团队人数及路演形式；定向主题仅列名称\n访问方式：免费公开\n适用范围：2026创意赛道与定向主题赛道\n学习用途：先选择赛道，再规划作品材料与团队分工\n来源：https://cxcyxy.cdu.edu.cn/info/1019/4390.htm",
+      "summary": "通知介绍设计领域、赛制、团队人数及路演形式；定向主题仅列名称",
+      "catalog_codes": [
+        "2026066"
+      ],
+      "provider": "成都大学转发赛事说明",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e989741e02ff5d3ba934",
+      "title": "第九届华灿奖参赛选手操作手册（往届）",
+      "url": "https://jwc.swjtu.edu.cn/download/ueditor/jsp/upload/file/20240517/1715908451425086147.pdf",
+      "text": "第九届华灿奖参赛选手操作手册（往届）\n第九届平台报名流程图与常见问题\n访问方式：免费公开\n适用范围：第九届报名与投稿流程\n学习用途：提前了解组队、确认成员、报名材料和作品提交的整体步骤\n来源：https://jwc.swjtu.edu.cn/download/ueditor/jsp/upload/file/20240517/1715908451425086147.pdf",
+      "summary": "第九届平台报名流程图与常见问题",
+      "catalog_codes": [
+        "2026066"
+      ],
+      "provider": "华灿奖参赛操作手册／西南交通大学官网附件",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-f0ec9804fdf3f965c669",
+      "title": "NCDA竞赛办法与作品要求",
+      "url": "https://www.ncda.org.cn/dsjs/dssz/",
+      "text": "NCDA竞赛办法与作品要求\n包括原创要求、推荐表、作品文件和宣传海报等材料\n访问方式：免费公开\n适用范围：2026第14届主体赛事\n学习用途：先确定赛道、材料和作者人数，再安排创作\n来源：https://www.ncda.org.cn/dsjs/dssz/",
+      "summary": "包括原创要求、推荐表、作品文件和宣传海报等材料",
+      "catalog_codes": [
+        "2026068"
+      ],
+      "provider": "未来设计师NCDA组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-8c0b498076a58984d317",
+      "title": "NCDA大赛内容",
+      "url": "https://www.ncda.org.cn/dsjs/dsnr/",
+      "text": "NCDA大赛内容\n官方赛项与命题入口；各专项要求需继续阅读对应链接\n访问方式：免费公开\n适用范围：按页面具体命题与类别选题\n学习用途：将泛泛的设计想法转成对应赛项任务\n来源：https://www.ncda.org.cn/dsjs/dsnr/",
+      "summary": "官方赛项与命题入口；各专项要求需继续阅读对应链接",
+      "catalog_codes": [
+        "2026068"
+      ],
+      "provider": "未来设计师NCDA组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-106768dae48006dc9554",
+      "title": "Arduino Learn",
+      "url": "https://docs.arduino.cc/learn/",
+      "text": "Arduino Learn\n官方学习目录涵盖入门、编程、电子与通信\n访问方式：免费公开\n适用范围：需要传感器、执行器或嵌入式原型的项目\n学习用途：补齐输入输出、通信和硬件调试基础\n来源：https://docs.arduino.cc/learn/",
+      "summary": "官方学习目录涵盖入门、编程、电子与通信",
+      "catalog_codes": [
+        "2026069"
+      ],
+      "provider": "Arduino",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-eaadf2e84eb2084ae7d6",
+      "title": "科学探究类实验过程与评审要求",
+      "url": "https://sky.yangtzeu.edu.cn/__local/E/24/1B/85D922800D61F0CC331CE340B1D_93B0E90E_977FA.pdf",
+      "text": "科学探究类实验过程与评审要求\n官方评分说明强调数据来源、过程记录与结论一致性\n访问方式：免费公开\n适用范围：第十一届科学探究类\n来源：https://sky.yangtzeu.edu.cn/__local/E/24/1B/85D922800D61F0CC331CE340B1D_93B0E90E_977FA.pdf",
+      "summary": "官方评分说明强调数据来源、过程记录与结论一致性",
+      "catalog_codes": [
+        "2026072"
+      ],
+      "provider": "全国大学生生命科学竞赛委员会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-ac1d13ebcdd49624fbd4",
+      "title": "2026年高教社杯赛题发布页",
+      "url": "https://www.mcm.edu.cn/html_cn/node/27b6e148f8113f09b0269f64a02629fb.html",
+      "text": "2026年高教社杯赛题发布页\n2026年赛题与题目附件，可用于训练问题分析、模型假设、求解与论文表达\n访问方式：免费公开\n适用范围：2026当届赛题复盘\n学习用途：从原题与附件出发检查模型假设和结果解释\n来源：https://www.mcm.edu.cn/html_cn/node/27b6e148f8113f09b0269f64a02629fb.html",
+      "summary": "2026年赛题与题目附件，可用于训练问题分析、模型假设、求解与论文表达",
+      "catalog_codes": [
+        "2026074"
+      ],
+      "provider": "全国大学生数学建模竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-329adb7c7b915fa18e05",
+      "title": "ASCE各赛项规则及培训入口",
+      "url": "https://www.asce.org/communities/student-members/conferences/rules",
+      "text": "ASCE各赛项规则及培训入口\n规则页列出独木舟、可持续、测量等规则，另附提案写作、材料合规和展示培训\n访问方式：免费公开\n适用范围：按具体赛项选用；2027年规则\n学习用途：分清赛项技术要求、澄清答疑及提交物\n来源：https://www.asce.org/communities/student-members/conferences/rules",
+      "summary": "规则页列出独木舟、可持续、测量等规则，另附提案写作、材料合规和展示培训",
+      "catalog_codes": [
+        "2026076"
+      ],
+      "provider": "ASCE",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c90e6adb6727c2fa32af",
+      "title": "2027 Sustainable Solutions规则PDF",
+      "url": "https://www.asce.org/-/media/asce-images-and-files/communities/students-and-younger-members/documents/2027-asce-sustainable-solutions-competition-rules-v1.pdf",
+      "text": "2027 Sustainable Solutions规则PDF\n34页官方规则，主题为地面出行项目资助模拟\n访问方式：免费公开\n适用范围：2027可持续方案赛项，非2026共同规则\n学习用途：学习以工程约束与可持续评价编制项目提案\n来源：https://www.asce.org/-/media/asce-images-and-files/communities/students-and-younger-members/documents/2027-asce-sustainable-solutions-competition-rules-v1.pdf",
+      "summary": "34页官方规则，主题为地面出行项目资助模拟",
+      "catalog_codes": [
+        "2026076"
+      ],
+      "provider": "ASCE",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e3c37e5e8093515e7e75",
+      "title": "ASCE混凝土独木舟赛项说明",
+      "url": "https://www.asce.org/communities/student-members/conferences/asce-concrete-canoe-competition",
+      "text": "ASCE混凝土独木舟赛项说明\n官方介绍与年度规则入口；页面同时保留2026获奖信息\n访问方式：免费公开\n适用范围：混凝土独木舟子项目\n学习用途：了解材料设计、制作和项目管理之间的联系\n来源：https://www.asce.org/communities/student-members/conferences/asce-concrete-canoe-competition",
+      "summary": "官方介绍与年度规则入口；页面同时保留2026获奖信息",
+      "catalog_codes": [
+        "2026076"
+      ],
+      "provider": "ASCE",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-ce78a488e9fa59e885d5",
+      "title": "第九届学生赛道任务与报告模板入口",
+      "url": "https://gxbsxs-9.glodonedu.com/workcompety",
+      "text": "第九届学生赛道任务与报告模板入口\n官方历史页含模块任务、指导书、报告模板和软件下载栏目\n访问方式：免费公开\n学习用途：了解建模、造价、机电、施工和成果表达之间的任务关系\n来源：https://gxbsxs-9.glodonedu.com/workcompety",
+      "summary": "官方历史页含模块任务、指导书、报告模板和软件下载栏目",
+      "catalog_codes": [
+        "2026078"
+      ],
+      "provider": "广联达／BIM毕业设计大赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3101d381974b9464d65d",
+      "title": "buildingSMART IFC官方入门说明",
+      "url": "https://technical.buildingsmart.org/standards/ifc/",
+      "text": "buildingSMART IFC官方入门说明\n介绍IFC数据模型、典型工程交换场景及文件格式\n访问方式：免费公开\n适用范围：BIM模型信息交换与协作通用技能\n学习用途：理解构件属性、关联和模型交换，避免把BIM只理解为三维外观\n来源：https://technical.buildingsmart.org/standards/ifc/",
+      "summary": "介绍IFC数据模型、典型工程交换场景及文件格式",
+      "catalog_codes": [
+        "2026078"
+      ],
+      "provider": "buildingSMART International",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5947f68ab8bf277d78af",
+      "title": "2026国际传播综合能力样题及评分标准",
+      "url": "https://ucc.fltrp.com/c/2026-03-27/541272.shtml",
+      "text": "2026国际传播综合能力样题及评分标准\n官方完整样题页面；包括不同阶段的考查说明\n访问方式：免费公开\n适用范围：英语组国际传播综合能力赛项\n学习用途：按样题和评分标准制定读写译训练\n来源：https://ucc.fltrp.com/c/2026-03-27/541272.shtml",
+      "summary": "官方完整样题页面；包括不同阶段的考查说明",
+      "catalog_codes": [
+        "2026081"
+      ],
+      "provider": "外研社",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b941cec3e8a7f722cf32",
+      "title": "2026笔译样题及评分标准",
+      "url": "https://ucc.fltrp.com/c/2026-03-27/541273.shtml",
+      "text": "2026笔译样题及评分标准\n官方样题和评分标准，赛段要求分别列出\n访问方式：免费公开\n适用范围：英语组笔译赛项\n学习用途：了解英汉互译、译后编辑和编译等阶段性任务\n来源：https://ucc.fltrp.com/c/2026-03-27/541273.shtml",
+      "summary": "官方样题和评分标准，赛段要求分别列出",
+      "catalog_codes": [
+        "2026081"
+      ],
+      "provider": "外研社",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e7c1da920f66f2f02030",
+      "title": "理解当代中国官方备赛资源",
+      "url": "https://heep-jczt.fltrp.com/ucc-resources/",
+      "text": "理解当代中国官方备赛资源\n页面可免费浏览；其中教材及术语手册购买收费\n访问方式：付费\n适用范围：英语读写译与中国主题表达\n学习用途：集中查看教材和核心术语手册，按赛项选用\n来源：https://heep-jczt.fltrp.com/ucc-resources/",
+      "summary": "页面可免费浏览；其中教材及术语手册购买收费",
+      "catalog_codes": [
+        "2026081"
+      ],
+      "provider": "外研社",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-8bbb7828030a965eb4d3",
+      "title": "2026比赛章程与评分标准",
+      "url": "https://contest.i21st.cn/college/article/6990.html",
+      "text": "2026比赛章程与评分标准\n章程可公开阅读\n访问方式：免费公开\n适用范围：第31届英语演讲比赛\n学习用途：按内容、语言表达和综合表现检查演讲准备\n来源：https://contest.i21st.cn/college/article/6990.html",
+      "summary": "章程可公开阅读",
+      "catalog_codes": [
+        "2026082"
+      ],
+      "provider": "21世纪报社",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-321d8f74aaf4c1b94061",
+      "title": "第九届大赛章程",
+      "url": "https://ictvd.oss-cn-beijing.aliyuncs.com/uploadfile/2026/0401/20260401041236519.pdf",
+      "text": "第九届大赛章程\n官方39页PDF\n访问方式：免费公开\n适用范围：第九届跨文化能力大赛\n学习用途：准备前先核对组别、任务和评价要求\n来源：https://ictvd.oss-cn-beijing.aliyuncs.com/uploadfile/2026/0401/20260401041236519.pdf",
+      "summary": "官方39页PDF",
+      "catalog_codes": [
+        "2026083"
+      ],
+      "provider": "外教社跨文化能力测试中心",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c4ab1c2b6286ef8b7c8b",
+      "title": "2026类别与题型调整说明",
+      "url": "https://flc.zjnu.edu.cn/2025/1222/c19548a541375/page.htm",
+      "text": "2026类别与题型调整说明\n高校官方通知提醒听力、翻译分值调整及取消智力测试\n访问方式：免费公开\n适用范围：2026全国大学生英语竞赛基础备赛\n学习用途：先选正确类别，再根据当年调整核对旧题训练\n来源：https://flc.zjnu.edu.cn/2025/1222/c19548a541375/page.htm",
+      "summary": "高校官方通知提醒听力、翻译分值调整及取消智力测试",
+      "catalog_codes": [
+        "2026084"
+      ],
+      "provider": "浙江师范大学外国语学院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7df733c419deb25f8d5c",
+      "title": "第十四届全国光电竞赛总通知",
+      "url": "https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/1033eff1-a5c0-49c4-badb-991b00bf2633.pdf",
+      "text": "第十四届全国光电竞赛总通知\n先区分开放创意项目与光学系统设计任务\n访问方式：免费公开\n适用范围：2026赛道选择\n来源：https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/1033eff1-a5c0-49c4-badb-991b00bf2633.pdf",
+      "summary": "先区分开放创意项目与光学系统设计任务",
+      "catalog_codes": [
+        "2026085"
+      ],
+      "provider": "竞赛委员会／南京信息工程大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6ed4e4f9b17bddcd6846",
+      "title": "2026光学设计赛题与提交要求",
+      "url": "https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/a507a594-be6c-49c3-8c08-6c356e178e6e.pdf",
+      "text": "2026光学设计赛题与提交要求\n包括微光夜视观察物镜、AR眼镜拍摄镜头两道赛题\n访问方式：免费公开\n适用范围：2026光学设计赛道\n学习用途：依据给定目标和设计要求练习镜头系统设计及报告表达\n来源：https://wdy.nuist.edu.cn/_upload/article/files/e8/cb/f2ed60c748e28c0254c5523a259e/a507a594-be6c-49c3-8c08-6c356e178e6e.pdf",
+      "summary": "包括微光夜视观察物镜、AR眼镜拍摄镜头两道赛题",
+      "catalog_codes": [
+        "2026085"
+      ],
+      "provider": "光学设计赛道分委员会／南京信息工程大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5f102dc32ceda457478a",
+      "title": "2026第一轮通知",
+      "url": "https://jwc.ustb.edu.cn/docs/2026-03/ce7f8929264847f5b89a67e54d9117c5.pdf",
+      "text": "2026第一轮通知\n全国大学生物理实验竞赛的类别、参赛要求与组织安排\n访问方式：免费公开\n适用范围：2026物理实验竞赛各类别\n学习用途：在选题前确认类别与提交要求\n来源：https://jwc.ustb.edu.cn/docs/2026-03/ce7f8929264847f5b89a67e54d9117c5.pdf",
+      "summary": "全国大学生物理实验竞赛的类别、参赛要求与组织安排",
+      "catalog_codes": [
+        "2026086"
+      ],
+      "provider": "竞赛组委会／北京科技大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e5801a14d671ea17ef78",
+      "title": "2026命题、自选题及评审资料汇编",
+      "url": "https://jw.bitzh.edu.cn/docs/2026-03/a241f1b86084476daad63c9c7150da36.pdf",
+      "text": "2026命题、自选题及评审资料汇编\n12页资料包含6个命题方向、自选课题要求与评审标准；其中包含AI与物理实验结合方向\n访问方式：免费公开\n适用范围：命题类及自选课题类\n学习用途：按具体题目、视频格式和评价维度规划实验、数据与报告\n来源：https://jw.bitzh.edu.cn/docs/2026-03/a241f1b86084476daad63c9c7150da36.pdf",
+      "summary": "12页资料包含6个命题方向、自选课题要求与评审标准；其中包含AI与物理实验结合方向",
+      "catalog_codes": [
+        "2026086"
+      ],
+      "provider": "竞赛组委会（北京理工大学珠海学院转载）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b010a4d0beb6bf0e022e",
+      "title": "第三届就业赛道方案",
+      "url": "https://www.gzdhxy.edu.cn/uploadfiles/2025/11/20251108160008420.pdf",
+      "text": "第三届就业赛道方案\n2页方案包含材料、陈述和面试环节及评价维度；是第三届版本\n访问方式：免费公开\n适用范围：第三届就业赛道及求职展示训练\n学习用途：按职业目标、岗位能力和发展潜力组织简历及实践证据\n来源：https://www.gzdhxy.edu.cn/uploadfiles/2025/11/20251108160008420.pdf",
+      "summary": "2页方案包含材料、陈述和面试环节及评价维度；是第三届版本",
+      "catalog_codes": [
+        "2026087"
+      ],
+      "provider": "教育部赛道方案（广州东华职业学院转载）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-68c3b1373c1a946d6d22",
+      "title": "第十二届第一轮通知与作品要求",
+      "url": "https://jwc.njucm.edu.cn/_upload/article/files/55/1e/2dc96cc0439cbb1e00e19c2efd1d/bc70b9e0-1159-4e6e-a50d-da41780dc199.pdf",
+      "text": "第十二届第一轮通知与作品要求\n组委会原始文件的高校公开副本，不含虚构的报名安排\n访问方式：免费公开\n适用范围：2026医创赛选题与作品准备\n学习用途：区分赛道和作品类别，核对材料、评审及科研规范\n来源：https://jwc.njucm.edu.cn/_upload/article/files/55/1e/2dc96cc0439cbb1e00e19c2efd1d/bc70b9e0-1159-4e6e-a50d-da41780dc199.pdf",
+      "summary": "组委会原始文件的高校公开副本，不含虚构的报名安排",
+      "catalog_codes": [
+        "2026088"
+      ],
+      "provider": "医学创新竞赛委员会／南京中医药大学",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d7599b4c977c8dcb84c1",
+      "title": "医学创新大赛参赛流程操作手册",
+      "url": "https://slyx.zjnu.edu.cn/_upload/article/files/16/34/afab5c184223904f162628ea2a5e/2e250a13-f3e2-474c-9796-6959a858ba51.pdf",
+      "text": "医学创新大赛参赛流程操作手册\n11页图文操作说明；操作手册可公开阅读，实际报名需要登录\n访问方式：免费公开\n适用范围：第十二届报名和作品提交\n学习用途：帮助理解团队信息、赛区选择与材料提交流程\n来源：https://slyx.zjnu.edu.cn/_upload/article/files/16/34/afab5c184223904f162628ea2a5e/2e250a13-f3e2-474c-9796-6959a858ba51.pdf",
+      "summary": "11页图文操作说明；操作手册可公开阅读，实际报名需要登录",
+      "catalog_codes": [
+        "2026088"
+      ],
+      "provider": "赛事平台（浙江师范大学转载）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b10a4edd099472f5c1d7",
+      "title": "PubMed 文献检索用户指南",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/help/",
+      "text": "PubMed 文献检索用户指南\n免费公开的检索帮助\n访问方式：免费公开\n适用范围：医学选题背景调查与文献引用\n学习用途：学习检索、筛选和导出文献，为研究问题与背景综述寻找依据\n来源：https://pubmed.ncbi.nlm.nih.gov/help/",
+      "summary": "免费公开的检索帮助",
+      "catalog_codes": [
+        "2026088"
+      ],
+      "provider": "美国国家医学图书馆 NLM",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c5bc1349c0824901b254",
+      "title": "2026第十四届通知与参赛要求",
+      "url": "https://www.cmit.cn/html/tongzhigonggao/show-144-45826-1.html",
+      "text": "2026第十四届通知与参赛要求\n数字媒体作品方向、提交格式与原创素材要求\n访问方式：免费公开\n适用范围：2026数媒竞赛\n学习用途：先确认作品方向、提交和原创素材要求，再确定开发范围\n来源：https://www.cmit.cn/html/tongzhigonggao/show-144-45826-1.html",
+      "summary": "数字媒体作品方向、提交格式与原创素材要求",
+      "catalog_codes": [
+        "2026089"
+      ],
+      "provider": "数媒竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-21aa8ade5cc6008a7f6d",
+      "title": "获奖案例：陶瓷工艺制作VR实训系统",
+      "url": "https://www.cmit.cn/html/youxi/show-151-4141-1.html",
+      "text": "获奖案例：陶瓷工艺制作VR实训系统\n了解技术与具体教学场景的结合方式和作品呈现方向\n访问方式：免费公开\n适用范围：虚拟现实、教学交互类作品\n来源：https://www.cmit.cn/html/youxi/show-151-4141-1.html",
+      "summary": "了解技术与具体教学场景的结合方式和作品呈现方向",
+      "catalog_codes": [
+        "2026089"
+      ],
+      "provider": "数媒竞赛组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-713c0313c52d8d04c8ec",
+      "title": "2026诵读中国参赛方案",
+      "url": "http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+      "text": "2026诵读中国参赛方案\n比较组别、选文及同期声视频要求，建立上传前检查表\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第八届\n来源：http://www.moe.gov.cn/srcsite/A18/s3137/202605/W020260528387299680335.docx",
+      "summary": "比较组别、选文及同期声视频要求，建立上传前检查表",
+      "catalog_codes": [
+        "2026090"
+      ],
+      "provider": "2026诵读中国参赛方案",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-85e802eff7ecdff4389a",
+      "title": "2026诵读中国官方常见问题",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/s271/202605/t20260528_1437994.html",
+      "text": "2026诵读中国官方常见问题\n补充组别、人数和录制规范等常见问题，与主方案对照\n学习顺序：逐项检查作品是否符合同期声和人数限制\n语言：中文\n访问方式：在线阅读\n适用范围：2026届\n来源：https://www.moe.gov.cn/jyb_xwfb/s271/202605/t20260528_1437994.html",
+      "summary": "补充组别、人数和录制规范等常见问题，与主方案对照",
+      "catalog_codes": [
+        "2026090"
+      ],
+      "provider": "2026诵读中国官方常见问题",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6921ea20d58e611b339f",
+      "title": "Audacity录音与编辑入门",
+      "url": "https://manual.audacityteam.org/quick_help.html",
+      "text": "Audacity录音与编辑入门\n介绍导入、录音、选区、剪辑、效果处理与导出\n适用对象：配音、音乐和表演提交音频者\n基础要求：基本计算机操作\n学习顺序：先录30秒声音，比较原音与轻度处理效果，再检查导出格式\n语言：英语\n访问方式：免费文档及开源软件\n适用范围：通用备赛资料\n来源：https://manual.audacityteam.org/quick_help.html",
+      "summary": "介绍导入、录音、选区、剪辑、效果处理与导出",
+      "catalog_codes": [
+        "2026090",
+        "2026192",
+        "2026193",
+        "2026195",
+        "2026196",
+        "2026197",
+        "2026198",
+        "2026199",
+        "2026201",
+        "2026203",
+        "2026205",
+        "2026209",
+        "2026211",
+        "2026217",
+        "2026221",
+        "2026223",
+        "2026224",
+        "2026225",
+        "2026226",
+        "2026227",
+        "2026230",
+        "2026235",
+        "2026238",
+        "2026246",
+        "2026250",
+        "2026251"
+      ],
+      "provider": "Audacity项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-a89c1e1ebb606825a4fe",
+      "title": "2026米兰设计周作品展通知",
+      "url": "https://www.gzcc.edu.cn/sjjxzx/upload/files/2025/11/4be560d9fc410536.pdf",
+      "text": "2026米兰设计周作品展通知\n先确定学生作品单元和方向，再核对作品报送及评价范围\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十届\n来源：https://www.gzcc.edu.cn/sjjxzx/upload/files/2025/11/4be560d9fc410536.pdf",
+      "summary": "先确定学生作品单元和方向，再核对作品报送及评价范围",
+      "catalog_codes": [
+        "2026091"
+      ],
+      "provider": "2026米兰设计周作品展通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-dab03c0f3192422d6911",
+      "title": "Blender开放电影与制作档案",
+      "url": "https://studio.blender.org/films/",
+      "text": "Blender开放电影与制作档案\n可观看开放电影并进入制作项目，比较角色设计、镜头叙事和制作流程\n适用对象：动画与数字影像作者\n基础要求：基本视听语言\n学习顺序：先选Charge或Wing It观看并画节奏表，再查看可访问制作说明\n语言：英语\n访问方式：电影公开浏览；部分制作文件和日志需付费订阅\n适用范围：通用备赛资料\n来源：https://studio.blender.org/films/",
+      "summary": "可观看开放电影并进入制作项目，比较角色设计、镜头叙事和制作流程",
+      "catalog_codes": [
+        "2026091",
+        "2026093",
+        "2026217",
+        "2026219",
+        "2026222",
+        "2026225",
+        "2026227",
+        "2026231",
+        "2026235",
+        "2026236"
+      ],
+      "provider": "Blender Studio",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-d8bfb25bcaa96cba4b5a",
+      "title": "Blender 5.0参考手册",
+      "url": "https://docs.blender.org/manual/en/5.0/",
+      "text": "Blender 5.0参考手册\n涵盖建模、材质、动画、镜头和渲染，可制作设计表达与动画原型\n适用对象：三维设计、数字媒体和动画作者\n基础要求：基础计算机操作\n学习顺序：从界面与基础建模开始，完成一个小场景后再添加材质、灯光和镜头\n语言：英语；有其他语言版本\n访问方式：文档免费；Blender开源；手册固定5.0版，界面与新版可能不同\n适用范围：通用备赛资料\n来源：https://docs.blender.org/manual/en/5.0/",
+      "summary": "涵盖建模、材质、动画、镜头和渲染，可制作设计表达与动画原型",
+      "catalog_codes": [
+        "2026091",
+        "2026093",
+        "2026133",
+        "2026153",
+        "2026154",
+        "2026155",
+        "2026158",
+        "2026159",
+        "2026161",
+        "2026162",
+        "2026163",
+        "2026165",
+        "2026215",
+        "2026216",
+        "2026219",
+        "2026222",
+        "2026231",
+        "2026236",
+        "2026248"
+      ],
+      "provider": "Blender Foundation",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-15a8a948d5837f0f8f9f",
+      "title": "Krita数字绘画手册",
+      "url": "https://docs.krita.org/en/index.html",
+      "text": "Krita数字绘画手册\n介绍笔刷、图层、绘画与动画等数字创作功能\n适用对象：插画、视觉传达、分镜和概念设计作者\n基础要求：基本绘画或设计基础\n学习顺序：先做图层和笔刷练习，再完成一页分镜或主视觉，保留源文件和创作过程\n语言：英语；含多语言文档\n访问方式：免费开源文档\n适用范围：通用备赛资料\n来源：https://docs.krita.org/en/index.html",
+      "summary": "介绍笔刷、图层、绘画与动画等数字创作功能",
+      "catalog_codes": [
+        "2026091",
+        "2026093",
+        "2026140",
+        "2026148",
+        "2026150",
+        "2026178",
+        "2026218",
+        "2026220",
+        "2026228",
+        "2026229",
+        "2026232",
+        "2026233",
+        "2026234",
+        "2026237"
+      ],
+      "provider": "Krita项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-0fda7f96f0018046f209",
+      "title": "2026大广赛参赛指南",
+      "url": "https://www.sun-ada.net/home/about_intrs2.html",
+      "text": "2026大广赛参赛指南\n按作品类别核对人数、画幅和提交时刻，避免跨校组队\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十八届\n来源：https://www.sun-ada.net/home/about_intrs2.html",
+      "summary": "按作品类别核对人数、画幅和提交时刻，避免跨校组队",
+      "catalog_codes": [
+        "2026092"
+      ],
+      "provider": "2026大广赛参赛指南",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-4b2aa9bf45d9644b4792",
+      "title": "2026大广赛阿里云品牌命题",
+      "url": "https://www.sun-ada.net/home/zt_xqs3026.html",
+      "text": "2026大广赛阿里云品牌命题\n介绍具体创作目标、对象和作品方向，练习从真实命题提出创意\n学习顺序：读品牌及目标，再写受众、主张和媒介方案\n语言：中文\n访问方式：在线阅读\n适用范围：2026第18届阿里云命题\n来源：https://www.sun-ada.net/home/zt_xqs3026.html",
+      "summary": "介绍具体创作目标、对象和作品方向，练习从真实命题提出创意",
+      "catalog_codes": [
+        "2026092"
+      ],
+      "provider": "2026大广赛阿里云品牌命题",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-fd36300a92750946689b",
+      "title": "Illustrator官方入门与学习面板",
+      "url": "https://helpx.adobe.com/illustrator/desktop/get-started/learn-the-basics/homescreen-overview.html",
+      "text": "Illustrator官方入门与学习面板\n说明新建文档、模板和应用内学习入口，适合组织矢量设计练习\n适用对象：平面设计、品牌与ACP参赛学生\n基础要求：基础设计知识\n学习顺序：新建对应尺寸文档，从Learn面板做图形与文字练习\n语言：英语\n访问方式：网页免费；实际软件需有效许可；本页是入门导航而非完整课程\n适用范围：通用备赛资料\n来源：https://helpx.adobe.com/illustrator/desktop/get-started/learn-the-basics/homescreen-overview.html",
+      "summary": "说明新建文档、模板和应用内学习入口，适合组织矢量设计练习",
+      "catalog_codes": [
+        "2026092",
+        "2026178",
+        "2026218",
+        "2026220",
+        "2026228",
+        "2026229",
+        "2026232",
+        "2026233",
+        "2026234",
+        "2026237"
+      ],
+      "provider": "Adobe",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-fb9f9cf8584c1b60f068",
+      "title": "DaVinci Resolve官方训练",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/training?hl=en-US",
+      "text": "DaVinci Resolve官方训练\n提供剪辑、调色、音频与视觉效果训练视频、教材和练习工程\n适用对象：微电影、动画后期、配音及视频作品作者\n基础要求：基础计算机操作；初学可从剪辑开始\n学习顺序：先学剪辑和音频基础，用自己的素材完成一分钟叙事片，再做调色与字幕检查\n语言：英语；部分教材有其他语言\n访问方式：训练资料公开；软件有免费版和Studio付费版\n适用范围：通用备赛资料\n来源：https://www.blackmagicdesign.com/products/davinciresolve/training?hl=en-US",
+      "summary": "提供剪辑、调色、音频与视觉效果训练视频、教材和练习工程",
+      "catalog_codes": [
+        "2026092",
+        "2026170",
+        "2026196",
+        "2026198",
+        "2026201",
+        "2026217",
+        "2026219",
+        "2026222",
+        "2026223",
+        "2026225",
+        "2026227",
+        "2026231",
+        "2026235",
+        "2026236",
+        "2026246"
+      ],
+      "provider": "Blackmagic Design",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-5a8bb5d8bfa2e24ff94d",
+      "title": "2025第19届中国好创意全国简章与投稿指引",
+      "url": "https://storage.cdec.org.cn/hcy/2024/11/20241106104540586-vqn8.pdf",
+      "text": "2025第19届中国好创意全国简章与投稿指引\n从上一届全国简章学习类别、投稿限额、截止时间和院校审核流程\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：2025第19届历史全国简章\n来源：https://storage.cdec.org.cn/hcy/2024/11/20241106104540586-vqn8.pdf",
+      "summary": "从上一届全国简章学习类别、投稿限额、截止时间和院校审核流程",
+      "catalog_codes": [
+        "2026093"
+      ],
+      "provider": "第20届中国好创意参赛作品说明",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a31dcb68d500323b4d41",
+      "title": "2026第20届中国好创意未来包装创新专项简章",
+      "url": "https://storage.cdec.org.cn/hcy/2025/12/20251208161625321-cl58.pdf",
+      "text": "2026第20届中国好创意未来包装创新专项简章\n18页专项文件包括真实企业命题、包装方案提交与评价；只适用包装专项\n学习顺序：读自主/企业命题约束，再做方案、展板、3D效果图或短视频，逐项核对指定格式\n语言：中文\n访问方式：在线阅读\n适用范围：2026第20届未来包装专项\n来源：https://storage.cdec.org.cn/hcy/2025/12/20251208161625321-cl58.pdf",
+      "summary": "18页专项文件包括真实企业命题、包装方案提交与评价；只适用包装专项",
+      "catalog_codes": [
+        "2026093"
+      ],
+      "provider": "第20届中国好创意参赛作品说明",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d1e854e42370d8f04d1d",
+      "title": "2022微结构摄影大赛全国通知",
+      "url": "https://ccbm.ecut.edu.cn/8d/fa/c7122a101882/page.htm",
+      "text": "2022微结构摄影大赛全国通知\n先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：2022年全国微结构摄影赛\n来源：https://ccbm.ecut.edu.cn/8d/fa/c7122a101882/page.htm",
+      "summary": "先阅读资格、任务与评分，再按原件制作材料清单",
+      "catalog_codes": [
+        "2026094"
+      ],
+      "provider": "2022微结构摄影大赛全国通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-1340f35ffe2af5ba171c",
+      "title": "ImageJ图像定量分析教程",
+      "url": "https://imagej.net/learn/",
+      "text": "ImageJ图像定量分析教程\n学习标尺校准、测量和图像处理流程；保留原图并记录处理参数\n基础要求：有显微图像和基础实验知识\n学习顺序：按Getting started安装Fiji，再用示例图练习标尺与面积测量\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://imagej.net/learn/",
+      "summary": "学习标尺校准、测量和图像处理流程；保留原图并记录处理参数",
+      "catalog_codes": [
+        "2026094",
+        "2026127"
+      ],
+      "provider": "ImageJ项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a3e61093929d1ca4657f",
+      "title": "Nikon显微镜原理教程",
+      "url": "https://www.microscopyu.com/microscopy-basics",
+      "text": "Nikon显微镜原理教程\n解释显微镜成像、分辨率、对比度及制样成像基础\n基础要求：基础光学\n学习顺序：从分辨率和物镜章节入门，再对比自己的成像条件\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.microscopyu.com/microscopy-basics",
+      "summary": "解释显微镜成像、分辨率、对比度及制样成像基础",
+      "catalog_codes": [
+        "2026094"
+      ],
+      "provider": "Nikon MicroscopyU",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-cb34a8639df6f2da8085",
+      "title": "Nikon Small World获奖显微作品",
+      "url": "https://www.nikonsmallworld.com/galleries",
+      "text": "Nikon Small World获奖显微作品\n可打开历年作品图像并查看拍摄方式\n基础要求：显微成像入门\n学习顺序：选三幅图记录仪器、倍率与主体，再回到未加工原图比较\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.nikonsmallworld.com/galleries",
+      "summary": "可打开历年作品图像并查看拍摄方式",
+      "catalog_codes": [
+        "2026094"
+      ],
+      "provider": "Nikon",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6fa374289396be115c02",
+      "title": "2026上海先进材料创新创意大赛通知",
+      "url": "https://chxy.usst.edu.cn/2026/0717/c17378a368877/page.htm",
+      "text": "2026上海先进材料创新创意大赛通知\n核对团队人数和选题边界，将创新点写成可验证的材料指标\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十三届\n来源：https://chxy.usst.edu.cn/2026/0717/c17378a368877/page.htm",
+      "summary": "核对团队人数和选题边界，将创新点写成可验证的材料指标",
+      "catalog_codes": [
+        "2026095"
+      ],
+      "provider": "2026上海先进材料创新创意大赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-88c979649bc710c808ac",
+      "title": "剑桥DoITPoMS纤维复合材料力学教学包",
+      "url": "https://www.doitpoms.ac.uk/tlplib/fibre_composites/index.php",
+      "text": "剑桥DoITPoMS纤维复合材料力学教学包\n从增强体、基体、界面和混合定律理解复合材料；配套交互练习\n基础要求：材料力学基础\n学习顺序：先做混合定律例题，再比较纤维方向对性能的影响\n语言：英语\n访问方式：教学章节公开；旧Flash交互演示可能无法运行，正文和图示可阅读\n适用范围：通用备赛资料\n来源：https://www.doitpoms.ac.uk/tlplib/fibre_composites/index.php",
+      "summary": "从增强体、基体、界面和混合定律理解复合材料；配套交互练习",
+      "catalog_codes": [
+        "2026095",
+        "2026115",
+        "2026124",
+        "2026127"
+      ],
+      "provider": "剑桥大学DoITPoMS",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3a17315a5936574d0770",
+      "title": "FreeCAD参数化建模手册",
+      "url": "https://www.freecad.org/manual/a-freecad-manual.pdf",
+      "text": "FreeCAD参数化建模手册\n以参数化实体建模、工程对象和可制造模型为主线的官方历史手册\n适用对象：产品、车辆、结构设计团队\n基础要求：空间几何和工程制图基础\n学习顺序：先理解草图约束和参数依赖，再做可调尺寸零件；工程安全计算另行验证\n语言：英语\n访问方式：公开PDF；工具开源\n适用范围：通用备赛资料\n来源：https://www.freecad.org/manual/a-freecad-manual.pdf",
+      "summary": "以参数化实体建模、工程对象和可制造模型为主线的官方历史手册",
+      "catalog_codes": [
+        "2026095",
+        "2026096",
+        "2026104",
+        "2026115",
+        "2026118",
+        "2026121",
+        "2026124",
+        "2026153",
+        "2026158",
+        "2026163",
+        "2026172",
+        "2026173",
+        "2026174",
+        "2026176",
+        "2026177",
+        "2026179",
+        "2026181",
+        "2026184",
+        "2026185",
+        "2026186",
+        "2026187",
+        "2026188",
+        "2026189",
+        "2026190",
+        "2026191",
+        "2026243",
+        "2026248",
+        "2026249"
+      ],
+      "provider": "FreeCAD项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-26c1f4cca1c7b3c45524",
+      "title": "MIT科研海报与带注释案例",
+      "url": "https://mitcommlab.mit.edu/be/commkit/poster/",
+      "text": "MIT科研海报与带注释案例\n用具体研究海报和注释说明研究问题、核心图表、结论与口头讲解怎样相互配合\n适用对象：科研交流、论文和设计汇报作者\n基础要求：已有研究问题或初步数据\n学习顺序：先选一张带注释海报分析信息层级，再用自己的数据重画一张关键图，练习20秒和两分钟两种说明\n语言：英语\n访问方式：正文免费；附件和视频按站点条件访问\n适用范围：通用备赛资料\n来源：https://mitcommlab.mit.edu/be/commkit/poster/",
+      "summary": "用具体研究海报和注释说明研究问题、核心图表、结论与口头讲解怎样相互配合",
+      "catalog_codes": [
+        "2026095",
+        "2026115",
+        "2026116",
+        "2026117",
+        "2026124",
+        "2026128",
+        "2026131",
+        "2026132",
+        "2026135",
+        "2026137",
+        "2026140",
+        "2026148",
+        "2026150",
+        "2026170",
+        "2026177",
+        "2026178",
+        "2026179",
+        "2026180",
+        "2026181",
+        "2026184",
+        "2026185",
+        "2026186",
+        "2026187",
+        "2026188",
+        "2026189",
+        "2026190",
+        "2026191",
+        "2026205",
+        "2026209",
+        "2026214",
+        "2026218",
+        "2026220",
+        "2026228",
+        "2026229",
+        "2026232",
+        "2026233",
+        "2026234",
+        "2026237",
+        "2026241",
+        "2026242",
+        "2026243",
+        "2026247",
+        "2026249",
+        "2026252"
+      ],
+      "provider": "MIT Communication Lab",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-7af16ce2604c5d33fd7c",
+      "title": "VEX 2025—2026 Push Back赛季手册v4.0",
+      "url": "https://content.vexrobotics.com/docs/25-26/v5rc-push-back/docs/Push-Back-4.0.pdf",
+      "text": "VEX 2025—2026 Push Back赛季手册v4.0\n理解场地、得分和VEXU附录，再练习机器人设计约束\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：英语\n访问方式：在线阅读\n适用范围：适用于2025—2026历史赛季、4月修订版\n来源：https://content.vexrobotics.com/docs/25-26/v5rc-push-back/docs/Push-Back-4.0.pdf",
+      "summary": "理解场地、得分和VEXU附录，再练习机器人设计约束",
+      "catalog_codes": [
+        "2026096"
+      ],
+      "provider": "VEX 2025—2026 Push Back赛季手册v4.0",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e0c8f326784a34b815d7",
+      "title": "VEX V5 C++电机与电机组官方API",
+      "url": "https://api.vex.com/v5/home/cpp/Motors_and_MotorControllers/motor_and_motor_group.html",
+      "text": "VEX V5 C++电机与电机组官方API\n提供V5 C++电机、传感器与控制接口，适合编写基础运动控制\n基础要求：C++及VEX V5硬件\n学习顺序：先读设备配置与Motor，再测试单电机闭环控制\n语言：英语\n适用范围：通用备赛资料\n来源：https://api.vex.com/v5/home/cpp/Motors_and_MotorControllers/motor_and_motor_group.html",
+      "summary": "提供V5 C++电机、传感器与控制接口，适合编写基础运动控制",
+      "catalog_codes": [
+        "2026096"
+      ],
+      "provider": "VEX Robotics",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-9202fd49582e625dd276",
+      "title": "2026高校电气电子工程创新大赛章程",
+      "url": "https://eeeic.ces.org.cn/AboutCompetition/A2-6",
+      "text": "2026高校电气电子工程创新大赛章程\n工程成果、测试与报告的赛道要求\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第五届\n来源：https://eeeic.ces.org.cn/AboutCompetition/A2-6",
+      "summary": "工程成果、测试与报告的赛道要求",
+      "catalog_codes": [
+        "2026097"
+      ],
+      "provider": "2026高校电气电子工程创新大赛章程",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-28669c4069dd8f927be3",
+      "title": "KiCad入门教程",
+      "url": "https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+      "text": "KiCad入门教程\n从原理图到PCB走线和规则检查，形成可复查的电子硬件设计文件\n基础要求：基础电路\n学习顺序：按示例完成简单电路，执行ERC/DRC后再制板\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.kicad.org/9.0/en/getting_started_in_kicad/getting_started_in_kicad.html",
+      "summary": "从原理图到PCB走线和规则检查，形成可复查的电子硬件设计文件",
+      "catalog_codes": [
+        "2026097",
+        "2026100",
+        "2026101"
+      ],
+      "provider": "KiCad项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-39e149ad178677a962ad",
+      "title": "Analog Devices LTspice基础视频课程",
+      "url": "https://www.analog.com/en/resources/media-center/videos/series/ltspice-basics-video-series.html",
+      "text": "Analog Devices LTspice基础视频课程\n用电路仿真检查模拟电路的工作点、瞬态和频率响应\n基础要求：基础模拟电路\n学习顺序：安装软件并运行官方示例，先比较直流与瞬态分析\n语言：英语\n适用范围：通用备赛资料\n来源：https://www.analog.com/en/resources/media-center/videos/series/ltspice-basics-video-series.html",
+      "summary": "用电路仿真检查模拟电路的工作点、瞬态和频率响应",
+      "catalog_codes": [
+        "2026097",
+        "2026101"
+      ],
+      "provider": "Analog Devices",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-cb149f0ec2b4433844e1",
+      "title": "2026国际青年人工智能大赛通知",
+      "url": "https://24391852.s21i.faiusr.com/61/ABUIABA9GAAggtvH1QYozKy96gQ.pdf",
+      "text": "2026国际青年人工智能大赛通知\n从18个项目中选适合的赛项，核对硬件与算法任务\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第八届\n来源：https://24391852.s21i.faiusr.com/61/ABUIABA9GAAggtvH1QYozKy96gQ.pdf",
+      "summary": "从18个项目中选适合的赛项，核对硬件与算法任务",
+      "catalog_codes": [
+        "2026098"
+      ],
+      "provider": "2026国际青年人工智能大赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-88228fcfd9621d1bdf42",
+      "title": "ROS 2官方教程",
+      "url": "https://docs.ros.org/en/jazzy/Tutorials.html",
+      "text": "ROS 2官方教程\n从节点、话题和服务学习机器人通信，再接入仿真和传感器\n基础要求：Linux、Python或C++\n学习顺序：按Beginner CLI和Client Libraries顺序完成发布订阅例子\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.ros.org/en/jazzy/Tutorials.html",
+      "summary": "从节点、话题和服务学习机器人通信，再接入仿真和传感器",
+      "catalog_codes": [
+        "2026098",
+        "2026099",
+        "2026103",
+        "2026104"
+      ],
+      "provider": "Open Robotics",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-65d64f70a251644118d4",
+      "title": "PyTorch入门教程",
+      "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "text": "PyTorch入门教程\n学习张量、数据集、模型训练与保存，作为AI赛项基线实验的起点\n基础要求：Python和线性代数\n学习顺序：完成Learn the Basics全流程，固定数据划分并记录随机种子\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "summary": "学习张量、数据集、模型训练与保存，作为AI赛项基线实验的起点",
+      "catalog_codes": [
+        "2026098",
+        "2026102"
+      ],
+      "provider": "PyTorch项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-53d8c90e604f8bbd39e9",
+      "title": "OpenCV Python教程",
+      "url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "text": "OpenCV Python教程\n从图像读写、滤波、特征和视频分析练习视觉处理\n基础要求：Python和NumPy\n学习顺序：先做图像预处理，再比较分割和目标检测方法\n语言：英语\n适用范围：通用备赛资料\n来源：https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "summary": "从图像读写、滤波、特征和视频分析练习视觉处理",
+      "catalog_codes": [
+        "2026098",
+        "2026102"
+      ],
+      "provider": "OpenCV项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b62348bb381b400b0fd9",
+      "title": "2026先进机器人大赛AI赛项高校转发通知",
+      "url": "https://cxcy.jsu.edu.cn/cxcysj/ss/xkjs/a9a8876774c0411a824b731b5ed5f98e.htm",
+      "text": "2026先进机器人大赛AI赛项高校转发通知\n阅读图像、识别等AI赛项说明\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十九届\n来源：https://cxcy.jsu.edu.cn/cxcysj/ss/xkjs/a9a8876774c0411a824b731b5ed5f98e.htm",
+      "summary": "阅读图像、识别等AI赛项说明",
+      "catalog_codes": [
+        "2026099"
+      ],
+      "provider": "2026先进机器人大赛AI赛项高校转发通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6b02487d1f84402d9ef3",
+      "title": "Simulink Onramp",
+      "url": "https://matlabacademy.mathworks.com/details/simulink-onramp/simulink",
+      "text": "Simulink Onramp\n通过基础模型练习理解信号、模块、仿真和系统响应\n适用对象：赛车控制、自动化和交通系统团队\n基础要求：基础数学；控制概念有帮助\n学习顺序：先搭建简单动态系统，再比较不同参数下响应\n语言：英语；有中文入口\n访问方式：入门课程免费，需账号\n适用范围：通用备赛资料\n来源：https://matlabacademy.mathworks.com/details/simulink-onramp/simulink",
+      "summary": "通过基础模型练习理解信号、模块、仿真和系统响应",
+      "catalog_codes": [
+        "2026099",
+        "2026166",
+        "2026172",
+        "2026173",
+        "2026174",
+        "2026175",
+        "2026176",
+        "2026255"
+      ],
+      "provider": "MathWorks",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1e1420cad8bb9328e451",
+      "title": "2026嵌入式系统专题邀请赛通知",
+      "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+      "text": "2026嵌入式系统专题邀请赛通知\n先核对嵌入式实现和赛项平台约束；具体报名按邀请学校执行\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十三届英特尔杯嵌入式AI专题赛\n来源：https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+      "summary": "先核对嵌入式实现和赛项平台约束；具体报名按邀请学校执行",
+      "catalog_codes": [
+        "2026100"
+      ],
+      "provider": "2026嵌入式系统专题邀请赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-288e2e3f53bcaf3a2364",
+      "title": "OpenVINO官方示例仓库",
+      "url": "https://github.com/openvinotoolkit/openvino_notebooks",
+      "text": "OpenVINO官方示例仓库\n可运行的模型部署笔记本，涵盖推理、优化和设备选择\n基础要求：Python、深度学习基础\n学习顺序：按仓库安装说明运行一个基础推理例子，再比较量化前后精度与延迟\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://github.com/openvinotoolkit/openvino_notebooks",
+      "summary": "可运行的模型部署笔记本，涵盖推理、优化和设备选择",
+      "catalog_codes": [
+        "2026100"
+      ],
+      "provider": "OpenVINO团队",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-14b50b06c10747a9d968",
+      "title": "Python官方教程",
+      "url": "https://docs.python.org/3/tutorial/",
+      "text": "Python官方教程\n介绍Python语法、数据结构、模块、文件读写与错误处理，可建立可复现的数据处理脚本\n适用对象：有编程基础、需要数据分析或算法实现的学生\n基础要求：已有一种语言的基本编程经验；并非零编程入门课\n学习顺序：先完成控制流、列表字典和文件读写，再将自己的实验或赛题数据读入脚本\n语言：英语；有中文版本入口\n访问方式：文档免费，Python开源\n适用范围：通用备赛资料\n来源：https://docs.python.org/3/tutorial/",
+      "summary": "介绍Python语法、数据结构、模块、文件读写与错误处理，可建立可复现的数据处理脚本",
+      "catalog_codes": [
+        "2026100",
+        "2026142",
+        "2026143",
+        "2026144",
+        "2026145",
+        "2026146",
+        "2026147",
+        "2026149",
+        "2026151",
+        "2026152",
+        "2026166",
+        "2026167",
+        "2026168",
+        "2026169",
+        "2026175",
+        "2026239",
+        "2026255"
+      ],
+      "provider": "Python Software Foundation",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-fd348bb445f90bb4c664",
+      "title": "2026信息技术前沿专题邀请赛通知",
+      "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+      "text": "2026信息技术前沿专题邀请赛通知\n按RA6M5/RA8P1平台与阶段作品要求组织开发；校赛需学校推荐\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年瑞萨杯信息科技前沿专题赛\n来源：https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+      "summary": "按RA6M5/RA8P1平台与阶段作品要求组织开发；校赛需学校推荐",
+      "catalog_codes": [
+        "2026101"
+      ],
+      "provider": "2026信息技术前沿专题邀请赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-01ccbb6ed59fd330d0b2",
+      "title": "瑞萨Flexible Software Package官方仓库",
+      "url": "https://github.com/renesas/fsp",
+      "text": "瑞萨Flexible Software Package官方仓库\n面向RA微控制器的软件包，含接口说明和工程支持，辅助理解指定开发板\n基础要求：C语言及MCU外设\n学习顺序：根据实际开发板型号选择版本，先跑串口和定时器示例\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://github.com/renesas/fsp",
+      "summary": "面向RA微控制器的软件包，含接口说明和工程支持，辅助理解指定开发板",
+      "catalog_codes": [
+        "2026101"
+      ],
+      "provider": "Renesas Electronics",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-4435857a73866c686b50",
+      "title": "同济2025全球AI创新大赛视觉算法案例",
+      "url": "https://cse.tongji.edu.cn/6b/d2/c15598a355282/page.htm",
+      "text": "同济2025全球AI创新大赛视觉算法案例\n从公开团队项目说明理解视觉识别建模和工程优化过程\n学习顺序：识别问题、数据、模型与部署约束，再用公开工具复现相似任务\n语言：中文\n访问方式：在线阅读\n适用范围：2025项目案例\n来源：https://cse.tongji.edu.cn/6b/d2/c15598a355282/page.htm",
+      "summary": "从公开团队项目说明理解视觉识别建模和工程优化过程",
+      "catalog_codes": [
+        "2026102"
+      ],
+      "provider": "同济2025全球AI创新大赛视觉算法案例",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b9fb2c90f50c98bfcf9c",
+      "title": "RoboRacer/F1TENTH自动驾驶课程",
+      "url": "https://f1tenth-coursekit.readthedocs.io/en/latest/",
+      "text": "RoboRacer/F1TENTH自动驾驶课程\n从车辆控制、激光雷达与导航入门小车自动驾驶；教学平台与比赛指定平台可能不同\n基础要求：Linux、ROS和控制基础\n学习顺序：先做仿真和基础控制实验，再学习定位与规划\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://f1tenth-coursekit.readthedocs.io/en/latest/",
+      "summary": "从车辆控制、激光雷达与导航入门小车自动驾驶；教学平台与比赛指定平台可能不同",
+      "catalog_codes": [
+        "2026102",
+        "2026103"
+      ],
+      "provider": "F1TENTH社区",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3c6867ee467a7b0ff28d",
+      "title": "2026智能无人系统挑战赛正式通知",
+      "url": "https://files.sciconf.cn/gs_pdf/2026/08/17/20260817142749143335.pdf",
+      "text": "2026智能无人系统挑战赛正式通知\n核对挑战任务、队伍要求与提交安排，按具体赛项技术规则备赛\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第六届\n来源：https://files.sciconf.cn/gs_pdf/2026/08/17/20260817142749143335.pdf",
+      "summary": "核对挑战任务、队伍要求与提交安排，按具体赛项技术规则备赛",
+      "catalog_codes": [
+        "2026103"
+      ],
+      "provider": "2026智能无人系统挑战赛正式通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-df583deaf47cc4d62aee",
+      "title": "同济机器人竞技作品与技术案例",
+      "url": "https://qdc.tongji.edu.cn/info/1012/1757.htm",
+      "text": "同济机器人竞技作品与技术案例\n同济团队公开的姿态估计、模块化机械和通信方案，可用于理解整机协同\n学习顺序：先分解机构、感知、控制与通信，再选择一项做台架验证\n语言：中文\n访问方式：在线阅读\n适用范围：案例学习\n来源：https://qdc.tongji.edu.cn/info/1012/1757.htm",
+      "summary": "同济团队公开的姿态估计、模块化机械和通信方案，可用于理解整机协同",
+      "catalog_codes": [
+        "2026104"
+      ],
+      "provider": "同济机器人竞技作品与技术案例",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-fa5b10e17a0cc0b92aff",
+      "title": "FDI Moot通用规则（2024-11-25修订）",
+      "url": "https://fdimoot.org/Rules.pdf",
+      "text": "FDI Moot通用规则（2024-11-25修订）\n阅读团队、书状和口头辩论结构\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：英语\n适用范围：官网2026导航所引用的通用规则；版本为2024-11-25，深圳细则及全球赛程分别核对\n来源：https://fdimoot.org/Rules.pdf",
+      "summary": "阅读团队、书状和口头辩论结构",
+      "catalog_codes": [
+        "2026105"
+      ],
+      "provider": "FDI Moot竞赛规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-f59af211a3b078407bb6",
+      "title": "ICSID 2022仲裁规则证据指引",
+      "url": "https://icsid.worldbank.org/procedures/arbitration/convention/evidence/2022",
+      "text": "ICSID 2022仲裁规则证据指引\n检索投资仲裁公约和规则版本，训练对管辖和程序规则的定位引用\n基础要求：国际投资法及法律英语\n学习顺序：依赛事案情选适用规则版本，制作管辖与程序条款表\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://icsid.worldbank.org/procedures/arbitration/convention/evidence/2022",
+      "summary": "检索投资仲裁公约和规则版本，训练对管辖和程序规则的定位引用",
+      "catalog_codes": [
+        "2026105"
+      ],
+      "provider": "ICSID",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e35af3bd3f965add03b4",
+      "title": "联合国国际法视听图书馆专题讲座",
+      "url": "https://legal.un.org/avl/ls/lectures.html",
+      "text": "联合国国际法视听图书馆专题讲座\n专题国际法讲座和参考材料，练习法律概念与英文论证表达\n基础要求：基础国际法和英语听力\n学习顺序：先选与赛题相符的一节讲座，整理英文论证提纲\n语言：英语及其他语言\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://legal.un.org/avl/ls/lectures.html",
+      "summary": "专题国际法讲座和参考材料，练习法律概念与英文论证表达",
+      "catalog_codes": [
+        "2026105",
+        "2026107",
+        "2026108",
+        "2026109",
+        "2026110"
+      ],
+      "provider": "联合国",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d56a28e8e3a0e7c936a9",
+      "title": "Jessup 2026官方规则",
+      "url": "https://www.ilsa.org/History/Jessup%202026/Rules.pdf",
+      "text": "Jessup 2026官方规则\n核对团队资格、书状规范和口辩流程，规则与当年赛题共同使用\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：英语\n访问方式：在线阅读\n适用范围：适用于2026年Philip C. Jessup国际法模拟法庭\n来源：https://www.ilsa.org/History/Jessup%202026/Rules.pdf",
+      "summary": "核对团队资格、书状规范和口辩流程，规则与当年赛题共同使用",
+      "catalog_codes": [
+        "2026106"
+      ],
+      "provider": "Jessup 2026官方规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-2f9a69dd3019a884f146",
+      "title": "Jessup 2026官方赛题",
+      "url": "https://www.ilsa.org/History/Jessup%202026/Problem.pdf",
+      "text": "Jessup 2026官方赛题\n当年虚构国际公法争议用于拆分事实、请求和论证议题\n学习顺序：先画事实时间线，再分方建立争点和法源表\n语言：英语\n访问方式：在线阅读\n适用范围：2026届\n来源：https://www.ilsa.org/History/Jessup%202026/Problem.pdf",
+      "summary": "当年虚构国际公法争议用于拆分事实、请求和论证议题",
+      "catalog_codes": [
+        "2026106"
+      ],
+      "provider": "Jessup 2026官方赛题",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d110d08b9a4cc73d5a97",
+      "title": "Jessup 2026 NUALS申请方优秀书状",
+      "url": "https://www.ilsa.org/History/Jessup%202026/NUALSApplicant.pdf",
+      "text": "Jessup 2026 NUALS申请方优秀书状\n完整书状，用于学习结构、引注和论证组织\n学习顺序：先比较目录与争点，再对照赛题评估论证证据\n语言：英语\n访问方式：在线阅读\n适用范围：2026届公开优秀书状\n来源：https://www.ilsa.org/History/Jessup%202026/NUALSApplicant.pdf",
+      "summary": "完整书状，用于学习结构、引注和论证组织",
+      "catalog_codes": [
+        "2026106"
+      ],
+      "provider": "Jessup 2026 NUALS申请方优秀书状",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-d7cb3c7ca684bc3b9a73",
+      "title": "国际法院案件原文库",
+      "url": "https://www.icj-cij.org/cases",
+      "text": "国际法院案件原文库\n公开判决、咨询意见和诉状入口，适合公法模拟法庭构建判例依据\n基础要求：国际公法及英语\n学习顺序：围绕赛题争点筛选案件，标记判决段落并区分多数意见和个别意见\n语言：英语/法语\n适用范围：通用备赛资料\n来源：https://www.icj-cij.org/cases",
+      "summary": "公开判决、咨询意见和诉状入口，适合公法模拟法庭构建判例依据",
+      "catalog_codes": [
+        "2026106"
+      ],
+      "provider": "国际法院",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e07086e38515de7fc6fc",
+      "title": "第33届Vis Moot规则",
+      "url": "https://www.vismoot.org/wp-content/uploads/2025/08/33rd-Vis-Moot-Rules_FINAL.pdf",
+      "text": "第33届Vis Moot规则\n比较书状和口辩要求，了解CISG和国际仲裁论证结构\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第33届Vis Moot\n来源：https://www.vismoot.org/wp-content/uploads/2025/08/33rd-Vis-Moot-Rules_FINAL.pdf",
+      "summary": "比较书状和口辩要求，了解CISG和国际仲裁论证结构",
+      "catalog_codes": [
+        "2026107"
+      ],
+      "provider": "第33届Vis Moot规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a3b3ecdfd772d4c6c9c1",
+      "title": "UNCITRAL国际货物销售合同公约",
+      "url": "https://uncitral.un.org/en/texts/salegoods/conventions/sale_of_goods/cisg",
+      "text": "UNCITRAL国际货物销售合同公约\nCISG正文及相关资料，可建立合同成立、违约救济与解释规则的条文索引\n基础要求：合同法与法律英语\n学习顺序：先读适用范围，再结合Vis赛题制作争点与条款对应表\n语言：英语及联合国官方语言\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://uncitral.un.org/en/texts/salegoods/conventions/sale_of_goods/cisg",
+      "summary": "CISG正文及相关资料，可建立合同成立、违约救济与解释规则的条文索引",
+      "catalog_codes": [
+        "2026107"
+      ],
+      "provider": "UNCITRAL",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-72780fe48116b7eeba7a",
+      "title": "ICC Moot 2026程序规则",
+      "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+      "text": "ICC Moot 2026程序规则\n对应控方、辩方、政府方分工，核对书状和庭辩要求\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：英语\n访问方式：在线阅读\n适用范围：适用于2026年第十三届IBA ICCMCC\n来源：https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+      "summary": "对应控方、辩方、政府方分工，核对书状和庭辩要求",
+      "catalog_codes": [
+        "2026108"
+      ],
+      "provider": "ICC Moot 2026程序规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-eabb2f26b786c41d3b36",
+      "title": "ICC Moot 2026修正赛题",
+      "url": "https://www.pace.edu/sites/default/files/2026-01/law-icc-moot-court-case-2026.pdf",
+      "text": "ICC Moot 2026修正赛题\n18页公开修正案例，用于控方、辩方与政府方三角色训练\n学习顺序：按上诉议题整理事实和法源，再分角色准备书状\n语言：英语\n适用范围：2026届修正版；虚构案例，无标准答案\n来源：https://www.pace.edu/sites/default/files/2026-01/law-icc-moot-court-case-2026.pdf",
+      "summary": "18页公开修正案例，用于控方、辩方与政府方三角色训练",
+      "catalog_codes": [
+        "2026108"
+      ],
+      "provider": "Grotius Centre（Pace法学院公开）",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-5e4ca666b8051f3f9e75",
+      "title": "2025中国红十字国际人道法模拟法庭规则",
+      "url": "https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Court_Rules-final.pdf",
+      "text": "2025中国红十字国际人道法模拟法庭规则\n掌握组队、书状与庭辩要求\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2025年第十九届中国国际人道法模拟法庭\n来源：https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Court_Rules-final.pdf",
+      "summary": "掌握组队、书状与庭辩要求",
+      "catalog_codes": [
+        "2026109"
+      ],
+      "provider": "2025中国红十字国际人道法模拟法庭规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-f17834cf57f361b99273",
+      "title": "2025中国国际人道法模拟法庭赛题",
+      "url": "https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Problem_National_Rounds.pdf",
+      "text": "2025中国国际人道法模拟法庭赛题\n当届虚构案例及问题，可训练事实到规则的适用\n学习顺序：读事实和争点，为各方列要件、论据及反驳\n语言：中文\n访问方式：在线阅读\n适用范围：2025中国赛\n来源：https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Problem_National_Rounds.pdf",
+      "summary": "当届虚构案例及问题，可训练事实到规则的适用",
+      "catalog_codes": [
+        "2026109"
+      ],
+      "provider": "2025中国国际人道法模拟法庭赛题",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-13604224362e0e002325",
+      "title": "2026法律英语大赛华东预赛与演讲准备通知",
+      "url": "https://law.tongji.edu.cn/info/1355/8537.htm",
+      "text": "2026法律英语大赛华东预赛与演讲准备通知\n明确用英语表达法律观点的主题，说明报名后提交演讲稿和赛区安排\n学习顺序：先自拟法律议题，用Wex核对术语，再写观点、论据和反驳，准备英文演讲稿\n语言：中文\n访问方式：在线阅读\n适用范围：2026第十五届华东预赛通知\n来源：https://law.tongji.edu.cn/info/1355/8537.htm",
+      "summary": "明确用英语表达法律观点的主题，说明报名后提交演讲稿和赛区安排",
+      "catalog_codes": [
+        "2026110"
+      ],
+      "provider": "同济大学法学院／赛事组委会",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-339d96ac5ce30d1166fe",
+      "title": "Cornell Wex法律英语术语词典",
+      "url": "https://www.law.cornell.edu/wex",
+      "text": "Cornell Wex法律英语术语词典\n用法律英语定义辨析诉讼、证据和论证词汇\n学习顺序：按备赛文章抽取术语，写英文定义和自己的例句\n语言：英语\n访问方式：公开页面或可读取附件\n适用范围：偏美国法术语\n来源：https://www.law.cornell.edu/wex",
+      "summary": "用法律英语定义辨析诉讼、证据和论证词汇",
+      "catalog_codes": [
+        "2026110"
+      ],
+      "provider": "Cornell Law School LII",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-974fed4c5c081e5af0b0",
+      "title": "2019地球物理知识竞赛通知与附件",
+      "url": "https://ch3.whu.edu.cn/document/ueditor/file/20190711/1562805942854086571.pdf",
+      "text": "2019地球物理知识竞赛通知与附件\n介绍2019年地球物理知识竞赛的知识范围与选拔方式\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n适用范围：2019年第五届\n来源：https://ch3.whu.edu.cn/document/ueditor/file/20190711/1562805942854086571.pdf",
+      "summary": "介绍2019年地球物理知识竞赛的知识范围与选拔方式",
+      "catalog_codes": [
+        "2026112"
+      ],
+      "provider": "2019地球物理知识竞赛通知与附件",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7046f66dc9621176abc2",
+      "title": "SimPEG地球物理反演入门教程",
+      "url": "https://simpeg.xyz/user-tutorials",
+      "text": "SimPEG地球物理反演入门教程\n用公开例子理解正演、数据拟合与反演，辅助勘探地球物理能力训练\n基础要求：Python、线性代数和地球物理\n学习顺序：先跑直流电阻率正演例子，再比较噪声和模型正则化\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://simpeg.xyz/user-tutorials",
+      "summary": "用公开例子理解正演、数据拟合与反演，辅助勘探地球物理能力训练",
+      "catalog_codes": [
+        "2026112"
+      ],
+      "provider": "SimPEG项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-67b1689624fdeb63ba62",
+      "title": "ObsPy地震波形教程",
+      "url": "https://docs.obspy.org/tutorial/",
+      "text": "ObsPy地震波形教程\n读取波形、滤波和响应校正，练习地震数据处理与可视化\n基础要求：Python及信号处理\n学习顺序：从读取波形开始，记录滤波参数并避免把加工结果误当原始观测\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.obspy.org/tutorial/",
+      "summary": "读取波形、滤波和响应校正，练习地震数据处理与可视化",
+      "catalog_codes": [
+        "2026112"
+      ],
+      "provider": "ObsPy项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7ebc6129f9badd25786d",
+      "title": "OpenStax University Physics Volume 1",
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/1-introduction",
+      "text": "OpenStax University Physics Volume 1\n以微积分为基础学习力学、波动等，包含量纲、估算、有效数字与练习\n适用对象：大学物理、实验和UPC团队\n基础要求：微积分及高中物理\n学习顺序：先复习量纲与估算，再选与赛题有关的力学章节，记录假设和适用边界\n语言：英语\n访问方式：免费阅读\n适用范围：通用备赛资料\n来源：https://openstax.org/books/university-physics-volume-1/pages/1-introduction",
+      "summary": "以微积分为基础学习力学、波动等，包含量纲、估算、有效数字与练习",
+      "catalog_codes": [
+        "2026112",
+        "2026120",
+        "2026122",
+        "2026126",
+        "2026212",
+        "2026213",
+        "2026214",
+        "2026252"
+      ],
+      "provider": "OpenStax / Rice University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-57f8ed3bb0906d465e16",
+      "title": "2026地质技能竞赛通知及修订章程",
+      "url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+      "text": "2026地质技能竞赛通知及修订章程\n对照地学知识、标本、野外传统/AI赛道做技能清单\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第八届\n来源：https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+      "summary": "对照地学知识、标本、野外传统/AI赛道做技能清单",
+      "catalog_codes": [
+        "2026113"
+      ],
+      "provider": "2026地质技能竞赛通知及修订章程",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-467b89de81e83026b690",
+      "title": "QGIS官方培训手册",
+      "url": "https://docs.qgis.org/3.44/en/docs/training_manual/",
+      "text": "QGIS官方培训手册\n包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习\n适用对象：景观、城市调研、交通及资源管理团队\n基础要求：基础地图和表格概念\n学习顺序：先做基础地图和坐标系练习，再选缓冲区或网络分析，最后输出带数据来源的图\n语言：英语；提供语言切换\n访问方式：免费开源文档；练习数据许可按各包说明\n适用范围：通用备赛资料\n来源：https://docs.qgis.org/3.44/en/docs/training_manual/",
+      "summary": "包含制图、属性数据、矢量分析、网络分析和栅格处理的分步练习",
+      "catalog_codes": [
+        "2026113",
+        "2026133",
+        "2026134",
+        "2026136",
+        "2026138",
+        "2026139",
+        "2026153",
+        "2026154",
+        "2026155",
+        "2026156",
+        "2026157",
+        "2026158",
+        "2026159",
+        "2026160",
+        "2026161",
+        "2026162",
+        "2026163",
+        "2026164",
+        "2026165",
+        "2026167",
+        "2026168",
+        "2026169",
+        "2026239",
+        "2026248"
+      ],
+      "provider": "QGIS项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6e5f1680cb32b5943bad",
+      "title": "开放矿物学教材与标本图",
+      "url": "https://opengeology.org/Mineralogy/",
+      "text": "开放矿物学教材与标本图\n含矿物性质、鉴定与图像示例，辅助标本辨识和成因解释\n基础要求：普通地质学\n学习顺序：按物理性质建立鉴定表，用照片与实物交叉验证\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://opengeology.org/Mineralogy/",
+      "summary": "含矿物性质、鉴定与图像示例，辅助标本辨识和成因解释",
+      "catalog_codes": [
+        "2026113"
+      ],
+      "provider": "University of North Dakota作者团队",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-af530cf24885ad3ca910",
+      "title": "第十五届海洋知识竞赛规程",
+      "url": "https://www.hunan.gov.cn/zqt/zcsd/202506/33706249/files/40ff5d6c51b64c63b24a3e9a60aef2be.docx",
+      "text": "第十五届海洋知识竞赛规程\n区分大学生选拔与公众答题，按海洋知识主题学习\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于第十五届（2025—2026届）\n来源：https://www.hunan.gov.cn/zqt/zcsd/202506/33706249/files/40ff5d6c51b64c63b24a3e9a60aef2be.docx",
+      "summary": "区分大学生选拔与公众答题，按海洋知识主题学习",
+      "catalog_codes": [
+        "2026114"
+      ],
+      "provider": "第十五届海洋知识竞赛规程",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7cd8f618c0b095d8d038",
+      "title": "NOAA海洋知识学习库",
+      "url": "https://oceanservice.noaa.gov/education/",
+      "text": "NOAA海洋知识学习库\n提供海洋过程、生态、测量与人类影响的教育资料\n基础要求：基础自然科学\n学习顺序：按海洋过程和资源保护主题做知识卡片，区分科学事实与政策\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://oceanservice.noaa.gov/education/",
+      "summary": "提供海洋过程、生态、测量与人类影响的教育资料",
+      "catalog_codes": [
+        "2026114"
+      ],
+      "provider": "NOAA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-792d2c9d59d87a860489",
+      "title": "NOAA潮汐与潮流教程",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_tides/",
+      "text": "NOAA潮汐与潮流教程\n用图示学习潮汐成因、观测与潮流基础\n学习顺序：按目录逐节阅读，并解释潮汐与潮流的区别\n语言：英语\n访问方式：公开页面或可读取附件\n适用范围：海洋基础知识；非官方题库\n来源：https://oceanservice.noaa.gov/education/tutorial_tides/",
+      "summary": "用图示学习潮汐成因、观测与潮流基础",
+      "catalog_codes": [
+        "2026114"
+      ],
+      "provider": "NOAA National Ocean Service",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-be88714a883f8306473c",
+      "title": "2026 CCE杯板簧规则",
+      "url": "https://www.chinacompositesexpo.com/upload/ckfinder/files/Z_20260617c191115_g684.pdf",
+      "text": "2026 CCE杯板簧规则\n理解指定玻纤树脂、液体成型和外形边界，再准备方案\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年“CCE”杯第十一届\n来源：https://www.chinacompositesexpo.com/upload/ckfinder/files/Z_20260617c191115_g684.pdf",
+      "summary": "理解指定玻纤树脂、液体成型和外形边界，再准备方案",
+      "catalog_codes": [
+        "2026115"
+      ],
+      "provider": "2026 CCE杯板簧规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-a19d62b8d529c3a67322",
+      "title": "NASA系统工程手册",
+      "url": "https://www.nasa.gov/reference/systems-engineering-handbook/",
+      "text": "NASA系统工程手册\n需求、设计、验证和确认的系统工程流程，适合载荷方案与毕设组织\n基础要求：工程项目基础及英语\n学习顺序：围绕一项载荷建立需求矩阵，再写验证计划和风险清单\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.nasa.gov/reference/systems-engineering-handbook/",
+      "summary": "需求、设计、验证和确认的系统工程流程，适合载荷方案与毕设组织",
+      "catalog_codes": [
+        "2026116",
+        "2026117"
+      ],
+      "provider": "NASA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-378d7199d054847fecb4",
+      "title": "NASA OpenVSP学习入口",
+      "url": "https://vspu.larc.nasa.gov/",
+      "text": "NASA OpenVSP学习入口\n以参数化方式搭建飞行器几何并了解分析工具，用于飞行器设计训练\n基础要求：航空基础及CAD\n学习顺序：从几何基本体和机翼教程开始，记录模型参数及设计假设\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://vspu.larc.nasa.gov/",
+      "summary": "以参数化方式搭建飞行器几何并了解分析工具，用于飞行器设计训练",
+      "catalog_codes": [
+        "2026116",
+        "2026117",
+        "2026118",
+        "2026119"
+      ],
+      "provider": "NASA",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-19b238ee911023cd1c1a",
+      "title": "2026航空专业本科毕设成果展通知",
+      "url": "https://aero.nuaa.edu.cn/_upload/article/files/1e/f4/5617aa0a4e6f916ba9b23f5f9246/da998135-7e4e-4c7e-b578-2a22fc47ec9d.pdf",
+      "text": "2026航空专业本科毕设成果展通知\n先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第七届航空航天本科毕设成果交流会\n来源：https://aero.nuaa.edu.cn/_upload/article/files/1e/f4/5617aa0a4e6f916ba9b23f5f9246/da998135-7e4e-4c7e-b578-2a22fc47ec9d.pdf",
+      "summary": "先阅读资格、任务与评分，再按原件制作材料清单",
+      "catalog_codes": [
+        "2026117"
+      ],
+      "provider": "2026航空专业本科毕设成果展通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7cd1bb7c5ae7d8e371cc",
+      "title": "2026中国大学生飞行器设计创新大赛规则",
+      "url": "https://www.cuadc.cn/upload/20260508155652f.pdf",
+      "text": "2026中国大学生飞行器设计创新大赛规则\n先按项目选择飞行器和测评任务，严格区分技术规则与报名系统\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年中国大学生飞行器设计创新大赛\n来源：https://www.cuadc.cn/upload/20260508155652f.pdf",
+      "summary": "先按项目选择飞行器和测评任务，严格区分技术规则与报名系统",
+      "catalog_codes": [
+        "2026119"
+      ],
+      "provider": "2026中国大学生飞行器设计创新大赛规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-eb72a3697573489192da",
+      "title": "2026飞行器竞赛技术报告模板",
+      "url": "https://www.cuadc.cn/upload/20260508155741f.docx",
+      "text": "2026飞行器竞赛技术报告模板\n把设计、验证与试飞数据写入指定报告结构\n学习顺序：先建立目录与实验记录表，再据实填设计与测试证据\n语言：中文\n访问方式：在线阅读\n适用范围：2026届官方模板\n来源：https://www.cuadc.cn/upload/20260508155741f.docx",
+      "summary": "把设计、验证与试飞数据写入指定报告结构",
+      "catalog_codes": [
+        "2026119"
+      ],
+      "provider": "2026飞行器竞赛技术报告模板",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6fb625809af0d09e1449",
+      "title": "PX4官方开发文档",
+      "url": "https://docs.px4.io/main/en/",
+      "text": "PX4官方开发文档\n学习开源飞控、仿真和调试流程；实际飞行操作须遵守赛事及场地要求\n基础要求：Linux、控制与嵌入式基础\n学习顺序：先做SITL仿真，再阅读开发与参数调试章节\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.px4.io/main/en/",
+      "summary": "学习开源飞控、仿真和调试流程；实际飞行操作须遵守赛事及场地要求",
+      "catalog_codes": [
+        "2026119"
+      ],
+      "provider": "PX4项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-b06de368e0f43caff455",
+      "title": "2026飞行器竞赛报名系统操作手册",
+      "url": "https://www.cuadc.cn/upload/20260508155720f.pdf",
+      "text": "2026飞行器竞赛报名系统操作手册\n15页手册说明领队、队伍和作品报送流程\n学习顺序：先由领队确认资格，再按手册设置成员和项目\n语言：中文\n访问方式：在线阅读\n适用范围：2026届系统操作\n来源：https://www.cuadc.cn/upload/20260508155720f.pdf",
+      "summary": "15页手册说明领队、队伍和作品报送流程",
+      "catalog_codes": [
+        "2026119"
+      ],
+      "provider": "2026飞行器竞赛报名系统操作手册",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-f3c5f351c00d8d3a8863",
+      "title": "MIT结构力学习题与解答",
+      "url": "https://ocw.mit.edu/courses/2-080j-structural-mechanics-fall-2013/pages/assignments/",
+      "text": "MIT结构力学习题与解答\n覆盖应力应变、梁挠度、板弯曲、能量法和稳定性，附课程练习与解答\n适用对象：结构、桥梁、赛车和材料设计团队\n基础要求：材料力学及微积分\n学习顺序：先完成梁和稳定性题，再对自己结构做简化计算；模型试验和安全审查不能省略\n语言：英语\n访问方式：公开课程；含解答\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/2-080j-structural-mechanics-fall-2013/pages/assignments/",
+      "summary": "覆盖应力应变、梁挠度、板弯曲、能量法和稳定性，附课程练习与解答",
+      "catalog_codes": [
+        "2026120",
+        "2026121",
+        "2026122",
+        "2026123",
+        "2026125",
+        "2026127",
+        "2026172",
+        "2026173",
+        "2026174",
+        "2026176",
+        "2026185",
+        "2026186",
+        "2026187",
+        "2026188",
+        "2026189",
+        "2026191",
+        "2026241",
+        "2026242",
+        "2026243"
+      ],
+      "provider": "MIT OpenCourseWare",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-0df1c43a21709fc03a48",
+      "title": "Engineering Statics开放教材",
+      "url": "https://engineeringstatics.org/",
+      "text": "Engineering Statics开放教材\n覆盖受力图、平衡、桁架、摩擦与惯性矩，含习题与部分交互例子\n基础要求：微积分和大学物理\n学习顺序：先练受力图再做平衡例题，保留推导而非只核答案\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://engineeringstatics.org/",
+      "summary": "覆盖受力图、平衡、桁架、摩擦与惯性矩，含习题与部分交互例子",
+      "catalog_codes": [
+        "2026120",
+        "2026122",
+        "2026125",
+        "2026126"
+      ],
+      "provider": "Colorado State/Penn State作者团队",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-501fdc834b603871e436",
+      "title": "SymPy力学模块文档",
+      "url": "https://docs.sympy.org/latest/modules/physics/mechanics/index.html",
+      "text": "SymPy力学模块文档\n用符号计算建立运动学和动力学方程，适合课后核验推导\n基础要求：Python、理论力学\n学习顺序：按运动学例子定义参考系，再手算与符号结果比较\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://docs.sympy.org/latest/modules/physics/mechanics/index.html",
+      "summary": "用符号计算建立运动学和动力学方程，适合课后核验推导",
+      "catalog_codes": [
+        "2026120",
+        "2026126"
+      ],
+      "provider": "SymPy项目",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-7d73b6f46b18bd4cc67b",
+      "title": "2026第七届超材料力学大赛通知",
+      "url": "https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/fd6b4a7b-f576-45f2-a1e2-b23b7d01918b.pdf",
+      "text": "2026第七届超材料力学大赛通知\n从作品形式、STL、申报书和壁报要求反推研究计划\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第七届超材料力学大赛\n来源：https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/fd6b4a7b-f576-45f2-a1e2-b23b7d01918b.pdf",
+      "summary": "从作品形式、STL、申报书和壁报要求反推研究计划",
+      "catalog_codes": [
+        "2026121"
+      ],
+      "provider": "2026第七届超材料力学大赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-21ab89713b3e5d0a2d3c",
+      "title": "第七届超材料力学大赛申报模板",
+      "url": "https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/10bd571f-b242-472e-a723-b4ef0ad312e3.docx",
+      "text": "第七届超材料力学大赛申报模板\n将研究目标、材料结构和验证结果整理为申报书\n学习顺序：按栏目建立证据清单，再完成结构设计与性能对比\n语言：中文\n访问方式：在线阅读\n适用范围：2026第七届官方模板\n来源：https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/10bd571f-b242-472e-a723-b4ef0ad312e3.docx",
+      "summary": "将研究目标、材料结构和验证结果整理为申报书",
+      "catalog_codes": [
+        "2026121"
+      ],
+      "provider": "第七届超材料力学大赛申报模板",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c617cc6d0b9416c92a63",
+      "title": "FEniCSx有限元入门",
+      "url": "https://jsdokken.com/dolfinx-tutorial/",
+      "text": "FEniCSx有限元入门\n从Poisson和线弹性例子理解网格、边界条件和有限元离散\n基础要求：偏微分方程、Python和力学\n学习顺序：先复现Poisson再做线弹性，检查网格收敛和边界条件\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://jsdokken.com/dolfinx-tutorial/",
+      "summary": "从Poisson和线弹性例子理解网格、边界条件和有限元离散",
+      "catalog_codes": [
+        "2026121"
+      ],
+      "provider": "FEniCSx教程作者Jørgen S. Dokken",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6aa5ca50dc61975e2a05",
+      "title": "2026上海市力学竞赛正式通知",
+      "url": "http://www.sstam.org.cn/show.aspx?flag=11&info_id=846&info_lb=11",
+      "text": "2026上海市力学竞赛正式通知\n个人赛与团体赛的报名、缴费及比赛安排\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第七届上海市大学生力学竞赛\n来源：http://www.sstam.org.cn/show.aspx?flag=11&info_id=846&info_lb=11",
+      "summary": "个人赛与团体赛的报名、缴费及比赛安排",
+      "catalog_codes": [
+        "2026122",
+        "2026123"
+      ],
+      "provider": "2026上海市力学竞赛正式通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-ac5b690032a7de66e1d1",
+      "title": "NumPy数组计算快速入门",
+      "url": "https://numpy.org/doc/stable/user/quickstart.html",
+      "text": "NumPy数组计算快速入门\n以数组形状、索引、广播和数值运算示例训练数据计算能力\n适用对象：建模、物理实验和机器学习参赛者\n基础要求：Python基础；理解向量矩阵\n学习顺序：先复现数组操作，再写一段参数扫描并核对单位及数组维度\n语言：英语\n访问方式：免费开源文档；示例另需NumPy，部分需Matplotlib\n适用范围：通用备赛资料\n来源：https://numpy.org/doc/stable/user/quickstart.html",
+      "summary": "以数组形状、索引、广播和数值运算示例训练数据计算能力",
+      "catalog_codes": [
+        "2026123",
+        "2026142",
+        "2026182",
+        "2026183",
+        "2026212",
+        "2026213",
+        "2026214",
+        "2026245",
+        "2026252"
+      ],
+      "provider": "NumPy项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-e3cac54aad41131a681c",
+      "title": "2026第十届光威杯通知",
+      "url": "https://htadmin.csfcm.org.cn/upload/file/20260409/1775727878519895.pdf",
+      "text": "2026第十届光威杯通知\n核对材料创新范围、预备会员条件及作品申报流程\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十届光威杯\n来源：https://htadmin.csfcm.org.cn/upload/file/20260409/1775727878519895.pdf",
+      "summary": "核对材料创新范围、预备会员条件及作品申报流程",
+      "catalog_codes": [
+        "2026124"
+      ],
+      "provider": "2026第十届光威杯通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-c6e077ae097079d55b7b",
+      "title": "2026材料力学互联网赛规则",
+      "url": "https://tdbgi.edu.tm/images/olymp/regulations-en.pdf",
+      "text": "2026材料力学互联网赛规则\n按题型和计时要求安排应力、变形与强度训练\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第五届材料力学互联网奥赛\n来源：https://tdbgi.edu.tm/images/olymp/regulations-en.pdf",
+      "summary": "按题型和计时要求安排应力、变形与强度训练",
+      "catalog_codes": [
+        "2026125"
+      ],
+      "provider": "2026材料力学互联网赛规则",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-2777f361dca651671f88",
+      "title": "2026材料力学互联网赛示例题",
+      "url": "https://tdbgi.edu.tm/images/olymp/tasks-en.pdf",
+      "text": "2026材料力学互联网赛示例题\n含柱截面允许荷载等6页样题，用于练习拉压强度与读图\n学习顺序：先统一截面单位，再列应力强度约束；独立计算后自检\n语言：英语、俄语、土库曼语\n访问方式：在线阅读\n适用范围：主办方公开示例；英/俄/土库曼语，无附标准答案\n来源：https://tdbgi.edu.tm/images/olymp/tasks-en.pdf",
+      "summary": "含柱截面允许荷载等6页样题，用于练习拉压强度与读图",
+      "catalog_codes": [
+        "2026125"
+      ],
+      "provider": "2026材料力学互联网赛示例题",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-daff50bfec562dffe6e7",
+      "title": "2026理论力学互联网赛通知",
+      "url": "https://turkmenistan.gov.tm/en/post/102661/energy-institute-turkmenistan-invites-students-5th-international-olympiad-theoretical-mechanics",
+      "text": "2026理论力学互联网赛通知\n核对个人/团体模式、8题形式及线上考试流程\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第五届理论力学互联网奥赛\n来源：https://turkmenistan.gov.tm/en/post/102661/energy-institute-turkmenistan-invites-students-5th-international-olympiad-theoretical-mechanics",
+      "summary": "核对个人/团体模式、8题形式及线上考试流程",
+      "catalog_codes": [
+        "2026126"
+      ],
+      "provider": "2026理论力学互联网赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-29943eaec7b2349a1b33",
+      "title": "2026欧波同失效分析赛通知",
+      "url": "https://www.shixiaofenxisai.com/uploader/2026/04/20260423115356.pdf",
+      "text": "2026欧波同失效分析赛通知\n围绕断口、材料表征、原因论证和评分结构设计报告\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第十一届欧波同杯失效分析赛\n来源：https://www.shixiaofenxisai.com/uploader/2026/04/20260423115356.pdf",
+      "summary": "围绕断口、材料表征、原因论证和评分结构设计报告",
+      "catalog_codes": [
+        "2026127"
+      ],
+      "provider": "2026欧波同失效分析赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-21a10842569745432c01",
+      "title": "OpenStax Chemistry 2e",
+      "url": "https://openstax.org/books/chemistry-2e/pages/1-introduction",
+      "text": "OpenStax Chemistry 2e\n系统复习物质、计量、热化学、平衡、电化学等基础；章节附例题与练习\n适用对象：化学知识赛初学者及化工项目成员\n基础要求：高中化学；定量章节需基础代数\n学习顺序：先读测量与物质量，再按自己的薄弱点学习酸碱平衡、电化学；区分例题与章末习题答案\n语言：英语\n访问方式：免费在线阅读\n适用范围：通用备赛资料\n来源：https://openstax.org/books/chemistry-2e/pages/1-introduction",
+      "summary": "系统复习物质、计量、热化学、平衡、电化学等基础；章节附例题与练习",
+      "catalog_codes": [
+        "2026128",
+        "2026129",
+        "2026130",
+        "2026131",
+        "2026132",
+        "2026135",
+        "2026137",
+        "2026180",
+        "2026241",
+        "2026242",
+        "2026244"
+      ],
+      "provider": "OpenStax / Rice University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c5bc664fb185fe1c5937",
+      "title": "SCIP+绿色化学化工创新创业大赛案例集（2019—2023）",
+      "url": "https://makeable.cn/wp-content/uploads/2024/10/SCIP-%E7%BB%BF%E8%89%B2%E5%8C%96%E5%AD%A6%E5%8C%96%E5%B7%A5%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E6%A1%88%E4%BE%8B%E9%9B%86_compressed.pdf",
+      "text": "SCIP+绿色化学化工创新创业大赛案例集（2019—2023）\n除了历年名单，还提供项目技术路线、产业化阶段和应用情况。包含天然产物生物制造、聚酯催化剂、连续流微反应等具体案例\n适用对象：绿色化工、材料与能源创新团队\n基础要求：基础化学及工程知识，能理解研发与中试的区别\n学习顺序：先读PDF第16—19页的技术与应用叙述，分别整理问题、方案、验证证据和产业化条件，再用同样框架检查自己的项目。不要把获奖名单直接当作品内容\n语言：中文\n访问方式：34页PDF；案例信息对应书中年代\n来源：https://makeable.cn/wp-content/uploads/2024/10/SCIP-%E7%BB%BF%E8%89%B2%E5%8C%96%E5%AD%A6%E5%8C%96%E5%B7%A5%E5%88%9B%E6%96%B0%E5%88%9B%E4%B8%9A%E5%A4%A7%E8%B5%9B%E6%A1%88%E4%BE%8B%E9%9B%86_compressed.pdf",
+      "summary": "除了历年名单，还提供项目技术路线、产业化阶段和应用情况。包含天然产物生物制造、聚酯催化剂、连续流微反应等具体案例",
+      "catalog_codes": [
+        "2026128",
+        "2026135"
+      ],
+      "provider": "SCIP+活动网站／大赛案例集",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-7737b7152dd72db2a965",
+      "title": "2026电化学测量技术竞赛通知",
+      "url": "https://www.shiep.edu.cn/_upload/article/files/c9/0e/a4c976534696aff535bcec09172a/ad2d727e-ddc5-44fc-b133-351a94ffbfd5.pdf",
+      "text": "2026电化学测量技术竞赛通知\n按组别练习安全操作、测量、报告和视频提交\n学习顺序：先阅读资格、任务与评分，再按原件制作材料清单\n语言：中文\n访问方式：在线阅读\n适用范围：适用于2026年第五届电化学测量技术竞赛\n来源：https://www.shiep.edu.cn/_upload/article/files/c9/0e/a4c976534696aff535bcec09172a/ad2d727e-ddc5-44fc-b133-351a94ffbfd5.pdf",
+      "summary": "按组别练习安全操作、测量、报告和视频提交",
+      "catalog_codes": [
+        "2026129"
+      ],
+      "provider": "2026电化学测量技术竞赛通知",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-bc1dd81e1653007247bd",
+      "title": "Gamry循环伏安法原理与分析教程",
+      "url": "https://www.gamry.com/electrochemistry-applications/cv-cyclic-voltammetry/",
+      "text": "Gamry循环伏安法原理与分析教程\n官方应用笔记中检索循环伏安和阻抗测试，理解仪器参数与实验解释\n基础要求：电化学及基本实验操作\n学习顺序：选CV/EIS入门文章，整理参比电极、扫描速率和误差控制\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://www.gamry.com/electrochemistry-applications/cv-cyclic-voltammetry/",
+      "summary": "官方应用笔记中检索循环伏安和阻抗测试，理解仪器参数与实验解释",
+      "catalog_codes": [
+        "2026129"
+      ],
+      "provider": "Gamry Instruments",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-6acfe909f11a32776860",
+      "title": "MIT化学实验技术训练",
+      "url": "https://ocw.mit.edu/courses/5-301-chemistry-laboratory-techniques-january-iap-2012/",
+      "text": "MIT化学实验技术训练\n以实验操作训练为核心，配实验说明和视频；可练分离、纯化和表征\n基础要求：普通化学与实验安全培训\n学习顺序：先看实验安全和操作示范，再按实验条件制定受指导的训练计划\n语言：英语\n访问方式：公开页面\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/5-301-chemistry-laboratory-techniques-january-iap-2012/",
+      "summary": "以实验操作训练为核心，配实验说明和视频；可练分离、纯化和表征",
+      "catalog_codes": [
+        "2026129",
+        "2026130"
+      ],
+      "provider": "MIT OpenCourseWare",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-3406f3adbcab099557c9",
+      "title": "第13届化学实验竞赛及理论试题分析",
+      "url": "https://cjournal.hep.com.cn/1000-8438/CN/PDF/1210526181738115465",
+      "text": "第13届化学实验竞赛及理论试题分析\n命题作者公开分析2024竞赛中的实验安全、操作和数据处理考查思路\n学习顺序：逐项归纳理论题涉及的实验能力，再用课程习题自测\n语言：中文\n访问方式：在线阅读\n适用范围：赛事发生2024；论文发表于2025；非2026规程\n来源：https://cjournal.hep.com.cn/1000-8438/CN/PDF/1210526181738115465",
+      "summary": "命题作者公开分析2024竞赛中的实验安全、操作和数据处理考查思路",
+      "catalog_codes": [
+        "2026130"
+      ],
+      "provider": "第13届化学实验竞赛及理论试题分析",
+      "verified_at": "2026-10-03"
+    },
+    {
+      "id": "resource-e499101451f7dc9ce42e",
+      "title": "MIT 5.111化学原理试题与答案",
+      "url": "https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/resources/exams/",
+      "text": "MIT 5.111化学原理试题与答案\n提供2014化学原理考试、练习考试及解答，用于定量计算和概念自测\n适用对象：化学知识赛备赛学生\n基础要求：普通化学基础\n学习顺序：按知识点选题并限时独立作答，再核对解答、建立错题表\n语言：英语\n访问方式：免费历史课程；含答案\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/5-111sc-principles-of-chemical-science-fall-2014/resources/exams/",
+      "summary": "提供2014化学原理考试、练习考试及解答，用于定量计算和概念自测",
+      "catalog_codes": [
+        "2026130",
+        "2026244"
+      ],
+      "provider": "MIT OpenCourseWare",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-ef5f2817b9fb689f72ab",
+      "title": "2026化学科研报告与墙报准备参考",
+      "url": "https://chem.dlut.edu.cn/info/1029/13550.htm",
+      "text": "2026化学科研报告与墙报准备参考\n科研报告与墙报的材料组织及汇报形式\n学习顺序：整理研究问题、实验与结果，练习8分钟汇报\n语言：中文\n访问方式：公开阅读\n适用范围：2026年科研报告与墙报准备\n来源：https://chem.dlut.edu.cn/info/1029/13550.htm",
+      "summary": "科研报告与墙报的材料组织及汇报形式",
+      "catalog_codes": [
+        "2026131"
+      ],
+      "provider": "大连理工大学化学学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-03d57d7a09c23f2d41ce",
+      "title": "Purdue OWL研究论文写作起步",
+      "url": "https://owl.purdue.edu/owl/general_writing/common_writing_assignments/research_papers/where_do_i_begin.html",
+      "text": "Purdue OWL研究论文写作起步\n介绍从理解任务、检索资料到组织论证、起草和修订的研究写作过程\n适用对象：论文、调研报告、项目说明作者\n基础要求：能阅读基础英语；已有主题\n学习顺序：先列研究问题和证据表，再写提纲；保留原始出处，最后检查论证与引用\n语言：英语\n访问方式：免费网页\n适用范围：通用备赛资料\n来源：https://owl.purdue.edu/owl/general_writing/common_writing_assignments/research_papers/where_do_i_begin.html",
+      "summary": "介绍从理解任务、检索资料到组织论证、起草和修订的研究写作过程",
+      "catalog_codes": [
+        "2026131",
+        "2026132",
+        "2026157",
+        "2026160",
+        "2026164",
+        "2026182",
+        "2026183",
+        "2026194",
+        "2026200",
+        "2026202",
+        "2026207",
+        "2026210",
+        "2026247"
+      ],
+      "provider": "Purdue University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-8205e9b05d0ad688aca8",
+      "title": "汇创青春环境设计材料清单",
+      "url": "https://jwc.sta.edu.cn/e9/6c/c665a125292/page.htm",
+      "text": "汇创青春环境设计材料清单\n说明展板、表格及可选模型和视频的用途\n学习顺序：按作品类别整理必交与选交材料，制作展板并准备作品说明\n语言：中文\n访问方式：公开阅读或附件\n来源：https://jwc.sta.edu.cn/e9/6c/c665a125292/page.htm",
+      "summary": "说明展板、表格及可选模型和视频的用途",
+      "catalog_codes": [
+        "2026133"
+      ],
+      "provider": "上海戏剧学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-753331c3014c5f201505",
+      "title": "ASLA 2025融土与融水管理获奖项目",
+      "url": "https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2025-student-awards/12199",
+      "text": "ASLA 2025融土与融水管理获奖项目\n阿拉斯加项目以冻土退化和社区环境为问题，展示从场地证据到融水管理规划的图文论证\n适用对象：景观设计、城市调研及生态规划学生\n基础要求：能阅读基本规划图\n学习顺序：先梳理问题—证据—策略关系，再比较图面如何支持空间决策；仅学习方法，不照搬场地结论\n语言：英语\n访问方式：项目图文可浏览\n适用范围：通用备赛资料\n来源：https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2025-student-awards/12199",
+      "summary": "阿拉斯加项目以冻土退化和社区环境为问题，展示从场地证据到融水管理规划的图文论证",
+      "catalog_codes": [
+        "2026133",
+        "2026154",
+        "2026155",
+        "2026159",
+        "2026161",
+        "2026162",
+        "2026165"
+      ],
+      "provider": "ASLA",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6f65748e18e5aa25cb33",
+      "title": "EPA EPANET供水管网模拟资料",
+      "url": "https://www.epa.gov/water-research/epanet",
+      "text": "EPA EPANET供水管网模拟资料\n提供管网水力、水质建模软件及手册，可练习泵、管线和水池系统分析\n适用对象：给排水和水系统竞赛团队\n基础要求：管网和流体力学基础\n学习顺序：先做小型供水管网，检查流量压力和单位，再改变泵工况比较结果\n语言：英语\n访问方式：官方公开资料\n适用范围：通用备赛资料\n来源：https://www.epa.gov/water-research/epanet",
+      "summary": "提供管网水力、水质建模软件及手册，可练习泵、管线和水池系统分析",
+      "catalog_codes": [
+        "2026134",
+        "2026136",
+        "2026138",
+        "2026139"
+      ],
+      "provider": "US EPA",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-ee5932f5e46e017687e6",
+      "title": "EPA SWMM手册与应用示例入口",
+      "url": "https://www.epa.gov/water-research/storm-water-management-model-swmm",
+      "text": "EPA SWMM手册与应用示例入口\n提供雨洪径流、水力及水质模拟的用户手册、参考手册和应用包\n适用对象：市政环境、水处理和生态场地设计团队\n基础要求：水文学、水力学基础\n学习顺序：先按用户手册建立小汇水区，再比较降雨和低影响开发方案；说明参数假设\n语言：英语\n访问方式：官方软件与文档公开\n适用范围：通用备赛资料\n来源：https://www.epa.gov/water-research/storm-water-management-model-swmm",
+      "summary": "提供雨洪径流、水力及水质模拟的用户手册、参考手册和应用包",
+      "catalog_codes": [
+        "2026134",
+        "2026136",
+        "2026138",
+        "2026139"
+      ],
+      "provider": "US EPA",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-ca8c66ade54b8f2365c8",
+      "title": "2026市政环境AI+本科生赛道规则与任务",
+      "url": "https://cese.bjut.edu.cn/system/_content/download.jsp?owner=2010203365&urltype=news.DownloadAttachUrl&wbfileid=AE3772C9F76CACCE4FAD3AFEA537EAC2",
+      "text": "2026市政环境AI+本科生赛道规则与任务\n含五选一校选任务、污染诊断建模要求、提交规格及评分。无标准答案\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先读第1页资格和第6—7页赛程，再将第3—5页任务拆成数据处理、诊断、优化和答辩练习\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://cese.bjut.edu.cn/system/_content/download.jsp?owner=2010203365&urltype=news.DownloadAttachUrl&wbfileid=AE3772C9F76CACCE4FAD3AFEA537EAC2",
+      "summary": "含五选一校选任务、污染诊断建模要求、提交规格及评分。无标准答案",
+      "catalog_codes": [
+        "2026136"
+      ],
+      "provider": "大赛组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-949b060c6fbfb2a89430",
+      "title": "BagasSeries甘蔗渣材料与社区设计项目",
+      "url": "https://www.biodesignchallenge.org/university-of-pennsylvania-2025",
+      "text": "BagasSeries甘蔗渣材料与社区设计项目\n2025项目将市场甘蔗渣与社区使用需求结合，通过访谈、材料试验和产品设计提出废物利用方案\n适用对象：生物设计、绿色材料、产品和化工创新团队\n基础要求：基本材料或设计知识\n学习顺序：比较访谈结果怎样转为材料和功能选择；借鉴过程并独立验证自己的材料性能\n语言：英语\n访问方式：公开项目介绍；无完整制造配方或性能验证数据\n适用范围：通用备赛资料\n来源：https://www.biodesignchallenge.org/university-of-pennsylvania-2025",
+      "summary": "2025项目将市场甘蔗渣与社区使用需求结合，通过访谈、材料试验和产品设计提出废物利用方案",
+      "catalog_codes": [
+        "2026137",
+        "2026180"
+      ],
+      "provider": "Biodesign Challenge",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-8b2a326e3417c22a3a5f",
+      "title": "MDN Web开发学习路径",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "text": "MDN Web开发学习路径\n围绕HTML、CSS、JavaScript和可访问性学习交互作品的实现\n适用对象：软件创新、文创交互和信息展示作品作者\n基础要求：基础计算机操作；可从入门模块开始\n学习顺序：先实现一页可访问的交互原型，再做响应式布局和表单验证，用目标用户测试\n语言：英语；部分中文\n访问方式：免费文档\n适用范围：通用备赛资料\n来源：https://developer.mozilla.org/en-US/docs/Learn_web_development",
+      "summary": "围绕HTML、CSS、JavaScript和可访问性学习交互作品的实现",
+      "catalog_codes": [
+        "2026140",
+        "2026147",
+        "2026148",
+        "2026150",
+        "2026151",
+        "2026152"
+      ],
+      "provider": "MDN Web Docs",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c6e95ca6934d85889946",
+      "title": "Swift学生挑战赛2026提交与评审规则",
+      "url": "https://developer.apple.com/swift-student-challenge/policy/",
+      "text": "Swift学生挑战赛2026提交与评审规则\n确认个人资格、离线运行、AI披露与材料格式\n学习顺序：先完成3分钟离线原型，再对照资格和提交清单自检\n语言：中文\n访问方式：公开阅读\n来源：https://developer.apple.com/swift-student-challenge/policy/",
+      "summary": "确认个人资格、离线运行、AI披露与材料格式",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "provider": "Apple",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b7079aa9ca597f65a434",
+      "title": "Develop in Swift官方教程",
+      "url": "https://developer.apple.com/tutorials/develop-in-swift",
+      "text": "Develop in Swift官方教程\n通过Xcode、Swift、SwiftUI与数据建模练习制作应用原型\n适用对象：Swift Student Challenge初学者\n基础要求：需要可运行所需Xcode版本的Mac；基本计算机能力\n学习顺序：先完成Hello SwiftUI，再做一个离线小应用\n语言：英语\n访问方式：教程公开；部分功能需Apple账号与对应设备\n适用范围：通用备赛资料\n来源：https://developer.apple.com/tutorials/develop-in-swift",
+      "summary": "通过Xcode、Swift、SwiftUI与数据建模练习制作应用原型",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "provider": "Apple",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-d6657152ae26b8485678",
+      "title": "Swift Student Challenge备赛指南",
+      "url": "https://developer.apple.com/swift-student-challenge/get-ready/",
+      "text": "Swift Student Challenge备赛指南\n官方准备入口将创意、学习工具和作品实践连接起来\n适用对象：Swift学生挑战申请者\n基础要求：理解当届资格和提交条件\n学习顺序：先确定三分钟体验的核心任务，再按指南规划实现和可访问性测试\n语言：英语\n访问方式：免费网页\n适用范围：通用备赛资料\n来源：https://developer.apple.com/swift-student-challenge/get-ready/",
+      "summary": "官方准备入口将创意、学习工具和作品实践连接起来",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "provider": "Apple",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-7b9548694204ba477826",
+      "title": "2026 Swift Student Challenge获奖作品报道",
+      "url": "https://www.apple.com/ng/newsroom/2026/05/ai-meets-accessibility-in-this-years-swift-student-challenge/",
+      "text": "2026 Swift Student Challenge获奖作品报道\n官方介绍将AI与无障碍需求结合的学生作品，可分析问题发现和交互设计\n适用对象：准备学生应用作品的开发者\n基础要求：已能制作基础交互界面\n学习顺序：逐项记录用户需求、交互流程和验证方式，再比较自己的离线实现约束\n语言：英语\n访问方式：公开图文；仅案例说明\n适用范围：通用备赛资料\n来源：https://www.apple.com/ng/newsroom/2026/05/ai-meets-accessibility-in-this-years-swift-student-challenge/",
+      "summary": "官方介绍将AI与无障碍需求结合的学生作品，可分析问题发现和交互设计",
+      "catalog_codes": [
+        "2026141"
+      ],
+      "provider": "Apple Newsroom",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c54c88c8d0669c19b9fd",
+      "title": "2026CCSP通知及赛场新规导读",
+      "url": "https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+      "text": "2026CCSP通知及赛场新规导读\n说明CSP成绩门槛、个人赛形式及时间；结合9月14日携物规定准备赛场清单\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先查CSP资格，再安排12小时5题模拟\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+      "summary": "说明CSP成绩门槛、个人赛形式及时间；结合9月14日携物规定准备赛场清单",
+      "catalog_codes": [
+        "2026143"
+      ],
+      "provider": "中国计算机学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-ad4499cf471c310d51ee",
+      "title": "2025 ICPC世界总决赛官方题目",
+      "url": "https://worldfinals.icpc.global/problems/2025/finals/index.html",
+      "text": "2025 ICPC世界总决赛官方题目\n提供完整题目PDF和题目时间、内存等说明，可作高阶算法训练\n适用对象：程序设计竞赛进阶选手\n基础要求：熟悉数据结构与常用算法\n学习顺序：先独立解一题、设计边界测试，再复盘复杂度\n语言：英语\n访问方式：免费题目\n适用范围：通用备赛资料\n来源：https://worldfinals.icpc.global/problems/2025/finals/index.html",
+      "summary": "提供完整题目PDF和题目时间、内存等说明，可作高阶算法训练",
+      "catalog_codes": [
+        "2026143",
+        "2026144",
+        "2026145",
+        "2026146",
+        "2026149"
+      ],
+      "provider": "ICPC",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-95488c1b4796ef91498a",
+      "title": "MIT 6.006算法课程习题与解答",
+      "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/",
+      "text": "MIT 6.006算法课程习题与解答\n算法课程配套题目、模板与解答，训练证明、复杂度分析和程序实现\n适用对象：程序设计竞赛学生\n基础要求：基础编程和离散数学\n学习顺序：先独立写算法与证明，再对照解答复盘边界条件\n语言：英语\n访问方式：公开课程；含答案\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/",
+      "summary": "算法课程配套题目、模板与解答，训练证明、复杂度分析和程序实现",
+      "catalog_codes": [
+        "2026143",
+        "2026144",
+        "2026145",
+        "2026146",
+        "2026149"
+      ],
+      "provider": "MIT OpenCourseWare",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1921449142edcfd5a28d",
+      "title": "CCPC第十一届总决赛邀请函",
+      "url": "https://ccpc.io/uploads/20260317/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%80%BB%E5%86%B3%E8%B5%9B%E9%82%80%E8%AF%B7%E5%87%BD_%E7%9B%96%E7%AB%A0%E7%89%88.pdf",
+      "text": "CCPC第十一届总决赛邀请函\n确认晋级限制、团队人数和报名系统\n学习顺序：算法练习参考后续题库资料\n语言：中文\n访问方式：公开阅读\n来源：https://ccpc.io/uploads/20260317/%E7%AC%AC%E5%8D%81%E4%B8%80%E5%B1%8A%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%80%BB%E5%86%B3%E8%B5%9B%E9%82%80%E8%AF%B7%E5%87%BD_%E7%9B%96%E7%AB%A0%E7%89%88.pdf",
+      "summary": "确认晋级限制、团队人数和报名系统",
+      "catalog_codes": [
+        "2026144"
+      ],
+      "provider": "CCPC组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-5ee4a6ce4e901aed3582",
+      "title": "第十七届蓝桥杯各赛项规程与报名指南入口",
+      "url": "https://ie.cufe.edu.cn/info/1069/7376.htm",
+      "text": "第十七届蓝桥杯各赛项规程与报名指南入口\n包含章程、C/C++/Java/Python/Web/网络安全及AI赛规附件；各赛项分别阅读\n学习顺序：选择一个具体赛项，再读对应规则与学生报名指南\n语言：中文\n访问方式：公开阅读或附件\n来源：https://ie.cufe.edu.cn/info/1069/7376.htm",
+      "summary": "包含章程、C/C++/Java/Python/Web/网络安全及AI赛规附件；各赛项分别阅读",
+      "catalog_codes": [
+        "2026145"
+      ],
+      "provider": "中央财经大学转发组委会附件",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-90f7e680103b9cb10d4e",
+      "title": "2026年第八届码蹄杯全国大学生程序设计大赛通知",
+      "url": "https://jsj.suse.edu.cn/2026/0108/c3314a205573/page.htm",
+      "text": "2026年第八届码蹄杯全国大学生程序设计大赛通知\n说明个人编程、可选预赛轮次和取最好成绩机制\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：用3小时完成一组算法题，练习四种语言中自己选定的一种；先确认预赛轮次再制定模拟安排\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://jsj.suse.edu.cn/2026/0108/c3314a205573/page.htm",
+      "summary": "说明个人编程、可选预赛轮次和取最好成绩机制",
+      "catalog_codes": [
+        "2026146"
+      ],
+      "provider": "四川轻化工大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-e46806a021bf886405d5",
+      "title": "PortSwigger Web Security Academy学习路径",
+      "url": "https://portswigger.net/web-security/learning-paths",
+      "text": "PortSwigger Web Security Academy学习路径\n将Web安全知识与配套训练实验按主题和难度组织\n适用对象：网络安全竞赛Web方向选手\n基础要求：HTTP、浏览器和基础编程知识\n学习顺序：按初学路径完成一个主题，记录漏洞成因和修复办法，再做对应实验\n语言：英语\n访问方式：课程免费；实验可能需账号，仅在授权训练环境练习\n适用范围：通用备赛资料\n来源：https://portswigger.net/web-security/learning-paths",
+      "summary": "将Web安全知识与配套训练实验按主题和难度组织",
+      "catalog_codes": [
+        "2026147",
+        "2026151",
+        "2026152"
+      ],
+      "provider": "PortSwigger",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-213a580cc9e007a9cac5",
+      "title": "第十九届软件创新大赛正式通知与附件入口",
+      "url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+      "text": "第十九届软件创新大赛正式通知与附件入口\n包含学生和教师分别计数、跨校归属、匿名提交及阶段日期。附件接口暂需验证码\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先确认队伍归属及题目，再按初赛、复赛、决赛建立交付清单\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://ss.dlut.edu.cn/info/1371/29872.htm",
+      "summary": "包含学生和教师分别计数、跨校归属、匿名提交及阶段日期。附件接口暂需验证码",
+      "catalog_codes": [
+        "2026148"
+      ],
+      "provider": "大连理工大学软件学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-605bb6244b14dc5162bf",
+      "title": "2025上海网安赛市赛形式说明",
+      "url": "https://jwc.shmtu.edu.cn/2025/0410/c8546a242921/page.htm",
+      "text": "2025上海网安赛市赛形式说明\n了解CTF与安全作品设计两个方向\n学习顺序：先读第5节选择攻防或作品路线，再用靶场或工程教程训练\n语言：中文\n访问方式：公开阅读或附件\n来源：https://jwc.shmtu.edu.cn/2025/0410/c8546a242921/page.htm",
+      "summary": "了解CTF与安全作品设计两个方向",
+      "catalog_codes": [
+        "2026151"
+      ],
+      "provider": "上海海事大学教务处",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-d27877df7e837a84a56d",
+      "title": "网鼎杯第四届报名及赛程说明",
+      "url": "https://cetc.nwu.edu.cn/info/1008/2535.htm",
+      "text": "网鼎杯第四届报名及赛程说明\n区分个人实名报名、集体组织及校内选拔\n学习顺序：确认报名身份后，按后续CTF练习资料建立解题记录\n语言：中文\n访问方式：公开阅读\n来源：https://cetc.nwu.edu.cn/info/1008/2535.htm",
+      "summary": "区分个人实名报名、集体组织及校内选拔",
+      "catalog_codes": [
+        "2026152"
+      ],
+      "provider": "西北大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-f4945f4af5f407f580a8",
+      "title": "2026 ASLA学生奖类别与材料指南",
+      "url": "https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2026-student-cfe",
+      "text": "2026 ASLA学生奖类别与材料指南\n官方分组要求可用于建立英文作品叙述及图像规格清单\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先读Eligibility，再只读拟报名类别的Submission Requirements；整理场地计划、图像和项目说明\n语言：英语\n访问方式：公开网页\n适用范围：2026年ASLA学生奖\n来源：https://www.asla.org/awards-events-main-landing/honors-awards/pro-student-awards/2026-student-cfe",
+      "summary": "官方分组要求可用于建立英文作品叙述及图像规格清单",
+      "catalog_codes": [
+        "2026154"
+      ],
+      "provider": "ASLA",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6183bc6b32939ff5cb55",
+      "title": "IFLA 2025任务书与三类评价要点",
+      "url": "https://ifla2025.com/media/pages/student-activities/student-competition/bb89078064-1745825477/ifla-2025_student-competition_brief-v2.pdf",
+      "text": "IFLA 2025任务书与三类评价要点\n将场地分析、研究方法与设计方案形成证据链；三类评价侧重不同\n学习顺序：先确定类别和场地，再按分析—设计关联整理两张展板；资料为英文\n语言：中文\n访问方式：公开阅读或附件\n来源：https://ifla2025.com/media/pages/student-activities/student-competition/bb89078064-1745825477/ifla-2025_student-competition_brief-v2.pdf",
+      "summary": "将场地分析、研究方法与设计方案形成证据链；三类评价侧重不同",
+      "catalog_codes": [
+        "2026155"
+      ],
+      "provider": "IFLA 2025组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-f34e9c13671252516434",
+      "title": "OpenStax社会研究方法",
+      "url": "https://openstax.org/books/introduction-sociology-3e/pages/2-2-research-methods",
+      "text": "OpenStax社会研究方法\n比较调查、实地研究、实验与二手资料分析的适用范围和局限\n适用对象：城市调研、社会实践与治理研究团队\n基础要求：基础阅读能力\n学习顺序：先将问题转为可观察指标，再选择方法，说明样本和偏差限制\n语言：英语\n访问方式：免费网页；涉及实地访谈应遵守学校研究要求\n适用范围：通用备赛资料\n来源：https://openstax.org/books/introduction-sociology-3e/pages/2-2-research-methods",
+      "summary": "比较调查、实地研究、实验与二手资料分析的适用范围和局限",
+      "catalog_codes": [
+        "2026156",
+        "2026157",
+        "2026160",
+        "2026164",
+        "2026247"
+      ],
+      "provider": "OpenStax / Rice University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b3416a6c385acec2e8be",
+      "title": "StatsAPEC官方统计与政策研究",
+      "url": "https://statistics.apec.org/",
+      "text": "StatsAPEC官方统计与政策研究\n提供经济体指标与政策研究入口，可支持亚太议题分析和跨经济体比较\n适用对象：MODEL APEC与全球治理案例团队\n基础要求：基础统计和英语阅读\n学习顺序：先选与议题相关指标，再做图表，不以相关性代替因果\n语言：英语\n访问方式：公开访问；各指标年份、定义与来源需随数据一起记录\n适用范围：通用备赛资料\n来源：https://statistics.apec.org/",
+      "summary": "提供经济体指标与政策研究入口，可支持亚太议题分析和跨经济体比较",
+      "catalog_codes": [
+        "2026156",
+        "2026208",
+        "2026240",
+        "2026254"
+      ],
+      "provider": "APEC Policy Support Unit",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-db05afae6f9c2e07db6a",
+      "title": "2026建成遗产优秀作业评选要求",
+      "url": "https://jzxy.bucea.edu.cn/xyxx/xwxx/1c04fde13b854d75a397afd8d4718276.htm",
+      "text": "2026建成遗产优秀作业评选要求\n给出保护研究、设计利用与环境修整的评审侧重，附展板和PPT要求\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先建立遗产价值判断证据表，再组织研究、策略、修复技术与表达；提交前逐项核对版权条款\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://jzxy.bucea.edu.cn/xyxx/xwxx/1c04fde13b854d75a397afd8d4718276.htm",
+      "summary": "给出保护研究、设计利用与环境修整的评审侧重，附展板和PPT要求",
+      "catalog_codes": [
+        "2026158"
+      ],
+      "provider": "北京建筑大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b8875d8119342cf45a94",
+      "title": "2025园林教育大会毕设报送要求",
+      "url": "https://m.sohu.com/a/915182836_100098692",
+      "text": "2025园林教育大会毕设报送要求\n设计与论文的范围区别、匿名排版和高校汇总表\n学习顺序：先确认2025毕设身份，再做两张以内匿名展板与统计表\n语言：中文\n访问方式：刊物署名全文\n来源：https://m.sohu.com/a/915182836_100098692",
+      "summary": "设计与论文的范围区别、匿名排版和高校汇总表",
+      "catalog_codes": [
+        "2026161"
+      ],
+      "provider": "《风景园林》杂志署名发布",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-2fb66f5a03f7d6a7fad2",
+      "title": "2026国地杯科技论文与调查报告参赛规则",
+      "url": "https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+      "text": "2026国地杯科技论文与调查报告参赛规则\n明确作品类型、AI使用边界、学院限额、两阶段材料及决赛答辩\n适用对象：准备该届赛事的学生与指导教师\n基础要求：先确认参赛资格及组别\n学习顺序：先选调查或科技论文路径，再列研究问题、数据来源和实地证据；不得让生成式AI直接生成参赛正文\n语言：中文\n访问方式：公开网页\n适用范围：对应通知届次；不作其他年份规则\n来源：https://www.csnr.org.cn/detail.html?contentId=1009&id=65",
+      "summary": "明确作品类型、AI使用边界、学院限额、两阶段材料及决赛答辩",
+      "catalog_codes": [
+        "2026164"
+      ],
+      "provider": "中国自然资源学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c9e332a28dd90ff6ba15",
+      "title": "CARLA仿真快速起步",
+      "url": "https://carla.readthedocs.io/en/latest/start_quickstart/",
+      "text": "CARLA仿真快速起步\n指导安装仿真服务器及Python客户端、启动示例并读取仿真环境\n适用对象：自动驾驶算法团队\n基础要求：Python基础；具备合适GPU和磁盘空间\n学习顺序：先运行官方示例，再记录传感器与控制数据\n语言：英语\n访问方式：免费文档和开放项目；系统与硬件要求见原页\n适用范围：通用备赛资料\n来源：https://carla.readthedocs.io/en/latest/start_quickstart/",
+      "summary": "指导安装仿真服务器及Python客户端、启动示例并读取仿真环境",
+      "catalog_codes": [
+        "2026166",
+        "2026175"
+      ],
+      "provider": "CARLA项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-968fc5d7a1d4ec425a6d",
+      "title": "第二十一届交通运输科技大赛实施方案｜备赛导读",
+      "url": "https://tumu.bucea.edu.cn/xyxw/0a70a22cd0ff4da6842af9c31e7a7068.htm",
+      "text": "第二十一届交通运输科技大赛实施方案｜备赛导读\n全国交通及相关专业本科生、研究生和留学生经高校推荐参赛，学生≤5人、教师≤2人；不接受个人或其他团体直接报名\n学习顺序：先按学历和研究主题选分赛道，再按创新、专业知识、实用和完成度检查成果\n语言：中文\n访问方式：公开阅读\n来源：https://tumu.bucea.edu.cn/xyxw/0a70a22cd0ff4da6842af9c31e7a7068.htm",
+      "summary": "全国交通及相关专业本科生、研究生和留学生经高校推荐参赛，学生≤5人、教师≤2人；不接受个人或其他团体直接报名",
+      "catalog_codes": [
+        "2026167"
+      ],
+      "provider": "北京建筑大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-8b0ae831bf83bfb134e9",
+      "title": "SUMO交通仿真教程",
+      "url": "https://eclipse.dev/sumo/docs/Tutorials/index.html",
+      "text": "SUMO交通仿真教程\n提供路网、交通需求、信号灯、公共交通和Python控制仿真的循序教程\n适用对象：交通运输创新与城市系统研究团队\n基础要求：基础计算机操作；进阶需Python\n学习顺序：先做Hello World路网，再构造对照情景比较拥堵或运行效率\n语言：英语\n访问方式：免费开源文档\n适用范围：通用备赛资料\n来源：https://eclipse.dev/sumo/docs/Tutorials/index.html",
+      "summary": "提供路网、交通需求、信号灯、公共交通和Python控制仿真的循序教程",
+      "catalog_codes": [
+        "2026167",
+        "2026168",
+        "2026169"
+      ],
+      "provider": "Eclipse SUMO",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-72caec5140f93be02163",
+      "title": "首届轨道交通科技创新大赛参赛方式｜备赛导读",
+      "url": "https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+      "text": "首届轨道交通科技创新大赛参赛方式｜备赛导读\n学校于2026年5月31日前将盖章单位回执发nicrails@163.com，资格通过后开通单位账户；不接受个人直接申请\n学习顺序：按五个专业类别选题，再检查学生参与项目数、导师项目数及学校推荐程序\n语言：中文\n访问方式：公开阅读\n来源：https://www.nicrails.com/Home/Page?colId=f84e0334-c03c-4cc2-b43a-cfc6caac0374-2026",
+      "summary": "学校于2026年5月31日前将盖章单位回执发nicrails@163.com，资格通过后开通单位账户；不接受个人直接申请",
+      "catalog_codes": [
+        "2026168"
+      ],
+      "provider": "赛事组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3827775ef5dafc7dce4c",
+      "title": "第三届城市轨道双创选题与提交流程",
+      "url": "https://trans.dlut.edu.cn/info/1021/2300.htm",
+      "text": "第三届城市轨道双创选题与提交流程\n展示自选与业主实际需求的选题区别\n学习顺序：先从实际运营需求选问题，再准备可验证的创新方案\n语言：中文\n访问方式：公开阅读\n来源：https://trans.dlut.edu.cn/info/1021/2300.htm",
+      "summary": "展示自选与业主实际需求的选题区别",
+      "catalog_codes": [
+        "2026169"
+      ],
+      "provider": "大连理工大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-2b0483a60b3883fa6426",
+      "title": "2023口腔科普作品通知与回执",
+      "url": "https://www.shstomatology.org.cn/html/web/xinwendongtai/tongzhigonggao/1922125798742921217.html",
+      "text": "2023口腔科普作品通知与回执\n面向大众的医学知识转译和报送要求\n学习顺序：先选择一个科普问题，核实权威医学依据后写通俗脚本\n语言：中文\n访问方式：公开阅读\n来源：https://www.shstomatology.org.cn/html/web/xinwendongtai/tongzhigonggao/1922125798742921217.html",
+      "summary": "面向大众的医学知识转译和报送要求",
+      "catalog_codes": [
+        "2026170"
+      ],
+      "provider": "上海市口腔医学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-9254a355767b6246966c",
+      "title": "WHO口腔健康资料",
+      "url": "https://www.who.int/health-topics/oral-health/oral-health",
+      "text": "WHO口腔健康资料\n提供口腔健康公共卫生概念、问题范围及报告入口，可核对科普作品背景\n适用对象：口腔健康科普作者\n基础要求：基本医学常识\n学习顺序：先界定面向公众的问题，再回到原报告核实数字、年份与适用地区\n语言：英语；部分资料有中文\n访问方式：公开官方资料\n适用范围：通用备赛资料\n来源：https://www.who.int/health-topics/oral-health/oral-health",
+      "summary": "提供口腔健康公共卫生概念、问题范围及报告入口，可核对科普作品背景",
+      "catalog_codes": [
+        "2026170",
+        "2026204"
+      ],
+      "provider": "WHO",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-4bcba4aabd27bb50a89c",
+      "title": "Dentalcare牙体解剖概览",
+      "url": "https://www.dentalcare.com/en-us/ce-courses/ce500/divisions-and-components-of-the-teeth",
+      "text": "Dentalcare牙体解剖概览\n介绍牙体组成与形态术语，并关联牙种、牙面和咬合课程章节\n适用对象：口腔形态技能赛学习者\n基础要求：口腔解剖基础\n学习顺序：先识别牙冠牙根和牙面，再对照课程图示画轮廓；雕刻需接受课程教师的实操反馈\n语言：英语\n访问方式：正文可读；测试或学习记录可能需账号；含企业教育背景\n适用范围：通用备赛资料\n来源：https://www.dentalcare.com/en-us/ce-courses/ce500/divisions-and-components-of-the-teeth",
+      "summary": "介绍牙体组成与形态术语，并关联牙种、牙面和咬合课程章节",
+      "catalog_codes": [
+        "2026171"
+      ],
+      "provider": "Dentalcare / P&G",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1e23892c405e00f93856",
+      "title": "郑州大学《牙体解剖与口腔生理学》",
+      "url": "https://www.icourse163.org/course/ZZU-1461116163",
+      "text": "郑州大学《牙体解剖与口腔生理学》\n将牙体形态、牙列和咬合知识与辨认、绘画及塑形训练相结合。课程介绍和先修知识可公开阅读\n适用对象：口腔专业学生；需要补形态学基础的参赛者\n基础要求：课程预备知识为系统解剖学\n学习顺序：先熟悉牙体术语和形态，再结合课程图示画多视图，最后用雕刻作品比较二维描述与三维形态\n语言：中文\n访问方式：课程已结课，页面提供自学入口；视频和测验可能需登录\n来源：https://www.icourse163.org/course/ZZU-1461116163",
+      "summary": "将牙体形态、牙列和咬合知识与辨认、绘画及塑形训练相结合。课程介绍和先修知识可公开阅读",
+      "catalog_codes": [
+        "2026171"
+      ],
+      "provider": "郑州大学／中国大学MOOC",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-f8cd36b08fe85f744c74",
+      "title": "同济《牙体解剖学》课程实验教学大纲",
+      "url": "https://dent.tongji.edu.cn/info/1170/11083.htm",
+      "text": "同济《牙体解剖学》课程实验教学大纲\n列出五类恒牙的描绘和1:1石膏牙雕刻项目，说明材料、课前预习和教师评分方式\n适用对象：已开始牙体形态学习的口腔医学本科生\n基础要求：人体解剖学、生理学基础；实操需课程教师指导\n学习顺序：先读实验要求，画牙体多视图，再按中切牙、尖牙、前磨牙和磨牙顺序练习；将比例和沟嵴形态交教师核对\n语言：中文\n来源：https://dent.tongji.edu.cn/info/1170/11083.htm",
+      "summary": "列出五类恒牙的描绘和1:1石膏牙雕刻项目，说明材料、课前预习和教师评分方式",
+      "catalog_codes": [
+        "2026171"
+      ],
+      "provider": "同济大学口腔医学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-15c8c59452fdb87b224b",
+      "title": "壳牌2026全球与卡塔尔规则",
+      "url": "https://www.shellecomarathon.com/about/global-rules.html",
+      "text": "壳牌2026全球与卡塔尔规则\n车辆技术、人员文件与场地竞赛要求须配套阅读\n学习顺序：先读2026 Chapter I，再读Qatar Chapter II，建立车辆技术与材料检查表\n语言：英文\n访问方式：公开阅读\n来源：https://www.shellecomarathon.com/about/global-rules.html",
+      "summary": "车辆技术、人员文件与场地竞赛要求须配套阅读",
+      "catalog_codes": [
+        "2026172"
+      ],
+      "provider": "Shell",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c36206d2f84f42e45d5d",
+      "title": "2026方程式系列赛事规则与技术审查手册",
+      "url": "https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+      "text": "2026方程式系列赛事规则与技术审查手册\n含共用参赛条款及燃油、电动、无人驾驶分项规则\n学习顺序：先读A章资格、文件清单，再读对应CV/EV/AV技术章并建立合规检查表\n语言：中文\n访问方式：公开阅读\n来源：https://img.sae-china.org/web/2026/04/2026中国大学生方程式系列赛事规则（最终版）.pdf",
+      "summary": "含共用参赛条款及燃油、电动、无人驾驶分项规则",
+      "catalog_codes": [
+        "2026173",
+        "2026174",
+        "2026175"
+      ],
+      "provider": "中国汽车工程学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b76944b6c63759377f8a",
+      "title": "2026巴哈大赛完整规则 V1.2",
+      "url": "https://h5.bajasaechina.com/assets/docs/rules-manual.pdf",
+      "text": "2026巴哈大赛完整规则 V1.2\n含参赛资格、车辆安全、静态报告与动态测试条款\n学习顺序：先读A4—A7建立人员与材料清单，再按所选动力类型读技术条款\n语言：中文\n访问方式：公开阅读\n来源：https://h5.bajasaechina.com/assets/docs/rules-manual.pdf",
+      "summary": "含参赛资格、车辆安全、静态报告与动态测试条款",
+      "catalog_codes": [
+        "2026176"
+      ],
+      "provider": "中国大学生巴哈大赛",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-03dbb6e2d0b6e70a9b4b",
+      "title": "2026汇创青春产品设计材料与模板导读",
+      "url": "https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "text": "2026汇创青春产品设计材料与模板导读\n正式附件给出展板、模型照片、设计说明和不得重复投赛的要求\n学习顺序：先检查作品参赛历史，再按附件模板整理模型照片、创新点和技术过程\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "summary": "正式附件给出展板、模型照片、设计说明和不得重复投赛的要求",
+      "catalog_codes": [
+        "2026177"
+      ],
+      "provider": "上海海洋大学教务处",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-784f80734c43b6c8dc0c",
+      "title": "2026 James Dyson Award国家及地区获奖设计",
+      "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/introducing-our-james-dyson-award-2026-national-winners",
+      "text": "2026 James Dyson Award国家及地区获奖设计\n展示无障碍、医疗、灾害应对与可持续设计等具体发明，适合分析需求、原型和验证证据\n适用对象：产品设计、工程创新和创业团队\n基础要求：基础设计或工程能力\n学习顺序：选一个与自己问题相近的项目，拆解目标用户、现有方案不足、原型迭代及效果验证\n语言：英语\n访问方式：公开项目介绍；非完整工程图纸\n适用范围：通用备赛资料\n来源：https://www.dyson.co.uk/discover/sustainability/james-dyson-award/introducing-our-james-dyson-award-2026-national-winners",
+      "summary": "展示无障碍、医疗、灾害应对与可持续设计等具体发明，适合分析需求、原型和验证证据",
+      "catalog_codes": [
+        "2026177",
+        "2026179",
+        "2026181",
+        "2026184",
+        "2026190",
+        "2026249"
+      ],
+      "provider": "Dyson",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b61d4d39317cce6a8917",
+      "title": "汇创青春视觉传达常规赛与XR专项区分",
+      "url": "https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "text": "汇创青春视觉传达常规赛与XR专项区分\n明确常规市级初评、终评入口和不同提交规格，另有专项独立路径\n学习顺序：先确定常规或XR专项，再使用对应任务及模板；常规准备350dpi设计稿与实物照片\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "summary": "明确常规市级初评、终评入口和不同提交规格，另有专项独立路径",
+      "catalog_codes": [
+        "2026178"
+      ],
+      "provider": "上海海洋大学教务处",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c4326d9cddc2f88ec2e7",
+      "title": "WaterSense与OnCue：2025戴森获奖设计方法",
+      "url": "https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+      "text": "WaterSense与OnCue：2025戴森获奖设计方法\nWaterSense以持续水质监测替代间歇采样；OnCue用触觉和视觉提示降低帕金森患者打字误差，页面可见装置图片和机制简介\n学习顺序：比较用户问题、原型功能和技术验证思路，再进入各项目详情\n语言：英文\n访问方式：公开阅读或附件\n适用范围：2025案例供2026及后续训练参考\n来源：https://www.dyson.co.uk/discover/sustainability/james-dyson-award/2026-james-dyson-award-open-for-entries",
+      "summary": "WaterSense以持续水质监测替代间歇采样；OnCue用触觉和视觉提示降低帕金森患者打字误差，页面可见装置图片和机制简介",
+      "catalog_codes": [
+        "2026179"
+      ],
+      "provider": "Dyson",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-2a437df40a5d6cedebb3",
+      "title": "Flowstate与Septa生物材料项目",
+      "url": "https://www.biodesignchallenge.org/college-for-creative-studies-2026",
+      "text": "Flowstate与Septa生物材料项目\nFlowstate把本地食品废料转成临时生物基喷漆；Septa将果皮果浆变为随pH变色提示新鲜度的包装，页面有原型图与项目视频入口\n学习顺序：比较原料选择、使用寿命和使用场景，再把本队材料性能与环境收益设计成可验证实验\n语言：英文\n访问方式：公开阅读\n适用范围：2026具体项目案例，视频需外部平台访问\n来源：https://www.biodesignchallenge.org/college-for-creative-studies-2026",
+      "summary": "Flowstate把本地食品废料转成临时生物基喷漆；Septa将果皮果浆变为随pH变色提示新鲜度的包装，页面有原型图与项目视频入口",
+      "catalog_codes": [
+        "2026180"
+      ],
+      "provider": "Biodesign Challenge",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-a628e57dd2a0c3cd69e9",
+      "title": "丘成桐2012—2025总决赛面试真题",
+      "url": "https://www.yau-contest.com/index/reldown?id=10",
+      "text": "丘成桐2012—2025总决赛面试真题\n按科目及Individual、Overall、Team分类，可练习口头推理与证明；部分文件含答案\n基础要求：拟参加科目的高阶本科课程\n学习顺序：先按个人或团队组别选题，口述证明并接受追问，再核对可用的解析\n语言：英语为主\n访问方式：官方ZIP下载，部分含答案\n来源：https://www.yau-contest.com/index/reldown?id=10",
+      "summary": "按科目及Individual、Overall、Team分类，可练习口头推理与证明；部分文件含答案",
+      "catalog_codes": [
+        "2026182"
+      ],
+      "provider": "赛事官网",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-dc79cf52c17dd6d5e1aa",
+      "title": "丘成桐2010—2026历年笔试真题",
+      "url": "https://www.yau-contest.com/index/reldown?id=9",
+      "text": "丘成桐2010—2026历年笔试真题\n按年及科目归档题目，部分年份附solution文件；2026试题与旧年题目分别保存\n基础要求：相应科目的本科数学基础\n学习顺序：先用拟参赛科目近年题限时2小时自测，再回到大纲补知识，有解析的年份对照订正\n语言：英语为主\n访问方式：官方ZIP下载，含PDF及部分答案\n来源：https://www.yau-contest.com/index/reldown?id=9",
+      "summary": "按年及科目归档题目，部分年份附solution文件；2026试题与旧年题目分别保存",
+      "catalog_codes": [
+        "2026182"
+      ],
+      "provider": "赛事官网",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-8ee852c48ee246642bc2",
+      "title": "MIT单变量微积分类题与解答",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/resources/problem-sets/",
+      "text": "MIT单变量微积分类题与解答\n公开习题、解答和相关讲解入口，适合补齐微积分推导基础\n适用对象：数学、物理和建模参赛者\n基础要求：高中数学\n学习顺序：先独立做题并写推导，再对照解答；高级竞赛仍需补对应分科知识\n语言：英语\n访问方式：免费课程，题目与解答分文件\n适用范围：通用备赛资料\n来源：https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/resources/problem-sets/",
+      "summary": "公开习题、解答和相关讲解入口，适合补齐微积分推导基础",
+      "catalog_codes": [
+        "2026182",
+        "2026212",
+        "2026213"
+      ],
+      "provider": "MIT OpenCourseWare",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-a2b774cd4c5b853be098",
+      "title": "2026 MCM/ICM六题与论文索引",
+      "url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2026/results/index.html",
+      "text": "2026 MCM/ICM六题与论文索引\n按A—F列题目、结果与优胜论文入口，论文访问可能需会员\n学习顺序：选一道历史题限时建模，再比较假设、求解与验证方式\n语言：英文\n访问方式：公开索引；部分题目链接回到结果页，论文可能需会员\n来源：https://www.contest.comap.com/undergraduate/contests/mcm/contests/2026/results/index.html",
+      "summary": "按A—F列题目、结果与优胜论文入口，论文访问可能需会员",
+      "catalog_codes": [
+        "2026183"
+      ],
+      "provider": "COMAP",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-822eb8332b7bd3b75dd7",
+      "title": "MATLAB Onramp",
+      "url": "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+      "text": "MATLAB Onramp\n交互式学习数组、数据分析、可视化和MATLAB基本操作\n适用对象：建模、实验数据和控制团队\n基础要求：基础数学\n学习顺序：先完成课程练习，再把一组实际测量数据导入并画误差或拟合图\n语言：英语；有中文入口\n访问方式：入门课程免费；需账号\n适用范围：通用备赛资料\n来源：https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+      "summary": "交互式学习数组、数据分析、可视化和MATLAB基本操作",
+      "catalog_codes": [
+        "2026183",
+        "2026255"
+      ],
+      "provider": "MathWorks",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-43f6f8605acd695a8fc9",
+      "title": "第九届创新体验竞赛三主题任务与评分",
+      "url": "https://www.chinaccsis.com/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/全国大学生创新体验竞赛章程_已签章.pdf",
+      "text": "第九届创新体验竞赛三主题任务与评分\n含创意日记、实物制作、创业计划分别的交件与答辩要求，并解释复赛与决赛权重\n学习顺序：先选主题，再按30天创意记录、实物制作过程或商业方案安排练习；根据本主题评分自查\n语言：中文\n访问方式：公开阅读\n来源：https://www.chinaccsis.com/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/全国大学生创新体验竞赛章程_已签章.pdf",
+      "summary": "含创意日记、实物制作、创业计划分别的交件与答辩要求，并解释复赛与决赛权重",
+      "catalog_codes": [
+        "2026184"
+      ],
+      "provider": "中国创造学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-b074df1717828e5b66e0",
+      "title": "2026混凝土龙舟赛题及七项评分",
+      "url": "https://www.concretedragon.org/wp-content/uploads/2026ICDBC-国际大学生混凝土龙舟邀请赛赛题-1.pdf",
+      "text": "2026混凝土龙舟赛题及七项评分\n覆盖船模尺寸、材料比例、动力、论文与各测试评分，无标准设计答案\n学习顺序：先列硬性尺寸和材料约束，再做浮力、承载、控制和制作试验，最后按七项权重整理报告\n语言：中文\n访问方式：公开阅读\n来源：https://www.concretedragon.org/wp-content/uploads/2026ICDBC-国际大学生混凝土龙舟邀请赛赛题-1.pdf",
+      "summary": "覆盖船模尺寸、材料比例、动力、论文与各测试评分，无标准设计答案",
+      "catalog_codes": [
+        "2026185"
+      ],
+      "provider": "国际混凝土龙舟技术委员会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1d4595ef1ffb9710f451",
+      "title": "第八届茅以升公益桥创新设计大赛通知转发｜备赛导读",
+      "url": "https://civil.swjtu.edu.cn/info/1055/70612.htm",
+      "text": "第八届茅以升公益桥创新设计大赛通知转发｜备赛导读\n高校相关专业学生3—5人组队，至少含1名土木工程研究生或高年级本科生，教师1—2名；每生只参加1队\n学习顺序：先选自选或指定桥址，完成现场需求调查和方案比较，再做受力计算与造价说明\n语言：中文\n访问方式：公开阅读\n来源：https://civil.swjtu.edu.cn/info/1055/70612.htm",
+      "summary": "高校相关专业学生3—5人组队，至少含1名土木工程研究生或高年级本科生，教师1—2名；每生只参加1队",
+      "catalog_codes": [
+        "2026187"
+      ],
+      "provider": "西南交通大学土木工程学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-e530c8e63e15b876a84d",
+      "title": "2026世界大学生桥梁设计大赛通知｜备赛导读",
+      "url": "https://www.chts.cn/xs/TZGG/art/2026/art_4ba927087a724d6b998e56fc7725d06a.html",
+      "text": "2026世界大学生桥梁设计大赛通知｜备赛导读\n全球高校全日制本专科、硕博均可，学生≤5、教师≤2，可跨国跨校；只交电子作品，不要求实物模型\n学习顺序：先按赛题给定荷载与地形建立约束表，再形成传力路径、关键构件分析及A3设计册\n语言：中文\n访问方式：公开阅读\n来源：https://www.chts.cn/xs/TZGG/art/2026/art_4ba927087a724d6b998e56fc7725d06a.html",
+      "summary": "全球高校全日制本专科、硕博均可，学生≤5、教师≤2，可跨国跨校；只交电子作品，不要求实物模型",
+      "catalog_codes": [
+        "2026191"
+      ],
+      "provider": "中国公路学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-29968d97451ef24e5b92",
+      "title": "第五届德语之星全国高校德语演讲比赛通知｜备赛导读",
+      "url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+      "text": "第五届德语之星全国高校德语演讲比赛通知｜备赛导读\n在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲\n学习顺序：围绕中德文化交流史检索一手文献，写成3—5分钟讲稿，按一镜到底匿名录像练习\n语言：中文\n访问方式：公开阅读\n来源：https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+      "summary": "在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲",
+      "catalog_codes": [
+        "2026192"
+      ],
+      "provider": "同济大学外国语学院德语系",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-0b7cefc33fb4a7253b06",
+      "title": "Goethe-Institut免费德语练习",
+      "url": "https://www.goethe.de/de/spr/ueb.html",
+      "text": "Goethe-Institut免费德语练习\n按水平和主题提供词汇、语法、阅读、听力及媒体练习\n适用对象：德语能力、演讲与配音学生\n基础要求：可按自身A1—高级水平选择\n学习顺序：先做匹配水平的听读练习，再选择一个主题复述并录音查错\n语言：德语\n访问方式：免费资源入口；部分外链或互动功能有账号条件\n适用范围：通用备赛资料\n来源：https://www.goethe.de/de/spr/ueb.html",
+      "summary": "按水平和主题提供词汇、语法、阅读、听力及媒体练习",
+      "catalog_codes": [
+        "2026192",
+        "2026196",
+        "2026197",
+        "2026200",
+        "2026201",
+        "2026202",
+        "2026203",
+        "2026251"
+      ],
+      "provider": "Goethe-Institut",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c409ba6a591fbfb24c1d",
+      "title": "柏林勃兰登堡科学院CLARIN语言资料",
+      "url": "https://fedora.dwds.de/de/",
+      "text": "柏林勃兰登堡科学院CLARIN语言资料\n介绍德语历史语料、词典和资料库入口，供写作和语言研究查证\n适用对象：德语学术写作及研究创新学生\n基础要求：中高级德语；基础语料研究能力\n学习顺序：先确定词典或语料类型，再检索可访问数据，记录样本范围与引用信息\n语言：德语\n访问方式：介绍页公开；具体语料访问和许可不同\n适用范围：通用备赛资料\n来源：https://fedora.dwds.de/de/",
+      "summary": "介绍德语历史语料、词典和资料库入口，供写作和语言研究查证",
+      "catalog_codes": [
+        "2026192",
+        "2026197",
+        "2026200",
+        "2026202",
+        "2026203"
+      ],
+      "provider": "BBAW CLARIN服务中心",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-77594ba18a3cb1b0a613",
+      "title": "第十八届CASIO杯中国日语专业本科生研究生演讲辩论大赛初赛通知｜备赛导读",
+      "url": "https://sjs.shisu.edu.cn/1a/22/c2709a203298/page.htm",
+      "text": "第十八届CASIO杯中国日语专业本科生研究生演讲辩论大赛初赛通知｜备赛导读\n每校推荐1名在读本硕博选手；初赛题目为グリーン発展と文化共生，视频3分钟以内，不用道具或PPT\n学习顺序：围绕本届题目练习3分钟日语演讲，使用纯色背景匿名全身录像\n语言：中文\n访问方式：公开阅读\n来源：https://sjs.shisu.edu.cn/1a/22/c2709a203298/page.htm",
+      "summary": "每校推荐1名在读本硕博选手；初赛题目为グリーン発展と文化共生，视频3分钟以内，不用道具或PPT",
+      "catalog_codes": [
+        "2026193"
+      ],
+      "provider": "上海外国语大学日本文化经济学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c920cf065181b5dc54f7",
+      "title": "国际交流基金《彩》生活日语",
+      "url": "https://www.irodori.jpf.go.jp/elementary01/pdf.html",
+      "text": "国际交流基金《彩》生活日语\n提供A2层级主题课文、任务和音频，训练听说及清晰表达\n适用对象：需补日语口语基础的参赛者\n基础要求：入门日语，约A1基础\n学习顺序：按主题先听后复述，再把同类表达迁移到自拟演讲\n语言：日语；部分多语言辅助\n访问方式：教材和音频公开\n适用范围：通用备赛资料\n来源：https://www.irodori.jpf.go.jp/elementary01/pdf.html",
+      "summary": "提供A2层级主题课文、任务和音频，训练听说及清晰表达",
+      "catalog_codes": [
+        "2026193",
+        "2026199",
+        "2026206",
+        "2026211",
+        "2026250"
+      ],
+      "provider": "The Japan Foundation",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-eac484c0cf74c68aaebb",
+      "title": "国立国语研究所少纳言语料库",
+      "url": "https://shonagon.ninjal.ac.jp/",
+      "text": "国立国语研究所少纳言语料库\n提供现代日语书面语语料检索，可核对词语搭配、语域和使用实例\n适用对象：日语论文、翻译和写作参赛者\n基础要求：中高级日语与基础检索意识\n学习顺序：选择关键词比较不同语境，记录语料来源\n语言：日语\n访问方式：公开入口；使用前需自行阅读并同意条件，引用和批量使用受限制\n适用范围：通用备赛资料\n来源：https://shonagon.ninjal.ac.jp/",
+      "summary": "提供现代日语书面语语料检索，可核对词语搭配、语域和使用实例",
+      "catalog_codes": [
+        "2026193",
+        "2026194",
+        "2026198",
+        "2026199",
+        "2026206",
+        "2026207",
+        "2026210",
+        "2026211",
+        "2026250"
+      ],
+      "provider": "日本国立国語研究所",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-bd4eace0bd2ad4e8057e",
+      "title": "2021第四届人民中国杯笔译与口译提交规则",
+      "url": "https://www.jpworld.cn/match/article_detail/68",
+      "text": "2021第四届人民中国杯笔译与口译提交规则\n含个人原创、匿名文档和口译四道题录制要求；不含参考译文\n学习顺序：用规则练习匿名排版和限时口译；历史要求不用于新届报名\n语言：中文\n访问方式：公开阅读或附件\n来源：https://www.jpworld.cn/match/article_detail/68",
+      "summary": "含个人原创、匿名文档和口译四道题录制要求；不含参考译文",
+      "catalog_codes": [
+        "2026194"
+      ],
+      "provider": "日语世界网",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-4c742bedb57787d25553",
+      "title": "Web Japan日本美术事实资料",
+      "url": "https://web-japan.org/factsheet/en/pdf/e24_art.pdf",
+      "text": "Web Japan日本美术事实资料\n概述日本绘画、浮世绘等美术发展，可为日本知识和文化研究建立时间线\n适用对象：日本知识赛与文化研究学生\n基础要求：基础英语及日本史常识\n学习顺序：整理时期、艺术形式与代表特征，再回到日语资料核对专有名词\n语言：英语\n访问方式：公开PDF\n适用范围：通用备赛资料\n来源：https://web-japan.org/factsheet/en/pdf/e24_art.pdf",
+      "summary": "概述日本绘画、浮世绘等美术发展，可为日本知识和文化研究建立时间线",
+      "catalog_codes": [
+        "2026194",
+        "2026206",
+        "2026207",
+        "2026210"
+      ],
+      "provider": "Web Japan",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-fa5f8c0d85675f6a5af5",
+      "title": "第六届词达人杯报名及竞赛规则转发｜备赛导读",
+      "url": "https://www.tjcu.edu.cn/info/1080/25485.htm",
+      "text": "第六届词达人杯报名及竞赛规则转发｜备赛导读\n本科英语类考专四专八相关词汇，非英语类考四六级相关词汇，两组都含课程思政词汇，省赛国赛适度拓展；校赛160题、60分钟\n学习顺序：按英语类或非英语类先复习对应词表，再用报名后官方模拟题；不收集非公开试题\n语言：中文\n访问方式：公开阅读\n来源：https://www.tjcu.edu.cn/info/1080/25485.htm",
+      "summary": "本科英语类考专四专八相关词汇，非英语类考四六级相关词汇，两组都含课程思政词汇，省赛国赛适度拓展；校赛160题、60分钟",
+      "catalog_codes": [
+        "2026195"
+      ],
+      "provider": "天津商业大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-83462ca961e723f6aece",
+      "title": "British Council设计汇报听力与练习",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/design-presentation",
+      "text": "British Council设计汇报听力与练习\n以产品汇报示例训练结构提示、图表解释与过渡表达，附听力文本和练习\n适用对象：英语演讲、设计答辩与国际竞赛学生\n基础要求：B2左右英语\n学习顺序：听一遍抓结构，再对照文本标出过渡语；用自己的研究内容复述\n语言：英语\n访问方式：学习正文免费；互动功能可能需账号\n适用范围：通用备赛资料\n来源：https://learnenglish.britishcouncil.org/free-resources/listening/b2/design-presentation",
+      "summary": "以产品汇报示例训练结构提示、图表解释与过渡表达，附听力文本和练习",
+      "catalog_codes": [
+        "2026195",
+        "2026204",
+        "2026205",
+        "2026208",
+        "2026209",
+        "2026240",
+        "2026254"
+      ],
+      "provider": "British Council",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-f652279842b60547047a",
+      "title": "British Council B1—B2词汇练习",
+      "url": "https://learnenglish.britishcouncil.org/free-resources/vocabulary/b1-b2",
+      "text": "British Council B1—B2词汇练习\n以主题练习词义、发音和拼写，补充词汇提取速度\n适用对象：英语词汇比赛学习者\n基础要求：B1—B2英语\n学习顺序：先选薄弱主题，隔日自测词义和拼写；赛事词表仍需按平台规定学习\n语言：英语\n访问方式：词汇与练习公开；部分互动需账号\n适用范围：通用备赛资料\n来源：https://learnenglish.britishcouncil.org/free-resources/vocabulary/b1-b2",
+      "summary": "以主题练习词义、发音和拼写，补充词汇提取速度",
+      "catalog_codes": [
+        "2026195"
+      ],
+      "provider": "British Council",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-51caf1ddc971c048fc49",
+      "title": "扎雅杯2026配音作品格式与评审要求",
+      "url": "https://peiyin.zhayadeutsch.cn/",
+      "text": "扎雅杯2026配音作品格式与评审要求\n按语音语调、流畅表达、情感与角色还原检查作品；含禁止AI配音要求\n学习顺序：先消除原对白和制作字幕，再由全体队员录音、校对口型和音量\n语言：中文\n访问方式：公开阅读或附件\n来源：https://peiyin.zhayadeutsch.cn/",
+      "summary": "按语音语调、流畅表达、情感与角色还原检查作品；含禁止AI配音要求",
+      "catalog_codes": [
+        "2026196"
+      ],
+      "provider": "赛事组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3995664d94d44f00f432",
+      "title": "第5届日语讲中国故事微视频通知及报名表",
+      "url": "https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+      "text": "第5届日语讲中国故事微视频通知及报名表\n学校推荐、三分钟视频、匿名和双语字幕的制作标准\n学习顺序：先确定科技创新故事，写日语脚本并核对时长，再按表格确认校内队伍\n语言：中文\n访问方式：公开阅读\n来源：https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+      "summary": "学校推荐、三分钟视频、匿名和双语字幕的制作标准",
+      "catalog_codes": [
+        "2026198"
+      ],
+      "provider": "中国日语教学研究会、上海外国语大学贤达经济人文学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-cfc5004061ad7f65b85a",
+      "title": "首届全国大学生日语演讲赛题与评分说明",
+      "url": "https://www.zjminghaojy.com/News/202412728.html",
+      "text": "首届全国大学生日语演讲赛题与评分说明\n两道命题任选其一，提供初赛视频要求和决赛命题/即兴评分\n学习顺序：先选题写一页稿，再按2—3分钟录制并练习限时即兴回答\n语言：中文\n访问方式：公开阅读\n来源：https://www.zjminghaojy.com/News/202412728.html",
+      "summary": "两道命题任选其一，提供初赛视频要求和决赛命题/即兴评分",
+      "catalog_codes": [
+        "2026199"
+      ],
+      "provider": "赛事联合主办方",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3cf07e0af5426d7f83a1",
+      "title": "第八届全国高校本科生德语配音大赛初赛通知｜备赛导读",
+      "url": "https://de.bfsu.edu.cn/info/1066/7733.htm",
+      "text": "第八届全国高校本科生德语配音大赛初赛通知｜备赛导读\n全国各校仅1队2—6名在校本科生，排除德语母语者；2026主题科幻，提交3—5分钟德语配音片段（德语字幕）及未消音原片\n学习顺序：选3—5分钟科幻影视片段，标注角色节奏与情绪，分配角色后练习口型、停顿与德语语音\n语言：中文\n访问方式：公开阅读\n来源：https://de.bfsu.edu.cn/info/1066/7733.htm",
+      "summary": "全国各校仅1队2—6名在校本科生，排除德语母语者；2026主题科幻，提交3—5分钟德语配音片段（德语字幕）及未消音原片",
+      "catalog_codes": [
+        "2026201"
+      ],
+      "provider": "北京外国语大学德语学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3ddd646101bf1d5cc772",
+      "title": "2025德语辩论赛中德双语规则与评分表",
+      "url": "https://www.goethe.de/resources/files/pdf353/regelwerk_debattierwettbewerb-fuer-germanistikstudierende.pdf",
+      "text": "2025德语辩论赛中德双语规则与评分表\n含资格、准备与比赛流程以及专业性、说服力、表达等评分维度\n学习顺序：按第7—10页演练：赛前10分钟准备，2+2分钟开篇、6分钟自由辩论、2+2分钟总结；再用附表互评\n语言：中文\n访问方式：公开阅读\n来源：https://www.goethe.de/resources/files/pdf353/regelwerk_debattierwettbewerb-fuer-germanistikstudierende.pdf",
+      "summary": "含资格、准备与比赛流程以及专业性、说服力、表达等评分维度",
+      "catalog_codes": [
+        "2026203"
+      ],
+      "provider": "歌德学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-17fb63e8a98b22f658b3",
+      "title": "上海市第二届学术英语演讲比赛启动通知｜备赛导读",
+      "url": "https://cec.fudan.edu.cn/83/12/c23080a754450/page.htm",
+      "text": "上海市第二届学术英语演讲比赛启动通知｜备赛导读\n上海高校本科及研究生可参加科研英语、通用学术英语两个组别；每校每组1名，承办学校每组可2名，国籍不限，导师1—2名\n学习顺序：根据自己的成果选择科研或通用学术组，整理英文摘要、数据依据和非专业听众可理解的解释\n语言：中文\n访问方式：公开阅读\n来源：https://cec.fudan.edu.cn/83/12/c23080a754450/page.htm",
+      "summary": "上海高校本科及研究生可参加科研英语、通用学术英语两个组别；每校每组1名，承办学校每组可2名，国籍不限，导师1—2名",
+      "catalog_codes": [
+        "2026205"
+      ],
+      "provider": "复旦大学大学英语教学部",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1208d4e9a54762f54c71",
+      "title": "笹川杯知识大赛2015赛制流程",
+      "url": "https://foreign.jlu.edu.cn/__local/0/3A/B3/B87AEF7CA6E98FDCB8FC464EB0D_8A4DC532_4DAF7.pdf?e=.pdf",
+      "text": "笹川杯知识大赛2015赛制流程\n3页正式比赛流程，可用于分角色知识问答训练\n学习顺序：三人分工，模拟指定题与限时抢答；个人再做一小时综合练习\n语言：中文\n访问方式：公开阅读\n来源：https://foreign.jlu.edu.cn/__local/0/3A/B3/B87AEF7CA6E98FDCB8FC464EB0D_8A4DC532_4DAF7.pdf?e=.pdf",
+      "summary": "3页正式比赛流程，可用于分角色知识问答训练",
+      "catalog_codes": [
+        "2026206"
+      ],
+      "provider": "吉林大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6968f2a77e92cd1b2084",
+      "title": "联合国模拟联合国研究资料入口",
+      "url": "https://www.un.org/en/node/44556",
+      "text": "联合国模拟联合国研究资料入口\n汇集模拟会议与官方文件、术语、研究指南入口，帮助准备有证据的立场材料\n适用对象：模拟外交与全球治理学生\n基础要求：英语阅读和基本国际关系知识\n学习顺序：先查议题背景及相关机构职责，再写立场与证据表\n语言：英语\n访问方式：公开阅读\n适用范围：通用备赛资料\n来源：https://www.un.org/en/node/44556",
+      "summary": "汇集模拟会议与官方文件、术语、研究指南入口，帮助准备有证据的立场材料",
+      "catalog_codes": [
+        "2026208",
+        "2026240",
+        "2026254"
+      ],
+      "provider": "United Nations",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-56e9e712a0de72ae5f6c",
+      "title": "第九届全国大学生5分钟科研英语演讲大赛通知｜备赛导读",
+      "url": "https://gs.wtu.edu.cn/info/1023/12602.htm",
+      "text": "第九届全国大学生5分钟科研英语演讲大赛通知｜备赛导读\n面向我国含港澳台高校在读本科和研究生，1—5人团队，支持跨校、跨专业及跨年级；复旦大学出版社主办，公益不收费\n学习顺序：先将项目写成研究问题、方法和结果，再压缩成面向非专业听众的5分钟英文演讲\n语言：中文\n访问方式：公开阅读\n来源：https://gs.wtu.edu.cn/info/1023/12602.htm",
+      "summary": "面向我国含港澳台高校在读本科和研究生，1—5人团队，支持跨校、跨专业及跨年级；复旦大学出版社主办，公益不收费",
+      "catalog_codes": [
+        "2026209"
+      ],
+      "provider": "武汉纺织大学研究生院（外国语学院）",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-23ea0efb398d5ca1cb42",
+      "title": "第十九届中华全国日语演讲命题及赛制",
+      "url": "https://rwxy.xisu.edu.cn/info/1129/5487.htm",
+      "text": "第十九届中华全国日语演讲命题及赛制\n命题与即兴各占50%，可练习五分钟命题陈述\n学习顺序：围绕两个主办统一命题写稿，随后练随机题；不要用西北报名表代替华东表\n语言：中文\n访问方式：公开阅读\n来源：https://rwxy.xisu.edu.cn/info/1129/5487.htm",
+      "summary": "命题与即兴各占50%，可练习五分钟命题陈述",
+      "catalog_codes": [
+        "2026211"
+      ],
+      "provider": "西安外国语大学日本文化经济学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-af249b4a64d549a46042",
+      "title": "University Physics Competition Contest Rules｜备赛导读",
+      "url": "https://www.uphysicsc.com/contestrules.html",
+      "text": "University Physics Competition Contest Rules｜备赛导读\n同校1—3名在读学生组队，导师同校，每生限1队，不能已获任何STEM学士学位；不要求全日制\n学习顺序：先练物理假设、量纲和模型验证，再做48小时模拟；使用AI须保留完整输入输出并声明\n语言：英语\n访问方式：公开阅读\n来源：https://www.uphysicsc.com/contestrules.html",
+      "summary": "同校1—3名在读学生组队，导师同校，每生限1队，不能已获任何STEM学士学位；不要求全日制",
+      "catalog_codes": [
+        "2026212"
+      ],
+      "provider": "UPC",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-fcfb6e0b02e743923714",
+      "title": "第三十九届物理竞赛同济分组与命题原则",
+      "url": "https://jwc.tongji.edu.cn/00/3b/c30359a327739/page.htm",
+      "text": "第三十九届物理竞赛同济分组与命题原则\n按修读课程分组，考查实际物理问题的分析与建模\n学习顺序：选择所修课程对应的组别，练习基础知识与建模应用\n语言：中文\n访问方式：公开阅读\n适用范围：2023年第三十九届\n来源：https://jwc.tongji.edu.cn/00/3b/c30359a327739/page.htm",
+      "summary": "按修读课程分组，考查实际物理问题的分析与建模",
+      "catalog_codes": [
+        "2026213"
+      ],
+      "provider": "同济本科生院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-aaaad96adfbba3060c6e",
+      "title": "第二十届半夏完整征片要求",
+      "url": "https://tvs.cuc.edu.cn/2023/0306/c240a202526/pagem.htm",
+      "text": "第二十届半夏完整征片要求\n按影片类型、长度、格式、字幕与授权检查投片材料\n学习顺序：先定影片单元，再检查正片和报名表；保留网盘路径与文件名\n语言：中文\n访问方式：公开阅读\n来源：https://tvs.cuc.edu.cn/2023/0306/c240a202526/pagem.htm",
+      "summary": "按影片类型、长度、格式、字幕与授权检查投片材料",
+      "catalog_codes": [
+        "2026217"
+      ],
+      "provider": "中国传媒大学电视学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-af5ed02f4e3444e21bba",
+      "title": "国青杯2026春期通知与作品规格",
+      "url": "https://cxcyxy.ntu.edu.cn/_upload/article/files/ae/b2/69ae7f2a48b28142aa0a3a7134fb/c6b06bf1-7e24-4ee1-ad53-960429135ad5.pdf",
+      "text": "国青杯2026春期通知与作品规格\n含八类征集作品、报送组织方式及文件规格\n学习顺序：先选择类别，再按第4—5页核对文件格式和作品登记表\n语言：中文\n访问方式：公开阅读\n来源：https://cxcyxy.ntu.edu.cn/_upload/article/files/ae/b2/69ae7f2a48b28142aa0a3a7134fb/c6b06bf1-7e24-4ee1-ad53-960429135ad5.pdf",
+      "summary": "含八类征集作品、报送组织方式及文件规格",
+      "catalog_codes": [
+        "2026218"
+      ],
+      "provider": "国青杯组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-4220601561c9881942d6",
+      "title": "汇创青春2026数字媒体与动画类别通知与附件",
+      "url": "https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "text": "汇创青春2026数字媒体与动画类别通知与附件\n说明院校报送及类别组织方式，校内日期仅适用发布学校\n语言：中文\n访问方式：公开阅读\n适用范围：2026外校组织通知\n来源：https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "summary": "说明院校报送及类别组织方式，校内日期仅适用发布学校",
+      "catalog_codes": [
+        "2026219"
+      ],
+      "provider": "上海海洋大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-d4940d2bc22e76f87174",
+      "title": "2026 ACP中国赛海选文件要求",
+      "url": "https://www.adobeacp.com/content/news?id=1761116432915444",
+      "text": "2026 ACP中国赛海选文件要求\n区分平面和视频尺寸、编码与提交条件\n学习顺序：先选择平面或视频，再按格式导出并核对主题图\n语言：中文\n访问方式：公开阅读\n来源：https://www.adobeacp.com/content/news?id=1761116432915444",
+      "summary": "区分平面和视频尺寸、编码与提交条件",
+      "catalog_codes": [
+        "2026220"
+      ],
+      "provider": "ACP中国运营管理中心",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-9b934698da000293660c",
+      "title": "耶鲁Listening to Music公开课",
+      "url": "https://oyc.yale.edu/music/musi-112/lecture-1",
+      "text": "耶鲁Listening to Music公开课\n通过聆听和作品片段分析节奏、旋律、曲式，训练演奏作品的结构理解\n适用对象：音乐比赛备赛者及跨专业创作者\n基础要求：英语听读能力；初级乐理有帮助\n学习顺序：先读讲义概览，再听片段并标出结构；把分析用于自己的曲目分句和排练\n语言：英语\n访问方式：公开课免费；作品音视频版权按原站\n适用范围：通用备赛资料\n来源：https://oyc.yale.edu/music/musi-112/lecture-1",
+      "summary": "通过聆听和作品片段分析节奏、旋律、曲式，训练演奏作品的结构理解",
+      "catalog_codes": [
+        "2026221",
+        "2026223",
+        "2026224",
+        "2026226",
+        "2026230",
+        "2026238"
+      ],
+      "provider": "Yale University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-f3e07e9b82952c044a84",
+      "title": "MuseScore Studio制谱手册",
+      "url": "https://handbook.musescore.org/",
+      "text": "MuseScore Studio制谱手册\n提供建谱、音符休止符输入及回放的操作说明，可准备排练谱\n适用对象：音乐表演与创作学生\n基础要求：基本识谱\n学习顺序：制作一页本人有权使用的练习谱，加入演奏标记并检查节拍\n语言：英语\n访问方式：Studio软件和手册免费；与第三方乐谱下载服务收费不同\n适用范围：通用备赛资料\n来源：https://handbook.musescore.org/",
+      "summary": "提供建谱、音符休止符输入及回放的操作说明，可准备排练谱",
+      "catalog_codes": [
+        "2026221",
+        "2026224",
+        "2026226",
+        "2026230",
+        "2026238"
+      ],
+      "provider": "MuseScore项目",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-15447e6c173bbd5fbcac",
+      "title": "第十六届北影节高校动漫征集格式",
+      "url": "https://www.bjiff.com/xghd/xqdy/kmlt/202512/t20251224_188579_ext.html",
+      "text": "第十六届北影节高校动漫征集格式\n包含学生与创作时段、三类作品格式及AI直接生成限制\n学习顺序：先检查创作时段与原创，再准备无水印完整影片或全套图像\n语言：中文\n访问方式：公开阅读\n来源：https://www.bjiff.com/xghd/xqdy/kmlt/202512/t20251224_188579_ext.html",
+      "summary": "包含学生与创作时段、三类作品格式及AI直接生成限制",
+      "catalog_codes": [
+        "2026222"
+      ],
+      "provider": "北京国际电影节",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-7f29988d778f78a2720b",
+      "title": "2026汇创青春戏剧舞蹈公演及视频要求",
+      "url": "https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "text": "2026汇创青春戏剧舞蹈公演及视频要求\n区分公演资格日期、剧照、连续演出片段与完整作品要求\n学习顺序：先检查公演日期，再选取15分钟以内的连续演出片段，并准备完整正式演出视频和剧照\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.shou.edu.cn/_upload/article/files/22/e7/d97a972f44b09dda54f203c393cf/31a6e1e9-a9d8-4cbe-b038-3f01bd5ba200.docx",
+      "summary": "区分公演资格日期、剧照、连续演出片段与完整作品要求",
+      "catalog_codes": [
+        "2026223"
+      ],
+      "provider": "上海海洋大学教务处",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3f8069847ee637e2b21b",
+      "title": "汇创青春2026音乐艺术类别通知与附件",
+      "url": "https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "text": "汇创青春2026音乐艺术类别通知与附件\n说明院校报送及类别组织方式，校内日期仅适用发布学校\n语言：中文\n访问方式：公开阅读\n适用范围：2026外校组织通知\n来源：https://ien.shou.edu.cn/2026/0313/c15062a350984/page.htm",
+      "summary": "说明院校报送及类别组织方式，校内日期仅适用发布学校",
+      "catalog_codes": [
+        "2026224"
+      ],
+      "provider": "上海海洋大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-a9fdfd10ca1f60ca582d",
+      "title": "2026汇创青春影视及剧本、AI短片报送要求",
+      "url": "https://ien.shou.edu.cn/_upload/article/files/18/fd/6840f0d34c0989d7806b54e59333/acdeb91d-0b07-4ce0-864e-242f830f722f.zip",
+      "text": "2026汇创青春影视及剧本、AI短片报送要求\n影视、长片剧本、AI剧情短片分开，提供片长和材料要求\n学习顺序：先按呈现形式选择类别，再核对主创资格、素材版权及交件清单\n语言：中文\n访问方式：公开阅读\n来源：https://ien.shou.edu.cn/_upload/article/files/18/fd/6840f0d34c0989d7806b54e59333/acdeb91d-0b07-4ce0-864e-242f830f722f.zip",
+      "summary": "影视、长片剧本、AI剧情短片分开，提供片长和材料要求",
+      "catalog_codes": [
+        "2026225"
+      ],
+      "provider": "上海海洋大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-9d3f86df94f81f4ba931",
+      "title": "第三十五届金犊奖参赛办法与评审标准",
+      "url": "https://www.ad-young.com/Home/PublicArticleContent?id=A20260311134538&liname=1&year=2026&ba=5",
+      "text": "第三十五届金犊奖参赛办法与评审标准\n可用于规划团队与策略、创意、执行三个评分维度\n学习顺序：先确认组别与命题，再用40/40/20自评作品\n语言：中文\n访问方式：公开阅读\n来源：https://www.ad-young.com/Home/PublicArticleContent?id=A20260311134538&liname=1&year=2026&ba=5",
+      "summary": "可用于规划团队与策略、创意、执行三个评分维度",
+      "catalog_codes": [
+        "2026228"
+      ],
+      "provider": "金犊奖组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-dcbb3774adcfc28087c0",
+      "title": "蓝桥杯17视觉艺术赛题、规格与评分表",
+      "url": "https://jwc.hutb.edu.cn/upload/bksybkjxpgzx/contentmanage/article/file/2026/03/03/202603031658001606.pdf",
+      "text": "蓝桥杯17视觉艺术赛题、规格与评分表\n25页规则\n学习顺序：读所选赛项，再逐项核对该赛项评分及源文件要求\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.hutb.edu.cn/upload/bksybkjxpgzx/contentmanage/article/file/2026/03/03/202603031658001606.pdf",
+      "summary": "25页规则",
+      "catalog_codes": [
+        "2026229"
+      ],
+      "provider": "蓝桥杯组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-ee13aea89b77d907d4ae",
+      "title": "Art+她守护2026视觉符号命题",
+      "url": "https://www.ccfcs.cn/index/pages/yxs",
+      "text": "Art+她守护2026视觉符号命题\n两类视觉符号设计任务与图像规范，可以练习把抽象边界意识转换为通用标识\n学习顺序：选择线上或线下场景，验证辨识与可读性后出系列图；阅读素材包及专项授权条款\n语言：中文\n访问方式：公开阅读\n来源：https://www.ccfcs.cn/index/pages/yxs",
+      "summary": "两类视觉符号设计任务与图像规范，可以练习把抽象边界意识转换为通用标识",
+      "catalog_codes": [
+        "2026233"
+      ],
+      "provider": "中国大学生创意节",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-3b44f16031d0fc1b87ac",
+      "title": "学院奖2026春季上传与原创规范",
+      "url": "https://www.5iidea.com/contents/47748",
+      "text": "学院奖2026春季上传与原创规范\n集中说明AI声明、素材授权、团队人数和防重复提交要求\n学习顺序：先读所选品牌策略单，整理AI与素材使用清单，再上传匿名作品\n语言：中文\n访问方式：公开阅读\n来源：https://www.5iidea.com/contents/47748",
+      "summary": "集中说明AI声明、素材授权、团队人数和防重复提交要求",
+      "catalog_codes": [
+        "2026234"
+      ],
+      "provider": "创意星球",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-53d028bcef3c2ad73b21",
+      "title": "2026全国高校影视展映征集规则",
+      "url": "https://www.ccava.cn/newsinfo/11226640.html",
+      "text": "2026全国高校影视展映征集规则\n2026二年级门槛、学生片时长、作品时间范围与AI要求\n学习顺序：先核创作时段和会员推荐条件，再按类别准备参报与统计表\n语言：中文\n访问方式：公开阅读\n来源：https://www.ccava.cn/newsinfo/11226640.html",
+      "summary": "2026二年级门槛、学生片时长、作品时间范围与AI要求",
+      "catalog_codes": [
+        "2026235"
+      ],
+      "provider": "中国高等院校影视学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-51dcd7c33fd8125806e9",
+      "title": "2025影视作品展映分类要求与报送规范",
+      "url": "https://www.ccava.cn/newsinfo/8472199.html",
+      "text": "2025影视作品展映分类要求与报送规范\n说明创作期、会员推荐、作品类型、画质和AI材料要求\n学习顺序：先核推荐资格，再按拟报单元检查时长、授权和文件\n语言：中文\n访问方式：公开阅读\n来源：https://www.ccava.cn/newsinfo/8472199.html",
+      "summary": "说明创作期、会员推荐、作品类型、画质和AI材料要求",
+      "catalog_codes": [
+        "2026235"
+      ],
+      "provider": "中国高等院校影视学会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-76877895ec48b826c08d",
+      "title": "2026金猴奖学生作品提交要求",
+      "url": "https://jhj.cicaf.com/en/articles/62.html",
+      "text": "2026金猴奖学生作品提交要求\n区分动画短片与漫画提交物，强调学校集体申报、完成时间和版权声明\n学习顺序：逐项准备正片/漫画、预告/剧本、图像和版权表；学校审核后统一提交\n语言：英文\n访问方式：公开阅读\n来源：https://jhj.cicaf.com/en/articles/62.html",
+      "summary": "区分动画短片与漫画提交物，强调学校集体申报、完成时间和版权声明",
+      "catalog_codes": [
+        "2026236"
+      ],
+      "provider": "中国国际动漫节",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-a1d28b038c8a9336ef7e",
+      "title": "中国品牌设计大赛通用作品规格",
+      "url": "https://www.brandesign.org.cn/about",
+      "text": "中国品牌设计大赛通用作品规格\n作者人数与图像、视频、展示版的制作要求\n学习顺序：按作品类别准备展示版、图像、视频及作品说明\n语言：中文\n访问方式：公开阅读\n来源：https://www.brandesign.org.cn/about",
+      "summary": "作者人数与图像、视频、展示版的制作要求",
+      "catalog_codes": [
+        "2026237"
+      ],
+      "provider": "中国品牌设计大赛官网",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-1921bd2dce07f013ef6d",
+      "title": "蜂鸟音乐奖2021完整章程与曲目选择",
+      "url": "https://sino-german-dialogue.tongji.edu.cn/b9/25/c7120a178469/page.htm",
+      "text": "蜂鸟音乐奖2021完整章程与曲目选择\n可学习室内乐合作、曲目时期搭配及完整演奏要求\n学习顺序：先读曲目要求，以两首不同时期作品制定练习计划\n语言：中文\n访问方式：公开阅读\n来源：https://sino-german-dialogue.tongji.edu.cn/b9/25/c7120a178469/page.htm",
+      "summary": "可学习室内乐合作、曲目时期搭配及完整演奏要求",
+      "catalog_codes": [
+        "2026238"
+      ],
+      "provider": "同济大学中德人文交流研究中心",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-685d6249944d90a47961",
+      "title": "2026数据新闻赛提交材料与任务要求",
+      "url": "https://webplus.hainnu.edu.cn/_s58/2026/0515/c2514a165201/page.psp",
+      "text": "2026数据新闻赛提交材料与任务要求\n可核团队、材料、选题与数据叙事评价，时间限定海南赛区\n学习顺序：先列数据来源与叙事结构，再按材料清单准备作品与授权\n语言：中文\n访问方式：公开阅读\n适用范围：2026海南通知；通用规则可参考\n来源：https://webplus.hainnu.edu.cn/_s58/2026/0515/c2514a165201/page.psp",
+      "summary": "可核团队、材料、选题与数据叙事评价，时间限定海南赛区",
+      "catalog_codes": [
+        "2026239"
+      ],
+      "provider": "海南师范大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6218c1b9bd6c9b160a37",
+      "title": "Data Journalism Handbook阅读入口",
+      "url": "https://datajournalism.com/read",
+      "text": "Data Journalism Handbook阅读入口\n数据新闻手册以案例讨论数据获取、分析、呈现与核验\n适用对象：数据新闻与信息可视化作者\n基础要求：基本新闻与表格分析知识\n学习顺序：先读一个完整案例，列出数据来源、清洗决策、证据和叙事，再做自己的小项目\n语言：英语\n访问方式：手册公开阅读\n适用范围：通用备赛资料\n来源：https://datajournalism.com/read",
+      "summary": "数据新闻手册以案例讨论数据获取、分析、呈现与核验",
+      "catalog_codes": [
+        "2026239"
+      ],
+      "provider": "European Journalism Centre / DataJournalism.com",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c70d0a12d8935bdc02a4",
+      "title": "第九届土木材料知识竞赛通知与回执",
+      "url": "https://polymer.tongji.edu.cn/__local/D/50/94/EAF6228AAC76F3CC03FF762EAB5_A37EE8C3_46AB3.pdf",
+      "text": "第九届土木材料知识竞赛通知与回执\n个人闭卷分组、备考范围及报名回执\n学习顺序：按年级选组；从材料基本性质与低碳材料现状复习\n语言：中文\n访问方式：公开阅读\n来源：https://polymer.tongji.edu.cn/__local/D/50/94/EAF6228AAC76F3CC03FF762EAB5_A37EE8C3_46AB3.pdf",
+      "summary": "个人闭卷分组、备考范围及报名回执",
+      "catalog_codes": [
+        "2026242"
+      ],
+      "provider": "同济大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-6505727aea79bce6f402",
+      "title": "国药杯2025第十八届官方通知与考查范围",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+      "text": "国药杯2025第十八届官方通知与考查范围\n专业与非专业分组，考查基础化学与生活化学，采用120分钟闭卷形式\n适用对象：化学知识竞赛备赛学生\n基础要求：高中及普通化学基础\n学习顺序：先按考查范围建立复习清单，再使用化学教材和MIT练习自测\n语言：中文\n访问方式：查看原文\n适用范围：2025年第十八届\n来源：https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+      "summary": "专业与非专业分组，考查基础化学与生活化学，采用120分钟闭卷形式",
+      "catalog_codes": [
+        "2026244"
+      ],
+      "provider": "同济大学化学科学与工程学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-da7976dbd2e801566144",
+      "title": "第二届济时开讲课程制作要求",
+      "url": "https://jwc.tongji.edu.cn/81/01/c30536a295169/page.htm",
+      "text": "第二届济时开讲课程制作要求\n八分钟微课堂，强调对应课程章节、PPT与讲稿、视频同步\n学习顺序：先定位课程章节，写8分钟教案，再录制包含课件的试讲\n语言：中文\n访问方式：公开阅读\n来源：https://jwc.tongji.edu.cn/81/01/c30536a295169/page.htm",
+      "summary": "八分钟微课堂，强调对应课程章节、PPT与讲稿、视频同步",
+      "catalog_codes": [
+        "2026246"
+      ],
+      "provider": "同济大学",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-25fbc6e230e261216598",
+      "title": "Cornell课程设计指南",
+      "url": "https://teaching.cornell.edu/teaching-resources/preparing-teach/designing-your-course",
+      "text": "Cornell课程设计指南\n按学习目标、评价证据和教学活动组织课程设计\n适用对象：微课、试讲和教学比赛学生\n基础要求：熟悉准备讲授的知识点\n学习顺序：先写一个可检验的学习目标，再设计练习和反馈，最后制作课件\n语言：英语\n访问方式：公开教学指南\n适用范围：通用备赛资料\n来源：https://teaching.cornell.edu/teaching-resources/preparing-teach/designing-your-course",
+      "summary": "按学习目标、评价证据和教学活动组织课程设计",
+      "catalog_codes": [
+        "2026246"
+      ],
+      "provider": "Cornell University",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-8d4bb15a301739d68752",
+      "title": "2026学院杯主赛道任务与制图要求",
+      "url": "https://xueyuanbei.com/zsd/219.html",
+      "text": "2026学院杯主赛道任务与制图要求\n空间与情感主题下的三个设计组别、匿名展板与报名流程\n学习顺序：先选组别和场地，展示分析过程，再按A0竖版检查匿名信息\n语言：中文\n访问方式：公开阅读\n来源：https://xueyuanbei.com/zsd/219.html",
+      "summary": "空间与情感主题下的三个设计组别、匿名展板与报名流程",
+      "catalog_codes": [
+        "2026248"
+      ],
+      "provider": "学院杯大赛组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-dc20f5e39caab8b34220",
+      "title": "2025学院杯AIGC专题制作要求",
+      "url": "https://xueyuanbei.com/ztsd/221.html",
+      "text": "2025学院杯AIGC专题制作要求\n图像与动态影像规格分别列出，另要求保留AI关键词与过程图\n学习顺序：先选择静态或动态类别，整理生成过程和设计解释，再输出匿名成果\n语言：中文\n访问方式：公开阅读\n来源：https://xueyuanbei.com/ztsd/221.html",
+      "summary": "图像与动态影像规格分别列出，另要求保留AI关键词与过程图",
+      "catalog_codes": [
+        "2026248"
+      ],
+      "provider": "学院杯组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-5042395ac24a549d2dca",
+      "title": "2026 DIA类别、材料和报名FAQ",
+      "url": "https://www.di-award.org/zh/rules.html",
+      "text": "2026 DIA类别、材料和报名FAQ\n用于区分产业实物与概念样机、公众和提名途径及双语材料\n学习顺序：先判断成果成熟度与权利归属，再准备双语产品说明和功能演示\n语言：中文\n访问方式：公开阅读\n来源：https://www.di-award.org/zh/rules.html",
+      "summary": "用于区分产业实物与概念样机、公众和提名途径及双语材料",
+      "catalog_codes": [
+        "2026249"
+      ],
+      "provider": "中国设计智造大奖组委会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-5a592371a8812b876038",
+      "title": "日语才能演示大赛官方项目介绍",
+      "url": "https://www.ieas.net.cn/upload/files/2025/2/上海教育国际交流协会项目与服务手册（2025）.pdf",
+      "text": "日语才能演示大赛官方项目介绍\n说明即席作文、演讲及问答的训练方向\n学习顺序：先在限定时间内写约400字日文，再进行演讲与追问练习\n语言：中文\n访问方式：公开阅读\n适用范围：2025服务手册中的项目介绍，不含某届完整报名规则\n来源：https://www.ieas.net.cn/upload/files/2025/2/上海教育国际交流协会项目与服务手册（2025）.pdf",
+      "summary": "说明即席作文、演讲及问答的训练方向",
+      "catalog_codes": [
+        "2026250"
+      ],
+      "provider": "上海教育国际交流协会",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-c8f15aa2e39cdb378023",
+      "title": "卓越杯2023完整章程与40/30/30评分",
+      "url": "https://honors.shisu.edu.cn/_upload/article/files/bb/95/ea51d40546f9ae002acf6f4eed16/e341642c-7edf-4ef0-8e77-773baebcd7c6.pdf",
+      "text": "卓越杯2023完整章程与40/30/30评分\n说明三人团队、双语展析问答和各部分得分\n学习顺序：先开发全球治理案例及证据，再分工模拟英文学术问答与中文政策问答\n语言：中文\n访问方式：公开阅读\n适用范围：2023首届历史训练依据\n来源：https://honors.shisu.edu.cn/_upload/article/files/bb/95/ea51d40546f9ae002acf6f4eed16/e341642c-7edf-4ef0-8e77-773baebcd7c6.pdf",
+      "summary": "说明三人团队、双语展析问答和各部分得分",
+      "catalog_codes": [
+        "2026254"
+      ],
+      "provider": "上海外国语大学卓越学院",
+      "verified_at": "2026-10-02"
+    },
+    {
+      "id": "resource-34121b6a8ca47abe93f0",
+      "title": "汇川杯官方学习专区与数字孪生练习",
+      "url": "https://course.inovance.com/page/6546037",
+      "text": "汇川杯官方学习专区与数字孪生练习\n官方FAQ指明PLC、HMI、机器人基础、实训手册、六个数字孪生案例及VUP视频的学习顺序\n学习顺序：先学PLC/HMI/机器人基础，再用案例手册配合视频实操；部分软件需云许可、加密狗或参赛授权\n语言：中文\n访问方式：官方FAQ确认入口；课程细项可能需登录，软件和硬件授权按赛项申请\n来源：https://course.inovance.com/page/6546037",
+      "summary": "官方FAQ指明PLC、HMI、机器人基础、实训手册、六个数字孪生案例及VUP视频的学习顺序",
+      "catalog_codes": [
+        "2026255"
+      ],
+      "provider": "汇川技术",
+      "verified_at": "2026-10-02"
+    }
+  ]
+}
