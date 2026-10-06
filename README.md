@@ -10,6 +10,7 @@
 | --- | --- |
 | 第一次读代码，从哪个文件开始 | **[代码导读](docs/code-guide.md)** |
 | 目前完成了什么、是否已上传 | [团队进度](docs/progress.md) |
+| 通过临时网址使用 AI 内测版 | [邀请内测](docs/private-beta.md) |
 | 怎么安装和启动 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) |
 | 前后端怎么对接 | [赛事与账号 API](docs/api.md) · [组队 API](docs/api-teams.md) |
 | 查赛事资料与学习资源 | [人工赛事资料](docs/competition-research/README.md) · [目录 1—89](docs/competition-research/tongji-2026-001-089/README.md) |
@@ -21,7 +22,7 @@
 - **信息中心**：赛事列表、搜索、详情；科研板块标注“暂不开放”，首页保留人工快讯。
 - **参赛组队**：发布招募、申请、双方确认入队和成员管理。
 - **账号与反馈**：学校邮箱账号、站内通知、登录用户的举报与申诉。
-- **管理与采集**：按学校 2026 版目录监测 255 项全学科赛事，保存官网原文与 PDF/DOCX 附件；规则提取字段并核验上架，缺项和冲突留在后台。AIC、NCDA 保留专用采集，具体流程见[赛事提取与上架](docs/catalog-publication.md)。
+- **资料维护**：当前使用人工整理的统一资料包，导入赛事正文、来源和关联学习资源，并生成当前或下一届组队目标。更新后重建检索索引，步骤见[赛事助手交接](docs/ai-assistant-handoff.md)；旧采集代码保留供历史维护。
 
 赛事知识、学习资源和组队目标统一使用[新版资料导入与检索](docs/competition-search-handoff.md)。执行数据库迁移和统一导入后，即可在资源中心查阅资料、在现有组队入口发布招募。
 

@@ -3,6 +3,7 @@ import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
 const route = useRoute()
+const privateBeta = import.meta.env.VITE_PRIVATE_BETA === '1'
 function revisitAi() {
   if (route.name === 'home' && route.hash === '#ai') {
     document.getElementById('ai')?.scrollIntoView({
@@ -50,13 +51,14 @@ function revisitAi() {
           <ThemeToggle />
           <RouterLink to="/account/teams" exact-active-class="is-active">我的组队</RouterLink>
           <RouterLink to="/account/notifications" exact-active-class="is-active">通知</RouterLink>
-          <RouterLink class="header-account" :to="{ name: 'account' }" aria-label="账户"
-            ><AppIcon name="user" :size="16" /><span>账户</span></RouterLink
+          <RouterLink class="header-account" :to="{ name: 'account' }" :aria-label="privateBeta ? '内测账号' : '账户'"
+            ><AppIcon name="user" :size="16" /><span>{{ privateBeta ? '内测账号' : '账户' }}</span></RouterLink
           >
         </div>
       </div>
     </el-header>
     <el-main class="app-main">
+      <div v-if="privateBeta" class="private-beta-banner" role="note">邀请内测 · 使用分配的测试账号体验 AI 助手、组队和举报，操作记录仅用于本轮测试</div>
       <RouterView />
     </el-main>
     <footer class="app-footer">
@@ -68,3 +70,6 @@ function revisitAi() {
     </footer>
   </el-container>
 </template>
+<style scoped>
+.private-beta-banner { padding: 10px 24px; text-align: center; font-size: 13px; color: var(--el-color-primary); background: var(--el-color-primary-light-9); }
+</style>

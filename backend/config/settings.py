@@ -236,7 +236,8 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_REFERRER_POLICY = 'same-origin'
 X_FRAME_OPTIONS = 'DENY'
 ALLAUTH_TRUSTED_PROXY_COUNT = int(os.getenv('ALLAUTH_TRUSTED_PROXY_COUNT', '0'))
-if not DEBUG:
+# 邀请内测模块在导入后执行自身的隔离校验；正常正式配置始终保留下列要求。
+if not DEBUG and os.getenv('DJANGO_SETTINGS_MODULE') != 'config.private_beta_settings':
     origin = urlsplit(PUBLIC_ORIGIN)
     if origin.scheme != 'https' or not origin.hostname or origin.path or origin.query or origin.fragment or origin.username:
         raise ImproperlyConfigured('正式环境须配置 HTTPS 的 DJANGO_PUBLIC_ORIGIN（不含路径）。')

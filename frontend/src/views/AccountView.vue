@@ -17,6 +17,7 @@ import { formatUpdatedAt } from '../utils/competition'
 import AppIcon from '../components/AppIcon.vue'
 import AccountPageHeader from '../components/AccountPageHeader.vue'
 
+const privateBeta = import.meta.env.VITE_PRIVATE_BETA === '1'
 const user = ref(null)
 const initializing = ref(true)
 const initializationFailed = ref(false)
@@ -76,6 +77,7 @@ function clearSignedOutState() {
 }
 
 function selectMode(next) {
+  if (privateBeta && next !== 'login') return
   if (busy.value) return
   mode.value = next
   errors.value = []
@@ -213,7 +215,7 @@ onBeforeUnmount(() => {
     <AccountPageHeader
       title="我的"
       accent="账号"
-      description="管理校园身份，也为下一次合作做好准备。"
+      :description="privateBeta ? '使用分配的内测账号，体验 AI 助手与组队' : '管理校园身份，也为下一次合作做好准备。'"
       :show-nav="!!user && !initializing"
     />
     <div class="account-content">
@@ -245,6 +247,7 @@ onBeforeUnmount(() => {
               登录
             </button>
             <button
+              v-if="!privateBeta"
               :class="{ active: mode === 'signup' }"
               :disabled="!!busy"
               @click="selectMode('signup')"
@@ -254,18 +257,18 @@ onBeforeUnmount(() => {
           </div>
           <h2>{{ title }}</h2>
           <form class="account-form" @submit.prevent="submitCredentials">
-            <label for="account-email">学校邮箱</label>
+            <label for="account-email">{{ privateBeta ? '内测账号' : '学校邮箱' }}</label>
             <input
               id="account-email"
               v-model="credentials.email"
               type="email"
               autocomplete="username"
               maxlength="254"
-              placeholder="你的邮箱@tongji.edu.cn"
+              :placeholder="privateBeta ? '分配给你的测试账号' : '你的邮箱@tongji.edu.cn'"
               required
               :disabled="!!busy || mode === 'reset'"
             />
-            <p class="field-hint">接受使用同济学校邮箱的各院系学生。</p>
+            <p class="field-hint">{{ privateBeta ? '请使用内测负责人分配的账号和密码；账号中的邮箱是测试标识。' : '接受使用同济学校邮箱的各院系学生。' }}</p>
             <template v-if="mode === 'reset'">
               <label for="reset-code">邮件中的重置验证码</label>
               <input
@@ -329,7 +332,7 @@ onBeforeUnmount(() => {
           </form>
           <div class="account-links">
             <button
-              v-if="mode === 'login'"
+              v-if="mode === 'login' && !privateBeta"
               class="text-button"
               :disabled="!!busy"
               @click="selectMode('recover')"
@@ -358,7 +361,7 @@ onBeforeUnmount(() => {
         </el-card>
         <aside class="account-intro">
           <h2>连接校园，<br /><span>从一个好想法开始</span></h2>
-          <p>使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。</p>
+          <p>{{ privateBeta ? '本轮体验 AI 赛事助手、资料查询、发布招募、申请入队和举报。每位同学使用自己的测试账号，密码遗失可联系内测负责人。' : '使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。' }}</p>
           <RouterLink class="more-link" :to="{ name: 'competitions' }"
             >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>
         </aside>
@@ -376,8 +379,8 @@ onBeforeUnmount(() => {
             </div>
             <dl class="account-identity">
               <div><dt>系统代号</dt><dd>{{ user.public_code }}</dd></div>
-              <div><dt>学校邮箱</dt><dd>{{ user.email }}</dd></div>
-              <div><dt>当前状态</dt><dd><span class="account-status">{{ overview.status }}</span></dd></div>
+              <div><dt>{{ privateBeta ? '测试账号' : '学校邮箱' }}</dt><dd>{{ user.email }}</dd></div>
+              <div><dt>当前状态</dt><dd><span class="account-status">{{ privateBeta ? '内测账号' : overview.status }}</span></dd></div>
             </dl>
           </div>
           <div class="account-next-step">
@@ -402,7 +405,7 @@ onBeforeUnmount(() => {
         <div class="account-section-heading account-detail-heading">
           <h2>账号设置与说明</h2>
         </div>
-        <el-card id="email-verification" class="detail-section account-detail-section" shadow="never">
+        <el-card v-if="!privateBeta" id="email-verification" class="detail-section account-detail-section" shadow="never">
           <div class="account-heading">
             <h2>学校邮箱验证</h2>
             <span class="account-section-state">{{ user.school_email_verified ? '已验证' : '待验证' }}</span>
@@ -454,7 +457,7 @@ onBeforeUnmount(() => {
         <el-card id="contact-details" class="detail-section account-detail-section" shadow="never">
           <h2>联系方式</h2>
           <p class="muted">
-            微信号或手机号至少填写一项，用于双方授权后的组队联系。
+            {{ privateBeta ? '已填入测试联系方式。本轮可用测试内容体验联系方式授权。' : '微信号或手机号至少填写一项，用于双方授权后的组队联系。' }}
           </p>
           <form
             class="account-form contact-form"
