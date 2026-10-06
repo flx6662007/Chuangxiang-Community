@@ -86,47 +86,15 @@ curation.view_knowledgedocument
 
 ## 资料入库
 
-资料与来源见[三批交付](competition-research/README.md)。代码在 GitHub 不代表每位队友数据库已收到资料；这里不以包内记录数代替实际入库数量。
-
-1. 配置目标数据库，应用已有迁移：在 `backend/` 执行 `python manage.py migrate`。`curation/0001_initial` 和 `0002_documentreview_importedobjectrevision` 已在仓库，不另建同名表或改写旧迁移。
-2. 将资料包保存在仓库外的持久目录，保留附件相对结构。先校验 ZIP、文件及附件哈希，再运行下方文件校验命令。
-3. 先导入 131—255 包，再导入依赖它的 90—130 包；1—89 包无此依赖，可独立处理。复用对象缺失、版本不匹配或被人工修改时，导入会拒绝并回滚该次事务。
-4. 使用有导入权限的实际管理员执行 `--preview`，写入会在事务末尾回滚。管理员的预览查看权限不自动授予导入权限，具体权限见各包说明。
-5. 正式导入时另存 `导入执行清单.json`，保留原始底稿与随包清单不变；仅在执行副本填写本次操作的 `review.status=approved`、真实确认人和日期，再预演、`--apply`。
+赛事知识统一使用新版独立资料包。在仓库根目录执行：
 
 ```powershell
-# 以 backend 为当前目录；Windows 可用 .\.venv\Scripts\python.exe 替代 python。
-python manage.py import_curated_competitions "<资料包>/导入清单.json"
-python manage.py import_curated_competitions "<资料包>/导入清单.json" --actor-id <实际管理员ID> --preview
-python manage.py import_curated_competitions "<资料包>/导入执行清单.json" --actor-id <实际管理员ID> --preview
-python manage.py import_curated_competitions "<资料包>/导入执行清单.json" --actor-id <实际管理员ID> --apply
+python backend/manage.py migrate
+python backend/manage.py load_competition_knowledge --actor-id <管理员ID> --apply --reason '启用新版赛事知识'
 ```
 
-**执行清单的 `review` 只确认本次入库操作，不代表事实已核验。** 导入器先保存草稿。按照当前项目决定，整理完成的赛事和知识正文可直接发布，无需逐条内容审核；使用下面的批量发布命令即可。发布不自动开放组队或 AI 问答。
+命令在一个事务中导入并公开 198 篇资料，重复运行保持稳定，已撤下资料保持撤下。无需下载旧包附件或按旧批次建立依赖。索引构建、环境变量和助手调用见[赛事助手接入](ai-assistant-handoff.md)。
 
-### 赛事与知识正文直接发布
+旧资料保留在维护历史。同一目录已有新版公开正文时，公开知识列表隐藏旧包正文；原赛事、资源和组队记录保留。公开目录不返回内部学校目录来源和责任学院，赛事正文继续保留真实官方来源及资格限制。
 
-先执行 `python manage.py migrate`，应用 `competitions/0002_direct_publication` 和 `curation/0003_allow_direct_publication`。执行身份需要 `competitions.change_competition`、`curation.change_knowledgedocument`、`curation.add_documentreview`，这些是后台写入权限，访客阅读不需要登录。
-
-```powershell
-python manage.py publish_curated_library --package-id tongji-2026-131-255 --package-id tongji-2026-90-130 --package-id tongji-2026-001-089-20261003 --actor-id <维护身份ID> --apply
-```
-
-不加 `--apply` 只显示操作范围。赛事使用 `publication_method=direct`，知识正文使用 `review_status=published`；保留现有 `verified/approved` 作为独立核验标记。直接发布保留原文、来源、真实日期与核验时间，不把缺失日期补成当前年份，也不改变招募开关。未知分类的届次暂归“目录赛事”，避免猜测学科。接口向访客返回来源链接，已有隐私字段过滤保持生效。
-
-后台赛事列表和知识文档列表也提供“直接发布所选……”操作。重复执行不会重复生成发布记录，已经撤下的内容不会被该命令重新公开。
-
-### 学习资料公开
-
-本项目的学习资料供所有访客使用。资料包导入完毕后，以有 `resources.change_resource` 权限的管理员运行下列命令。默认只列范围，加 `--apply` 后经 `resources/services.py` 逐条校验链接、标题、介绍和类别，记录版本并发布；已有类别保留，未分类项统一归为“赛事学习资料”。这只是学习外链发布，不声称重新核验了所有远程网站的实时可用性。
-
-```powershell
-python manage.py publish_curated_resources --package-id tongji-2026-131-255 --package-id tongji-2026-90-130 --package-id tongji-2026-001-089-20261003
-# 确认目标库后，在同一命令末尾添加：--actor-id <实际管理员ID> --apply
-```
-
-已发布资源重复执行不会重复生成版本。发布属于对入库内容的后续维护，原资料包不会强行覆盖发布后的记录；下一次修改须走内容维护与版本校验流程。后台 Resource 列表也提供“发布所选已整理学习资料”操作。
-
-导入使用稳定编号、载荷哈希和版本记录去重，不覆盖已被人工修改的数据。正文版本保存资料包根路径，移动包前须安排路径迁移。执行清单、运行报告、本机路径和真实数据库不提交 GitHub。
-
-当前资料来源采用人工整理；`ingestion/` 和目录监测代码为历史实现，保留模型与迁移，不作为本流程启动条件。维护事实时修改对应包的整理底稿，再重新生成派生文件；不要同时修改多份索引形成冲突。
+资料更新沿用[新版维护与重建流程](competition-search-handoff.md)。

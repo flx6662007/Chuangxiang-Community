@@ -25,7 +25,7 @@ def main():
     work = Path(tempfile.mkdtemp(prefix='knowledge-rebuild-', dir=local))
     rebuilt, evidence = work / 'public', work / 'maintenance'
     evidence.mkdir()
-    inputs = ('verified-supplements.json', 'rechecked-supplements.json',
+    inputs = ('verified-supplements.json', 'rechecked-supplements.json', 'temporal-supplements.json',
               'recheck-review.json', 'public-text-revisions.json')
     for name in inputs:
         shutil.copyfile(maintenance / name, evidence / name)

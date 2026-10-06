@@ -64,7 +64,7 @@ def _numpy():
 
 
 def _visible(record):
-    return (record.get('review_status') == 'approved'
+    return (record.get('review_status') in ('approved', 'published')
             and record.get('publication_status') == 'published')
 
 

@@ -255,8 +255,8 @@ class Competition(CleanFieldsModel):
             ),
             models.CheckConstraint(
                 condition=Q(recruitment_enabled=False) | Q(
-                    publication_status='published', participation_type__in=['team', 'both'],
-                    recruitment_deadline__isnull=False, recruitment_note__regex=r'\S',
+                    publication_status='published', participation_type__in=['team', 'both', 'unknown'],
+                    recruitment_note__regex=r'\S',
                 ), name='comp_recruitment_requirements',
             ),
             *deadline_constraints('registration_deadline'),
@@ -268,14 +268,18 @@ class Competition(CleanFieldsModel):
         return self.title
 
     @property
+    def effective_recruitment_deadline(self):
+        from .recruitment_policy import cutoff
+        official = cutoff({'registration_deadline': self.registration_deadline.isoformat() if self.registration_deadline else None,
+                           'registration_deadline_at': self.registration_deadline_at.isoformat() if self.registration_deadline_at else None})
+        deadlines = [value for value in (self.recruitment_deadline, official) if value is not None]
+        return min(deadlines) if deadlines else None
+
+    @property
     def is_recruitment_open(self):
-        """只计算赛事侧条件；不代替账号、队伍、卡片的权限判断。"""
-        return bool(
-            self.publication_status == self.PublicationStatus.PUBLISHED
-            and self.participation_type in (self.ParticipationType.TEAM, self.ParticipationType.BOTH)
-            and self.recruitment_enabled and self.recruitment_deadline
-            and self.recruitment_deadline > timezone.now()
-        )
+        deadline = self.effective_recruitment_deadline
+        return bool(self.publication_status == 'published' and self.participation_type != 'individual'
+                    and self.recruitment_enabled and (deadline is None or timezone.now() < deadline))
 
     def clean(self):
         super().clean()

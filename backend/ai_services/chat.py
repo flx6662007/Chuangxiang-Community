@@ -1,11 +1,12 @@
 """聊天业务入口；检索只读，仍沿用 V1 消息契约。"""
 
+from django.conf import settings
 from .client import OpenAICompatibleClient
 from .config import AIConfig
 from .exceptions import AIInputError, AIResponseError
 from .fusion import context_message, fuse, verified_answer_text
 from .platform import retrieve_platform
-from .knowledge import retrieve_knowledge
+from .competition_knowledge import retrieve_knowledge
 from .router import route_query
 from .web import retrieve_official_web
 
@@ -52,8 +53,12 @@ def chat(messages, *, client=None, details=False):
         config.validate()
     question = history[-1]['content']
     route = route_query(question)
+    if not settings.PUBLIC_RESEARCH_ENABLED and 'project' in route.domains and 'competition' not in route.domains:
+        message = {'role':'assistant','content':'科研信息暂不开放。可以继续查询赛事和学习资料。'}
+        return {'message':message,'sources':[], 'route':{'intent':'platform','domains':['project']},
+                'retrieval':{'knowledge':'not_requested','web':'not_requested','has_sources':False}} if details else message
     platform = retrieve_platform(question, route) if route.intent in ('platform', 'hybrid') else []
-    knowledge, knowledge_status = (retrieve_knowledge(question) if route.knowledge_requested
+    knowledge, knowledge_status = (retrieve_knowledge(question) if route.knowledge_requested or 'competition' in route.domains
                                    else ([], 'not_requested'))
     web, web_status = (retrieve_official_web(question) if route.web_requested
                        else ([], 'not_requested'))

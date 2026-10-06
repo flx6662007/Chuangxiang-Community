@@ -230,6 +230,9 @@ def build(args):
     rechecked = maintenance / 'rechecked-supplements.json'
     if rechecked.is_file():
         apply_supplements(records, load(rechecked))
+    temporal = maintenance / 'temporal-supplements.json'
+    if temporal.is_file():
+        apply_supplements(records, load(temporal))
     for code, record in list(records.items()):
         if record['catalog_code'] in revisions.get('internal', {}) or code in revisions.get('internal_records', {}):
             del records[code]

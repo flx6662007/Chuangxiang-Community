@@ -1,6 +1,6 @@
 # 新版赛事知识导入与检索
 
-新版资料通过一个命令独立入库，再由 Python 检索接口向 AI 提供正文、匹配理由和来源。数据版本为 `874ccd5c6dddf794`，共 198 条文档、864 个段落。旧版资料保留现状。
+新版资料通过一个命令独立入库，再由 Python 检索接口向 AI 提供正文、匹配理由和来源。数据版本为 `d744beaf5c993b25`，共 198 条文档、912 个段落。旧版资料保留现状。
 
 ## 准备环境
 
@@ -16,16 +16,16 @@ python -m venv .local/retrieval-venv
 
 ## 统一导入
 
-导入文件固定放在 `docs/competition-knowledge-maintenance/imports/`，三包分别包含 65、41、92 条文档。每包自带目录信息、正文、字段、来源及版本，业务赛事关联为空。
+导入文件固定放在 `docs/competition-knowledge-maintenance/imports/`，三包分别包含 65、41、92 条文档。每包自带目录信息、正文、字段、来源及版本；统一导入服务据此建立业务赛事组队目标、资源和关联。
 
 ```powershell
 $actorId = [int](Read-Host '管理员用户 ID')
-.local/retrieval-venv/Scripts/python.exe backend/manage.py load_competition_knowledge --actor-id $actorId --apply --reason '启用赛事知识版本 874ccd5c6dddf794'
+.local/retrieval-venv/Scripts/python.exe backend/manage.py load_competition_knowledge --actor-id $actorId --apply --reason '启用赛事知识版本 d744beaf5c993b25'
 ```
 
-`load_competition_knowledge` 在一个事务内读取三包、保存文档版本、记录管理员审核并启用检索。审核人来自指定账号，审核日期来自执行日期，`--reason` 保存本次操作依据。JSON 中的初始 `pending` 状态由这次操作完成审核。
+`load_competition_knowledge` 在一个事务内读取三包、保存文档版本、记录管理员审核、启用检索，并发布 302 条学习资源及当前组队目标。审核人来自指定账号，审核日期来自执行日期，`--reason` 保存本次操作依据。JSON 中的初始 `pending` 状态由这次操作完成审核。
 
-首次完整执行后，报告显示 198 条可检索文档。报告同时给出资料版本、数据库语料版本和新增、更新、复用、撤下的数量。再次导入相同内容复用现有版本；更新正文时生成新版本并保留历史记录。已撤下文档维持撤下状态。
+首次完整执行后，报告显示 198 条可检索文档；`activation` 显示组队目标、下一届目标和学习资源数量。组队截止切换与定时命令见[赛事助手接入](ai-assistant-handoff.md#资料与招募关联)。报告同时给出资料版本、数据库语料版本和新增、更新、复用、撤下的数量。再次导入相同内容复用现有版本；更新正文时生成新版本并保留历史记录。已撤下文档维持撤下状态。
 
 需要查看执行结果时，使用相同命令并将 `--apply` 改为 `--preview`；预演执行整条流程后回滚。默认不指定这两个参数时也执行预演。
 
@@ -137,7 +137,7 @@ $env:COMPETITION_SEMANTIC_INDEX=(Join-Path (Get-Location) '.local/competition-se
 
 完整实测请求和返回值见 [接口样例](competition-knowledge-maintenance/api-examples.json)：本科三人队查找英特尔杯，以及指定参考日查询仍可报名的赛事。后者的空结果保留逐项条件诊断。
 
-当前 Vue 聊天组件调用 `/api/v1/ai/chat/`，请求为 `messages`，响应为 `message.role/content`；详见 [AI 聊天说明](ai-chat.md)。聊天接入同学在这条调用链中调用 `search_competitions()`，读取 `knowledge_results` 或 `hits`。
+首页赛事助手使用 `/api/v1/ai/guide/`，将用户条件传给 `search_competitions()`，再展示赛事分析与现有招募。通用聊天保留 `/api/v1/ai/chat/` 的 `messages` 契约，赛事知识同样复用这一检索模块。接口与本地启动见[赛事助手接入](ai-assistant-handoff.md)。
 
 接入方将返回的正文片段和证据加入模型上下文，并按产品需要展示来源与无结果条件。本次独立知识链路以 `knowledge_results` 提供问答依据，`results` 保留为赛事卡片适配字段。
 

@@ -40,7 +40,7 @@ class FusionTests(SimpleTestCase):
             def complete_text(self, messages):
                 raise AssertionError('no factual source must not call the model')
 
-        with patch('ai_services.chat.retrieve_platform', return_value=[]):
+        with patch('ai_services.chat.retrieve_platform', return_value=[]), patch('ai_services.chat.retrieve_knowledge', return_value=([], 'no_published_knowledge')):
             result = chat([{'role': 'user', 'content': '有哪些机器人比赛'}],
                           client=Provider(), details=True)
         self.assertEqual(result['sources'], [])

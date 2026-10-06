@@ -105,7 +105,6 @@ onBeforeUnmount(clear)
           <p class="editorial-meta">{{ item.code }} · {{ item.version }} 年目录</p>
           <h2 id="catalog-title">{{ item.name }}</h2>
           <div class="tag-row"><span class="tag">目录等级 {{ item.grade }}</span><span class="tag neutral">{{ item.levels }}</span></div>
-          <p>{{ item.departments?.join('、') }}</p>
         </div>
       </header>
       <nav class="detail-tabs" aria-label="赛事资料导航">
@@ -155,10 +154,6 @@ onBeforeUnmount(clear)
             <h2>学习资源</h2><p>规则、赛题、课程、工具及案例，与本赛事目录关联。</p>
             <p v-if="!preview" class="muted">共 {{ item.resource_count || 0 }} 条学习资料</p>
             <RouterLink class="action-button" :to="{ name: 'resources', query: resourceQuery }">查看关联学习资料 →</RouterLink>
-          </el-card>
-          <el-card class="detail-section" shadow="never">
-            <h2>目录来源</h2><p class="muted">{{ item.version }} 年学校本科生学科竞赛目录</p>
-            <a v-if="safeExternalUrl(item.source_url)" :href="safeExternalUrl(item.source_url)" target="_blank" rel="noopener noreferrer">查看目录来源 ↗</a>
           </el-card>
         </aside>
       </div>

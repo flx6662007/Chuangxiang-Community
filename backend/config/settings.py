@@ -274,3 +274,6 @@ AI_CHAT = {
     'TIMEOUT_SECONDS': os.getenv('DEEPSEEK_TIMEOUT_SECONDS', '60'),
     'MAX_OUTPUT_TOKENS': os.getenv('DEEPSEEK_MAX_OUTPUT_TOKENS', '2048'),
 }
+
+# 科研资料独立维护，比赛展示期间关闭公开入口。
+PUBLIC_RESEARCH_ENABLED = os.getenv("PUBLIC_RESEARCH_ENABLED", "0").lower() in ("1", "true")

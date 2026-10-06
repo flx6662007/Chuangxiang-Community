@@ -22,7 +22,7 @@ defineProps({
         <span class="tag">目录等级 {{ item.grade || '未注明' }}</span>
         <span class="tag neutral">{{ item.levels || '范围待补充' }}</span>
       </div>
-      <p class="competition-card__summary">{{ item.departments?.join('、') || '责任学院待补充' }}</p>
+      <p class="competition-card__summary">查看赛事介绍、参赛要求与学习资料。</p>
     </div>
     <div class="competition-card-aside">
       <span class="deadline-label">赛事档案</span>

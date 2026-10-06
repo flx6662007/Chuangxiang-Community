@@ -8,6 +8,10 @@ class Command(BaseCommand):
     help = '结算招募卡到期、退出/移除及整队解散的固定 24 小时期限。'
 
     def handle(self, *args, **options):
+        from curation.activation import refresh_team_targets
+        refreshed = refresh_team_targets()
+        if refreshed:
+            self.stdout.write(f'已更新组队目标：{refreshed}')
         count = 0
         for competition_id in Team.objects.values_list('competition_id', flat=True).distinct():
             with lock_competition_graph(competition_id):

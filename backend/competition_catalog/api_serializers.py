@@ -8,8 +8,8 @@ class CatalogSerializer(serializers.BaseSerializer):
         return {
             'code': entry.code, 'name': public_text(entry.name), 'version': entry.version,
             'grade': entry.grade, 'levels': public_text(entry.levels),
-            'departments': [public_text(x) for x in entry.departments],
-            'source_url': safe_source_url(entry.source_url),
+            'departments': [],
+            'source_url': '',
             **self.context['counts'][entry.pk],
         }
 

@@ -38,7 +38,7 @@ class RouterTests(SimpleTestCase):
             'url': 'https://www.tongji.edu.cn/robot', 'internal_url': '/competitions/1',
             'text': '机器人比赛规则', 'verified_at': '2026-10-04', 'published_on': None,
             'status': 'unknown', 'status_note': '截止未知',
-        }]) as retrieval:
+        }]) as retrieval, patch('ai_services.chat.retrieve_knowledge', return_value=([], 'no_published_knowledge')):
             result = chat([{'role': 'user', 'content': '机器人比赛'}], client=provider)
         self.assertEqual(result['role'], 'assistant')
         self.assertEqual(provider.messages[-1], {'role': 'user', 'content': '机器人比赛'})

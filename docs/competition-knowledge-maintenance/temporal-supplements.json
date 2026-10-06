@@ -1,0 +1,1320 @@
+{
+  "reviewed_on": "2026-10-06",
+  "records": [
+    {
+      "code": "m89-2026089-overview",
+      "catalog_code": "2026089",
+      "title": "大学生数字媒体科技作品及创意竞赛",
+      "edition": "2026年·第十四届",
+      "fields": {
+        "registration_deadline": "2026-10-23",
+        "submission_deadline": "2026-10-23",
+        "registration_deadline_at": "2026-10-23T23:59:59+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-1382fb3626b8f8e5976c"
+        ],
+        "submission_deadline": [
+          "ev-1382fb3626b8f8e5976c"
+        ],
+        "registration_deadline_at": [
+          "ev-1382fb3626b8f8e5976c"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-1382fb3626b8f8e5976c",
+          "url": "https://www.cmit.cn/html/tongzhigonggao/show-144-45826-1.html",
+          "title": "关于举办2026年第十四届全国大学生数字媒体科技作品及创意竞赛的通知",
+          "quote": "",
+          "locator": "赛事介绍与通知正文",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-10-23",
+          "evidence_ids": [
+            "ev-1382fb3626b8f8e5976c"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-10-23",
+          "evidence_ids": [
+            "ev-1382fb3626b8f8e5976c"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-10-23T23:59:59+08:00",
+          "evidence_ids": [
+            "ev-1382fb3626b8f8e5976c"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c93-2025-2",
+      "catalog_code": "2026093",
+      "title": "中国好创意暨全国数字艺术设计大赛",
+      "edition": "2025年第十九届",
+      "fields": {
+        "registration_deadline": "2025-06-30",
+        "registration_deadline_at": "2025-06-30T17:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-04a98a1ca0834430cda1"
+        ],
+        "registration_deadline_at": [
+          "ev-04a98a1ca0834430cda1"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-04a98a1ca0834430cda1",
+          "url": "https://storage.cdec.org.cn/hcy/2024/11/20241106104540586-vqn8.pdf",
+          "title": "第19届全国参赛简章",
+          "quote": "",
+          "locator": "PDF第4页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-06-30",
+          "evidence_ids": [
+            "ev-04a98a1ca0834430cda1"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-06-30T17:00:00+08:00",
+          "evidence_ids": [
+            "ev-04a98a1ca0834430cda1"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c95-2026-1",
+      "catalog_code": "2026095",
+      "title": "国际大学生新材料创新创意大赛",
+      "edition": "2026年第十三届",
+      "fields": {
+        "registration_deadline": "2026-08-25"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-a8c454368af315e2f634"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-a8c454368af315e2f634",
+          "url": "https://chxy.usst.edu.cn/2026/0821/c17378a369648/page.htm",
+          "title": "第十三届新材料大赛报名延期通知",
+          "quote": "",
+          "locator": "延期通知",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-08-25",
+          "evidence_ids": [
+            "ev-a8c454368af315e2f634"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c96-2025-1",
+      "catalog_code": "2026096",
+      "title": "VEX机器人亚洲公开赛",
+      "edition": "2025—2026赛季 VEX U 亚洲公开赛（2025年12月）",
+      "fields": {
+        "registration_deadline": "2025-12-15",
+        "registration_deadline_at": "2025-12-15T12:00:00-05:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-313e435a2fe95211d781"
+        ],
+        "registration_deadline_at": [
+          "ev-313e435a2fe95211d781"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-313e435a2fe95211d781",
+          "url": "https://events.vex.com/robot-competitions/college-competition/RE-VURC-25-0707.html",
+          "title": "VEX Asia Open Signature Event VEX U",
+          "quote": "",
+          "locator": "General Info / Registration",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-12-15",
+          "evidence_ids": [
+            "ev-313e435a2fe95211d781"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-12-15T12:00:00-05:00",
+          "evidence_ids": [
+            "ev-313e435a2fe95211d781"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c97-2026-1",
+      "catalog_code": "2026097",
+      "title": "高校电气电子工程创新大赛",
+      "edition": "2026年第五届",
+      "fields": {
+        "registration_deadline": "2026-04-01",
+        "event_completed_on": "2026-10-06"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-6153150560368e5f0d30"
+        ],
+        "event_completed_on": [
+          "completed-curated-c97-2026-1"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-6153150560368e5f0d30",
+          "url": "https://eeeic.ces.org.cn/Index",
+          "title": "第五届大赛官网",
+          "quote": "",
+          "locator": "官网首页截止时间",
+          "verified_at": "2026-10-03"
+        },
+        {
+          "id": "completed-curated-c97-2026-1",
+          "url": "https://eeeic.ces.org.cn/Index",
+          "title": "第五届高校电气电子工程创新大赛官网",
+          "locator": "2026-08-04全国总决赛报道",
+          "verified_at": "2026-10-06",
+          "quote": ""
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-04-01",
+          "evidence_ids": [
+            "ev-6153150560368e5f0d30"
+          ]
+        },
+        {
+          "id": "verified-event-completed",
+          "heading": "赛事进展",
+          "text": "第五届高校电气电子工程创新大赛全国总决赛于2026年7月28—30日在哈尔滨工业大学举行，7月30日结束。",
+          "evidence_ids": [
+            "completed-curated-c97-2026-1"
+          ]
+        },
+        {
+          "id": "verified-final-dates",
+          "heading": "赛程安排",
+          "text": "全国总决赛于2026年7月28—30日在哈尔滨工业大学举行。",
+          "evidence_ids": [
+            "completed-curated-c97-2026-1"
+          ]
+        }
+      ],
+      "supersedes_sections": [
+        "fact-3"
+      ]
+    },
+    {
+      "code": "curated-c100-2026-1",
+      "catalog_code": "2026100",
+      "title": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
+      "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
+      "fields": {
+        "registration_deadline": "2026-01-20"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-5a2490e9a0e139b6b95f"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-5a2490e9a0e139b6b95f",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/344",
+          "title": "2026英特尔杯嵌入式AI通知",
+          "quote": "",
+          "locator": "二、四、五",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-01-20",
+          "evidence_ids": [
+            "ev-5a2490e9a0e139b6b95f"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c101-2026-1",
+      "catalog_code": "2026101",
+      "title": "全国大学生电子设计竞赛信息科技前沿专题赛（瑞萨杯）",
+      "edition": "2026年瑞萨杯信息科技前沿专题赛",
+      "fields": {
+        "registration_deadline": "2026-01-15",
+        "registration_deadline_at": "2026-01-15T17:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-e3e5f30714b7b369e028"
+        ],
+        "registration_deadline_at": [
+          "ev-e3e5f30714b7b369e028"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-e3e5f30714b7b369e028",
+          "url": "https://www.nuedc-training.com.cn/index/news/details/new_id/342",
+          "title": "2026瑞萨杯通知",
+          "quote": "",
+          "locator": "二至五",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-01-15",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-01-15T17:00:00+08:00",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c103-2026-1",
+      "catalog_code": "2026103",
+      "title": "智能无人系统应用挑战赛",
+      "edition": "2026年第六届",
+      "fields": {
+        "registration_deadline": "2026-07-05"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-9d2a3a3a0967ab16b828"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-9d2a3a3a0967ab16b828",
+          "url": "https://files.sciconf.cn/gs_pdf/2026/08/17/20260817142749143335.pdf",
+          "title": "第六届挑战赛正式通知",
+          "quote": "",
+          "locator": "PDF第1—6页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-07-05",
+          "evidence_ids": [
+            "ev-9d2a3a3a0967ab16b828"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c104-2026-1",
+      "catalog_code": "2026104",
+      "title": "中国智能机器人格斗及竞技大赛",
+      "edition": "2026年第十届",
+      "fields": {
+        "registration_deadline": "2026-10-15",
+        "submission_deadline": "2026-10-20"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-74bd9c4390283b3197d7"
+        ],
+        "submission_deadline": [
+          "ev-74bd9c4390283b3197d7"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-74bd9c4390283b3197d7",
+          "url": "http://www.robo-maker.org/new/announcement/115.html",
+          "title": "第十届机器人格斗及竞技大赛通知",
+          "quote": "",
+          "locator": "网页嵌入通知图片三、四、六",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-10-15",
+          "evidence_ids": [
+            "ev-74bd9c4390283b3197d7"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-10-20",
+          "evidence_ids": [
+            "ev-74bd9c4390283b3197d7"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c105-2026-1",
+      "catalog_code": "2026105",
+      "title": "FDI模拟投资仲裁竞赛（FDI Moot）",
+      "edition": "2026年FDI Moot",
+      "fields": {
+        "registration_deadline": "2026-06-01"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-99863fd94fd0d887e494"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-99863fd94fd0d887e494",
+          "url": "https://fdiscia.lexmoot.com/newmoot?entype=Rules&name=name1",
+          "title": "2026深圳赛区日程",
+          "quote": "",
+          "locator": "Schedule：Registration Closing、Leader Registration、Skeleton Briefs",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-06-01",
+          "evidence_ids": [
+            "ev-99863fd94fd0d887e494"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c107-2026-1",
+      "catalog_code": "2026107",
+      "title": "国际商事模拟仲裁庭辩论赛（Vis Moot）",
+      "edition": "2026年第33届Vis Moot",
+      "fields": {
+        "registration_deadline": "2025-11-13",
+        "registration_deadline_at": "2025-11-13T23:30:00+01:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-a4a2fff1d8b8ec400896"
+        ],
+        "registration_deadline_at": [
+          "ev-a4a2fff1d8b8ec400896"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-a4a2fff1d8b8ec400896",
+          "url": "https://www.vismoot.org/wp-content/uploads/2025/08/33rd-Vis-Moot-Rules_FINAL.pdf",
+          "title": "33rd Vis Moot Rules",
+          "quote": "",
+          "locator": "PDF第4—9页及Memoranda",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-11-13",
+          "evidence_ids": [
+            "ev-a4a2fff1d8b8ec400896"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-11-13T23:30:00+01:00",
+          "evidence_ids": [
+            "ev-a4a2fff1d8b8ec400896"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c108-2026-1",
+      "catalog_code": "2026108",
+      "title": "国际刑事法院模拟法庭竞赛（ICC）",
+      "edition": "2026年第十三届IBA ICCMCC",
+      "fields": {
+        "registration_deadline": "2025-11-17",
+        "registration_deadline_at": "2025-11-17T17:00:00+01:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-72638f0533bc889651f7"
+        ],
+        "registration_deadline_at": [
+          "ev-72638f0533bc889651f7"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-72638f0533bc889651f7",
+          "url": "https://iccmoot.com/wp-content/uploads/2025/08/ROPs-IBA-ICCMCC-2026.pdf",
+          "title": "2026 ICC Moot Rules of Procedure",
+          "quote": "",
+          "locator": "Art11、22",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-11-17",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-11-17T17:00:00+01:00",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c109-2025-1",
+      "catalog_code": "2026109",
+      "title": "红十字国际人道法模拟法庭比赛",
+      "edition": "2025年第十九届中国国际人道法模拟法庭",
+      "fields": {
+        "registration_deadline": "2025-09-07"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-40e78fb31e227c6b85ad"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-40e78fb31e227c6b85ad",
+          "url": "https://www.icrc.org/sites/default/files/2025-06/2025_china_IHL_Moot_Court_Rules-final.pdf",
+          "title": "2025中国人道法模拟法庭比赛规则",
+          "quote": "",
+          "locator": "PDF第2—7页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-09-07",
+          "evidence_ids": [
+            "ev-40e78fb31e227c6b85ad"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c110-2026-1",
+      "catalog_code": "2026110",
+      "title": "全国法律英语大赛",
+      "edition": "2026年第十五届全国法律英语大赛",
+      "fields": {
+        "registration_deadline": "2026-04-10",
+        "registration_deadline_at": "2026-04-11T00:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-3a9ae76d09b3ef318926"
+        ],
+        "registration_deadline_at": [
+          "ev-3a9ae76d09b3ef318926"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-3a9ae76d09b3ef318926",
+          "url": "https://law.tongji.edu.cn/info/1355/8537.htm",
+          "title": "第十五届全国法律英语大赛华东赛区通知",
+          "quote": "",
+          "locator": "一至四",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-04-10",
+          "evidence_ids": [
+            "ev-3a9ae76d09b3ef318926"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-04-11T00:00:00+08:00",
+          "evidence_ids": [
+            "ev-3a9ae76d09b3ef318926"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c113-2026-1",
+      "catalog_code": "2026113",
+      "title": "全国大学生地质技能竞赛（2026）",
+      "edition": "2026年第八届",
+      "fields": {
+        "registration_deadline": "2026-08-15"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-18142c418ed60dc0cb4f"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-18142c418ed60dc0cb4f",
+          "url": "https://www.geosociety.org.cn/upload/pdf/notice/20260706173639_29.pdf",
+          "title": "第八届地质技能竞赛二号通知与2026修订章程",
+          "quote": "",
+          "locator": "PDF第2—3、6—31页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-08-15",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c115-2026-1",
+      "catalog_code": "2026115",
+      "title": "CCE杯全国大学生复合材料设计与制作大赛（原上纬杯）",
+      "edition": "2026年“CCE”杯第十一届",
+      "fields": {
+        "registration_deadline": "2026-07-10",
+        "submission_deadline": "2026-08-20"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-25528b5f8671c6a1be57"
+        ],
+        "submission_deadline": [
+          "ev-25528b5f8671c6a1be57"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-25528b5f8671c6a1be57",
+          "url": "https://www.chinacompositesexpo.com/cn/news-detail-128-17488.html",
+          "title": "2026 CCE杯第十一届通知",
+          "quote": "",
+          "locator": "报名、作品与赛程",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-07-10",
+          "evidence_ids": [
+            "ev-25528b5f8671c6a1be57"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-08-20",
+          "evidence_ids": [
+            "ev-25528b5f8671c6a1be57"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c117-2026-1",
+      "catalog_code": "2026117",
+      "title": "全国航空航天类专业本科毕业设计成果交流会",
+      "edition": "2026年第七届航空航天本科毕设成果交流会",
+      "fields": {
+        "registration_deadline": "2026-04-20"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-caadcd3a5d3be31e0cca"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-caadcd3a5d3be31e0cca",
+          "url": "https://aero.nuaa.edu.cn/_upload/article/files/1e/f4/5617aa0a4e6f916ba9b23f5f9246/da998135-7e4e-4c7e-b578-2a22fc47ec9d.pdf",
+          "title": "第七届本科毕业设计成果交流会一号通知",
+          "quote": "",
+          "locator": "扫描PDF第1—2页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-04-20",
+          "evidence_ids": [
+            "ev-caadcd3a5d3be31e0cca"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c121-2026-1",
+      "catalog_code": "2026121",
+      "title": "第七届力学超材料大赛",
+      "edition": "2026年第七届超材料力学大赛",
+      "fields": {
+        "registration_deadline": "2026-08-31",
+        "submission_deadline": "2026-09-30"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-695f0ada17d95979db67"
+        ],
+        "submission_deadline": [
+          "ev-695f0ada17d95979db67"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-695f0ada17d95979db67",
+          "url": "https://aero.nuaa.edu.cn/_upload/article/files/e0/ee/c8bd89e740738bbf543c423a63a0/fd6b4a7b-f576-45f2-a1e2-b23b7d01918b.pdf",
+          "title": "第七届超材料力学大赛一轮通知",
+          "quote": "",
+          "locator": "PDF第2—4页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-08-31",
+          "evidence_ids": [
+            "ev-695f0ada17d95979db67"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2026-09-30",
+          "evidence_ids": [
+            "ev-695f0ada17d95979db67"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-shanghai-mechanics-2026-7",
+      "catalog_code": "2026122",
+      "title": "第七届上海市大学生力学竞赛",
+      "edition": "2026年第七届上海市大学生力学竞赛",
+      "fields": {
+        "registration_deadline": "2026-09-25"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-881aa6d4135065252573"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-881aa6d4135065252573",
+          "url": "http://www.sstam.org.cn/show.aspx?flag=11&info_id=846&info_lb=11",
+          "title": "第七届上海市力学竞赛第二轮通知",
+          "quote": "",
+          "locator": "三",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-09-25",
+          "evidence_ids": [
+            "ev-881aa6d4135065252573"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c126-2026-1",
+      "catalog_code": "2026126",
+      "title": "第五届国际奥林匹克互联网学科竞赛“理论力学”",
+      "edition": "2026年第五届理论力学互联网奥赛",
+      "fields": {
+        "registration_deadline": "2026-03-15"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-af3469b1a2ec93b2c0bc"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-af3469b1a2ec93b2c0bc",
+          "url": "https://turkmenistan.gov.tm/en/post/102661/energy-institute-turkmenistan-invites-students-5th-international-olympiad-theoretical-mechanics",
+          "title": "第五届理论力学奥赛邀请",
+          "quote": "",
+          "locator": "正文比赛形式与注册",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-03-15",
+          "evidence_ids": [
+            "ev-af3469b1a2ec93b2c0bc"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c135-fe3f1f98",
+      "catalog_code": "2026128",
+      "title": "“SCIP+”绿色化学化工创新创业大赛",
+      "edition": "2025年",
+      "fields": {
+        "registration_deadline": "2025-09-30"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-16b371449c0337f1aa24"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-16b371449c0337f1aa24",
+          "url": "https://makeable.cn/2025-scip/2025-scip-%E5%A4%A7%E8%B5%9B%E8%AF%A6%E6%83%85/",
+          "title": "2025 SCIP+ 大赛详情",
+          "quote": "",
+          "locator": "主命题、指定命题、赛程安排",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-09-30",
+          "evidence_ids": [
+            "ev-16b371449c0337f1aa24"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c129-2026-1",
+      "catalog_code": "2026129",
+      "title": "全国大学生电化学测量技术竞赛",
+      "edition": "2026年第五届电化学测量技术竞赛",
+      "fields": {
+        "registration_deadline": "2026-04-15",
+        "registration_deadline_at": "2026-04-15T23:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-dac9d305a7138663b019"
+        ],
+        "registration_deadline_at": [
+          "ev-dac9d305a7138663b019"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-dac9d305a7138663b019",
+          "url": "https://www.shiep.edu.cn/_upload/article/files/c9/0e/a4c976534696aff535bcec09172a/ad2d727e-ddc5-44fc-b133-351a94ffbfd5.pdf",
+          "title": "第五届电化学测量技术竞赛通知",
+          "quote": "",
+          "locator": "PDF第1—10页",
+          "verified_at": "2026-10-03"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-04-15",
+          "evidence_ids": [
+            "ev-dac9d305a7138663b019"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-04-15T23:00:00+08:00",
+          "evidence_ids": [
+            "ev-dac9d305a7138663b019"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c143-17bb43de",
+      "catalog_code": "2026143",
+      "title": "CCF大学生计算机系统与程序设计竞赛（CCSP）",
+      "edition": "2026年",
+      "fields": {
+        "registration_deadline": "2026-10-11"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-4bbfd096a53c27038908"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-4bbfd096a53c27038908",
+          "url": "https://ccsp.ccf.org.cn/ccsp/Bulletin/2026-09-09/931089.shtml",
+          "title": "2026年CCF大学生计算机系统与程序设计竞赛报名通知",
+          "quote": "",
+          "locator": "参赛资格、报名、竞赛安排",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-10-11",
+          "evidence_ids": [
+            "ev-4bbfd096a53c27038908"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c198-787fbf0f",
+      "catalog_code": "2026198",
+      "title": "全国大学生“用日语讲好中国故事”微视频大赛",
+      "edition": "2025年第五届",
+      "fields": {
+        "registration_deadline": "2025-06-30",
+        "submission_deadline": "2025-07-15"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-680f323137c56650a93b"
+        ],
+        "submission_deadline": [
+          "ev-c684996738b9fc50ae06"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-680f323137c56650a93b",
+          "url": "https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+          "title": "第5届全国大学生“用日语讲好中国故事”微视频大赛通知（第1号）",
+          "quote": "",
+          "locator": "PDF第2—3页，第五部分；第6页落款",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "ev-c684996738b9fc50ae06",
+          "url": "https://www.xdsisu.edu.cn/_upload/article/files/ec/e5/c547a92b436b8933057a0fc70569/e775837c-e3ec-416d-9815-7aef9d6c66a6.pdf",
+          "title": "第5届全国大学生“用日语讲好中国故事”微视频大赛通知（第1号）",
+          "quote": "",
+          "locator": "PDF第2—5页",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-06-30",
+          "evidence_ids": [
+            "ev-680f323137c56650a93b"
+          ]
+        },
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2025-07-15",
+          "evidence_ids": [
+            "ev-c684996738b9fc50ae06"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c242-2e9a3463",
+      "catalog_code": "2026242",
+      "title": "上海市土木工程材料知识竞赛",
+      "edition": "2024年第九届",
+      "fields": {
+        "registration_deadline": "2024-04-20"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-7dcd8cc389d8cedfa60d"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-7dcd8cc389d8cedfa60d",
+          "url": "https://polymer.tongji.edu.cn/__local/D/50/94/EAF6228AAC76F3CC03FF762EAB5_A37EE8C3_46AB3.pdf",
+          "title": "关于举办“城建星材杯” 上海市第九届土木工程材料知识",
+          "quote": "",
+          "locator": "PDF第2—4页",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2024-04-20",
+          "evidence_ids": [
+            "ev-7dcd8cc389d8cedfa60d"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c244-2191d337",
+      "catalog_code": "2026244",
+      "title": "同济大学化学知识竞赛",
+      "edition": "2008年第一届",
+      "fields": {
+        "registration_deadline": "2008-11-05"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-4c94791d2b080e2b5280"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-4c94791d2b080e2b5280",
+          "url": "https://www.tongji.edu.cn/info/1032/1968.htm",
+          "title": "关于举办第一届“同济大学化学知识竞赛”的通知-同济大学",
+          "quote": "",
+          "locator": "参赛对象、竞赛内容和时间安排",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2008-11-05",
+          "evidence_ids": [
+            "ev-4c94791d2b080e2b5280"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c244-4f33501b",
+      "catalog_code": "2026244",
+      "title": "同济大学化学知识竞赛",
+      "edition": "2025年第十八届",
+      "fields": {
+        "registration_deadline": "2025-11-16",
+        "registration_deadline_at": "2025-11-16T23:55:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-80978d39371db903bf3b"
+        ],
+        "registration_deadline_at": [
+          "ev-80978d39371db903bf3b"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-80978d39371db903bf3b",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzY4MzEzMTc3Nw%3D%3D&mid=2247515657&idx=1&sn=f01c64cee44bae6ae4f520b067375af6",
+          "title": "关于举办第十八届“国药杯”同济大学化学知识竞赛的通知",
+          "quote": "",
+          "locator": "PDF第1—2页",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-11-16",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-11-16T23:55:00+08:00",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c247-1467df86",
+      "catalog_code": "2026247",
+      "title": "使命与担当",
+      "edition": "2020年第六届",
+      "fields": {
+        "registration_deadline": "2020-10-16"
+      },
+      "field_evidence": {
+        "registration_deadline": [
+          "ev-7705f167a48b28f09d1a"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-7705f167a48b28f09d1a",
+          "url": "https://tjwm.tongji.edu.cn/info/1005/1176.htm",
+          "title": "第六届同济大学“使命与担当”社会实践与创新竞赛通知-同济大学精神文明网",
+          "quote": "",
+          "locator": "四、竞赛设计；六、报名时间和报名方式",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2020-10-16",
+          "evidence_ids": [
+            "ev-7705f167a48b28f09d1a"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c155-ffcfd903",
+      "catalog_code": "2026155",
+      "title": "IFLA 国际学生竞赛",
+      "edition": "2025年IFLA学生竞赛",
+      "fields": {
+        "submission_deadline": "2025-05-31"
+      },
+      "field_evidence": {
+        "submission_deadline": [
+          "ev-bc539b7288e376d4cf8b"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-bc539b7288e376d4cf8b",
+          "url": "https://ifla2025.com/student-activities/student-competition",
+          "title": "IFLA 2025报名及截止",
+          "quote": "",
+          "locator": "关键日期和报名步骤",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-submission_deadline",
+          "heading": "作品提交截止",
+          "text": "2025-05-31",
+          "evidence_ids": [
+            "ev-bc539b7288e376d4cf8b"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "m89-2026020-overview",
+      "catalog_code": "2026020",
+      "title": "全球校园人工智能算法精英大赛·AI+开源",
+      "edition": "2026第八届·AI+开源主题赛",
+      "fields": {
+        "registration_deadline_at": "2026-10-15T20:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline_at": [
+          "verified-aic-dates"
+        ]
+      },
+      "sources": [
+        {
+          "id": "verified-aic-dates",
+          "url": "https://www.aicomp.cn/tracks/tracks-5/4924.html",
+          "title": "2026AIC·AI+开源算法主题赛赛题及竞赛规则",
+          "quote": "",
+          "locator": "七、赛程安排：报名、初赛",
+          "verified_at": "2026-10-04"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-10-15T20:00:00+08:00",
+          "evidence_ids": [
+            "verified-aic-dates"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c148-79c641ae",
+      "catalog_code": "2026148",
+      "title": "全国大学生软件创新大赛",
+      "edition": "2026年第十九届",
+      "fields": {
+        "registration_deadline_at": "2026-02-02T18:00:00+08:00",
+        "event_completed_on": "2026-10-06"
+      },
+      "field_evidence": {
+        "registration_deadline_at": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "event_completed_on": [
+          "completed-curated-c148-79c641ae"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-7abc4924c99ba867c215",
+          "url": "https://ss.dlut.edu.cn/info/1371/29872.htm",
+          "title": "第十九届全国大学生软件创新大赛通知",
+          "quote": "",
+          "locator": "参赛对象、赛制、报名、材料提交",
+          "verified_at": "2026-10-02"
+        },
+        {
+          "id": "completed-curated-c148-79c641ae",
+          "url": "https://www.swcontest.com.cn/",
+          "title": "第十九届全国大学生软件创新大赛官网",
+          "locator": "新闻动态：2026-06-02赛事落幕报道",
+          "verified_at": "2026-10-06",
+          "quote": ""
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-02-02T18:00:00+08:00",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "verified-event-completed",
+          "heading": "赛事进展",
+          "text": "第十九届全国大学生软件创新大赛已结束，官网于2026年6月2日发布落幕报道。",
+          "evidence_ids": [
+            "completed-curated-c148-79c641ae"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "curated-c192-35ef9e26",
+      "catalog_code": "2026192",
+      "title": "“德语之星”全国高校德语演讲比赛",
+      "edition": "2026年第五届",
+      "fields": {
+        "registration_deadline_at": "2026-09-30T17:00:00+08:00"
+      },
+      "field_evidence": {
+        "registration_deadline_at": [
+          "ev-47e0659627e28386b4c3"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ev-47e0659627e28386b4c3",
+          "url": "https://deutsch.tongji.edu.cn/info/1041/1361.htm",
+          "title": "第五届德语之星全国高校德语演讲比赛通知",
+          "quote": "",
+          "locator": "参赛资格、初赛及报名方式",
+          "verified_at": "2026-10-02"
+        }
+      ],
+      "sections": [
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-09-30T17:00:00+08:00",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
+        }
+      ]
+    }
+  ]
+}

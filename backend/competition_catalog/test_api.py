@@ -85,7 +85,7 @@ class CatalogAPITests(LibraryAPIFixtures, TestCase):
         self.catalog.save()
         result = self.client.get('/api/v1/competition-catalog/2026001/').data
         self.assertEqual(result['source_url'], '')
-        self.assertEqual(result['departments'], ['测试学院'])
+        self.assertEqual(result['departments'], [])
         self.assertNotIn('private', str(result))
 
     def test_search_grade_page_limits_and_invalid_parameters(self):

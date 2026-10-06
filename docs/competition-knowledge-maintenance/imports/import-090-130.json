@@ -558,7 +558,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -679,7 +679,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -879,7 +879,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -887,7 +887,7 @@
       "code": "final-curated-c93-2025-2",
       "title": "中国好创意暨全国数字艺术设计大赛",
       "edition": "2025年第十九届",
-      "body": "## 赛事介绍\n\n2026年为第二十届中国好创意暨全国数字艺术设计大赛。\n\n## 赛程安排\n\n常规报名及截稿2025年6月30日17:00；免费报名。\n\n## 参赛对象\n\n在校学生可个人或团队投稿；教师另列。学生23类作品按二级学院报送，每类最多20件，论文每人仅1篇。",
+      "body": "## 赛事介绍\n\n2026年为第二十届中国好创意暨全国数字艺术设计大赛。\n\n## 赛程安排\n\n常规报名及截稿2025年6月30日17:00；免费报名。\n\n## 参赛对象\n\n在校学生可个人或团队投稿；教师另列。学生23类作品按二级学院报送，每类最多20件，论文每人仅1篇。\n\n## 报名截止\n\n2025-06-30\n\n## 报名截止时刻\n\n2025-06-30T17:00:00+08:00",
       "sources": [
         {
           "id": "ev-568055544dfc5794101b",
@@ -928,11 +928,19 @@
           "aliases": [],
           "summary": "2026年为第二十届中国好创意暨全国数字艺术设计大赛。",
           "fields": {
-            "eligibility": "在校学生可个人或团队投稿；教师另列。学生23类作品按二级学院报送，每类最多20件，论文每人仅1篇。"
+            "eligibility": "在校学生可个人或团队投稿；教师另列。学生23类作品按二级学院报送，每类最多20件，论文每人仅1篇。",
+            "registration_deadline": "2025-06-30",
+            "registration_deadline_at": "2025-06-30T17:00:00+08:00"
           },
           "field_evidence": {
             "eligibility": [
               "ev-568055544dfc5794101b"
+            ],
+            "registration_deadline": [
+              "ev-04a98a1ca0834430cda1"
+            ],
+            "registration_deadline_at": [
+              "ev-04a98a1ca0834430cda1"
             ]
           },
           "sources": [
@@ -977,12 +985,28 @@
               "evidence_ids": [
                 "ev-568055544dfc5794101b"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-06-30",
+              "evidence_ids": [
+                "ev-04a98a1ca0834430cda1"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2025-06-30T17:00:00+08:00",
+              "evidence_ids": [
+                "ev-04a98a1ca0834430cda1"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "39b26d56af0653b7af1fc810f78fe09a9ba11f3fac4b690e72af78dec1d8a1b8",
+          "content_hash": "c7bdd6552940e8a7b95ac22ea8b184e25c29a06293b3bc29fa25aefb6d5966f4",
           "category_evidence": [
             "ev-568055544dfc5794101b"
           ],
@@ -1020,7 +1044,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1147,7 +1171,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1288,7 +1312,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1296,7 +1320,7 @@
       "code": "final-curated-c95-2026-1",
       "title": "国际大学生新材料创新创意大赛",
       "edition": "2026年第十三届",
-      "body": "## 参赛对象\n\n全日制本科、硕士、博士学生按团队最高学历分组；3—5人，每人限1队1作品，教师不超过3人。\n\n## 报名方式\n\n创新、创意、创业三个方向；报名材料须学校盖章及2位高级职称专家推荐，发送至clds@usst.edu.cn。\n\n## 赛程安排\n\n原8月15日报名截止经正式通知延期至8月25日。\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛对象\n\n全日制本科、硕士、博士学生按团队最高学历分组；3—5人，每人限1队1作品，教师不超过3人。",
+      "body": "## 参赛对象\n\n全日制本科、硕士、博士学生按团队最高学历分组；3—5人，每人限1队1作品，教师不超过3人。\n\n## 报名方式\n\n创新、创意、创业三个方向；报名材料须学校盖章及2位高级职称专家推荐，发送至clds@usst.edu.cn。\n\n## 赛程安排\n\n原8月15日报名截止经正式通知延期至8月25日。\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛对象\n\n全日制本科、硕士、博士学生按团队最高学历分组；3—5人，每人限1队1作品，教师不超过3人。\n\n## 报名截止\n\n2026-08-25",
       "sources": [
         {
           "id": "ev-d713deb5534ca0617125",
@@ -1342,9 +1366,7 @@
           "edition": "2026年第十三届",
           "category": "chemistry-and-materials",
           "level": "municipal",
-          "aliases": [
-            "上海市先进材料创新创意大赛"
-          ],
+          "aliases": [],
           "summary": "全日制本科、硕士、博士学生按团队最高学历分组；3—5人，每人限1队1作品，教师不超过3人。",
           "fields": {
             "team_size_min": 3,
@@ -1354,7 +1376,8 @@
               "本科",
               "硕士",
               "博士"
-            ]
+            ],
+            "registration_deadline": "2026-08-25"
           },
           "field_evidence": {
             "team_size_min": [
@@ -1368,6 +1391,9 @@
             ],
             "education": [
               "ev-d713deb5534ca0617125"
+            ],
+            "registration_deadline": [
+              "ev-a8c454368af315e2f634"
             ]
           },
           "sources": [
@@ -1444,20 +1470,24 @@
               "evidence_ids": [
                 "ev-d713deb5534ca0617125"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-08-25",
+              "evidence_ids": [
+                "ev-a8c454368af315e2f634"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "d7dfcda623b6e6f8968c8f0fda2b3dad80e20ed29f66c417f2fb97b43f00b623",
+          "content_hash": "b225f6023fdd97497ea51adc2af0236ebdd21d6e094db2a7377aea6016d8156e",
           "category_evidence": [
             "ev-d713deb5534ca0617125"
           ],
-          "alias_evidence": {
-            "上海市先进材料创新创意大赛": [
-              "ev-d713deb5534ca0617125"
-            ]
-          },
+          "alias_evidence": {},
           "learning_resources": [
             {
               "id": "resource-6fa374289396be115c02",
@@ -1485,7 +1515,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1493,7 +1523,7 @@
       "code": "final-curated-c96-2025-1",
       "title": "VEX机器人亚洲公开赛",
       "edition": "2025—2026赛季 VEX U 亚洲公开赛（2025年12月）",
-      "body": "## 赛程安排\n\n高校组VEX U赛事2025年12月18—21日在北京首钢举办；属2025—2026赛季，有条件取得2026世锦赛晋级名额。\n\n## 赛程安排\n\n官方报名截止2025年12月15日12:00 EST\n\n## 作品要求\n\nVEX U组要求提交实体工程笔记本并参加现场评审。",
+      "body": "## 赛程安排\n\n高校组VEX U赛事2025年12月18—21日在北京首钢举办；属2025—2026赛季，有条件取得2026世锦赛晋级名额。\n\n## 赛程安排\n\n官方报名截止2025年12月15日12:00 EST\n\n## 作品要求\n\nVEX U组要求提交实体工程笔记本并参加现场评审。\n\n## 报名截止\n\n2025-12-15\n\n## 报名截止时刻\n\n2025-12-15T12:00:00-05:00",
       "sources": [
         {
           "id": "ev-313e435a2fe95211d781",
@@ -1527,8 +1557,18 @@
             "VEX"
           ],
           "summary": "高校组VEX U赛事2025年12月18—21日在北京首钢举办；属2025—2026赛季，有条件取得2026世锦赛晋级名额。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2025-12-15",
+            "registration_deadline_at": "2025-12-15T12:00:00-05:00"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-313e435a2fe95211d781"
+            ],
+            "registration_deadline_at": [
+              "ev-313e435a2fe95211d781"
+            ]
+          },
           "sources": [
             {
               "id": "ev-313e435a2fe95211d781",
@@ -1563,12 +1603,28 @@
               "evidence_ids": [
                 "ev-313e435a2fe95211d781"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-12-15",
+              "evidence_ids": [
+                "ev-313e435a2fe95211d781"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2025-12-15T12:00:00-05:00",
+              "evidence_ids": [
+                "ev-313e435a2fe95211d781"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "0e31290bed8a15ca1889460f2d0d11158d415496360462182650f9913f91a512",
+          "content_hash": "5d5ad3e17aaab4bf5928f1074250b8dcf1534b903071d6bfb52aecd28de051c6",
           "category_evidence": [
             "ev-313e435a2fe95211d781"
           ],
@@ -1598,7 +1654,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1606,7 +1662,7 @@
       "code": "final-curated-c97-2026-1",
       "title": "高校电气电子工程创新大赛",
       "edition": "2026年第五届",
-      "body": "## 参赛对象\n\n在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。\n\n## 作品要求\n\n自由命题团队不超过5人，企业命题不超过6人；不用一个统一人数上限替代赛道要求。\n\n## 赛程安排\n\n决赛7月27—29日哈尔滨，决赛材料7月15日12时截止。\n\n## 作品要求\n\n决赛交Word报告、签章PDF、视频（10分钟/300MB以内）、PPT和海报；去除学校教师信息。\n\n## 赛程安排\n\n官网报名截止2026年4月1日。\n\n## 参赛对象\n\n在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。",
+      "body": "## 参赛对象\n\n在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。\n\n## 作品要求\n\n自由命题团队不超过5人，企业命题不超过6人；不用一个统一人数上限替代赛道要求。\n\n## 作品要求\n\n决赛交Word报告、签章PDF、视频（10分钟/300MB以内）、PPT和海报；去除学校教师信息。\n\n## 赛程安排\n\n官网报名截止2026年4月1日。\n\n## 参赛对象\n\n在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。\n\n## 报名截止\n\n2026-04-01\n\n## 赛事进展\n\n第五届高校电气电子工程创新大赛全国总决赛于2026年7月28—30日在哈尔滨工业大学举行，7月30日结束。\n\n## 赛程安排\n\n全国总决赛于2026年7月28—30日在哈尔滨工业大学举行。",
       "sources": [
         {
           "id": "ev-57793855d0f4377f4a91",
@@ -1614,14 +1670,6 @@
           "title": "高校电气电子工程创新大赛参赛章程",
           "quote": "",
           "locator": "参赛要求",
-          "verified_at": "2026-10-03"
-        },
-        {
-          "id": "ev-9c8f4cbc3adb5dd367f3",
-          "url": "https://www.ces.org.cn/html/report/26062783-1.htm",
-          "title": "第五届全国决赛通知",
-          "quote": "",
-          "locator": "国赛安排通知：赛程",
           "verified_at": "2026-10-03"
         },
         {
@@ -1639,6 +1687,14 @@
           "quote": "",
           "locator": "官网首页截止时间",
           "verified_at": "2026-10-03"
+        },
+        {
+          "id": "completed-curated-c97-2026-1",
+          "url": "https://eeeic.ces.org.cn/Index",
+          "title": "第五届高校电气电子工程创新大赛官网",
+          "locator": "2026-08-04全国总决赛报道",
+          "verified_at": "2026-10-06",
+          "quote": ""
         }
       ],
       "attachments": [],
@@ -1663,11 +1719,19 @@
           "aliases": [],
           "summary": "在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。",
           "fields": {
-            "eligibility": "在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。"
+            "eligibility": "在校学生以本科生为主，研究生人数不超过队员三分之一；每人只能参加1队，指导教师至多2人。",
+            "registration_deadline": "2026-04-01",
+            "event_completed_on": "2026-10-06"
           },
           "field_evidence": {
             "eligibility": [
               "ev-57793855d0f4377f4a91"
+            ],
+            "registration_deadline": [
+              "ev-6153150560368e5f0d30"
+            ],
+            "event_completed_on": [
+              "completed-curated-c97-2026-1"
             ]
           },
           "sources": [
@@ -1677,14 +1741,6 @@
               "title": "高校电气电子工程创新大赛参赛章程",
               "quote": "",
               "locator": "参赛要求",
-              "verified_at": "2026-10-03"
-            },
-            {
-              "id": "ev-9c8f4cbc3adb5dd367f3",
-              "url": "https://www.ces.org.cn/html/report/26062783-1.htm",
-              "title": "第五届全国决赛通知",
-              "quote": "",
-              "locator": "国赛安排通知：赛程",
               "verified_at": "2026-10-03"
             },
             {
@@ -1702,6 +1758,14 @@
               "quote": "",
               "locator": "官网首页截止时间",
               "verified_at": "2026-10-03"
+            },
+            {
+              "id": "completed-curated-c97-2026-1",
+              "url": "https://eeeic.ces.org.cn/Index",
+              "title": "第五届高校电气电子工程创新大赛官网",
+              "locator": "2026-08-04全国总决赛报道",
+              "verified_at": "2026-10-06",
+              "quote": ""
             }
           ],
           "sections": [
@@ -1719,14 +1783,6 @@
               "text": "自由命题团队不超过5人，企业命题不超过6人；不用一个统一人数上限替代赛道要求。",
               "evidence_ids": [
                 "ev-57793855d0f4377f4a91"
-              ]
-            },
-            {
-              "id": "fact-3",
-              "heading": "赛程安排",
-              "text": "决赛7月27—29日哈尔滨，决赛材料7月15日12时截止。",
-              "evidence_ids": [
-                "ev-9c8f4cbc3adb5dd367f3"
               ]
             },
             {
@@ -1752,12 +1808,36 @@
               "evidence_ids": [
                 "ev-57793855d0f4377f4a91"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-04-01",
+              "evidence_ids": [
+                "ev-6153150560368e5f0d30"
+              ]
+            },
+            {
+              "id": "verified-event-completed",
+              "heading": "赛事进展",
+              "text": "第五届高校电气电子工程创新大赛全国总决赛于2026年7月28—30日在哈尔滨工业大学举行，7月30日结束。",
+              "evidence_ids": [
+                "completed-curated-c97-2026-1"
+              ]
+            },
+            {
+              "id": "verified-final-dates",
+              "heading": "赛程安排",
+              "text": "全国总决赛于2026年7月28—30日在哈尔滨工业大学举行。",
+              "evidence_ids": [
+                "completed-curated-c97-2026-1"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "7f15f50bb3ddb3d2f595d3fc27b93636d791e40497a966236d3b26449a4ebf69",
+          "content_hash": "4da7a88fd881ebc66844f4075bf53d61d1b618765d10bf27cff9e42007bf9c1a",
           "category_evidence": [
             "ev-57793855d0f4377f4a91"
           ],
@@ -1783,7 +1863,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1938,7 +2018,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2029,7 +2109,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2037,7 +2117,7 @@
       "code": "final-curated-c100-2026-1",
       "title": "全国大学生电子设计竞赛嵌入式AI专题赛（英特尔杯）",
       "edition": "2026年第十三届英特尔杯嵌入式AI专题赛",
-      "body": "## 赛程安排\n\n学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。\n\n## 作品要求\n\n基于规定Intel平台独立完成硬件、代码、调试和报告；中文报告约15000字、英文简报至多6页\n\n## 参赛对象与组队\n\n队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。",
+      "body": "## 赛程安排\n\n学校报名1月20日截止；初选方案3月25日，作品6月30日；报告邮寄7月1日以邮戳为准。\n\n## 作品要求\n\n基于规定Intel平台独立完成硬件、代码、调试和报告；中文报告约15000字、英文简报至多6页\n\n## 参赛对象与组队\n\n队员须为普通高校全日制在校本科生，每队3名学生，配备1名指导教师。学校通过邀请名单或分区申请取得报名资格。\n\n## 报名截止\n\n2026-01-20",
       "sources": [
         {
           "id": "ev-5a2490e9a0e139b6b95f",
@@ -2084,7 +2164,8 @@
             "education": [
               "本科"
             ],
-            "participation_type": "team"
+            "participation_type": "team",
+            "registration_deadline": "2026-01-20"
           },
           "field_evidence": {
             "team_size_min": [
@@ -2101,6 +2182,9 @@
             ],
             "participation_type": [
               "verified-embedded-eligibility"
+            ],
+            "registration_deadline": [
+              "ev-5a2490e9a0e139b6b95f"
             ]
           },
           "sources": [
@@ -2145,12 +2229,20 @@
               "evidence_ids": [
                 "verified-embedded-eligibility"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-01-20",
+              "evidence_ids": [
+                "ev-5a2490e9a0e139b6b95f"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "8b054717dc27bba74b9b2e5283bec378ef8d6bb922dfb52487544b0c3493f235",
+          "content_hash": "c3f26ec32c1725fa3bf7601523b46c1cfd5a0f0d64845f06b0ea8daad6680a10",
           "category_evidence": [
             "ev-5a2490e9a0e139b6b95f"
           ],
@@ -2182,7 +2274,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2190,7 +2282,7 @@
       "code": "final-curated-c101-2026-1",
       "title": "全国大学生电子设计竞赛信息科技前沿专题赛（瑞萨杯）",
       "edition": "2026年瑞萨杯信息科技前沿专题赛",
-      "body": "## 作品要求\n\n主题瑞萨MCU助力新兴产业和未来产业；初选RA6M5、决赛RA8P1，不得任意替换平台。\n\n## 赛程安排\n\n学校报名1月15日17时，初选报告3月20日17时，最终报告7月31日17时；决赛8月20—23日长春。\n\n## 作品要求\n\n中文初选报告不超过10000字、决赛不超过15000字，需独立完成作品并附代码及测试依据。\n\n## 参赛对象与组队\n\n队员在报名、竞赛与评审期间须为普通高校全日制在校本科生。每队3名学生，可配备1名指导教师；学校先取得初选资格或申请批准。",
+      "body": "## 作品要求\n\n主题瑞萨MCU助力新兴产业和未来产业；初选RA6M5、决赛RA8P1，不得任意替换平台。\n\n## 赛程安排\n\n学校报名1月15日17时，初选报告3月20日17时，最终报告7月31日17时；决赛8月20—23日长春。\n\n## 作品要求\n\n中文初选报告不超过10000字、决赛不超过15000字，需独立完成作品并附代码及测试依据。\n\n## 参赛对象与组队\n\n队员在报名、竞赛与评审期间须为普通高校全日制在校本科生。每队3名学生，可配备1名指导教师；学校先取得初选资格或申请批准。\n\n## 报名截止\n\n2026-01-15\n\n## 报名截止时刻\n\n2026-01-15T17:00:00+08:00",
       "sources": [
         {
           "id": "ev-e3e5f30714b7b369e028",
@@ -2237,7 +2329,9 @@
             "eligibility": "报名、竞赛和评审期间须为普通高校全日制在校本科生；参赛学校须具备分区初选资格或完成分区及组委会审批。",
             "education": [
               "本科"
-            ]
+            ],
+            "registration_deadline": "2026-01-15",
+            "registration_deadline_at": "2026-01-15T17:00:00+08:00"
           },
           "field_evidence": {
             "team_size_min": [
@@ -2254,6 +2348,12 @@
             ],
             "education": [
               "verified-renesas-eligibility"
+            ],
+            "registration_deadline": [
+              "ev-e3e5f30714b7b369e028"
+            ],
+            "registration_deadline_at": [
+              "ev-e3e5f30714b7b369e028"
             ]
           },
           "sources": [
@@ -2306,12 +2406,28 @@
               "evidence_ids": [
                 "verified-renesas-eligibility"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-01-15",
+              "evidence_ids": [
+                "ev-e3e5f30714b7b369e028"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-01-15T17:00:00+08:00",
+              "evidence_ids": [
+                "ev-e3e5f30714b7b369e028"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "59792ded512e1954c09a38a059dfb6c985f15e80b49f89d277190744e7130822",
+          "content_hash": "9f9dae52185363fe91aec19810c5243769e53b710e0022f654f82f505f523937",
           "category_evidence": [
             "ev-e3e5f30714b7b369e028"
           ],
@@ -2343,7 +2459,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2470,7 +2586,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2478,7 +2594,7 @@
       "code": "final-curated-c103-2026-1",
       "title": "智能无人系统应用挑战赛",
       "edition": "2026年第六届",
-      "body": "## 参赛对象\n\n面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。\n\n## 作品要求\n\n4个大类覆盖自主、算法、基础与创新，具体项目使用指定仿真或机器人平台。\n\n## 赛程安排\n\n学校/单位盖章报名表7月5日前发送IUSAC310@163.com，以回复确认；8月19—23日南京理工大学江阴校区。\n\n## 参赛对象\n\n面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。",
+      "body": "## 参赛对象\n\n面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。\n\n## 作品要求\n\n4个大类覆盖自主、算法、基础与创新，具体项目使用指定仿真或机器人平台。\n\n## 赛程安排\n\n学校/单位盖章报名表7月5日前发送IUSAC310@163.com，以回复确认；8月19—23日南京理工大学江阴校区。\n\n## 参赛对象\n\n面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。\n\n## 报名截止\n\n2026-07-05",
       "sources": [
         {
           "id": "ev-9d2a3a3a0967ab16b828",
@@ -2511,10 +2627,14 @@
           "aliases": [],
           "summary": "面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。",
           "fields": {
-            "eligibility": "面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。"
+            "eligibility": "面向高校学生与企事业科研团队，年龄地域不限，成果须自主知识产权及科研诚信；人数按赛项。",
+            "registration_deadline": "2026-07-05"
           },
           "field_evidence": {
             "eligibility": [
+              "ev-9d2a3a3a0967ab16b828"
+            ],
+            "registration_deadline": [
               "ev-9d2a3a3a0967ab16b828"
             ]
           },
@@ -2560,12 +2680,20 @@
               "evidence_ids": [
                 "ev-9d2a3a3a0967ab16b828"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-07-05",
+              "evidence_ids": [
+                "ev-9d2a3a3a0967ab16b828"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "afd66ff5dfad0933de47a3bfd0618995a7154e54b8244e65f0d041b68c1be5b1",
+          "content_hash": "a6e3bf517bcd596cd7ae90ef4f8e0b0cf3e7850c7e882ab1f219290569cea1d6",
           "category_evidence": [
             "ev-9d2a3a3a0967ab16b828"
           ],
@@ -2591,7 +2719,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2599,7 +2727,7 @@
       "code": "final-curated-c104-2026-1",
       "title": "中国智能机器人格斗及竞技大赛",
       "edition": "2026年第十届",
-      "body": "## 报名方式\n\n全国高校本科、专科/高职，以二级学院报名；每支队4名学生、最多2名教师。\n\n## 赛事介绍\n\n轮式/仿人格斗、视觉、具身、无人机竞技和创新设计；校赛后达到50%队伍进入国赛，初评后进入决赛。\n\n## 赛程安排\n\n国赛报名9月1日至10月15日，作品10月1—20日，初评11月1—5日，拟决赛11月21—22日北京理工大学良乡。\n\n## 赛事介绍\n\n校赛不收费，国赛按队收500元，晋级后无需另交\n\n## 队伍最少人数\n\n4\n\n## 队伍最多人数\n\n4",
+      "body": "## 报名方式\n\n全国高校本科、专科/高职，以二级学院报名；每支队4名学生、最多2名教师。\n\n## 赛事介绍\n\n轮式/仿人格斗、视觉、具身、无人机竞技和创新设计；校赛后达到50%队伍进入国赛，初评后进入决赛。\n\n## 赛程安排\n\n国赛报名9月1日至10月15日，作品10月1—20日，初评11月1—5日，拟决赛11月21—22日北京理工大学良乡。\n\n## 赛事介绍\n\n校赛不收费，国赛按队收500元，晋级后无需另交\n\n## 队伍最少人数\n\n4\n\n## 队伍最多人数\n\n4\n\n## 报名截止\n\n2026-10-15\n\n## 作品提交截止\n\n2026-10-20",
       "sources": [
         {
           "id": "ev-74bd9c4390283b3197d7",
@@ -2633,13 +2761,21 @@
           "summary": "全国高校本科、专科/高职，以二级学院报名；每支队4名学生、最多2名教师。",
           "fields": {
             "team_size_min": 4,
-            "team_size_max": 4
+            "team_size_max": 4,
+            "registration_deadline": "2026-10-15",
+            "submission_deadline": "2026-10-20"
           },
           "field_evidence": {
             "team_size_min": [
               "ev-74bd9c4390283b3197d7"
             ],
             "team_size_max": [
+              "ev-74bd9c4390283b3197d7"
+            ],
+            "registration_deadline": [
+              "ev-74bd9c4390283b3197d7"
+            ],
+            "submission_deadline": [
               "ev-74bd9c4390283b3197d7"
             ]
           },
@@ -2701,12 +2837,28 @@
               "evidence_ids": [
                 "ev-74bd9c4390283b3197d7"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-10-15",
+              "evidence_ids": [
+                "ev-74bd9c4390283b3197d7"
+              ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2026-10-20",
+              "evidence_ids": [
+                "ev-74bd9c4390283b3197d7"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "b5acd8aa4182bbe23b8d6642d57dc92db0c400f3bd353264870483d87cf1377b",
+          "content_hash": "6cc84d974b9b2e2b85f96e5e26364fec2ad190402fc9ef0f61fec25f3ee66dd1",
           "category_evidence": [
             "ev-74bd9c4390283b3197d7"
           ],
@@ -2732,7 +2884,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2740,7 +2892,7 @@
       "code": "final-curated-c105-2026-1",
       "title": "FDI模拟投资仲裁竞赛（FDI Moot）",
       "edition": "2026年FDI Moot",
-      "body": "## 赛事介绍\n\n本赛事模拟投资仲裁，含申请人与被申请人英文书状及口头辩论；地区选拔与全球阶段分别安排。\n\n## 赛事介绍\n\n规则§3限制法学学习阶段及资格；§6两方书状PDF、各不超过16000字，须匿名。\n\n## 赛程安排\n\n深圳赛区日程要求全球网站注册于2026年6月1日16时截止；当地领队注册截止6月5日17时，Skeleton Briefs提交截止6月26日08时。",
+      "body": "## 赛事介绍\n\n本赛事模拟投资仲裁，含申请人与被申请人英文书状及口头辩论；地区选拔与全球阶段分别安排。\n\n## 赛事介绍\n\n规则§3限制法学学习阶段及资格；§6两方书状PDF、各不超过16000字，须匿名。\n\n## 赛程安排\n\n深圳赛区日程要求全球网站注册于2026年6月1日16时截止；当地领队注册截止6月5日17时，Skeleton Briefs提交截止6月26日08时。\n\n## 报名截止\n\n2026-06-01",
       "sources": [
         {
           "id": "ev-0b93c919c785732c9c19",
@@ -2783,8 +2935,14 @@
             "FDI"
           ],
           "summary": "本赛事模拟投资仲裁，含申请人与被申请人英文书状及口头辩论；地区选拔与全球阶段分别安排。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2026-06-01"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-99863fd94fd0d887e494"
+            ]
+          },
           "sources": [
             {
               "id": "ev-0b93c919c785732c9c19",
@@ -2827,12 +2985,20 @@
               "evidence_ids": [
                 "ev-99863fd94fd0d887e494"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-06-01",
+              "evidence_ids": [
+                "ev-99863fd94fd0d887e494"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "b5fe160cd804ef40cd046ba86af1549243fed4b57c1eb709f9a787eb750b749f",
+          "content_hash": "84667e65890bc716e07c535c5a90dee1475c1454b963f65af5188317b0f77ebc",
           "category_evidence": [
             "ev-0b93c919c785732c9c19"
           ],
@@ -2865,7 +3031,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3058,7 +3224,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3066,7 +3232,7 @@
       "code": "final-curated-c107-2026-1",
       "title": "国际商事模拟仲裁庭辩论赛（Vis Moot）",
       "edition": "2026年第33届Vis Moot",
-      "body": "## 报名方式\n\n比赛英文进行，提交双方书状并口辩；Vienna与Vis East是独立报名和独立获奖赛事。\n\n## 赛程安排\n\n第33届报名表截止2025年11月13日23:30维也纳时间；费用截止12月12日，申请方书状12月11日\n\n## 赛程安排\n\n2026年3月27日至4月2日维也纳举行，普通轮3月28—31日，淘汰轮至4月2日。",
+      "body": "## 报名方式\n\n比赛英文进行，提交双方书状并口辩；Vienna与Vis East是独立报名和独立获奖赛事。\n\n## 赛程安排\n\n第33届报名表截止2025年11月13日23:30维也纳时间；费用截止12月12日，申请方书状12月11日\n\n## 赛程安排\n\n2026年3月27日至4月2日维也纳举行，普通轮3月28—31日，淘汰轮至4月2日。\n\n## 报名截止\n\n2025-11-13\n\n## 报名截止时刻\n\n2025-11-13T23:30:00+01:00",
       "sources": [
         {
           "id": "ev-a4a2fff1d8b8ec400896",
@@ -3100,8 +3266,18 @@
             "Vis Moot"
           ],
           "summary": "比赛英文进行，提交双方书状并口辩；Vienna与Vis East是独立报名和独立获奖赛事。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2025-11-13",
+            "registration_deadline_at": "2025-11-13T23:30:00+01:00"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-a4a2fff1d8b8ec400896"
+            ],
+            "registration_deadline_at": [
+              "ev-a4a2fff1d8b8ec400896"
+            ]
+          },
           "sources": [
             {
               "id": "ev-a4a2fff1d8b8ec400896",
@@ -3136,12 +3312,28 @@
               "evidence_ids": [
                 "ev-a4a2fff1d8b8ec400896"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-11-13",
+              "evidence_ids": [
+                "ev-a4a2fff1d8b8ec400896"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2025-11-13T23:30:00+01:00",
+              "evidence_ids": [
+                "ev-a4a2fff1d8b8ec400896"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "1d880b236aab43bb54a5ca8168412045f9db50fc2769eca8b7daf8ff16850dac",
+          "content_hash": "f31a7972262a6726fd30f0cbff2cceb4ffe699af1bdbc85740b8ba34aa5f2b65",
           "category_evidence": [
             "ev-a4a2fff1d8b8ec400896"
           ],
@@ -3171,7 +3363,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3179,7 +3371,7 @@
       "code": "final-curated-c108-2026-1",
       "title": "国际刑事法院模拟法庭竞赛（ICC）",
       "edition": "2026年第十三届IBA ICCMCC",
-      "body": "## 组队要求\n\n3名口辩选手，可另加2名研究员及2名教练；学生人数3—5，7人总数含教练。\n\n## 参赛对象\n\n在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。\n\n## 赛程安排\n\n团队报名2025年11月17日17:00 CET截止；国际轮书状2026年3月18日17:00 CET，国家赛队由国家组织方统一转交。\n\n## 赛程安排\n\n国际赛2026年6月12—19日海牙；三方书状须Word和PDF并匿名\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛对象\n\n在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。\n\n## 参赛形式\n\n团队参赛",
+      "body": "## 组队要求\n\n3名口辩选手，可另加2名研究员及2名教练；学生人数3—5，7人总数含教练。\n\n## 参赛对象\n\n在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。\n\n## 赛程安排\n\n团队报名2025年11月17日17:00 CET截止；国际轮书状2026年3月18日17:00 CET，国家赛队由国家组织方统一转交。\n\n## 赛程安排\n\n国际赛2026年6月12—19日海牙；三方书状须Word和PDF并匿名\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛对象\n\n在读本科、硕士或JD，交换生可代表所在高校，非法学学生需足够法律知识；已取得执业准入（含通过律师考试）者不能作为选手。\n\n## 参赛形式\n\n团队参赛\n\n## 报名截止\n\n2025-11-17\n\n## 报名截止时刻\n\n2025-11-17T17:00:00+01:00",
       "sources": [
         {
           "id": "ev-e419b33f5417a04e671d",
@@ -3246,7 +3438,9 @@
               "本科",
               "硕士"
             ],
-            "participation_type": "team"
+            "participation_type": "team",
+            "registration_deadline": "2025-11-17",
+            "registration_deadline_at": "2025-11-17T17:00:00+01:00"
           },
           "field_evidence": {
             "team_size_min": [
@@ -3262,6 +3456,12 @@
               "ev-bd67e61ee71424ed8be5"
             ],
             "participation_type": [
+              "ev-72638f0533bc889651f7"
+            ],
+            "registration_deadline": [
+              "ev-72638f0533bc889651f7"
+            ],
+            "registration_deadline_at": [
               "ev-72638f0533bc889651f7"
             ]
           },
@@ -3363,12 +3563,28 @@
               "evidence_ids": [
                 "ev-72638f0533bc889651f7"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-11-17",
+              "evidence_ids": [
+                "ev-72638f0533bc889651f7"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2025-11-17T17:00:00+01:00",
+              "evidence_ids": [
+                "ev-72638f0533bc889651f7"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "3fdf3703507271d20a2c4cb00471838ae975471e09948e7cbced1d4a880c91d0",
+          "content_hash": "cddc2f37b8fe882e3a2d08c33584ba0124023012102b8e7764713f4fc4a45516",
           "category_evidence": [
             "ev-e419b33f5417a04e671d"
           ],
@@ -3401,7 +3617,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3409,7 +3625,7 @@
       "code": "final-curated-c109-2025-1",
       "title": "红十字国际人道法模拟法庭比赛",
       "edition": "2025年第十九届中国国际人道法模拟法庭",
-      "body": "## 赛事介绍\n\n中国境内高校学生，法学第一学位或博士以下研究生；执业律师、大学教师和博士研究生不能参加，境内高校的外国学生可参加。\n\n## 赛程安排\n\n报名2025年9月7日23:59 CST截止，11月1日前确定名单；11月21—23日武汉中南财经政法大学。\n\n## 赛事介绍\n\n使用2025中国赛区赛题与澄清，各阶段书状、口辩和资格依中国规则",
+      "body": "## 赛事介绍\n\n中国境内高校学生，法学第一学位或博士以下研究生；执业律师、大学教师和博士研究生不能参加，境内高校的外国学生可参加。\n\n## 赛程安排\n\n报名2025年9月7日23:59 CST截止，11月1日前确定名单；11月21—23日武汉中南财经政法大学。\n\n## 赛事介绍\n\n使用2025中国赛区赛题与澄清，各阶段书状、口辩和资格依中国规则\n\n## 报名截止\n\n2025-09-07",
       "sources": [
         {
           "id": "ev-40e78fb31e227c6b85ad",
@@ -3441,8 +3657,14 @@
           "level": "national",
           "aliases": [],
           "summary": "中国境内高校学生，法学第一学位或博士以下研究生；执业律师、大学教师和博士研究生不能参加，境内高校的外国学生可参加。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2025-09-07"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-40e78fb31e227c6b85ad"
+            ]
+          },
           "sources": [
             {
               "id": "ev-40e78fb31e227c6b85ad",
@@ -3477,12 +3699,20 @@
               "evidence_ids": [
                 "ev-40e78fb31e227c6b85ad"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-09-07",
+              "evidence_ids": [
+                "ev-40e78fb31e227c6b85ad"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "b69467eb5cabbfe4877a9984e1ae7b51b2565d23d492da07784eea6987c17e6f",
+          "content_hash": "227dd0115b4e9fc56ae14e19dacb73c876aa6c70250b76a9489c609569772713",
           "category_evidence": [
             "ev-40e78fb31e227c6b85ad"
           ],
@@ -3508,7 +3738,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3516,7 +3746,7 @@
       "code": "final-curated-c110-2026-1",
       "title": "全国法律英语大赛",
       "edition": "2026年第十五届全国法律英语大赛",
-      "body": "## 赛事介绍\n\n第十五届全国法律英语大赛以英语表达法律观点，按华东赛区安排参赛。\n\n## 赛程安排\n\n报名截止4月10日24:00，华东预赛4月25日，全国决赛5月30日在北京举行。\n\n## 报名方式\n\n按腾讯文档表填写报名信息并按赛区要求递交英文演讲材料",
+      "body": "## 赛事介绍\n\n第十五届全国法律英语大赛以英语表达法律观点，按华东赛区安排参赛。\n\n## 赛程安排\n\n报名截止4月10日24:00，华东预赛4月25日，全国决赛5月30日在北京举行。\n\n## 报名方式\n\n按腾讯文档表填写报名信息并按赛区要求递交英文演讲材料\n\n## 报名截止\n\n2026-04-10\n\n## 报名截止时刻\n\n2026-04-11T00:00:00+08:00",
       "sources": [
         {
           "id": "ev-3a9ae76d09b3ef318926",
@@ -3548,8 +3778,18 @@
           "level": "national",
           "aliases": [],
           "summary": "第十五届全国法律英语大赛以英语表达法律观点，按华东赛区安排参赛。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2026-04-10",
+            "registration_deadline_at": "2026-04-11T00:00:00+08:00"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-3a9ae76d09b3ef318926"
+            ],
+            "registration_deadline_at": [
+              "ev-3a9ae76d09b3ef318926"
+            ]
+          },
           "sources": [
             {
               "id": "ev-3a9ae76d09b3ef318926",
@@ -3584,12 +3824,28 @@
               "evidence_ids": [
                 "ev-3a9ae76d09b3ef318926"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-04-10",
+              "evidence_ids": [
+                "ev-3a9ae76d09b3ef318926"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-04-11T00:00:00+08:00",
+              "evidence_ids": [
+                "ev-3a9ae76d09b3ef318926"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "80d334cfd08760c419153cfdda9b2721a9fe3c93fb2b717b928ee84a91847acf",
+          "content_hash": "ad486bee6ed91df8753749c08bc9254e4b3bcfb815e01efba8979f8a1442c568",
           "category_evidence": [
             "ev-3a9ae76d09b3ef318926"
           ],
@@ -3615,7 +3871,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3720,7 +3976,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3728,7 +3984,7 @@
       "code": "final-curated-c113-2026-1",
       "title": "全国大学生地质技能竞赛（2026）",
       "edition": "2026年第八届",
-      "body": "## 赛程安排\n\n2026年8月26—28日在西南石油大学成都举办，领队团体账户注册8月15日截止，学生由高校领队代注册缴费。\n\n## 组队要求\n\n地质相关本科和专科生（含留学生），按2026年8月在籍资格；每队3人，每校1—4队，含AI赛道最多4队。\n\n## 赛事介绍\n\n考查综合应用、野外地质技能、标本鉴定与地学知识；野外传统赛道和AI赛道二选一。\n\n## 作品要求\n\n指定成图软件为MapGIS6.7、AutoCAD2014、CorelDRAWX8、Section2021等\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n3\n\n## 参赛形式\n\n团队参赛",
+      "body": "## 赛程安排\n\n2026年8月26—28日在西南石油大学成都举办，领队团体账户注册8月15日截止，学生由高校领队代注册缴费。\n\n## 组队要求\n\n地质相关本科和专科生（含留学生），按2026年8月在籍资格；每队3人，每校1—4队，含AI赛道最多4队。\n\n## 赛事介绍\n\n考查综合应用、野外地质技能、标本鉴定与地学知识；野外传统赛道和AI赛道二选一。\n\n## 作品要求\n\n指定成图软件为MapGIS6.7、AutoCAD2014、CorelDRAWX8、Section2021等\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n3\n\n## 参赛形式\n\n团队参赛\n\n## 报名截止\n\n2026-08-15",
       "sources": [
         {
           "id": "ev-18142c418ed60dc0cb4f",
@@ -3763,7 +4019,8 @@
           "fields": {
             "team_size_min": 3,
             "team_size_max": 3,
-            "participation_type": "team"
+            "participation_type": "team",
+            "registration_deadline": "2026-08-15"
           },
           "field_evidence": {
             "team_size_min": [
@@ -3773,6 +4030,9 @@
               "ev-18142c418ed60dc0cb4f"
             ],
             "participation_type": [
+              "ev-18142c418ed60dc0cb4f"
+            ],
+            "registration_deadline": [
               "ev-18142c418ed60dc0cb4f"
             ]
           },
@@ -3842,12 +4102,20 @@
               "evidence_ids": [
                 "ev-18142c418ed60dc0cb4f"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-08-15",
+              "evidence_ids": [
+                "ev-18142c418ed60dc0cb4f"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "73b509109b4a62993f946c08abf600a7a7ecd5f4fefed1009e1d4eee497ce9ec",
+          "content_hash": "e9ccbb72a1a491ec6dd4b9e09ee252941d4bbb2d29a9b84d0f35b463a403c211",
           "category_evidence": [
             "ev-18142c418ed60dc0cb4f"
           ],
@@ -3873,7 +4141,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3972,7 +4240,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4057,7 +4325,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4065,7 +4333,7 @@
       "code": "final-curated-c115-2026-1",
       "title": "CCE杯全国大学生复合材料设计与制作大赛（原上纬杯）",
       "edition": "2026年“CCE”杯第十一届",
-      "body": "## 赛事介绍\n\n赛事本届称CCE杯\n\n## 组队要求\n\n每队3—5名学生，至少3名本科生，每校最多3队；参赛作品为玻璃纤维复合材料板簧。\n\n## 赛程安排\n\n报名7月10日前，方案与海报8月20日前，8月31日报到；现场测试和展示安排见本届通知。\n\n## 报名方式\n\n独立设计制作并提交技术方案，报名后成员更换限制及原创新条款须遵守。\n\n## 赛事介绍\n\n采用组委会统一提供的玻璃纤维和树脂，液体成型；板簧外形、材料及测试要求需按本届附件执行。\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛形式\n\n团队参赛",
+      "body": "## 赛事介绍\n\n赛事本届称CCE杯\n\n## 组队要求\n\n每队3—5名学生，至少3名本科生，每校最多3队；参赛作品为玻璃纤维复合材料板簧。\n\n## 赛程安排\n\n报名7月10日前，方案与海报8月20日前，8月31日报到；现场测试和展示安排见本届通知。\n\n## 报名方式\n\n独立设计制作并提交技术方案，报名后成员更换限制及原创新条款须遵守。\n\n## 赛事介绍\n\n采用组委会统一提供的玻璃纤维和树脂，液体成型；板簧外形、材料及测试要求需按本届附件执行。\n\n## 队伍最少人数\n\n3\n\n## 队伍最多人数\n\n5\n\n## 参赛形式\n\n团队参赛\n\n## 报名截止\n\n2026-07-10\n\n## 作品提交截止\n\n2026-08-20",
       "sources": [
         {
           "id": "ev-25528b5f8671c6a1be57",
@@ -4110,7 +4378,9 @@
           "fields": {
             "team_size_min": 3,
             "team_size_max": 5,
-            "participation_type": "team"
+            "participation_type": "team",
+            "registration_deadline": "2026-07-10",
+            "submission_deadline": "2026-08-20"
           },
           "field_evidence": {
             "team_size_min": [
@@ -4120,6 +4390,12 @@
               "ev-25528b5f8671c6a1be57"
             ],
             "participation_type": [
+              "ev-25528b5f8671c6a1be57"
+            ],
+            "registration_deadline": [
+              "ev-25528b5f8671c6a1be57"
+            ],
+            "submission_deadline": [
               "ev-25528b5f8671c6a1be57"
             ]
           },
@@ -4205,12 +4481,28 @@
               "evidence_ids": [
                 "ev-25528b5f8671c6a1be57"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-07-10",
+              "evidence_ids": [
+                "ev-25528b5f8671c6a1be57"
+              ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2026-08-20",
+              "evidence_ids": [
+                "ev-25528b5f8671c6a1be57"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "70d05735082fd5926ac030bf135127ad9b59823d68b10dbd525d043309d4fe09",
+          "content_hash": "9c7331ec436ebb5cfeb3690d120ee974167e548b67439cb657ef46da0fb92e24",
           "category_evidence": [
             "ev-25528b5f8671c6a1be57"
           ],
@@ -4246,7 +4538,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4337,7 +4629,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4444,7 +4736,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4452,7 +4744,7 @@
       "code": "final-curated-c117-2026-1",
       "title": "全国航空航天类专业本科毕业设计成果交流会",
       "edition": "2026年第七届航空航天本科毕设成果交流会",
-      "body": "## 参赛对象\n\n面向2026届航空航天类相关13个专业本科毕业生，各学院每专业最多推荐3个作品；由学院统一报名。\n\n## 赛程安排\n\n由学院指定联系人于4月20日前扫描通知中的二维码报名。\n\n## 赛程安排\n\n提交完整毕业论文或设计及汇报PPT。原定提交时间为5月10日（暂定）；比赛于2026年5月22—24日在厦门大学举行。\n\n## 参赛对象\n\n面向2026届航空航天类相关13个专业本科毕业生，各学院每专业最多推荐3个作品；由学院统一报名。",
+      "body": "## 参赛对象\n\n面向2026届航空航天类相关13个专业本科毕业生，各学院每专业最多推荐3个作品；由学院统一报名。\n\n## 赛程安排\n\n由学院指定联系人于4月20日前扫描通知中的二维码报名。\n\n## 赛程安排\n\n提交完整毕业论文或设计及汇报PPT。原定提交时间为5月10日（暂定）；比赛于2026年5月22—24日在厦门大学举行。\n\n## 参赛对象\n\n面向2026届航空航天类相关13个专业本科毕业生，各学院每专业最多推荐3个作品；由学院统一报名。\n\n## 报名截止\n\n2026-04-20",
       "sources": [
         {
           "id": "ev-caadcd3a5d3be31e0cca",
@@ -4488,13 +4780,17 @@
             "eligibility": "面向2026届航空航天类相关13个专业本科毕业生，各学院每专业最多推荐3个作品；由学院统一报名。",
             "education": [
               "本科"
-            ]
+            ],
+            "registration_deadline": "2026-04-20"
           },
           "field_evidence": {
             "eligibility": [
               "ev-caadcd3a5d3be31e0cca"
             ],
             "education": [
+              "ev-caadcd3a5d3be31e0cca"
+            ],
+            "registration_deadline": [
               "ev-caadcd3a5d3be31e0cca"
             ]
           },
@@ -4540,12 +4836,20 @@
               "evidence_ids": [
                 "ev-caadcd3a5d3be31e0cca"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-04-20",
+              "evidence_ids": [
+                "ev-caadcd3a5d3be31e0cca"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "4ca3298b82b038f9ca8ac08ceab13910e8ec24ed2046ec3a1d12a48214075725",
+          "content_hash": "8d8aee68048ecea537e354b9ed58dbb989528e41dbdfb2bb9ec4e1e8acec70a7",
           "category_evidence": [
             "ev-caadcd3a5d3be31e0cca"
           ],
@@ -4577,7 +4881,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4710,7 +5014,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4718,7 +5022,7 @@
       "code": "final-curated-c121-2026-1",
       "title": "第七届力学超材料大赛",
       "edition": "2026年第七届超材料力学大赛",
-      "body": "## 参赛对象\n\n全国在校本科与研究生均可个人或团队参赛，一般不超过5人、教师一般不超过2人，鼓励跨校；初评后不得改作品和成员。\n\n## 作品要求\n\n可交实物、样机、实验模型、三维模型或研究报告；初赛壁报120×100厘米、申报书、STL数模及支撑材料。\n\n## 赛程安排\n\n报名表8月31日前，作品9月30日前，评审10月1—17日，决赛10月31日；官方邮箱xy19@nuaa.edu.cn。\n\n## 参赛对象\n\n全国在校本科与研究生均可个人或团队参赛，一般不超过5人、教师一般不超过2人，鼓励跨校；初评后不得改作品和成员。",
+      "body": "## 参赛对象\n\n全国在校本科与研究生均可个人或团队参赛，一般不超过5人、教师一般不超过2人，鼓励跨校；初评后不得改作品和成员。\n\n## 作品要求\n\n可交实物、样机、实验模型、三维模型或研究报告；初赛壁报120×100厘米、申报书、STL数模及支撑材料。\n\n## 赛程安排\n\n报名表8月31日前，作品9月30日前，评审10月1—17日，决赛10月31日；官方邮箱xy19@nuaa.edu.cn。\n\n## 参赛对象\n\n全国在校本科与研究生均可个人或团队参赛，一般不超过5人、教师一般不超过2人，鼓励跨校；初评后不得改作品和成员。\n\n## 报名截止\n\n2026-08-31\n\n## 作品提交截止\n\n2026-09-30",
       "sources": [
         {
           "id": "ev-695f0ada17d95979db67",
@@ -4755,13 +5059,21 @@
             "education": [
               "本科",
               "研究生"
-            ]
+            ],
+            "registration_deadline": "2026-08-31",
+            "submission_deadline": "2026-09-30"
           },
           "field_evidence": {
             "eligibility": [
               "ev-695f0ada17d95979db67"
             ],
             "education": [
+              "ev-695f0ada17d95979db67"
+            ],
+            "registration_deadline": [
+              "ev-695f0ada17d95979db67"
+            ],
+            "submission_deadline": [
               "ev-695f0ada17d95979db67"
             ]
           },
@@ -4807,12 +5119,28 @@
               "evidence_ids": [
                 "ev-695f0ada17d95979db67"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-08-31",
+              "evidence_ids": [
+                "ev-695f0ada17d95979db67"
+              ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2026-09-30",
+              "evidence_ids": [
+                "ev-695f0ada17d95979db67"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "ff064f508272445273f177bcc557f2cb8bb1f771110b08803b7103bc4b731b48",
+          "content_hash": "1e00fce739e3c7a30c877c2cd10ff01fbf228251860a2d26f05b39d3d2d68446",
           "category_evidence": [
             "ev-695f0ada17d95979db67"
           ],
@@ -4850,7 +5178,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4858,7 +5186,7 @@
       "code": "final-curated-shanghai-mechanics-2026-7",
       "title": "第七届上海市大学生力学竞赛",
       "edition": "2026年第七届上海市大学生力学竞赛",
-      "body": "## 赛程安排\n\n个人赛10月17日8:30—11:30，各校闭卷理论力学与材料力学，120分；参考最近两届周培源基础及提高题。\n\n## 赛程安排\n\n团体赛11月21日9—15时交大闵行，实验设计操作两题各3小时、不涉及应变测试；每校1队3人，成员必须参加个人赛。\n\n## 赛程安排\n\n两赛均9月25日学校统一报名，9月30日前缴费；个人80元、团体1000元\n\n## 赛事介绍\n\n第一轮说明上海全日制本专科及研究生、年龄不超过30岁",
+      "body": "## 赛程安排\n\n个人赛10月17日8:30—11:30，各校闭卷理论力学与材料力学，120分；参考最近两届周培源基础及提高题。\n\n## 赛程安排\n\n团体赛11月21日9—15时交大闵行，实验设计操作两题各3小时、不涉及应变测试；每校1队3人，成员必须参加个人赛。\n\n## 赛程安排\n\n两赛均9月25日学校统一报名，9月30日前缴费；个人80元、团体1000元\n\n## 赛事介绍\n\n第一轮说明上海全日制本专科及研究生、年龄不超过30岁\n\n## 报名截止\n\n2026-09-25",
       "sources": [
         {
           "id": "ev-9b40b44481f1f7b66ca4",
@@ -4919,8 +5247,14 @@
             "上海市大学生力学竞赛团体赛"
           ],
           "summary": "个人赛10月17日8:30—11:30，各校闭卷理论力学与材料力学，120分；参考最近两届周培源基础及提高题。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2026-09-25"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-881aa6d4135065252573"
+            ]
+          },
           "sources": [
             {
               "id": "ev-9b40b44481f1f7b66ca4",
@@ -4987,12 +5321,20 @@
               "evidence_ids": [
                 "ev-03a46d532aefac1a937e"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-09-25",
+              "evidence_ids": [
+                "ev-881aa6d4135065252573"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "6aa0c4adadddf48479cc04f58f52bc31ae28600b8f8abb784e55f168de3de745",
+          "content_hash": "02f600d39b7700359dc4405ae84e5d7a36b11076891f20d070b9bdd961c4e0b7",
           "category_evidence": [
             "ev-9b40b44481f1f7b66ca4"
           ],
@@ -5037,7 +5379,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5188,7 +5530,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5301,7 +5643,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5309,7 +5651,7 @@
       "code": "final-curated-c126-2026-1",
       "title": "第五届国际奥林匹克互联网学科竞赛“理论力学”",
       "edition": "2026年第五届理论力学互联网奥赛",
-      "body": "## 组队要求\n\n能源学院主办，全球高校学生不限专业年级；每校至多10名个人赛选手、1—2支队伍，每队至多5人，可跨校组队。\n\n## 赛事介绍\n\n个人8题240分钟（静力2、运动学2、动力学4），团体5题60分钟，英语俄语土库曼语。\n\n## 赛程安排\n\n报名3月15日前，比赛3月24—28日期间\n\n## 队伍最多人数\n\n5",
+      "body": "## 组队要求\n\n能源学院主办，全球高校学生不限专业年级；每校至多10名个人赛选手、1—2支队伍，每队至多5人，可跨校组队。\n\n## 赛事介绍\n\n个人8题240分钟（静力2、运动学2、动力学4），团体5题60分钟，英语俄语土库曼语。\n\n## 赛程安排\n\n报名3月15日前，比赛3月24—28日期间\n\n## 队伍最多人数\n\n5\n\n## 报名截止\n\n2026-03-15",
       "sources": [
         {
           "id": "ev-af3469b1a2ec93b2c0bc",
@@ -5342,10 +5684,14 @@
           "aliases": [],
           "summary": "能源学院主办，全球高校学生不限专业年级；每校至多10名个人赛选手、1—2支队伍，每队至多5人，可跨校组队。",
           "fields": {
-            "team_size_max": 5
+            "team_size_max": 5,
+            "registration_deadline": "2026-03-15"
           },
           "field_evidence": {
             "team_size_max": [
+              "ev-af3469b1a2ec93b2c0bc"
+            ],
+            "registration_deadline": [
               "ev-af3469b1a2ec93b2c0bc"
             ]
           },
@@ -5391,12 +5737,20 @@
               "evidence_ids": [
                 "ev-af3469b1a2ec93b2c0bc"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-03-15",
+              "evidence_ids": [
+                "ev-af3469b1a2ec93b2c0bc"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "665cfcca39db079e691ea0cb691eede6cc7e6312acd501a15959b4bb4c8e4626",
+          "content_hash": "d5c7616b374473312691e9821174eaff41e742606287e761c022f70cb0591071",
           "category_evidence": [
             "ev-af3469b1a2ec93b2c0bc"
           ],
@@ -5428,7 +5782,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5587,7 +5941,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5595,7 +5949,7 @@
       "code": "final-curated-c135-fe3f1f98",
       "title": "“SCIP+”绿色化学化工创新创业大赛",
       "edition": "2025年",
-      "body": "## 赛程安排\n\n2025主命题为未来材料、未来能源、未来环境，另列22项指定命题。历史报名截止9月30日，初复赛10月9日至11月30日，决赛安排12月。",
+      "body": "## 赛程安排\n\n2025主命题为未来材料、未来能源、未来环境，另列22项指定命题。历史报名截止9月30日，初复赛10月9日至11月30日，决赛安排12月。\n\n## 报名截止\n\n2025-09-30",
       "sources": [
         {
           "id": "ev-16b371449c0337f1aa24",
@@ -5632,8 +5986,14 @@
             "SCIP"
           ],
           "summary": "2025主命题为未来材料、未来能源、未来环境，另列22项指定命题。历史报名截止9月30日，初复赛10月9日至11月30日，决赛安排12月。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2025-09-30"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-16b371449c0337f1aa24"
+            ]
+          },
           "sources": [
             {
               "id": "ev-16b371449c0337f1aa24",
@@ -5652,12 +6012,20 @@
               "evidence_ids": [
                 "ev-16b371449c0337f1aa24"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-09-30",
+              "evidence_ids": [
+                "ev-16b371449c0337f1aa24"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "a41294bcdd84d1a1def0ba87a70e2ecf2947e3caefab0fe873174cacfc40c71d",
+          "content_hash": "ca9e0017cc64bb978626fe7a7991badc54e25ce0fe63846696d637ebab183fdb",
           "category_evidence": [
             "ev-16b371449c0337f1aa24"
           ],
@@ -5693,7 +6061,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5868,7 +6236,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5876,7 +6244,7 @@
       "code": "final-curated-c129-2026-1",
       "title": "全国大学生电化学测量技术竞赛",
       "edition": "2026年第五届电化学测量技术竞赛",
-      "body": "## 参赛对象\n\n同校2名学生1队，1—2名教师，化学化工材料能源等相关专业全日制本科及硕博；跨专业可、跨校不可。\n\n## 报名方式\n\n2本科属本科组，含研究生属研究生组，报名后不换学生；同一学生仅1队。\n\n## 赛程安排\n\n报名4月15日23:00截止，初赛4月26日；复赛5月18日至6月28日，含操作安全、测量、报告和视频。\n\n## 赛程安排\n\n证书申领时间为7月15—18日及7月27—30日。\n\n## 队伍最少人数\n\n2\n\n## 队伍最多人数\n\n2",
+      "body": "## 参赛对象\n\n同校2名学生1队，1—2名教师，化学化工材料能源等相关专业全日制本科及硕博；跨专业可、跨校不可。\n\n## 报名方式\n\n2本科属本科组，含研究生属研究生组，报名后不换学生；同一学生仅1队。\n\n## 赛程安排\n\n报名4月15日23:00截止，初赛4月26日；复赛5月18日至6月28日，含操作安全、测量、报告和视频。\n\n## 赛程安排\n\n证书申领时间为7月15—18日及7月27—30日。\n\n## 队伍最少人数\n\n2\n\n## 队伍最多人数\n\n2\n\n## 报名截止\n\n2026-04-15\n\n## 报名截止时刻\n\n2026-04-15T23:00:00+08:00",
       "sources": [
         {
           "id": "ev-dac9d305a7138663b019",
@@ -5910,13 +6278,21 @@
           "summary": "同校2名学生1队，1—2名教师，化学化工材料能源等相关专业全日制本科及硕博；跨专业可、跨校不可。",
           "fields": {
             "team_size_min": 2,
-            "team_size_max": 2
+            "team_size_max": 2,
+            "registration_deadline": "2026-04-15",
+            "registration_deadline_at": "2026-04-15T23:00:00+08:00"
           },
           "field_evidence": {
             "team_size_min": [
               "ev-dac9d305a7138663b019"
             ],
             "team_size_max": [
+              "ev-dac9d305a7138663b019"
+            ],
+            "registration_deadline": [
+              "ev-dac9d305a7138663b019"
+            ],
+            "registration_deadline_at": [
               "ev-dac9d305a7138663b019"
             ]
           },
@@ -5978,12 +6354,28 @@
               "evidence_ids": [
                 "ev-dac9d305a7138663b019"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-04-15",
+              "evidence_ids": [
+                "ev-dac9d305a7138663b019"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-04-15T23:00:00+08:00",
+              "evidence_ids": [
+                "ev-dac9d305a7138663b019"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "7d1b7d82dec4d050d19598b8966912ceeb1e26ffa7b48cd87f7c8c84833e3dd2",
+          "content_hash": "e9c61e35f1d85750de17a023a35e7bd726cb019f080071151e7e17842e95e4a5",
           "category_evidence": [
             "ev-dac9d305a7138663b019"
           ],
@@ -6015,7 +6407,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6120,7 +6512,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     }
@@ -6129,7 +6521,7 @@
     "competitions": [],
     "resources": []
   },
-  "corpus_version": "874ccd5c6dddf794",
+  "corpus_version": "d744beaf5c993b25",
   "catalog_scope": {
     "start": 90,
     "end": 130,

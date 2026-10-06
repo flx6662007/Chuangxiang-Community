@@ -6,10 +6,12 @@
     "participation_type": 63,
     "team_size_min": 31,
     "team_size_max": 44,
-    "registration_deadline": 24,
-    "submission_deadline": 35,
+    "registration_deadline": 52,
+    "submission_deadline": 41,
     "registration_url": 38,
+    "registration_deadline_at": 12,
     "registration_start": 1,
+    "event_completed_on": 2,
     "tracks": 35,
     "registration_method": 64,
     "organizer": 5,
@@ -17,6 +19,6 @@
     "grades": 1
   },
   "categorized": 193,
-  "with_aliases": 39,
-  "alias_count": 54
+  "with_aliases": 38,
+  "alias_count": 53
 }

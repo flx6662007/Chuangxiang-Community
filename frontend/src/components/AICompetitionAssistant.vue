@@ -4,6 +4,7 @@ import AppIcon from './AppIcon.vue'
 import { getAIStatus, requestAIChat } from '../api/ai'
 import { useAIChat } from '../composables/useAIChat.js'
 import CatalogSearch from './CatalogSearch.vue'
+import CompetitionGuide from './CompetitionGuide.vue'
 
 const examples = ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类']
 const query = ref('')
@@ -72,6 +73,8 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 </script>
 
 <template>
+  <CompetitionGuide />
+  <details class="general-chat"><summary>其他科研与学习问题</summary>
   <div v-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
   <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
   <CatalogSearch v-else-if="!configured" />
@@ -140,6 +143,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
     </div>
 
   </section>
+  </details>
 </template>
 
 <style scoped>

@@ -5,6 +5,7 @@ reads the database; no HTTP requests or model calls are made by keyword search.
 """
 
 from copy import deepcopy
+from functools import lru_cache
 from datetime import date, datetime
 import hashlib
 import json
@@ -17,10 +18,17 @@ from zoneinfo import ZoneInfo
 from .semantic import DEFAULT_THRESHOLD, SemanticError, load_index
 
 
+@lru_cache(maxsize=2)
+def _runtime_index(path, modified_ns, size, model_path, revision):
+    # Search still validates current document fingerprints on every request.
+    return load_index(path)
+
+
 FIELD_NAMES = (
     'eligibility', 'education', 'grades', 'majors', 'participation_type', 'organizer', 'tracks', 'registration_method',
     'team_size_min', 'team_size_max', 'registration_start', 'registration_deadline',
     'submission_deadline', 'registration_url', 'registration_status', 'status_as_of',
+    'registration_deadline_at', 'event_completed_on',
 )
 FILTER_NAMES = {
     'education', 'grade', 'major', 'category', 'level', 'participation_type',
@@ -492,7 +500,7 @@ def _validate_corpus(corpus):
                 or not isinstance(record.get('content_hash'), str) or not record['content_hash'] or not isinstance(record.get('fields'), dict)):
             raise ValueError('赛事记录编号、标题、字段或内容版本无效。')
         seen.add(record['id'])
-        if (record.get('review_status') not in ('draft', 'approved', 'withdrawn')
+        if (record.get('review_status') not in ('draft', 'approved', 'published', 'withdrawn')
                 or record.get('publication_status') not in ('draft', 'published', 'withdrawn')
                 or not isinstance(record.get('level', 'unknown'), str) or record.get('level', 'unknown') not in LEVELS):
             raise ValueError('赛事审核、发布状态或范围编码无效。')
@@ -548,8 +556,11 @@ def _validate_corpus(corpus):
                     raise ValueError(f'{name} 必须为正整数。')
             elif not isinstance(value, str):
                 raise ValueError(f'{name} 必须为文本。')
-            elif name in {'registration_start', 'registration_deadline', 'submission_deadline', 'status_as_of'} and value:
+            elif name in {'registration_start', 'registration_deadline', 'submission_deadline', 'status_as_of', 'event_completed_on'} and value:
                 _day(value, name=name)
+            elif name == 'registration_deadline_at' and value:
+                if datetime.fromisoformat(value).tzinfo is None:
+                    raise ValueError('报名截止时刻需要时区。')
         if fields.get('participation_type') not in (None, '', 'individual', 'team', 'both'):
             raise ValueError('参赛形式编码无效。')
         if fields.get('registration_status') not in (None, '', 'open', 'closed', 'upcoming'):
@@ -642,7 +653,7 @@ def search_competitions(query, *, filters=None, preferences=None, as_of=None, mo
     today = _day(as_of, name='as_of') if as_of is not None else datetime.now(ZoneInfo('Asia/Shanghai')).date()
     corpus = _corpus_from_database() if corpus is None else corpus
     _validate_corpus(corpus)
-    records = {row['id']: row for row in corpus['records'] if row.get('review_status') == 'approved'
+    records = {row['id']: row for row in corpus['records'] if row.get('review_status') in ('approved', 'published')
                and row.get('publication_status') == 'published' and _sources(row)}
     candidates, matched_constraints = {}, {}
     for key, row in records.items():
@@ -669,7 +680,10 @@ def search_competitions(query, *, filters=None, preferences=None, as_of=None, mo
                 path = os.getenv('COMPETITION_SEMANTIC_INDEX')
                 if not path:
                     raise SemanticError('semantic_index_unconfigured')
-                index = load_index(path)
+                stat = os.stat(path)
+                index = _runtime_index(os.path.abspath(path), stat.st_mtime_ns, stat.st_size,
+                                       os.getenv('COMPETITION_EMBEDDING_MODEL_PATH', ''),
+                                       os.getenv('COMPETITION_EMBEDDING_REVISION', ''))
             elif isinstance(index, (str, os.PathLike)):
                 index = load_index(index)
             if not hasattr(index, 'search') or not callable(index.search):

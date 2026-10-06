@@ -15,7 +15,7 @@ from research.models import ResearchOpportunity
 urlpatterns = [path('editorial/', include('information_library.public_urls'))]
 
 
-@override_settings(ROOT_URLCONF=__name__)
+@override_settings(PUBLIC_RESEARCH_ENABLED=True, ROOT_URLCONF=__name__)
 class PublicEditorialTests(TestCase):
     @classmethod
     def setUpTestData(cls):

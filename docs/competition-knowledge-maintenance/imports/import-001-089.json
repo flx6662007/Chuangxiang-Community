@@ -735,7 +735,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -813,7 +813,7 @@
           },
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -892,7 +892,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -970,7 +970,7 @@
           },
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1049,7 +1049,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1138,7 +1138,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1217,7 +1217,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1306,7 +1306,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1385,7 +1385,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1467,7 +1467,7 @@
           },
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1539,7 +1539,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1611,7 +1611,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1619,7 +1619,7 @@
       "code": "final-m89-2026020-overview",
       "title": "全球校园人工智能算法精英大赛·AI+开源",
       "edition": "2026第八届·AI+开源主题赛",
-      "body": "## 赛事介绍\n\n基于AI技术制作可运行作品或算法成果，需用演示、报告和测试说明自主贡献。\n\n## 赛事介绍\n\n接受AI应用及开源贡献，要求实质改进；单纯调用接口或界面包装不足。\n\n## 参赛对象与组队\n\n在读专科生、本科生及研究生可参赛。每队1—3名学生，队员来自同一学校，分校不计为同一学校。\n\n## 报名与时间\n\n通过赛事官网注册队伍，选择AI+开源主题赛并完成缴费。报名及初赛作品提交均于2026年10月15日20:00截止。",
+      "body": "## 赛事介绍\n\n基于AI技术制作可运行作品或算法成果，需用演示、报告和测试说明自主贡献。\n\n## 赛事介绍\n\n接受AI应用及开源贡献，要求实质改进；单纯调用接口或界面包装不足。\n\n## 参赛对象与组队\n\n在读专科生、本科生及研究生可参赛。每队1—3名学生，队员来自同一学校，分校不计为同一学校。\n\n## 报名与时间\n\n通过赛事官网注册队伍，选择AI+开源主题赛并完成缴费。报名及初赛作品提交均于2026年10月15日20:00截止。\n\n## 报名截止时刻\n\n2026-10-15T20:00:00+08:00",
       "sources": [
         {
           "id": "ev-dbedf8f872af0fa6cd6c",
@@ -1681,7 +1681,8 @@
             "team_size_max": 3,
             "registration_deadline": "2026-10-15",
             "submission_deadline": "2026-10-15",
-            "registration_url": "https://www.aicomp.cn/"
+            "registration_url": "https://www.aicomp.cn/",
+            "registration_deadline_at": "2026-10-15T20:00:00+08:00"
           },
           "field_evidence": {
             "eligibility": [
@@ -1706,6 +1707,9 @@
               "verified-aic-dates"
             ],
             "registration_url": [
+              "verified-aic-dates"
+            ],
+            "registration_deadline_at": [
               "verified-aic-dates"
             ]
           },
@@ -1767,12 +1771,20 @@
               "evidence_ids": [
                 "verified-aic-dates"
               ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-10-15T20:00:00+08:00",
+              "evidence_ids": [
+                "verified-aic-dates"
+              ]
             }
           ],
           "kind": "edition",
           "review_status": "approved",
           "publication_status": "published",
-          "content_hash": "115595e0ad4007ac881541a6475b1fe29390db9b4accc0f7049788cbfde9fdb6",
+          "content_hash": "7cf1f7de31c021cd65f2f82abce0cb9605c3a747980f408625e45d0e79790f9c",
           "category_evidence": [
             "ev-dbedf8f872af0fa6cd6c"
           ],
@@ -1802,7 +1814,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1887,7 +1899,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1966,7 +1978,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2051,7 +2063,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2142,7 +2154,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2227,7 +2239,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2306,7 +2318,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2391,7 +2403,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2463,7 +2475,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2548,7 +2560,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2633,7 +2645,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2712,7 +2724,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2797,7 +2809,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2890,7 +2902,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2969,7 +2981,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3054,7 +3066,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3139,7 +3151,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3241,7 +3253,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3343,7 +3355,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3422,7 +3434,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3550,7 +3562,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3635,7 +3647,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3726,7 +3738,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3811,7 +3823,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3902,7 +3914,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3987,7 +3999,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4072,7 +4084,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4171,7 +4183,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4268,7 +4280,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4361,7 +4373,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4446,7 +4458,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4531,7 +4543,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4610,7 +4622,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4701,7 +4713,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4792,7 +4804,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4914,7 +4926,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5007,7 +5019,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5102,7 +5114,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5181,7 +5193,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5260,7 +5272,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5349,7 +5361,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5446,7 +5458,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5518,7 +5530,7 @@
           "alias_evidence": {},
           "learning_resources": []
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5609,7 +5621,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5717,7 +5729,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5796,7 +5808,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5875,7 +5887,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5971,7 +5983,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6073,7 +6085,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6158,7 +6170,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6234,7 +6246,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6325,7 +6337,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6333,7 +6345,7 @@
       "code": "final-m89-2026089-overview",
       "title": "大学生数字媒体科技作品及创意竞赛",
       "edition": "2026年·第十四届",
-      "body": "## 赛事介绍\n\n赛事面向数字媒体技术与创意作品，涵盖人工智能、虚拟现实、交互、数字艺术等方向。\n\n## 赛事介绍\n\n报名及提交截止为2026年10月23日23:59:59。",
+      "body": "## 赛事介绍\n\n赛事面向数字媒体技术与创意作品，涵盖人工智能、虚拟现实、交互、数字艺术等方向。\n\n## 赛事介绍\n\n报名及提交截止为2026年10月23日23:59:59。\n\n## 报名截止\n\n2026-10-23\n\n## 作品提交截止\n\n2026-10-23\n\n## 报名截止时刻\n\n2026-10-23T23:59:59+08:00",
       "sources": [
         {
           "id": "ev-1382fb3626b8f8e5976c",
@@ -6365,8 +6377,22 @@
           "level": "unknown",
           "aliases": [],
           "summary": "赛事面向数字媒体技术与创意作品，涵盖人工智能、虚拟现实、交互、数字艺术等方向。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2026-10-23",
+            "submission_deadline": "2026-10-23",
+            "registration_deadline_at": "2026-10-23T23:59:59+08:00"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-1382fb3626b8f8e5976c"
+            ],
+            "submission_deadline": [
+              "ev-1382fb3626b8f8e5976c"
+            ],
+            "registration_deadline_at": [
+              "ev-1382fb3626b8f8e5976c"
+            ]
+          },
           "sources": [
             {
               "id": "ev-1382fb3626b8f8e5976c",
@@ -6393,12 +6419,36 @@
               "evidence_ids": [
                 "ev-1382fb3626b8f8e5976c"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-10-23",
+              "evidence_ids": [
+                "ev-1382fb3626b8f8e5976c"
+              ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2026-10-23",
+              "evidence_ids": [
+                "ev-1382fb3626b8f8e5976c"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-10-23T23:59:59+08:00",
+              "evidence_ids": [
+                "ev-1382fb3626b8f8e5976c"
+              ]
             }
           ],
-          "kind": "overview",
+          "kind": "edition",
           "review_status": "approved",
           "publication_status": "published",
-          "content_hash": "6bcb56631c697045daf06c2b68562f8a4ec3e6cb3015ae8715e46a90d4672093",
+          "content_hash": "a6d1e9c355e51f981ddb5627a3b005602344eb8a0606a075003cc4b5cc271b70",
           "category_evidence": [
             "ev-1382fb3626b8f8e5976c"
           ],
@@ -6418,7 +6468,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     }
@@ -6427,7 +6477,7 @@
     "competitions": [],
     "resources": []
   },
-  "corpus_version": "874ccd5c6dddf794",
+  "corpus_version": "d744beaf5c993b25",
   "catalog_scope": {
     "first": 1,
     "last": 89,

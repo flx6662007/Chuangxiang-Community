@@ -29,7 +29,8 @@
         "team_size_max": 3,
         "registration_deadline": "2026-10-15",
         "submission_deadline": "2026-10-15",
-        "registration_url": "https://www.aicomp.cn/"
+        "registration_url": "https://www.aicomp.cn/",
+        "registration_deadline_at": "2026-10-15T20:00:00+08:00"
       },
       "field_evidence": {
         "eligibility": [
@@ -54,6 +55,9 @@
           "verified-aic-dates"
         ],
         "registration_url": [
+          "verified-aic-dates"
+        ],
+        "registration_deadline_at": [
           "verified-aic-dates"
         ]
       },
@@ -115,12 +119,20 @@
           "evidence_ids": [
             "verified-aic-dates"
           ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-10-15T20:00:00+08:00",
+          "evidence_ids": [
+            "verified-aic-dates"
+          ]
         }
       ],
       "kind": "edition",
       "review_status": "approved",
       "publication_status": "published",
-      "content_hash": "115595e0ad4007ac881541a6475b1fe29390db9b4accc0f7049788cbfde9fdb6",
+      "content_hash": "7cf1f7de31c021cd65f2f82abce0cb9605c3a747980f408625e45d0e79790f9c",
       "category_evidence": [
         "ev-dbedf8f872af0fa6cd6c"
       ],
@@ -640,7 +652,8 @@
         "education": [
           "本科"
         ],
-        "participation_type": "team"
+        "participation_type": "team",
+        "registration_deadline": "2026-01-20"
       },
       "field_evidence": {
         "team_size_min": [
@@ -657,6 +670,9 @@
         ],
         "participation_type": [
           "verified-embedded-eligibility"
+        ],
+        "registration_deadline": [
+          "ev-5a2490e9a0e139b6b95f"
         ]
       },
       "sources": [
@@ -701,12 +717,20 @@
           "evidence_ids": [
             "verified-embedded-eligibility"
           ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-01-20",
+          "evidence_ids": [
+            "ev-5a2490e9a0e139b6b95f"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "8b054717dc27bba74b9b2e5283bec378ef8d6bb922dfb52487544b0c3493f235",
+      "content_hash": "c3f26ec32c1725fa3bf7601523b46c1cfd5a0f0d64845f06b0ea8daad6680a10",
       "category_evidence": [
         "ev-5a2490e9a0e139b6b95f"
       ],
@@ -759,7 +783,9 @@
         "eligibility": "报名、竞赛和评审期间须为普通高校全日制在校本科生；参赛学校须具备分区初选资格或完成分区及组委会审批。",
         "education": [
           "本科"
-        ]
+        ],
+        "registration_deadline": "2026-01-15",
+        "registration_deadline_at": "2026-01-15T17:00:00+08:00"
       },
       "field_evidence": {
         "team_size_min": [
@@ -776,6 +802,12 @@
         ],
         "education": [
           "verified-renesas-eligibility"
+        ],
+        "registration_deadline": [
+          "ev-e3e5f30714b7b369e028"
+        ],
+        "registration_deadline_at": [
+          "ev-e3e5f30714b7b369e028"
         ]
       },
       "sources": [
@@ -828,12 +860,28 @@
           "evidence_ids": [
             "verified-renesas-eligibility"
           ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-01-15",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-01-15T17:00:00+08:00",
+          "evidence_ids": [
+            "ev-e3e5f30714b7b369e028"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "59792ded512e1954c09a38a059dfb6c985f15e80b49f89d277190744e7130822",
+      "content_hash": "9f9dae52185363fe91aec19810c5243769e53b710e0022f654f82f505f523937",
       "category_evidence": [
         "ev-e3e5f30714b7b369e028"
       ],
@@ -890,7 +938,9 @@
           "本科",
           "硕士"
         ],
-        "participation_type": "team"
+        "participation_type": "team",
+        "registration_deadline": "2025-11-17",
+        "registration_deadline_at": "2025-11-17T17:00:00+01:00"
       },
       "field_evidence": {
         "team_size_min": [
@@ -906,6 +956,12 @@
           "ev-bd67e61ee71424ed8be5"
         ],
         "participation_type": [
+          "ev-72638f0533bc889651f7"
+        ],
+        "registration_deadline": [
+          "ev-72638f0533bc889651f7"
+        ],
+        "registration_deadline_at": [
           "ev-72638f0533bc889651f7"
         ]
       },
@@ -1007,12 +1063,28 @@
           "evidence_ids": [
             "ev-72638f0533bc889651f7"
           ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-11-17",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-11-17T17:00:00+01:00",
+          "evidence_ids": [
+            "ev-72638f0533bc889651f7"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "3fdf3703507271d20a2c4cb00471838ae975471e09948e7cbced1d4a880c91d0",
+      "content_hash": "cddc2f37b8fe882e3a2d08c33584ba0124023012102b8e7764713f4fc4a45516",
       "category_evidence": [
         "ev-e419b33f5417a04e671d"
       ],
@@ -1062,7 +1134,8 @@
       "fields": {
         "team_size_min": 3,
         "team_size_max": 3,
-        "participation_type": "team"
+        "participation_type": "team",
+        "registration_deadline": "2026-08-15"
       },
       "field_evidence": {
         "team_size_min": [
@@ -1072,6 +1145,9 @@
           "ev-18142c418ed60dc0cb4f"
         ],
         "participation_type": [
+          "ev-18142c418ed60dc0cb4f"
+        ],
+        "registration_deadline": [
           "ev-18142c418ed60dc0cb4f"
         ]
       },
@@ -1141,12 +1217,20 @@
           "evidence_ids": [
             "ev-18142c418ed60dc0cb4f"
           ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2026-08-15",
+          "evidence_ids": [
+            "ev-18142c418ed60dc0cb4f"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "73b509109b4a62993f946c08abf600a7a7ecd5f4fefed1009e1d4eee497ce9ec",
+      "content_hash": "e9ccbb72a1a491ec6dd4b9e09ee252941d4bbb2d29a9b84d0f35b463a403c211",
       "category_evidence": [
         "ev-18142c418ed60dc0cb4f"
       ],
@@ -1881,13 +1965,21 @@
         "eligibility": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
         "education": [
           "本科"
-        ]
+        ],
+        "registration_deadline": "2025-11-16",
+        "registration_deadline_at": "2025-11-16T23:55:00+08:00"
       },
       "field_evidence": {
         "eligibility": [
           "ev-80978d39371db903bf3b"
         ],
         "education": [
+          "ev-80978d39371db903bf3b"
+        ],
+        "registration_deadline": [
+          "ev-80978d39371db903bf3b"
+        ],
+        "registration_deadline_at": [
           "ev-80978d39371db903bf3b"
         ]
       },
@@ -1973,12 +2065,28 @@
           "evidence_ids": [
             "ev-80978d39371db903bf3b"
           ]
+        },
+        {
+          "id": "field-registration_deadline",
+          "heading": "报名截止",
+          "text": "2025-11-16",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2025-11-16T23:55:00+08:00",
+          "evidence_ids": [
+            "ev-80978d39371db903bf3b"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "577a402ad03d9dfdf1821d4a58ebf12a5aa57f3efe6e4577462290958cb4681a",
+      "content_hash": "21741a93eeb739e53456b82bcec4963e06f38a9da95c6476dbdb5396b4842636",
       "category_evidence": [
         "ev-80978d39371db903bf3b"
       ],
@@ -2226,7 +2334,9 @@
         "registration_method": "官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。",
         "registration_deadline": "2026-02-02",
         "submission_deadline": "2026-05-28",
-        "registration_url": "https://www.swcontest.com.cn"
+        "registration_url": "https://www.swcontest.com.cn",
+        "registration_deadline_at": "2026-02-02T18:00:00+08:00",
+        "event_completed_on": "2026-10-06"
       },
       "field_evidence": {
         "eligibility": [
@@ -2252,6 +2362,12 @@
         ],
         "registration_url": [
           "ev-7abc4924c99ba867c215"
+        ],
+        "registration_deadline_at": [
+          "ev-7abc4924c99ba867c215"
+        ],
+        "event_completed_on": [
+          "completed-curated-c148-79c641ae"
         ]
       },
       "sources": [
@@ -2262,6 +2378,14 @@
           "quote": "",
           "locator": "参赛对象、赛制、报名、材料提交",
           "verified_at": "2026-10-02"
+        },
+        {
+          "id": "completed-curated-c148-79c641ae",
+          "url": "https://www.swcontest.com.cn/",
+          "title": "第十九届全国大学生软件创新大赛官网",
+          "locator": "新闻动态：2026-06-02赛事落幕报道",
+          "verified_at": "2026-10-06",
+          "quote": ""
         }
       ],
       "sections": [
@@ -2352,12 +2476,28 @@
           "evidence_ids": [
             "ev-7abc4924c99ba867c215"
           ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-02-02T18:00:00+08:00",
+          "evidence_ids": [
+            "ev-7abc4924c99ba867c215"
+          ]
+        },
+        {
+          "id": "verified-event-completed",
+          "heading": "赛事进展",
+          "text": "第十九届全国大学生软件创新大赛已结束，官网于2026年6月2日发布落幕报道。",
+          "evidence_ids": [
+            "completed-curated-c148-79c641ae"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "589cfb7bfd81e663deacde07c93da6d761536430f3e04b3e965fc4afe7e85088",
+      "content_hash": "a45f7afabd7c03175c80db481820c4efd0aaf7bab7799fca460b60deed1225dd",
       "category_evidence": [
         "ev-7abc4924c99ba867c215"
       ],
@@ -2420,7 +2560,8 @@
         ],
         "grades": [
           "不限年级"
-        ]
+        ],
+        "registration_deadline_at": "2026-09-30T17:00:00+08:00"
       },
       "field_evidence": {
         "organizer": [
@@ -2454,6 +2595,9 @@
           "ev-47e0659627e28386b4c3"
         ],
         "grades": [
+          "ev-47e0659627e28386b4c3"
+        ],
+        "registration_deadline_at": [
           "ev-47e0659627e28386b4c3"
         ]
       },
@@ -2563,12 +2707,20 @@
           "evidence_ids": [
             "ev-47e0659627e28386b4c3"
           ]
+        },
+        {
+          "id": "field-registration_deadline_at",
+          "heading": "报名截止时刻",
+          "text": "2026-09-30T17:00:00+08:00",
+          "evidence_ids": [
+            "ev-47e0659627e28386b4c3"
+          ]
         }
       ],
       "review_status": "approved",
       "publication_status": "published",
       "kind": "edition",
-      "content_hash": "10987bed158dc291494bf4b46c728f322e38a12406b497e15893125b4159374d",
+      "content_hash": "127c82126dc5ba7a3d0130aeb219d1f200872ddefab2177fb17de9995207dc3d",
       "category_evidence": [
         "ev-47e0659627e28386b4c3"
       ],

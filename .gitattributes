@@ -4,4 +4,4 @@
 
 # Preserve delivery evidence hashes and the CSV's documented CRLF bytes.
 docs/competition-knowledge-maintenance/source-snapshots/** -text
-docs/competition-knowledge/competitions.csv -text
+docs/competition-knowledge/competitions.csv -text whitespace=cr-at-eol

@@ -28,7 +28,7 @@ urlpatterns = [
 ]
 
 
-@override_settings(ROOT_URLCONF='information_library.tests', PASSWORD_HASHERS=['django.contrib.auth.hashers.MD5PasswordHasher'])
+@override_settings(PUBLIC_RESEARCH_ENABLED=True, ROOT_URLCONF='information_library.tests', PASSWORD_HASHERS=['django.contrib.auth.hashers.MD5PasswordHasher'])
 class LibraryTests(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -316,7 +316,9 @@ class TextAndEditorialTests(SimpleTestCase):
         self.assertEqual(public_text('<b>研究</b>\n微信：hidden_handle\n邮箱：a@tongji.edu.cn'), '研究')
 
     def test_real_editorial_content_preserves_missing_dates(self):
-        rows = list(_editorial_rows('research'))
+        archive = Path(__file__).resolve().parents[2] / 'docs/undergraduate-research/site-before-pause.json'
+        with patch('information_library.selectors.EDITORIAL_PATH', archive):
+            rows = list(_editorial_rows('research'))
         self.assertEqual(len(rows), 6)
         self.assertEqual(list(_editorial_rows('newsletter')), [])
         for row in rows:

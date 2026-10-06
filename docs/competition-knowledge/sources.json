@@ -736,14 +736,6 @@
     "verified_at": "2026-10-03"
   },
   {
-    "id": "ev-9c8f4cbc3adb5dd367f3",
-    "url": "https://www.ces.org.cn/html/report/26062783-1.htm",
-    "title": "第五届全国决赛通知",
-    "quote": "",
-    "locator": "国赛安排通知：赛程",
-    "verified_at": "2026-10-03"
-  },
-  {
     "id": "ev-42a3f51ece4901f060f1",
     "url": "https://www.ces.org.cn/html/report/26062783-1.htm",
     "title": "第五届全国决赛通知",
@@ -758,6 +750,14 @@
     "quote": "",
     "locator": "官网首页截止时间",
     "verified_at": "2026-10-03"
+  },
+  {
+    "id": "completed-curated-c97-2026-1",
+    "url": "https://eeeic.ces.org.cn/Index",
+    "title": "第五届高校电气电子工程创新大赛官网",
+    "locator": "2026-08-04全国总决赛报道",
+    "verified_at": "2026-10-06",
+    "quote": ""
   },
   {
     "id": "ev-35579ef9460ba5551ad6",
@@ -1254,6 +1254,14 @@
     "quote": "",
     "locator": "参赛对象、赛制、报名、材料提交",
     "verified_at": "2026-10-02"
+  },
+  {
+    "id": "completed-curated-c148-79c641ae",
+    "url": "https://www.swcontest.com.cn/",
+    "title": "第十九届全国大学生软件创新大赛官网",
+    "locator": "新闻动态：2026-06-02赛事落幕报道",
+    "verified_at": "2026-10-06",
+    "quote": ""
   },
   {
     "id": "ev-fe817d3f844b7b1297f5",

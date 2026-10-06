@@ -110,6 +110,7 @@ class CompetitionAPITests(TestCase):
         event = self.public[0]
         event.participation_type = 'team'
         event.recruitment_enabled = True
+        event.registration_deadline = timezone.localdate() + timedelta(days=2)
         event.recruitment_deadline = timezone.now() + timedelta(days=1)
         event.full_clean()
         event.save()

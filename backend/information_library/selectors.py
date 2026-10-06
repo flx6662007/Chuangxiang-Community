@@ -1,4 +1,5 @@
 """只读聚合与字段白名单。来源正文始终是数据，不能作为模型或系统指令执行。"""
+from django.conf import settings
 from datetime import date
 import hashlib
 import html
@@ -260,7 +261,7 @@ def collect_records(kinds=None, *, include_unpublished=False):
             public_records[('competition', row['id'])] = row
             if 'competition' in selected:
                 rows.append(row)
-    if 'research' in needed:
+    if 'research' in needed and (include_unpublished or settings.PUBLIC_RESEARCH_ENABLED):
         queryset = ResearchOpportunity.objects.exclude(Q(code__startswith='demo-') | Q(title__contains='【虚构样例】'))
         if not include_unpublished:
             queryset = queryset.filter(publication_status='published')

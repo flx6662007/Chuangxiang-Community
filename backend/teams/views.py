@@ -91,9 +91,10 @@ class RecruitmentListView(BusinessView):
             check(p['open_only'] in ['true', 'false', '1', '0'], 'invalid_fields', 'open_only 使用 true 或 false。', 400)
         if p.get('open_only') in ['true', '1']:
             now = timezone.now()
+            from competitions.recruitment_policy import open_query
+            from competitions.models import Competition
             qs = qs.filter(closed_at__isnull=True, expires_at__gt=now, team__dissolved_at__isnull=True,
-                           team__competition__recruitment_enabled=True).filter(
-                Q(team__competition__recruitment_deadline__isnull=True) | Q(team__competition__recruitment_deadline__gt=now))
+                           team__competition_id__in=Competition.objects.filter(open_query(now)).values('pk'))
             occupied = Membership.objects.filter(application__recruitment_id=OuterRef('pk'), ended_at__isnull=True).values('application__recruitment_id').annotate(n=Count('pk')).values('n')
             from django.db.models import Subquery, IntegerField, Value
             from django.db.models.functions import Coalesce

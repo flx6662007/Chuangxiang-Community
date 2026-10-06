@@ -10,6 +10,7 @@ const route = useRoute()
 const router = useRouter()
 const searchInput = ref('')
 const items = ref([]), count = ref(0), loading = ref(true), error = ref('')
+const available = ref(false)
 const pageSize = 12
 const page = computed(() => libraryPage(route.query.page))
 let requestNumber = 0, controller
@@ -29,7 +30,8 @@ async function load() {
   try {
     const data = await listResearch({ search: search.value, page: page.value, page_size: pageSize }, controller.signal)
     if (request !== requestNumber) return
-    items.value = data.results
+    available.value = data.available !== false
+    items.value = available.value ? data.results : []
     count.value = data.count
   } catch (err) {
     if (request !== requestNumber || err.code === 'ERR_CANCELED') return
@@ -95,9 +97,9 @@ onBeforeUnmount(() => { requestNumber++; controller?.abort() })
     </p>
     <div class="list-summary" role="status" aria-live="polite">
       <span>{{
-        search ? '“' + search + '” 的搜索结果' : '全部科研线索'
+        !available ? '暂不开放' : search ? '“' + search + '” 的搜索结果' : '全部科研线索'
       }}</span>
-      <span v-if="!loading && !error"
+      <span v-if="available && !loading && !error"
         >共 <strong>{{ count }}</strong> 条线索</span
       >
     </div>
@@ -113,7 +115,7 @@ onBeforeUnmount(() => { requestNumber++; controller?.abort() })
         :item="item"
       />
     </div>
-    <div v-else class="state-panel compact-state">
+    <div v-else-if="available" class="state-panel compact-state">
       <h3>{{ search ? '没有找到匹配线索' : '官方线索整理中' }}</h3>
       <p>
         {{

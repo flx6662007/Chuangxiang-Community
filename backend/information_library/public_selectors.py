@@ -1,6 +1,7 @@
 """面向访客的科研与快讯资料；维护记录和联系人不进入响应。"""
 import json
 import re
+from django.conf import settings
 
 from django.db.models import Q
 from django.utils import timezone
@@ -46,6 +47,8 @@ def _editorial_cards(kind, reserved_urls):
 
 
 def research_cards():
+    if not settings.PUBLIC_RESEARCH_ENABLED:
+        return []
     # 数据库承担当前状态；下架/草稿同源记录也阻止旧人工文件重新展示。
     reserved_urls = {safe_source_url(url) for url in ResearchOpportunity.objects.values_list('official_url', flat=True)}
     queryset = ResearchOpportunity.objects.filter(publication_status='published').exclude(

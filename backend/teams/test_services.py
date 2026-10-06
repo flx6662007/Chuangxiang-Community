@@ -79,6 +79,27 @@ class TeamFlowTests(TestCase):
             function(*args, **kwargs)
         self.assertEqual(str(raised.exception.detail['code']), code)
 
+    def test_unknown_deadline_and_format_allow_publishing_and_applying(self):
+        self.competition.recruitment_deadline = None
+        self.competition.participation_type = 'unknown'
+        s.save(self.competition)
+        card = self.card()
+        self.assertTrue(card.is_open)
+        application = self.apply(card)
+        self.assertEqual(application.recruitment_id, card.pk)
+
+    def test_official_deadline_caps_card_and_closes_it_at_boundary(self):
+        now = timezone.now()
+        self.competition.registration_deadline_at = now + timedelta(days=1)
+        self.competition.registration_deadline_timezone = 'Asia/Shanghai'
+        self.competition.registration_deadline = timezone.localdate(self.competition.registration_deadline_at)
+        s.save(self.competition)
+        card = self.card(duration_days=7)
+        self.assertEqual(card.expires_at, self.competition.registration_deadline_at)
+        with patch('django.utils.timezone.now', return_value=card.expires_at):
+            self.assertFalse(card.is_open)
+            self.assert_conflict('card_unavailable', self.card)
+
     def test_preview_checks_full_template_and_leaves_no_rows(self):
         result = s.preview_recruitment(actor=self.owner, data=self.card_data())
         self.assertGreater(result['expires_at'], timezone.now())

@@ -300,7 +300,7 @@ def publish_recruitment(*, actor, data):
         card = save(Recruitment(team=team, duration_days=data['duration_days'], created_at=now))
         rev = build_card_revision(card, actor, data, now)
         card.current_revision, card.published_at, card.last_edited_at = rev, now, now
-        card.expires_at = min(now + timedelta(days=card.duration_days), competition.recruitment_deadline) if competition.recruitment_deadline else now + timedelta(days=card.duration_days)
+        card.expires_at = min(now + timedelta(days=card.duration_days), competition.effective_recruitment_deadline) if competition.effective_recruitment_deadline else now + timedelta(days=card.duration_days)
         card.publication_status = 'published'
         return save(card)
     return execute(data['competition_id'], actor, action)

@@ -110,7 +110,7 @@ async function loadTeams() {
 }
 
 onMounted(() => {
-  loadEditorial('research')
+  researchLoading.value = false
   loadEditorial('newsletters')
   if (!isVisualPreview.value) {
     loadCompetitions()
@@ -199,17 +199,7 @@ onBeforeUnmount(() => {
           <div><h2 id="research-title">科研项目<span>与参与方式</span></h2></div>
           <RouterLink class="home-more" :to="{ name: 'research-projects' }">查看全部 <span>↗</span></RouterLink>
         </header>
-        <p class="home-intro">了解实验室在做什么，以及本科生如何参与。</p>
-        <div v-if="researchLoading" class="home-state" role="status">正在加载科研线索…</div>
-        <div v-else-if="researchError" class="home-state" role="alert">暂时无法加载科研线索。<button type="button" @click="loadEditorial('research')">重新加载 ↗</button></div>
-        <div v-else-if="!laboratories.length" class="home-state">科研项目信息正在整理。</div>
-        <div v-else class="research-list">
-          <article v-for="item in laboratories.slice(0, 3)" :key="item.id" class="research-row">
-            <div class="research-main"><h3>{{ item.title }}</h3><p>{{ item.summary }}</p><span>{{ item.participation }}</span></div>
-            <div class="research-end"><span>{{ item.unit }}</span><span v-if="item.verifiedOn">核查于 {{ item.verifiedOn }}</span></div>
-            <a v-if="safeExternalUrl(item.sourceUrl)" class="research-arrow" :href="safeExternalUrl(item.sourceUrl)" target="_blank" rel="noopener noreferrer" :aria-label="`查看${item.title}的官方来源`">↗</a>
-          </article>
-        </div>
+        <p class="home-intro">暂不开放</p>
       </div>
     </section>
 

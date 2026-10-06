@@ -1,4 +1,6 @@
 """科研和快讯的访客只读接口。"""
+from django.conf import settings
+from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
@@ -13,6 +15,8 @@ class PublicEditorialView(APIView):
     cards = staticmethod(research_cards)
 
     def get(self, request):
+        if type(self) is PublicEditorialView and not settings.PUBLIC_RESEARCH_ENABLED:
+            return Response({'count':0,'next':None,'previous':None,'results':[], 'available':False})
         query = request.query_params.get('search', '').strip()
         if len(query) > 200:
             raise ValidationError({'search': '搜索内容最多 200 字。'})

@@ -151,7 +151,7 @@ def load_competition_knowledge(*, actor, reason, apply=False, directory=None):
                     if document.review_status == 'draft':
                         to_approve.append(row['code'])
                     continue
-                if document.review_status == 'approved':
+                if document.review_status in ('approved', 'published'):
                     review_document(document.code, revision=document.current_revision.version,
                                     status='draft', reason=reason, actor=actor)
             pending.append(row)
@@ -169,7 +169,7 @@ def load_competition_knowledge(*, actor, reason, apply=False, directory=None):
     from information_library.competition_search import database_corpus
     corpus = database_corpus()
     owned_codes = ImportedObject.objects.filter(kind='document', package_id__in=package_ids).values_list('code', flat=True)
-    active_documents = KnowledgeDocument.objects.filter(code__in=owned_codes, review_status='approved').select_related('current_revision')
+    active_documents = KnowledgeDocument.objects.filter(code__in=owned_codes, review_status__in=('approved', 'published')).select_related('current_revision')
     active_record_ids = {document.current_revision.metadata['search_record']['id'] for document in active_documents}
     require(active_record_ids <= record_ids, '当前启用的知识文档需要属于本次资料版本。')
     visible = {record['id'] for record in corpus['records']} & active_record_ids
@@ -179,6 +179,8 @@ def load_competition_knowledge(*, actor, reason, apply=False, directory=None):
               'corpus_version': version, 'database_corpus_version': corpus['version'],
               'packages': package_ids, 'documents': len(codes),
               'searchable_documents': len(visible), 'counts': dict(counts)}
+    from .activation import activate_release
+    result['activation'] = activate_release([r for r in corpus['records'] if r['id'] in visible], actor=actor)
     if not apply:
         transaction.set_rollback(True)
     return result

@@ -1,9 +1,9 @@
 """页面与 AI 共用的公开资料范围，包括直接发布和已核验资料。"""
-from django.db.models import Exists, OuterRef, Q
+from django.db.models import Exists, OuterRef, Q, F
 from django.conf import settings
 from competitions.models import Competition
 from competitions.scope import apply_competition_scope
-from .models import DocumentLink, KnowledgeDocument
+from .models import DocumentLink, KnowledgeDocument, ImportedObject
 
 
 def student_visible_documents():
@@ -19,6 +19,16 @@ def student_visible_documents():
         Q(current_revision__links__resource__code__startswith='demo-') |
         Q(current_revision__links__resource__title__contains='【虚构样例】')
     ).distinct()
+    # Once the independent release covers a catalog, its old package documents
+    # remain in maintenance history and no longer duplicate the public reading set.
+    replacements = DocumentLink.objects.filter(catalog_id=OuterRef('catalog_id'),
+        revision_id=F('revision__document__current_revision_id'),
+        revision__document__code__startswith='final-')
+    replaced_links = DocumentLink.objects.filter(revision_id=OuterRef('current_revision_id'),
+        catalog__isnull=False).annotate(_replacement=Exists(replacements)).filter(_replacement=True)
+    legacy_codes = ImportedObject.objects.filter(kind='document', package_id__startswith='tongji-2026-').values('code')
+    queryset = queryset.annotate(_has_replacement=Exists(replaced_links)).exclude(
+        code__in=legacy_codes, _has_replacement=True)
     if settings.COMPETITION_CATALOG_ONLY:
         allowed_competitions = apply_competition_scope(
             Competition.objects.filter(publication_status='published'),

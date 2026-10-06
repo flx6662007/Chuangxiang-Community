@@ -129,8 +129,8 @@ def card_output(card, user=None):
         'current_existing_member_count': card.current_existing_member_count,
         'joined_member_count': card.joined_member_count, 'remaining_slots': card.remaining_slots,
         'duration_days': card.duration_days, 'published_at': card.published_at, 'expires_at': card.expires_at,
-        'effective_expires_at': min(card.expires_at, card.team.competition.recruitment_deadline)
-            if card.expires_at and card.team.competition.recruitment_deadline else card.expires_at,
+        'effective_expires_at': min(card.expires_at, card.team.competition.effective_recruitment_deadline)
+            if card.expires_at and card.team.competition.effective_recruitment_deadline else card.expires_at,
         'last_edited_at': card.last_edited_at, 'closed_at': card.closed_at, 'close_reason': card.close_reason,
         'is_open': card.is_open, 'status': status, 'allowed_actions': actions})
     return result

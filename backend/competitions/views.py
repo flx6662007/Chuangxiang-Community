@@ -87,8 +87,8 @@ class CompetitionListView(PublicCompetitionMixin, ListAPIView):
         if recruitment_open is not None:
             if recruitment_open not in ('true', 'false', '1', '0'):
                 raise ValidationError({'recruitment_open': '请使用 true 或 false。'})
-            eligible = Q(recruitment_enabled=True, recruitment_deadline__gt=timezone.now(),
-                         participation_type__in=['team', 'both'])
+            from .recruitment_policy import open_query
+            eligible = open_query(timezone.now())
             queryset = queryset.filter(eligible) if recruitment_open in ('true', '1') else queryset.exclude(eligible)
         return queryset
 

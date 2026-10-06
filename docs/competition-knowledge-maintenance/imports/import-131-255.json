@@ -942,7 +942,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1039,7 +1039,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1284,7 +1284,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1471,7 +1471,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1676,7 +1676,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1684,7 +1684,7 @@
       "code": "final-curated-c143-17bb43de",
       "title": "CCF大学生计算机系统与程序设计竞赛（CCSP）",
       "edition": "2026年",
-      "body": "## 赛程安排\n\nCCF通知2026年CCSP于10月21—22日在成都西华大学举行，报名至10月11日；9月14日另发比赛规则调整。\n\n## 作品要求\n\n参赛者须为在校学生，CSP第37—43次七场认证中的最高成绩不低于200分；名额有限。比赛为个人机试。\n\n## 赛程安排\n\n2026年10月21日9:00—21:00在成都西华大学竞赛，5道题、每题100分，可用C/C++、Java、Python。10月22日颁奖。\n\n## 赛程安排\n\n9月14日新规禁止U盘、移动硬盘、存储卡等电子存储设备；合理数量纸质材料可带，其他计算及通信设备禁止。键盘、鼠标、有线耳机须接受检查。\n\n## 参赛对象\n\n在校学生；CSP第37—43次最高成绩≥200分。\n\n## 赛道\n\n个人计算机系统与程序设计机试；5题，每题100分。\n\n## 参赛形式\n\n个人参赛",
+      "body": "## 赛程安排\n\nCCF通知2026年CCSP于10月21—22日在成都西华大学举行，报名至10月11日；9月14日另发比赛规则调整。\n\n## 作品要求\n\n参赛者须为在校学生，CSP第37—43次七场认证中的最高成绩不低于200分；名额有限。比赛为个人机试。\n\n## 赛程安排\n\n2026年10月21日9:00—21:00在成都西华大学竞赛，5道题、每题100分，可用C/C++、Java、Python。10月22日颁奖。\n\n## 赛程安排\n\n9月14日新规禁止U盘、移动硬盘、存储卡等电子存储设备；合理数量纸质材料可带，其他计算及通信设备禁止。键盘、鼠标、有线耳机须接受检查。\n\n## 参赛对象\n\n在校学生；CSP第37—43次最高成绩≥200分。\n\n## 赛道\n\n个人计算机系统与程序设计机试；5题，每题100分。\n\n## 参赛形式\n\n个人参赛\n\n## 报名截止\n\n2026-10-11",
       "sources": [
         {
           "id": "ev-4bbfd096a53c27038908",
@@ -1730,7 +1730,8 @@
           "fields": {
             "eligibility": "在校学生；CSP第37—43次最高成绩≥200分。",
             "tracks": "个人计算机系统与程序设计机试；5题，每题100分。",
-            "participation_type": "individual"
+            "participation_type": "individual",
+            "registration_deadline": "2026-10-11"
           },
           "field_evidence": {
             "eligibility": [
@@ -1740,6 +1741,9 @@
               "ev-4bbfd096a53c27038908"
             ],
             "participation_type": [
+              "ev-4bbfd096a53c27038908"
+            ],
+            "registration_deadline": [
               "ev-4bbfd096a53c27038908"
             ]
           },
@@ -1817,12 +1821,20 @@
               "evidence_ids": [
                 "ev-4bbfd096a53c27038908"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2026-10-11",
+              "evidence_ids": [
+                "ev-4bbfd096a53c27038908"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "ff8459f8dbb97cecb2926ac991c323a7f69c207a3f104c3ce35f652f0a0dee26",
+          "content_hash": "72fcbc76fa360a13916b57010da56f2846783ec8d0a0326e94a462aad25b67c6",
           "category_evidence": [
             "ev-4bbfd096a53c27038908"
           ],
@@ -1861,7 +1873,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -1964,7 +1976,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2161,7 +2173,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2316,7 +2328,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2486,7 +2498,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2619,7 +2631,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2627,7 +2639,7 @@
       "code": "final-curated-c148-79c641ae",
       "title": "全国大学生软件创新大赛",
       "edition": "2026年第十九届",
-      "body": "## 参赛对象\n\n面向普通高校在籍学生，含本科与研究生；学生队长1名、其他学生不超过3名，指导教师不超过2名，合计最多6人。可跨校、跨专业、跨学历组队，跨校队伍按队长学校归属。每位学生限1队，每队限1件软件作品。\n\n## 赛事介绍\n\n2026主题为AI无界，创见未来；须依该届指定题目开发，材料匿名，不出现学校和成员身份。比赛不收参赛费，交通食宿自理。\n\n## 赛程安排\n\n报名及初赛提交截止2026年2月2日18:00；复赛4月23日18:00；决赛材料5月28日18:00，现场决赛5月30—31日。\n\n## 参赛对象\n\n普通高校在籍学生；可跨校、跨专业、跨学历，跨校队伍归属队长学校。\n\n## 参赛形式\n\n团队参赛\n\n## 队伍最少人数\n\n1\n\n## 队伍最多人数\n\n4\n\n## 报名方式\n\n官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。\n\n## 报名截止\n\n2026-02-02\n\n## 作品提交截止\n\n2026-05-28\n\n## 报名入口\n\nhttps://www.swcontest.com.cn",
+      "body": "## 参赛对象\n\n面向普通高校在籍学生，含本科与研究生；学生队长1名、其他学生不超过3名，指导教师不超过2名，合计最多6人。可跨校、跨专业、跨学历组队，跨校队伍按队长学校归属。每位学生限1队，每队限1件软件作品。\n\n## 赛事介绍\n\n2026主题为AI无界，创见未来；须依该届指定题目开发，材料匿名，不出现学校和成员身份。比赛不收参赛费，交通食宿自理。\n\n## 赛程安排\n\n报名及初赛提交截止2026年2月2日18:00；复赛4月23日18:00；决赛材料5月28日18:00，现场决赛5月30—31日。\n\n## 参赛对象\n\n普通高校在籍学生；可跨校、跨专业、跨学历，跨校队伍归属队长学校。\n\n## 参赛形式\n\n团队参赛\n\n## 队伍最少人数\n\n1\n\n## 队伍最多人数\n\n4\n\n## 报名方式\n\n官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。\n\n## 报名截止\n\n2026-02-02\n\n## 作品提交截止\n\n2026-05-28\n\n## 报名入口\n\nhttps://www.swcontest.com.cn\n\n## 报名截止时刻\n\n2026-02-02T18:00:00+08:00\n\n## 赛事进展\n\n第十九届全国大学生软件创新大赛已结束，官网于2026年6月2日发布落幕报道。",
       "sources": [
         {
           "id": "ev-7abc4924c99ba867c215",
@@ -2636,6 +2648,14 @@
           "quote": "",
           "locator": "参赛对象、赛制、报名、材料提交",
           "verified_at": "2026-10-02"
+        },
+        {
+          "id": "completed-curated-c148-79c641ae",
+          "url": "https://www.swcontest.com.cn/",
+          "title": "第十九届全国大学生软件创新大赛官网",
+          "locator": "新闻动态：2026-06-02赛事落幕报道",
+          "verified_at": "2026-10-06",
+          "quote": ""
         }
       ],
       "attachments": [],
@@ -2667,7 +2687,9 @@
             "registration_method": "官网按指定赛题组队注册并上传作品，初赛、复赛和决赛分阶段提交。",
             "registration_deadline": "2026-02-02",
             "submission_deadline": "2026-05-28",
-            "registration_url": "https://www.swcontest.com.cn"
+            "registration_url": "https://www.swcontest.com.cn",
+            "registration_deadline_at": "2026-02-02T18:00:00+08:00",
+            "event_completed_on": "2026-10-06"
           },
           "field_evidence": {
             "eligibility": [
@@ -2693,6 +2715,12 @@
             ],
             "registration_url": [
               "ev-7abc4924c99ba867c215"
+            ],
+            "registration_deadline_at": [
+              "ev-7abc4924c99ba867c215"
+            ],
+            "event_completed_on": [
+              "completed-curated-c148-79c641ae"
             ]
           },
           "sources": [
@@ -2703,6 +2731,14 @@
               "quote": "",
               "locator": "参赛对象、赛制、报名、材料提交",
               "verified_at": "2026-10-02"
+            },
+            {
+              "id": "completed-curated-c148-79c641ae",
+              "url": "https://www.swcontest.com.cn/",
+              "title": "第十九届全国大学生软件创新大赛官网",
+              "locator": "新闻动态：2026-06-02赛事落幕报道",
+              "verified_at": "2026-10-06",
+              "quote": ""
             }
           ],
           "sections": [
@@ -2793,12 +2829,28 @@
               "evidence_ids": [
                 "ev-7abc4924c99ba867c215"
               ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-02-02T18:00:00+08:00",
+              "evidence_ids": [
+                "ev-7abc4924c99ba867c215"
+              ]
+            },
+            {
+              "id": "verified-event-completed",
+              "heading": "赛事进展",
+              "text": "第十九届全国大学生软件创新大赛已结束，官网于2026年6月2日发布落幕报道。",
+              "evidence_ids": [
+                "completed-curated-c148-79c641ae"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "589cfb7bfd81e663deacde07c93da6d761536430f3e04b3e965fc4afe7e85088",
+          "content_hash": "a45f7afabd7c03175c80db481820c4efd0aaf7bab7799fca460b60deed1225dd",
           "category_evidence": [
             "ev-7abc4924c99ba867c215"
           ],
@@ -2830,7 +2882,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -2957,7 +3009,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3120,7 +3172,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3297,7 +3349,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3305,7 +3357,7 @@
       "code": "final-curated-c155-ffcfd903",
       "title": "IFLA 国际学生竞赛",
       "edition": "2025年IFLA学生竞赛",
-      "body": "## 赛程安排\n\n2025南特竞赛围绕气候适应、土壤、生物多样性及可持续水管理；跨专业团队由景观学生牵头，提交截止5月31日。\n\n## 赛事介绍\n\n个人或最多5人团队，相关专业跨学科团队须由风景园林学生领队，评审时仍在读。\n\n## 赛事介绍\n\n交学校签署表及在读证明；英文项目陈述≤150词、叙述≤300词，两张竖向A1匿名PDF展板，300dpi、每张≤20MB。\n\n## 参赛对象\n\n风景园林或课程涉及该学科的在读学生；相关领域学生只能参加由风景园林学生领队的团队。\n\n## 赛道\n\n景观规划、景观设计、应用研究\n\n## 参赛形式\n\n个人或团队参赛\n\n## 队伍最多人数\n\n5\n\n## 报名方式\n\n官方页面填写表单、上传PDF并付款完成提交。",
+      "body": "## 赛程安排\n\n2025南特竞赛围绕气候适应、土壤、生物多样性及可持续水管理；跨专业团队由景观学生牵头，提交截止5月31日。\n\n## 赛事介绍\n\n个人或最多5人团队，相关专业跨学科团队须由风景园林学生领队，评审时仍在读。\n\n## 赛事介绍\n\n交学校签署表及在读证明；英文项目陈述≤150词、叙述≤300词，两张竖向A1匿名PDF展板，300dpi、每张≤20MB。\n\n## 参赛对象\n\n风景园林或课程涉及该学科的在读学生；相关领域学生只能参加由风景园林学生领队的团队。\n\n## 赛道\n\n景观规划、景观设计、应用研究\n\n## 参赛形式\n\n个人或团队参赛\n\n## 队伍最多人数\n\n5\n\n## 报名方式\n\n官方页面填写表单、上传PDF并付款完成提交。\n\n## 作品提交截止\n\n2025-05-31",
       "sources": [
         {
           "id": "ev-bc539b7288e376d4cf8b",
@@ -3352,7 +3404,8 @@
             "tracks": "景观规划、景观设计、应用研究",
             "participation_type": "both",
             "team_size_max": 5,
-            "registration_method": "官方页面填写表单、上传PDF并付款完成提交。"
+            "registration_method": "官方页面填写表单、上传PDF并付款完成提交。",
+            "submission_deadline": "2025-05-31"
           },
           "field_evidence": {
             "eligibility": [
@@ -3369,6 +3422,9 @@
             ],
             "registration_method": [
               "ev-14253f8a8812987cc9fe"
+            ],
+            "submission_deadline": [
+              "ev-bc539b7288e376d4cf8b"
             ]
           },
           "sources": [
@@ -3453,12 +3509,20 @@
               "evidence_ids": [
                 "ev-14253f8a8812987cc9fe"
               ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2025-05-31",
+              "evidence_ids": [
+                "ev-bc539b7288e376d4cf8b"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "44798fbfd8ef2ff021de0db72d04ba0aa07fd2269b88f7c1862133abfa352098",
+          "content_hash": "5ea2a50425fa5614807ac52dded838e93651c143d3d6da22fa36e56c197b7fa6",
           "category_evidence": [
             "ev-bc539b7288e376d4cf8b"
           ],
@@ -3494,7 +3558,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3621,7 +3685,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3834,7 +3898,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -3977,7 +4041,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4203,7 +4267,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4302,7 +4366,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4513,7 +4577,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4771,7 +4835,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -4914,7 +4978,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5069,7 +5133,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5165,7 +5229,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5261,7 +5325,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5424,7 +5488,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5605,7 +5669,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5786,7 +5850,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -5967,7 +6031,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6175,7 +6239,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6336,7 +6400,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6529,7 +6593,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6694,7 +6758,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -6867,7 +6931,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -7100,7 +7164,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -7197,7 +7261,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -7396,7 +7460,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -7637,7 +7701,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -7855,7 +7919,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -8068,7 +8132,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -8076,7 +8140,7 @@
       "code": "final-curated-c192-35ef9e26",
       "title": "“德语之星”全国高校德语演讲比赛",
       "edition": "2026年第五届",
-      "body": "## 赛程安排\n\n第五届德语之星全国高校德语演讲比赛决赛暂定2026年11月1日在线下举行。\n\n## 参赛对象\n\n在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲。\n\n## 作品要求\n\n主题中德文化交流史；初赛3—5分钟德语视频，可用PPT但匿名、全程出镜且一镜到底，不剪辑加速或加特效。\n\n## 赛程安排\n\n学校报名2026年9月30日17:00截止；已报名队伍初赛视频10月9日17:00前交tjde_yanjiang@163.com。决赛11月1日为暂定。\n\n## 主办单位\n\n同济大学外国语学院，德语系承办\n\n## 参赛对象\n\n德语专业本科生或德语主专业双学位学生；非德语母语，年级不限。\n\n## 参赛形式\n\n团队参赛\n\n## 队伍最少人数\n\n2\n\n## 队伍最多人数\n\n4\n\n## 报名方式\n\n学校选1队及带队老师，报名表与初赛视频分阶段邮件提交tjde_yanjiang@163.com。\n\n## 报名截止\n\n2026-09-30\n\n## 作品提交截止\n\n2026-10-09",
+      "body": "## 赛程安排\n\n第五届德语之星全国高校德语演讲比赛决赛暂定2026年11月1日在线下举行。\n\n## 参赛对象\n\n在校德语专业本科生或德语为主专业的双学位学生可参加，年级不限，排除德语母语者；每校1队2—4人，选1人演讲。\n\n## 作品要求\n\n主题中德文化交流史；初赛3—5分钟德语视频，可用PPT但匿名、全程出镜且一镜到底，不剪辑加速或加特效。\n\n## 赛程安排\n\n学校报名2026年9月30日17:00截止；已报名队伍初赛视频10月9日17:00前交tjde_yanjiang@163.com。决赛11月1日为暂定。\n\n## 主办单位\n\n同济大学外国语学院，德语系承办\n\n## 参赛对象\n\n德语专业本科生或德语主专业双学位学生；非德语母语，年级不限。\n\n## 参赛形式\n\n团队参赛\n\n## 队伍最少人数\n\n2\n\n## 队伍最多人数\n\n4\n\n## 报名方式\n\n学校选1队及带队老师，报名表与初赛视频分阶段邮件提交tjde_yanjiang@163.com。\n\n## 报名截止\n\n2026-09-30\n\n## 作品提交截止\n\n2026-10-09\n\n## 报名截止时刻\n\n2026-09-30T17:00:00+08:00",
       "sources": [
         {
           "id": "ev-47e0659627e28386b4c3",
@@ -8125,7 +8189,8 @@
             ],
             "grades": [
               "不限年级"
-            ]
+            ],
+            "registration_deadline_at": "2026-09-30T17:00:00+08:00"
           },
           "field_evidence": {
             "organizer": [
@@ -8159,6 +8224,9 @@
               "ev-47e0659627e28386b4c3"
             ],
             "grades": [
+              "ev-47e0659627e28386b4c3"
+            ],
+            "registration_deadline_at": [
               "ev-47e0659627e28386b4c3"
             ]
           },
@@ -8268,12 +8336,20 @@
               "evidence_ids": [
                 "ev-47e0659627e28386b4c3"
               ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2026-09-30T17:00:00+08:00",
+              "evidence_ids": [
+                "ev-47e0659627e28386b4c3"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "10987bed158dc291494bf4b46c728f322e38a12406b497e15893125b4159374d",
+          "content_hash": "127c82126dc5ba7a3d0130aeb219d1f200872ddefab2177fb17de9995207dc3d",
           "category_evidence": [
             "ev-47e0659627e28386b4c3"
           ],
@@ -8305,7 +8381,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -8500,7 +8576,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -8667,7 +8743,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -8814,7 +8890,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9021,7 +9097,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9029,7 +9105,7 @@
       "code": "final-curated-c198-787fbf0f",
       "title": "全国大学生“用日语讲好中国故事”微视频大赛",
       "edition": "2025年第五届",
-      "body": "## 赛程安排\n\n2025第五届以学校为单位报名，每校一队、学生最多三人、指导教师最多两人。面向国内高校日语、日语翻译及具有同等日语水平的本科及以上学生。初赛主题为中国科技创新的故事，MP4横屏3分钟（允许前后15秒）、至少1080P，日语音频与日汉双语字幕，现场原声，不允许后期配音，至少一名队员出镜。报名6月30日截止，初赛作品7月15日截止。\n\n## 赛程安排\n\n报名表需负责人和队员签字、学院或学校盖章。初赛作品窗口2025年6月1日至7月15日；决赛题目提前72小时发布。\n\n## 作品要求\n\n完整通知列赛事邮箱ryweishipin5th@126.com；视频至少一名队员出镜，现场原声，日语配音轨并附中日双语字幕。\n\n## 队伍最多人数\n\n3\n\n## 报名方式\n\n按第1号通知填写盖章报名表，经赛事邮箱ryweishipin5th@126.com报送；以学校为单位组队。",
+      "body": "## 赛程安排\n\n2025第五届以学校为单位报名，每校一队、学生最多三人、指导教师最多两人。面向国内高校日语、日语翻译及具有同等日语水平的本科及以上学生。初赛主题为中国科技创新的故事，MP4横屏3分钟（允许前后15秒）、至少1080P，日语音频与日汉双语字幕，现场原声，不允许后期配音，至少一名队员出镜。报名6月30日截止，初赛作品7月15日截止。\n\n## 赛程安排\n\n报名表需负责人和队员签字、学院或学校盖章。初赛作品窗口2025年6月1日至7月15日；决赛题目提前72小时发布。\n\n## 作品要求\n\n完整通知列赛事邮箱ryweishipin5th@126.com；视频至少一名队员出镜，现场原声，日语配音轨并附中日双语字幕。\n\n## 队伍最多人数\n\n3\n\n## 报名方式\n\n按第1号通知填写盖章报名表，经赛事邮箱ryweishipin5th@126.com报送；以学校为单位组队。\n\n## 报名截止\n\n2025-06-30\n\n## 作品提交截止\n\n2025-07-15",
       "sources": [
         {
           "id": "ev-680f323137c56650a93b",
@@ -9071,13 +9147,21 @@
           "summary": "2025第五届以学校为单位报名，每校一队、学生最多三人、指导教师最多两人。面向国内高校日语、日语翻译及具有同等日语水平的本科及以上学生。初赛主题为中国科技创新的故事，MP4横屏3分钟（允许前后15秒）、至少1080P，日语音频与日汉双语字幕，现场原声，不允许后期配音，至少一名队员出镜。报名6月30日截止，初赛作品7月15日截止。",
           "fields": {
             "team_size_max": 3,
-            "registration_method": "按第1号通知填写盖章报名表，经赛事邮箱ryweishipin5th@126.com报送；以学校为单位组队。"
+            "registration_method": "按第1号通知填写盖章报名表，经赛事邮箱ryweishipin5th@126.com报送；以学校为单位组队。",
+            "registration_deadline": "2025-06-30",
+            "submission_deadline": "2025-07-15"
           },
           "field_evidence": {
             "team_size_max": [
               "ev-680f323137c56650a93b"
             ],
             "registration_method": [
+              "ev-c684996738b9fc50ae06"
+            ],
+            "registration_deadline": [
+              "ev-680f323137c56650a93b"
+            ],
+            "submission_deadline": [
               "ev-c684996738b9fc50ae06"
             ]
           },
@@ -9139,12 +9223,28 @@
               "evidence_ids": [
                 "ev-c684996738b9fc50ae06"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-06-30",
+              "evidence_ids": [
+                "ev-680f323137c56650a93b"
+              ]
+            },
+            {
+              "id": "field-submission_deadline",
+              "heading": "作品提交截止",
+              "text": "2025-07-15",
+              "evidence_ids": [
+                "ev-c684996738b9fc50ae06"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "180e668818ed3088a763ee0d42e92a3ea26d47440df283ed8a1e575088ed09fa",
+          "content_hash": "78ac9411f307023bebb05e898d6283a1944573a816a141c16a888b592ae284e6",
           "category_evidence": [
             "ev-680f323137c56650a93b"
           ],
@@ -9176,7 +9276,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9363,7 +9463,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9568,7 +9668,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9665,7 +9765,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -9888,7 +9988,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10058,7 +10158,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10201,7 +10301,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10395,7 +10495,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10520,7 +10620,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10647,7 +10747,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -10858,7 +10958,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11031,7 +11131,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11194,7 +11294,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11377,7 +11477,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11474,7 +11574,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11655,7 +11755,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11746,7 +11846,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -11941,7 +12041,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -12158,7 +12258,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -12263,7 +12363,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -12444,7 +12544,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -12605,7 +12705,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -12804,7 +12904,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13063,7 +13163,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13226,7 +13326,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13401,7 +13501,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13554,7 +13654,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13719,7 +13819,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -13902,7 +14002,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14043,7 +14143,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14194,7 +14294,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14405,7 +14505,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14413,7 +14513,7 @@
       "code": "final-curated-c242-2e9a3463",
       "title": "上海市土木工程材料知识竞赛",
       "edition": "2024年第九届",
-      "body": "## 参赛对象\n\n上海在校本科生个人闭卷笔试，大一大二为低年级组、大三大四为高年级组；考查土木材料基础、发展与低碳。\n\n## 赛程安排\n\n报名截止2024年4月20日。\n\n## 报名方式\n\n报名表依年级发送：低年级jiangwei@tongji.edu.cn，高年级wukai@tongji.edu.cn；个人闭卷，需有效学生证。\n\n## 赛道\n\n低年级（大一、大二）和高年级（大三、大四）\n\n## 报名方式\n\n填写PDF第4页回执；低年级发送jiangwei@tongji.edu.cn，高年级发送wukai@tongji.edu.cn。\n\n## 参赛对象\n\n上海在校本科生个人闭卷笔试，大一大二为低年级组、大三大四为高年级组；考查土木材料基础、发展与低碳。",
+      "body": "## 参赛对象\n\n上海在校本科生个人闭卷笔试，大一大二为低年级组、大三大四为高年级组；考查土木材料基础、发展与低碳。\n\n## 赛程安排\n\n报名截止2024年4月20日。\n\n## 报名方式\n\n报名表依年级发送：低年级jiangwei@tongji.edu.cn，高年级wukai@tongji.edu.cn；个人闭卷，需有效学生证。\n\n## 赛道\n\n低年级（大一、大二）和高年级（大三、大四）\n\n## 报名方式\n\n填写PDF第4页回执；低年级发送jiangwei@tongji.edu.cn，高年级发送wukai@tongji.edu.cn。\n\n## 参赛对象\n\n上海在校本科生个人闭卷笔试，大一大二为低年级组、大三大四为高年级组；考查土木材料基础、发展与低碳。\n\n## 报名截止\n\n2024-04-20",
       "sources": [
         {
           "id": "ev-7dcd8cc389d8cedfa60d",
@@ -14451,7 +14551,8 @@
             "eligibility": "上海在校本科生个人闭卷笔试，大一大二为低年级组、大三大四为高年级组；考查土木材料基础、发展与低碳。",
             "education": [
               "本科"
-            ]
+            ],
+            "registration_deadline": "2024-04-20"
           },
           "field_evidence": {
             "tracks": [
@@ -14464,6 +14565,9 @@
               "ev-7dcd8cc389d8cedfa60d"
             ],
             "education": [
+              "ev-7dcd8cc389d8cedfa60d"
+            ],
+            "registration_deadline": [
               "ev-7dcd8cc389d8cedfa60d"
             ]
           },
@@ -14525,12 +14629,20 @@
               "evidence_ids": [
                 "ev-7dcd8cc389d8cedfa60d"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2024-04-20",
+              "evidence_ids": [
+                "ev-7dcd8cc389d8cedfa60d"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "54ff15c90519f906cec29824e2366f647310212e896597c245416a8ad5c95142",
+          "content_hash": "d3e7232849621c1d66ac3804b46b30118bbc37d1b847adb34df19a4d67943c06",
           "category_evidence": [
             "ev-7dcd8cc389d8cedfa60d"
           ],
@@ -14562,7 +14674,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14570,7 +14682,7 @@
       "code": "final-curated-c244-2191d337",
       "title": "同济大学化学知识竞赛",
       "edition": "2008年第一届",
-      "body": "## 作品要求\n\n首届历史通知为化学基础、前沿和生活化学相关笔试。\n\n## 赛程安排\n\n报名截止2008年11月5日，比赛11月15日8:30—10:30；资格按当时化学新生与其他专业本科生规定。",
+      "body": "## 作品要求\n\n首届历史通知为化学基础、前沿和生活化学相关笔试。\n\n## 赛程安排\n\n报名截止2008年11月5日，比赛11月15日8:30—10:30；资格按当时化学新生与其他专业本科生规定。\n\n## 报名截止\n\n2008-11-05",
       "sources": [
         {
           "id": "ev-4c94791d2b080e2b5280",
@@ -14602,8 +14714,14 @@
           "level": "unknown",
           "aliases": [],
           "summary": "首届历史通知为化学基础、前沿和生活化学相关笔试。",
-          "fields": {},
-          "field_evidence": {},
+          "fields": {
+            "registration_deadline": "2008-11-05"
+          },
+          "field_evidence": {
+            "registration_deadline": [
+              "ev-4c94791d2b080e2b5280"
+            ]
+          },
           "sources": [
             {
               "id": "ev-4c94791d2b080e2b5280",
@@ -14630,12 +14748,20 @@
               "evidence_ids": [
                 "ev-4c94791d2b080e2b5280"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2008-11-05",
+              "evidence_ids": [
+                "ev-4c94791d2b080e2b5280"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "95d85f2fae2aa421e7790a7c7077cb6602fe79638406a0fad2fc0d9ea575a6cd",
+          "content_hash": "d34dfdb774c0871aa69b033c3af1c32cd9549fad4d1a8078bd356aa4669e0f61",
           "category_evidence": [
             "ev-4c94791d2b080e2b5280"
           ],
@@ -14661,7 +14787,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -14669,7 +14795,7 @@
       "code": "final-curated-c244-4f33501b",
       "title": "同济大学化学知识竞赛",
       "edition": "2025年第十八届",
-      "body": "## 赛事介绍\n\n2025第十八届面向同济全校本科生，化学类专业与非专业分组。\n\n## 赛程安排\n\n报名截止2025年11月16日23:55，使用学校创新创业平台。\n\n## 作品要求\n\n闭卷笔试120分钟；单选、多选、填空、简答分析题；携带2B铅笔及橡皮。\n\n## 赛程安排\n\n原通知安排2025年11月29日9:35—11:35，四平路教学南楼。\n\n## 赛程安排\n\n赛后报道记载2025年12月6日在四平路和嘉定校区举行，与初始通知的日期和校区安排不同；主办为本科生院，化学科学与工程学院承办。\n\n## 赛事介绍\n\n初始通知的非专业组一、二、三等奖比例分别为0.5%、1.5%、3%，奖金500、300、100元；专业组三个等级分别3、6、11人，奖金同额。课程成绩奖励另有课程与期末成绩条件\n\n## 参赛对象\n\n2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
+      "body": "## 赛事介绍\n\n2025第十八届面向同济全校本科生，化学类专业与非专业分组。\n\n## 赛程安排\n\n报名截止2025年11月16日23:55，使用学校创新创业平台。\n\n## 作品要求\n\n闭卷笔试120分钟；单选、多选、填空、简答分析题；携带2B铅笔及橡皮。\n\n## 赛程安排\n\n原通知安排2025年11月29日9:35—11:35，四平路教学南楼。\n\n## 赛程安排\n\n赛后报道记载2025年12月6日在四平路和嘉定校区举行，与初始通知的日期和校区安排不同；主办为本科生院，化学科学与工程学院承办。\n\n## 赛事介绍\n\n初始通知的非专业组一、二、三等奖比例分别为0.5%、1.5%、3%，奖金500、300、100元；专业组三个等级分别3、6、11人，奖金同额。课程成绩奖励另有课程与期末成绩条件\n\n## 参赛对象\n\n2025第十八届面向同济全校本科生，化学类专业与非专业分组。\n\n## 报名截止\n\n2025-11-16\n\n## 报名截止时刻\n\n2025-11-16T23:55:00+08:00",
       "sources": [
         {
           "id": "ev-80978d39371db903bf3b",
@@ -14721,13 +14847,21 @@
             "eligibility": "2025第十八届面向同济全校本科生，化学类专业与非专业分组。",
             "education": [
               "本科"
-            ]
+            ],
+            "registration_deadline": "2025-11-16",
+            "registration_deadline_at": "2025-11-16T23:55:00+08:00"
           },
           "field_evidence": {
             "eligibility": [
               "ev-80978d39371db903bf3b"
             ],
             "education": [
+              "ev-80978d39371db903bf3b"
+            ],
+            "registration_deadline": [
+              "ev-80978d39371db903bf3b"
+            ],
+            "registration_deadline_at": [
               "ev-80978d39371db903bf3b"
             ]
           },
@@ -14813,12 +14947,28 @@
               "evidence_ids": [
                 "ev-80978d39371db903bf3b"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2025-11-16",
+              "evidence_ids": [
+                "ev-80978d39371db903bf3b"
+              ]
+            },
+            {
+              "id": "field-registration_deadline_at",
+              "heading": "报名截止时刻",
+              "text": "2025-11-16T23:55:00+08:00",
+              "evidence_ids": [
+                "ev-80978d39371db903bf3b"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "577a402ad03d9dfdf1821d4a58ebf12a5aa57f3efe6e4577462290958cb4681a",
+          "content_hash": "21741a93eeb739e53456b82bcec4963e06f38a9da95c6476dbdb5396b4842636",
           "category_evidence": [
             "ev-80978d39371db903bf3b"
           ],
@@ -14844,7 +14994,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15034,7 +15184,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15139,7 +15289,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15227,7 +15377,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15235,7 +15385,7 @@
       "code": "final-curated-c247-1467df86",
       "title": "使命与担当",
       "edition": "2020年第六届",
-      "body": "## 参赛对象\n\n面向同济在读本科生。\n\n## 报名方式\n\n初赛为80分钟开卷笔试，含不定项选择与材料分析；按报名人数15%晋级。\n\n## 赛事介绍\n\n复赛每四人一组，80分钟开卷；决赛以风采展示、客观答题和辩论进行。\n\n## 赛程安排\n\n报名截止2020年10月16日22时。\n\n## 参赛对象\n\n面向同济在读本科生。",
+      "body": "## 参赛对象\n\n面向同济在读本科生。\n\n## 报名方式\n\n初赛为80分钟开卷笔试，含不定项选择与材料分析；按报名人数15%晋级。\n\n## 赛事介绍\n\n复赛每四人一组，80分钟开卷；决赛以风采展示、客观答题和辩论进行。\n\n## 赛程安排\n\n报名截止2020年10月16日22时。\n\n## 参赛对象\n\n面向同济在读本科生。\n\n## 报名截止\n\n2020-10-16",
       "sources": [
         {
           "id": "ev-7705f167a48b28f09d1a",
@@ -15271,13 +15421,17 @@
             "eligibility": "面向同济在读本科生。",
             "education": [
               "本科"
-            ]
+            ],
+            "registration_deadline": "2020-10-16"
           },
           "field_evidence": {
             "eligibility": [
               "ev-7705f167a48b28f09d1a"
             ],
             "education": [
+              "ev-7705f167a48b28f09d1a"
+            ],
+            "registration_deadline": [
               "ev-7705f167a48b28f09d1a"
             ]
           },
@@ -15331,12 +15485,20 @@
               "evidence_ids": [
                 "ev-7705f167a48b28f09d1a"
               ]
+            },
+            {
+              "id": "field-registration_deadline",
+              "heading": "报名截止",
+              "text": "2020-10-16",
+              "evidence_ids": [
+                "ev-7705f167a48b28f09d1a"
+              ]
             }
           ],
           "review_status": "approved",
           "publication_status": "published",
           "kind": "edition",
-          "content_hash": "54d037fc567e874eff6b34627d2a0fce0ae330801043fbeeee2621f5c2ce150a",
+          "content_hash": "971768dc6bed5b7cf538c8a68ec86b40a7e8034cdcb7b2a4a2c03db0a26def6c",
           "alias_evidence": {},
           "learning_resources": [
             {
@@ -15359,7 +15521,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15563,7 +15725,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15780,7 +15942,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -15983,7 +16145,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -16104,7 +16266,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -16279,7 +16441,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     },
@@ -16462,7 +16624,7 @@
             }
           ]
         },
-        "corpus_version": "874ccd5c6dddf794",
+        "corpus_version": "d744beaf5c993b25",
         "content_standard": "competition-knowledge-v1"
       }
     }
@@ -16471,5 +16633,5 @@
     "competitions": [],
     "resources": []
   },
-  "corpus_version": "874ccd5c6dddf794"
+  "corpus_version": "d744beaf5c993b25"
 }
