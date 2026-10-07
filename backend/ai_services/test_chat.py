@@ -61,7 +61,7 @@ class ChatTests(SimpleTestCase):
                 response = self.post(history)
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(response['Cache-Control'], 'no-store')
-                self.assertEqual(set(response.json()), {'message', 'sources', 'route', 'retrieval'})
+                self.assertEqual(set(response.json()), {'message', 'sources', 'recommendations', 'mode', 'route', 'retrieval'})
                 self.assertNotIn(CONFIG.api_key.encode(), response.content)
                 history.append(response.json()['message'])
         self.assertEqual([len(p['messages']) for p in payloads], [2, 4, 6])
@@ -71,16 +71,14 @@ class ChatTests(SimpleTestCase):
     @override_settings(AI_CHAT={})
     def test_unconfigured_returns_safe_error_without_network(self):
         with patch('httpx.Client') as client, \
-                patch('ai_services.chat.retrieve_platform') as platform, \
-                patch('ai_services.chat.retrieve_knowledge') as knowledge, \
-                patch('ai_services.chat.retrieve_official_web') as web:
+                patch('ai_services.chat.retrieve_unified') as knowledge, \
+                patch('ai_services.chat.search_external') as web:
             for question in (QUESTION, {'role': 'user', 'content': '机器人比赛规则官网最新通知'}):
                 with self.subTest(question=question['content']):
                     response = self.post([question])
                     self.assertEqual(response.status_code, 503)
                     self.assertEqual(response.json()['code'], 'ai_configuration_error')
         client.assert_not_called()
-        platform.assert_not_called()
         knowledge.assert_not_called()
         web.assert_not_called()
 
@@ -149,6 +147,19 @@ class ChatTests(SimpleTestCase):
             self.assertEqual(self.client.post(URL, 'text', content_type='text/plain').status_code, 415)
             self.assertEqual(self.client.get(URL).status_code, 405)
             service.assert_not_called()
+
+    def test_mode_contract_accepts_four_modes_and_rejects_unknown_values(self):
+        with patch('ai_services.views.chat', return_value={'role': 'assistant', 'content': '好的'}) as service:
+            for mode in ('smart', 'competition', 'research', 'resource'):
+                response = self.client.post(URL, json.dumps({'messages': [QUESTION], 'mode': mode}),
+                                            content_type='application/json')
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(service.call_args.kwargs['mode'], mode)
+            for mode in ('other', None, 1, ['competition']):
+                response = self.client.post(URL, json.dumps({'messages': [QUESTION], 'mode': mode}),
+                                            content_type='application/json')
+                self.assertEqual(response.status_code, 400)
+            self.assertEqual(service.call_count, 4)
 
     @override_settings(DEBUG=True)
     def test_unexpected_errors_do_not_return_or_log_sensitive_exception(self):

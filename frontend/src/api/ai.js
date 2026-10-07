@@ -6,9 +6,9 @@ export async function getAIStatus(signal) {
   return (await http.get('/ai/status/', { signal })).data
 }
 
-export async function requestAIChat(messages, { signal } = {}) {
+export async function requestAIChat(messages, { signal, mode = 'smart' } = {}) {
   await ensureCsrf()
-  const { data } = await http.post('/ai/chat/', { messages }, {
+  const { data } = await http.post('/ai/chat/', { messages, mode }, {
     signal,
     timeout: 130000,
   })

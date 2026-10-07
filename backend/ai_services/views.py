@@ -12,6 +12,7 @@ from rest_framework.views import APIView
 
 from .chat import chat
 from .exceptions import AIInputError, AIServiceError
+from .router import MODES
 
 
 class ChatThrottle(SimpleRateThrottle):
@@ -47,9 +48,12 @@ class ChatView(APIView):
 
     def post(self, request):
         try:
-            if not isinstance(request.data, dict) or set(request.data) != {'messages'}:
+            if not isinstance(request.data, dict) or set(request.data) not in ({'messages'}, {'messages', 'mode'}):
                 raise AIInputError()
-            result = chat(request.data['messages'], details=True)
+            mode = request.data.get('mode', 'smart')
+            if type(mode) is not str or mode not in MODES:
+                raise AIInputError()
+            result = chat(request.data['messages'], mode=mode, details=True)
             # Test doubles and legacy internal callers may still return the V1 message object.
             return Response(result if 'message' in result else {'message': result})
         except AIServiceError as error:

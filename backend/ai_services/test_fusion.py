@@ -20,10 +20,11 @@ class FusionTests(SimpleTestCase):
         older = item('competition', url, '报名截止是九月。', published='2026-08-01')
         newer = item('web', url, '官网更正为十月。', version=None, published='2026-09-01')
         sources, slots = fuse([older], [], [newer])
-        self.assertEqual([source['published_on'] for source in sources], ['2026-09-01', '2026-08-01'])
-        self.assertEqual(slots['WEB_CONTEXT'][0]['source_id'], 1)
-        self.assertEqual(slots['PLATFORM_CONTEXT'][0]['source_id'], 2)
-        self.assertEqual(sources[1]['internal_url'], '/competitions/1')
+        self.assertEqual([source['published_on'] for source in sources], ['2026-08-01', '2026-09-01'])
+        self.assertEqual(slots['PLATFORM_CONTEXT'][0]['source_id'], 1)
+        self.assertEqual(slots['WEB_CONTEXT'][0]['source_id'], 2)
+        self.assertEqual(sources[0]['internal_url'], '/competitions/1')
+        self.assertFalse(sources[1]['reviewed'])
 
     def test_bad_citations_urls_and_duplicate_sources(self):
         url = 'https://www.tongji.edu.cn/robot'
@@ -40,7 +41,10 @@ class FusionTests(SimpleTestCase):
             def complete_text(self, messages):
                 raise AssertionError('no factual source must not call the model')
 
-        with patch('ai_services.chat.retrieve_platform', return_value=[]), patch('ai_services.chat.retrieve_knowledge', return_value=([], 'no_published_knowledge')):
+        with patch('ai_services.chat.retrieve_unified', return_value={
+                'records': [], 'knowledge_rows': [], 'knowledge_status': 'no_published_knowledge',
+                'mode_used': 'keyword', 'warnings': [],
+            }), patch('ai_services.chat.search_external', return_value=([], 'registered_site_not_matched')):
             result = chat([{'role': 'user', 'content': '有哪些机器人比赛'}],
                           client=Provider(), details=True)
         self.assertEqual(result['sources'], [])

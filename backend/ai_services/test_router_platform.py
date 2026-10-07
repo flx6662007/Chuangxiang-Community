@@ -33,12 +33,18 @@ class RouterTests(SimpleTestCase):
                 return '尚未查到可确认的赛事。'
 
         provider = Provider()
-        with patch('ai_services.chat.retrieve_platform', return_value=[{
+        direct = [{
             'kind': 'competition', 'entity_id': 'db-1', 'version': 'v1', 'title': '机器人比赛',
             'url': 'https://www.tongji.edu.cn/robot', 'internal_url': '/competitions/1',
             'text': '机器人比赛规则', 'verified_at': '2026-10-04', 'published_on': None,
             'status': 'unknown', 'status_note': '截止未知',
-        }]) as retrieval, patch('ai_services.chat.retrieve_knowledge', return_value=([], 'no_published_knowledge')):
+        }]
+        with patch('ai_services.chat.retrieve_unified', return_value={
+            'records': [{'source_type': 'platform_competition'}], 'knowledge_rows': [],
+            'knowledge_status': 'no_published_knowledge',
+            'mode_used': 'keyword', 'warnings': [],
+        }) as retrieval, patch('ai_services.chat.as_evidence', return_value=direct[0]), patch(
+                'ai_services.chat.search_external', return_value=([], 'registered_site_not_matched')):
             result = chat([{'role': 'user', 'content': '机器人比赛'}], client=provider)
         self.assertEqual(result['role'], 'assistant')
         self.assertEqual(provider.messages[-1], {'role': 'user', 'content': '机器人比赛'})

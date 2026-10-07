@@ -1,7 +1,8 @@
-"""One-page official-site read. This is bounded source reading, not Web Search."""
+"""External evidence adapters. The default adapter reads registered official notices."""
 
 from urllib.parse import urlsplit
 import hashlib
+from typing import Protocol
 
 from django.utils import timezone
 
@@ -9,6 +10,7 @@ from competition_catalog.models import OfficialSite
 from competition_catalog.monitor import normalize_name, parse_page
 from ingestion.http import FetchError, OfficialClient, checked_url
 from information_library.selectors import public_text, safe_source_url
+from .evidence import validated_external
 
 
 class ChatOfficialClient(OfficialClient):
@@ -64,6 +66,43 @@ def retrieve_official_web(question, *, client_factory=ChatOfficialClient):
             'published_on': parsed['source_published_on'].isoformat() if parsed['source_published_on'] else None,
             'read_at': timezone.now().isoformat(), 'status': 'unreviewed_official_page',
             'status_note': '官网页面刚刚读取，未经平台人工审核；请以原文和后续更正为准。',
+            'source_type': 'official_event', 'reviewed': False,
         }], 'ready'
     except (FetchError, ValueError, TypeError):
         return [], 'official_site_unavailable'
+
+
+class RegisteredOfficialAdapter:
+    """Current search adapter. Future SearXNG/API adapters implement search(query)."""
+
+    def search(self, query):
+        return retrieve_official_web(query)
+
+
+class ExternalSearchAdapter(Protocol):
+    """Future providers return candidate rows and a status; trust is assigned here."""
+
+    def search(self, query): ...
+
+
+def search_external(query, *, domain='competition', adapters=None):
+    """Search only configured adapters; dedupe and validate every candidate."""
+    adapters = [RegisteredOfficialAdapter()] if adapters is None else adapters
+    results, seen, statuses = [], set(), []
+    for adapter in adapters:
+        try:
+            rows, status = adapter.search(query)
+        except (FetchError, OSError, ValueError):
+            statuses.append('external_search_unavailable')
+            continue
+        statuses.append(status)
+        for row in rows:
+            # A result cannot award itself official status. Only our registry adapter
+            # has already checked the target host against an enabled OfficialSite.
+            source_type = 'official_event' if type(adapter) is RegisteredOfficialAdapter else 'ordinary_web'
+            candidate = validated_external(row, domain=domain, source_type=source_type)
+            if candidate and candidate['url'] not in seen:
+                seen.add(candidate['url'])
+                results.append(candidate)
+    results.sort(key=lambda row: -row['evidence_score'])
+    return results[:3], 'ready' if results else (statuses[0] if statuses else 'no_adapter')

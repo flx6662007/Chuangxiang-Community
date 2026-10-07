@@ -10,9 +10,12 @@ DOMAIN_WORDS = {
     'resource': ('资源', '教程', '课程', '学习资料', '工具', 'resource', 'tutorial'),
     'team': ('组队', '队友', '团队', '招募', 'team', 'teammate'),
 }
-WEB_WORDS = ('官网', '最新公告', '最新通知', '官方网站', '实时', '联网', 'web', 'official site')
+MODES = ('smart', 'competition', 'research', 'resource')
+WEB_WORDS = ('官网', '最新', '官方网站', '实时', '联网', '网上搜索', '网络搜索', '搜索网络', 'web', 'official site')
 KNOWLEDGE_WORDS = ('资料', '规则', '章程', '指南', '怎么准备', '如何准备', '备赛', '要求', '文档')
-TIME_WORDS = ('最新', '现在', '目前', '今年', '本届', '还可以', '截止', '报名', '2026', 'today', 'current')
+TIME_WORDS = ('最新', '现在', '目前', '今年', '本届', '还可以', '截止', '报名中', '近期', '最近', 'today', 'current')
+CONVERSATION_WORDS = ('你好', '嗨', '谢谢', '再见', '你是谁', '你能做什么', '帮我做什么',
+                      '刚才', '上一轮', '之前的问题', '对话历史')
 
 
 @dataclass(frozen=True)
@@ -24,12 +27,21 @@ class Route:
     knowledge_requested: bool
 
 
-def route_query(question):
+def route_query(question, mode='smart'):
+    if mode not in MODES:
+        raise ValueError('invalid assistant mode')
     lowered = question.casefold()
     domains = tuple(name for name, words in DOMAIN_WORDS.items() if any(word in lowered for word in words))
-    if not domains:
-        domains = ('other',)
     wants_web = any(word in lowered for word in WEB_WORDS)
+    if mode == 'competition':
+        domains = ('competition', 'resource')
+    elif mode == 'research':
+        domains = ('project', 'resource')
+    elif mode == 'resource':
+        domains = ('resource',)
+    elif not domains:
+        conversational = any(word in lowered for word in CONVERSATION_WORDS)
+        domains = ('competition', 'project', 'resource') if not wants_web and not conversational and query_terms(question) else ('other',)
     wants_knowledge = any(word in lowered for word in KNOWLEDGE_WORDS)
     wants_platform = any(name in domains for name in ('competition', 'project', 'resource', 'team'))
     if wants_web and (wants_platform or wants_knowledge):
@@ -44,7 +56,8 @@ def route_query(question):
         intent = 'platform'
     else:
         intent = 'general'
-    return Route(intent, domains, any(word in lowered for word in TIME_WORDS), wants_web, wants_knowledge)
+    current = any(word in lowered for word in TIME_WORDS) or bool(re.search(r'(?<!\d)20\d{2}(?!\d)', lowered))
+    return Route(intent, domains, current, wants_web, wants_knowledge)
 
 
 def query_terms(question):

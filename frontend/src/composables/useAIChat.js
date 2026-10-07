@@ -37,7 +37,7 @@ export function useAIChat(request) {
   let controller
   let disposed = false
 
-  async function submit(text, { retry = false } = {}) {
+  async function submit(text, { retry = false, mode = 'smart' } = {}) {
     if (pending.value || disposed) return false
     const content = typeof text === 'string' ? text.trim() : ''
     if (!retry && (!content || content.length > 2000)) return false
@@ -52,7 +52,7 @@ export function useAIChat(request) {
     error.value = ''
     controller = new AbortController()
     try {
-      const reply = await request(recentChatMessages(messages.value), { signal: controller.signal })
+      const reply = await request(recentChatMessages(messages.value), { signal: controller.signal, mode })
       if (disposed) return false
       messages.value.push(reply)
       return true
@@ -72,5 +72,13 @@ export function useAIChat(request) {
     controller?.abort()
   }
 
-  return { messages, pending, error, failed, submit, dispose }
+  function clear() {
+    if (pending.value) return false
+    messages.value = []
+    error.value = ''
+    failed.value = false
+    return true
+  }
+
+  return { messages, pending, error, failed, submit, dispose, clear }
 }

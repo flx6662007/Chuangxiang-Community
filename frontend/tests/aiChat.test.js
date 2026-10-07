@@ -95,3 +95,14 @@ test('前端错误不展示原始服务器消息或异常详情', () => {
   assert.ok(!chatErrorMessage(new Error(secret)).includes(secret))
   assert.match(chatErrorMessage({ code: 'ECONNABORTED' }), /超时/)
 })
+
+test('四种模式复用同一会话调用，切换模式清空旧上下文', async () => {
+  const calls = []
+  const chat = useAIChat(async (messages, options) => { calls.push({ messages, mode: options.mode }); return reply })
+  for (const mode of ['smart', 'competition', 'research', 'resource']) {
+    assert.equal(chat.clear(), true)
+    assert.equal(await chat.submit('查询资料', { mode }), true)
+  }
+  assert.deepEqual(calls.map(call => call.mode), ['smart', 'competition', 'research', 'resource'])
+  assert.ok(calls.every(call => call.messages.length === 1))
+})

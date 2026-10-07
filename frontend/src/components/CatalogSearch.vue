@@ -52,19 +52,19 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="ai-assistant" aria-labelledby="ai-assistant-title">
+  <section class="ai-assistant" aria-labelledby="catalog-search-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">查阅比赛资料</h2>
+        <h2 id="catalog-search-title">查阅比赛资料</h2>
       </div>
       <span class="editorial-label">关键词搜索</span>
     </div>
     <p class="ai-assistant-intro">输入赛事名称、技能或方向，查找已收录的赛事和学习资料。</p>
     <div class="ai-assistant-panel">
       <form class="ai-assistant-form" role="search" aria-label="赛事资料搜索" @submit.prevent="submitSearch">
-        <label for="ai-competition-query">赛事名称或关键词</label>
+        <label for="catalog-search-query">赛事名称或关键词</label>
         <textarea
-          id="ai-competition-query"
+          id="catalog-search-query"
           v-model="query"
           maxlength="500"
           rows="3"

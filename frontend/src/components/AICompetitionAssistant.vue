@@ -1,12 +1,23 @@
 <script setup>
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AppIcon from './AppIcon.vue'
 import { getAIStatus, requestAIChat } from '../api/ai'
 import { useAIChat } from '../composables/useAIChat.js'
 import CatalogSearch from './CatalogSearch.vue'
 import CompetitionGuide from './CompetitionGuide.vue'
 
-const examples = ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类']
+const modeOptions = [
+  { value: 'smart', label: '智能' }, { value: 'competition', label: '赛事' },
+  { value: 'research', label: '科研' }, { value: 'resource', label: '资源' },
+]
+const examplesByMode = {
+  smart: ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类'],
+  competition: ['数学建模比赛', '适合大二学生', '机器人赛事'],
+  research: ['机器人研究方向', '本科生科研机会'],
+  resource: ['Python 入门', '数学建模学习资料'],
+}
+const mode = ref('smart')
+const examples = computed(() => examplesByMode[mode.value])
 const query = ref('')
 const validation = ref('')
 const conversation = ref(null)
@@ -31,7 +42,15 @@ async function loadStatus() {
   }
 }
 onMounted(loadStatus)
-const { messages, pending, error, failed, submit, dispose } = useAIChat(requestAIChat)
+const { messages, pending, error, failed, submit, dispose, clear } = useAIChat(requestAIChat)
+
+function changeMode(value) {
+  if (value === mode.value || pending.value) return
+  clear()
+  query.value = ''
+  validation.value = ''
+  mode.value = value
+}
 
 function addExample(example) {
   const current = query.value.trim()
@@ -52,7 +71,7 @@ function submitChat() {
   }
   query.value = ''
   validation.value = ''
-  void submit(text)
+  void submit(text, { mode: mode.value })
 }
 
 function onKeydown(event) {
@@ -73,20 +92,23 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 </script>
 
 <template>
-  <CompetitionGuide />
-  <details class="general-chat"><summary>其他科研与学习问题</summary>
-  <div v-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
-  <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
-  <CatalogSearch v-else-if="!configured" />
-  <section v-else class="ai-assistant" aria-labelledby="ai-assistant-title">
+  <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">竞赛和科研问题，<br /><span>问问 AI 助手</span></h2>
+        <h2 id="ai-assistant-title">科创 AI 助手</h2>
       </div>
-      <span class="editorial-label">科创 AI 助手</span>
+      <span class="editorial-label">赛事 · 科研 · 资源</span>
     </div>
-    <p class="ai-assistant-intro">可以问比赛怎么选、如何准备，也可以说说你的专业和经验。</p>
-    <div class="ai-assistant-panel">
+    <p class="ai-assistant-intro">选择关注方向，问比赛、科研机会或学习资源；也可以在赛事模式使用完整的选赛与找队友向导。</p>
+    <div class="ai-mode-list" role="group" aria-label="助手模式">
+      <button v-for="option in modeOptions" :key="option.value" type="button" class="ai-mode-button"
+        :class="{ 'is-active': mode === option.value }" :aria-pressed="mode === option.value"
+        :disabled="pending" @click="changeMode(option.value)">{{ option.label }}</button>
+    </div>
+    <div v-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
+    <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
+    <CatalogSearch v-else-if="!configured" />
+    <div v-else class="ai-assistant-panel">
       <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0">
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
           <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
@@ -99,9 +121,24 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
                 <a v-else :href="source.url" target="_blank" rel="noopener noreferrer">[{{ source.id }}] {{ source.title }}</a>
                 <small>{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
                 <small v-if="source.status_note">{{ source.status_note }}</small>
-                <a v-if="source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">官方原文</a>
+                <small v-if="source.trust_label">{{ source.trust_label }}{{ source.reviewed ? ' · 已核验' : ' · 未经人工核验' }}</small>
+                <a v-if="source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">外部原文</a>
               </li>
             </ol>
+          </div>
+          <div v-if="message.recommendations?.length" class="ai-chat-sources" aria-label="相关推荐">
+            <strong>相关推荐</strong>
+            <ul>
+              <li v-for="(item, itemIndex) in message.recommendations" :key="itemIndex">
+                <span>{{ { competition: '赛事', resource: '资源', research_opportunity: '科研机会', research_group: '课题组' }[item.object_type] }} · </span>
+                <a :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                <small>{{ item.reason }} · {{ item.reviewed ? '站内已核验' : '站内公开' }}</small>
+                <small v-if="item.status_note">{{ item.status_note }}</small>
+                <small v-if="item.research_group_label">课题组原文：{{ item.research_group_label }}</small>
+                <small v-if="item.related_resources?.length">相关资源：<a v-for="(resource, resourceIndex) in item.related_resources" :key="resourceIndex"
+                  :href="resource.source_url" target="_blank" rel="noopener noreferrer">{{ resource.title }}{{ resourceIndex < item.related_resources.length - 1 ? '、' : '' }}</a></small>
+              </li>
+            </ul>
           </div>
           <small v-if="['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
           <small v-if="['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
@@ -109,7 +146,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
         <p v-if="pending" class="ai-chat-status" role="status">正在回复…</p>
         <div v-if="error" class="ai-chat-error" role="alert">
           <p>{{ error }}</p>
-          <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true })">重试这条消息</button>
+          <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true, mode })">重试这条消息</button>
         </div>
       </div>
       <form class="ai-assistant-form" aria-label="科创 AI 对话" @submit.prevent="submitChat">
@@ -139,11 +176,13 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <p class="ai-demo-note">回答参考站内资料和已登记的官网页面，请以官方原文为准。Enter 发送，Shift + Enter 换行。对话仅在当前页面保留，最多参考最近 20 轮（约 6 万字符）。</p>
+      <p class="ai-demo-note">回答参考站内资料和已登记官网；来源状态会单独标注。Enter 发送，Shift + Enter 换行。切换模式会开始新对话。</p>
     </div>
-
+    <details v-if="mode === 'competition'" class="ai-guide-details">
+      <summary>打开赛事向导：选赛事、分析条件、找队友</summary>
+      <CompetitionGuide />
+    </details>
   </section>
-  </details>
 </template>
 
 <style scoped>
@@ -167,4 +206,10 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-chat-sources small { display: block; color: var(--text-secondary, #a4b1c0); }
 .ai-chat-sources a { color: var(--accent, #6da5ff); }
 .ai-chat-coverage { display: block; margin-top: 8px; color: var(--text-secondary, #a4b1c0); }
+.ai-mode-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.ai-mode-button { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 8px 18px; color: var(--text-primary, #f4f2ee); background: transparent; font: inherit; cursor: pointer; }
+.ai-mode-button.is-active { color: var(--bg-primary, #101a24); background: var(--text-primary, #f4f2ee); }
+.ai-mode-button:disabled { opacity: .55; cursor: not-allowed; }
+.ai-guide-details { margin-top: 24px; border-top: 1px solid var(--border, #344357); padding-top: 18px; }
+.ai-guide-details summary { cursor: pointer; }
 </style>
