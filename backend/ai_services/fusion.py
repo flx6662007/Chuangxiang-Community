@@ -2,6 +2,7 @@
 
 import json
 import re
+from urllib.parse import urlsplit
 
 from information_library.selectors import public_text, safe_source_url
 from .evidence import evidence_score, source_trust
@@ -11,13 +12,26 @@ MAX_SOURCES = 6
 MAX_CONTEXT_CHARS = 7500
 
 
+def citation_url(row):
+    url = safe_source_url(row.get('url'))
+    # Curated research pages use #about/#join; preserve safe section anchors.
+    fragment = urlsplit(row.get('url') or '').fragment if url else ''
+    if url and row.get('fields') and re.fullmatch(r'[A-Za-z0-9_./:-]{1,120}', fragment):
+        return url + '#' + fragment
+    return url
+
+
 def fuse(platform, knowledge, web):
     # Reviewed internal evidence is first; reserve one slot for a fresh external page.
-    pools = (('platform', platform[:3]), ('knowledge', knowledge[:2]), ('web', web[:1]))
+    # Keep the existing competition allocation. Research can use vacant slots for
+    # separately sourced introduction/recruitment/results instead of discarding them.
+    research = any(row.get('fields') for row in platform)
+    platform_limit = MAX_SOURCES - min(2, len(knowledge)) - min(1, len(web)) if research else 3
+    pools = (('platform', platform[:platform_limit]), ('knowledge', knowledge[:2]), ('web', web[:1]))
     chosen, seen = [], set()
     for slot, rows in pools:
         for row in rows:
-            url = safe_source_url(row.get('url'))
+            url = citation_url(row)
             if not url or not row.get('title') or not row.get('text'):
                 continue
             identity = (url, row.get('version'), row.get('text')[:160])
@@ -36,10 +50,10 @@ def fuse(platform, knowledge, web):
         source = {key: row.get(key) for key in (
             'kind', 'entity_id', 'version', 'title', 'url', 'internal_url', 'verified_at',
             'published_on', 'read_at', 'status', 'status_note', 'locator', 'edition', 'content_hash',
-            'object_type', 'retrieval_score',
+            'object_type', 'retrieval_score', 'fields', 'section',
         )}
         source['id'] = number
-        source['url'] = safe_source_url(source['url'])
+        source['url'] = citation_url(row)
         valid_competition = (slot == 'platform' and source['kind'] == 'competition'
                              and isinstance(source['entity_id'], str) and re.fullmatch(r'db-\d+', source['entity_id'])
                              and source['internal_url'] == '/competitions/' + source['entity_id'][3:])

@@ -7,7 +7,7 @@ const route = useRoute()
 const page = computed(() => {
   if (route.name === 'research-projects') return {
     first: '走进', second: '真正的研究',
-    description: '从官方科研线索出发，探索适合自己的研究方向。',
+    description: '',
   }
   if (['resources', 'resource-detail'].includes(route.name)) return {
     first: '查找', second: '学习与工具资源',
@@ -32,7 +32,7 @@ const page = computed(() => {
           {{ page.first }}<br />
           <span>{{ page.second }}</span>
         </h1>
-        <p>{{ page.description }}</p>
+        <p v-if="page.description">{{ page.description }}</p>
       </div>
     </header>
     <div class="information-content">

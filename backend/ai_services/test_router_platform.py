@@ -43,7 +43,7 @@ class RouterTests(SimpleTestCase):
             'records': [{'source_type': 'platform_competition'}], 'knowledge_rows': [],
             'knowledge_status': 'no_published_knowledge',
             'mode_used': 'keyword', 'warnings': [],
-        }) as retrieval, patch('ai_services.chat.as_evidence', return_value=direct[0]), patch(
+        }) as retrieval, patch('ai_services.chat.evidence_rows', return_value=direct), patch(
                 'ai_services.chat.search_external', return_value=([], 'registered_site_not_matched')):
             result = chat([{'role': 'user', 'content': '机器人比赛'}], client=provider)
         self.assertEqual(result['role'], 'assistant')

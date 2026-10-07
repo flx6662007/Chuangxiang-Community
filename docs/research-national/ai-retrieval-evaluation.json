@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "question": "介绍一下人机交互实验室的研究方向，附上来源。",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "人机交互实验室",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "人机交互实验室有哪些成果？",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "人机交互实验室招收硕士吗？",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "人机交互实验室的申请条件",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "人机交互实验室在哪个校区？",
+      "expected": "research-cn-buaa-haptic"
+    },
+    {
+      "question": "存储研究组的研究内容",
+      "expected": "research-cn-tsinghua-storage"
+    },
+    {
+      "question": "存储研究组本科生可以加入吗？",
+      "expected": "research-cn-tsinghua-storage"
+    },
+    {
+      "question": "清华大学存储研究组招募对象",
+      "expected": "research-cn-tsinghua-storage"
+    },
+    {
+      "question": "生物医学人工智能实验室有哪些研究成果？",
+      "expected": "research-cn-fudan-biomedical-ai"
+    },
+    {
+      "question": "生物医学人工智能实验室博士招生",
+      "expected": "research-cn-fudan-biomedical-ai"
+    },
+    {
+      "question": "EIGNN 成果",
+      "expected": "research-cn-fudan-biomedical-ai"
+    },
+    {
+      "question": "GMGC 研究",
+      "expected": "research-cn-fudan-biomedical-ai"
+    },
+    {
+      "question": "功能晶体生长实验室有哪些进展？",
+      "expected": "research-cn-nju-crystal-growth"
+    },
+    {
+      "question": "功能晶体生长实验室招收什么专业？",
+      "expected": "research-cn-nju-crystal-growth"
+    },
+    {
+      "question": "南京大学晶体生长研究",
+      "expected": "research-cn-nju-crystal-growth"
+    },
+    {
+      "question": "朱志伟代谢工程与合成生物技术课题组申请条件",
+      "expected": "research-cn-dlut-zhu-zhiwei"
+    },
+    {
+      "question": "可兼职科研助理",
+      "expected": "research-cn-dlut-zhu-zhiwei"
+    },
+    {
+      "question": "合成生物学兼职机会",
+      "expected": "research-cn-dlut-zhu-zhiwei"
+    },
+    {
+      "question": "大数据存储与管理实验室科研助理",
+      "expected": "research-cn-nwpu-bigdata-storage"
+    },
+    {
+      "question": "人机物融合群智计算实验室工作内容",
+      "expected": "research-cn-nwpu-crowd-computing"
+    },
+    {
+      "question": "人工智能与生物医学影像实验室的参与工作",
+      "expected": "research-cn-westlake-yang-lin"
+    },
+    {
+      "question": "本科生科研机会",
+      "conditions": true
+    },
+    {
+      "question": "大二学生可以申请哪些科研实习",
+      "conditions": true
+    },
+    {
+      "question": "硕士生招募",
+      "conditions": true
+    },
+    {
+      "question": "博士生招募",
+      "conditions": true
+    },
+    {
+      "question": "可兼职科研助理",
+      "conditions": true
+    },
+    {
+      "question": "跨校硕士科研机会",
+      "conditions": true
+    },
+    {
+      "question": "外校本科生实习",
+      "conditions": true
+    },
+    {
+      "question": "历史招募信息",
+      "conditions": true
+    }
+  ]
+}

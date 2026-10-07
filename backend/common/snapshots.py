@@ -13,7 +13,7 @@ def json_object(value, allowed, required=(), max_chars=30000):
 
 PUBLIC_SNAPSHOT_KEYS = {
     'code','title','description','summary','recruiting_entity','official_url','official_source_name',
-    'supervisor','research_group','institution','category','work_content','eligibility','requirements',
+    'supervisor','research_group','institution','source_published_on','card_details','category','work_content','eligibility','requirements',
     'vacancies_text','vacancies_min','vacancies_max','weekly_hours_text','weekly_hours_min','weekly_hours_max',
     'duration_text','starts_on','ends_on','collaboration_mode','location_text','application_instructions',
     'application_url','application_email','deadline_mode','deadline_on','deadline_at','deadline_timezone',

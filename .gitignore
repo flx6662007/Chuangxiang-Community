@@ -16,5 +16,11 @@ staticfiles/
 node_modules/
 dist/
 
+# Generated research review artifacts (keep locally, not in release commits)
+/docs/research-national/**/index.html
+/docs/research-national/**/*.xlsx
+/docs/research-national/**/source-index.json
+/docs/research-national/**/validation-report.json
+
 # macOS metadata
 .DS_Store

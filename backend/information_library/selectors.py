@@ -159,6 +159,15 @@ def _competition(item):
 
 
 def _research(item, sources):
+    from research.knowledge import research_facts
+    summary = item.summary or item.description
+    if not item.card_details:
+        summary = '\n'.join(dict.fromkeys(filter(None, (item.summary, item.description))))
+    facts = research_facts(summary=summary, institution=item.institution or item.recruiting_entity,
+        details=item.card_details, primary_url=item.official_url,
+        verified_at=iso(item.last_verified_at), published_on=iso(item.source_published_on), sources=sources,
+        legacy={'eligibility': item.eligibility, 'work': item.work_content, 'commitment': item.duration_text},
+        closed=item.is_closed)
     verified_sources = [s for s in sources if s.verified_at and safe_source_url(s.source_url)]
     urls = ([item.official_url] if item.last_verified_at else []) + [s.source_url for s in verified_sources]
     if item.is_closed:
@@ -169,8 +178,7 @@ def _research(item, sources):
         content_status, note = 'unconfirmed_availability', '请以官方最新招募安排为准；收录不保证当前名额。'
     row = _record(
         'research', f'db-{item.pk}', item.title,
-        '\n'.join(filter(None, [item.summary, item.description, item.recruiting_entity, item.institution,
-                                item.work_content, item.eligibility, item.requirements, item.duration_text])),
+        '\n'.join(block['text'] for block in facts['evidence_blocks']),
         item.publication_status, urls,
         [{'url': safe_source_url(s.source_url), 'published_on': iso(s.published_on)} for s in verified_sources],
         verified_at=item.last_verified_at, updated_at=item.updated_at, published_at=item.published_at,
@@ -183,6 +191,12 @@ def _research(item, sources):
     row['_pending_sources'] = [url for value in ([item.official_url] if not item.last_verified_at else [])
                                + [s.source_url for s in sources if not s.verified_at]
                                if (url := safe_source_url(value))]
+    row.update(facts)
+    row['version'] = str(row['version']) + ':' + facts['facts_version']
+    row['source_published_on'] = iso(item.source_published_on)
+    if item.card_details:
+        row['status_note'] = '历史批次' if facts['has_recruitment_source'] and not facts['recruitment_active'] else ''
+        row['content_status'] = 'historical' if row['status_note'] else 'research_material'
     return row
 
 
@@ -274,7 +288,10 @@ def collect_records(kinds=None, *, include_unpublished=False):
             if 'research' in selected:
                 rows.append(row)
         if 'research' in selected:
-            rows.extend(_editorial_rows('research'))
+            # Database state also suppresses editorial copies of drafts/withdrawals.
+            reserved = {safe_source_url(url).rstrip('/') for url in ResearchOpportunity.objects.values_list('official_url', flat=True)}
+            rows.extend(row for row in _editorial_rows('research')
+                        if not any(url.rstrip('/') in reserved for url in row['source_urls']))
     if 'newsletter' in selected:
         queryset = Newsletter.objects.exclude(code__startswith='demo-').select_related('current_revision')
         if not include_unpublished:

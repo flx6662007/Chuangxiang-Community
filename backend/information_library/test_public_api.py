@@ -1,5 +1,6 @@
 """公开资料接口：发布边界、当前版本、隐私字段和分页。"""
 import json
+from datetime import date
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -69,7 +70,7 @@ class PublicEditorialTests(TestCase):
         data = response.json()
         self.assertEqual(data['count'], 1)
         card = data['results'][0]
-        self.assertEqual(set(card), {'id', 'title', 'unit', 'date', 'verifiedOn', 'summary', 'participation', 'evidenceNote', 'sourceUrl', 'direction'})
+        self.assertEqual(set(card), {'id', 'title', 'unit', 'date', 'verifiedOn', 'summary', 'participation', 'evidenceNote', 'sourceUrl', 'direction', 'details'})
         self.assertEqual(card['date'], '')
         self.assertEqual(card['verifiedOn'], '')
         for private in ('secret@', '13812345678', '内部', '<b>', 'application_email'):
@@ -110,6 +111,17 @@ class PublicEditorialTests(TestCase):
             self.assertEqual(self.client.get('/editorial/research/', params).status_code, 400)
         self.assertEqual(self.client.get('/editorial/research/', {'page': 999}).status_code, 404)
 
+    def test_structured_search_and_last_check_are_not_limited_to_current_page(self):
+        self.research('older', last_verified_at=timezone.datetime(2026, 10, 1, tzinfo=timezone.get_current_timezone()))
+        self.research('newer', last_verified_at=timezone.datetime(2026, 10, 7, tzinfo=timezone.get_current_timezone()),
+                      card_details={'direction': '合成生物学', 'recruitment': {'roles': '科研助理', 'commitment': '可兼职'}, 'hasRecruitmentSource': True})
+        for params in ({'page_size': 1}, {'page_size': 1, 'page': 2}, {'search': '不存在'}):
+            self.assertEqual(self.client.get('/editorial/research/', params).json()['lastVerifiedOn'], '2026-10-07')
+        data = self.client.get('/editorial/research/', {'search': '合成生物学 可兼职'}).json()
+        self.assertEqual(data['count'], 1)
+        self.assertEqual(data['results'][0]['details']['recruitment']['roles'], '科研助理')
+        self.assertEqual(data['statistics'], {'laboratories': 2, 'recruitmentDetails': 1, 'recruitmentSources': 1})
+
     def test_newsletter_current_public_revision_only(self):
         item, revision = self.newsletter()
         NewsletterRevision.objects.create(newsletter=item, version=2, title='未公开新稿', introduction='内部计划',
@@ -120,6 +132,24 @@ class PublicEditorialTests(TestCase):
         self.assertEqual(response.json()['results'][0]['title'], revision.title)
         self.assertNotIn('未公开', response.content.decode())
         self.assertNotIn('内部计划', response.content.decode())
+
+    @patch('research.presentation.timezone.localdate', return_value=date(2026, 10, 7))
+    def test_recruitment_filter_combines_search_pagination_and_excludes_closed_batches(self, _today):
+        self.research('description-only')
+        self.research('join-link', card_details={'hasRecruitmentSource': True})
+        self.research('assistant', card_details={'hasRecruitmentSource': True, 'recruitment': {'roles': '科研助理'}})
+        self.research('historical', card_details={'hasRecruitmentSource': True, 'recruitment': {'status': '历史批次'}})
+        self.research('expired', card_details={'hasRecruitmentSource': True, 'recruitment': {'deadline': '2026-10-06'}})
+        self.research('due-today', card_details={'hasRecruitmentSource': True, 'recruitment': {'deadline': '2026-10-07'}})
+        for page in (1, 2, 3):
+            data = self.client.get('/editorial/research/', {'recruitment': '1', 'page_size': 1, 'page': page}).json()
+            self.assertEqual(data['count'], 3)
+            self.assertEqual(len(data['results']), 1)
+        data = self.client.get('/editorial/research/', {'recruitment': '1', 'search': '科研助理'}).json()
+        self.assertEqual(data['count'], 1)
+        self.assertEqual(data['results'][0]['details']['recruitment']['roles'], '科研助理')
+        self.assertEqual(self.client.get('/editorial/research/', {'recruitment': '0'}).json()['count'], 6)
+        self.assertEqual(self.client.get('/editorial/research/', {'recruitment': 'invalid'}).status_code, 400)
 
     def test_withdrawn_newsletter_does_not_reappear_from_editorial(self):
         item, _ = self.newsletter()

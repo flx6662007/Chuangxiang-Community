@@ -38,3 +38,17 @@ test('结构化推荐只接受安全来源，保留关联资源和审核标记',
   assert.deepEqual(answer.recommendations[0].related_resources,
     [{ title: '入门课程', source_url: 'https://www.tongji.edu.cn/course' }])
 })
+
+test('科研字段及多来源独立保留，过滤未知字段、危险链接和重复链接', () => {
+  const url = 'https://lab.example.edu.cn/research'
+  const link = { label: '研究介绍', url }
+  const result = parseAIReply({ message: { role: 'assistant', content: '研究介绍[1]' },
+    recommendations: [{ object_type: 'research_opportunity', title: '实验室', reason: '研究资料', source_url: url,
+      facts: { summary: '电子皮肤', roles: '博士生', privateNotes: '不能公开' },
+      field_links: { summary: [link, link, { label: '危险', url: 'javascript:alert(1)' }],
+        roles: [{ label: '招募详情', url: 'https://lab.example.edu.cn/join' }] } }] })
+  const card = result.recommendations[0]
+  assert.deepEqual(card.facts, { summary: '电子皮肤', roles: '博士生' })
+  assert.deepEqual(card.field_links.summary, [link])
+  assert.equal(card.field_links.roles[0].url, 'https://lab.example.edu.cn/join')
+})

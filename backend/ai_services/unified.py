@@ -15,6 +15,7 @@ from resources.models import Resource, ResourceCompetition, ResourceResearchOppo
 from .router import query_terms
 from .platform import retrieve_platform
 from .unified_index import search as semantic_search
+from .research_retrieval import intent as research_intent, research_score, matches_conditions
 
 
 class ResearchGroupSelector:
@@ -115,11 +116,16 @@ def public_secondary_records(*, group_selector=None):
             ).values_list('resource__code', flat=True))} if item else {}
             rows.append(_record('research_opportunity', source['id'], source['title'], source['text'][:500],
                                 source['text'], source['source_urls'][0], source_type='platform_research',
-                                published_at=source['published_at'], verified_at=source['verified_at'],
+                                published_at=source.get('source_published_on'), verified_at=source['verified_at'],
                                 version=source['version'] or '', status=source['publication_status'], related=related,
                                 group_label=item.research_group if item else ''))
             rows[-1]['status_note'] = source['status_note']
             rows[-1]['content_status'] = source['content_status']
+            rows[-1].update({key: source[key] for key in (
+                'institution', 'facts', 'field_links', 'evidence_blocks', 'has_recruitment_source',
+                'recruitment_active') if key in source})
+            if source.get('facts'):
+                rows[-1]['summary'] = source['facts'].get('summary', source['title'])
         selector = group_selector or ResearchGroupSelector()
         for row in selector.public_records():
             if (isinstance(row, dict) and all(isinstance(row.get(key), str) and row[key].strip()
@@ -172,8 +178,26 @@ def _mode_fit(kind, mode):
 
 def _rank(rows, question, mode, *, index=None):
     terms = query_terms(question)
+    research_request = research_intent(question)
+    research_rows = [row for row in rows if row['object_type'] == 'research_opportunity']
+    pinned = {row['object_id'] for row in research_rows if row['title'] in question}
+    # School restrictions are explicit only when the query names a known institution.
+    schools = {row['institution'].split(' · ')[0] for row in research_rows
+               if row.get('institution') and row['institution'].split(' · ')[0] in question}
+    def eligible(row):
+        if row['object_type'] != 'research_opportunity':
+            return True
+        if pinned:
+            return row['object_id'] in pinned
+        return (not schools or row.get('institution', '').split(' · ')[0] in schools) and matches_conditions(row, research_request)
+    def keyword_score(row):
+        if not eligible(row):
+            return 0
+        if row['object_type'] == 'research_opportunity':
+            return research_score(row, question, pinned=row['object_id'] in pinned)
+        return _keyword_score(row, question, terms)
     # For a broad request such as "学习资源", do not invent topical relevance.
-    keyword = {key: score for row in rows if (score := _keyword_score(row, question, terms)) > 0
+    keyword = {key: score for row in rows if (score := keyword_score(row)) > 0
                for key in [(row['object_type'], row['object_id'])]}
     warnings, semantic = [], {}
     if rows and terms:
@@ -181,6 +205,8 @@ def _rank(rows, question, mode, *, index=None):
             semantic = semantic_search(rows, question, index=index)
         except (SemanticError, OSError, ValueError) as error:
             warnings.append(str(error) if isinstance(error, SemanticError) else 'semantic_unavailable')
+    eligible_keys = {(row['object_type'], row['object_id']) for row in rows if eligible(row)}
+    semantic = {key: score for key, score in semantic.items() if key in eligible_keys}
     keyword_order = sorted(keyword, key=lambda key: (-keyword[key], key))
     semantic_order = sorted(semantic, key=lambda key: (-semantic[key], key))
     rrf = {}
@@ -188,10 +214,16 @@ def _rank(rows, question, mode, *, index=None):
         for rank, key in enumerate(ranking, start=1):
             rrf[key] = rrf.get(key, 0) + 1 / (60 + rank)
     weights = retrieval_weights()
+    if not semantic:
+        available = sum(value for key, value in weights.items() if key != 'semantic') or 1
+        weights = {key: value / available if key != 'semantic' else 0 for key, value in weights.items()}
     by_key = {(row['object_type'], row['object_id']): row for row in rows}
     result = []
     for key in rrf:
         row = by_key[key].copy()
+        if row.get('evidence_blocks'):
+            preferred = 'recruitment' if research_request['recruitment'] else 'achievements' if research_request['achievements'] else 'introduction'
+            row['evidence_blocks'] = sorted(row['evidence_blocks'], key=lambda block: block['section'] != preferred)
         source_score = 1.0 if row['verified_at'] else 0.55
         row['retrieval_score'] = round(
             weights['keyword'] * keyword.get(key, 0) + weights['semantic'] * min(1, semantic.get(key, 0)) +
@@ -362,6 +394,7 @@ def recommendations(rows):
                                     for kind, ids in row['related_object_ids'].items() if isinstance(ids, list) and kind in
                                     ('competition', 'resource', 'research_opportunity', 'research_group')},
              'source_url': row['source_url'],
+             'facts': row.get('facts', {}), 'field_links': row.get('field_links', {}),
              'research_group_label': row.get('research_group_label') or '',
              'reviewed': bool(row['verified_at']), 'retrieval_score': row['retrieval_score'],
              'status': row['status'], 'content_status': row.get('content_status') or '',
@@ -369,3 +402,19 @@ def recommendations(rows):
              'related_resources': [{'title': resources[code]['title'], 'source_url': resources[code]['source_url']}
                                    for code in row['related_object_ids'].get('resource', []) if code in resources][:3]}
             for row in rows[:6]]
+
+
+def evidence_rows(rows):
+    """Round-robin labs first, then additional independently sourced sections."""
+    pools = []
+    for row in rows:
+        if row['source_type'] == 'approved_knowledge':
+            continue
+        base = as_evidence(row)
+        blocks = row.get('evidence_blocks')
+        pools.append([{**base, 'title': row['title'] + ' · ' + {'introduction': '研究介绍',
+                       'achievements': '研究成果', 'recruitment': '招募信息'}[block['section']],
+                       'text': block['text'], 'url': block['url'], 'verified_at': block['verified_at'],
+                       'published_on': block['published_on'], 'fields': block['fields'],
+                       'section': block['section']} for block in blocks] if blocks else [base])
+    return [pool[i] for i in range(max((len(pool) for pool in pools), default=0)) for pool in pools if i < len(pool)]

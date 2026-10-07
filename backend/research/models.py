@@ -12,6 +12,7 @@ from common.models import DomainModel
 from common.codes import new_code
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from .validation import validate_model
+from .presentation import validate_card_details
 
 class ResearchTaxonomy(DomainModel):
     """受控分类、标签及研究/适用方向，不与现有赛事词条合表。"""
@@ -44,7 +45,7 @@ class ResearchTaxonomy(DomainModel):
 
 
 class ResearchOpportunity(DomainModel):
-    """一次具体科研招募。人工发布必填仅为基本信息、招募主体、官方信息链接。"""
+    """实验室研究资料及可选招募信息；发布需基本介绍、主体和官方链接。"""
     immutable_fields = ('code', 'created_at')
     code = models.SlugField('稳定编号', max_length=80, unique=True, default=new_code('research'))
     title = models.CharField('标题', max_length=200)
@@ -53,6 +54,8 @@ class ResearchOpportunity(DomainModel):
     recruiting_entity = models.CharField('招募主体原文', max_length=1000, default='', blank=True)
     official_url = models.URLField('官方信息链接', max_length=2048, default='', blank=True, validators=[URLValidator(schemes=['http','https'])])
     official_source_name = models.CharField('官方来源名称', max_length=200, default='', blank=True)
+    source_published_on = models.DateField('官方原文发布日期', null=True, blank=True)
+    card_details = models.JSONField('结构化展示字段', default=dict, blank=True, validators=[validate_card_details])
     supervisor = models.CharField('可提取的导师名称', max_length=200, default='', blank=True)
     research_group = models.CharField('可提取的课题组/实验室', max_length=200, default='', blank=True)
     institution = models.CharField('可提取的院系/机构', max_length=200, default='', blank=True)

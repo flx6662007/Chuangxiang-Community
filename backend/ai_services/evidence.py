@@ -78,6 +78,10 @@ def external_decision(question, route, internal_records):
         return True, 'time_sensitive'
     if route.intent == 'general':
         return False, 'general_question'
+    if any(row.get('object_type') == 'research_opportunity' and row.get('title') in question
+           and row.get('evidence_blocks') and row.get('retrieval_score', 0) >= threshold
+           for row in internal_records):
+        return False, 'internal_evidence_sufficient'
     if len(internal_records) < minimum:
         return True, 'insufficient_internal_results'
     if max((row.get('retrieval_score', 0) for row in internal_records), default=0) < threshold:

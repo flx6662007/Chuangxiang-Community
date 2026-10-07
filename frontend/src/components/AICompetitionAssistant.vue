@@ -5,6 +5,13 @@ import { getAIStatus, requestAIChat } from '../api/ai'
 import { useAIChat } from '../composables/useAIChat.js'
 import CatalogSearch from './CatalogSearch.vue'
 import CompetitionGuide from './CompetitionGuide.vue'
+import ResearchFieldLinks from './ResearchFieldLinks.vue'
+
+const researchFields = [
+  ['summary', '研究内容'], ['direction', '研究方向'], ['location', '研究地点'], ['achievements', '研究成果'],
+  ['roles', '招募对象'], ['eligibility', '申请条件'], ['work', '参与工作'], ['commitment', '时间投入'],
+  ['scope', '申请范围'], ['cohort', '招募批次'], ['deadline', '申请截止'], ['status', '招募状态'],
+]
 
 const modeOptions = [
   { value: 'smart', label: '智能' }, { value: 'competition', label: '赛事' },
@@ -13,7 +20,7 @@ const modeOptions = [
 const examplesByMode = {
   smart: ['竞赛入门', 'AI 相关', '适合大二学生', '科研创新类'],
   competition: ['数学建模比赛', '适合大二学生', '机器人赛事'],
-  research: ['机器人研究方向', '本科生科研机会'],
+  research: ['人机交互实验室的成果', '本科生科研机会', '可兼职科研助理'],
   resource: ['Python 入门', '数学建模学习资料'],
 }
 const mode = ref('smart')
@@ -119,9 +126,9 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
               <li v-for="source in message.sources" :key="source.id">
                 <RouterLink v-if="source.internal_url" :to="source.internal_url">[{{ source.id }}] {{ source.title }}</RouterLink>
                 <a v-else :href="source.url" target="_blank" rel="noopener noreferrer">[{{ source.id }}] {{ source.title }}</a>
-                <small>{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
+                <small v-if="!['research_opportunity', 'research_group'].includes(source.kind)">{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
                 <small v-if="source.status_note">{{ source.status_note }}</small>
-                <small v-if="source.trust_label">{{ source.trust_label }}{{ source.reviewed ? ' · 已核验' : ' · 未经人工核验' }}</small>
+                <small v-if="source.trust_label && !['research_opportunity', 'research_group'].includes(source.kind)">{{ source.trust_label }}{{ source.reviewed ? ' · 已核验' : ' · 未经人工核验' }}</small>
                 <a v-if="source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">外部原文</a>
               </li>
             </ol>
@@ -130,18 +137,25 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
             <strong>相关推荐</strong>
             <ul>
               <li v-for="(item, itemIndex) in message.recommendations" :key="itemIndex">
-                <span>{{ { competition: '赛事', resource: '资源', research_opportunity: '科研机会', research_group: '课题组' }[item.object_type] }} · </span>
+                <span>{{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组' }[item.object_type] }} · </span>
                 <a :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
-                <small>{{ item.reason }} · {{ item.reviewed ? '站内已核验' : '站内公开' }}</small>
+                <template v-if="item.object_type === 'research_opportunity' && Object.keys(item.facts || {}).length">
+                  <template v-for="[field, label] in researchFields" :key="field">
+                    <small v-if="item.facts[field]">{{ label }}：{{ item.facts[field] }} <ResearchFieldLinks :links="item.field_links[field]" :context="`${item.title} · ${label}`" /></small>
+                  </template>
+                  <small v-if="item.field_links.recruitment?.length">招募信息：<ResearchFieldLinks :links="item.field_links.recruitment" /></small>
+                  <a :href="item.source_url" target="_blank" rel="noopener noreferrer">官方说明 ↗</a>
+                </template>
+                <small v-else>{{ item.reason }} · {{ item.reviewed ? '站内已核验' : '站内公开' }}</small>
                 <small v-if="item.status_note">{{ item.status_note }}</small>
-                <small v-if="item.research_group_label">课题组原文：{{ item.research_group_label }}</small>
+                <small v-if="item.research_group_label && item.object_type !== 'research_opportunity'">课题组：{{ item.research_group_label }}</small>
                 <small v-if="item.related_resources?.length">相关资源：<a v-for="(resource, resourceIndex) in item.related_resources" :key="resourceIndex"
                   :href="resource.source_url" target="_blank" rel="noopener noreferrer">{{ resource.title }}{{ resourceIndex < item.related_resources.length - 1 ? '、' : '' }}</a></small>
               </li>
             </ul>
           </div>
-          <small v-if="['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
-          <small v-if="['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
+          <small v-if="!message.sources?.length && ['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
+          <small v-if="!message.sources?.length && ['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
         </article>
         <p v-if="pending" class="ai-chat-status" role="status">正在回复…</p>
         <div v-if="error" class="ai-chat-error" role="alert">
@@ -157,7 +171,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
           maxlength="2000"
           :disabled="pending"
           rows="3"
-          placeholder="例如：我是大二学生，会一点 Python，可以参加哪些比赛？需要怎么准备？"
+          :placeholder="mode === 'research' ? '例如：介绍一下人机交互实验室的研究方向和成果；有哪些可兼职的科研助理机会？' : '例如：我是大二学生，会一点 Python，可以参加哪些比赛？需要怎么准备？'"
           :aria-invalid="Boolean(validation)"
           :aria-describedby="validation ? 'ai-query-validation' : undefined"
           @input="validation = ''"

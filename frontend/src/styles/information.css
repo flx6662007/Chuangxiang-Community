@@ -123,8 +123,19 @@
 
 .is-editorial-page .project-page .search-bar { margin-bottom: 19px; }
 .is-editorial-page .project-page .notice-text { max-width: 900px; margin: 0 0 42px; padding: 0 0 0 16px; border-left: 2px solid var(--border, #8aaed2); background: none; color: var(--text-secondary, #62717d); font-size: var(--type-small); line-height: var(--leading-loose); }
-.is-editorial-page .research-editorial-list { border-top: 1px solid var(--border, #9eabad); }
-.is-editorial-page .research-opportunity { display: grid; grid-template-columns: minmax(0, 1fr) 172px 102px; gap: 24px; align-items: start; padding: 32px 0 35px; border-bottom: 1px solid var(--border, #cbd2d1); }
+.is-editorial-page .research-editorial-list { display: grid; gap: 18px; }
+.is-editorial-page .research-opportunity { display: grid; grid-template-columns: minmax(0, 1fr) 102px; gap: 24px; align-items: start; padding: 28px 30px; border: 1px solid var(--border, #d7dbda); border-radius: 5px; background: var(--surface, #fbfaf7); }
+.is-editorial-page .research-list-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; }
+.is-editorial-page .research-recruitment-filter { display: flex; align-items: center; gap: 8px; width: fit-content; margin-top: 18px; color: var(--text-secondary); cursor: pointer; }
+.is-editorial-page .research-recruitment-filter input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }
+.is-editorial-page .research-last-verified { margin: 0; font-size: var(--type-caption); color: var(--text-secondary); }
+.is-editorial-page .research-opportunity-facts { margin: 18px 0 0; display: grid; gap: 9px; font-size: var(--type-small); line-height: var(--leading-body); }
+.is-editorial-page .research-opportunity-facts > div { display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 12px; }
+.is-editorial-page .research-opportunity-facts dt { color: var(--text-secondary); }
+.is-editorial-page .research-opportunity-facts dd { margin: 0; color: var(--text-primary); overflow-wrap: anywhere; white-space: pre-line; }
+.is-editorial-page .research-field-links { display: inline; white-space: normal; }
+.is-editorial-page .research-field-links a { display: inline-block; margin-left: 12px; color: var(--accent); font-size: var(--type-caption); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.is-editorial-page .research-opportunity-facts dd.links-only .research-field-links a:first-child { margin-left: 0; }
 .is-editorial-page .research-opportunity-number { color: var(--accent, #387bc1); font: 700 var(--type-small) var(--font-ui); letter-spacing: .1em; padding-top: 5px; }
 .is-editorial-page .research-opportunity-main { min-width: 0; }
 .is-editorial-page .research-opportunity-unit { color: var(--text-secondary, #4b729a); font-size: var(--type-caption); line-height: 1.6; margin: 0 0 8px; }
@@ -193,7 +204,7 @@
   .is-editorial-page .header-actions > a:not(.header-account) { display: none; }
   .is-editorial-page .header-account { display: flex; }
   .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr) 125px; gap: 18px; }
-  .is-editorial-page .research-opportunity-action { grid-column: 2; grid-row: 2; text-align: left; }
+  .is-editorial-page .research-opportunity-action { grid-column: 2; grid-row: 1; text-align: right; }
 }
 @media (max-width: 640px) {
   .is-editorial-page .app-header { height: auto; min-height: 70px; padding: 0 16px; }
@@ -231,10 +242,9 @@
   .is-editorial-page .competition-card__header h2 { font-size: var(--type-title-md); }
   .is-editorial-page .competition-card-aside { width: 100%; border-left: 0; border-top: 1px solid var(--border, #d6dcde); padding: 15px 0 0; gap: 5px; }
   .is-editorial-page .card-detail-link { padding-top: 8px; }
-  .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr); gap: 8px 13px; padding: 26px 0 30px; }
+  .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr); gap: 8px 13px; padding: 24px 20px; }
   .is-editorial-page .research-opportunity-main h3 { font-size: var(--type-title-md); }
-  .is-editorial-page .research-opportunity-meta { grid-column: 1; grid-row: 2; display: flex; gap: 24px; flex-wrap: wrap; padding-top: 5px; }
-  .is-editorial-page .research-opportunity-action { grid-column: 1; grid-row: 3; padding-top: 9px; }
+  .is-editorial-page .research-opportunity-action { grid-column: 1; grid-row: 2; padding-top: 9px; text-align: left; }
   .is-editorial-page .app-footer { padding: 32px 24px; }
 }
 @media (prefers-reduced-motion: reduce) {

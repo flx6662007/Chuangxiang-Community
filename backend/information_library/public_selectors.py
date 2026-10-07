@@ -8,6 +8,7 @@ from django.utils import timezone
 
 from newsletters.models import Newsletter, NewsletterItem
 from research.models import ResearchOpportunity
+from research.presentation import public_card_details
 
 from . import selectors
 from .selectors import collect_records, editorial_date, is_demo, public_text, safe_source_url
@@ -39,11 +40,14 @@ def _editorial_cards(kind, reserved_urls):
                 or not source or source in reserved_urls):
             continue
         reserved_urls.add(source)
-        yield _card('editorial-' + identifier, title, unit=item.get('unit', ''),
+        card = _card('editorial-' + identifier, title, unit=item.get('unit', ''),
                     date=item.get('date'), verified=item.get('verifiedOn'),
                     summary=item.get('summary', ''), participation=item.get('participation', ''),
                     evidence=item.get('evidenceNote', ''), source=source,
                     direction=item.get('direction', ''))
+        if kind == 'research':
+            card['details'] = public_card_details(data.get('profiles', {}).get(identifier, {}))
+        yield card
 
 
 def research_cards():
@@ -68,12 +72,15 @@ def research_cards():
             participation.append(f'申请截止：{item.deadline_on.isoformat()}')
         elif item.deadline_mode == 'ongoing':
             participation.append('长期招募')
-        cards.append(_card(
+        card = _card(
             f'db-{item.pk}', item.title, unit=item.institution or item.recruiting_entity,
+            date=item.source_published_on.isoformat() if item.source_published_on else '',
             verified=_day(item.last_verified_at), summary=item.summary or item.description,
             participation=' · '.join(filter(None, participation)), evidence=item.requirements,
             source=source, direction=' / '.join(entry.name for entry in item.directions.all()),
-        ))
+        )
+        card['details'] = public_card_details(item.card_details)
+        cards.append(card)
     cards.extend(_editorial_cards('research', reserved_urls))
     return cards
 
@@ -105,4 +112,4 @@ def newsletter_cards():
 def search_cards(cards, query):
     words = query.casefold().split()
     fields = ('title', 'unit', 'summary', 'participation', 'evidenceNote', 'direction')
-    return [item for item in cards if all(word in '\n'.join(item[key] for key in fields).casefold() for word in words)]
+    return [item for item in cards if all(word in ('\n'.join(item[key] for key in fields) + json.dumps(item.get('details', {}), ensure_ascii=False)).casefold() for word in words)]

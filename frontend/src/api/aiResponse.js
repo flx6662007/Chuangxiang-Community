@@ -6,6 +6,25 @@ function safeHttpUrl(value) {
   } catch { return false }
 }
 
+const researchFields = ['summary', 'direction', 'location', 'achievements', 'roles', 'eligibility',
+  'work', 'commitment', 'scope', 'cohort', 'deadline', 'status', 'recruitment']
+
+function researchFacts(item) {
+  const facts = {}, field_links = {}
+  for (const field of researchFields) {
+    if (typeof item.facts?.[field] === 'string') facts[field] = item.facts[field].slice(0, 5000)
+    if (Array.isArray(item.field_links?.[field])) {
+      const seen = new Set()
+      field_links[field] = item.field_links[field].filter(link => {
+        if (!link || typeof link.label !== 'string' || !safeHttpUrl(link.url) || seen.has(link.url)) return false
+        seen.add(link.url)
+        return true
+      }).slice(0, 3).map(link => ({ label: link.label.slice(0, 40), url: link.url }))
+    }
+  }
+  return { facts, field_links }
+}
+
 export function parseAIReply(data) {
   const message = data?.message
   if (message?.role !== 'assistant' || typeof message.content !== 'string' || !message.content.trim()) {
@@ -34,6 +53,7 @@ export function parseAIReply(data) {
       && typeof item.title === 'string' && typeof item.reason === 'string'
       && safeHttpUrl(item.source_url))
     .map(item => ({ object_type: item.object_type, title: item.title, reason: item.reason,
+      ...researchFacts(item),
       source_url: item.source_url, reviewed: item.reviewed === true,
       status_note: typeof item.status_note === 'string' ? item.status_note : '',
       research_group_label: typeof item.research_group_label === 'string' ? item.research_group_label : '',

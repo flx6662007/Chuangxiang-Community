@@ -1,0 +1,4959 @@
+{
+  "scope": "national",
+  "laboratories": [
+    {
+      "id": "research-cn-tsinghua-storage",
+      "title": "存储研究组",
+      "unit": "清华大学",
+      "summary": "研究数据存储系统及其性能、可靠性，为计算机系统与数据管理提供基础技术。",
+      "participation": "本科实习生、硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://storage.cs.tsinghua.edu.cn/vacancies-ch/"
+    },
+    {
+      "id": "research-cn-tsinghua-green-transport",
+      "title": "智能绿色车辆与交通全国重点实验室",
+      "unit": "清华大学",
+      "summary": "围绕汽车安全、节能与智能交通开展研究，连接车辆技术与交通系统应用。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://www.ase.tsinghua.edu.cn/peoples/joinus"
+    },
+    {
+      "id": "research-cn-tsinghua-coai",
+      "title": "交互式人工智能课题组 CoAI",
+      "unit": "清华大学",
+      "summary": "研究自然语言对话、文本生成、阅读理解和常识推理，探索人与智能系统的语言交互。",
+      "participation": "本科生、研究生、博士后、工程师",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://hml.coai.cs.tsinghua.edu.cn/recruit"
+    },
+    {
+      "id": "research-cn-tsinghua-nlp",
+      "title": "自然语言处理团队",
+      "unit": "清华大学",
+      "summary": "研究语言模型、中文信息处理与社会人文计算，涉及诗歌生成等应用和开源项目。",
+      "participation": "实习生、博士后、研究员",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://nlp.csai.tsinghua.edu.cn/join_us/"
+    },
+    {
+      "id": "research-cn-tsinghua-liu-yongjin",
+      "title": "刘永进课题组",
+      "unit": "清华大学",
+      "summary": "探索机器记忆、视频世界模型、具身交互与脑电解码，连接图形计算和认知研究。",
+      "participation": "本科生、实习生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin_student.htm"
+    },
+    {
+      "id": "research-cn-tsinghua-yao-jun",
+      "title": "姚骏实验室",
+      "unit": "清华大学",
+      "summary": "研究神经系统和脑疾病，结合干细胞与脑类器官等方法开展实验。",
+      "participation": "博士后",
+      "evidenceNote": "",
+      "date": "2026-07-11",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://life.tsinghua.edu.cn/info/1129/7783.htm"
+    },
+    {
+      "id": "research-cn-tsinghua-lu-lab",
+      "title": "鲁志实验室",
+      "unit": "清华大学",
+      "summary": "研究非编码 RNA 与生物信息学，探索人工智能在核酸药物和精准医学中的应用。",
+      "participation": "本科科研、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bioinfo.life.tsinghua.edu.cn/docs/people/join-us/"
+    },
+    {
+      "id": "research-cn-tsinghua-compbio",
+      "title": "机器学习和计算生物学课题组",
+      "unit": "清华大学",
+      "summary": "结合机器学习、生物计算与大数据分析开展交叉研究。",
+      "participation": "本科生、硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://group.iiis.tsinghua.edu.cn/~compbio/openings.html"
+    },
+    {
+      "id": "research-cn-pku-tang",
+      "title": "汤超实验室",
+      "unit": "北京大学",
+      "summary": "通过理论、计算与实验研究复杂生命系统；成都团队还涉及肿瘤免疫和转化研究。",
+      "participation": "计算与实验方向博士后、细胞生物学科研助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://cqb.pku.edu.cn/tanglab/jrwm.htm"
+    },
+    {
+      "id": "research-cn-pku-photonics",
+      "title": "先进集成光子芯片实验室",
+      "unit": "北京大学",
+      "summary": "研究光子芯片的小型化、集成与应用，推动光学器件向集成系统发展。",
+      "participation": "本科生、研究生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://photonics.pku.edu.cn/jrwm.htm"
+    },
+    {
+      "id": "research-cn-pku-graphics",
+      "title": "图形图像实验室",
+      "unit": "北京大学",
+      "summary": "研究计算机图形绘制与图像技术。",
+      "participation": "本科实习生、毕业设计、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://www.wict.pku.edu.cn/GraphicsLab/jrwm/index.htm"
+    },
+    {
+      "id": "research-cn-pku-graphics-interaction",
+      "title": "图形与交互技术实验室",
+      "unit": "北京大学",
+      "summary": "研究图形图像、三维重建、仿真、虚拟现实与人机交互。",
+      "participation": "本科实习生、毕业设计、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://www.graphics.pku.edu.cn/zxns/index.htm"
+    },
+    {
+      "id": "research-cn-buaa-haptic",
+      "title": "人机交互实验室",
+      "unit": "北京航空航天大学 · 沙河校区",
+      "summary": "研究触觉感知与反馈、多模态交互、虚拟现实和康复机器人。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://haptic.buaa.edu.cn/"
+    },
+    {
+      "id": "research-cn-buaa-fluid-manufacturing",
+      "title": "智能流体装备与制造实验室",
+      "unit": "北京航空航天大学",
+      "summary": "研究智能流体装备与制造，涉及医疗检测和新能源等应用。",
+      "participation": "博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://immeetlab.buaa.edu.cn/zsxx/bss.htm"
+    },
+    {
+      "id": "research-cn-buaa-bionic-mems",
+      "title": "蒋永刚课题组／仿生与微纳系统研究所",
+      "unit": "北京航空航天大学",
+      "summary": "围绕仿生工程、微纳器件与 MEMS 传感开展研究，包括耐高温和多传感器集成。",
+      "participation": "硕士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://shi.buaa.edu.cn/09356/zh_CN/zhym/20380/list/index.htm"
+    },
+    {
+      "id": "research-cn-buaa-lin-nan",
+      "title": "林楠课题组",
+      "unit": "北京航空航天大学",
+      "summary": "研究极紫外光源、先进光刻、芯片检测与阿秒脉冲，兼顾光学原理和工程应用。",
+      "participation": "硕士生、博士生、师资博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://shi.buaa.edu.cn/linnan/en/index.htm"
+    },
+    {
+      "id": "research-cn-tju-itlab",
+      "title": "智能信息处理实验室",
+      "unit": "天津大学",
+      "summary": "研究知识图谱、图像和语音处理、多模态技术，并探索智能技术在绿色能源中的应用。",
+      "participation": "交流学习、硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://itlab.tju.edu.cn/"
+    },
+    {
+      "id": "research-cn-tju-aimip",
+      "title": "人工智能与海洋信息处理实验室",
+      "unit": "天津大学",
+      "summary": "围绕人工智能与海洋信息处理开展研究。",
+      "participation": "本科实习生、硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://aimip.tju.edu.cn/sysjj/zspy.htm"
+    },
+    {
+      "id": "research-cn-tju-yang-jingyu",
+      "title": "杨敬钰课题组",
+      "unit": "天津大学",
+      "summary": "研究图像视频处理与三维视觉。",
+      "participation": "硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://seea.tju.edu.cn/info/1386/4831.htm"
+    },
+    {
+      "id": "research-cn-tju-photon-chip",
+      "title": "光子芯片实验室",
+      "unit": "天津大学",
+      "summary": "开展集成光学、纳米光学、光学传感、光谱及科学智能交叉研究。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://cheng.tju.edu.cn/lxwm.htm"
+    },
+    {
+      "id": "research-cn-sjtu-graphene",
+      "title": "石墨烯及纳米功能材料实验室",
+      "unit": "上海交通大学",
+      "summary": "围绕电池、催化和电化学传感研究纳米功能材料。",
+      "participation": "博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://graphene.sjtu.edu.cn/content/jrwm"
+    },
+    {
+      "id": "research-cn-sjtu-epse",
+      "title": "能源与过程系统工程实验室",
+      "unit": "上海交通大学 · 闵行校区",
+      "summary": "研究过程系统建模优化、电池管理、电解制氢和多能源系统协同控制。",
+      "participation": "博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://epse.sjtu.edu.cn/joinus/"
+    },
+    {
+      "id": "research-cn-sjtu-2d-kitchen",
+      "title": "低维量子物理与后摩尔信息器件实验室",
+      "unit": "上海交通大学 · 闵行校区",
+      "summary": "研究低维材料物理和新型信息器件，结合二维材料加工与低温测量。",
+      "participation": "本科生、硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://2dkitchen.sjtu.edu.cn/jia_ru_wo_men.html"
+    },
+    {
+      "id": "research-cn-sjtu-laser-plasma",
+      "title": "激光等离子体教育部重点实验室",
+      "unit": "上海交通大学",
+      "summary": "研究激光与等离子体物理。",
+      "participation": "研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://llp.sjtu.edu.cn/Web/News/143"
+    },
+    {
+      "id": "research-cn-sjtu-ding-hong",
+      "title": "丁洪研究团队",
+      "unit": "上海交通大学",
+      "summary": "结合角分辨光电子能谱、扫描隧道显微镜和薄膜等实验平台开展物理研究。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://web.tdli.sjtu.edu.cn/dingh/join-us/"
+    },
+    {
+      "id": "research-cn-sjtu-yang-compbio",
+      "title": "杨洋计算生物学课题组",
+      "unit": "上海交通大学",
+      "summary": "将机器学习和语言模型用于分子设计、手性研究与医学图像分析。",
+      "participation": "本科生、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://compbio.sjtu.edu.cn/openings_cn.html"
+    },
+    {
+      "id": "research-cn-fudan-feng-rui",
+      "title": "冯瑞跨媒体智能计算课题组",
+      "unit": "复旦大学",
+      "summary": "围绕跨媒体信息处理、医学图像和视频理解开展研究。",
+      "participation": "研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.fudan.edu.cn/fengrui/zh_CN/zdylm/667348/list/index.htm"
+    },
+    {
+      "id": "research-cn-fudan-xiao-xiao",
+      "title": "肖晓实验室／认知神经科学中心",
+      "unit": "复旦大学 · 张江校区",
+      "summary": "研究认知行为、神经环路与脑疾病干预，建设认知神经科学实验平台。",
+      "participation": "博士后、科研助理、工程岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.fudan.edu.cn/xxiao/zh_CN/zdylm/656157/list/index.htm"
+    },
+    {
+      "id": "research-cn-fudan-knowledge-works",
+      "title": "知识工场实验室",
+      "unit": "复旦大学",
+      "summary": "围绕知识图谱与知识驱动的智能技术开展研究。",
+      "participation": "本科实习生、硕士实习生、博士实习生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://kw.fudan.edu.cn/recruitment/"
+    },
+    {
+      "id": "research-cn-fudan-secsys",
+      "title": "系统软件与安全实验室",
+      "unit": "复旦大学",
+      "summary": "研究系统软件和安全技术，连接底层系统能力与安全问题。",
+      "participation": "本科科研、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://secsys.fudan.edu.cn/recruit/"
+    },
+    {
+      "id": "research-cn-fudan-functional-ultrasound",
+      "title": "功能超声前沿交叉课题组",
+      "unit": "复旦大学",
+      "summary": "围绕功能超声与智慧医疗开展交叉研究，连接工程方法和生物医学问题。",
+      "participation": "本科科研、研究生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://fus.fudan.edu.cn/jrwm.htm"
+    },
+    {
+      "id": "research-cn-fudan-biomedical-ai",
+      "title": "生物医学人工智能实验室",
+      "unit": "复旦大学",
+      "summary": "研究影像遗传学、脑疾病风险建模及微生物组计算。",
+      "participation": "博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://mai.fudan.edu.cn/"
+    },
+    {
+      "id": "research-cn-zju-rice-breeding",
+      "title": "水稻生物育种全国重点实验室",
+      "unit": "浙江大学",
+      "summary": "研究水稻重要性状的遗传机制、生物育种技术和新品种创制。",
+      "participation": "专职研究员",
+      "evidenceNote": "",
+      "date": "2026-07-08",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://hr.zju.edu.cn/cn/2026/0708/c29048a3187018/page.htm"
+    },
+    {
+      "id": "research-cn-zju-evolution",
+      "title": "生命演化研究中心",
+      "unit": "浙江大学 · 紫金港校区",
+      "summary": "研究生命与疾病演化、基因组、群体遗传和计算生物学。",
+      "participation": "本科生、研究生、科研岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://evolution.zju.edu.cn/contacts.html"
+    },
+    {
+      "id": "research-cn-zju-human-decision",
+      "title": "人类决策实验室",
+      "unit": "浙江大学",
+      "summary": "研究人类决策规律、认知与脑机制，并用行为数据开展智能决策研究。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "2021-11-30",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://psymap.zju.edu.cn/2021/1130/c64007a2446800/page.htm"
+    },
+    {
+      "id": "research-cn-nju-crystal-growth",
+      "title": "功能晶体生长实验室",
+      "unit": "南京大学",
+      "summary": "开展功能晶体生长与物性研究。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://crystal.nju.edu.cn/jrwm/index.html"
+    },
+    {
+      "id": "research-cn-nju-superconducting-qubits",
+      "title": "超导量子器件研究组",
+      "unit": "南京大学",
+      "summary": "围绕超导量子器件与量子计算开展研究。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sslab.nju.edu.cn/61360/list.htm"
+    },
+    {
+      "id": "research-cn-nju-ren-xingjie",
+      "title": "任兴杰课题组",
+      "unit": "南京大学",
+      "summary": "围绕功能基因组与基因编辑开展生命医学研究。",
+      "participation": "博士后",
+      "evidenceNote": "",
+      "date": "2026-09-03",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://imb.nju.edu.cn/rczp/syszp/20260903/i415205.html"
+    },
+    {
+      "id": "research-cn-nju-bandgap-materials",
+      "title": "人工带隙材料实验室",
+      "unit": "南京大学",
+      "summary": "研究人工微结构中的光子和声子行为，探索带隙材料的物理机制与应用。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://lbgm.nju.edu.cn/"
+    },
+    {
+      "id": "research-cn-nju-xiao-qian",
+      "title": "肖倩课题组",
+      "unit": "南京大学",
+      "summary": "研究肿瘤微环境。",
+      "participation": "科研助理",
+      "evidenceNote": "",
+      "date": "2026-06-25",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://imb.nju.edu.cn/rczp/syszp/20260625/i399641.html"
+    },
+    {
+      "id": "research-cn-ustc-huang-chengdong",
+      "title": "黄成栋实验室",
+      "unit": "中国科学技术大学",
+      "summary": "以结构生物学、核磁共振和生化方法研究蛋白质动态与生命过程。",
+      "participation": "本科毕业论文研究、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.ustc.edu.cn/huangchengdong/zh_CN/zdylm/1015731/list/index.htm"
+    },
+    {
+      "id": "research-cn-ustc-sterile-inflammation",
+      "title": "危险信号感应与无菌性炎症实验室",
+      "unit": "中国科学技术大学",
+      "summary": "研究危险信号识别和无菌性炎症，连接免疫学、细胞生物学与神经生物学。",
+      "participation": "本科实习生、研究生、博士后、特任副研究员",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://team.ustc.edu.cn/ZHOUJIANGLAB/zh_CN/zdylm/993788/list/index.htm"
+    },
+    {
+      "id": "research-cn-ustc-acsa",
+      "title": "先进计算机系统结构实验室 ACSA",
+      "unit": "中国科学技术大学",
+      "summary": "研究高性能计算、计算芯片与并行系统，并结合大数据和成像应用。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://acsa.ustc.edu.cn/joinus/"
+    },
+    {
+      "id": "research-cn-ustc-emerald",
+      "title": "植物生理生态与地球系统模拟实验室",
+      "unit": "中国科学技术大学",
+      "summary": "结合植物生理生态和地球系统模拟，研究植物与环境的关系。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://team.ustc.edu.cn/emerald/zh_CN/zdylm/1033224/list/index.htm"
+    },
+    {
+      "id": "research-cn-ustc-bio-nano-chemistry",
+      "title": "仿生与纳米化学实验室",
+      "unit": "中国科学技术大学",
+      "summary": "围绕仿生材料、纳米化学与材料合成开展跨学科研究。",
+      "participation": "博士后、特任副研究员、研究学者",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://team.ustc.edu.cn/yulab/zh_CN/zdylm/657904/list/index.htm"
+    },
+    {
+      "id": "research-cn-westlake-new-phase-metals",
+      "title": "新相金属与制造实验室",
+      "unit": "西湖大学",
+      "summary": "研究新相金属与制造，连接材料科学、热能和工程技术。",
+      "participation": "博士生、博士后、科研助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://tang.lab.westlake.edu.cn/zh/Openings.htm"
+    },
+    {
+      "id": "research-cn-westlake-xie-qi",
+      "title": "谢琦实验室",
+      "unit": "西湖大学",
+      "summary": "研究干细胞、肿瘤及其微环境，探索细胞状态与疾病的关系。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://xieqi.lab.westlake.edu.cn/index_cn.html"
+    },
+    {
+      "id": "research-cn-westlake-xin-zhang",
+      "title": "张鑫生物聚集体化学实验室",
+      "unit": "西湖大学",
+      "summary": "用荧光探针、成像和化学调控研究蛋白与 RNA 聚集、相分离及细胞器功能。",
+      "participation": "博士生、科研助理、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://xinzhang.lab.westlake.edu.cn/zwwz/jionus.htm"
+    },
+    {
+      "id": "research-cn-westlake-yang-lin",
+      "title": "人工智能与生物医学影像实验室",
+      "unit": "西湖大学",
+      "summary": "研究医学影像、数字病理、多模态大模型与智能体。",
+      "participation": "科研助理",
+      "evidenceNote": "",
+      "date": "2026-07-20",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://engineering.westlake.edu.cn/Recuitment/202607/t20260720_68396.shtml"
+    },
+    {
+      "id": "research-cn-westlake-yue-zhang",
+      "title": "张越实验室",
+      "unit": "西湖大学",
+      "summary": "结合纳米材料、蛋白质设计、膜物理、微生物与机器学习开展研究。",
+      "participation": "博士生、博士后、研究助理、访问学者",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://yz.lab.westlake.edu.cn/joinus.html"
+    },
+    {
+      "id": "research-cn-westlake-synthetic-biology",
+      "title": "合成生物学及生物工程实验室",
+      "unit": "西湖大学",
+      "summary": "研究合成生物学与生物工程。",
+      "participation": "博士后、科研岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://synbio-zeng.lab.westlake.edu.cn/jrwm.htm"
+    },
+    {
+      "id": "research-cn-westlake-tian-jingyi",
+      "title": "田静逸实验室",
+      "unit": "西湖大学",
+      "summary": "研究拓扑与非厄米物理、微纳光学结构，以及微纳光源和探测器。",
+      "participation": "博士生、科研助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://omal.lab.westlake.edu.cn/Join_Us/Ph_D_students_or_research_assistants.htm"
+    },
+    {
+      "id": "research-cn-westlake-quantum-devices",
+      "title": "李新浩量子器件实验室",
+      "unit": "西湖大学",
+      "summary": "研究量子器件。",
+      "participation": "本科生、学生科研、博士后、科研助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://qid.lab.westlake.edu.cn/Join.htm"
+    },
+    {
+      "id": "research-cn-xmu-brain-cognition",
+      "title": "脑认知与智能计算实验室",
+      "unit": "厦门大学",
+      "summary": "研究脑机接口、生成式人工智能、虚拟数字人及人工智能教育等交叉方向。",
+      "participation": "硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bci.xmu.edu.cn/zs.html"
+    },
+    {
+      "id": "research-cn-xmu-li-qiucheng",
+      "title": "李秋珵课题组",
+      "unit": "厦门大学",
+      "summary": "研究二维材料制备、异质结构及相关微观物性。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://lqc-lab.xmu.edu.cn/Joinus.htm"
+    },
+    {
+      "id": "research-cn-xmu-huang-jialiang",
+      "title": "黄佳良实验室",
+      "unit": "厦门大学",
+      "summary": "结合单细胞多组学与基因编辑开展研究，连接计算分析和实验验证。",
+      "participation": "研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://huanglab.xmu.edu.cn/Join_US.htm"
+    },
+    {
+      "id": "research-cn-xmu-yang-yang-materials",
+      "title": "杨扬课题组",
+      "unit": "厦门大学",
+      "summary": "研究表面组装、原子尺度制造和微纳仪器，连接材料与器件方法。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://yangyanglab.xmu.edu.cn/"
+    },
+    {
+      "id": "research-cn-xmu-yi-jun",
+      "title": "易军课题组",
+      "unit": "厦门大学 · 翔安校区",
+      "summary": "研究超快光谱、近场光学与纳米光子学。",
+      "participation": "本科实习生、科研助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://nplab.xmu.edu.cn/contact.html"
+    },
+    {
+      "id": "research-cn-xmu-dmci",
+      "title": "刘向荣 DMCI 研究组",
+      "unit": "厦门大学",
+      "summary": "围绕分子表示学习、药物作用预测和生物网络建模开展计算研究。",
+      "participation": "硕士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://dmci.xmu.edu.cn/Openings.html"
+    },
+    {
+      "id": "research-cn-xmu-spatial-computing",
+      "title": "空间感知与计算实验室",
+      "unit": "厦门大学",
+      "summary": "研究空间感知、强化学习与智能计算。",
+      "participation": "硕士生、博士生、联合培养",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://asc.xmu.edu.cn/m/t/shensiqi"
+    },
+    {
+      "id": "research-cn-xmu-marine-biogeochemistry",
+      "title": "海洋生物地球化学全国重点实验室",
+      "unit": "厦门大学",
+      "summary": "研究海洋生物地球化学。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://mel.xmu.edu.cn/"
+    },
+    {
+      "id": "research-cn-xmu-pi-lab",
+      "title": "信息材料与工业智能实验室 π-Lab",
+      "unit": "厦门大学",
+      "summary": "研究单分子电子学、分子组装、精密仪器与科学智能。",
+      "participation": "博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://pilab.xmu.edu.cn/Join_Usnx.htm"
+    },
+    {
+      "id": "research-cn-sysu-ding-junjun",
+      "title": "丁俊军实验室",
+      "unit": "中山大学",
+      "summary": "围绕干细胞相关问题开展研究。",
+      "participation": "本科实习生、毕业设计、硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://zssom.sysu.edu.cn/stemcellding/activities/academicexchanges/1421781.htm"
+    },
+    {
+      "id": "research-cn-sysu-zheng-zhikun",
+      "title": "郑治坤课题组",
+      "unit": "中山大学 · 广州校区",
+      "summary": "研究聚合物材料在膜分离、光学加密等方向的应用。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://ce.sysu.edu.cn/zhenggroup/Contact%20us%26Join%20us/joinus_Chinese.html"
+    },
+    {
+      "id": "research-cn-sysu-zhang-rui",
+      "title": "张锐课题组",
+      "unit": "中山大学",
+      "summary": "研究 RNA 编辑工具、RNA 治疗及生物人工智能，结合多组学分析和实验验证。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://lifesciences.sysu.edu.cn/zh-hans/node/1079"
+    },
+    {
+      "id": "research-cn-sysu-microbe-environment",
+      "title": "微生物与环境互作团队",
+      "unit": "中山大学 · 深圳校区",
+      "summary": "研究植物病原微生物、地衣共生体系和环境适应，连接微生物互作与农业生物技术。",
+      "participation": "科研助理、博士后、客座硕士生、客座博士生",
+      "evidenceNote": "",
+      "date": "2026-01-23",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://ab.sysu.edu.cn/zh-hans/article/1347"
+    },
+    {
+      "id": "research-cn-sysu-nuclear-imaging",
+      "title": "谢思维核医学分子影像团队",
+      "unit": "中山大学 · 深圳校区",
+      "summary": "从闪烁材料、辐射探测与系统研制延伸到图像重建和医学影像人工智能。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bme.sysu.edu.cn/teacher/teacher02/1419679.htm"
+    },
+    {
+      "id": "research-cn-scut-hybrid-materials",
+      "title": "功能与智能杂化材料与器件重点实验室",
+      "unit": "华南理工大学",
+      "summary": "研究功能杂化材料和智能器件，面向显示、通信及软物质材料应用。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://www2.scut.edu.cn/aismst/gdszdsys/list.htm"
+    },
+    {
+      "id": "research-cn-scut-millimeter-terahertz",
+      "title": "毫米波与太赫兹重点实验室",
+      "unit": "华南理工大学",
+      "summary": "研究毫米波及太赫兹电路、天线、封装和系统，面向通信、感知与检测应用。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://yanzhao.scut.edu.cn/ExpertInfo.aspx?zjbh=Pd6NjeJcwXUCiI4y9kBe5A%3D%3D"
+    },
+    {
+      "id": "research-cn-scut-digital-rural",
+      "title": "数字乡村与文旅可持续发展重点实验室",
+      "unit": "华南理工大学",
+      "summary": "用大数据和跨学科方法研究乡村发展、文旅与可持续治理。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "2025-04-07",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://news.scut.edu.cn/2025/0407/c44a57185/page.htm"
+    },
+    {
+      "id": "research-cn-sustech-high-tc",
+      "title": "陈卓昱超导机理实验室",
+      "unit": "南方科技大学",
+      "summary": "研究超导机理及相关材料问题，并探索人工智能辅助材料研究。",
+      "participation": "研究生、科研岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://hightc.phy.sustech.edu.cn/contact/recru.html?lang=zh-cn"
+    },
+    {
+      "id": "research-cn-sustech-song-xuejun",
+      "title": "宋学军实验室",
+      "unit": "南方科技大学",
+      "summary": "研究感觉与认知、疼痛、麻醉及相关分子机制和新型镇痛技术。",
+      "participation": "科研人员",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://med.sustech.edu.cn/Home/deps/recru?ClassID=2392&yxID=214"
+    },
+    {
+      "id": "research-cn-whu-gao-yongqiang",
+      "title": "高永强课题组",
+      "unit": "武汉大学",
+      "summary": "研究植物信号传播和环境响应，涉及伤害信号、离子通道与气孔调节。",
+      "participation": "本科科研、硕士生、博士生、科研助理、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1486.html"
+    },
+    {
+      "id": "research-cn-whu-lei-cheng",
+      "title": "激光与超快成像实验室",
+      "unit": "武汉大学",
+      "summary": "研究激光和超快成像，结合计算方法拓展生物医学观察技术。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://leilab.whu.edu.cn/"
+    },
+    {
+      "id": "research-cn-whu-gpcv",
+      "title": "摄影测量与计算机视觉课题组 GPCV",
+      "unit": "武汉大学",
+      "summary": "开展摄影测量、计算机视觉与空间感知相关研究。",
+      "participation": "研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://gpcv.whu.edu.cn/contact.html"
+    },
+    {
+      "id": "research-cn-whu-rsidea",
+      "title": "智能遥感数据分析研究组",
+      "unit": "武汉大学",
+      "summary": "研究高光谱与无人机等遥感数据的智能分析。",
+      "participation": "研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://rsidea.whu.edu.cn/enroll.htm"
+    },
+    {
+      "id": "research-cn-whu-hou-xin",
+      "title": "侯昕课题组",
+      "unit": "武汉大学",
+      "summary": "用水稻、拟南芥研究光合作用的能量转换、系统组装与抗逆调控。",
+      "participation": "本科生、硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1280.html"
+    },
+    {
+      "id": "research-cn-whu-cai-qiang",
+      "title": "蔡强课题组",
+      "unit": "武汉大学",
+      "summary": "研究植物免疫、病原体毒力与细胞通讯，包括跨物种 RNA 调控。",
+      "participation": "硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1315.html"
+    },
+    {
+      "id": "research-cn-hust-sinclab",
+      "title": "天地一体化信息网络实验室",
+      "unit": "华中科技大学",
+      "summary": "研究天地一体化信息网络及相关通信技术。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://cse-sinclab.hust.edu.cn/jrwm.htm"
+    },
+    {
+      "id": "research-cn-csu-chen-tao",
+      "title": "陈涛课题组",
+      "unit": "中南大学",
+      "summary": "围绕锂二氧化碳电池催化剂等电化学材料开展研究。",
+      "participation": "本科科研、硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.csu.edu.cn/chentao/en/index.htm"
+    },
+    {
+      "id": "research-cn-csu-social-governance",
+      "title": "复杂社会系统智慧治理实验室",
+      "unit": "中南大学",
+      "summary": "融合系统工程、人工智能与社会治理，研究复杂社会系统的建模和决策。",
+      "participation": "科研人才",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bs.csu.edu.cn/info/1627/26902.htm"
+    },
+    {
+      "id": "research-cn-csu-precision-manufacturing",
+      "title": "极端服役性能精准制造全国重点实验室",
+      "unit": "中南大学",
+      "summary": "研究极端服役构件的高品质制造、轻金属光学元件及超精密加工。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://hpcm.csu.edu.cn/info/1030/1574.htm"
+    },
+    {
+      "id": "research-cn-csu-wang-meng",
+      "title": "王孟课题组",
+      "unit": "中南大学",
+      "summary": "将电脉冲加工、机器学习与自动化实验结合，研究铜合金和复合材料的精准制造。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.csu.edu.cn/wangmeng1/en/more/208327/jsjjgd/index.htm"
+    },
+    {
+      "id": "research-cn-scu-advanced-polymers",
+      "title": "先进高分子材料全国重点实验室",
+      "unit": "四川大学",
+      "summary": "研究高分子材料的结构、性能与加工。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sklpme.scu.edu.cn/sysgk/sysjj/"
+    },
+    {
+      "id": "research-cn-scu-biotherapy",
+      "title": "生物治疗全国重点实验室",
+      "unit": "四川大学",
+      "summary": "研究生物治疗。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://sklb.scu.edu.cn/f_science.html"
+    },
+    {
+      "id": "research-cn-scu-mountain-rivers",
+      "title": "山区河流保护与治理全国重点实验室",
+      "unit": "四川大学",
+      "summary": "研究山区河流演变、生态保护、系统治理及灾害风险防控。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://skhl.scu.edu.cn/sysgk/sysjj.htm"
+    },
+    {
+      "id": "research-cn-scu-radiation-physics",
+      "title": "辐射物理及技术教育部重点实验室",
+      "unit": "四川大学",
+      "summary": "开展医学物理、辐照材料、核监测和同位素应用等研究，并介绍大科学装置参与成果。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://720lab.scu.edu.cn/"
+    },
+    {
+      "id": "research-cn-scu-bioresources",
+      "title": "生物资源与生态环境教育部重点实验室",
+      "unit": "四川大学",
+      "summary": "研究西部生物资源、可持续利用及濒危动植物和生态环境保护。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://life.scu.edu.cn/klbeme/sysjj.htm"
+    },
+    {
+      "id": "research-cn-uestc-media-lab",
+      "title": "Media Lab",
+      "unit": "电子科技大学 · 清水河校区",
+      "summary": "研究具身智能、生成式人工智能与多模态大模型，并探索教育、文化、医疗等应用。",
+      "participation": "博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://medialab.uestc.edu.cn/join"
+    },
+    {
+      "id": "research-cn-uestc-biophysics",
+      "title": "生物力学与微纳医学工程实验室",
+      "unit": "电子科技大学",
+      "summary": "研究肿瘤细胞力学及微环境，并开发微纳载体、探针和分子成像方法。",
+      "participation": "博士生、博士后、青年科研岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://biophysics.uestc.edu.cn/info/1010/1054.htm"
+    },
+    {
+      "id": "research-cn-uestc-thin-films",
+      "title": "电子薄膜与集成器件全国重点实验室",
+      "unit": "电子科技大学",
+      "summary": "研究磁电薄膜、电子聚合物、微结构传感与功率半导体器件。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://etfid.uestc.edu.cn/kfkt/sqzn.htm"
+    },
+    {
+      "id": "research-cn-uestc-moemil",
+      "title": "现代光电测控及仪器实验室 MOEMIL",
+      "unit": "电子科技大学",
+      "summary": "研究机器视觉、机器学习与数字图像处理，结合仪器研发和工程应用。",
+      "participation": "硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.uestc.edu.cn/moemil/zh_CN/zdylm/319044/list/index.htm"
+    },
+    {
+      "id": "research-cn-uestc-jin-electrochemistry",
+      "title": "晋兆宇先进电化学技术实验室",
+      "unit": "电子科技大学",
+      "summary": "研究高分辨电化学分析、智能仪器及能源环境应用。",
+      "participation": "暑期研学",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://jin-group.uestc.edu.cn/Openings.htm"
+    },
+    {
+      "id": "research-cn-uestc-quantum-photonics",
+      "title": "量子物理与光量子信息教育部重点实验室",
+      "unit": "电子科技大学",
+      "summary": "研究量子关联、多体物理、量子计算与模拟、量子材料及光量子互联。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://quantum.uestc.edu.cn/gkl/sysjj.htm"
+    },
+    {
+      "id": "research-cn-xjtu-fu-laiyi",
+      "title": "付来义课题组",
+      "unit": "西安交通大学",
+      "summary": "围绕生物医学智能计算及科学智能开展交叉研究。",
+      "participation": "本科科研训练、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.xjtu.edu.cn/laiyifu/zh_CN/index.htm"
+    },
+    {
+      "id": "research-cn-xjtu-cold-atoms",
+      "title": "陈涛冷原子课题组",
+      "unit": "西安交通大学",
+      "summary": "利用冷原子和光镊技术开展量子模拟等研究。",
+      "participation": "本科科研训练、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.xjtu.edu.cn/taochen/zh_CN/zdylm/1062930/list/index.htm"
+    },
+    {
+      "id": "research-cn-xjtu-feng-zhihui",
+      "title": "冯智辉课题组",
+      "unit": "西安交通大学",
+      "summary": "研究线粒体功能和代谢等生命医学问题。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://gr.xjtu.edu.cn/zhfeng/zh_CN/zdylm/1004853/list/index.htm"
+    },
+    {
+      "id": "research-cn-xjtu-wang-jinjun",
+      "title": "王进军课题组",
+      "unit": "西安交通大学",
+      "summary": "围绕模式识别、计算机视觉与机器学习开展研究。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://gr.xjtu.edu.cn/jinjun/zh_CN/zhym/994013/list/index.htm"
+    },
+    {
+      "id": "research-cn-xjtu-chen-xin",
+      "title": "陈欣课题组",
+      "unit": "西安交通大学",
+      "summary": "研究复杂系统优化控制及人工智能在电力、储能和新能源中的应用。",
+      "participation": "全日制硕士生、博士生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://gr.xjtu.edu.cn/chenxin/zh_CN/index/319981/list/index.htm"
+    },
+    {
+      "id": "research-cn-nwpu-bigdata-storage",
+      "title": "大数据存储与管理实验室",
+      "unit": "西北工业大学",
+      "summary": "围绕工业大数据开展研究，涉及实验设计、数据分析和科研成果整理。",
+      "participation": "科研助理（非事业编制）",
+      "evidenceNote": "",
+      "date": "2026-06-25",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://renshi.nwpu.edu.cn/info/1264/33185.htm"
+    },
+    {
+      "id": "research-cn-nwpu-crowd-computing",
+      "title": "人机物融合群智计算实验室",
+      "unit": "西北工业大学",
+      "summary": "围绕普适计算开展研究，涉及实验设计与数据分析。",
+      "participation": "科研助理（非事业编制）",
+      "evidenceNote": "",
+      "date": "2026-04-30",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://renshi.nwpu.edu.cn/info/1326/31895.htm"
+    },
+    {
+      "id": "research-cn-nwpu-xray-imaging",
+      "title": "李瑞梓 X 射线高对比度成像项目组",
+      "unit": "西北工业大学",
+      "summary": "研究高性能闪烁材料及 X 射线高对比度成像。",
+      "participation": "项目科研岗位",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://renshi.nwpu.edu.cn/info/1326/31415.htm"
+    },
+    {
+      "id": "research-cn-nwpu-unmanned-control",
+      "title": "智能无人控制系统实验室",
+      "unit": "西北工业大学",
+      "summary": "开展无人系统及其软硬件研发，涉及嵌入式和机械工程。",
+      "participation": "工程师、研发助理",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://renshi.nwpu.edu.cn/info/1326/30205.htm"
+    },
+    {
+      "id": "research-cn-nwpu-structural-integrity",
+      "title": "飞行器结构完整性技术重点实验室",
+      "unit": "西北工业大学",
+      "summary": "开展飞行器结构完整性实验研究。",
+      "participation": "实验员、实验研究员",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://liuyuan.nwpu.edu.cn/info/1060/1015.htm"
+    },
+    {
+      "id": "research-cn-hit-robotics",
+      "title": "机器人技术与系统全国重点实验室",
+      "unit": "哈尔滨工业大学",
+      "summary": "研究机器人设计、感知控制、人机协作与系统集成，研究涉及相关应用成果。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://robot.hit.edu.cn/sysjj/list.htm"
+    },
+    {
+      "id": "research-cn-hit-scir",
+      "title": "社会计算与交互机器人研究中心 SCIR",
+      "unit": "哈尔滨工业大学",
+      "summary": "研究自然语言处理、大语言模型和具身智能，关注语言、知识、社会与机器人交互。",
+      "participation": "研究生（含博士）",
+      "evidenceNote": "",
+      "date": "2026-07-02",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://ir.hit.edu.cn/2026/0702/c19589a395732/page.htm"
+    },
+    {
+      "id": "research-cn-hit-wu-yan",
+      "title": "吴艳智能测试与控制团队",
+      "unit": "哈尔滨工业大学",
+      "summary": "研究时间序列分析、虚拟仪器及智能测试控制技术。",
+      "participation": "本科课外实践、本科实习、研究生",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://homepage.hit.edu.cn/WuYan?lang=zh"
+    },
+    {
+      "id": "research-cn-hit-space-radiation",
+      "title": "汪洋课题组",
+      "unit": "哈尔滨工业大学",
+      "summary": "研究太空高能带电粒子辐射，结合卫星数据、理论模型和数值模拟。",
+      "participation": "本科生、硕士生、博士生、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://homepage.hit.edu.cn/wangyang2016"
+    },
+    {
+      "id": "research-cn-jlu-earth-instruments",
+      "title": "地球信息探测仪器教育部重点实验室",
+      "unit": "吉林大学",
+      "summary": "研究海洋、极地和光学对地观测仪器，以及地质灾害监测预警。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://olagi.jlu.edu.cn/sysjj1/yjfx.htm"
+    },
+    {
+      "id": "research-cn-jlu-symbolic-knowledge",
+      "title": "符号计算与知识工程教育部重点实验室",
+      "unit": "吉林大学",
+      "summary": "研究符号计算、自动推理、知识工程、计算智能与可信移动计算。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://scke.jlu.edu.cn/sysgk/sysjj.htm"
+    },
+    {
+      "id": "research-cn-jlu-pathobiology",
+      "title": "病理生物学教育部重点实验室",
+      "unit": "吉林大学",
+      "summary": "研究再生医学、肿瘤、代谢与心脑血管疾病、感染及创伤修复的生物学机制。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://pathobiology.jlu.edu.cn/sysgk/sysjj.htm"
+    },
+    {
+      "id": "research-cn-jlu-supramolecular",
+      "title": "超分子结构与材料全国重点实验室",
+      "unit": "吉林大学",
+      "summary": "研究非共价相互作用、超分子精准组装、模拟表征及先进材料。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://supramol.jlu.edu.cn/sysgk1/sysjj.htm"
+    },
+    {
+      "id": "research-cn-jlu-bionic-engineering",
+      "title": "工程仿生教育部重点实验室",
+      "unit": "吉林大学",
+      "summary": "研究生物耦合、仿生材料与行走系统，并用于农机节能和智能农业。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bionic.jlu.edu.cn/sysgk/yjfx.htm"
+    },
+    {
+      "id": "research-cn-jlu-bioarchaeology",
+      "title": "生物考古实验室",
+      "unit": "吉林大学",
+      "summary": "利用人、动物和植物遗存，结合古 DNA 等自然科学方法研究人类、农业和文明起源。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://jlub.jlu.edu.cn/sysgk/sysjj.htm"
+    },
+    {
+      "id": "research-cn-dlut-digital-chemistry",
+      "title": "数据驱动的智能化学合成平台",
+      "unit": "大连理工大学",
+      "summary": "结合人工智能与自动化实验，探索分子研发和化学合成的新方法。",
+      "participation": "学生科研",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://digichem.dlut.edu.cn/gywm/jlcx.htm"
+    },
+    {
+      "id": "research-cn-dlut-dutir",
+      "title": "信息检索研究室 DUTIR",
+      "unit": "大连理工大学",
+      "summary": "研究信息检索、自然语言、推荐、情感计算与生物医学文本挖掘。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://ir.dlut.edu.cn/index.htm"
+    },
+    {
+      "id": "research-cn-dlut-zhu-zhiwei",
+      "title": "朱志伟代谢工程与合成生物技术课题组",
+      "unit": "大连理工大学",
+      "summary": "开展代谢工程、微生物菌株构建和性能评价，连接合成生物与生物制造。",
+      "participation": "科研助理、博士后",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://faculty.dlut.edu.cn/zhuzhiwei1/en/index/1085142/list/index.htm"
+    },
+    {
+      "id": "research-cn-dlut-intelligent-biomanufacturing",
+      "title": "智能生物制造教育部重点实验室",
+      "unit": "大连理工大学",
+      "summary": "研究细胞工厂设计、合成生物、分子工程、智能给药及器官与细胞工程。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://bim-moe.dlut.edu.cn/sysgk/kyfx.htm"
+    },
+    {
+      "id": "research-cn-dlut-fine-chemicals",
+      "title": "精细化工重点实验室",
+      "unit": "大连理工大学",
+      "summary": "研究染料与响应分子、精细化工材料及智能制造，结合人工智能与绿色化工。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://finechem.dlut.edu.cn/kxyjlj/yjfx.htm"
+    },
+    {
+      "id": "research-cn-dlut-huanghai",
+      "title": "辽宁黄海实验室",
+      "unit": "大连理工大学",
+      "summary": "依托大连理工大学，研究高档数控机床、高端基础件、航空航天装备和智能制造。",
+      "participation": "",
+      "evidenceNote": "",
+      "date": "",
+      "verifiedOn": "2026-10-07",
+      "sourceUrl": "https://huanghailab.dlut.edu.cn/sysgk/sysjj1/sysjj1.htm"
+    }
+  ],
+  "profiles": {
+    "research-cn-tsinghua-storage": {
+      "direction": "计算机系统",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://storage.cs.tsinghua.edu.cn/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://storage.cs.tsinghua.edu.cn/vacancies-ch/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-green-transport": {
+      "direction": "车辆与交通",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://www.ase.tsinghua.edu.cn/peoples/joinus"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://www.ase.tsinghua.edu.cn/peoples/joinus"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-coai": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、研究生、博士后、工程师"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://hml.coai.cs.tsinghua.edu.cn/recruit"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://hml.coai.cs.tsinghua.edu.cn/recruit"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-nlp": {
+      "direction": "人工智能与人文",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "实习生、博士后、研究员"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://nlp.csai.tsinghua.edu.cn/join_us/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://nlp.csai.tsinghua.edu.cn/join_us/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-liu-yongjin": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、实习生、博士后",
+        "eligibility": "编程与数学基础"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin_student.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin_student.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin_student.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-yao-jun": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后",
+        "cohort": "2026 年"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://life.tsinghua.edu.cn/info/1129/7783.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://life.tsinghua.edu.cn/info/1129/7783.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-lu-lab": {
+      "direction": "计算生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bioinfo.life.tsinghua.edu.cn/docs/people/join-us/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://bioinfo.life.tsinghua.edu.cn/docs/people/join-us/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tsinghua-compbio": {
+      "direction": "计算生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、硕士生、博士生、博士后",
+        "eligibility": "理工科背景；不限生物专业"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://group.iiis.tsinghua.edu.cn/~compbio/openings.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://group.iiis.tsinghua.edu.cn/~compbio/openings.html"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://group.iiis.tsinghua.edu.cn/~compbio/openings.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-pku-tang": {
+      "direction": "系统生物学",
+      "location": "北京；成都招聘岗位须分别核对",
+      "achievements": "",
+      "recruitment": {
+        "roles": "计算与实验方向博士后、细胞生物学科研助理",
+        "cohort": "2026 年"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://cqb.pku.edu.cn/tanglab/jrwm.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://cqb.pku.edu.cn/tanglab/jrwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-pku-photonics": {
+      "direction": "光电与芯片",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、研究生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://photonics.pku.edu.cn/jrwm.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://photonics.pku.edu.cn/jrwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-pku-graphics": {
+      "direction": "计算机图形学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、毕业设计、研究生",
+        "eligibility": "本科实习面向大二至大四；编程与数学基础"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://www.wict.pku.edu.cn/GraphicsLab/jrwm/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://www.wict.pku.edu.cn/GraphicsLab/jrwm/index.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://www.wict.pku.edu.cn/GraphicsLab/jrwm/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-pku-graphics-interaction": {
+      "direction": "计算机图形学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、毕业设计、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://www.graphics.pku.edu.cn/zxns/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://www.graphics.pku.edu.cn/zxns/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-buaa-haptic": {
+      "direction": "机器人与交互",
+      "location": "沙河校区",
+      "achievements": "透明触觉界面、电子皮肤和视觉运动学习等成果",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后",
+        "eligibility": "数学、编程与英语基础"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://haptic.buaa.edu.cn/#about"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "论文与专利",
+            "url": "https://haptic.buaa.edu.cn/publications.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://haptic.buaa.edu.cn/#join"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://haptic.buaa.edu.cn/#join"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-buaa-fluid-manufacturing": {
+      "direction": "智能制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://immeetlab.buaa.edu.cn/zsxx/bss.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://immeetlab.buaa.edu.cn/zsxx/bss.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-buaa-bionic-mems": {
+      "direction": "微纳与传感",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://shi.buaa.edu.cn/09356/zh_CN/zhym/20380/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://shi.buaa.edu.cn/09356/zh_CN/zhym/20380/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-buaa-lin-nan": {
+      "direction": "光电与芯片",
+      "location": "博士后工作地为北京或杭州",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生、师资博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://shi.buaa.edu.cn/linnan/en/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://shi.buaa.edu.cn/linnan/en/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tju-itlab": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "交流学习、硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://itlab.tju.edu.cn/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://itlab.tju.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tju-aimip": {
+      "direction": "人工智能与海洋",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、硕士生、博士生",
+        "eligibility": "本科实习面向高年级学生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://aimip.tju.edu.cn/sysjj/zspy.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://aimip.tju.edu.cn/sysjj/zspy.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://aimip.tju.edu.cn/sysjj/zspy.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tju-yang-jingyu": {
+      "direction": "计算机视觉",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://seea.tju.edu.cn/info/1386/4831.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://seea.tju.edu.cn/info/1386/4831.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-tju-photon-chip": {
+      "direction": "光电与芯片",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://cheng.tju.edu.cn/lxwm.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://cheng.tju.edu.cn/lxwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-graphene": {
+      "direction": "材料与能源",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://graphene.sjtu.edu.cn/content/jrwm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://graphene.sjtu.edu.cn/content/jrwm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-epse": {
+      "direction": "能源与化工",
+      "location": "闵行校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后",
+        "eligibility": "相关专业背景"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://epse.sjtu.edu.cn/joinus/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://epse.sjtu.edu.cn/joinus/"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://epse.sjtu.edu.cn/joinus/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-2d-kitchen": {
+      "direction": "量子与器件",
+      "location": "闵行校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、硕士生、博士生、博士后",
+        "eligibility": "微电子、物理、电子科学、材料等专业背景"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://2dkitchen.sjtu.edu.cn/jia_ru_wo_men.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://2dkitchen.sjtu.edu.cn/jia_ru_wo_men.html"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://2dkitchen.sjtu.edu.cn/jia_ru_wo_men.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-laser-plasma": {
+      "direction": "激光与等离子体",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生",
+        "cohort": "2024 级",
+        "status": "历史批次"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://llp.sjtu.edu.cn/Web/News/143"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://llp.sjtu.edu.cn/Web/News/143"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-ding-hong": {
+      "direction": "凝聚态物理",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://web.tdli.sjtu.edu.cn/dingh/join-us/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://web.tdli.sjtu.edu.cn/dingh/join-us/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sjtu-yang-compbio": {
+      "direction": "科学智能",
+      "location": "",
+      "achievements": "分子手性表示、抗原肽设计及医学图像分析论文",
+      "recruitment": {
+        "roles": "本科生、研究生",
+        "eligibility": "本科科研不限专业；研究生需编程和机器学习基础"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://compbio.sjtu.edu.cn/"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "成果介绍",
+            "url": "https://compbio.sjtu.edu.cn/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://compbio.sjtu.edu.cn/openings_cn.html"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://compbio.sjtu.edu.cn/openings_cn.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-feng-rui": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.fudan.edu.cn/fengrui/zh_CN/zdylm/667348/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.fudan.edu.cn/fengrui/zh_CN/zdylm/667348/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-xiao-xiao": {
+      "direction": "脑科学",
+      "location": "张江校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后、科研助理、工程岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.fudan.edu.cn/xxiao/zh_CN/zdylm/656157/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.fudan.edu.cn/xxiao/zh_CN/zdylm/656157/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-knowledge-works": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、硕士实习生、博士实习生",
+        "scope": "国内外高校"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://kw.fudan.edu.cn/recruitment/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://kw.fudan.edu.cn/recruitment/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-secsys": {
+      "direction": "计算机系统与安全",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://secsys.fudan.edu.cn/recruit/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://secsys.fudan.edu.cn/recruit/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-functional-ultrasound": {
+      "direction": "生物医学工程",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研、研究生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://fus.fudan.edu.cn/jrwm.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://fus.fudan.edu.cn/jrwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-fudan-biomedical-ai": {
+      "direction": "人工智能与医学",
+      "location": "",
+      "achievements": "影像遗传可解释模型 EIGNN 和全球微生物基因目录 GMGC",
+      "recruitment": {
+        "roles": "博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://mai.fudan.edu.cn/"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "EIGNN 成果",
+            "url": "https://mai.fudan.edu.cn/newsDetail.html?id=83"
+          }
+        ],
+        "roles": [
+          {
+            "label": "博士招生",
+            "url": "https://mai.fudan.edu.cn/"
+          },
+          {
+            "label": "博士后招聘",
+            "url": "https://mai.fudan.edu.cn/newsDetail.html?id=77"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-zju-rice-breeding": {
+      "direction": "农业与生命",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "专职研究员",
+        "cohort": "2026 年"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://hr.zju.edu.cn/cn/2026/0708/c29048a3187018/page.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://hr.zju.edu.cn/cn/2026/0708/c29048a3187018/page.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-zju-evolution": {
+      "direction": "生命科学",
+      "location": "紫金港校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、研究生、科研岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://evolution.zju.edu.cn/contacts.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://evolution.zju.edu.cn/contacts.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-zju-human-decision": {
+      "direction": "心理与社会科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "cohort": "2021 年",
+        "status": "历史批次"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://psymap.zju.edu.cn/2021/1130/c64007a2446800/page.htm"
+          }
+        ],
+        "cohort": [
+          {
+            "label": "招募详情",
+            "url": "https://psymap.zju.edu.cn/2021/1130/c64007a2446800/page.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nju-crystal-growth": {
+      "direction": "材料与物理",
+      "location": "",
+      "achievements": "机器视觉辅助晶体生长及拓扑材料研究进展",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后",
+        "eligibility": "物理、材料专业背景"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://crystal.nju.edu.cn/"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "晶体生长进展",
+            "url": "https://crystal.nju.edu.cn//sysdt/20260722/i406187.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://crystal.nju.edu.cn/jrwm/index.html"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://crystal.nju.edu.cn/jrwm/index.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nju-superconducting-qubits": {
+      "direction": "量子信息",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sslab.nju.edu.cn/61360/list.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://sslab.nju.edu.cn/61360/list.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nju-ren-xingjie": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后",
+        "cohort": "2026 年"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://imb.nju.edu.cn/rczp/syszp/20260903/i415205.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://imb.nju.edu.cn/rczp/syszp/20260903/i415205.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nju-bandgap-materials": {
+      "direction": "材料与物理",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://lbgm.nju.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-nju-xiao-qian": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理",
+        "cohort": "2026 年"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://imb.nju.edu.cn/rczp/syszp/20260625/i399641.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://imb.nju.edu.cn/rczp/syszp/20260625/i399641.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-ustc-huang-chengdong": {
+      "direction": "结构生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科毕业论文研究、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.ustc.edu.cn/huangchengdong/zh_CN/zdylm/1015731/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.ustc.edu.cn/huangchengdong/zh_CN/zdylm/1015731/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-ustc-sterile-inflammation": {
+      "direction": "免疫与生命",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、研究生、博士后、特任副研究员"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://team.ustc.edu.cn/ZHOUJIANGLAB/zh_CN/zdylm/993788/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://team.ustc.edu.cn/ZHOUJIANGLAB/zh_CN/zdylm/993788/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-ustc-acsa": {
+      "direction": "计算机系统",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://acsa.ustc.edu.cn/joinus/"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://acsa.ustc.edu.cn/joinus/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-ustc-emerald": {
+      "direction": "生态与地球系统",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://team.ustc.edu.cn/emerald/zh_CN/zdylm/1033224/list/index.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://team.ustc.edu.cn/emerald/zh_CN/zdylm/1033224/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-ustc-bio-nano-chemistry": {
+      "direction": "材料与化学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后、特任副研究员、研究学者"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://team.ustc.edu.cn/yulab/zh_CN/zdylm/657904/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://team.ustc.edu.cn/yulab/zh_CN/zdylm/657904/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-new-phase-metals": {
+      "direction": "材料与制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、博士后、科研助理",
+        "cohort": "2026 年入学"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://tang.lab.westlake.edu.cn/zh/Openings.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://tang.lab.westlake.edu.cn/zh/Openings.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-xie-qi": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://xieqi.lab.westlake.edu.cn/index_cn.html"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://xieqi.lab.westlake.edu.cn/index_cn.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-xin-zhang": {
+      "direction": "化学生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、科研助理、博士后",
+        "eligibility": "科研助理：相关专业本科及以上学历"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://xinzhang.lab.westlake.edu.cn/zwwz/jionus.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://xinzhang.lab.westlake.edu.cn/zwwz/jionus.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://xinzhang.lab.westlake.edu.cn/zwwz/jionus.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-yang-lin": {
+      "direction": "人工智能与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理",
+        "cohort": "2026 年",
+        "work": "实验设计、模型训练、结果分析与论文整理。"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://engineering.westlake.edu.cn/Recuitment/202607/t20260720_68396.shtml"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://engineering.westlake.edu.cn/Recuitment/202607/t20260720_68396.shtml"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-yue-zhang": {
+      "direction": "生命与材料交叉",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、博士后、研究助理、访问学者"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://yz.lab.westlake.edu.cn/joinus.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://yz.lab.westlake.edu.cn/joinus.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-synthetic-biology": {
+      "direction": "合成生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后、科研岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://synbio-zeng.lab.westlake.edu.cn/jrwm.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://synbio-zeng.lab.westlake.edu.cn/jrwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-tian-jingyi": {
+      "direction": "微纳光学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、科研助理",
+        "cohort": "2027 年",
+        "deadline": "博士申请：2027 年 3 月之前"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://omal.lab.westlake.edu.cn/Join_Us/Ph_D_students_or_research_assistants.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://omal.lab.westlake.edu.cn/Join_Us/Ph_D_students_or_research_assistants.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-westlake-quantum-devices": {
+      "direction": "量子与器件",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、学生科研、博士后、科研助理"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://qid.lab.westlake.edu.cn/Join.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://qid.lab.westlake.edu.cn/Join.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-brain-cognition": {
+      "direction": "人工智能与脑科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生",
+        "cohort": "2026 年 9 月入学",
+        "status": "历史批次"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bci.xmu.edu.cn/zs.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://bci.xmu.edu.cn/zs.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-li-qiucheng": {
+      "direction": "二维材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://lqc-lab.xmu.edu.cn/Joinus.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://lqc-lab.xmu.edu.cn/Joinus.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-huang-jialiang": {
+      "direction": "计算生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://huanglab.xmu.edu.cn/Join_US.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://huanglab.xmu.edu.cn/Join_US.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-yang-yang-materials": {
+      "direction": "材料与微纳制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://yangyanglab.xmu.edu.cn/"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://yangyanglab.xmu.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-yi-jun": {
+      "direction": "纳米光学",
+      "location": "翔安校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、科研助理"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://nplab.xmu.edu.cn/contact.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://nplab.xmu.edu.cn/contact.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-dmci": {
+      "direction": "人工智能与生物计算",
+      "location": "",
+      "achievements": " MoleMCL 分子预训练和药物作用预测等论文",
+      "recruitment": {
+        "roles": "硕士生",
+        "eligibility": "编程、英语与数学基础"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://dmci.xmu.edu.cn/"
+          },
+          {
+            "label": "研究项目",
+            "url": "https://dmci.xmu.edu.cn/Research.html"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "成果介绍",
+            "url": "https://dmci.xmu.edu.cn/"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://dmci.xmu.edu.cn/Openings.html"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://dmci.xmu.edu.cn/Openings.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-spatial-computing": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生、联合培养"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://asc.xmu.edu.cn/m/t/shensiqi"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://asc.xmu.edu.cn/m/t/shensiqi"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xmu-marine-biogeochemistry": {
+      "direction": "海洋与环境",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://mel.xmu.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-xmu-pi-lab": {
+      "direction": "科学智能与材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士后",
+        "eligibility": "单分子电子学、科学智能、科学仪器方向"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://pilab.xmu.edu.cn/Join_Usnx.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://pilab.xmu.edu.cn/Join_Usnx.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://pilab.xmu.edu.cn/Join_Usnx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sysu-ding-junjun": {
+      "direction": "干细胞与生命",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科实习生、毕业设计、硕士生、博士生",
+        "cohort": "2027 级推免"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://zssom.sysu.edu.cn/stemcellding/activities/academicexchanges/1421781.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://zssom.sysu.edu.cn/stemcellding/activities/academicexchanges/1421781.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sysu-zheng-zhikun": {
+      "direction": "高分子与材料",
+      "location": "广州校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://ce.sysu.edu.cn/zhenggroup/Contact%20us%26Join%20us/joinus_Chinese.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://ce.sysu.edu.cn/zhenggroup/Contact%20us%26Join%20us/joinus_Chinese.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sysu-zhang-rui": {
+      "direction": "RNA 与免疫",
+      "location": "",
+      "achievements": " RNA 表观编辑 RModBlock、单碱基编辑 MIRROR 与片段删除编辑 SCISSOR",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后",
+        "cohort": "2027 年硕博招生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://lifesciences.sysu.edu.cn/zh-hans/node/1079"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "成果介绍",
+            "url": "https://lifesciences.sysu.edu.cn/zh-hans/node/1079"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://lifesciences.sysu.edu.cn/zh-hans/node/1079"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sysu-microbe-environment": {
+      "direction": "微生物与环境",
+      "location": "深圳校区；深圳市光明区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理、博士后、客座硕士生、客座博士生",
+        "eligibility": "科研助理：相关专业本科及以上学历",
+        "commitment": "客座研究生：连续一年以上",
+        "work": "协助实验研究和实验室运行；客座生开展课题和学位论文研究。",
+        "scope": "接收客座硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://ab.sysu.edu.cn/zh-hans/article/1347"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://ab.sysu.edu.cn/zh-hans/article/1347"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://ab.sysu.edu.cn/zh-hans/article/1347"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sysu-nuclear-imaging": {
+      "direction": "生物医学工程",
+      "location": "深圳校区；深圳市光明区",
+      "achievements": " PET 探测器、闪烁晶体、成像系统及相关论文",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bme.sysu.edu.cn/teacher/teacher02/1419679.htm"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "成果介绍",
+            "url": "https://bme.sysu.edu.cn/teacher/teacher02/1419679.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://bme.sysu.edu.cn/teacher/teacher02/1419679.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-scut-hybrid-materials": {
+      "direction": "材料与器件",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://www2.scut.edu.cn/aismst/gdszdsys/list.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-scut-millimeter-terahertz": {
+      "direction": "电子与通信",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://yanzhao.scut.edu.cn/ExpertInfo.aspx?zjbh=Pd6NjeJcwXUCiI4y9kBe5A%3D%3D"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://yanzhao.scut.edu.cn/ExpertInfo.aspx?zjbh=Pd6NjeJcwXUCiI4y9kBe5A%3D%3D"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-scut-digital-rural": {
+      "direction": "社会科学与数字技术",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://news.scut.edu.cn/2025/0407/c44a57185/page.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-sustech-high-tc": {
+      "direction": "量子与材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生、科研岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://hightc.phy.sustech.edu.cn/contact/recru.html?lang=zh-cn"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://hightc.phy.sustech.edu.cn/contact/recru.html?lang=zh-cn"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-sustech-song-xuejun": {
+      "direction": "神经科学与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研人员"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://med.sustech.edu.cn/Home/deps/recru?ClassID=2392&yxID=214"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://med.sustech.edu.cn/Home/deps/recru?ClassID=2392&yxID=214"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-gao-yongqiang": {
+      "direction": "植物科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研、硕士生、博士生、科研助理、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1486.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1486.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-lei-cheng": {
+      "direction": "光学与成像",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://leilab.whu.edu.cn/"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://leilab.whu.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-gpcv": {
+      "direction": "遥感与计算机视觉",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://gpcv.whu.edu.cn/contact.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://gpcv.whu.edu.cn/contact.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-rsidea": {
+      "direction": "遥感与人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://rsidea.whu.edu.cn/enroll.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://rsidea.whu.edu.cn/enroll.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-hou-xin": {
+      "direction": "植物科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1280.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1280.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-whu-cai-qiang": {
+      "direction": "植物科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1315.html"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1315.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-hust-sinclab": {
+      "direction": "通信与网络",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://cse-sinclab.hust.edu.cn/jrwm.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://cse-sinclab.hust.edu.cn/jrwm.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-csu-chen-tao": {
+      "direction": "能源与材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研、硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.csu.edu.cn/chentao/en/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.csu.edu.cn/chentao/en/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-csu-social-governance": {
+      "direction": "社会科学与人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研人才"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bs.csu.edu.cn/info/1627/26902.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://bs.csu.edu.cn/info/1627/26902.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-csu-precision-manufacturing": {
+      "direction": "先进制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://hpcm.csu.edu.cn/info/1030/1574.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-csu-wang-meng": {
+      "direction": "材料与智能制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.csu.edu.cn/wangmeng1/en/more/208327/jsjjgd/index.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.csu.edu.cn/wangmeng1/en/more/208327/jsjjgd/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-scu-advanced-polymers": {
+      "direction": "高分子材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sklpme.scu.edu.cn/sysgk/sysjj/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-scu-biotherapy": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://sklb.scu.edu.cn/f_science.html"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-scu-mountain-rivers": {
+      "direction": "水利与环境",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://skhl.scu.edu.cn/sysgk/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-scu-radiation-physics": {
+      "direction": "物理与工程",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://720lab.scu.edu.cn/"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-scu-bioresources": {
+      "direction": "生命与生态",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://life.scu.edu.cn/klbeme/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-uestc-media-lab": {
+      "direction": "人工智能",
+      "location": "清水河校区",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、博士后",
+        "eligibility": "相关专业背景；数学与编程能力"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://medialab.uestc.edu.cn/join"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://medialab.uestc.edu.cn/join"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://medialab.uestc.edu.cn/join"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-uestc-biophysics": {
+      "direction": "生物医学工程",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "博士生、博士后、青年科研岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://biophysics.uestc.edu.cn/info/1010/1054.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://biophysics.uestc.edu.cn/info/1010/1054.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-uestc-thin-films": {
+      "direction": "电子与材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://etfid.uestc.edu.cn/kfkt/sqzn.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-uestc-moemil": {
+      "direction": "光电与人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.uestc.edu.cn/moemil/zh_CN/zdylm/319044/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.uestc.edu.cn/moemil/zh_CN/zdylm/319044/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-uestc-jin-electrochemistry": {
+      "direction": "化学与仪器",
+      "location": "",
+      "achievements": "扫描电化学显微镜表面滴定与原位测量系统",
+      "recruitment": {
+        "roles": "暑期研学",
+        "cohort": "2026 年",
+        "status": "历史批次",
+        "deadline": "2026-07-05（已结束）"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://jin-group.uestc.edu.cn/Openings.htm"
+          }
+        ],
+        "achievements": [
+          {
+            "label": "成果介绍",
+            "url": "https://jin-group.uestc.edu.cn/Openings.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://jin-group.uestc.edu.cn/Openings.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-uestc-quantum-photonics": {
+      "direction": "量子信息",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://quantum.uestc.edu.cn/gkl/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-xjtu-fu-laiyi": {
+      "direction": "生物医学智能计算",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研训练、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.xjtu.edu.cn/laiyifu/zh_CN/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.xjtu.edu.cn/laiyifu/zh_CN/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xjtu-cold-atoms": {
+      "direction": "量子物理",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科科研训练、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.xjtu.edu.cn/taochen/zh_CN/zdylm/1062930/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.xjtu.edu.cn/taochen/zh_CN/zdylm/1062930/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xjtu-feng-zhihui": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://gr.xjtu.edu.cn/zhfeng/zh_CN/zdylm/1004853/list/index.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://gr.xjtu.edu.cn/zhfeng/zh_CN/zdylm/1004853/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xjtu-wang-jinjun": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://gr.xjtu.edu.cn/jinjun/zh_CN/zhym/994013/list/index.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://gr.xjtu.edu.cn/jinjun/zh_CN/zhym/994013/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-xjtu-chen-xin": {
+      "direction": "人工智能与能源",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "全日制硕士生、博士生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://gr.xjtu.edu.cn/chenxin/zh_CN/index/319981/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://gr.xjtu.edu.cn/chenxin/zh_CN/index/319981/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nwpu-bigdata-storage": {
+      "direction": "计算机系统",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理（非事业编制）",
+        "cohort": "2026 年",
+        "work": "实验设计、数据分析及科研成果整理。"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://renshi.nwpu.edu.cn/info/1264/33185.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://renshi.nwpu.edu.cn/info/1264/33185.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nwpu-crowd-computing": {
+      "direction": "泛在计算",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理（非事业编制）",
+        "cohort": "2026 年",
+        "work": "实验设计与数据分析。"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/31895.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/31895.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nwpu-xray-imaging": {
+      "direction": "材料与成像",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "项目科研岗位"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/31415.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/31415.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nwpu-unmanned-control": {
+      "direction": "机器人与控制",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "工程师、研发助理"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/30205.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://renshi.nwpu.edu.cn/info/1326/30205.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-nwpu-structural-integrity": {
+      "direction": "航空与力学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "实验员、实验研究员"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://liuyuan.nwpu.edu.cn/info/1060/1015.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://liuyuan.nwpu.edu.cn/info/1060/1015.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-hit-robotics": {
+      "direction": "机器人",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://robot.hit.edu.cn/sysjj/list.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-hit-scir": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "研究生（含博士）",
+        "cohort": "2027 级"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://ir.hit.edu.cn/2026/0702/c19589a395732/page.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://ir.hit.edu.cn/2026/0702/c19589a395732/page.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-hit-wu-yan": {
+      "direction": "测试与控制",
+      "location": "哈尔滨、郑州（不同项目）",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科课外实践、本科实习、研究生"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://homepage.hit.edu.cn/WuYan?lang=zh"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://homepage.hit.edu.cn/WuYan?lang=zh"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-hit-space-radiation": {
+      "direction": "空间物理",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "本科生、硕士生、博士生、博士后"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://homepage.hit.edu.cn/wangyang2016"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://homepage.hit.edu.cn/wangyang2016"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-jlu-earth-instruments": {
+      "direction": "地学与仪器",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://olagi.jlu.edu.cn/sysjj1/yjfx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-jlu-symbolic-knowledge": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://scke.jlu.edu.cn/sysgk/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-jlu-pathobiology": {
+      "direction": "生命与医学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://pathobiology.jlu.edu.cn/sysgk/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-jlu-supramolecular": {
+      "direction": "材料与化学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://supramol.jlu.edu.cn/sysgk1/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-jlu-bionic-engineering": {
+      "direction": "仿生与工程",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bionic.jlu.edu.cn/sysgk/yjfx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-jlu-bioarchaeology": {
+      "direction": "考古与生命科学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://jlub.jlu.edu.cn/sysgk/sysjj.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-dlut-digital-chemistry": {
+      "direction": "科学智能与化学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "学生科研"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://digichem.dlut.edu.cn/gywm/jlcx.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://digichem.dlut.edu.cn/gywm/jlcx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-dlut-dutir": {
+      "direction": "人工智能",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://ir.dlut.edu.cn/index.htm"
+          }
+        ],
+        "recruitment": [
+          {
+            "label": "招募详情",
+            "url": "https://ir.dlut.edu.cn/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-dlut-zhu-zhiwei": {
+      "direction": "合成生物学",
+      "location": "",
+      "achievements": "",
+      "recruitment": {
+        "roles": "科研助理、博士后",
+        "eligibility": "科研助理：相关专业本科学历",
+        "commitment": "科研助理可兼职"
+      },
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://faculty.dlut.edu.cn/zhuzhiwei1/en/index/1085142/list/index.htm"
+          }
+        ],
+        "roles": [
+          {
+            "label": "招募详情",
+            "url": "https://faculty.dlut.edu.cn/zhuzhiwei1/en/index/1085142/list/index.htm"
+          }
+        ],
+        "eligibility": [
+          {
+            "label": "申请要求",
+            "url": "https://faculty.dlut.edu.cn/zhuzhiwei1/en/index/1085142/list/index.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": true
+    },
+    "research-cn-dlut-intelligent-biomanufacturing": {
+      "direction": "生物制造",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://bim-moe.dlut.edu.cn/sysgk/kyfx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-dlut-fine-chemicals": {
+      "direction": "化学与材料",
+      "location": "",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://finechem.dlut.edu.cn/kxyjlj/yjfx.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    },
+    "research-cn-dlut-huanghai": {
+      "direction": "先进制造",
+      "location": "大连英歌石科学城",
+      "achievements": "",
+      "recruitment": {},
+      "fieldLinks": {
+        "summary": [
+          {
+            "label": "研究介绍",
+            "url": "https://huanghailab.dlut.edu.cn/sysgk/sysjj1/sysjj1.htm"
+          }
+        ]
+      },
+      "hasRecruitmentSource": false
+    }
+  },
+  "sources": {
+    "research-cn-tsinghua-storage": [
+      {
+        "url": "https://storage.cs.tsinghua.edu.cn/vacancies-ch/",
+        "title": "Storage Research Group - Vacancies",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://storage.cs.tsinghua.edu.cn/",
+        "title": "存储研究组研究介绍与成果",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-green-transport": [
+      {
+        "url": "https://www.ase.tsinghua.edu.cn/peoples/joinus",
+        "title": "加入我们 | 清华大学智能绿色车辆与交通全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-coai": [
+      {
+        "url": "https://hml.coai.cs.tsinghua.edu.cn/recruit",
+        "title": "CoAI - 清华大学交互式人工智能课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-nlp": [
+      {
+        "url": "https://nlp.csai.tsinghua.edu.cn/join_us/",
+        "title": "joinUs",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-liu-yongjin": [
+      {
+        "url": "https://cg.cs.tsinghua.edu.cn/people/~Yongjin/Yongjin_student.htm",
+        "title": "Graphics & Geometric Computing Group | CS, Tsinghua Univ.",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-yao-jun": [
+      {
+        "url": "https://life.tsinghua.edu.cn/info/1129/7783.htm",
+        "title": "清华大学生命学院姚骏实验室招聘博士后（神经科学与脑疾病方向）-清华大学生命科学学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-lu-lab": [
+      {
+        "url": "https://bioinfo.life.tsinghua.edu.cn/docs/people/join-us/",
+        "title": "Join Us! - Welcome to Lu Lab @ Tsinghua - Welcome to Lu Lab @ Tsinghua",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tsinghua-compbio": [
+      {
+        "url": "https://group.iiis.tsinghua.edu.cn/~compbio/openings.html",
+        "title": "Machine Learning and Computational Biology Group",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-pku-tang": [
+      {
+        "url": "https://cqb.pku.edu.cn/tanglab/jrwm.htm",
+        "title": "加入我们-汤超实验室-北京大学",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-pku-photonics": [
+      {
+        "url": "https://photonics.pku.edu.cn/jrwm.htm",
+        "title": "加入我们-北京大学先进集成光子芯片实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-pku-graphics": [
+      {
+        "url": "https://www.wict.pku.edu.cn/GraphicsLab/jrwm/index.htm",
+        "title": "WICT GraphicsLab - 加入我们！",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-pku-graphics-interaction": [
+      {
+        "url": "https://www.graphics.pku.edu.cn/zxns/index.htm",
+        "title": "北京大学图形与交互技术实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-buaa-haptic": [
+      {
+        "url": "https://haptic.buaa.edu.cn/",
+        "title": "北京航空航天大学人机交互实验室",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://haptic.buaa.edu.cn/publications.html",
+        "title": "人机交互实验室论文与专利成果",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-buaa-fluid-manufacturing": [
+      {
+        "url": "https://immeetlab.buaa.edu.cn/zsxx/bss.htm",
+        "title": "博士生-北航智能流体装备与制造实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-buaa-bionic-mems": [
+      {
+        "url": "https://shi.buaa.edu.cn/09356/zh_CN/zhym/20380/list/index.htm",
+        "title": "北京航空航天大学主页平台系统 蒋永刚--中文主页--招生/招聘",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-buaa-lin-nan": [
+      {
+        "url": "https://shi.buaa.edu.cn/linnan/en/index.htm",
+        "title": "北京航空航天大学主页平台系统 linnan--Home--Home",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tju-itlab": [
+      {
+        "url": "https://itlab.tju.edu.cn/",
+        "title": "天津大学智能信息处理实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tju-aimip": [
+      {
+        "url": "https://aimip.tju.edu.cn/sysjj/zspy.htm",
+        "title": "招生培养-人工智能与海洋信息处理实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tju-yang-jingyu": [
+      {
+        "url": "https://seea.tju.edu.cn/info/1386/4831.htm",
+        "title": "杨敬钰-电气自动化与信息工程学院官网",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-tju-photon-chip": [
+      {
+        "url": "https://cheng.tju.edu.cn/lxwm.htm",
+        "title": "联系我们-光子芯片实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-graphene": [
+      {
+        "url": "https://graphene.sjtu.edu.cn/content/jrwm",
+        "title": "加入我们 - 上海交通大学石墨烯及纳米功能材料实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-epse": [
+      {
+        "url": "https://epse.sjtu.edu.cn/joinus/",
+        "title": "加入我们 | 上海交通大学能源与过程系统工程实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-2d-kitchen": [
+      {
+        "url": "https://2dkitchen.sjtu.edu.cn/jia_ru_wo_men.html",
+        "title": "加入我们 - 蔡星汉课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-laser-plasma": [
+      {
+        "url": "https://llp.sjtu.edu.cn/Web/News/143",
+        "title": "上海交通大学激光等离子体教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-ding-hong": [
+      {
+        "url": "https://web.tdli.sjtu.edu.cn/dingh/join-us/",
+        "title": "加入我们 | 丁洪研究团队",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sjtu-yang-compbio": [
+      {
+        "url": "https://compbio.sjtu.edu.cn/openings_cn.html",
+        "title": "招生 - Yang Lab",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://compbio.sjtu.edu.cn/",
+        "title": "杨洋计算生物学课题组研究介绍与成果",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-feng-rui": [
+      {
+        "url": "https://faculty.fudan.edu.cn/fengrui/zh_CN/zdylm/667348/list/index.htm",
+        "title": "冯瑞 中文主页--加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-xiao-xiao": [
+      {
+        "url": "https://faculty.fudan.edu.cn/xxiao/zh_CN/zdylm/656157/list/index.htm",
+        "title": "肖晓 肖晓 类脑智能科学与技术研究院--加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-knowledge-works": [
+      {
+        "url": "https://kw.fudan.edu.cn/recruitment/",
+        "title": "加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-secsys": [
+      {
+        "url": "https://secsys.fudan.edu.cn/recruit/",
+        "title": "复旦大学-系统软件与安全实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-functional-ultrasound": [
+      {
+        "url": "https://fus.fudan.edu.cn/jrwm.htm",
+        "title": "加入我们-复旦大学智慧医疗超声实验室功能超声前沿交叉课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-fudan-biomedical-ai": [
+      {
+        "url": "https://mai.fudan.edu.cn/",
+        "title": "首页",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://mai.fudan.edu.cn/newsDetail.html?id=83",
+        "title": "EIGNN 可解释影像遗传神经网络研究成果",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://mai.fudan.edu.cn/newsDetail.html?id=77",
+        "title": "生物医学人工智能实验室博士后招聘",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-zju-rice-breeding": [
+      {
+        "url": "https://hr.zju.edu.cn/cn/2026/0708/c29048a3187018/page.htm",
+        "title": "水稻生物育种全国重点实验室（浙江大学）专职研究员招聘启事",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-zju-evolution": [
+      {
+        "url": "https://evolution.zju.edu.cn/contacts.html",
+        "title": "联系丨浙江大学生命演化研究中心",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-zju-human-decision": [
+      {
+        "url": "https://psymap.zju.edu.cn/2021/1130/c64007a2446800/page.htm",
+        "title": "加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nju-crystal-growth": [
+      {
+        "url": "https://crystal.nju.edu.cn/jrwm/index.html",
+        "title": "加入我们",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://crystal.nju.edu.cn/",
+        "title": "功能晶体生长实验室研究介绍与成果",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://crystal.nju.edu.cn//sysdt/20260722/i406187.html",
+        "title": "机器视觉辅助铌酸锂晶体生长研究进展",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nju-superconducting-qubits": [
+      {
+        "url": "https://sslab.nju.edu.cn/61360/list.htm",
+        "title": "加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nju-ren-xingjie": [
+      {
+        "url": "https://imb.nju.edu.cn/rczp/syszp/20260903/i415205.html",
+        "title": "南京大学现生院/南京鼓楼医院任兴杰课题组诚聘博士后",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nju-bandgap-materials": [
+      {
+        "url": "https://lbgm.nju.edu.cn/",
+        "title": "南京大学人工带隙材料实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nju-xiao-qian": [
+      {
+        "url": "https://imb.nju.edu.cn/rczp/syszp/20260625/i399641.html",
+        "title": "肖倩课题组诚聘科研助理",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-ustc-huang-chengdong": [
+      {
+        "url": "https://faculty.ustc.edu.cn/huangchengdong/zh_CN/zdylm/1015731/list/index.htm",
+        "title": "中国科学技术大学 黄成栋--中文主页--招生信息",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-ustc-sterile-inflammation": [
+      {
+        "url": "https://team.ustc.edu.cn/ZHOUJIANGLAB/zh_CN/zdylm/993788/list/index.htm",
+        "title": "中国科学技术大学 危险信号感应与无菌性炎症实验室--中文主页--加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-ustc-acsa": [
+      {
+        "url": "https://acsa.ustc.edu.cn/joinus/",
+        "title": "ACSA Lab | Join us Now!",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-ustc-emerald": [
+      {
+        "url": "https://team.ustc.edu.cn/emerald/zh_CN/zdylm/1033224/list/index.htm",
+        "title": "中国科学技术大学 植物生理生态与地球系统模拟实验室--中文主页--加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-ustc-bio-nano-chemistry": [
+      {
+        "url": "https://team.ustc.edu.cn/yulab/zh_CN/zdylm/657904/list/index.htm",
+        "title": "中国科学技术大学 仿生与纳米化学实验室--中文主页--加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-new-phase-metals": [
+      {
+        "url": "https://tang.lab.westlake.edu.cn/zh/Openings.htm",
+        "title": "加入我们-Tang Research Group",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-xie-qi": [
+      {
+        "url": "https://xieqi.lab.westlake.edu.cn/index_cn.html",
+        "title": "主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-xin-zhang": [
+      {
+        "url": "https://xinzhang.lab.westlake.edu.cn/zwwz/jionus.htm",
+        "title": "加入我们-张鑫教授实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-yang-lin": [
+      {
+        "url": "https://engineering.westlake.edu.cn/Recuitment/202607/t20260720_68396.shtml",
+        "title": "岗位信息详情页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-yue-zhang": [
+      {
+        "url": "https://yz.lab.westlake.edu.cn/joinus.html",
+        "title": "张越实验室-加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-synthetic-biology": [
+      {
+        "url": "https://synbio-zeng.lab.westlake.edu.cn/jrwm.htm",
+        "title": "加入我们-西湖大学-曾安平实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-tian-jingyi": [
+      {
+        "url": "https://omal.lab.westlake.edu.cn/Join_Us/Ph_D_students_or_research_assistants.htm",
+        "title": "Ph.D students or research assistants-田静逸实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-westlake-quantum-devices": [
+      {
+        "url": "https://qid.lab.westlake.edu.cn/Join.htm",
+        "title": "Join-Xinhao Li Lab",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-brain-cognition": [
+      {
+        "url": "https://bci.xmu.edu.cn/zs.html",
+        "title": "脑认知与智能计算实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-li-qiucheng": [
+      {
+        "url": "https://lqc-lab.xmu.edu.cn/Joinus.htm",
+        "title": "Join us-Li Research Group",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-huang-jialiang": [
+      {
+        "url": "https://huanglab.xmu.edu.cn/Join_US.htm",
+        "title": "Join US-厦门大学黄佳良实验室 Huang lab at Xiamen University",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-yang-yang-materials": [
+      {
+        "url": "https://yangyanglab.xmu.edu.cn/",
+        "title": "杨扬课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-yi-jun": [
+      {
+        "url": "https://nplab.xmu.edu.cn/contact.html",
+        "title": "Contact - Yi Research Group",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-dmci": [
+      {
+        "url": "https://dmci.xmu.edu.cn/Openings.html",
+        "title": "DMCI@XMU",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://dmci.xmu.edu.cn/",
+        "title": "刘向荣 DMCI 研究组研究介绍与成果",
+        "verifiedOn": "2026-10-07"
+      },
+      {
+        "url": "https://dmci.xmu.edu.cn/Research.html",
+        "title": "DMCI 科研项目",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-spatial-computing": [
+      {
+        "url": "https://asc.xmu.edu.cn/m/t/shensiqi",
+        "title": "空间感知与计算实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-marine-biogeochemistry": [
+      {
+        "url": "https://mel.xmu.edu.cn/",
+        "title": "厦门大学海洋生物地球化学全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xmu-pi-lab": [
+      {
+        "url": "https://pilab.xmu.edu.cn/Join_Usnx.htm",
+        "title": "Join Us纳贤-π-Lab@XMU-厦门大学信息材料与工业智能实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sysu-ding-junjun": [
+      {
+        "url": "https://zssom.sysu.edu.cn/stemcellding/activities/academicexchanges/1421781.htm",
+        "title": "丁俊军实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sysu-zheng-zhikun": [
+      {
+        "url": "https://ce.sysu.edu.cn/zhenggroup/Contact%20us%26Join%20us/joinus_Chinese.html",
+        "title": "加入我们",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sysu-zhang-rui": [
+      {
+        "url": "https://lifesciences.sysu.edu.cn/zh-hans/node/1079",
+        "title": "张锐 | 中山大学生命科学学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sysu-microbe-environment": [
+      {
+        "url": "https://ab.sysu.edu.cn/zh-hans/article/1347",
+        "title": "中山大学农业与生物技术学院微生物与环境互作团队诚聘英才 | 中山大学农业与生物技术学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sysu-nuclear-imaging": [
+      {
+        "url": "https://bme.sysu.edu.cn/teacher/teacher02/1419679.htm",
+        "title": "中山大学生物医学工程学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scut-hybrid-materials": [
+      {
+        "url": "https://www2.scut.edu.cn/aismst/gdszdsys/list.htm",
+        "title": "华南理工大学华南软物质科学与技术高等研究院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scut-millimeter-terahertz": [
+      {
+        "url": "https://yanzhao.scut.edu.cn/ExpertInfo.aspx?zjbh=Pd6NjeJcwXUCiI4y9kBe5A%3D%3D",
+        "title": "华南理工大学教师信息",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scut-digital-rural": [
+      {
+        "url": "https://news.scut.edu.cn/2025/0407/c44a57185/page.htm",
+        "title": "中国社会科学网：数字跨界推进乡村跨学科研究",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sustech-high-tc": [
+      {
+        "url": "https://hightc.phy.sustech.edu.cn/contact/recru.html?lang=zh-cn",
+        "title": "实验室简介 - 超导机理实验室 陈卓昱课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-sustech-song-xuejun": [
+      {
+        "url": "https://med.sustech.edu.cn/Home/deps/recru?ClassID=2392&yxID=214",
+        "title": "南方科技大学医学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-gao-yongqiang": [
+      {
+        "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1486.html",
+        "title": "杂交水稻全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-lei-cheng": [
+      {
+        "url": "https://leilab.whu.edu.cn/",
+        "title": "激光与超快成像实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-gpcv": [
+      {
+        "url": "https://gpcv.whu.edu.cn/contact.html",
+        "title": "加入我们 | GPCV 课题组",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-rsidea": [
+      {
+        "url": "https://rsidea.whu.edu.cn/enroll.htm",
+        "title": "招生信息",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-hou-xin": [
+      {
+        "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1280.html",
+        "title": "杂交水稻全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-whu-cai-qiang": [
+      {
+        "url": "https://sklhr.whu.edu.cn/portal/article/about_article/id/1315.html",
+        "title": "杂交水稻全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-hust-sinclab": [
+      {
+        "url": "https://cse-sinclab.hust.edu.cn/jrwm.htm",
+        "title": "加入我们-天地一体化实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-csu-chen-tao": [
+      {
+        "url": "https://faculty.csu.edu.cn/chentao/en/index.htm",
+        "title": "中南大学 Chen Tao",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-csu-social-governance": [
+      {
+        "url": "https://bs.csu.edu.cn/info/1627/26902.htm",
+        "title": "国家自然科学基金委卓越研究群体、教育部哲学社会科学实验室诚聘海内外英才-中南大学商学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-csu-precision-manufacturing": [
+      {
+        "url": "https://hpcm.csu.edu.cn/info/1030/1574.htm",
+        "title": "极端服役性能精准制造全国重点实验室2026年自主研究课题申请指南-极端服役性能精准制造全国重点实验室门户网站",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-csu-wang-meng": [
+      {
+        "url": "https://faculty.csu.edu.cn/wangmeng1/en/more/208327/jsjjgd/index.htm",
+        "title": "中南大学 wangmeng",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scu-advanced-polymers": [
+      {
+        "url": "https://sklpme.scu.edu.cn/sysgk/sysjj/",
+        "title": "实验室简介",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scu-biotherapy": [
+      {
+        "url": "https://sklb.scu.edu.cn/f_science.html",
+        "title": "四川大学生物治疗全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scu-mountain-rivers": [
+      {
+        "url": "https://skhl.scu.edu.cn/sysgk/sysjj.htm",
+        "title": "实验室简介-四川大学山区河流保护与治理全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scu-radiation-physics": [
+      {
+        "url": "https://720lab.scu.edu.cn/",
+        "title": "辐射物理及技术教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-scu-bioresources": [
+      {
+        "url": "https://life.scu.edu.cn/klbeme/sysjj.htm",
+        "title": "实验室简介-生物资源与生态环境教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-media-lab": [
+      {
+        "url": "https://medialab.uestc.edu.cn/join",
+        "title": "电子科技大学 Media Lab",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-biophysics": [
+      {
+        "url": "https://biophysics.uestc.edu.cn/info/1010/1054.htm",
+        "title": "青年骨干教师/博士后/博士研究生招聘-生物物理学实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-thin-films": [
+      {
+        "url": "https://etfid.uestc.edu.cn/kfkt/sqzn.htm",
+        "title": "申请指南-电子薄膜与集成器件全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-moemil": [
+      {
+        "url": "https://faculty.uestc.edu.cn/moemil/zh_CN/zdylm/319044/list/index.htm",
+        "title": "现代光电测控及仪器实验室 现代光电测控及仪器实验室MOEMIL 电子科技大学主页平台管理系统",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-jin-electrochemistry": [
+      {
+        "url": "https://jin-group.uestc.edu.cn/Openings.htm",
+        "title": "Openings-Jin Research Group",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-uestc-quantum-photonics": [
+      {
+        "url": "https://quantum.uestc.edu.cn/gkl/sysjj.htm",
+        "title": "实验室简介-量子物理与光量子信息",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xjtu-fu-laiyi": [
+      {
+        "url": "https://faculty.xjtu.edu.cn/laiyifu/zh_CN/index.htm",
+        "title": "付来义 西安交通大学教师主页管理系统 Home 中文主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xjtu-cold-atoms": [
+      {
+        "url": "https://faculty.xjtu.edu.cn/taochen/zh_CN/zdylm/1062930/list/index.htm",
+        "title": "陈涛 西安交通大学教师主页管理系统 Welcome 中文主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xjtu-feng-zhihui": [
+      {
+        "url": "https://gr.xjtu.edu.cn/zhfeng/zh_CN/zdylm/1004853/list/index.htm",
+        "title": "冯智辉 西安交通大学教师主页管理系统 招生招聘 中文主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xjtu-wang-jinjun": [
+      {
+        "url": "https://gr.xjtu.edu.cn/jinjun/zh_CN/zhym/994013/list/index.htm",
+        "title": "王进军 西安交通大学教师主页管理系统 加入我们 中文主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-xjtu-chen-xin": [
+      {
+        "url": "https://gr.xjtu.edu.cn/chenxin/zh_CN/index/319981/list/index.htm",
+        "title": "陈欣 西安交通大学教师主页管理系统 首页 中文主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nwpu-bigdata-storage": [
+      {
+        "url": "https://renshi.nwpu.edu.cn/info/1264/33185.htm",
+        "title": "西北工业大学计算机学院大数据存储与管理实验室非事业编制人员招聘启事-人力资源部",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nwpu-crowd-computing": [
+      {
+        "url": "https://renshi.nwpu.edu.cn/info/1326/31895.htm",
+        "title": "西北工业大学计算机学院人机物融合群智计算实验室非事业编制人员招聘启事-人力资源部",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nwpu-xray-imaging": [
+      {
+        "url": "https://renshi.nwpu.edu.cn/info/1326/31415.htm",
+        "title": "柔性电子研究院X射线高对比度成像项目组招聘启事-人力资源部",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nwpu-unmanned-control": [
+      {
+        "url": "https://renshi.nwpu.edu.cn/info/1326/30205.htm",
+        "title": "西北工业大学软件学院智能无人控制系统实验室招聘启事-人力资源部",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-nwpu-structural-integrity": [
+      {
+        "url": "https://liuyuan.nwpu.edu.cn/info/1060/1015.htm",
+        "title": "西北工业大学飞行器结构完整性技术工信部重点实验室招聘启事-力学与交通运载工程学院",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-hit-robotics": [
+      {
+        "url": "https://robot.hit.edu.cn/sysjj/list.htm",
+        "title": "实验室简介",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-hit-scir": [
+      {
+        "url": "https://ir.hit.edu.cn/2026/0702/c19589a395732/page.htm",
+        "title": "哈尔滨工业大学社会计算与交互机器人研究中心现面向全国招收2027级研究生（含博士生）",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-hit-wu-yan": [
+      {
+        "url": "https://homepage.hit.edu.cn/WuYan?lang=zh",
+        "title": "吴艳 - 哈尔滨工业大学教师个人主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-hit-space-radiation": [
+      {
+        "url": "https://homepage.hit.edu.cn/wangyang2016",
+        "title": "汪洋 - 哈尔滨工业大学教师个人主页",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-earth-instruments": [
+      {
+        "url": "https://olagi.jlu.edu.cn/sysjj1/yjfx.htm",
+        "title": "研究方向-地球信息探测仪器教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-symbolic-knowledge": [
+      {
+        "url": "https://scke.jlu.edu.cn/sysgk/sysjj.htm",
+        "title": "实验室简介-符号计算与知识工程教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-pathobiology": [
+      {
+        "url": "https://pathobiology.jlu.edu.cn/sysgk/sysjj.htm",
+        "title": "实验室简介-吉林大学病理生物学教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-supramolecular": [
+      {
+        "url": "https://supramol.jlu.edu.cn/sysgk1/sysjj.htm",
+        "title": "实验室简介-吉林大学超分子结构与材料全国重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-bionic-engineering": [
+      {
+        "url": "https://bionic.jlu.edu.cn/sysgk/yjfx.htm",
+        "title": "研究方向-吉林大学工程仿生教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-jlu-bioarchaeology": [
+      {
+        "url": "https://jlub.jlu.edu.cn/sysgk/sysjj.htm",
+        "title": "实验室简介-吉林大学生物考古实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-digital-chemistry": [
+      {
+        "url": "https://digichem.dlut.edu.cn/gywm/jlcx.htm",
+        "title": "建立初心-数据驱动的智能化学合成平台",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-dutir": [
+      {
+        "url": "https://ir.dlut.edu.cn/index.htm",
+        "title": "信息检索研究室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-zhu-zhiwei": [
+      {
+        "url": "https://faculty.dlut.edu.cn/zhuzhiwei1/en/index/1085142/list/index.htm",
+        "title": "大连理工大学主页平台管理系统 Zhu Zhiwei Home Home",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-intelligent-biomanufacturing": [
+      {
+        "url": "https://bim-moe.dlut.edu.cn/sysgk/kyfx.htm",
+        "title": "科研方向-智能生物制造教育部重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-fine-chemicals": [
+      {
+        "url": "https://finechem.dlut.edu.cn/kxyjlj/yjfx.htm",
+        "title": "研究方向-精细化工重点实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ],
+    "research-cn-dlut-huanghai": [
+      {
+        "url": "https://huanghailab.dlut.edu.cn/sysgk/sysjj1/sysjj1.htm",
+        "title": "实验室简介-黄海实验室",
+        "verifiedOn": "2026-10-07"
+      }
+    ]
+  }
+}
