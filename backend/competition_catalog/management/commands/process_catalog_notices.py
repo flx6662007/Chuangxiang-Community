@@ -13,7 +13,7 @@ from competition_catalog.models import CatalogExtraction, OfficialNotice
 from competition_catalog.publication import notice_snapshot, persist_extraction, publish_extraction
 from competition_catalog.registry import ADAPTER_CATALOG
 from competitions.services import require_editor
-from ingestion.services import source_mutex
+from ingestion.locks import source_mutex
 
 
 class Command(BaseCommand):

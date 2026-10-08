@@ -1,43 +1,23 @@
 """游客只读赛事接口，读取已维护的数据，不在页面请求中抓取或调用 AI。"""
 
-from django.db.models import F, OuterRef, Prefetch, Q, Subquery
+from django.db.models import Q
 from django.utils import timezone
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from rest_framework.pagination import PageNumberPagination
+from common.api import CompetitionPagination
 from rest_framework.permissions import AllowAny
 from rest_framework.exceptions import ValidationError
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .models import Competition, CompetitionSource, CompetitionTaxonomy
+from .models import Competition, CompetitionTaxonomy
 from .serializers import CompetitionDetailSerializer, CompetitionListSerializer, TaxonomySerializer
 from .scope import apply_competition_scope
-from .timeliness import TIME_STATUSES, annotate_timeliness
-
-
-DEMO_PREFIX = Q(code__startswith='demo-r1-') | Q(code__startswith='demo-r2-')
+from .selectors import DEMO_PREFIX, public_competition_queryset
+from .timeliness import TIME_STATUSES
 
 
 def public_taxonomies():
     return CompetitionTaxonomy.objects.filter(is_active=True).exclude(DEMO_PREFIX, name__startswith='【虚构样例】')
-
-
-class CompetitionPagination(PageNumberPagination):
-    page_size = 20
-    page_size_query_param = 'page_size'
-    max_page_size = 50
-
-    def get_page_size(self, request):
-        raw = request.query_params.get(self.page_size_query_param)
-        if raw is None:
-            return self.page_size
-        try:
-            size = int(raw)
-        except (ValueError, TypeError):
-            raise ValidationError({'page_size': '每页数量须为正整数。'}) from None
-        if size < 1:
-            raise ValidationError({'page_size': '每页数量须为正整数。'})
-        return min(size, self.max_page_size)
 
 
 class PublicCompetitionMixin:
@@ -45,19 +25,7 @@ class PublicCompetitionMixin:
     permission_classes = (AllowAny,)
 
     def get_queryset(self):
-        queryset = Competition.objects.filter(
-            publication_status=Competition.PublicationStatus.PUBLISHED,
-        ).exclude(DEMO_PREFIX, title__startswith='【虚构样例】').select_related('category').prefetch_related(
-            'tags',
-            Prefetch('sources', queryset=CompetitionSource.objects.filter(
-                Q(last_verified_at__isnull=False) | Q(competition__publication_method=Competition.PublicationMethod.DIRECT),
-            ), to_attr='public_sources'),
-        )
-        return annotate_timeliness(queryset).annotate(
-            _source_date=Subquery(CompetitionSource.objects.filter(
-                competition_id=OuterRef('pk'), is_primary=True,
-            ).values('source_published_on')[:1]),
-        ).order_by('-_still_open', F('_source_date').desc(nulls_last=True), '-published_at', '-id')
+        return public_competition_queryset()
 
 
 class CompetitionListView(PublicCompetitionMixin, ListAPIView):

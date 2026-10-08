@@ -7,7 +7,8 @@ from django.conf import settings
 from django.utils import timezone
 
 from information_library.competition_search import search_competitions
-from information_library.selectors import collect_records, public_text, safe_source_url
+from information_library.selectors import collect_records
+from common.public_content import public_text, safe_source_url
 from information_library.semantic import SemanticError
 from research.models import ResearchOpportunity
 from resources.models import Resource, ResourceCompetition, ResourceResearchOpportunity
@@ -148,7 +149,7 @@ def public_secondary_records(*, group_selector=None):
                     row['related_object_ids'].get('research_opportunity', []) if identifier in visible_research]
     # Public recruitment cards are the only team data exposed to visitors.
     # Read them on every request so newly published or closed cards take effect immediately.
-    from teams.views import public_cards
+    from teams.selectors import public_cards
     for card in public_cards().prefetch_related('current_revision__required_roles',
                                                 'current_revision__required_skills'):
         if not card.is_open:

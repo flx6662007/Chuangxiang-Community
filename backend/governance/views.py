@@ -1,9 +1,9 @@
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from competitions.views import CompetitionPagination
-from teams.errors import check
-from teams.views import BusinessView
+from common.api import CompetitionPagination
+from common.errors import check
+from common.api import BusinessView
 from . import services
 from .models import Appeal, Report
 from .serializers import AppealInput, ReportInput, record_output

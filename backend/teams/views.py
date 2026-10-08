@@ -1,44 +1,17 @@
-from django.core.exceptions import ObjectDoesNotExist, ValidationError as DjangoValidationError
-from django.db import IntegrityError
 from django.db.models import Q, Count, F, Exists, OuterRef
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework.exceptions import ValidationError
 
-from competitions.views import CompetitionPagination
+from common.api import BusinessView, StrictSerializer
 from . import services
-from .errors import BusinessError, check
-from .models import Recruitment, RecruitmentOption, RecruitmentRevision, Application, Team, Membership, DissolutionRequest
-from .serializers import (StrictSerializer, RecruitmentInput, EditInput, VersionInput, ApplicationInput,
+from .selectors import public_cards, own_applications, own_teams
+from common.errors import BusinessError, check
+from .models import RecruitmentOption, RecruitmentRevision, Membership, DissolutionRequest
+from .serializers import (RecruitmentInput, EditInput, VersionInput, ApplicationInput,
     ActionInput, ContinueInput, DepartureInput, ResponseInput, DissolutionInput, card_output,
     application_output, team_output, departure_output, dissolution_output)
-
-
-class BusinessView(APIView):
-    def handle_exception(self, exc):
-        if isinstance(exc, ObjectDoesNotExist):
-            exc = BusinessError('not_found', '对象不存在或不可访问。', 404)
-        elif isinstance(exc, DjangoValidationError):
-            exc = BusinessError('invalid_fields', '字段不符合业务规则。', 400,
-                                getattr(exc, 'message_dict', None) or {'non_field_errors': exc.messages})
-        elif isinstance(exc, ValidationError):
-            exc = BusinessError('invalid_fields', '请检查提交字段。', 400, exc.detail)
-        elif isinstance(exc, IntegrityError):
-            exc = BusinessError('conflict', '状态已改变或记录已存在，请刷新后重试。')
-        return super().handle_exception(exc)
-
-    def read_input(self, cls):
-        serializer = cls(data=self.request.data)
-        serializer.is_valid(raise_exception=True)
-        return serializer.validated_data
-
-    def page(self, objects, output):
-        paginator = CompetitionPagination()
-        page = paginator.paginate_queryset(objects, self.request, view=self)
-        return paginator.get_paginated_response([output(obj, self.request.user) for obj in page])
 
 
 class RecruitmentOptionsView(BusinessView):
@@ -59,13 +32,6 @@ class RecruitmentOptionsView(BusinessView):
             result[name] = [{'code': code, 'name': labels[code]} for code, _ in RecruitmentRevision._meta.get_field(name).choices]
         result['duration_days'] = [{'code': value, 'name': f'{value} 天'} for value in (3, 7, 14)]
         return Response(result)
-
-
-def public_cards():
-    return Recruitment.objects.filter(publication_status='published', team__competition__publication_status='published',
-        current_revision__isnull=False).exclude((Q(team__competition__code__startswith='demo-r1-') |
-            Q(team__competition__code__startswith='demo-r2-')) & Q(team__competition__title__contains='【虚构样例】')).select_related(
-                'team__competition', 'team__recruiter', 'current_revision')
 
 
 class RecruitmentListView(BusinessView):
@@ -136,12 +102,6 @@ class ApplicationCreateView(BusinessView):
         return Response(application_output(app, request.user), status=status.HTTP_201_CREATED)
 
 
-def own_applications(user):
-    return Application.objects.filter(Q(applicant=user) | Q(recruitment__team__recruiter=user)).select_related(
-        'applicant', 'recruitment__team__competition', 'recruitment__team__recruiter', 'recruitment__current_revision',
-        'current_revision__recruitment_revision')
-
-
 def settle_for(ids):
     for competition_id in sorted(set(ids)):
         services.execute(competition_id, None, lambda now: None)
@@ -185,10 +145,6 @@ class ApplicationContactView(BusinessView):
         response['Cache-Control'] = 'no-store, private'
         response['Pragma'] = 'no-cache'
         return response
-
-
-def own_teams(user):
-    return Team.objects.filter(pk__in=Membership.objects.filter(user=user).values('team_id')).select_related('competition', 'recruiter')
 
 
 class TeamListView(BusinessView):

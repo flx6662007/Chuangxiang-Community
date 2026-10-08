@@ -8,6 +8,7 @@ from tempfile import NamedTemporaryFile
 
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ValidationError
+from common.public_content import safe_source_url
 from information_library import selectors
 
 FIELDS = {'id', 'title', 'unit', 'summary', 'participation', 'evidenceNote', 'date', 'verifiedOn', 'sourceUrl'}
@@ -26,7 +27,7 @@ def validate_rows(rows, *, incoming=False):
             raise ValueError('字段须为文本，且不超过 20000 字符')
         if not re.fullmatch(r'[a-zA-Z0-9_-]{1,100}', row['id']) or row['id'] in ids:
             raise ValueError('编号无效或重复')
-        if not row['title'].strip() or not selectors.safe_source_url(row['sourceUrl']):
+        if not row['title'].strip() or not safe_source_url(row['sourceUrl']):
             raise ValueError('标题或来源无效')
         for field in ('date', 'verifiedOn'):
             if row[field]:

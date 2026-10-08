@@ -1,5 +1,5 @@
 import http from './http'
-import { ensureCsrf } from './accounts'
+import { ensureCsrf } from './csrf'
 const id = (value) => encodeURIComponent(value)
 const read = async (path, params, signal) =>
   (await http.get(path, { params, signal })).data

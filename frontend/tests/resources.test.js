@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { createResourceReader } from '../src/services/resourceClient.js'
+import { createResourceReader } from '../src/api/resourceClient.js'
 
 test('真实资源请求将搜索、目录、分页和取消信号传给 API，不默认预览草稿', async () => {
   const calls = []

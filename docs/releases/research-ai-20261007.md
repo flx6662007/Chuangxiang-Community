@@ -101,7 +101,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/dev.ps1 -NodePat
 ## 验收与结果
 
 ```powershell
-backend/.venv/Scripts/python.exe backend/manage.py test ai_services research.test_importer curation.test_research_import information_library --settings=config.test_settings --noinput
+backend/.venv/Scripts/python.exe backend/manage.py test ai_services research.test_importer research.test_materials_import information_library --settings=config.test_settings --noinput
 Push-Location frontend
 npm test
 npm run build

@@ -1,7 +1,7 @@
 """共用校验。full_clean 不替代数据库事务或批量写入的调用方责任。"""
 from django.core.exceptions import ValidationError
 
-from competitions.models import CleanFieldsModel
+from .model_base import CleanFieldsModel
 
 
 def require(condition, message):

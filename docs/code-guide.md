@@ -11,6 +11,7 @@
 | `serializers.py` | 哪些数据可以发给前端，如何组织成 JSON？部分写接口也用它检查输入。 |
 | `models.py` | 数据保存哪些字段，字段之间是什么关系？ |
 | `services.py` | 发布、申请、入队等操作，必须按哪些业务规则执行？ |
+| `selectors.py` | 哪些记录可见，如何组合查询条件？ |
 | `admin.py` | 管理员从哪里查看或操作这些内容？ |
 
 `views.py` 的“视图”指后端请求处理代码；浏览器里看到的页面在 `frontend/src/views/`。
@@ -23,7 +24,7 @@
 | --- | --- | --- |
 | 1 | [总路由](../backend/config/urls.py) | 找到 `api/v1/competitions/`，看它转到哪个业务路由 |
 | 2 | [赛事路由](../backend/competitions/urls.py) | 空路径对应 `CompetitionListView`，编号路径对应详情 |
-| 3 | [赛事视图](../backend/competitions/views.py) | 先看 `CompetitionListView.get_queryset()` 如何读取搜索和分类条件；再看 `PublicCompetitionMixin` 如何限定公开数据、排序 |
+| 3 | [赛事视图](../backend/competitions/views.py)与[查询](../backend/competitions/selectors.py) | `CompetitionListView.get_queryset()` 读取搜索和分类条件；`public_competition_queryset()` 限定公开数据、关联加载和排序 |
 | 4 | [赛事模型](../backend/competitions/models.py) | 找到 `Competition`，对照标题、截止日期、发布状态等字段；约束可以第二遍再读 |
 | 5 | [赛事序列化](../backend/competitions/serializers.py) | 看 `CompetitionListSerializer.Meta.fields`，这里决定哪些字段交给前端 |
 
@@ -63,6 +64,35 @@
 | 了解内部 AI 草稿 | [服务入口](../backend/ai_services/__init__.py) → [服务实现](../backend/ai_services/services.py)；用于通知提取和快讯草稿，配置独立于首页聊天 |
 | 维护历史采集与官网监测 | [采集命令](../backend/ingestion/management/commands/sync_competitions.py) → [采集服务](../backend/ingestion/services.py)，或 [目录监测](../backend/competition_catalog/monitor.py)；代码保留，执行与调度需另行配置，普通页面不触发采集 |
 | 调整页面样式 | 先找到 `frontend/src/views/` 中对应页面，再看它引用的组件及 `styles/index.css` |
+
+## 模块分工
+
+后端目录按业务对象区分。名字相似不代表保存同一份数据：
+
+| 目录 | 保存或处理什么 | 常见修改 |
+| --- | --- | --- |
+| `competition_catalog/` | 学校赛事目录及其关联届次 | 目录编号、官网登记、目录与届次关联 |
+| `competitions/` | 某一届比赛及其来源 | 报名日期、参赛条件、组队开放规则 |
+| `curation/` | 整理后的赛事知识正文、来源和版本 | 导入赛事规则、经验资料，关联目录/届次/资源 |
+| `research/` | 科研项目、实验室机会、来源和结构化事实 | 导入科研资料、维护本科生招募条件 |
+| `resources/` | 学习资料、工具、分类和关联关系 | 资源简介、链接、所属赛事或科研项目 |
+| `information_library/` | 跨模块的读取、汇总和赛事检索 | 公共科研接口、后台信息库、检索结果 |
+| `ai_services/` | 模型调用、问答流程与证据组织 | 提示词、多轮对话、推荐和来源引用 |
+
+例如，一项比赛在目录中只有一个编号，不同年份分别保存届次；规则正文是知识文档，配套教程是学习资源。科研资料有自己的招募对象、机构和结构化字段，不写入赛事知识文档表。科研导入命令现在归属 `research/`，运行命令仍为 `python manage.py import_research_materials ...`。
+
+共用实现按用途集中：
+
+- `common/api.py`、`errors.py`：输入检查、分页和错误响应；具体操作权限仍由各业务判断。
+- `common/model_base.py`、`persistence.py`：字段基础校验、先校验再保存。事务、锁及发布条件仍由业务服务控制。
+- `common/public_content.py`：公开文本和来源链接清理，不加载业务模型，也不发起网络请求。
+- `teams/selectors.py`、`competitions/selectors.py`：供视图、检索和其他业务复用的数据库查询。
+- `curation/api.py`：知识文档、资源和目录共用的读取/草稿预览行为。
+- `ingestion/locks.py`：官网采集共用的 PostgreSQL 来源锁；HTTP 抓取仍在 `http.py`。
+
+新增代码沿着“视图接收请求 → 查询或业务服务 → 模型与数据库”的方向调用。AI 使用公开查询和业务服务；`common/` 提供基础能力。不同操作的账号资格、发布规则和事务不强行合并。
+
+前端请求统一放 `src/api/`；`csrf.js` 获取令牌，`http.js` 配置请求，`utils/pagination.js` 统一页码处理。`*Client.js` 是可注入 HTTP 客户端的请求函数，便于独立测试；它们不调用模型供应商。首页视觉预览数据保留在 `mocks/homeVisualPreview.js`，已无人调用的旧 AI 模拟数据移除。
 
 ## 第二遍再读的内容
 

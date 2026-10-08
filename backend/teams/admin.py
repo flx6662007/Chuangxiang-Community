@@ -8,7 +8,7 @@ from django.urls import path, reverse
 from django.utils.html import format_html
 from .models import Recruitment, RecruitmentOption, Team, Application, Membership, DepartureRequest, DissolutionRequest
 from .services import withdraw_recruitment
-from .errors import BusinessError
+from common.errors import BusinessError
 
 
 @admin.register(RecruitmentOption)

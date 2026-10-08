@@ -14,7 +14,7 @@ from competition_catalog.attachments import fetch_attachment
 from competition_catalog.models import OfficialNotice
 from competition_catalog.monitor import NOTICE_WORDS, related_title, save_page
 from ingestion.http import FetchError, OfficialClient, Page
-from ingestion.services import source_mutex
+from ingestion.locks import source_mutex
 
 
 SUBMISSION_WORDS = re.compile(

@@ -291,14 +291,14 @@ class CompetitionSearchTests(unittest.TestCase):
         documents = MagicMock()
         documents.select_related.return_value.prefetch_related.return_value = [document]
         public_object = SimpleNamespace(pk=42)
-        public_mixin = MagicMock()
-        public_mixin.return_value.get_queryset.return_value.filter.return_value = [public_object]
+        public_queryset = MagicMock()
+        public_queryset.return_value.filter.return_value = [public_object]
         serialized = {'id': 42, 'title': row['title'], 'code': row['code'], 'category': row['category'],
                       'tags': [], 'private_field': 'internal-value'}
         serializer = MagicMock(return_value=SimpleNamespace(data=serialized))
         modules = {
             'curation.retrieval': SimpleNamespace(student_visible_documents=lambda: documents),
-            'competitions.views': SimpleNamespace(PublicCompetitionMixin=public_mixin),
+            'competitions.selectors': SimpleNamespace(public_competition_queryset=public_queryset),
             'competitions.serializers': SimpleNamespace(CompetitionListSerializer=serializer),
         }
         with patch.dict(sys.modules, modules):

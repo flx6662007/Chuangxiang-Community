@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from teams.serializers import StrictSerializer
+from common.api import StrictSerializer
 from .models import Appeal, Report
 from .services import EFFECT_NOTE, REPORT_NOTE
 

@@ -1,5 +1,5 @@
 import http from './http'
-import { ensureCsrf } from './accounts'
+import { ensureCsrf } from './csrf'
 
 export async function getGuide(signal) {
   return (await http.get('/ai/guide/', { signal, timeout: 130000 })).data

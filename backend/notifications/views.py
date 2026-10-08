@@ -1,7 +1,7 @@
 from django.utils import timezone
 from rest_framework.response import Response
-from teams.views import BusinessView
-from teams.serializers import StrictSerializer
+from common.api import BusinessView
+from common.api import StrictSerializer
 from .models import Notification
 
 

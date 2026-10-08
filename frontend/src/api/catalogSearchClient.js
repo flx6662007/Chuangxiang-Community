@@ -1,4 +1,4 @@
-export function createAssistantReader(http) {
+export function createCatalogSearchReader(http) {
   return {
     async search(query, { signal } = {}) {
       const q = typeof query === 'string' ? query.trim() : ''

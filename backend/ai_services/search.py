@@ -11,7 +11,7 @@ from competition_catalog.models import CatalogEntry
 from curation.models import DocumentLink
 from curation.selectors import visible_documents
 from information_library.presentation import reading_text
-from information_library.selectors import public_text
+from common.public_content import public_text
 
 
 # 同义词只扩展检索文本，不据此判断参赛资格或赛事是否正在报名。

@@ -7,7 +7,7 @@
 | 内容 | 文档 |
 | --- | --- |
 | 项目总览与本地启动 | [根 README](../README.md) |
-| 后端环境、数据库与测试 | [后端开发](backend-development.md) · [后端模块](../backend/README.md) |
+| 后端环境、数据库与测试 | [后端开发](backend-development.md) · [后端模块](../backend/README.md) · [模块分工](code-guide.md#模块分工) |
 | 前端页面、配置与测试 | [前端说明](../frontend/README.md) |
 | 临时网址与内测账号 | [邀请内测](private-beta.md) |
 | 服务器部署与费用 | [部署](deployment.md) · [采购清单](procurement.md) |

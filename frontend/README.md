@@ -79,8 +79,8 @@ npm run build
 
 第一次阅读先看[代码导读](../docs/code-guide.md)，其中按顺序连接了页面、请求、后端和数据库。
 
-- `src/api/`：按账号、赛事、组队、通知划分请求。写操作先取得 CSRF，每次读取当前 Cookie，避免登录轮换后使用旧令牌。
-- `src/api/catalog.js`：目录和知识文档的只读接口；`src/services/resources.js`：学习资源真实 API，已移除旧资源 Mock。
+- `src/api/`：统一放账号、赛事、资源、组队、通知等请求。`csrf.js` 负责取得 CSRF Cookie，`http.js` 在每次写入前读取当前值，避免登录轮换后使用旧令牌。
+- `src/api/catalog.js`：目录和知识文档；`resources.js`：学习资源；`catalogSearch.js`：关键词检索。资源与检索的 `*Client.js` 接受注入的 HTTP 客户端，供页面共用与独立测试。
 - `src/api/editorial.js`：科研列表、科研详情和首页快讯；`ResearchDetailView.vue` 复用科研卡片展示字段与来源。
 - `src/api/ai.js`、`aiStream.js`、`aiResponse.js`：AI 状态、JSON／SSE 请求、分片读取与响应校验；首页对话使用 SSE。
 - `src/composables/useAIChat.js`：对话历史、停止、重试和迟到响应处理；`src/utils/aiMarkdown.js`：回答排版与链接控制。
@@ -88,6 +88,8 @@ npm run build
 - `src/components/`：卡片、字段选择器、招募条件、申请处理和队伍处理组件。
 - `src/views/`：页面、URL 筛选、加载／错误／空状态；新增组队路由懒加载。
 - `src/utils/teams.js`：中文状态、表单白名单、双版本令牌、业务错误、通知站内跳转和停用词条展示。
+- `src/utils/pagination.js`：统一页码规则；`teams.js` 与 `library.js` 保留原有分页函数名。
+- `src/mocks/homeVisualPreview.js`：仅在首页 `?ui_preview=1` 时显示的视觉预览数据；普通页面仍读后端，旧 AI 模拟检索已移除。
 
 接口见 [API 总览](../docs/api.md)、[组队 API](../docs/api-teams.md) 与 [AI 接入](../docs/ai-v3.md)。同一页筛选使用服务器分页，不能仅过滤当前页。模型／字段修改需先同步接口约定。
 

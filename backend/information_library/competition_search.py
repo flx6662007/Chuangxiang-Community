@@ -442,7 +442,7 @@ def _reason(record, key, expected, evidence_ids):
 def _corpus_from_database():
     from curation.retrieval import student_visible_documents
     from competitions.serializers import CompetitionListSerializer
-    from competitions.views import PublicCompetitionMixin
+    from competitions.selectors import public_competition_queryset
     records, diagnostics, revisions = [], [], []
     public_competitions = {}
     for document in student_visible_documents().select_related('current_revision').prefetch_related('current_revision__links__competition'):
@@ -474,7 +474,7 @@ def _corpus_from_database():
         revisions.append((str(row['id']), row['content_hash'], revision.version, revision.content_hash))
     # Serialize actual public objects, with the same deadlines and sources as the list API.
     available = set()
-    public_rows = PublicCompetitionMixin().get_queryset().filter(pk__in=public_competitions) if public_competitions else ()
+    public_rows = public_competition_queryset().filter(pk__in=public_competitions) if public_competitions else ()
     for competition in public_rows:
         card = dict(CompetitionListSerializer(competition).data)
         available.add(competition.pk)

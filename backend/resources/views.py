@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from competition_catalog.models import CatalogEntry
-from competitions.views import CompetitionPagination
-from curation.views import LibraryReadMixin
+from common.api import CompetitionPagination
+from curation.api import LibraryReadMixin
 
 from .models import ResourceTaxonomy
 from .selectors import filter_catalog, resource_catalog_map, resource_options, visible_resources

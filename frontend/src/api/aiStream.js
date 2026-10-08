@@ -58,7 +58,7 @@ export async function readAIStream(response, onDelta, onStatus = () => {}) {
 }
 
 export async function requestAIChatStream(messages, { signal, mode = 'smart', onDelta = () => {}, onStatus = () => {}, conversationContext, webSearch = false } = {}) {
-  const { ensureCsrf } = await import('./accounts')
+  const { ensureCsrf } = await import('./csrf')
   await ensureCsrf()
   signal?.throwIfAborted()
   const controller = new AbortController()

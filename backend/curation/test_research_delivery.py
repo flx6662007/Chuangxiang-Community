@@ -1,4 +1,5 @@
 """Real 90--130 delivery acceptance with the preceding package as a dependency."""
+# “research” 是历史资料包命名；本文件验证赛事目录交付，不是 research 应用的科研导入。
 import copy
 import os
 import unittest

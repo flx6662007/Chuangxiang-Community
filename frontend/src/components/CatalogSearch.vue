@@ -2,7 +2,7 @@
 import { onBeforeUnmount, ref } from 'vue'
 import AppIcon from './AppIcon.vue'
 import CatalogCard from './CatalogCard.vue'
-import { searchCompetitionsByAI } from '../services/aiCompetitionSearch.js'
+import { searchCatalog } from '../api/catalogSearch.js'
 
 const examples = ['人工智能', '机器人', '数学建模', '创新创业']
 const query = ref('')
@@ -35,7 +35,7 @@ async function submitSearch() {
   phase.value = 'loading'
   response.value = null
   try {
-    const data = await searchCompetitionsByAI(text, { signal: controller.signal })
+    const data = await searchCatalog(text, { signal: controller.signal })
     if (request !== requestNumber) return
     response.value = data
     phase.value = 'success'

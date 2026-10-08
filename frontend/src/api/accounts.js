@@ -2,7 +2,6 @@ import axios from 'axios'
 import { announceSessionChange } from '../utils/sessionEvents'
 import http, { useCsrf } from './http'
 import {
-  csrfFromCookie,
   isFinishedPasswordReset,
   isPendingPasswordReset,
   isSignedOut,
@@ -27,9 +26,7 @@ function unexpectedResponse(response) {
   throw error
 }
 
-export async function ensureCsrf() {
-  if (!csrfFromCookie(document.cookie)) await http.get('/accounts/csrf/')
-}
+export { ensureCsrf } from './csrf'
 
 export async function getProfile() {
   return withProfileSessionCheck(

@@ -10,7 +10,7 @@ from django.conf import settings
 from competition_catalog.models import OfficialSite
 from competition_catalog.monitor import normalize_name, parse_page
 from ingestion.http import FetchError, OfficialClient, checked_url
-from information_library.selectors import public_text, safe_source_url
+from common.public_content import public_text, safe_source_url
 from .evidence import validated_external
 from .external_search import SearXNGAdapter
 

@@ -3,7 +3,7 @@ from django.core.exceptions import PermissionDenied, ValidationError
 from django.db import transaction
 from django.utils import timezone
 
-from information_library.selectors import public_text, safe_source_url
+from common.public_content import public_text, safe_source_url
 from .models import Resource, ResourceRevision
 
 
