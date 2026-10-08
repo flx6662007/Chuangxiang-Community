@@ -277,5 +277,16 @@ AI_CHAT = {
     'MAX_OUTPUT_TOKENS': os.getenv('DEEPSEEK_MAX_OUTPUT_TOKENS', '2048'),
 }
 
+# Optional self-hosted search. Empty URL preserves the registered-official-site adapter.
+AI_EXTERNAL_SEARCH = {
+    'SEARXNG_URL': os.getenv('AI_SEARXNG_URL', ''),
+    'TIMEOUT_SECONDS': 15,
+    'MAX_PAGES': 3,
+    'MIN_RESULTS': 2,
+    'MIN_CONFIDENCE': 0.55,
+    # Only server-maintained, exact hostnames may elevate a result to official status.
+    'OFFICIAL_HOSTS': {},
+}
+
 # 科研资料独立维护，比赛展示期间关闭公开入口。
 PUBLIC_RESEARCH_ENABLED = os.getenv("PUBLIC_RESEARCH_ENABLED", "0").lower() in ("1", "true")

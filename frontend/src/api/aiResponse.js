@@ -6,19 +6,6 @@ function safeHttpUrl(value) {
   } catch { return false }
 }
 
-function safeInternalUrl(kind, value) {
-  if (typeof value !== 'string') return null
-  if (/^\/competitions\/[1-9]\d*$/.test(value)) return value
-  if (kind === 'research_opportunity' && /^\/research\/[1-9]\d*$/.test(value)) return value
-  if (kind === 'resource' && /^\/resources\/[a-zA-Z0-9_-]{1,80}$/.test(value)) return value
-  if (kind === 'team' && /^\/teams\/[1-9]\d*$/.test(value)) return value
-  return null
-}
-
-function safeSourceUrl(kind, value) {
-  return safeHttpUrl(value) || (kind === 'team' && safeInternalUrl(kind, value) === value)
-}
-
 const researchFields = ['summary', 'direction', 'location', 'achievements', 'roles', 'eligibility',
   'work', 'commitment', 'scope', 'cohort', 'deadline', 'status', 'recruitment']
 
@@ -44,14 +31,13 @@ export function parseAIReply(data) {
     throw new Error('Invalid AI response')
   }
   const sources = Array.isArray(data.sources) ? data.sources.slice(0, 6).filter(source => {
-    return source && typeof source.title === 'string' && safeSourceUrl(source.kind, source.url)
+    return source && typeof source.title === 'string' && safeHttpUrl(source.url)
   }).map(source => ({
     id: source.id,
-    entity_id: typeof source.entity_id === 'string' ? source.entity_id.slice(0, 100) : null,
-    database_id: typeof source.database_id === 'string' && /^\d+$/.test(source.database_id) ? source.database_id : null,
     title: source.title,
     url: source.url,
-    internal_url: safeInternalUrl(source.kind, source.internal_url),
+    internal_url: (/^\/competitions\/\d+$/.test(source.internal_url || '') ||
+      (source.kind === 'resource' && /^\/resources\/[a-zA-Z0-9_-]{1,80}$/.test(source.internal_url || ''))) ? source.internal_url : null,
     kind: source.kind,
     source_type: typeof source.source_type === 'string' ? source.source_type : null,
     trust_label: typeof source.trust_label === 'string' ? source.trust_label : null,
@@ -63,12 +49,10 @@ export function parseAIReply(data) {
     read_at: typeof source.read_at === 'string' ? source.read_at : null,
   })) : []
   const recommendations = Array.isArray(data.recommendations) ? data.recommendations.slice(0, 6)
-    .filter(item => item && ['competition', 'resource', 'research_opportunity', 'research_group', 'team'].includes(item.object_type)
+    .filter(item => item && ['competition', 'resource', 'research_opportunity', 'research_group'].includes(item.object_type)
       && typeof item.title === 'string' && typeof item.reason === 'string'
-      && safeSourceUrl(item.object_type, item.source_url))
-    .map(item => ({ object_type: item.object_type, object_id: typeof item.object_id === 'string' ? item.object_id.slice(0, 100) : null,
-      database_id: typeof item.database_id === 'string' && /^\d+$/.test(item.database_id) ? item.database_id : null,
-      internal_url: safeInternalUrl(item.object_type, item.internal_url), title: item.title, reason: item.reason,
+      && safeHttpUrl(item.source_url))
+    .map(item => ({ object_type: item.object_type, object_id: item.object_id, title: item.title, reason: item.reason,
       ...researchFacts(item),
       source_url: item.source_url, reviewed: item.reviewed === true,
       status_note: typeof item.status_note === 'string' ? item.status_note : '',
@@ -77,5 +61,6 @@ export function parseAIReply(data) {
         .filter(resource => resource && typeof resource.title === 'string' && safeHttpUrl(resource.source_url)) : [],
       related_object_ids: item.related_object_ids && typeof item.related_object_ids === 'object' ? item.related_object_ids : {} })) : []
   return { role: 'assistant', content: message.content, sources, recommendations,
+    conversation_context: typeof data.conversation_context === 'string' && data.conversation_context.length <= 12000 ? data.conversation_context : undefined,
     retrieval: data.retrieval && typeof data.retrieval === 'object' ? data.retrieval : null }
 }

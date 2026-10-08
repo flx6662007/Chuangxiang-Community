@@ -34,19 +34,32 @@ export function useAIChat(request) {
   const pending = ref(false)
   const error = ref('')
   const failed = ref(false)
-  let controller
+  const phase = ref('idle')
+  let active
   let disposed = false
-  let flushTimer
-  let queued = ''
 
-  function flushDelta(index) {
-    clearTimeout(flushTimer)
-    flushTimer = undefined
-    if (queued && messages.value[index]) messages.value[index].content += queued
-    queued = ''
+  function flushDelta(run) {
+    clearTimeout(run.timer)
+    run.timer = undefined
+    if (active === run && run.queued && messages.value[run.index]) messages.value[run.index].content += run.queued
+    run.queued = ''
   }
 
-  async function submit(text, { retry = false, mode = 'smart' } = {}) {
+  function interrupt(run, message) {
+    if (active !== run) return
+    flushDelta(run)
+    const answer = messages.value[run.index]
+    if (answer?.content) Object.assign(answer, { generating: false, incomplete: true })
+    else messages.value.splice(run.index, 1)
+    active = undefined
+    pending.value = false
+    phase.value = 'idle'
+    error.value = message
+    failed.value = true
+    run.controller.abort()
+  }
+
+  async function submit(text, { retry = false, mode = 'smart', webSearch = false } = {}) {
     if (pending.value || disposed) return false
     const content = typeof text === 'string' ? text.trim() : ''
     if (!retry && (!content || content.length > 2000)) return false
@@ -58,51 +71,58 @@ export function useAIChat(request) {
       messages.value.push({ role: 'user', content })
     }
     const history = recentChatMessages(messages.value)
+    const conversationContext = messages.value.filter(message => message.role === 'assistant' && !message.incomplete).at(-1)?.conversation_context
     const assistantIndex = messages.value.length
     messages.value.push({ role: 'assistant', content: '', generating: true })
     pending.value = true
     failed.value = false
     error.value = ''
-    controller = new AbortController()
+    phase.value = 'retrieving'
+    const run = { controller: new AbortController(), index: assistantIndex, queued: '', timer: undefined }
+    active = run
     try {
-      const reply = await request(history, { signal: controller.signal, mode, onDelta(chunk) {
-        if (disposed || typeof chunk !== 'string' || !chunk) return
-        queued += chunk
-        if (!messages.value[assistantIndex].content) flushDelta(assistantIndex)
-        else if (!flushTimer) flushTimer = setTimeout(() => flushDelta(assistantIndex), 32)
+      const reply = await request(history, { signal: run.controller.signal, mode, conversationContext, webSearch,
+        onStatus(value) {
+          if (active === run && !disposed && ['retrieving', 'generating'].includes(value)) phase.value = value
+        }, onDelta(chunk) {
+        if (disposed || active !== run || typeof chunk !== 'string' || !chunk) return
+        phase.value = 'generating'
+        run.queued += chunk
+        if (!messages.value[assistantIndex].content) flushDelta(run)
+        else if (!run.timer) run.timer = setTimeout(() => flushDelta(run), 32)
       } })
-      if (disposed) return false
-      flushDelta(assistantIndex)
+      if (disposed || active !== run) return false
+      flushDelta(run)
       Object.assign(messages.value[assistantIndex], reply, { generating: false })
       return true
     } catch (cause) {
-      if (!disposed) {
-        flushDelta(assistantIndex)
-        if (messages.value[assistantIndex].content) {
-          Object.assign(messages.value[assistantIndex], { generating: false, incomplete: true })
-        } else messages.value.splice(assistantIndex, 1)
-        error.value = cause.name === 'AbortError' ? '已停止生成。' : chatErrorMessage(cause)
-        failed.value = true
-      }
+      if (!disposed && active === run) interrupt(run, cause.name === 'AbortError' ? '已停止生成。' : chatErrorMessage(cause))
       return false
     } finally {
-      clearTimeout(flushTimer)
-      flushTimer = undefined
-      queued = ''
-      pending.value = false
+      clearTimeout(run.timer)
+      if (active === run) {
+        active = undefined
+        pending.value = false
+        phase.value = 'idle'
+      }
     }
   }
 
   function stop() {
     if (!pending.value) return false
-    controller?.abort()
+    interrupt(active, '已停止生成。')
     return true
   }
 
   function dispose() {
     disposed = true
-    controller?.abort()
-    clearTimeout(flushTimer)
+    if (active) {
+      clearTimeout(active.timer)
+      active.controller.abort()
+      active = undefined
+    }
+    pending.value = false
+    phase.value = 'idle'
     if (messages.value.at(-1)?.generating) messages.value.pop()
   }
 
@@ -114,5 +134,5 @@ export function useAIChat(request) {
     return true
   }
 
-  return { messages, pending, error, failed, submit, stop, dispose, clear }
+  return { messages, pending, phase, error, failed, submit, stop, dispose, clear }
 }

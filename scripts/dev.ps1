@@ -78,8 +78,8 @@ foreach ($port in @($FrontendPort, $BackendPort)) {
     }
 }
 if (-not $PythonPath) { $PythonPath = Join-Path $backendRoot '.venv\Scripts\python.exe' }
-$pythonExecutable = (Get-Command $PythonPath -CommandType Application -ErrorAction Stop).Source
-$nodeExecutable = (Get-Command $NodePath -CommandType Application -ErrorAction Stop).Source
+$pythonExecutable = (Get-Command $PythonPath -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
+$nodeExecutable = (Get-Command $NodePath -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
 if (-not (Test-Path -LiteralPath $vitePath)) { throw 'Install frontend dependencies with npm.cmd ci first.' }
 if (-not (Test-Path -LiteralPath (Join-Path $backendRoot '.env'))) {
     throw 'Configure backend/.env and PostgreSQL first; see docs/backend-development.md.'

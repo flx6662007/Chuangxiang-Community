@@ -5,12 +5,14 @@ import hashlib
 from typing import Protocol
 
 from django.utils import timezone
+from django.conf import settings
 
 from competition_catalog.models import OfficialSite
 from competition_catalog.monitor import normalize_name, parse_page
 from ingestion.http import FetchError, OfficialClient, checked_url
 from information_library.selectors import public_text, safe_source_url
 from .evidence import validated_external
+from .external_search import SearXNGAdapter
 
 
 class ChatOfficialClient(OfficialClient):
@@ -87,7 +89,10 @@ class ExternalSearchAdapter(Protocol):
 
 def search_external(query, *, domain='competition', adapters=None):
     """Search only configured adapters; dedupe and validate every candidate."""
-    adapters = [RegisteredOfficialAdapter()] if adapters is None else adapters
+    if adapters is None:
+        adapters = [RegisteredOfficialAdapter()]
+        if getattr(settings, 'AI_EXTERNAL_SEARCH', {}).get('SEARXNG_URL'):
+            adapters.append(SearXNGAdapter())
     results, seen, statuses = [], set(), []
     for adapter in adapters:
         try:
@@ -100,9 +105,14 @@ def search_external(query, *, domain='competition', adapters=None):
             # A result cannot award itself official status. Only our registry adapter
             # has already checked the target host against an enabled OfficialSite.
             source_type = 'official_event' if type(adapter) is RegisteredOfficialAdapter else 'ordinary_web'
+            if type(adapter) is SearXNGAdapter:
+                trusted = adapter.config.get('OFFICIAL_HOSTS', {})
+                source_type = trusted.get(urlsplit(row.get('url', '')).hostname, 'ordinary_web')
+                if source_type not in ('official_event', 'organizer_official', 'campus_official', 'research_institute', 'official_repository'):
+                    source_type = 'ordinary_web'
             candidate = validated_external(row, domain=domain, source_type=source_type)
             if candidate and candidate['url'] not in seen:
                 seen.add(candidate['url'])
                 results.append(candidate)
     results.sort(key=lambda row: -row['evidence_score'])
-    return results[:3], 'ready' if results else (statuses[0] if statuses else 'no_adapter')
+    return results[:3], 'ready' if results else (statuses[-1] if statuses else 'no_adapter')
