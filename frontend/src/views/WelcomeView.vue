@@ -8,6 +8,7 @@ import { summaryDeadline, levelLabels, safeExternalUrl, deadlineStatusLabel } fr
 import { label, optionNames } from '../utils/teams'
 import { previewCompetitions, previewRecruitments } from '../mocks/homeVisualPreview'
 import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
+import ProjectOpportunityCard from '../components/ProjectOpportunityCard.vue'
 import HomeDotField from '../components/HomeDotField.vue'
 import HomeMarginMotif from '../components/HomeMarginMotif.vue'
 import HomeLiquidLinks from '../components/HomeLiquidLinks.vue'
@@ -110,7 +111,7 @@ async function loadTeams() {
 }
 
 onMounted(() => {
-  researchLoading.value = false
+  loadEditorial('research')
   loadEditorial('newsletters')
   if (!isVisualPreview.value) {
     loadCompetitions()
@@ -199,7 +200,11 @@ onBeforeUnmount(() => {
           <div><h2 id="research-title">科研项目<span>与参与方式</span></h2></div>
           <RouterLink class="home-more" :to="{ name: 'research-projects' }">查看全部 <span>↗</span></RouterLink>
         </header>
-        <p class="home-intro">暂不开放</p>
+        <p class="home-intro">查看已核查的实验室介绍、研究方向与参与信息。</p>
+        <div v-if="researchLoading" class="home-state" role="status">正在加载科研线索…</div>
+        <div v-else-if="researchError" class="home-state" role="alert">科研线索暂时无法加载。<button type="button" @click="loadEditorial('research')">重新加载 ↗</button></div>
+        <div v-else-if="!laboratories.length" class="home-state">目前没有公开科研线索。<RouterLink :to="{ name: 'research-projects' }">查看科研页面 ↗</RouterLink></div>
+        <div v-else class="research-editorial-list"><ProjectOpportunityCard v-for="item in laboratories" :key="item.id" :item="item" /></div>
       </div>
     </section>
 

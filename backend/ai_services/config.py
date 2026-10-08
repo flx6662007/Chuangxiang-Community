@@ -22,6 +22,7 @@ class AIConfig:
     provider: str = "qwen"
     base_url: str = field(default="", repr=False)
     api_key: str = field(default="", repr=False)
+    proxy_url: str = field(default="", repr=False)
     model: str = ""
     timeout_seconds: float = 30.0
     max_output_tokens: int = 2048
@@ -57,6 +58,7 @@ class AIConfig:
             provider=values.get("PROVIDER", "qwen"),
             base_url=values.get("BASE_URL", ""),
             api_key=values.get("API_KEY", ""),
+            proxy_url=values.get("PROXY_URL", ""),
             model=values.get("MODEL", ""),
             timeout_seconds=timeout,
             max_output_tokens=tokens,
@@ -96,6 +98,25 @@ class AIConfig:
             valid_url = False
         if not valid_url:
             raise AIConfigurationError() from None
+        if not isinstance(self.proxy_url, str):
+            raise AIConfigurationError() from None
+        if self.proxy_url:
+            try:
+                proxy = urlsplit(self.proxy_url)
+                valid_proxy = (
+                    proxy.scheme == 'http'
+                    and proxy.hostname in {'127.0.0.1', 'localhost', '::1'}
+                    and proxy.port is not None
+                    and 0 < proxy.port <= 65535
+                    and proxy.username is None and proxy.password is None
+                    and proxy.path in ('', '/')
+                    and not proxy.query and not proxy.fragment
+                    and not any(char.isspace() or ord(char) < 32 for char in self.proxy_url)
+                )
+            except (ValueError, TypeError):
+                valid_proxy = False
+            if not valid_proxy:
+                raise AIConfigurationError() from None
         if (
             isinstance(self.timeout_seconds, bool)
             or not isinstance(self.timeout_seconds, (int, float))

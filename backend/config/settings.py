@@ -271,6 +271,7 @@ AI_CHAT = {
     'PROVIDER': 'deepseek',
     'BASE_URL': os.getenv('DEEPSEEK_BASE_URL', 'https://api.deepseek.com'),
     'API_KEY': os.getenv('DEEPSEEK_API_KEY', ''),
+    'PROXY_URL': os.getenv('DEEPSEEK_PROXY_URL', ''),
     'MODEL': os.getenv('DEEPSEEK_MODEL', 'deepseek-flash'),
     'TIMEOUT_SECONDS': os.getenv('DEEPSEEK_TIMEOUT_SECONDS', '60'),
     'MAX_OUTPUT_TOKENS': os.getenv('DEEPSEEK_MAX_OUTPUT_TOKENS', '2048'),

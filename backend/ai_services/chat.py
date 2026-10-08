@@ -54,7 +54,7 @@ def validate_chat_messages(messages):
     return result
 
 
-def chat(messages, *, mode='smart', client=None, details=False):
+def _prepare_chat(messages, mode, client, *, details=True):
     history = validate_chat_messages(messages)
     # Keep the V1 configuration error even when a factual query has no retrievable source.
     config = AIConfig.from_django('AI_CHAT') if client is None else None
@@ -65,9 +65,9 @@ def chat(messages, *, mode='smart', client=None, details=False):
     if not settings.PUBLIC_RESEARCH_ENABLED and (mode == 'research' or
                                                  (mode == 'smart' and route.domains == ('project',))):
         message = {'role':'assistant','content':'科研信息暂不开放。可以继续查询赛事和学习资料。'}
-        return {'message':message,'sources':[], 'recommendations':[], 'mode':mode,
+        return {'early_content': message['content'], 'sources':[], 'recommendations':[], 'mode':mode,
                 'route':{'intent':'platform','domains':['project']},
-                'retrieval':{'knowledge':'not_requested','web':'not_requested','has_sources':False}} if details else message
+                'retrieval':{'knowledge':'not_requested','web':'not_requested','has_sources':False}}
     unified = (retrieve_unified(question, mode, route) if route.intent != 'general'
                else {'records': [], 'knowledge_rows': [], 'knowledge_status': 'not_requested',
                      'mode_used': 'not_requested', 'warnings': []})
@@ -77,29 +77,65 @@ def chat(messages, *, mode='smart', client=None, details=False):
     web, web_status = (search_external(question, domain='research' if mode == 'research' else 'competition')
                        if do_web else ([], 'not_requested'))
     sources, slots = fuse(platform, knowledge, web)
+    early_content = None
     if route.intent != 'general' and not sources:
-        content = '目前未查到可核实的相关来源。'
+        early_content = '目前未查到可核实的相关来源。'
         if route.web_requested:
-            content += '联网范围仅限已登记官网入口；本次没有取得可用官方通知，请到相关官网核对。'
+            early_content += '联网范围仅限已登记官网入口；本次没有取得可用官方通知，请到相关官网核对。'
         if 'team' in route.domains:
-            content += '组队功能目前只做领域识别，未读取团队或个人资料。'
-    else:
-        provider = client if client is not None else OpenAICompatibleClient(config)
-        context = context_message(route, slots, knowledge_status=knowledge_status,
-                                  web_status=web_status, mode=mode) if route.intent != 'general' else None
-        content = provider.complete_text([{'role': 'system', 'content': CHAT_SYSTEM_PROMPT},
-                                          *([context] if context else []), *history])
-    if not isinstance(content, str) or not content.strip() or len(content) > MAX_ASSISTANT_CHARS:
-        raise AIResponseError()
-    content = verified_answer_text(content, sources)
-    if not content:
-        raise AIResponseError()
-    message = {'role': 'assistant', 'content': content}
-    if not details:
-        return message
-    return {'message': message, 'sources': sources, 'recommendations': recommendations(unified['records']), 'mode': mode,
+            early_content += '组队功能目前只做领域识别，未读取团队或个人资料。'
+    context = context_message(route, slots, knowledge_status=knowledge_status,
+                              web_status=web_status, mode=mode) if route.intent != 'general' else None
+    return {'early_content': early_content, 'provider': client if client is not None else OpenAICompatibleClient(config),
+            'provider_messages': [{'role': 'system', 'content': CHAT_SYSTEM_PROMPT},
+                                  *([context] if context else []), *history],
+            'sources': sources, 'recommendations': recommendations(unified['records']) if details else [], 'mode': mode,
             'route': {'intent': route.intent, 'domains': list(route.domains), 'current': route.current,
                       'web_requested': route.web_requested, 'knowledge_requested': route.knowledge_requested},
             'retrieval': {'knowledge': knowledge_status, 'web': web_status,
                           'web_reason': web_reason, 'mode_used': unified['mode_used'],
                           'warnings': unified['warnings'], 'has_sources': bool(sources)}}
+
+
+def _finish_chat(prepared, content):
+    if not isinstance(content, str) or not content.strip() or len(content) > MAX_ASSISTANT_CHARS:
+        raise AIResponseError()
+    content = verified_answer_text(content, prepared['sources'])
+    if not content:
+        raise AIResponseError()
+    return {key: value for key, value in prepared.items() if key in ('sources', 'recommendations', 'mode', 'route', 'retrieval')} | {
+        'message': {'role': 'assistant', 'content': content},
+    }
+
+
+def chat(messages, *, mode='smart', client=None, details=False):
+    prepared = _prepare_chat(messages, mode, client, details=details)
+    content = prepared['early_content']
+    if content is None:
+        content = prepared['provider'].complete_text(prepared['provider_messages'])
+    result = _finish_chat(prepared, content)
+    if not details:
+        return result['message']
+    return result
+
+
+def stream_chat(messages, *, mode='smart', client=None):
+    """Prepare retrieval once, then yield model deltas and the verified V1 result."""
+    prepared = _prepare_chat(messages, mode, client)
+
+    def events():
+        if prepared['early_content'] is not None:
+            yield 'delta', {'content': prepared['early_content']}
+            yield 'done', _finish_chat(prepared, prepared['early_content'])
+            return
+        parts = []
+        length = 0
+        for chunk in prepared['provider'].stream_text(prepared['provider_messages']):
+            length += len(chunk)
+            if length > MAX_ASSISTANT_CHARS:
+                raise AIResponseError()
+            parts.append(chunk)
+            yield 'delta', {'content': chunk}
+        yield 'done', _finish_chat(prepared, ''.join(parts))
+
+    return events()

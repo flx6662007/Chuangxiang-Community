@@ -2,6 +2,7 @@
 
 import json
 import math
+import time
 
 import httpx
 
@@ -60,6 +61,90 @@ class OpenAICompatibleClient:
     def complete_text(self, messages: list[dict[str, str]]) -> str:
         return self._complete(messages, json_output=False)
 
+    def stream_text(self, messages: list[dict[str, str]]):
+        """Read real Chat Completions SSE frames without buffering the whole answer."""
+        config = self._config if self._config is not None else AIConfig.from_django()
+        if not isinstance(config, AIConfig):
+            raise AIConfigurationError() from None
+        config.validate()
+        if not isinstance(messages, list) or not messages or any(
+            not isinstance(message, dict) or set(message) != {'role', 'content'}
+            or message['role'] not in ('system', 'user', 'assistant')
+            or not isinstance(message['content'], str) or not message['content'].strip()
+            for message in messages
+        ):
+            raise AIInputError() from None
+        payload = {'model': config.model, 'messages': messages, 'stream': True,
+                   'max_tokens': config.max_output_tokens}
+        if config.provider == 'qwen':
+            payload['enable_thinking'] = False
+        elif config.provider == 'deepseek':
+            payload['thinking'] = {'type': 'disabled'}
+        try:
+            with httpx.Client(timeout=httpx.Timeout(config.timeout_seconds), transport=self._transport,
+                              proxy=config.proxy_url or None, follow_redirects=False, trust_env=False) as client:
+                with client.stream('POST', config.endpoint,
+                                   headers={'Authorization': f'Bearer {config.api_key}'},
+                                   json=payload) as response:
+                    if response.status_code in (401, 403):
+                        raise AIAuthenticationError() from None
+                    if response.status_code == 402:
+                        raise AIBalanceError() from None
+                    if response.status_code == 429:
+                        raise AIRateLimitError() from None
+                    if response.status_code >= 500:
+                        raise AIUpstreamError() from None
+                    if response.status_code != 200:
+                        raise AIResponseError() from None
+                    total_bytes, finished, done = 0, False, False
+                    started = time.monotonic()
+                    data_lines = []
+                    for line in response.iter_lines():
+                        total_bytes += len(line.encode('utf-8')) + 1
+                        if total_bytes > MAX_RESPONSE_BYTES or time.monotonic() - started > config.timeout_seconds * 2:
+                            raise AIResponseError() from None
+                        if line.startswith('data:'):
+                            data_lines.append(line[5:].strip())
+                        elif line and not line.startswith(':') and not line.startswith(('event:', 'id:', 'retry:')):
+                            raise AIResponseError() from None
+                        if line or not data_lines:
+                            continue
+                        data = '\n'.join(data_lines)
+                        data_lines = []
+                        if data == '[DONE]':
+                            done = True
+                            break
+                        envelope = _parse_json_object(data)
+                        if envelope.get('error'):
+                            raise AIResponseError() from None
+                        choices = envelope.get('choices')
+                        if not isinstance(choices, list) or len(choices) != 1 or not isinstance(choices[0], dict):
+                            raise AIResponseError() from None
+                        choice = choices[0]
+                        reason = choice.get('finish_reason')
+                        if reason not in (None, 'stop') or (reason == 'stop' and finished):
+                            raise AIResponseError() from None
+                        delta = choice.get('delta')
+                        if not isinstance(delta, dict) or delta.get('role') not in (None, 'assistant') or any(delta.get(key) is not None for key in
+                                                               ('tool_calls', 'function_call', 'refusal')):
+                            raise AIResponseError() from None
+                        content = delta.get('content')
+                        if content is not None:
+                            if not isinstance(content, str) or finished:
+                                raise AIResponseError() from None
+                            if content:
+                                yield content
+                        if reason == 'stop':
+                            finished = True
+                    if not done or not finished:
+                        raise AIResponseError() from None
+        except httpx.TimeoutException:
+            raise AITimeoutError() from None
+        except httpx.RequestError:
+            raise AIConnectionError() from None
+        except (httpx.InvalidURL, UnicodeError):
+            raise AIConfigurationError() from None
+
     def _complete(self, messages, *, json_output):
         config = self._config if self._config is not None else AIConfig.from_django()
         if not isinstance(config, AIConfig):
@@ -95,6 +180,7 @@ class OpenAICompatibleClient:
             with httpx.Client(
                 timeout=httpx.Timeout(config.timeout_seconds),
                 transport=self._transport,
+                proxy=config.proxy_url or None,
                 follow_redirects=False,
                 trust_env=False,
             ) as client:

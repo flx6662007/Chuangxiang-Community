@@ -36,40 +36,74 @@ export function useAIChat(request) {
   const failed = ref(false)
   let controller
   let disposed = false
+  let flushTimer
+  let queued = ''
+
+  function flushDelta(index) {
+    clearTimeout(flushTimer)
+    flushTimer = undefined
+    if (queued && messages.value[index]) messages.value[index].content += queued
+    queued = ''
+  }
 
   async function submit(text, { retry = false, mode = 'smart' } = {}) {
     if (pending.value || disposed) return false
     const content = typeof text === 'string' ? text.trim() : ''
     if (!retry && (!content || content.length > 2000)) return false
     if (retry && !failed.value) return false
+    if (failed.value && messages.value.at(-1)?.incomplete) messages.value.pop()
     if (!retry) {
       // 失败的问题仍显示到用户重试或改问为止；错误不进入模型上下文。
       if (failed.value) messages.value.pop()
       messages.value.push({ role: 'user', content })
     }
+    const history = recentChatMessages(messages.value)
+    const assistantIndex = messages.value.length
+    messages.value.push({ role: 'assistant', content: '', generating: true })
     pending.value = true
     failed.value = false
     error.value = ''
     controller = new AbortController()
     try {
-      const reply = await request(recentChatMessages(messages.value), { signal: controller.signal, mode })
+      const reply = await request(history, { signal: controller.signal, mode, onDelta(chunk) {
+        if (disposed || typeof chunk !== 'string' || !chunk) return
+        queued += chunk
+        if (!messages.value[assistantIndex].content) flushDelta(assistantIndex)
+        else if (!flushTimer) flushTimer = setTimeout(() => flushDelta(assistantIndex), 32)
+      } })
       if (disposed) return false
-      messages.value.push(reply)
+      flushDelta(assistantIndex)
+      Object.assign(messages.value[assistantIndex], reply, { generating: false })
       return true
     } catch (cause) {
       if (!disposed) {
-        error.value = chatErrorMessage(cause)
+        flushDelta(assistantIndex)
+        if (messages.value[assistantIndex].content) {
+          Object.assign(messages.value[assistantIndex], { generating: false, incomplete: true })
+        } else messages.value.splice(assistantIndex, 1)
+        error.value = cause.name === 'AbortError' ? '已停止生成。' : chatErrorMessage(cause)
         failed.value = true
       }
       return false
     } finally {
+      clearTimeout(flushTimer)
+      flushTimer = undefined
+      queued = ''
       pending.value = false
     }
+  }
+
+  function stop() {
+    if (!pending.value) return false
+    controller?.abort()
+    return true
   }
 
   function dispose() {
     disposed = true
     controller?.abort()
+    clearTimeout(flushTimer)
+    if (messages.value.at(-1)?.generating) messages.value.pop()
   }
 
   function clear() {
@@ -80,5 +114,5 @@ export function useAIChat(request) {
     return true
   }
 
-  return { messages, pending, error, failed, submit, dispose, clear }
+  return { messages, pending, error, failed, submit, stop, dispose, clear }
 }

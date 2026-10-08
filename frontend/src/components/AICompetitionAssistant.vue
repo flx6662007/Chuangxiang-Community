@@ -1,7 +1,9 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AppIcon from './AppIcon.vue'
-import { getAIStatus, requestAIChat } from '../api/ai'
+import MarkdownIt from 'markdown-it'
+import { getAIStatus } from '../api/ai'
+import { requestAIChatStream } from '../api/aiStream'
 import { useAIChat } from '../composables/useAIChat.js'
 import CatalogSearch from './CatalogSearch.vue'
 import CompetitionGuide from './CompetitionGuide.vue'
@@ -28,6 +30,13 @@ const examples = computed(() => examplesByMode[mode.value])
 const query = ref('')
 const validation = ref('')
 const conversation = ref(null)
+const markdown = new MarkdownIt({ html: false, linkify: true, breaks: true })
+const renderMarkdown = (content) => markdown.render(content || '')
+let followOutput = true
+function onConversationScroll() {
+  const panel = conversation.value
+  if (panel) followOutput = panel.scrollHeight - panel.scrollTop - panel.clientHeight < 80
+}
 const configured = ref(false)
 const statusLoading = ref(true)
 const statusError = ref(false)
@@ -49,7 +58,7 @@ async function loadStatus() {
   }
 }
 onMounted(loadStatus)
-const { messages, pending, error, failed, submit, dispose, clear } = useAIChat(requestAIChat)
+const { messages, pending, error, failed, submit, stop, dispose, clear } = useAIChat(requestAIChatStream)
 
 function changeMode(value) {
   if (value === mode.value || pending.value) return
@@ -89,10 +98,10 @@ function onKeydown(event) {
   }
 }
 
-watch(() => [messages.value.length, pending.value, error.value], async () => {
+watch(() => [messages.value.length, messages.value.at(-1)?.content, pending.value, error.value], async () => {
   await nextTick()
   const panel = conversation.value
-  if (panel) panel.scrollTop = panel.scrollHeight
+  if (panel && followOutput) panel.scrollTop = panel.scrollHeight
 })
 
 onBeforeUnmount(() => { statusController?.abort(); dispose() })
@@ -116,10 +125,13 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
     <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
     <CatalogSearch v-else-if="!configured" />
     <div v-else class="ai-assistant-panel">
-      <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0">
+      <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0" @scroll="onConversationScroll">
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
           <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
-          <p>{{ message.content }}</p>
+          <p v-if="message.role === 'user'">{{ message.content }}</p>
+          <div v-else-if="message.content" class="ai-chat-markdown" v-html="renderMarkdown(message.content)"></div>
+          <p v-else-if="message.generating" class="ai-chat-status">正在生成…</p>
+          <small v-if="message.incomplete" class="ai-chat-coverage">回答未完成，可重试。</small>
           <div v-if="message.sources?.length" class="ai-chat-sources" aria-label="回答来源">
             <span>参考来源</span>
             <ol>
@@ -157,7 +169,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
           <small v-if="!message.sources?.length && ['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
           <small v-if="!message.sources?.length && ['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
         </article>
-        <p v-if="pending" class="ai-chat-status" role="status">正在回复…</p>
+        <p v-if="pending" class="ai-chat-status" role="status">正在回复… <button type="button" class="text-button" @click="stop">停止生成</button></p>
         <div v-if="error" class="ai-chat-error" role="alert">
           <p>{{ error }}</p>
           <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true, mode })">重试这条消息</button>
@@ -211,6 +223,11 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-chat-message { min-width: 0; }
 .ai-chat-message strong { color: var(--text-secondary, #a4b1c0); font-size: var(--type-small); }
 .ai-chat-message p { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: var(--leading-body); }
+.ai-chat-markdown { margin-top: 8px; overflow-wrap: anywhere; line-height: var(--leading-body); }
+.ai-chat-markdown :deep(p) { margin: 0 0 10px; }
+.ai-chat-markdown :deep(p:last-child) { margin-bottom: 0; }
+.ai-chat-markdown :deep(a) { color: var(--accent, #6da5ff); }
+.ai-chat-markdown :deep(pre) { overflow-x: auto; }
 .ai-chat-message.is-user { padding-left: 16px; border-left: 2px solid var(--accent, #6da5ff); }
 .ai-chat-status { margin: 0; color: var(--text-secondary, #a4b1c0); }
 .ai-chat-error p { margin: 0 0 12px; }

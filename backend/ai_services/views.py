@@ -1,5 +1,8 @@
 """公开聊天入口；只返回白名单字段和固定错误文案。"""
 
+import json
+
+from django.http import StreamingHttpResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 from rest_framework.exceptions import APIException, Throttled
@@ -10,7 +13,7 @@ from rest_framework.response import Response
 from rest_framework.throttling import SimpleRateThrottle
 from rest_framework.views import APIView
 
-from .chat import chat
+from .chat import chat, stream_chat
 from .exceptions import AIInputError, AIServiceError
 from .router import MODES
 
@@ -36,6 +39,19 @@ ERRORS = {
 }
 
 
+def _validated_chat_request(request):
+    if not isinstance(request.data, dict) or set(request.data) not in ({'messages'}, {'messages', 'mode'}):
+        raise AIInputError()
+    mode = request.data.get('mode', 'smart')
+    if type(mode) is not str or mode not in MODES:
+        raise AIInputError()
+    return request.data['messages'], mode
+
+
+def _stream_event(name, data):
+    return f'event: {name}\ndata: {json.dumps(data, ensure_ascii=False, separators=(",", ":"))}\n\n'
+
+
 @method_decorator(csrf_protect, name='dispatch')
 class ChatView(APIView):
     # 首页游客也可使用；所有 POST（包括游客）仍须通过 CSRF 校验。
@@ -48,12 +64,8 @@ class ChatView(APIView):
 
     def post(self, request):
         try:
-            if not isinstance(request.data, dict) or set(request.data) not in ({'messages'}, {'messages', 'mode'}):
-                raise AIInputError()
-            mode = request.data.get('mode', 'smart')
-            if type(mode) is not str or mode not in MODES:
-                raise AIInputError()
-            result = chat(request.data['messages'], mode=mode, details=True)
+            messages, mode = _validated_chat_request(request)
+            result = chat(messages, mode=mode, details=True)
             # Test doubles and legacy internal callers may still return the V1 message object.
             return Response(result if 'message' in result else {'message': result})
         except AIServiceError as error:
@@ -76,6 +88,30 @@ class ChatView(APIView):
     def finalize_response(self, request, response, *args, **kwargs):
         response = super().finalize_response(request, response, *args, **kwargs)
         response['Cache-Control'] = 'no-store'
+        return response
+
+
+class StreamChatView(ChatView):
+    def post(self, request):
+        try:
+            messages, mode = _validated_chat_request(request)
+            events = stream_chat(messages, mode=mode)
+        except AIServiceError as error:
+            status, detail = ERRORS.get(error.code, (502, 'AI 服务暂时无法完成处理。'))
+            return Response({'code': error.code, 'detail': detail}, status=status)
+
+        def response_events():
+            try:
+                for name, data in events:
+                    yield _stream_event(name, data)
+            except AIServiceError as error:
+                _, detail = ERRORS.get(error.code, (502, 'AI 服务暂时无法完成处理。'))
+                yield _stream_event('error', {'code': error.code, 'detail': detail})
+            except Exception:
+                yield _stream_event('error', {'code': 'ai_unavailable', 'detail': 'AI 服务暂时不可用，请稍后重试。'})
+
+        response = StreamingHttpResponse(response_events(), content_type='text/event-stream; charset=utf-8')
+        response['X-Accel-Buffering'] = 'no'
         return response
 
 

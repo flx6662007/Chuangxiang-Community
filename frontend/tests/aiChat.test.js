@@ -106,3 +106,26 @@ test('四种模式复用同一会话调用，切换模式清空旧上下文', as
   assert.deepEqual(calls.map(call => call.mode), ['smart', 'competition', 'research', 'resource'])
   assert.ok(calls.every(call => call.messages.length === 1))
 })
+
+test('流式回复更新同一消息，停止后清理生成状态并允许重试', async () => {
+  let rejectRequest, onDelta, signal
+  const chat = useAIChat((_messages, options) => {
+    onDelta = options.onDelta
+    signal = options.signal
+    return new Promise((_resolve, reject) => { rejectRequest = reject })
+  })
+  const task = chat.submit('你好')
+  assert.equal(chat.messages.value.length, 2)
+  assert.equal(chat.messages.value[1].generating, true)
+  onDelta('根据')
+  onDelta('你的需求')
+  assert.equal(chat.messages.value.length, 2)
+  assert.equal(chat.stop(), true)
+  assert.equal(signal.aborted, true)
+  rejectRequest(new DOMException('aborted', 'AbortError'))
+  assert.equal(await task, false)
+  assert.equal(chat.pending.value, false)
+  assert.equal(chat.messages.value[1].incomplete, true)
+  assert.equal(chat.messages.value[1].generating, false)
+  assert.equal(chat.messages.value[1].content, '根据你的需求')
+})

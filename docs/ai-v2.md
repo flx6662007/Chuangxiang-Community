@@ -8,6 +8,14 @@
 
 通用聊天支持学习资源和登记官网查询；科研查询由 `PUBLIC_RESEARCH_ENABLED` 控制，当前默认关闭。聊天使用原有 `/api/v1/ai/chat/` 消息契约。所有赛事知识读取当前公开版本，资料内的历史届次和时间继续保留。
 
+本机网络若无法直连模型服务，可在被忽略的 `backend/.env` 设置 `DEEPSEEK_PROXY_URL=http://127.0.0.1:本机代理端口` 并重启后端。模型客户端只接受显式配置的本机 HTTP 代理，不读取环境代理，也不把密钥放到前端。代理服务需保持运行；无需代理的部署环境留空。
+
+## 流式聊天
+
+首页助手使用 `POST /api/v1/ai/chat/stream/`，请求体仍为 `{ "messages": [...], "mode": "smart|competition|research|resource" }`，沿用原接口的 CSRF、限流、历史窗口和检索流程。模型的 Chat Completions SSE 内容分片直接作为 `event: delta` 转发；生成结束后，后端校验回答中的引用与链接，再用 `event: done` 发送与原 `/api/v1/ai/chat/` 相同的完整 JSON（`message`、`sources`、`recommendations`、`route`、`retrieval` 等）。前端以 `done.message` 校正最终文本，并保留结构化来源与推荐。上游断流、超时或无效结果发送安全的 `event: error`，客户端结束生成状态并提供重试；用户可停止请求。原 JSON 接口继续可用。
+
+本机数据库资料需按下文导入并启用 `PUBLIC_RESEARCH_ENABLED=1`；改动只存在于本机 `.env`，其他部署环境需分别配置。资料变更后重建统一语义索引并重启后端。
+
 ## 科研结构化资料接入（2026-10-07）
 
 首页“科研”栏目和智能模式的科研问题已使用同一条 RAG 链路：公开数据库资料 → 字段关键词与 BGE 混合检索 → 按字段组装来源 → DeepSeek 自然语言回答。页面上的普通搜索仍用于浏览卡片。队长的内测网站需单独导入并配置，本机修改不等于内测部署。

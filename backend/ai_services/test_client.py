@@ -2,7 +2,9 @@
 
 import json
 import traceback
+from contextlib import nullcontext
 from dataclasses import replace
+from unittest.mock import patch
 
 import httpx
 from django.test import SimpleTestCase, override_settings
@@ -36,6 +38,24 @@ def completion(content='{"title":"测试赛事"}', finish_reason="stop", **messa
 class AIClientTests(SimpleTestCase):
     def model_client(self, handler, config=CONFIG):
         return OpenAICompatibleClient(config, httpx.MockTransport(handler))
+
+    def test_explicit_local_proxy_is_passed_to_http_client(self):
+        proxy = 'http://127.0.0.1:12450'
+        class LocalClient:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                pass
+
+            def stream(self, *_args, **_kwargs):
+                return nullcontext(httpx.Response(200, json=completion()))
+
+        with patch('ai_services.client.httpx.Client', return_value=LocalClient()) as factory:
+            result = OpenAICompatibleClient(replace(CONFIG, proxy_url=proxy)).complete_json(MESSAGES)
+        self.assertEqual(result, {'title': '测试赛事'})
+        self.assertEqual(factory.call_args.kwargs['proxy'], proxy)
+        self.assertIs(factory.call_args.kwargs['trust_env'], False)
 
     def test_qwen_request_and_valid_result(self):
         def handler(request):
@@ -176,6 +196,16 @@ class AIConfigTests(SimpleTestCase):
     def test_sensitive_values_are_excluded_from_repr(self):
         self.assertNotIn(CONFIG.api_key, repr(CONFIG))
         self.assertNotIn(CONFIG.base_url, repr(CONFIG))
+        self.assertNotIn('127.0.0.1:12450', repr(replace(CONFIG, proxy_url='http://127.0.0.1:12450')))
+
+    def test_only_explicit_local_http_proxy_is_valid(self):
+        replace(CONFIG, proxy_url='http://127.0.0.1:12450').validate()
+        replace(CONFIG, proxy_url='http://localhost:12450').validate()
+        for proxy in ('https://proxy.example.com:443', 'http://proxy.example.com:8080',
+                      'http://user:password@127.0.0.1:12450', 'http://127.0.0.1:12450/path',
+                      'http://127.0.0.1:99999', 'http://127.0.0.1:12450?key=x'):
+            with self.subTest(proxy=proxy), self.assertRaises(AIConfigurationError):
+                replace(CONFIG, proxy_url=proxy).validate()
 
     def test_config_is_frozen(self):
         from dataclasses import FrozenInstanceError
