@@ -67,13 +67,15 @@ def evidence_score(row, *, domain='competition'):
     return EvidenceScore(round(relevance, 4), trust.score, round(freshness, 4), round(total, 4))
 
 
-def external_decision(question, route, internal_records):
+def external_decision(question, route, internal_records, *, answer_kind='fact'):
     """Explicit freshness requests take precedence; otherwise use count/confidence."""
     config = getattr(settings, 'AI_EXTERNAL_SEARCH', {})
     minimum = int(config.get('MIN_RESULTS', 2)) if isinstance(config, dict) else 2
     threshold = float(config.get('MIN_CONFIDENCE', 0.55)) if isinstance(config, dict) else 0.55
     if route.web_requested:
         return True, 'explicit_external_request'
+    if answer_kind == 'advice' and not route.current:
+        return False, 'general_advice'
     if route.current and route.intent != 'general':
         return True, 'time_sensitive'
     if route.intent == 'general':
@@ -109,7 +111,7 @@ def validated_external(row, *, domain='competition', source_type='ordinary_web')
               'trust_score': trust.score, 'reviewed': False, 'trust_label': trust.label,
               'kind': 'web', 'internal_url': None, 'verified_at': None,
               'title': public_text(row['title'])[:200], 'text': public_text(row['text'])[:1800],
-              'published_on': published_on, 'read_at': timezone.now().isoformat(),
+              'published_on': published_on, 'read_at': row.get('read_at') or timezone.now().isoformat(),
               'status_note': '外部网页刚刚读取，未经平台人工审核；以原文和后续更正为准。',
               'status': 'unreviewed_official_page' if trust.score >= 0.8 else 'unreviewed_web_page'}
     result['evidence_score'] = evidence_score(result, domain=domain).total

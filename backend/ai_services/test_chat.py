@@ -45,10 +45,18 @@ class ChatTests(SimpleTestCase):
             self.assertEqual(str(request.url), 'https://api.deepseek.com/chat/completions')
             self.assertEqual(request.headers['authorization'], 'Bearer offline-test-token')
             payload = json.loads(request.content)
-            payloads.append(payload)
             self.assertEqual(payload['model'], 'deepseek-flash')
             self.assertEqual(payload['thinking'], {'type': 'disabled'})
             self.assertFalse(payload['stream'])
+            if payload.get('response_format'):
+                from .conversation import UNDERSTANDING_PROMPT
+                self.assertEqual(payload['messages'][0]['content'], UNDERSTANDING_PROMPT)
+                question = json.loads(payload['messages'][1]['content'])['conversation'][-1]['content']
+                return httpx.Response(200, json=completion(json.dumps({
+                    'relation': 'followup', 'question': question, 'kind': 'conversation', 'search_scope': 'topic',
+                    'target_indices': [], 'clarification': '',
+                }, ensure_ascii=False)))
+            payloads.append(payload)
             self.assertNotIn('response_format', payload)
             self.assertNotIn('tools', payload)
             return httpx.Response(200, json={**completion('我是创享平台的 AI 助手。'),
@@ -61,7 +69,7 @@ class ChatTests(SimpleTestCase):
                 response = self.post(history)
                 self.assertEqual(response.status_code, 200)
                 self.assertEqual(response['Cache-Control'], 'no-store')
-                self.assertEqual(set(response.json()), {'message', 'sources', 'recommendations', 'mode', 'route', 'retrieval'})
+                self.assertEqual(set(response.json()), {'message', 'sources', 'recommendations', 'mode', 'route', 'retrieval', 'conversation_context'})
                 self.assertNotIn(CONFIG.api_key.encode(), response.content)
                 history.append(response.json()['message'])
         self.assertEqual([len(p['messages']) for p in payloads], [2, 4, 6])

@@ -129,3 +129,55 @@ test('流式回复更新同一消息，停止后清理生成状态并允许重�
   assert.equal(chat.messages.value[1].generating, false)
   assert.equal(chat.messages.value[1].content, '根据你的需求')
 })
+
+test('停止立即解锁；重试期间旧增量、完成和 finally 都不能影响新请求', async () => {
+  const calls = []
+  const chat = useAIChat((history, options) => new Promise((resolve, reject) => calls.push({ history, options, resolve, reject })))
+  const old = chat.submit('第一个问题')
+  calls[0].options.onDelta('旧片段')
+  chat.stop()
+  assert.equal(chat.pending.value, false)
+  assert.equal(chat.messages.value[1].incomplete, true)
+  const retry = chat.submit('', { retry: true })
+  assert.deepEqual(calls[0].history, calls[1].history)
+  calls[0].options.onDelta('迟到')
+  calls[0].options.onStatus('generating')
+  calls[0].resolve(reply)
+  assert.equal(await old, false)
+  assert.equal(chat.pending.value, true)
+  assert.equal(chat.phase.value, 'retrieving')
+  calls[1].options.onDelta('新片段')
+  calls[1].resolve({ role: 'assistant', content: '新答案' })
+  assert.equal(await retry, true)
+  assert.equal(chat.messages.value.length, 2)
+  assert.equal(chat.messages.value[1].content, '新答案')
+})
+
+test('停止后切换模式清空，旧错误不能恢复会话；签名状态只来自完成回答', async () => {
+  const calls = []
+  const chat = useAIChat((history, options) => new Promise((resolve, reject) => calls.push({ history, options, resolve, reject })))
+  const initial = chat.submit('介绍研究方向')
+  calls[0].resolve({ ...reply, conversation_context: 'signed-context' })
+  await initial
+  const task = chat.submit('更细一点')
+  assert.equal(calls[1].options.conversationContext, 'signed-context')
+  chat.stop()
+  chat.clear()
+  calls[1].reject(new Error('late failure'))
+  await task
+  assert.equal(chat.messages.value.length, 0)
+  assert.equal(chat.error.value, '')
+})
+
+test('联网搜索默认关闭，用户可以在重试时开启且不重复提问', async () => {
+  const calls = []
+  const chat = useAIChat(async (history, options) => {
+    calls.push({ history, enabled: options.webSearch })
+    if (calls.length === 1) throw new Error('offline')
+    return reply
+  })
+  await chat.submit('查询官网')
+  await chat.submit('', { retry: true, webSearch: true })
+  assert.deepEqual(calls.map(call => call.enabled), [false, true])
+  assert.deepEqual(calls[0].history, calls[1].history)
+})

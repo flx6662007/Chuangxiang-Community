@@ -52,7 +52,7 @@ export function parseAIReply(data) {
     .filter(item => item && ['competition', 'resource', 'research_opportunity', 'research_group'].includes(item.object_type)
       && typeof item.title === 'string' && typeof item.reason === 'string'
       && safeHttpUrl(item.source_url))
-    .map(item => ({ object_type: item.object_type, title: item.title, reason: item.reason,
+    .map(item => ({ object_type: item.object_type, object_id: item.object_id, title: item.title, reason: item.reason,
       ...researchFacts(item),
       source_url: item.source_url, reviewed: item.reviewed === true,
       status_note: typeof item.status_note === 'string' ? item.status_note : '',
@@ -61,5 +61,6 @@ export function parseAIReply(data) {
         .filter(resource => resource && typeof resource.title === 'string' && safeHttpUrl(resource.source_url)) : [],
       related_object_ids: item.related_object_ids && typeof item.related_object_ids === 'object' ? item.related_object_ids : {} })) : []
   return { role: 'assistant', content: message.content, sources, recommendations,
+    conversation_context: typeof data.conversation_context === 'string' && data.conversation_context.length <= 12000 ? data.conversation_context : undefined,
     retrieval: data.retrieval && typeof data.retrieval === 'object' ? data.retrieval : null }
 }

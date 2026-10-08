@@ -40,12 +40,19 @@ ERRORS = {
 
 
 def _validated_chat_request(request):
-    if not isinstance(request.data, dict) or set(request.data) not in ({'messages'}, {'messages', 'mode'}):
+    if (not isinstance(request.data, dict) or 'messages' not in request.data
+            or set(request.data) - {'messages', 'mode', 'conversation_context', 'web_search'}):
         raise AIInputError()
     mode = request.data.get('mode', 'smart')
     if type(mode) is not str or mode not in MODES:
         raise AIInputError()
-    return request.data['messages'], mode
+    context = request.data.get('conversation_context')
+    if context is not None and (not isinstance(context, str) or len(context) > 12000):
+        raise AIInputError()
+    web_search = request.data.get('web_search')
+    if 'web_search' in request.data and type(web_search) is not bool:
+        raise AIInputError()
+    return request.data['messages'], mode, context, web_search
 
 
 def _stream_event(name, data):
@@ -64,8 +71,8 @@ class ChatView(APIView):
 
     def post(self, request):
         try:
-            messages, mode = _validated_chat_request(request)
-            result = chat(messages, mode=mode, details=True)
+            messages, mode, context, web_search = _validated_chat_request(request)
+            result = chat(messages, mode=mode, details=True, conversation_context=context, web_search=web_search)
             # Test doubles and legacy internal callers may still return the V1 message object.
             return Response(result if 'message' in result else {'message': result})
         except AIServiceError as error:
@@ -94,8 +101,8 @@ class ChatView(APIView):
 class StreamChatView(ChatView):
     def post(self, request):
         try:
-            messages, mode = _validated_chat_request(request)
-            events = stream_chat(messages, mode=mode)
+            messages, mode, context, web_search = _validated_chat_request(request)
+            events = stream_chat(messages, mode=mode, conversation_context=context, web_search=web_search)
         except AIServiceError as error:
             status, detail = ERRORS.get(error.code, (502, 'AI 服务暂时无法完成处理。'))
             return Response({'code': error.code, 'detail': detail}, status=status)
@@ -109,6 +116,9 @@ class StreamChatView(ChatView):
                 yield _stream_event('error', {'code': error.code, 'detail': detail})
             except Exception:
                 yield _stream_event('error', {'code': 'ai_unavailable', 'detail': 'AI 服务暂时不可用，请稍后重试。'})
+            finally:
+                if hasattr(events, 'close'):
+                    events.close()
 
         response = StreamingHttpResponse(response_events(), content_type='text/event-stream; charset=utf-8')
         response['X-Accel-Buffering'] = 'no'

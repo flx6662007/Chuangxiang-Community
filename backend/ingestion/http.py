@@ -58,8 +58,9 @@ class Document:
 
 class OfficialClient:
     """每页最多三次请求、三跳重定向、2 MB 解压后正文，站点间隔一秒。"""
-    def __init__(self, hosts, *, transport=None, resolve=True, interval=1, timeout=15, attempts=3):
+    def __init__(self, hosts, *, transport=None, resolve=True, interval=1, timeout=15, attempts=3, deadline=None):
         self.hosts, self.resolve, self.interval = set(hosts), resolve, interval
+        self.deadline = deadline
         self.attempts = attempts
         self.client = httpx.Client(
             headers={'User-Agent': USER_AGENT, 'Accept': 'text/html,text/plain;q=0.8'},
@@ -72,7 +73,16 @@ class OfficialClient:
     def close(self):
         self.client.close()
 
+    def _remaining(self):
+        if self.deadline is None:
+            return None
+        remaining = self.deadline - time.monotonic()
+        if remaining <= 0:
+            raise FetchError('timeout', '页面读取已超过本轮时间预算。')
+        return max(0.01, min(5, remaining))
+
     def _public_address(self, host):
+        self._remaining()
         if host in self.addresses:
             return self.addresses[host]
         try:
@@ -84,11 +94,13 @@ class OfficialClient:
             # 仍然只连接校验通过的公网 IP，不将 198.18/私网加入允许列表。
             try:
                 with self.client.stream('GET', 'https://1.1.1.1/dns-query',
-                        params={'name': host, 'type': 'A'}, headers={'Accept': 'application/dns-json'}) as response:
+                        params={'name': host, 'type': 'A'}, headers={'Accept': 'application/dns-json'},
+                        **({'timeout': self._remaining()} if self.deadline is not None else {})) as response:
                     if response.status_code != 200:
                         raise FetchError('dns_failure', '公共 DNS 解析暂时不可用。')
                     chunks, size = [], 0
                     for chunk in response.iter_bytes():
+                        self._remaining()
                         size += len(chunk)
                         if size > 65536:
                             raise FetchError('dns_failure', 'DNS 响应超过限制。')
@@ -108,10 +120,14 @@ class OfficialClient:
             current = url
             try:
                 for hop in range(4):
+                    self._remaining()
                     current = checked_url(current, self.hosts, resolve=False)
                     if not robots:
                         self._check_robots(current)
-                    time.sleep(max(0, self.interval - (time.monotonic() - self.last_request)))
+                    delay = max(0, self.interval - (time.monotonic() - self.last_request))
+                    if self.deadline is not None and delay >= self.deadline - time.monotonic():
+                        raise FetchError('timeout', '站点访问间隔超过本轮时间预算。')
+                    time.sleep(delay)
                     self.last_request = time.monotonic()
                     parts = urlsplit(current)
                     request_url, request_options = current, {}
@@ -124,6 +140,8 @@ class OfficialClient:
                             'Accept': 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/octet-stream;q=0.8',
                             'Accept-Encoding': 'identity',
                         })
+                    if self.deadline is not None:
+                        request_options['timeout'] = self._remaining()
                     with self.client.stream('GET', request_url, **request_options) as response:
                         if response.status_code in (301, 302, 303, 307, 308):
                             if hop == 3 or not response.headers.get('location'):
@@ -146,6 +164,7 @@ class OfficialClient:
                             raise FetchError('unsupported_content', '当前适配器仅解析 HTML/纯文本；附件须另行核验。', response.status_code)
                         chunks, size = [], 0
                         for chunk in response.iter_bytes(chunk_size=65536):
+                            self._remaining()
                             size += len(chunk)
                             if document and size > MAX_DOCUMENT_BYTES:
                                 raise FetchError('document_too_large', '附件超过 8 MB 上限。')

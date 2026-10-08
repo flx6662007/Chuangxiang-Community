@@ -61,12 +61,14 @@ class StreamChatTests(SimpleTestCase):
             self.assertTrue(response.streaming)
             self.assertEqual(response['Content-Type'], 'text/event-stream; charset=utf-8')
             chunks = list(response.streaming_content)
-        self.assertEqual(len(chunks), 3)
-        self.assertTrue(chunks[0].decode().startswith('event: delta'))
-        self.assertTrue(chunks[1].decode().startswith('event: delta'))
-        done = json.loads(chunks[2].decode().split('data: ', 1)[1])
+        self.assertEqual(len(chunks), 5)
+        self.assertIn('retrieving', chunks[0].decode())
+        self.assertIn('generating', chunks[1].decode())
+        self.assertTrue(chunks[2].decode().startswith('event: delta'))
+        self.assertTrue(chunks[3].decode().startswith('event: delta'))
+        done = json.loads(chunks[4].decode().split('data: ', 1)[1])
         self.assertEqual(done['message']['content'], '根据你的需求')
-        self.assertEqual(set(done), {'message', 'sources', 'recommendations', 'mode', 'route', 'retrieval'})
+        self.assertEqual(set(done), {'message', 'sources', 'recommendations', 'mode', 'route', 'retrieval', 'conversation_context'})
 
     def test_truncated_upstream_finishes_with_safe_error_event(self):
         upstream = Upstream([frame({'content': '部分回答'})])
@@ -87,3 +89,33 @@ class StreamChatTests(SimpleTestCase):
                                  content_type='application/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json()['code'], 'ai_input_error')
+
+    def test_disconnect_closes_upstream_without_waiting_for_done(self):
+        from .chat import stream_chat
+        upstream = Upstream([frame({'content': '首段'}), frame({'content': '迟到'}), frame({}, 'stop'), b'data: [DONE]\n\n'])
+        client = OpenAICompatibleClient(CONFIG, httpx.MockTransport(lambda request: httpx.Response(200, stream=upstream)))
+        events = stream_chat([{'role': 'user', 'content': '你好'}], client=client)
+        self.assertEqual(next(events)[0], 'status')
+        self.assertEqual(next(events)[0], 'status')
+        self.assertEqual(next(events), ('delta', {'content': '首段'}))
+        events.close()
+        self.assertTrue(upstream.closed)
+
+    def test_close_before_retrieval_does_not_start_search(self):
+        from .chat import stream_chat
+        with patch('ai_services.chat._prepare_chat') as prepare:
+            events = stream_chat([{'role': 'user', 'content': '你好'}])
+            self.assertEqual(next(events)[0], 'status')
+            events.close()
+        prepare.assert_not_called()
+
+    def test_http_response_close_propagates_to_model_stream(self):
+        upstream = Upstream([frame({'content': '首段'}), frame({'content': '后续'}), frame({}, 'stop'), b'data: [DONE]\n\n'])
+        client = OpenAICompatibleClient(CONFIG, httpx.MockTransport(lambda request: httpx.Response(200, stream=upstream)))
+        with patch('ai_services.chat.OpenAICompatibleClient', return_value=client):
+            response = Client().post('/api/v1/ai/chat/stream/', json.dumps({'messages': [{'role': 'user', 'content': '你好'}]}), content_type='application/json')
+            iterator = iter(response.streaming_content)
+            for _ in range(3):
+                next(iterator)
+            response.close()
+        self.assertTrue(upstream.closed)

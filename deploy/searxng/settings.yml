@@ -1,0 +1,10 @@
+# Private localhost instance. The startup script supplies a random SEARXNG_SECRET.
+use_default_settings: true
+server:
+  limiter: false
+  public_instance: false
+  image_proxy: false
+search:
+  formats:
+    - html
+    - json

@@ -1,7 +1,7 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import AppIcon from './AppIcon.vue'
-import MarkdownIt from 'markdown-it'
+import { renderAIMessage } from '../utils/aiMarkdown.js'
 import { getAIStatus } from '../api/ai'
 import { requestAIChatStream } from '../api/aiStream'
 import { useAIChat } from '../composables/useAIChat.js'
@@ -26,12 +26,11 @@ const examplesByMode = {
   resource: ['Python 入门', '数学建模学习资料'],
 }
 const mode = ref('smart')
+const webSearch = ref(false)
 const examples = computed(() => examplesByMode[mode.value])
 const query = ref('')
 const validation = ref('')
 const conversation = ref(null)
-const markdown = new MarkdownIt({ html: false, linkify: true, breaks: true })
-const renderMarkdown = (content) => markdown.render(content || '')
 let followOutput = true
 function onConversationScroll() {
   const panel = conversation.value
@@ -58,7 +57,7 @@ async function loadStatus() {
   }
 }
 onMounted(loadStatus)
-const { messages, pending, error, failed, submit, stop, dispose, clear } = useAIChat(requestAIChatStream)
+const { messages, pending, phase, error, failed, submit, stop, dispose, clear } = useAIChat(requestAIChatStream)
 
 function changeMode(value) {
   if (value === mode.value || pending.value) return
@@ -87,7 +86,7 @@ function submitChat() {
   }
   query.value = ''
   validation.value = ''
-  void submit(text, { mode: mode.value })
+  void submit(text, { mode: mode.value, webSearch: webSearch.value })
 }
 
 function onKeydown(event) {
@@ -129,8 +128,8 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
           <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
           <p v-if="message.role === 'user'">{{ message.content }}</p>
-          <div v-else-if="message.content" class="ai-chat-markdown" v-html="renderMarkdown(message.content)"></div>
-          <p v-else-if="message.generating" class="ai-chat-status">正在生成…</p>
+          <div v-else-if="message.content" class="ai-chat-markdown" v-html="renderAIMessage(message)"></div>
+          <p v-else-if="message.generating" class="ai-chat-status">{{ phase === 'retrieving' ? '正在查找资料…' : '正在生成回答…' }}</p>
           <small v-if="message.incomplete" class="ai-chat-coverage">回答未完成，可重试。</small>
           <div v-if="message.sources?.length" class="ai-chat-sources" aria-label="回答来源">
             <span>参考来源</span>
@@ -149,7 +148,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
             <strong>相关推荐</strong>
             <ul>
               <li v-for="(item, itemIndex) in message.recommendations" :key="itemIndex">
-                <span>{{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组' }[item.object_type] }} · </span>
+                <span>{{ itemIndex + 1 }}. {{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组' }[item.object_type] }} · </span>
                 <a :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
                 <template v-if="item.object_type === 'research_opportunity' && Object.keys(item.facts || {}).length">
                   <template v-for="[field, label] in researchFields" :key="field">
@@ -169,10 +168,10 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
           <small v-if="!message.sources?.length && ['no_approved_knowledge', 'no_published_knowledge'].includes(message.retrieval?.knowledge)" class="ai-chat-coverage">暂无可引用的站内资料。</small>
           <small v-if="!message.sources?.length && ['registered_site_not_matched', 'official_site_unavailable', 'official_page_not_a_notice'].includes(message.retrieval?.web)" class="ai-chat-coverage">这次未找到可用的官网通知。目前只查询已登记的官网。</small>
         </article>
-        <p v-if="pending" class="ai-chat-status" role="status">正在回复… <button type="button" class="text-button" @click="stop">停止生成</button></p>
+        <p v-if="pending" class="ai-chat-status" role="status">{{ phase === 'retrieving' ? '正在查找资料…' : '正在生成回答…' }} <button type="button" class="text-button" @click="stop">停止生成</button></p>
         <div v-if="error" class="ai-chat-error" role="alert">
           <p>{{ error }}</p>
-          <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true, mode })">重试这条消息</button>
+          <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true, mode, webSearch })">重试这条消息</button>
         </div>
       </div>
       <form class="ai-assistant-form" aria-label="科创 AI 对话" @submit.prevent="submitChat">
@@ -196,13 +195,17 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
               {{ example }}
             </button>
           </div>
-          <button class="action-button ai-submit" type="submit" :disabled="pending || !query.trim()">
-            <AppIcon name="spark" :size="17" />{{ pending ? '正在回复…' : '发送' }}
-          </button>
+          <div class="ai-send-controls">
+            <button type="button" class="ai-web-toggle" aria-label="联网搜索" :class="{ 'is-active': webSearch }"
+              :aria-pressed="webSearch" :disabled="pending" @click="webSearch = !webSearch">联网搜索</button>
+            <button class="action-button ai-submit" type="submit" :disabled="pending || !query.trim()">
+              <AppIcon name="spark" :size="17" />{{ pending ? '正在回复…' : '发送' }}
+            </button>
+          </div>
         </div>
         <p v-if="validation" id="ai-query-validation" class="form-error" role="alert">{{ validation }}</p>
       </form>
-      <p class="ai-demo-note">回答参考站内资料和已登记官网；来源状态会单独标注。Enter 发送，Shift + Enter 换行。切换模式会开始新对话。</p>
+      <p class="ai-demo-note">回答按需参考站内资料与站外原文，来源状态会单独标注。Enter 发送，Shift + Enter 换行。切换模式会开始新对话。</p>
     </div>
     <details v-if="mode === 'competition'" class="ai-guide-details">
       <summary>打开赛事向导：选赛事、分析条件、找队友</summary>
@@ -241,6 +244,10 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-mode-button { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 8px 18px; color: var(--text-primary, #f4f2ee); background: transparent; font: inherit; cursor: pointer; }
 .ai-mode-button.is-active { color: var(--bg-primary, #101a24); background: var(--text-primary, #f4f2ee); }
 .ai-mode-button:disabled { opacity: .55; cursor: not-allowed; }
+.ai-send-controls { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-shrink: 0; }
+.ai-web-toggle { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 7px 14px; font: inherit; color: var(--text-primary, #f4f2ee); background: transparent; cursor: pointer; white-space: nowrap; }
+.ai-web-toggle.is-active { border-color: var(--accent, #6da5ff); color: var(--accent, #6da5ff); }
+.ai-web-toggle:disabled { opacity: .55; cursor: not-allowed; }
 .ai-guide-details { margin-top: 24px; border-top: 1px solid var(--border, #344357); padding-top: 18px; }
 .ai-guide-details summary { cursor: pointer; }
 </style>

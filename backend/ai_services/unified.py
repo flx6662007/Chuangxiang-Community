@@ -178,6 +178,9 @@ def _mode_fit(kind, mode):
 
 def _rank(rows, question, mode, *, index=None):
     terms = query_terms(question)
+    # Explicit technology names are topical anchors; shared words like 入门 cannot replace them.
+    anchors = [term for term in re.findall(r'[a-z][a-z0-9+#.-]{1,}', question.casefold())
+               if term not in ('ai', 'vr', 'ar')]
     research_request = research_intent(question)
     research_rows = [row for row in rows if row['object_type'] == 'research_opportunity']
     pinned = {row['object_id'] for row in research_rows if row['title'] in question}
@@ -185,6 +188,10 @@ def _rank(rows, question, mode, *, index=None):
     schools = {row['institution'].split(' · ')[0] for row in research_rows
                if row.get('institution') and row['institution'].split(' · ')[0] in question}
     def eligible(row):
+        if row['object_type'] == 'resource' and anchors:
+            text = ' '.join((row['title'], row['summary'], row['content'], *row['tags'], *row['direction'])).casefold()
+            if not all(anchor in text for anchor in anchors):
+                return False
         if row['object_type'] != 'research_opportunity':
             return True
         if pinned:
@@ -207,6 +214,8 @@ def _rank(rows, question, mode, *, index=None):
             warnings.append(str(error) if isinstance(error, SemanticError) else 'semantic_unavailable')
     eligible_keys = {(row['object_type'], row['object_id']) for row in rows if eligible(row)}
     semantic = {key: score for key, score in semantic.items() if key in eligible_keys}
+    # Relation counts/freshness must not turn a weak semantic candidate into a recommendation.
+    semantic = {key: score for key, score in semantic.items() if score >= 0.45 or key in keyword}
     keyword_order = sorted(keyword, key=lambda key: (-keyword[key], key))
     semantic_order = sorted(semantic, key=lambda key: (-semantic[key], key))
     rrf = {}
@@ -299,7 +308,7 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
     if include_competition:
         competitions, knowledge_rows, competition_mode, comp_warnings = _competition_rows(question)
         warnings.extend(item['code'] if isinstance(item, dict) else str(item) for item in comp_warnings)
-        curated_ids = {identifier for row in competitions
+        curated_ids = {f'db-{identifier}' for row in competitions
                        for identifier in row['related_object_ids'].get('competition_id', [])}
         for source in retrieve_platform(question, route):
             if source['kind'] != 'competition' or source['entity_id'] in curated_ids:
@@ -316,6 +325,44 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
             row['status_note'] = source['status_note']
             competitions.append(row)
     primary = competitions + ranked
+    unique = {}
+    for row in primary:
+        # Multiple imported documents can describe the same titled edition.
+        identity = (row['object_type'], re.sub(r'[\W_]+', '', row['title']).casefold())
+        if identity not in unique or row['retrieval_score'] > unique[identity]['retrieval_score']:
+            unique[identity] = row
+    primary = list(unique.values())
+    topical_anchors = [term for term in ('数学建模', '人工智能', '机器学习', '数据分析', '机器人', '人机交互') if term in question]
+    if topical_anchors:
+        primary = [row for row in primary if all(term in ' '.join((row['title'], row['summary'], row['content'], *row['tags'], *row['direction']))
+                                                 for term in topical_anchors)]
+    if re.search(r'入门|零基础|初学', question):
+        technologies = re.findall(r'[a-z][a-z0-9+#.-]{1,}', question.casefold())
+        def foundation(row):
+            if row['object_type'] != 'resource' or not technologies:
+                return False
+            title = row['title'].casefold()
+            if not all(term in title for term in technologies):
+                return False
+            for term in technologies:
+                title = title.replace(term, '')
+            title = re.sub(r'官方|教程|入门|基础|学习|指南|课程|文档|快速|起步|语言|程序设计|编程|初学者|[\W_\d]', '', title)
+            return not title
+        if any(foundation(row) for row in primary):
+            primary = [row for row in primary if row['object_type'] != 'resource' or foundation(row)]
+    wants_resources = bool(re.search(r'资源|教程|课程|学习|准备', question))
+    if mode == 'research' and not wants_resources:
+        primary = [row for row in primary if row['object_type'] in ('research_opportunity', 'research_group')]
+    if mode == 'competition' and competitions and not wants_resources:
+        primary = [row for row in primary if row['object_type'] == 'competition']
+    exact = [row for row in primary if row['title'].casefold() in question.casefold()]
+    if exact:
+        primary = exact
+    elif mode == 'smart':
+        allowed = {kind for domain, kinds in (
+            ('competition', ('competition',)), ('project', ('research_opportunity', 'research_group')),
+            ('resource', ('resource',))) if domain in route.domains for kind in kinds}
+        primary = [row for row in primary if row['object_type'] in allowed]
     if mode == 'competition':
         primary.sort(key=lambda row: (row['object_type'] != 'competition', -row['retrieval_score']))
     elif mode == 'research':
@@ -404,7 +451,7 @@ def recommendations(rows):
             for row in rows[:6]]
 
 
-def evidence_rows(rows):
+def evidence_rows(rows, question=None):
     """Round-robin labs first, then additional independently sourced sections."""
     pools = []
     for row in rows:
@@ -412,6 +459,12 @@ def evidence_rows(rows):
             continue
         base = as_evidence(row)
         blocks = row.get('evidence_blocks')
+        if blocks and question:
+            if re.search(r'招募|招收|申请|报名|加入|资格|本科生.*可以|时间投入|工作内容|参与工作', question):
+                preferred = [block for block in blocks if block['section'] == 'recruitment']
+                blocks = preferred or [block for block in blocks if block['section'] == 'introduction']
+            else:
+                blocks = [block for block in blocks if block['section'] != 'recruitment']
         pools.append([{**base, 'title': row['title'] + ' · ' + {'introduction': '研究介绍',
                        'achievements': '研究成果', 'recruitment': '招募信息'}[block['section']],
                        'text': block['text'], 'url': block['url'], 'verified_at': block['verified_at'],

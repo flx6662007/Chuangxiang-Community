@@ -30,3 +30,15 @@ test('中途断开和错误事件都拒绝完成，不能永久生成', async ()
   await assert.rejects(readAIStream(response([encode('event: error\ndata: {"code":"ai_timeout"}\n\n')]), () => {}),
     error => error.response.data.code === 'ai_timeout')
 })
+
+test('状态事件可独立到达，收到 done 后主动关闭未结束的流', async () => {
+  let cancelled = false
+  const phases = []
+  const stream = new ReadableStream({ start(controller) {
+    controller.enqueue(new TextEncoder().encode('event: status\ndata: {"phase":"retrieving"}\n\nevent: done\ndata: {"message":{"role":"assistant","content":"完成"}}\n\n'))
+  }, cancel() { cancelled = true } })
+  const result = await readAIStream(new Response(stream, { headers: { 'content-type': 'text/event-stream' } }), () => {}, value => phases.push(value))
+  assert.equal(result.content, '完成')
+  assert.deepEqual(phases, ['retrieving'])
+  assert.equal(cancelled, true)
+})
