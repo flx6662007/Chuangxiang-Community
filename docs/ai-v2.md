@@ -1,5 +1,7 @@
 # 创享 AI 助手
 
+本文保留赛事 BGE、向导与科研结构化接入的说明。当前公共聊天契约见 [V3 接入](ai-v3.md)，多轮签名上下文、联网开关与 SearXNG 配置见 [10 月 8 日更新](ai-optimization-20261008.md)；不在本文重复维护这些接口细节。
+
 首页赛事助手完成需求输入、条件理解、赛事检索、资料分析、条件判断和现有招募查询。当前操作入口、接口和验收步骤见[赛事助手接入](ai-assistant-handoff.md)。
 
 赛事知识统一使用 `information_library.competition_search.search_competitions`，支持关键词、BGE 语义和混合检索。`ai_services/competition_knowledge.py` 将段落及其来源适配给通用聊天；`ai_services/guide.py` 保存用户条件并连接现有招募。

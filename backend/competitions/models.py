@@ -9,6 +9,8 @@ from django.db import models
 from django.db.models import F, Q
 from django.utils import timezone
 
+from common.model_base import CleanFieldsModel
+
 from .validators import parse_source_timezone, validate_code, validate_source_timezone
 
 
@@ -35,31 +37,6 @@ def deadline_constraints(prefix):
             ), name=f'comp_{prefix}_at_pair',
         ),
     ]
-
-
-class CleanFieldsModel(models.Model):
-    """字段校验前统一去除文本首尾空白；不隐式替代写入事务。"""
-
-    class Meta:
-        abstract = True
-
-    def clean_fields(self, exclude=None):
-        for field in self._meta.fields:
-            value = getattr(self, field.attname)
-            if field.name not in (exclude or ()) and isinstance(value, str):
-                setattr(self, field.attname, value.strip())
-        super().clean_fields(exclude=exclude)
-
-    def clean(self):
-        super().clean()
-        errors = {}
-        for field in self._meta.fields:
-            value = getattr(self, field.attname)
-            if isinstance(field, models.DateTimeField) and isinstance(value, datetime):
-                if timezone.is_naive(value):
-                    errors[field.name] = '请提供带时区的时间。'
-        if errors:
-            raise ValidationError(errors)
 
 
 class CompetitionTaxonomy(CleanFieldsModel):
@@ -336,7 +313,7 @@ class Competition(CleanFieldsModel):
                 errors['campus_arrangements'] = '校内安排必须有校内官方来源。'
             if direct:
                 # 来源无需人工核验，但公开链接不能携带凭据或指向本机等内部地址。
-                from information_library.selectors import safe_source_url
+                from common.public_content import safe_source_url
                 if self.pk and any(not safe_source_url(url) for url in self.sources.values_list('source_url', flat=True)):
                     errors['__all__'] = '公开来源必须使用无凭据的公网 HTTP(S) 链接。'
                 if self.registration_url and not safe_source_url(self.registration_url):
@@ -394,6 +371,6 @@ class CompetitionSource(CleanFieldsModel):
         if method == Competition.PublicationMethod.VERIFIED and self.last_verified_at is None:
             raise ValidationError({'last_verified_at': '公开赛事的来源必须经过核验。'})
         if method == Competition.PublicationMethod.DIRECT:
-            from information_library.selectors import safe_source_url
+            from common.public_content import safe_source_url
             if not safe_source_url(self.source_url):
                 raise ValidationError({'source_url': '公开来源必须使用无凭据的公网 HTTP(S) 链接。'})

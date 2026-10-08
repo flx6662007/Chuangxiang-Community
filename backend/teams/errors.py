@@ -1,17 +1,4 @@
-from rest_framework.exceptions import APIException
+"""兼容旧导入路径；业务错误定义位于 common.errors。"""
+from common.errors import BusinessError, check
 
-
-class BusinessError(APIException):
-    status_code = 409
-
-    def __init__(self, code, detail, status=409, fields=None):
-        self.status_code = status
-        data = {'code': code, 'detail': detail}
-        if fields:
-            data['fields'] = fields
-        super().__init__(data)
-
-
-def check(condition, code, detail, status=409):
-    if not condition:
-        raise BusinessError(code, detail, status)
+__all__ = ["BusinessError", "check"]

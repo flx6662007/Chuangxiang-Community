@@ -2,8 +2,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from competitions.views import CompetitionPagination
-from curation.views import LibraryReadMixin
+from common.api import CompetitionPagination
+from curation.api import LibraryReadMixin
 from .api_selectors import catalog_counts, catalog_entries, visible_editions
 from .api_serializers import CatalogSerializer, edition_summary
 from .models import CatalogEntry

@@ -6,8 +6,7 @@ from datetime import datetime, timezone as dt_timezone
 from django.conf import settings
 from django.utils import timezone
 
-from information_library.selectors import safe_source_url
-from information_library.selectors import public_text
+from common.public_content import public_text, safe_source_url
 
 
 @dataclass(frozen=True)

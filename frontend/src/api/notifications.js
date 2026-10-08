@@ -1,5 +1,5 @@
 import http from './http'
-import { ensureCsrf } from './accounts'
+import { ensureCsrf } from './csrf'
 export async function listNotifications(params, signal) {
   return (await http.get('/notifications/', { params, signal })).data
 }

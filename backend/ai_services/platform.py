@@ -1,6 +1,7 @@
 """Read current public platform records, including directly published material."""
 
-from information_library.selectors import collect_records, public_text, safe_source_url
+from information_library.selectors import collect_records
+from common.public_content import public_text, safe_source_url
 from resources.models import Resource
 
 from .router import query_terms

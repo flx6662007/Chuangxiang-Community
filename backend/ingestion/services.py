@@ -1,15 +1,15 @@
 """获取日志、不可变版本、候选与受控采纳。网络获取永远在业务事务之外。"""
-from contextlib import contextmanager
 from datetime import date, datetime, time, timedelta
-import hashlib
 import uuid
 from zoneinfo import ZoneInfo
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.db import connection, transaction
+from django.db import transaction
 from django.db.models import Max
 from django.utils import timezone
+
+from common.persistence import clean_save
 
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
 from competitions.scope import apply_competition_scope
@@ -17,6 +17,7 @@ from competition_catalog.registry import ADAPTER_CATALOG, bind_official_competit
 from competitions.services import publish_competition, require_editor, save_competition, save_source
 from .adapters import ADAPTERS, RULE_VERSION
 from .http import FetchError, OfficialClient
+from .locks import source_mutex
 from .models import FetchRun, ProcessingResult, SourceConfig, SourceVersion
 from .validation import source_hash
 
@@ -24,29 +25,6 @@ CONTENT_FIELDS = ('title', 'edition', 'summary', 'description', 'level', 'organi
                   'participation_type', 'team_size_min', 'team_size_max', 'registration_method',
                   'registration_url', 'registration_deadline', 'submission_deadline', 'deadline_notes')
 SAFE_UPDATE_FIELDS = {'summary', 'description', 'tracks', 'registration_method', 'deadline_notes'}
-
-
-def clean_save(obj, **kwargs):
-    obj.full_clean()
-    obj.save(**kwargs)
-    return obj
-
-
-@contextmanager
-def source_mutex(source_id):
-    """连接级 PostgreSQL advisory lock；不在整个网络请求期间持有事务/行锁。"""
-    if connection.vendor != 'postgresql':
-        raise ValidationError('持续采集需要 PostgreSQL 来源级互斥。')
-    key = int.from_bytes(hashlib.sha256(f'chuangxiang-ingestion-{source_id}'.encode()).digest()[:8], 'big', signed=True)
-    with connection.cursor() as cursor:
-        cursor.execute('SELECT pg_try_advisory_lock(%s)', [key])
-        acquired = cursor.fetchone()[0]
-    try:
-        yield acquired
-    finally:
-        if acquired:
-            with connection.cursor() as cursor:
-                cursor.execute('SELECT pg_advisory_unlock(%s)', [key])
 
 
 def initialize_sources(*, actor):

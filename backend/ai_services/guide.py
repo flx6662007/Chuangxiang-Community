@@ -188,7 +188,7 @@ def recruitment_matches(record, profile, user=None):
     """Read real published recruitment. Never create an edition from historical rules."""
     from competition_catalog.models import CatalogBinding
     from curation.models import DocumentLink
-    from teams.views import public_cards
+    from teams.selectors import public_cards
     from teams.serializers import card_output
 
     policy = recruitment_target(record, timezone.now())

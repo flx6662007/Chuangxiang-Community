@@ -1,5 +1,5 @@
 import http from './http'
-import { ensureCsrf } from './accounts'
+import { ensureCsrf } from './csrf'
 const read = async (path, params, signal) =>
   (await http.get('/governance/' + path, { params, signal })).data
 const write = async (path, body, signal) => {

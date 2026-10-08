@@ -5,6 +5,7 @@ Only curated field text is evidence. A linked page is not an imported full text.
 import hashlib
 import json
 from urllib.parse import urldefrag
+from common.public_content import public_text, safe_source_url
 
 from .presentation import public_card_details, has_recruitment_opportunity
 
@@ -24,7 +25,6 @@ def source_key(url):
 
 def research_facts(*, summary, institution, details, primary_url, verified_at,
                    published_on=None, sources=(), legacy=None, closed=False):
-    from information_library.selectors import public_text, safe_source_url
     profile = public_card_details(details)
     # Source dates belong to each actual page, never to the record's import date.
     verified = {source_key(primary_url): {'verified_at': verified_at, 'published_on': published_on}}

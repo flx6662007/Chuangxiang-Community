@@ -1,6 +1,6 @@
 """前端知识正文白名单；不输出导入路径、附件本地路径和操作者。"""
 from rest_framework import serializers
-from information_library.selectors import public_text, safe_source_url
+from common.public_content import public_text, safe_source_url
 from information_library.presentation import document_summary, reading_text
 
 

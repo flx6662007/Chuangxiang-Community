@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from information_library.selectors import public_text, safe_source_url
+from common.public_content import public_text, safe_source_url
 from information_library.presentation import resource_presentation
 
 

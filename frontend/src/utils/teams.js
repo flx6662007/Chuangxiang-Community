@@ -146,10 +146,7 @@ export function cleanRecruitmentInput(form) {
   result.recruitment_quota = Number(result.recruitment_quota)
   return result
 }
-export function validPage(value) {
-  const page = Number(value)
-  return Number.isSafeInteger(page) && page > 0 ? page : 1
-}
+export { normalizePage as validPage } from './pagination.js'
 export function applicationVersionPayload(item) {
   return {
     expected_version: item.recruitment.version,

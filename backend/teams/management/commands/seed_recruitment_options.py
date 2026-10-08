@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from teams.models import RecruitmentOption
-from teams.services import save
+from common.persistence import clean_save as save
 
 
 OPTIONS = {

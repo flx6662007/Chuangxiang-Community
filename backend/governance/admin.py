@@ -8,7 +8,7 @@ from django.template.response import TemplateResponse
 from django.urls import path, reverse
 from django.utils.html import format_html
 
-from teams.errors import BusinessError
+from common.errors import BusinessError
 from .models import AdminAction, Appeal, Report
 from .services import EFFECT_NOTE, REPORT_NOTE, review_record
 

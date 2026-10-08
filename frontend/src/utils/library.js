@@ -1,8 +1,5 @@
 // 目录身份与当届报名记录分开；这些值只整理查询，不推断报名状态。
-export function libraryPage(value) {
-  const page = Number(value)
-  return Number.isSafeInteger(page) && page > 0 ? page : 1
-}
+export { normalizePage as libraryPage } from './pagination.js'
 
 export function libraryText(value) {
   return typeof value === 'string' ? value.trim().slice(0, 200) : ''

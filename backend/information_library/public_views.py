@@ -6,7 +6,7 @@ from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 from django.http import Http404
 
-from competitions.views import CompetitionPagination
+from common.api import CompetitionPagination
 from .public_selectors import newsletter_cards, research_cards, search_cards
 from research.presentation import has_recruitment_opportunity
 

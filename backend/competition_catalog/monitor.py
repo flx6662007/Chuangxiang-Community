@@ -12,7 +12,7 @@ from django.db import transaction
 from django.utils import timezone
 
 from ingestion.http import FetchError, OfficialClient, checked_url
-from ingestion.services import source_mutex
+from ingestion.locks import source_mutex
 from .models import MonitorRun, OfficialNotice
 
 NOTICE_WORDS = re.compile(r'报名|通知|章程|规程|赛程|竞赛规则|征集|参赛|启动|赛题|'

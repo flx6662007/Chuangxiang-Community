@@ -6,11 +6,30 @@ __pycache__/
 # Local configuration and database runtime
 .env
 .env.*
+*.env
 !.env.example
 .local/
 deploy/models/
 *.sqlite3
+*.sqlite3-*
+*.dump
+*.pgdump
+*.sql.gz
+*.sql.bz2
+*.sql.xz
+backups/
+*.npz
 staticfiles/
+
+# Logs, process state and private invitation exports
+*.log
+*.pid
+*.pid.lock
+内测账号清单*
+内测邀请-*
+*.key
+*.pfx
+*.p12
 
 # Frontend generated files
 node_modules/

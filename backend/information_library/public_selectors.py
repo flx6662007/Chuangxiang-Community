@@ -9,9 +9,10 @@ from django.utils import timezone
 from newsletters.models import Newsletter, NewsletterItem
 from research.models import ResearchOpportunity
 from research.presentation import public_card_details
+from common.public_content import public_text, safe_source_url
 
 from . import selectors
-from .selectors import collect_records, editorial_date, is_demo, public_text, safe_source_url
+from .selectors import collect_records, editorial_date, is_demo
 
 
 def _day(value):

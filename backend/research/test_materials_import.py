@@ -3,12 +3,13 @@ from io import StringIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch, Mock
-from django.core.management import call_command
+from django.core.management import call_command, get_commands
 from django.core.management.base import CommandError
 from django.test import TestCase, override_settings
 from information_library.public_selectors import research_cards
 from information_library.selectors import collect_records
 from ai_services.chat import chat
+from .models import ResearchOpportunity, ResearchRevision
 
 @override_settings(PUBLIC_RESEARCH_ENABLED=False)
 class ResearchPauseTests(TestCase):
@@ -46,6 +47,9 @@ class ResearchPauseTests(TestCase):
 
 
 class ResearchMergeTests(TestCase):
+    def test_command_is_discovered_from_research_with_the_same_cli_name(self):
+        self.assertEqual(get_commands()['import_research_materials'], 'research')
+
     def card(self, identity, **overrides):
         return {'id': identity, 'title': '实验室介绍', 'unit': '高校',
                 'summary': '研究方向', 'participation': '', 'evidenceNote': '',
@@ -124,3 +128,38 @@ class ResearchMergeTests(TestCase):
         with TemporaryDirectory() as folder, self.assertRaises(CommandError):
             self.run_import(folder, {'laboratories': [self.card('same'), self.card('same')]},
                             {'laboratories': [self.card('new')]}, apply=True)
+
+    def test_database_command_preview_apply_and_repeat_leave_editorial_untouched(self):
+        with TemporaryDirectory() as folder:
+            source = Path(folder) / 'source.json'
+            editorial = Path(folder) / 'editorial.json'
+            source.write_text(json.dumps({'laboratories': [self.card('research-cn-example')]}), encoding='utf-8')
+            editorial.write_text('{"laboratories": [], "newsletters": [{"id": "retained"}]}', encoding='utf-8')
+            original = editorial.read_bytes()
+            with patch('information_library.selectors.EDITORIAL_PATH', editorial):
+                preview = StringIO()
+                call_command('import_research_materials', source=source, database=True, publish=True, stdout=preview)
+                self.assertEqual(json.loads(preview.getvalue())['created'], 1)
+                self.assertFalse(ResearchOpportunity.objects.exists())
+                self.assertFalse(ResearchRevision.objects.exists())
+                call_command('import_research_materials', source=source, database=True,
+                             publish=True, apply=True, stdout=StringIO())
+                self.assertEqual(ResearchOpportunity.objects.get().publication_status, 'published')
+                self.assertEqual(ResearchRevision.objects.count(), 1)
+                repeated = StringIO()
+                call_command('import_research_materials', source=source, database=True,
+                             publish=True, apply=True, stdout=repeated)
+                self.assertEqual(json.loads(repeated.getvalue())['unchanged'], 1)
+                self.assertEqual(ResearchRevision.objects.count(), 1)
+            self.assertEqual(editorial.read_bytes(), original)
+
+    def test_incompatible_command_options_are_rejected_before_writes(self):
+        with TemporaryDirectory() as folder:
+            source, target = Path(folder) / 'source.json', Path(folder) / 'target.json'
+            source.write_text(json.dumps({'laboratories': [self.card('research-cn-example')]}), encoding='utf-8')
+            for options in ({'database': True, 'target': target}, {'publish': True, 'target': target}):
+                with self.subTest(options=options), self.assertRaises(CommandError):
+                    call_command('import_research_materials', source=source, apply=True,
+                                 stdout=StringIO(), **options)
+            self.assertFalse(target.exists())
+            self.assertFalse(ResearchOpportunity.objects.exists())

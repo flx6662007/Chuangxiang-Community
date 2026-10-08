@@ -4,7 +4,7 @@ import json
 import re
 from urllib.parse import urlsplit
 
-from information_library.selectors import public_text, safe_source_url
+from common.public_content import public_text, safe_source_url
 from .evidence import evidence_score, source_trust
 
 

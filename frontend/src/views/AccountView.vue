@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue'
+import { ensureCsrf } from '../api/csrf'
 import {
-  ensureCsrf,
   getSessionProfile,
   requestPasswordReset,
   resetPassword,

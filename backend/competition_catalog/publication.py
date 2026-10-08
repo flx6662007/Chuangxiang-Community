@@ -9,6 +9,8 @@ from django.core.exceptions import ValidationError
 from django.db import transaction
 from django.utils import timezone
 
+from common.persistence import clean_save as _clean_save
+
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
 from competitions.services import require_editor, save_competition, save_source, publish_competition
 from ingestion.http import checked_url, FetchError
@@ -35,12 +37,6 @@ def notice_snapshot(notice):
         'hash': notice.content_hash, 'site_kind': site.kind, 'dedicated': site.dedicated,
         'allowed_hosts': list(site.allowed_hosts), 'attachments': deepcopy(notice.attachments),
     }
-
-
-def _clean_save(obj, **kwargs):
-    obj.full_clean()
-    obj.save(**kwargs)
-    return obj
 
 
 @transaction.atomic

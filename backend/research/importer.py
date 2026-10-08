@@ -8,6 +8,7 @@ from django.db import transaction
 from django.utils import timezone
 
 from common.snapshots import PUBLIC_SNAPSHOT_KEYS
+from common.public_content import safe_source_url
 from .models import ResearchOpportunity, ResearchRevision, ResearchSource
 from .knowledge import source_key
 
@@ -41,7 +42,6 @@ def import_cards(rows, *, apply=False, publish=False, profiles=None, sources=Non
     """Preview runs the same validations and rolls back; withdrawn rows stay withdrawn."""
     counts = {'created': 0, 'updated': 0, 'unchanged': 0, 'published': 0, 'withdrawn_preserved': 0}
     if sources is not None:
-        from information_library.selectors import safe_source_url
         if not isinstance(sources, dict) or set(sources) != {r['id'] for r in rows}:
             raise ValidationError('sources 必须与导入编号一一对应。')
         for entries in sources.values():

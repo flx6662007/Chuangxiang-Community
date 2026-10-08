@@ -2,7 +2,7 @@
 import json
 import re
 
-from .selectors import public_text
+from common.public_content import public_text
 
 
 # 仅处理整理时产生的固定模板，不删除赛事规则中的禁止条款或适用条件。

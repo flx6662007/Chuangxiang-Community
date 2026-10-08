@@ -80,7 +80,7 @@ curation.view_knowledgedocument
 | 知识当前版本与字段 | `backend/curation/selectors.py`、`serializers.py` |
 | 资源状态、关联及字段 | `backend/resources/selectors.py`、`serializers.py` |
 | 前端目录和知识请求 | `frontend/src/api/catalog.js` |
-| 前端资源请求 | `frontend/src/services/resources.js`、`resourceClient.js` |
+| 前端资源请求 | `frontend/src/api/resources.js`、`resourceClient.js` |
 
 修改公开范围应改后端查询规则并补权限测试，不用前端隐藏按钮代替。内部信息库和学生 API 的用途不同，不能把内部查询结果直接当公开结果返回。
 

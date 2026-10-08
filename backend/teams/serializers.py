@@ -1,16 +1,9 @@
 """输入拒绝未知字段；公开输出采用显式白名单。"""
 from rest_framework import serializers
+from common.api import StrictSerializer
 from django.db.models import Q
 from accounts.permissions import account_eligibility
 from .models import RecruitmentRevision, ApplicationRevision, Membership, Application, DepartureRequest, DissolutionRequest, DissolutionResponse, Recruitment
-
-
-class StrictSerializer(serializers.Serializer):
-    def to_internal_value(self, data):
-        unknown = set(data) - set(self.fields) if isinstance(data, dict) else set()
-        if unknown:
-            raise serializers.ValidationError({'unknown_fields': sorted(unknown)})
-        return super().to_internal_value(data)
 
 
 def choice(model, name, **kwargs):

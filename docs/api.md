@@ -2,21 +2,24 @@
 
 本文对应当前实现。普通业务接口使用 `/api/v1/`，账号认证使用 `/api/auth/browser/v1/`。**认证路径末尾没有 `/`，普通业务路径末尾有 `/`**，按表中路径请求。
 
-游客可读公开赛事和招募卡。本人资料、申请、队伍、通知、举报与申诉需要登录；写入使用 Session Cookie 与 CSRF。组队规则详见[组队接口](api-teams.md)，治理路径与本人权限详见[举报与申诉](api-governance.md)。学校赛事目录、学习资源与人工知识正文现已提供只读接口，见[资料库接口](api-library.md)；草稿仅限有权限的管理员主动预览。科研与快讯通过后台只读接口加载。首页助手根据服务端配置选择真实资料检索或模型聊天；本机尚未配置模型密钥，当前使用资料检索。AI 调用见[AI 服务说明](ai-services.md)。
+游客可读公开赛事和招募卡。本人资料、申请、队伍、通知、举报与申诉需要登录；写入使用 Session Cookie 与 CSRF。组队规则详见[组队接口](api-teams.md)，治理路径与本人权限详见[举报与申诉](api-governance.md)。学校赛事目录、学习资源与人工知识正文提供只读接口，见[资料库接口](api-library.md)；草稿仅限有权限的管理员主动预览。科研与快讯通过公共读取接口加载，科研受开放开关控制。首页助手按服务端配置提供资料检索或模型回答，当前契约见[AI 接入](ai-v3.md)。
 
 ## 科研、快讯与助手
 
 | 方法与路径 | 用途 |
 | --- | --- |
-| `GET /api/v1/editorial/research/` | 科研项目列表，支持 `search`、`page`、`page_size` |
+| `GET /api/v1/editorial/research/` | 科研列表，支持 `search`、`recruitment=1`、`page`、`page_size` |
+| `GET /api/v1/editorial/research/:id/` | 公开科研详情；数字数据库编号 |
 | `GET /api/v1/editorial/newsletters/` | 已发布快讯列表，支持相同查询参数 |
 | `GET /api/v1/ai/status/` | 返回 `chat_configured` 与 `catalog_search`，不返回密钥或服务配置 |
 | `GET /api/v1/ai/search/?q=RoboMaster` | 从公开赛事目录与知识正文检索，返回目录卡片和匹配原因 |
-| `POST /api/v1/ai/chat/` | 模型聊天，需服务端模型配置；请求结构见 [聊天说明](ai-chat.md) |
+| `POST /api/v1/ai/chat/` | JSON 聊天，需服务端模型配置；结构见 [AI 接入](ai-v3.md) |
+| `POST /api/v1/ai/chat/stream/` | 首页流式聊天；事件与多轮参数见 [最新更新](ai-optimization-20261008.md) |
+| `GET /api/v1/ai/guide/`、`POST /api/v1/ai/guide/` | 赛事向导会话、推荐、分析与找队友，见 [赛事助手交接](ai-assistant-handoff.md) |
 
 以上读取接口可匿名访问。科研与快讯使用 `{count, next, previous, results}` 分页结构，条目保留 `sourceUrl`、`verifiedOn` 等展示字段。后端合并已发布数据库记录与 `backend/information_library/data/editorial.json`，前端不再直接导入该文件；当前快讯未录入时显示空列表。数据库中明确撤下的同源条目不会由编辑文件重新显示。
 
-资料检索返回 `{mode: "keyword", query, keywords, count, results}`，每个结果含 `catalog` 与 `match_reason`，最多展示 8 项。它不依赖模型密钥；`chat_configured` 仅表示配置满足本地校验，不代表已验证模型服务可用。模型聊天与向量检索的配置见 [AI 第二阶段说明](ai-v2.md)。
+`ai/search/` 返回 `{mode: "keyword", query, keywords, count, results}`，每个结果含 `catalog` 与 `match_reason`，最多展示 8 项。这个接口不依赖模型密钥；不能据此认定聊天的混合检索也只有关键词。`chat_configured` 仅表示配置满足本地校验，不代表已验证模型服务可用。模型聊天与索引配置见 [AI 接入](ai-v3.md)。
 
 ## 请求约定
 

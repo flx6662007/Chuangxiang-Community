@@ -6,10 +6,12 @@ from django.contrib.auth import get_user_model
 from django.db import connection, transaction
 from django.utils import timezone
 
+from common.persistence import clean_save
+
 from accounts.permissions import account_eligibility, school_email_verified
 from competitions.models import Competition
 from notifications.services import emit
-from .errors import check
+from common.errors import check
 from .models import (
     Team, Recruitment, RecruitmentRevision, RecruitmentOption, RecruitmentBaselineMember,
     RecruitmentCurrentSkill, RecruitmentRequiredRole, RecruitmentRequiredSkill, RecruitmentCampus,
@@ -22,12 +24,6 @@ SCALARS = ('existing_member_count', 'recruitment_quota', 'foundation_requirement
            'weekly_effort', 'collaboration_goal', 'expected_duration', 'collaboration_mode')
 MULTI = {'current_skills': RecruitmentCurrentSkill, 'required_roles': RecruitmentRequiredRole,
          'required_skills': RecruitmentRequiredSkill, 'campuses': RecruitmentCampus}
-
-
-def save(obj):
-    obj.full_clean()
-    obj.save()
-    return obj
 
 
 @contextmanager
@@ -117,7 +113,7 @@ def finish_application(app, reason, now, actor=None):
     app.end_reason = reason
     app.resolved_at = now
     clear_confirmations(app)
-    save(app)
+    clean_save(app)
     kind = 'application_' + (reason if reason in ('withdrawn', 'rejected') else 'ended')
     emit(kind, target=app, recipients=recipients(app), actor=actor, payload={'reason': reason})
     return app
@@ -127,7 +123,7 @@ def close_card(card, reason, now, actor=None):
     if card.closed_at:
         return card
     card.closed_at, card.close_reason, card.closed_by = now, reason, actor
-    save(card)
+    clean_save(card)
     app_reason = {'manual': 'card_closed'}.get(reason, reason)
     for app in Application.objects.filter(recruitment=card, status__in=LIVE):
         finish_application(app, app_reason, now, actor)
@@ -146,16 +142,16 @@ def end_member(member, reason, now):
     if member.ended_at:
         return
     member.ended_at, member.end_reason = now, reason
-    save(member)
+    clean_save(member)
     for response in DissolutionResponse.objects.filter(membership=member, request__status='pending', excluded_at__isnull=True):
         response.excluded_at = now
-        save(response)
+        clean_save(response)
 
 
 def finish_departure(req, now, *, timeout=False):
     if timeout:
         req.status, req.resolved_at = 'timed_out', now
-        save(req)
+        clean_save(req)
     end_member(req.membership, req.kind, now)
     emit('departure_completed', target=req, recipients=[req.initiator_id, req.responder_id],
          payload={'reason': req.status})
@@ -165,7 +161,7 @@ def finish_dissolution(req, now, reason):
     if req.status != 'pending':
         return
     req.status, req.completion_reason, req.resolved_at = 'completed', reason, now
-    save(req)
+    clean_save(req)
     member_ids = list(req.team.active_members().values_list('user_id', flat=True))
     applicant_ids = list(Application.objects.filter(recruitment__team=req.team, status__in=LIVE).values_list('applicant_id', flat=True))
     for card in Recruitment.objects.filter(team=req.team, closed_at__isnull=True):
@@ -174,14 +170,14 @@ def finish_dissolution(req, now, reason):
         finish_application(app, 'team_dissolved', now)
     for departure in DepartureRequest.objects.filter(membership__team=req.team, status='pending'):
         departure.status, departure.resolved_at = 'team_dissolved', now
-        save(departure)
+        clean_save(departure)
         emit('departure_completed', target=departure, recipients=[departure.initiator_id, departure.responder_id],
              payload={'reason': 'team_dissolved'})
     for member in req.team.active_members():
         end_member(member, 'dissolution', now)
     team = req.team
     team.dissolved_at = now
-    save(team)
+    clean_save(team)
     emit('dissolution_completed', target=req, recipients=member_ids + applicant_ids, payload={'reason': reason})
 
 
@@ -191,7 +187,7 @@ def maybe_finish_dissolution(req, now):
     votes = DissolutionResponse.objects.filter(request=req, excluded_at__isnull=True)
     if votes.filter(response='reject').exists():
         req.status, req.resolved_at = 'rejected', now
-        save(req)
+        clean_save(req)
         emit('dissolution_rejected', target=req, recipients=req.team.active_members().values_list('user_id', flat=True))
     elif not votes.exclude(response='agree').exists():
         finish_dissolution(req, now, 'all_agreed' if votes.exists() else 'no_other_members')
@@ -250,7 +246,7 @@ def assign_options(revision, data, mappings):
         options = list(RecruitmentOption.objects.select_for_update().filter(code__in=codes).order_by('pk'))
         check(len(options) == len(set(codes)), 'invalid_fields', '所选词条不存在。', 400)
         for option in options:
-            save(model(revision=revision, option=option))
+            clean_save(model(revision=revision, option=option))
 
 
 def card_data(revision):
@@ -260,11 +256,11 @@ def card_data(revision):
 
 
 def build_card_revision(card, actor, data, now):
-    rev = save(RecruitmentRevision(recruitment=card, version=card.current_revision.version + 1 if card.current_revision_id else 1,
+    rev = clean_save(RecruitmentRevision(recruitment=card, version=card.current_revision.version + 1 if card.current_revision_id else 1,
                                   edited_by=actor, created_at=now, **{key: data[key] for key in SCALARS}))
     assign_options(rev, data, MULTI)
     for member in card.team.active_members().exclude(application__recruitment_id=card.pk):
-        save(RecruitmentBaselineMember(revision=rev, membership=member))
+        clean_save(RecruitmentBaselineMember(revision=rev, membership=member))
     rev.validate_ready()
     return rev
 
@@ -292,17 +288,17 @@ def publish_recruitment(*, actor, data):
         else:
             check(not Membership.objects.filter(user=actor, competition=competition, ended_at__isnull=True).exists(),
                   'already_member', '同届已有正式队伍，不能再创建队伍。')
-            team = save(Team(competition=competition, recruiter=actor, created_at=now))
-            save(Membership(team=team, competition=competition, user=actor, join_source='recruiter', joined_at=now))
+            team = clean_save(Team(competition=competition, recruiter=actor, created_at=now))
+            clean_save(Membership(team=team, competition=competition, user=actor, join_source='recruiter', joined_at=now))
             end_other_applications(actor.pk, competition.pk, now)
         check(not Recruitment.objects.filter(team=team, publication_status='published', closed_at__isnull=True).exists(),
               'active_card_exists', '同队只能保留一张有效招募卡，满员卡须先关闭。')
-        card = save(Recruitment(team=team, duration_days=data['duration_days'], created_at=now))
+        card = clean_save(Recruitment(team=team, duration_days=data['duration_days'], created_at=now))
         rev = build_card_revision(card, actor, data, now)
         card.current_revision, card.published_at, card.last_edited_at = rev, now, now
         card.expires_at = min(now + timedelta(days=card.duration_days), competition.effective_recruitment_deadline) if competition.effective_recruitment_deadline else now + timedelta(days=card.duration_days)
         card.publication_status = 'published'
-        return save(card)
+        return clean_save(card)
     return execute(data['competition_id'], actor, action)
 
 
@@ -326,12 +322,12 @@ def edit_recruitment(card_id, *, actor, data):
         old_version = card.current_revision.version
         card.current_revision = build_card_revision(card, actor, updated, now)
         card.last_edited_at = now
-        save(card)
+        clean_save(card)
         viewers = list(card.team.active_members().values_list('user_id', flat=True))
         for app in Application.objects.filter(recruitment=card, status__in=LIVE):
             viewers.append(app.applicant_id)
             clear_confirmations(app)
-            save(app)
+            clean_save(app)
         emit('recruitment_edited', target=card, recipients=viewers, actor=actor,
              payload={'from_version': old_version, 'to_version': card.current_revision.version, 'changed_fields': changed})
         if card.remaining_slots == 0:
@@ -363,24 +359,24 @@ def withdraw_recruitment(card_id, *, actor, reason):
             return card
         check(card.publication_status == 'published', 'invalid_state', '只能下架已发布招募。')
         card.publication_status, card.withdrawn_at, card.withdrawal_reason = 'withdrawn', now, reason.strip()
-        save(card)
+        clean_save(card)
         for app in Application.objects.filter(recruitment=card, status__in=LIVE):
             finish_application(app, 'card_withdrawn', now, actor)
-        save(AdminAction(action='withdraw', recruitment=card, actor=actor, reason=reason.strip(),
+        clean_save(AdminAction(action='withdraw', recruitment=card, actor=actor, reason=reason.strip(),
                          changes={'before_status': 'published', 'after_status': 'withdrawn'}))
         return card
     return execute(competition_id, actor, action)
 
 
 def build_application_revision(app, actor, data, now):
-    revision = save(ApplicationRevision(application=app,
+    revision = clean_save(ApplicationRevision(application=app,
         version=app.current_revision.version + 1 if app.current_revision_id else 1,
         recruitment_revision=app.recruitment.current_revision, weekly_effort=data['weekly_effort'],
         accepted_at=now, created_by=actor))
     assign_options(revision, data, {'desired_roles': ApplicationDesiredRole, 'skills': ApplicationSkill})
     app.current_revision = revision
     clear_confirmations(app)
-    return save(app)
+    return clean_save(app)
 
 
 def submit_application(card_id, *, actor, data):
@@ -396,7 +392,7 @@ def submit_application(card_id, *, actor, data):
               'already_member', '本届已有正式队伍。')
         check(not Application.objects.filter(recruitment=card, applicant=actor).exists(),
               'already_applied', '同一卡片只能申请一次，结束后可选择新的招募卡。')
-        app = save(Application(recruitment=card, applicant=actor, submitted_at=now))
+        app = clean_save(Application(recruitment=card, applicant=actor, submitted_at=now))
         build_application_revision(app, actor, data, now)
         emit('application_submitted', target=app, recipients=[card.team.recruiter_id], actor=actor)
         return app
@@ -435,7 +431,7 @@ def application_action(app_id, *, actor, action, data):
             if getattr(app, party + '_confirmed_at'):
                 setattr(app, party + '_confirmed_at', None)
                 setattr(app, party + '_confirmed_revision', None)
-                save(app)
+                clean_save(app)
                 emit('confirmation_revoked', target=app, recipients=recipients(app), actor=actor, payload={'party': party, 'revision': app.current_revision.version})
             return app
         ensure_open(card)
@@ -450,7 +446,7 @@ def application_action(app_id, *, actor, action, data):
         check(not app.is_paused, 'application_paused', '请申请人先接受最新条件，或等待解散请求结束。')
         if action == 'accept':
             app.status, app.contact_opened_at = 'contact_open', now
-            save(app)
+            clean_save(app)
             emit('contact_opened', target=app, recipients=recipients(app), actor=actor)
             return app
         check(action == 'confirm' and app.status == 'contact_open', 'invalid_state', '须先接受联系，再分别确认入队。')
@@ -463,17 +459,17 @@ def application_action(app_id, *, actor, action, data):
         setattr(app, party + '_confirmed_at', now)
         setattr(app, party + '_confirmed_revision', app.current_revision)
         if app.applicant_confirmed_at and app.recruiter_confirmed_at:
-            save(Membership(team=card.team, competition_id=competition_id, user=app.applicant,
+            clean_save(Membership(team=card.team, competition_id=competition_id, user=app.applicant,
                             application=app, join_source='application', joined_at=now))
             app.status, app.end_reason, app.resolved_at = 'joined', 'joined', now
-            save(app)
+            clean_save(app)
             emit('member_joined', target=app, recipients=recipients(app), actor=actor)
             end_other_applications(app.applicant_id, competition_id, now, app.pk)
             if card.remaining_slots == 0:
                 for other in Application.objects.filter(recruitment=card, status__in=LIVE):
                     finish_application(other, 'full', now)
         else:
-            save(app)
+            clean_save(app)
             emit('application_confirmed', target=app, recipients=recipients(app), actor=actor,
                  payload={'party': party, 'revision': app.current_revision.version})
         return app
@@ -494,7 +490,7 @@ def request_departure(member_id, *, actor, kind):
         if old:
             check(old.initiator_id == actor.pk and old.kind == kind, 'request_pending', '已有另一方发起的待处理请求。')
             return old
-        req = save(DepartureRequest(membership=member, kind=kind, initiator_id=initiator,
+        req = clean_save(DepartureRequest(membership=member, kind=kind, initiator_id=initiator,
                   responder_id=responder, created_at=now, deadline_at=now + timedelta(hours=24)))
         emit('departure_requested', target=req, recipients=[initiator, responder], actor=actor)
         return req
@@ -511,12 +507,12 @@ def departure_action(request_id, *, actor, action, response=None):
             return req
         if action == 'withdraw':
             req.status, req.resolved_at = 'withdrawn', now
-            save(req)
+            clean_save(req)
             emit('departure_withdrawn', target=req, recipients=[req.initiator_id, req.responder_id], actor=actor)
         else:
             req.response, req.responded_at, req.resolved_at = response, now, now
             req.status = 'approved' if response == 'agree' else 'rejected'
-            save(req)
+            clean_save(req)
             emit('departure_responded', target=req, recipients=[req.initiator_id, req.responder_id], actor=actor)
             if response == 'agree':
                 finish_departure(req, now)
@@ -535,9 +531,9 @@ def request_dissolution(team_id, *, actor):
         old = DissolutionRequest.objects.filter(team=team, status='pending').first()
         if old:
             return old
-        req = save(DissolutionRequest(team=team, initiator=actor, created_at=now, deadline_at=now + timedelta(hours=24)))
+        req = clean_save(DissolutionRequest(team=team, initiator=actor, created_at=now, deadline_at=now + timedelta(hours=24)))
         for member in team.active_members().exclude(user=actor):
-            save(DissolutionResponse(request=req, membership=member))
+            clean_save(DissolutionResponse(request=req, membership=member))
         emit('dissolution_requested', target=req, recipients=team.active_members().values_list('user_id', flat=True), actor=actor)
         maybe_finish_dissolution(req, now)
         return req
@@ -553,7 +549,7 @@ def dissolution_action(request_id, *, actor, action, response=None):
             if req.status != 'pending':
                 return req
             req.status, req.resolved_at = 'withdrawn', now
-            save(req)
+            clean_save(req)
             emit('dissolution_withdrawn', target=req, recipients=req.team.active_members().values_list('user_id', flat=True), actor=actor)
         else:
             vote = DissolutionResponse.objects.filter(request=req, membership__user=actor).first()
@@ -565,8 +561,13 @@ def dissolution_action(request_id, *, actor, action, response=None):
                 check(vote.response == response, 'request_resolved', '本次已回应，不能改答。')
                 return req
             vote.response, vote.responded_at = response, now
-            save(vote)
+            clean_save(vote)
             emit('dissolution_responded', target=req, recipients=[req.initiator_id], actor=actor)
             maybe_finish_dissolution(req, now)
         return req
     return execute(competition_id, actor, perform)
+
+
+def save(obj):
+    """兼容旧调用；新代码使用 common.persistence.clean_save。"""
+    return clean_save(obj)

@@ -2,7 +2,7 @@
 
 ## 当前范围
 
-已接入 Django/DRF、PostgreSQL、账号、赛事、组队、举报申诉和后台信息库。当前赛事资料以人工整理、离线入库与直接发布为主线；历史采集代码保留。本机开发版邮件输出到终端，AI 默认关闭；尚未真实邮件投递或公网部署。
+已接入 Django/DRF、PostgreSQL、账号、赛事、组队、举报申诉、公共资料库、科研资料和 AI 助手。赛事资料以人工整理、离线入库与直接发布为主线；历史采集代码保留。仓库默认邮件输出到终端；聊天、科研、联网和语义检索按各自配置启用。实际发信、内测或正式部署状态由对应环境验证，不能从代码拉取推断。
 
 完整状态见 [团队进度](progress.md)，接口见 [API 说明](api.md)，页面操作见 [人工验收](manual-checks.md)。[数据库交付说明](database-handoff.md) 保留同学交付时的模型、迁移、约束和样例记录；其中“接口待实现”等历史状态由本轮进度替代，字段规则不因此改变。
 
@@ -19,7 +19,7 @@ git branch --show-current
 git status
 ```
 
-默认克隆 `main`，本轮赛事与账号成果已通过 PR #3 合入主分支。已有仓库先提交或妥善保存自己的改动，再获取最新主分支，避免覆盖未提交工作。后续从最新主分支新建自己的任务分支，提交状态见 [团队进度](progress.md)。
+默认克隆 `main`。已有仓库先妥善保存自己的改动，再获取最新主分支，避免覆盖未提交工作。后续从最新主分支新建任务分支，接续入口见 [团队进度](progress.md)。
 
 ### 安装依赖
 
@@ -60,7 +60,12 @@ test -f .env || cp .env.example .env
 | `DJANGO_PUBLIC_ORIGIN=http://localhost:5173` | 前端开发地址 |
 | `DJANGO_CSRF_TRUSTED_ORIGINS` | 样例允许 `http://localhost:5173,http://127.0.0.1:5173` |
 | `EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend` | 验证码邮件打印到后端终端，不真实发送 |
-| `AI_ENABLED=0` | 关闭外部模型调用 |
+| `AI_ENABLED=0` | 关闭原内部通知/快讯草稿服务，不控制首页聊天 |
+| `DEEPSEEK_*` | 首页聊天及赛事向导的模型配置；密钥只放后端 |
+| `COMPETITION_EMBEDDING_MODEL_PATH`、`COMPETITION_SEMANTIC_INDEX` | BGE 模型目录及赛事索引路径 |
+| `UNIFIED_SEMANTIC_INDEX` | 科研/资源统一索引，不能与赛事索引互换 |
+| `PUBLIC_RESEARCH_ENABLED=0` | 默认关闭科研公开展示；导入科研资料后可按需启用 |
+| `AI_SEARXNG_URL` | 可选联网搜索地址，需另行运行 SearXNG |
 
 生成本机密钥：
 
@@ -85,9 +90,9 @@ test -f .env || cp .env.example .env
 
 新增的 django-allauth 使用它自带的 `account` 迁移，同样由 `migrate` 应用；不要另外创建验证码表或在 User 中复制“邮箱已验证”字段。已有开发库也需要安装新依赖并执行迁移。
 
-`init_competition_catalog` 导入 255 项全学科目录及已核对来源，可重复执行，不创建账号。默认公开列表仅显示已关联目录的赛事，因此新环境不能跳过初始化；目录不是 255 条当年报名通知，具体赛事仍需采集并通过字段校验。拉取来源清单更新后也执行此命令。
+`init_competition_catalog` 导入 255 项全学科目录及已核对来源，可重复执行，不创建账号。目录不是 255 条当年报名通知；具体正文、来源、学习资源及组队目标按[赛事助手交接](ai-assistant-handoff.md)和[统一检索维护](competition-search-handoff.md)导入。拉取目录清单更新后也执行此命令。
 
-内部演示先初始化真实招募选项，再按[采集说明](ingestion-implementation.md)导入官方赛事并按[定时任务](maintenance.md)安排更新：
+内部演示先初始化真实招募选项，再导入人工资料包。组队到期结算见[定时任务](maintenance.md)；该文档中的旧采集任务不是新环境的必选项：
 
 ```powershell
 .\.venv\Scripts\python.exe manage.py seed_recruitment_options
@@ -125,7 +130,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1
 
 脚本后台启动 Django 与 Vite，不另弹终端。默认网站为 <http://127.0.0.1:5173/>，后端为 <http://127.0.0.1:8000/>。它优先使用当前仓库的 `backend/.venv/Scripts/python.exe`，从 PATH 查找 `node.exe`；不安装依赖、不改数据库和 `.env`。
 
-本轮联调使用 `5174/8001` 时：
+如果默认端口已被另一工作区占用，可改用 `5174/8001`：
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -FrontendPort 5174 -BackendPort 8001

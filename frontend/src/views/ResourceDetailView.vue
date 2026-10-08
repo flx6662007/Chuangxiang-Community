@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
 import { formatUpdatedAt, safeExternalUrl } from '../utils/competition'
-import { getResource } from '../services/resources'
+import { getResource } from '../api/resources'
 import { resourceIcon } from '../utils/library'
 
 const route = useRoute()

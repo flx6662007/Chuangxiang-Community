@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
 import ResourceCard from '../components/ResourceCard.vue'
-import { listResources, listResourceTaxonomies } from '../services/resources'
+import { listResources, listResourceTaxonomies } from '../api/resources'
 import { libraryPage, libraryQuery, libraryText, resourceIcon } from '../utils/library'
 
 const route = useRoute(), router = useRouter()

@@ -1,5 +1,5 @@
 import http from './http'
-import { ensureCsrf } from './accounts'
+import { ensureCsrf } from './csrf'
 import { parseAIReply } from './aiResponse.js'
 
 export async function getAIStatus(signal) {

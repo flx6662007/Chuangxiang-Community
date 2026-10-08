@@ -6,21 +6,17 @@ from django.db import transaction
 from django.db.models import Q
 from django.utils import timezone
 
+from common.persistence import clean_save
+
 from accounts.models import UserRestriction
 from competitions.models import Competition
-from teams.errors import check
+from common.errors import check
 from teams.models import Application, Membership, Recruitment, Team
 from .models import AdminAction, Appeal, Report
 
 
 EFFECT_NOTE = '复核结论不自动解除账号限制或恢复招募；实际变更须由有权限的管理员另行执行并留痕。'
 REPORT_NOTE = '举报仅进入核实流程，不自动下架内容或限制账号；请在此记录查看处理反馈。'
-
-
-def save(obj):
-    obj.full_clean()
-    obj.save()
-    return obj
 
 
 def require_login(actor):
@@ -57,7 +53,7 @@ def report_target(kind, pk, actor):
         obj = Competition.objects.filter(Q(pk__in=public.values('pk')) | Q(pk__in=owned_ids)).get(pk=pk)
         return {'competition': obj}, obj.title[:240]
     check(kind == 'recruitment', 'invalid_fields', '只支持赛事或招募举报。', 400)
-    from teams.views import public_cards
+    from teams.selectors import public_cards
     owned = (Q(team__recruiter=actor) | Q(pk__in=Application.objects.filter(applicant=actor).values('recruitment_id')) |
         Q(team_id__in=Membership.objects.filter(user=actor, ended_at__isnull=True).values('team_id')))
     obj = Recruitment.objects.filter(Q(pk__in=public_cards().values('pk')) | owned).select_related('team__competition').get(pk=pk)
@@ -86,7 +82,7 @@ def submit_report(*, actor, data):
     now = timezone.now()
     check_limits(Report, actor, now)
     check(data['reason'] in Report.Reason.values, 'invalid_fields', '问题类型无效。', 400)
-    return save(Report(submitted_by=actor, target_title=title, description=text(data['description'], '说明'),
+    return clean_save(Report(submitted_by=actor, target_title=title, description=text(data['description'], '说明'),
         reason=data['reason'], created_at=now, **fields))
 
 
@@ -98,7 +94,7 @@ def submit_appeal(*, actor, data):
           'duplicate_pending', '这个对象已有待处理申诉，请等待另一位管理员复核。')
     now = timezone.now()
     check_limits(Appeal, actor, now)
-    return save(Appeal(submitted_by=actor, target_title=title, description=text(data['description'], '申诉说明'), created_at=now, **fields))
+    return clean_save(Appeal(submitted_by=actor, target_title=title, description=text(data['description'], '申诉说明'), created_at=now, **fields))
 
 
 @transaction.atomic
@@ -116,7 +112,7 @@ def review_record(model, pk, *, actor, outcome, feedback):
     row.status, row.feedback = outcome, text(feedback, '处理反馈')
     row.reviewed_by, row.reviewed_at = actor, timezone.now()
     # 不调用下架/限制/恢复服务，避免把举报成立或申诉成立冒充实际处分变更。
-    return save(row)
+    return clean_save(row)
 
 
 def target_choices(actor):
@@ -145,3 +141,8 @@ def target_choices(actor):
             candidates.append({'target_type': kind, 'target_id': row.pk, 'title': title, 'reason': reason,
                 'occurred_at': occurred_at, 'can_appeal': not pending_id, 'pending_appeal_id': pending_id})
     return sorted(candidates, key=lambda item: (item['occurred_at'], item['target_id']), reverse=True)
+
+
+def save(obj):
+    """兼容旧调用；新代码使用 common.persistence.clean_save。"""
+    return clean_save(obj)

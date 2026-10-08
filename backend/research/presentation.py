@@ -2,6 +2,7 @@
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from datetime import date
+from common.public_content import public_text, safe_source_url
 
 PROFILE_TEXT = ('direction', 'location', 'achievements')
 RECRUITMENT_FIELDS = ('roles', 'eligibility', 'work', 'commitment', 'scope', 'cohort', 'deadline', 'status')
@@ -19,7 +20,6 @@ def validate_card_details(value):
         raise ValidationError('展示字段必须为不超过 5000 字的文本。')
     if 'hasRecruitmentSource' in value and type(value['hasRecruitmentSource']) is not bool:
         raise ValidationError('招募来源标记必须为布尔值。')
-    from information_library.selectors import safe_source_url
     field_links = value.get('fieldLinks', {})
     if not isinstance(field_links, dict) or set(field_links) - set(LINK_FIELDS):
         raise ValidationError('字段来源映射无效。')
@@ -36,7 +36,6 @@ def validate_card_details(value):
 
 
 def public_card_details(value):
-    from information_library.selectors import public_text
     validate_card_details(value)
     return {**{k: public_text(value.get(k, '')) for k in PROFILE_TEXT},
             'recruitment': {k: public_text(v) for k, v in value.get('recruitment', {}).items() if v},
