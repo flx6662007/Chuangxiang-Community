@@ -69,7 +69,8 @@ def _record(kind, identifier, title, summary, content, url, *, source_type='plat
         'tags': [public_text(value) for value in tags if isinstance(value, str)],
         'category': public_text(category),
         'direction': [public_text(value) for value in direction if isinstance(value, str)],
-        'source_url': safe_source_url(url), 'source_type': source_type,
+        'source_url': (url if kind == 'team' and re.fullmatch(r'/teams/\d+', url or '')
+                       else safe_source_url(url)), 'source_type': source_type,
         'published_at': published_at, 'verified_at': verified_at,
         'version': str(version), 'status': status, 'related_object_ids': related,
         'research_group_label': public_text(group_label), 'retrieval_score': 0.0,
@@ -145,6 +146,22 @@ def public_secondary_records(*, group_selector=None):
             if row['object_type'] == 'resource':
                 row['related_object_ids']['research_opportunity'] = [identifier for identifier in
                     row['related_object_ids'].get('research_opportunity', []) if identifier in visible_research]
+    # Public recruitment cards are the only team data exposed to visitors.
+    # Read them on every request so newly published or closed cards take effect immediately.
+    from teams.views import public_cards
+    for card in public_cards().prefetch_related('current_revision__required_roles',
+                                                'current_revision__required_skills'):
+        if not card.is_open:
+            continue
+        revision = card.current_revision
+        roles = [option.name for option in revision.required_roles.all()]
+        skills = [option.name for option in revision.required_skills.all()]
+        summary = f'{card.team.competition.title}公开招募；需要角色：{"、".join(roles) or "未指定"}；需要技能：{"、".join(skills) or "未指定"}'
+        rows.append(_record('team', f'db-{card.pk}', f'{card.team.competition.title}组队招募',
+                            summary, summary, f'/teams/{card.pk}', source_type='platform_team',
+                            published_at=card.published_at.isoformat() if card.published_at else None,
+                            version=str(revision.version), tags=roles + skills,
+                            related={'competition': [f'db-{card.team.competition_id}']}))
     return rows
 
 
@@ -176,7 +193,7 @@ def _mode_fit(kind, mode):
                    or (mode == 'resource' and kind == 'resource')) else 0.35
 
 
-def _rank(rows, question, mode, *, index=None):
+def _rank(rows, question, mode, *, index=None, domains=()):
     terms = query_terms(question)
     research_request = research_intent(question)
     research_rows = [row for row in rows if row['object_type'] == 'research_opportunity']
@@ -195,6 +212,8 @@ def _rank(rows, question, mode, *, index=None):
             return 0
         if row['object_type'] == 'research_opportunity':
             return research_score(row, question, pinned=row['object_id'] in pinned)
+        if row['object_type'] == 'team' and not terms and 'team' in domains:
+            return 0.3
         return _keyword_score(row, question, terms)
     # For a broad request such as "学习资源", do not invent topical relevance.
     keyword = {key: score for row in rows if (score := keyword_score(row)) > 0
@@ -293,7 +312,7 @@ def _related_competitions(ids):
 
 def retrieve_unified(question, mode, route, *, index=None, group_selector=None, limit=8):
     secondary = public_secondary_records(group_selector=group_selector)
-    ranked, warnings, secondary_mode = _rank(secondary, question, mode, index=index)
+    ranked, warnings, secondary_mode = _rank(secondary, question, mode, index=index, domains=route.domains)
     include_competition = mode == 'competition' or (mode == 'smart' and 'competition' in route.domains)
     competitions, knowledge_rows, competition_mode = [], [], 'not_requested'
     if include_competition:
@@ -328,7 +347,7 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
         # Keep one relevant hit per requested domain before filling by score.
         requested = [kind for domain, kinds in (
             ('competition', ('competition',)), ('project', ('research_opportunity', 'research_group')),
-            ('resource', ('resource',))) if domain in route.domains for kind in kinds]
+            ('resource', ('resource',)), ('team', ('team',))) if domain in route.domains for kind in kinds]
         reserved = []
         for kind in requested:
             candidate = next((row for row in primary if row['object_type'] == kind), None)
@@ -372,12 +391,23 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
 def as_evidence(row):
     group_label = ('课题组原文名称：' + row['research_group_label'] + '\n'
                    if row.get('research_group_label') else '')
-    internal_url = ('/resources/' + row['object_id'] if row['object_type'] == 'resource' else
+    competition_ids = row['related_object_ids'].get('competition_id', [])
+    canonical_competition_id = str(competition_ids[0]) if competition_ids else ''
+    internal_url = ('/teams/' + row['object_id'][3:] if row['object_type'] == 'team'
+                    and re.fullmatch(r'db-\d+', row['object_id']) else
+                    '/research/' + row['object_id'][3:] if row['object_type'] == 'research_opportunity'
+                    and re.fullmatch(r'db-\d+', row['object_id']) else
+                    '/resources/' + row['object_id'] if row['object_type'] == 'resource' else
                     '/competitions/' + row['object_id'][3:] if row['object_type'] == 'competition'
-                    and re.fullmatch(r'db-\d+', row['object_id']) else None)
+                    and re.fullmatch(r'db-\d+', row['object_id']) else
+                    '/competitions/' + canonical_competition_id if row['object_type'] == 'competition'
+                    and re.fullmatch(r'[1-9]\d*', canonical_competition_id) else None)
     return {'kind': row['object_type'], 'entity_id': row['object_id'], 'version': row['version'],
             'title': row['title'], 'url': row['source_url'],
             'internal_url': internal_url,
+            'canonical_competition_id': canonical_competition_id,
+            'related_object_ids': {kind: ids[:5] for kind, ids in row['related_object_ids'].items()
+                                   if kind in ('competition', 'resource', 'research_opportunity', 'research_group', 'team')},
             'text': (group_label + row['summary'] + '\n' + row['content'])[:1800],
             'verified_at': row['verified_at'], 'published_on': row['published_at'],
             'status': row['status'], 'status_note': row.get('relation_reason') or row.get('status_note') or row['category'],
@@ -389,10 +419,14 @@ def recommendations(rows):
     resources = {row['object_id']: row for row in rows if row['object_type'] == 'resource'}
     visible = {(row['object_type'], row['object_id']) for row in rows}
     return [{'object_type': row['object_type'], 'object_id': row['object_id'],
+             'internal_url': as_evidence(row)['internal_url'],
+             'database_id': (str(row['related_object_ids']['competition_id'][0])
+                             if row['object_type'] == 'competition' and row['related_object_ids'].get('competition_id')
+                             else row['object_id'][3:] if re.fullmatch(r'db-\d+', row['object_id']) else None),
              'title': row['title'], 'reason': row.get('relation_reason') or row['summary'][:140],
              'related_object_ids': {kind: [identifier for identifier in ids if (kind, identifier) in visible]
                                     for kind, ids in row['related_object_ids'].items() if isinstance(ids, list) and kind in
-                                    ('competition', 'resource', 'research_opportunity', 'research_group')},
+                                    ('competition', 'resource', 'research_opportunity', 'research_group', 'team')},
              'source_url': row['source_url'],
              'facts': row.get('facts', {}), 'field_links': row.get('field_links', {}),
              'research_group_label': row.get('research_group_label') or '',

@@ -94,8 +94,16 @@ def research_score(row, question, *, pinned=False):
 def contextual_question(history, mode):
     """Resolve a bounded follow-up from user turns only, never client assistant text."""
     question = history[-1]['content']
-    if mode not in ('research', 'smart') or len(history) < 3:
+    if mode not in ('research', 'smart', 'competition') or len(history) < 3:
         return question
+    if re.search(r'^(这个|这场|该|它|刚才)(?:比赛|竞赛|赛事)', question):
+        for message in reversed(history[:-1]):
+            if message['role'] == 'user' and re.search(r'比赛|竞赛|赛事', message['content']):
+                return message['content'][:500] + '；' + question
+    if re.search(r'相关(?:科研)?(?:课题组|实验室|研究组)', question):
+        for message in reversed(history[:-1]):
+            if message['role'] == 'user' and re.search(r'比赛|竞赛|赛事|科研|研究', message['content']):
+                return message['content'][:500] + '；' + question
     if re.search(r'实验室|课题组|研究组', question):
         return question
     followup = re.search(r'^(那|它|这[个些家]|该[组实]|他们|还有|能否|是否|本科生|硕士生|博士生)', question)

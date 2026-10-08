@@ -52,3 +52,17 @@ test('科研字段及多来源独立保留，过滤未知字段、危险链接�
   assert.deepEqual(card.field_links.summary, [link])
   assert.equal(card.field_links.roles[0].url, 'https://lab.example.edu.cn/join')
 })
+
+test('站内记录编号和详情路由在聊天来源中保留', () => {
+  const result = parseAIReply({ message: { role: 'assistant', content: '见来源[1]' },
+    sources: [{ id: 1, kind: 'research_opportunity', entity_id: 'db-19', database_id: '19',
+      title: '实验室', url: 'https://lab.example.edu.cn', internal_url: '/research/19' },
+    { id: 2, kind: 'team', entity_id: 'db-8', title: '组队招募', url: '/teams/8', internal_url: '/teams/8' }],
+    recommendations: [{ object_type: 'team', object_id: 'db-8', database_id: '8', title: '组队招募',
+      reason: '公开卡片', source_url: '/teams/8', internal_url: '/teams/8' }] })
+  assert.equal(result.sources[0].internal_url, '/research/19')
+  assert.equal(result.sources[0].database_id, '19')
+  assert.equal(result.sources[1].internal_url, '/teams/8')
+  assert.equal(result.recommendations[0].object_id, 'db-8')
+  assert.equal(result.recommendations[0].internal_url, '/teams/8')
+})

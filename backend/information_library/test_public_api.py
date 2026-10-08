@@ -99,6 +99,17 @@ class PublicEditorialTests(TestCase):
         self.assertEqual(data['count'], 1)
         self.assertEqual(data['results'][0]['id'], f'db-{item.pk}')
 
+    def test_research_detail_uses_same_publication_boundary_as_list(self):
+        visible = self.research('detail-visible')
+        hidden = self.research('detail-draft', 'draft')
+        response = self.client.get(f'/editorial/research/{visible.pk}/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['id'], f'db-{visible.pk}')
+        self.assertNotIn('secret@', response.content.decode())
+        self.assertEqual(self.client.get(f'/editorial/research/{hidden.pk}/').status_code, 404)
+        with override_settings(PUBLIC_RESEARCH_ENABLED=False):
+            self.assertEqual(self.client.get(f'/editorial/research/{visible.pk}/').status_code, 404)
+
     def test_search_all_words_pagination_and_invalid_parameters(self):
         for index in range(3):
             self.research(f'lab-{index}')

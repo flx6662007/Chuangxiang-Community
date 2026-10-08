@@ -7,7 +7,7 @@ import re
 DOMAIN_WORDS = {
     'competition': ('竞赛', '比赛', '赛事', '参赛', '报名', '大赛', 'competition', 'contest'),
     'project': ('科研', '课题', '实验室', '项目', '导师', 'research', 'project', 'lab'),
-    'resource': ('资源', '教程', '课程', '学习资料', '工具', 'resource', 'tutorial'),
+    'resource': ('资源', '教程', '课程', '学习资料', '学习', '工具', 'resource', 'tutorial'),
     'team': ('组队', '队友', '团队', '招募', 'team', 'teammate'),
 }
 MODES = ('smart', 'competition', 'research', 'resource')
@@ -69,6 +69,7 @@ def query_terms(question):
     for word in WEB_WORDS + KNOWLEDGE_WORDS + TIME_WORDS + (
         '我想', '请问', '帮我', '推荐', '适合', '有没有', '有哪些', '怎么', '如何', '相关',
         '可以', '一个', '一些', '的', '吗', '呢', '是什么', '想了解', '学生', '本科',
+        '这个', '这场', '需要', '哪些', '知识', '对应', '专业', '学习',
     ):
         reduced = reduced.replace(word, ' ')
     return tuple(dict.fromkeys(token for token in re.findall(r'[\u4e00-\u9fff]{2,}|[a-z][a-z0-9+#.-]{1,}', reduced) if len(token) >= 2))[:8]

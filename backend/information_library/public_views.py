@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
+from django.http import Http404
 
 from competitions.views import CompetitionPagination
 from .public_selectors import newsletter_cards, research_cards, search_cards
@@ -44,3 +45,14 @@ class PublicEditorialView(APIView):
 
 class PublicNewsletterView(PublicEditorialView):
     cards = staticmethod(newsletter_cards)
+
+
+class PublicResearchDetailView(APIView):
+    authentication_classes = ()
+    permission_classes = (AllowAny,)
+
+    def get(self, request, pk):
+        for card in research_cards():
+            if card['id'] == f'db-{pk}':
+                return Response(card)
+        raise Http404

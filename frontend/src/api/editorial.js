@@ -9,4 +9,9 @@ async function listEditorial(kind, params, signal) {
 }
 
 export const listResearch = (params, signal) => listEditorial('research', params, signal)
+export async function getResearch(id, signal) {
+  const { data } = await http.get(`/editorial/research/${encodeURIComponent(id)}/`, { signal })
+  if (!data || data.id !== `db-${id}` || typeof data.title !== 'string') throw new Error('Invalid research response')
+  return data
+}
 export const listNewsletters = (params, signal) => listEditorial('newsletters', params, signal)

@@ -37,7 +37,10 @@ const router = createRouter({
         {
           path: 'research',
           component: InformationCenterView,
-          children: [{ path: '', name: 'research-projects', component: () => import('../views/ProjectListView.vue') }],
+          children: [
+            { path: '', name: 'research-projects', component: () => import('../views/ProjectListView.vue') },
+            { path: ':id(\\d+)', name: 'research-detail', component: () => import('../views/ResearchDetailView.vue') },
+          ],
         },
         {
           path: 'resources',

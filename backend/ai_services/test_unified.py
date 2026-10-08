@@ -1,17 +1,21 @@
 """Unified retrieval acceptance cases; no network or model request is made."""
 
 from unittest.mock import patch
+from datetime import timedelta
 
+from django.contrib.auth import get_user_model
 from django.test import SimpleTestCase, TestCase, override_settings
 from django.utils import timezone
 
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
 from research.models import ResearchOpportunity
 from resources.models import Resource, ResourceCompetition, ResourceResearchOpportunity, ResourceTaxonomy
+from teams.models import Team, Recruitment, RecruitmentRevision
 
 from .evidence import external_decision, source_trust
 from .router import route_query
-from .unified import as_evidence, public_secondary_records, recommendations, retrieve_unified
+from .unified import as_evidence, public_secondary_records, recommendations, retrieve_unified, evidence_rows
+from .fusion import fuse
 from .web import search_external
 
 
@@ -79,6 +83,8 @@ class UnifiedRetrievalTests(TestCase):
         self.assertTrue(result['knowledge_rows'])
         match = next(row for row in result['records'] if row['object_type'] == 'competition')
         self.assertIn(self.related_resource.code, match['related_object_ids']['resource'])
+        self.assertEqual(as_evidence(match)['internal_url'], f'/competitions/{self.competition.pk}')
+        self.assertEqual(recommendations([match])[0]['database_id'], str(self.competition.pk))
         self.assertEqual(recommendations(result['records'])[0]['related_resources'][0]['title'],
                          self.related_resource.title)
 
@@ -101,6 +107,40 @@ class UnifiedRetrievalTests(TestCase):
         result = self.retrieve('Python 入门资源', 'resource')
         self.assertEqual(result['records'][0]['object_id'], self.python_resource.code)
         self.assertNotIn('private-course-unit', {row['object_id'] for row in result['records']})
+
+    def test_new_public_resource_is_available_without_rebuilding_index(self):
+        self.assertFalse(self.retrieve('天文学入门资料', 'resource')['records'])
+        added = Resource.objects.create(code='astronomy-course-unit', title='天文学入门资料',
+            description='天文学公开学习资料', category=self.related_resource.category,
+            access_url='https://www.tongji.edu.cn/astronomy-course',
+            publication_status='published', availability='available', published_at=timezone.now())
+        result = self.retrieve('天文学入门资料', 'resource')
+        self.assertEqual(result['records'][0]['object_id'], added.code)
+
+    def test_public_open_team_card_is_searchable_and_links_to_real_detail(self):
+        self.competition.recruitment_enabled = True
+        self.competition.recruitment_note = '公开赛事组队'
+        self.competition.save(update_fields=['recruitment_enabled', 'recruitment_note'])
+        actor = get_user_model().objects.create_user(email='team-search@tongji.edu.cn', password='tests-only')
+        team = Team.objects.create(competition=self.competition, recruiter=actor)
+        card = Recruitment.objects.create(team=team, duration_days=7)
+        revision = RecruitmentRevision.objects.create(recruitment=card, version=1,
+            existing_member_count=1, recruitment_quota=2, foundation_requirement='beginner_ok',
+            weekly_effort='over_2_to_5', collaboration_mode='online', edited_by=actor)
+        now = timezone.now()
+        card.current_revision, card.publication_status = revision, 'published'
+        card.published_at, card.expires_at = now, now + timedelta(days=3)
+        card.save()
+        result = self.retrieve('机器人组队', 'smart')
+        row = next(row for row in result['records'] if row['object_type'] == 'team')
+        self.assertEqual(row['object_id'], f'db-{card.pk}')
+        sources, _ = fuse(evidence_rows([row]), [], [])
+        self.assertEqual(sources[0]['internal_url'], f'/teams/{card.pk}')
+        self.assertEqual(sources[0]['url'], f'/teams/{card.pk}')
+        card.closed_at, card.close_reason = now, 'manual'
+        card.save()
+        self.assertNotIn(('team', f'db-{card.pk}'),
+            {(item['object_type'], item['object_id']) for item in self.retrieve('机器人组队', 'smart')['records']})
 
     def test_smart_mode_keeps_relevant_competition_and_research(self):
         with patch('ai_services.unified.search_competitions', return_value=self.curated_competition()):

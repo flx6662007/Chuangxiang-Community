@@ -39,7 +39,7 @@ TRUST_BY_DOMAIN = {
 
 
 def source_trust(source_type, *, domain='competition', reviewed=False):
-    if source_type in ('approved_knowledge', 'platform_competition', 'platform_resource', 'platform_research'):
+    if source_type in ('approved_knowledge', 'platform_competition', 'platform_resource', 'platform_research', 'platform_team'):
         return SourceTrust(source_type, 1.0 if reviewed else 0.72, reviewed,
                            '站内已核验资料' if reviewed else '站内公开资料')
     score = TRUST_BY_DOMAIN.get(domain, TRUST_BY_DOMAIN['competition']).get(source_type, 0.20)
