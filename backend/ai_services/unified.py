@@ -380,7 +380,7 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
     elif mode == 'smart':
         allowed = {kind for domain, kinds in (
             ('competition', ('competition',)), ('project', ('research_opportunity', 'research_group')),
-            ('resource', ('resource',))) if domain in route.domains for kind in kinds}
+            ('resource', ('resource',)), ('team', ('team',))) if domain in route.domains for kind in kinds}
         primary = [row for row in primary if row['object_type'] in allowed]
     if mode == 'competition':
         primary.sort(key=lambda row: (row['object_type'] != 'competition', -row['retrieval_score']))

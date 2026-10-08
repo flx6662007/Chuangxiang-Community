@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1480" height="980" viewBox="0 0 1480 980" role="img" aria-labelledby="title desc">
+  <title id="title">创享 · 开放之窗 Logo 精修草图</title>
+  <desc id="desc">大尺寸标志、深色导航与浅色背景中的精修版开放之窗标志。使用创享网站蓝色系的轻微渐变。</desc>
+  <defs>
+    <linearGradient id="dark-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#9AC4F4"/>
+      <stop offset=".55" stop-color="#76A7E8"/>
+      <stop offset="1" stop-color="#5E8DD0"/>
+    </linearGradient>
+    <linearGradient id="light-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#527EA8"/>
+      <stop offset="1" stop-color="#315E84"/>
+    </linearGradient>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+      .mono { font-family: "SFMono-Regular", Menlo, Consolas, monospace; }
+      .brand { font-family: "LXGW WenKai GB", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+    </style>
+  </defs>
+  <rect width="1480" height="980" fill="#0B111B"/>
+  <path d="M64 137h1352" stroke="#26394C"/>
+  <text x="64" y="62" class="mono" font-size="15" letter-spacing="2.8" fill="#83ACDF">CHUANGXIANG  /  IDENTITY STUDY</text>
+  <text x="64" y="111" class="brand" font-size="38" font-weight="600" fill="#EDF2F7">开放之窗 · 精修草图</text>
+  <text x="1416" y="100" text-anchor="end" class="mono" font-size="15" letter-spacing="2" fill="#879AAD">02 / 03</text>
+
+  <rect x="64" y="170" width="748" height="724" rx="14" fill="#142337" stroke="#304258"/>
+  <text x="100" y="221" class="mono" font-size="14" letter-spacing="2.2" fill="#9CB3CA">SYMBOL  /  PRIMARY</text>
+  <g transform="translate(262 273) scale(5.45)">
+    <path d="M39 12.5H21A8.5 8.5 0 0 0 12.5 21v22a8.5 8.5 0 0 0 8.5 8.5h22a8.5 8.5 0 0 0 8.5-8.5V33" fill="none" stroke="url(#dark-blue)" stroke-width="6.5" stroke-linecap="round"/>
+    <rect x="46.5" y="11" width="8" height="8" rx="1.8" fill="#A9CEFA"/>
+  </g>
+  <text x="438" y="709" text-anchor="middle" class="brand" font-size="67" font-weight="600" letter-spacing="2" fill="#F5F4EF">创享</text>
+  <text x="438" y="758" text-anchor="middle" class="mono" font-size="17" letter-spacing="7" fill="#9FB0C0">CHUANGXIANG</text>
+  <path d="M100 808h676" stroke="#304258"/>
+  <text x="100" y="851" class="sans" font-size="16" fill="#AABBCD">开放的边框，呼应平台入口；离框的方块，表示新的可能。</text>
+
+  <rect x="844" y="170" width="572" height="248" rx="14" fill="#111D2B" stroke="#304258"/>
+  <text x="878" y="213" class="mono" font-size="14" letter-spacing="2" fill="#8FA7BF">DARK NAVIGATION  /  37 PX</text>
+  <rect x="878" y="240" width="504" height="126" rx="8" fill="#0B111B" stroke="#35465A"/>
+  <g transform="translate(902 268) scale(.66)">
+    <path d="M39 12.5H21A8.5 8.5 0 0 0 12.5 21v22a8.5 8.5 0 0 0 8.5 8.5h22a8.5 8.5 0 0 0 8.5-8.5V33" fill="none" stroke="url(#dark-blue)" stroke-width="6.5" stroke-linecap="round"/>
+    <rect x="46.5" y="11" width="8" height="8" rx="1.8" fill="#A9CEFA"/>
+  </g>
+  <text x="960" y="291" class="brand" font-size="29" font-weight="600" fill="#F5F4EF">创享</text>
+  <text x="960" y="315" class="mono" font-size="10" letter-spacing="2.2" fill="#8292A4">CHUANGXIANG</text>
+  <text x="1200" y="304" class="brand" font-size="18" fill="#A3AEBA">发现　AI　赛事</text>
+  <text x="878" y="392" class="sans" font-size="14" fill="#91A4B8">匹配当前网站的深色页头。</text>
+
+  <rect x="844" y="442" width="572" height="248" rx="14" fill="#F2F1ED" stroke="#CDD6DA"/>
+  <text x="878" y="485" class="mono" font-size="14" letter-spacing="2" fill="#60798D">LIGHT BACKGROUND  /  37 PX</text>
+  <rect x="878" y="512" width="504" height="126" rx="8" fill="#FAF9F6" stroke="#D0D7D6"/>
+  <g transform="translate(902 540) scale(.66)">
+    <path d="M39 12.5H21A8.5 8.5 0 0 0 12.5 21v22a8.5 8.5 0 0 0 8.5 8.5h22a8.5 8.5 0 0 0 8.5-8.5V33" fill="none" stroke="url(#light-blue)" stroke-width="6.5" stroke-linecap="round"/>
+    <rect x="46.5" y="11" width="8" height="8" rx="1.8" fill="#4475A0"/>
+  </g>
+  <text x="960" y="563" class="brand" font-size="29" font-weight="600" fill="#25313B">创享</text>
+  <text x="960" y="587" class="mono" font-size="10" letter-spacing="2.2" fill="#687680">CHUANGXIANG</text>
+  <text x="1200" y="576" class="brand" font-size="18" fill="#566570">发现　AI　赛事</text>
+  <text x="878" y="664" class="sans" font-size="14" fill="#5A6D7A">浅色背景使用深蓝版本，保留相同的结构。</text>
+
+  <rect x="844" y="714" width="572" height="180" rx="14" fill="#111D2B" stroke="#304258"/>
+  <text x="878" y="758" class="mono" font-size="14" letter-spacing="2" fill="#8FA7BF">PALETTE  /  SOFT BLUE SHIFT</text>
+  <rect x="878" y="787" width="112" height="54" rx="4" fill="#0B111B"/>
+  <rect x="1000" y="787" width="112" height="54" rx="4" fill="#76A7E8"/>
+  <rect x="1122" y="787" width="112" height="54" rx="4" fill="#38658A"/>
+  <rect x="1244" y="787" width="112" height="54" rx="4" fill="#F2F1ED"/>
+  <text x="878" y="866" class="mono" font-size="12" letter-spacing="1.1" fill="#7E93A8">NAVY</text>
+  <text x="1000" y="866" class="mono" font-size="12" letter-spacing="1.1" fill="#7E93A8">SOFT BLUE</text>
+  <text x="1122" y="866" class="mono" font-size="12" letter-spacing="1.1" fill="#7E93A8">INK BLUE</text>
+  <text x="1244" y="866" class="mono" font-size="12" letter-spacing="1.1" fill="#7E93A8">WARM WHITE</text>
+  <text x="64" y="949" class="mono" font-size="13" letter-spacing="1.7" fill="#71869B">LOGO SKETCH  ·  OCT 2026</text>
+  <text x="1416" y="949" text-anchor="end" class="mono" font-size="13" letter-spacing="1.7" fill="#71869B">CREATED FOR CHUANGXIANG</text>
+</svg>

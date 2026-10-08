@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link id="site-favicon" rel="icon" type="image/svg+xml" data-base="%BASE_URL%" />
     <script>
       // Apply before styles and Vue load; keep the key in sync with utils/theme.js.
       (() => {
@@ -11,6 +12,8 @@
         const theme = saved === 'dark' || saved === 'light'
           ? saved : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
         document.documentElement.dataset.theme = theme
+        const favicon = document.getElementById('site-favicon')
+        favicon.href = `${favicon.dataset.base}favicon-${theme}.svg`
       })()
     </script>
     <style>

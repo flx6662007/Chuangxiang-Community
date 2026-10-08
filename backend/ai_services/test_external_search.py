@@ -5,7 +5,7 @@ import httpx
 from django.core.cache import cache
 from django.test import SimpleTestCase
 
-from ingestion.http import FetchError, OfficialClient, Page
+from ingestion.http import FetchError, OfficialClient, Page, _certificate_matches_host
 from .external_search import SearXNGAdapter, page_evidence, search_question
 from .web import search_external
 
@@ -64,6 +64,45 @@ class ExternalSearchTests(SimpleTestCase):
         rows, status = self.adapter([{'url': 'https://lab.example.edu.cn/', 'content': '本科生可申请'}], Reader).search('本科申请')
         self.assertEqual(rows, [])
         self.assertEqual(status, 'external_page_unavailable')
+
+    def test_local_web_proxy_is_only_passed_to_page_reader(self):
+        self.config['WEB_PROXY_URL'] = 'http://127.0.0.1:12450'
+        options = []
+        class Reader:
+            def __init__(self, hosts, **kwargs):
+                options.append(kwargs)
+            def get(self, url):
+                return Page(url, BODY)
+            def close(self):
+                pass
+        rows, status = self.adapter([{'url': 'https://lab.example.edu.cn/about'}], Reader).search('机器人')
+        self.assertEqual(status, 'ready')
+        self.assertTrue(rows)
+        self.assertEqual(options[0]['proxy'], 'http://127.0.0.1:12450')
+
+    def test_web_proxy_must_be_local_and_without_credentials(self):
+        for proxy in ('http://10.0.0.1:8080', 'http://user:pass@127.0.0.1:8080',
+                      'https://127.0.0.1:8080', 'http://127.0.0.1:8080/private'):
+            with self.subTest(proxy=proxy):
+                self.config['WEB_PROXY_URL'] = proxy
+                self.assertEqual(self.adapter([], lambda *args, **kwargs: None).search('机器人'),
+                                 ([], 'external_search_unconfigured'))
+
+    def test_pinned_proxy_connection_checks_original_certificate_hostname(self):
+        certificate = {'subjectAltName': (('DNS', '*.example.org'), ('IP Address', '1.1.1.1'))}
+        self.assertTrue(_certificate_matches_host(certificate, 'www.example.org'))
+        self.assertTrue(_certificate_matches_host(certificate, '1.1.1.1'))
+        for host in ('example.org', 'nested.www.example.org', 'www.example.com', '127.0.0.1'):
+            with self.subTest(host=host):
+                self.assertFalse(_certificate_matches_host(certificate, host))
+        reader = OfficialClient(['www.example.org'], proxy='http://127.0.0.1:12450')
+        try:
+            response = httpx.Response(200, request=httpx.Request('GET', 'https://1.1.1.1/'))
+            with self.assertRaises(FetchError) as error:
+                reader._verify_proxy_certificate(response, 'www.example.org')
+            self.assertEqual(error.exception.code, 'tls_hostname_mismatch')
+        finally:
+            reader.close()
 
     def test_unsafe_urls_and_cross_host_redirects_are_not_evidence(self):
         class Reader:
