@@ -34,6 +34,15 @@ class Upstream(httpx.SyncByteStream):
     'API_KEY': CONFIG.api_key, 'MODEL': CONFIG.model,
 })
 class StreamChatTests(SimpleTestCase):
+    def setUp(self):
+        # Keep SSE transport fixtures dedicated to streaming; planning has its own contract tests.
+        planner = patch.object(OpenAICompatibleClient, 'complete_json', return_value={
+            'relation': 'new', 'question': '你好', 'kind': 'conversation',
+            'search_scope': 'topic', 'target_indices': [], 'clarification': '',
+        })
+        planner.start()
+        self.addCleanup(planner.stop)
+
     def test_client_forwards_real_upstream_chunks(self):
         upstream = Upstream([frame({'role': 'assistant'}), frame({'content': '根据'}),
                              frame({'content': '你的需求'}), frame({}, 'stop'), b'data: [DONE]\n\n'])

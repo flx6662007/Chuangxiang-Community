@@ -127,7 +127,14 @@ export function useAIChat(request) {
   }
 
   function clear() {
-    if (pending.value) return false
+    if (active) {
+      const run = active
+      active = undefined
+      clearTimeout(run.timer)
+      run.controller.abort()
+    }
+    pending.value = false
+    phase.value = 'idle'
     messages.value = []
     error.value = ''
     failed.value = false

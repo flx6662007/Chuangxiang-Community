@@ -36,17 +36,23 @@ class FusionTests(SimpleTestCase):
         self.assertNotIn('[88]', answer)
         self.assertNotIn('evil.example', answer)
 
-    def test_no_evidence_does_not_call_model_or_invent_sources(self):
+    def test_no_evidence_calls_model_but_cannot_invent_citations_or_cards(self):
         class Provider:
             def complete_text(self, messages):
-                raise AssertionError('no factual source must not call the model')
+                self.messages = messages
+                return '可以先比较机器人控制、视觉和仿真方向。[88] https://invented.example/entry'
 
+        provider = Provider()
         with patch('ai_services.chat.retrieve_unified', return_value={
                 'records': [], 'knowledge_rows': [], 'knowledge_status': 'no_published_knowledge',
                 'mode_used': 'keyword', 'warnings': [],
             }), patch('ai_services.chat.search_external', return_value=([], 'registered_site_not_matched')):
             result = chat([{'role': 'user', 'content': '有哪些机器人比赛'}],
-                          client=Provider(), details=True)
+                          client=provider, details=True)
         self.assertEqual(result['sources'], [])
-        self.assertIn('未查到', result['message']['content'])
+        self.assertEqual(result['recommendations'], [])
+        self.assertIn('通用知识', provider.messages[0]['content'])
+        self.assertIn('机器人控制', result['message']['content'])
+        self.assertNotIn('[88]', result['message']['content'])
+        self.assertNotIn('invented.example', result['message']['content'])
         self.assertFalse(result['retrieval']['has_sources'])

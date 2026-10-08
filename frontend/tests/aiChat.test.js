@@ -181,3 +181,47 @@ test('联网搜索默认关闭，用户可以在重试时开启且不重复提�
   assert.deepEqual(calls.map(call => call.enabled), [false, true])
   assert.deepEqual(calls[0].history, calls[1].history)
 })
+
+test('新对话取消生成并丢弃缓冲、历史和签名，迟到回调不能污染下一轮', async () => {
+  const calls = []
+  const chat = useAIChat((history, options) => new Promise((resolve, reject) => calls.push({ history, options, resolve, reject })))
+  const first = chat.submit('旧问题', { mode: 'resource', webSearch: true })
+  calls[0].resolve({ ...reply, conversation_context: 'old-signed-context' })
+  await first
+  const old = chat.submit('旧追问', { mode: 'resource', webSearch: true })
+  calls[1].options.onDelta('旧片段')
+  calls[1].options.onDelta('未刷新的缓冲')
+  assert.equal(chat.clear(), true)
+  assert.equal(calls[1].options.signal.aborted, true)
+  assert.deepEqual(chat.messages.value, [])
+  assert.equal(chat.phase.value, 'idle')
+  assert.equal(chat.pending.value, false)
+  assert.equal(chat.failed.value, false)
+  assert.equal(chat.error.value, '')
+  const fresh = chat.submit('新问题', { mode: 'resource', webSearch: true })
+  assert.deepEqual(calls[2].history, [{ role: 'user', content: '新问题' }])
+  assert.equal(calls[2].options.conversationContext, undefined)
+  assert.equal(calls[2].options.mode, 'resource')
+  assert.equal(calls[2].options.webSearch, true)
+  calls[1].options.onDelta('迟到内容')
+  calls[1].options.onStatus('generating')
+  calls[1].resolve({ ...reply, conversation_context: 'late-context' })
+  assert.equal(await old, false)
+  assert.equal(chat.phase.value, 'retrieving')
+  calls[2].resolve({ ...reply, content: '新答案' })
+  assert.equal(await fresh, true)
+  await new Promise(resolve => setTimeout(resolve, 40))
+  assert.deepEqual(chat.messages.value.map(row => row.content), ['新问题', '新答案'])
+})
+
+test('新对话后迟到错误不恢复错误提示或重试状态', async () => {
+  let reject
+  const chat = useAIChat(() => new Promise((_resolve, failed) => { reject = failed }))
+  const old = chat.submit('旧问题')
+  chat.clear()
+  reject(new Error('late network error'))
+  await old
+  assert.deepEqual(chat.messages.value, [])
+  assert.equal(chat.error.value, '')
+  assert.equal(chat.failed.value, false)
+})

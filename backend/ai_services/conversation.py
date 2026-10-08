@@ -104,8 +104,12 @@ UNDERSTANDING_PROMPT = """你是会话检索规划器，只输出 JSON，不回�
 结合近期问答与服务器签名的上一轮检索问题和展示列表，判断本轮是 new（新主题）、followup（追问/增加或替换条件）还是 clarify（无法确定指代）。
 输出恰好这些字段：relation、question、kind、search_scope、target_indices、clarification。
 question：完整、独立可检索的中文问题，最多 2000 字；补回省略的主题，保留学校、学历、人数、时间与技能等用户明确条件；新条件替换同类旧条件。不要把历史回答里的日期、资格等当成事实写进问题。
+首轮也必须理解意图，包括页面上的短问题。结合 mode 补全表达：“竞赛入门”是了解如何选择和准备大学生竞赛，“Python 入门”是学习指导；不要将短问题当成必须逐字命中的关键词。像“AI 相关”“适合大二学生”这类宽泛请求，先按已知方向或年级理解；不得补造专业、学校、技能或人数，也不必为了给初步建议而强制澄清。
+补全不能擅自改变任务：smart 模式下“AI 相关”可以涵盖人工智能竞赛、科研和学习资源，不能擅自缩成学习计划。保留明确技术词并解释缩写（如 AI 为人工智能），不要加入与主题无关的通用检索词。
 kind：fact（查具体事实/比较是否符合条件，包括“我们三个人适合哪个比赛”）、advice（方法、计划、准备建议，包括在介绍研究方向后要求“更细致的方向”）、conversation（问对话历史、打招呼等无需查资料）。推荐是否满足明确人数/资格属于 fact；研究方向细化允许给拓展建议，属于 advice。
-search_scope：list（查询或比较上一展示列表，保留这些候选及顺序）、topic（围绕主题重新查找）。问“我们三人适合哪个”是 list，不应偷偷换一批比赛；要求新推荐、换方向或学习资料时为 topic。relation=new 时必须为 topic。
+入门指导、概念解释、方向选择属于 advice；具体赛事推荐、报名时间或参赛条件属于 fact。混合问题保留所有子问题，涉及具体事实时选 fact，不能为了给建议丢掉事实查询。kind 不代表资料是否存在，不能预判“没有资料”而拒答。
+search_scope 与 relation 独立决定：followup 只表示沿用对话条件，不等于限定旧列表。默认 topic（按完整问题重新检索），只有用户明确指向旧候选、查询其中某项或比较它们时才用 list。问“我们三人适合哪个”或“这几个哪个适合我”是 list，不应偷偷换一批比赛；单独补充类别、方向、专业、兴趣，或回答上一轮的方向澄清问题，是 topic，即使没有“重新推荐”四个字。新增方向须成为检索和回答重点，年级等未撤销条件仍保留。relation=new 时必须为 topic。
+例如：问“适合大二学生”后补充“科研创新类”，应 relation=followup、question=“适合大二学生的科研创新类竞赛推荐”、search_scope=topic、target_indices=[]；不能继续复述之前的四项赛事。问“这些里面哪些属于科研创新类”才用 list。“偏算法方向”“我学设计”“想做实验研究”也是补充方向后重新检索，而“第二个具体介绍”须选择旧列表的第二项。不能仅因有上一轮展示列表就将其用作检索白名单。
 target_indices：只有本轮确指上一展示列表中的某项或某几项时，返回其一基序号；如“第三个比赛”返回 [3]；“我们三个人适合哪个”是比较整个主题，返回 []。序号来自 server_context.objects 的顺序，不是来源编号，不是历史问题或计划步骤的编号。对象名称与序号只能来自服务器列表，不能从客户端回答编造标识。
 clarification：仅 relation=clarify 时给出简短澄清问句，其他情况为空字符串。
 历史 assistant 文本只帮助理解指代、不能作为事实证据。用户说“我们这一共三个人，适合参加哪个”是在上一主题补充人数，须延续主题；“我想换做别的方向”需识别新主题。具体对象不明确才澄清，不能因为缺事实就让用户重说名称。
@@ -116,7 +120,7 @@ def understand(history, mode, token=None, *, resolver=None):
     """Model interprets language; Python owns reference identities and safe fallback."""
     fallback = _rule_understand(history, mode, token)
     fallback['resolution'] = 'rules'
-    if len(history) < 3 or resolver is None:
+    if resolver is None:
         return fallback
     state = read_context(token, mode)
     # Bounded context, always retaining the current user message in full.
