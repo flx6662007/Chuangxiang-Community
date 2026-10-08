@@ -1,36 +1,51 @@
 # 创享平台前端
 
-电脑端 Vue 3 工程，沿用 Vite、Vue Router、Axios、Element Plus。赛事目录、届次通知、学习资料和组队页面调用真实后端；接口失败显示错误，不自动填充模拟数据。未引入额外 UI 框架或前端全局状态库。科研、快讯也通过后端接口加载。首页助手无模型配置时使用真实资料检索，有配置时调用聊天接口。
+电脑端 Vue 3 工程，使用 Vite、Vue Router、Axios、Element Plus，AI 回答由 markdown-it 渲染。赛事目录、届次通知、学习资料、科研、快讯和组队页面调用真实后端；接口失败显示错误，不自动填充模拟数据。未引入前端全局状态库。首页助手支持关键词检索与模型对话，具体入口见下方“AI 助手”。
 
 ## 启动
 
-需要 Node.js 20.19+ 或 22.12+。在 `frontend/` 执行：
+需要 Node.js 20.19 及以上的 20.x，或 Node.js 22.12 及以上版本；范围以 `package.json` 的 `engines` 为准。在 `frontend/` 执行：
 
 ```powershell
 npm ci
 npm run dev
 ```
 
-先按[后端启动说明](../docs/backend-development.md)启动数据库与 Django。默认页面地址为 `http://127.0.0.1:5173/`，`/api` 由 Vite 代理至 `http://127.0.0.1:8000`。修改代理时复制 `.env.example` 为 `.env.local`，设置 `DEV_PROXY_TARGET`。本机配置不提交。
+先按[后端启动说明](../docs/backend-development.md)启动数据库与 Django。默认页面地址为 `http://127.0.0.1:5173/`，`/api` 由 Vite 代理至 `http://127.0.0.1:8000`。开发服务只绑定本机地址，端口占用时退出，不自动切换端口。
+
+需要调整配置时，将 `.env.example` 复制为 `.env.local`：
+
+| 变量 | 用途与默认值 |
+| --- | --- |
+| `DEV_SERVER_PORT` | 本机前端端口，默认 `5173` |
+| `DEV_PROXY_TARGET` | 本机 Django 地址，默认 `http://127.0.0.1:8000` |
+| `VITE_API_BASE_URL` | 业务接口前缀，默认 `/api/v1` |
+| `VITE_AUTH_BASE_URL` | 浏览器账号接口前缀，默认 `/api/auth/browser/v1` |
+| `VITE_PRIVATE_BETA` | 设为 `1` 时显示邀请内测界面；普通开发无需设置 |
+
+本机配置不提交。`VITE_` 变量会进入浏览器代码，模型密钥、数据库密码和邮件凭据只配置在后端。`DEV_` 代理变量供本机开发使用；生产反向代理按[部署说明](../docs/deployment.md)配置。
 
 ```powershell
 npm test
 npm run build
 ```
 
-生产环境需配置 history 路由回退 `index.html`；构建成功不代表已公网部署。邮箱默认开发控制台流程，真实 SMTP 暂缓。
+生产环境需配置 history 路由回退 `index.html`；构建成功不代表已公网部署。普通开发模式的验证码在后端控制台读取，实际邮箱投递由后端邮件配置决定。
+
+邀请内测模式隐藏注册、找回密码和邮箱验证表单，展示分配账号的说明；它只控制界面，不会创建账号、设置服务器权限或核验真实邮箱。启用内测须配套后端配置和测试账号，步骤见[邀请内测说明](../docs/private-beta.md)。构建后的模式固定在产物中，修改后需重新构建。
 
 ## 页面
 
 | 路由                     | 用途                                                               |
 | ------------------------ | ------------------------------------------------------------------ |
-| `/`                      | 首页、赛事搜索、最新公开赛事和栏目入口                             |
+| `/`                      | 首页、AI 助手、公开资讯和栏目入口；`/#ai` 定位助手                |
 | `/competitions` | 赛事目录搜索、等级筛选、分页；`?view=editions` 查看届次通知             |
 | `/competitions/catalog/:code` | 目录详情、关联届次、整理资料正文、学习资源入口                 |
 | `/competitions/:id` | 已发布届次的要求、日期、官方来源、关联招募入口                        |
 | `/resources` | 后端学习资源列表；支持搜索、类型、方向、目录编号和分页                       |
-| `/resources/:code` | 资源说明、来源原文与关联赛事目录                                       |
-| `/research` | 官方项目招募线索、关键词搜索与原文链接                                     |
+| `/resources/:id` | 资源说明、来源原文与关联赛事目录；此处 `id` 为资源编码字符串             |
+| `/research` | 科研资料搜索、研究方向、招募条件和对应来源                                 |
+| `/research/:id` | 指定科研资料的详情，`id` 为数字记录编号                                   |
 | `/teams`                 | 团队广场，按赛事、角色、技能、协作方式、校区、招募状态筛选         |
 | `/teams/publish`         | 固定模板、实际有效期预校验、确认发布；`team_id` 指定原队新一轮招募 |
 | `/teams/:id`             | 公开招募详情、登录后申请                                           |
@@ -40,11 +55,25 @@ npm run build
 | `/account/notifications` | 系统消息、未读筛选、已读和最新对象入口                             |
 | `/account/governance`    | 本人举报、反馈与申诉                                               |
 
-旧 `/information/competitions`、`/information/competitions/:id`、`/information/projects` 和 `/information/resources` 保留查询条件跳转至上述路径。
+旧 `/information`、`/information/competitions`、`/information/competitions/:id`、`/information/projects`、`/information/resources` 和 `/information/resources/:id` 保留查询条件与锚点跳转至上述路径。
 
 目录收录不代表当届正在报名。资源中心和资源详情无需登录或管理权限，搜索、分类及分页均读取公开资源；旧资源链接中的 `preview` 参数会自动移除。目录详情的内部知识草稿仍仅允许授权管理员主动预览，后端校验权限；内部正文以纯文本呈现，离开页面或切换账号会清空预览。
 
 没有自由发帖、自我介绍、附件、即时聊天或任意标签输入。公开卡片不读取联系方式。所有发布、申请、确认操作继续接受后端账号与业务权限检查。
+
+当前举报入口位于赛事届次详情和招募详情，登录后可提交；处理记录与申诉在 `/account/governance`。赛事目录详情、资源详情和科研详情尚未挂接举报入口。
+
+## AI 助手
+
+首页 `/#ai` 的 `AICompetitionAssistant.vue` 先调用 `GET /api/v1/ai/status/`。后端返回 `chat_configured=false` 时显示关键词搜索，调用真实的 `/api/v1/ai/search/`；状态接口失败时显示重试，不以演示结果代替。
+
+配置模型后，界面提供“智能、赛事、科研、资源”四个模式，通过 `POST /api/v1/ai/chat/stream/` 接收 SSE 流式回答，依次显示检索状态、回答分片、最终内容和来源。可以停止生成或重试失败消息；切换模式会清空本次对话。完整对话保留在组件内存，每次请求仅发送最近 20 轮、最多 60000 字符；单条问题最多 2000 字。
+
+“联网搜索”默认关闭，开启后将 `web_search=true` 交给后端，是否查得站外资料由后端能力与返回结果决定。模型请求和检索都由 Django 执行，前端不直接连接模型供应商。
+
+回答支持 Markdown 排版，禁用 HTML 和远程图片；生成中或中断回答中的链接不可点击，完成后仅放行结构化来源中的链接。来源、推荐和科研字段的多个依据单独展示，站内链接按前端允许的路由解析。当前解析器的科研／团队来源契约仍有一项失败测试，见下方基准记录。
+
+“赛事”模式下可展开 `CompetitionGuide.vue`：填写兴趣与技能 → 查找候选赛事 → 分析规则和学习资料 → 查看开放招募。向导通过 `/api/v1/ai/guide/` 读写会话；进入招募页后仍执行原有账号与组队权限校验。接口细节见 [AI 实现说明](../docs/ai-v2.md)。
 
 ## 代码
 
@@ -52,11 +81,15 @@ npm run build
 
 - `src/api/`：按账号、赛事、组队、通知划分请求。写操作先取得 CSRF，每次读取当前 Cookie，避免登录轮换后使用旧令牌。
 - `src/api/catalog.js`：目录和知识文档的只读接口；`src/services/resources.js`：学习资源真实 API，已移除旧资源 Mock。
+- `src/api/editorial.js`：科研列表、科研详情和首页快讯；`ResearchDetailView.vue` 复用科研卡片展示字段与来源。
+- `src/api/ai.js`、`aiStream.js`、`aiResponse.js`：AI 状态、JSON／SSE 请求、分片读取与响应校验；首页对话使用 SSE。
+- `src/composables/useAIChat.js`：对话历史、停止、重试和迟到响应处理；`src/utils/aiMarkdown.js`：回答排版与链接控制。
+- `src/api/guide.js`、`src/utils/guide.js`、`src/components/CompetitionGuide.vue`：赛事向导请求、条件转换和流程展示。
 - `src/components/`：卡片、字段选择器、招募条件、申请处理和队伍处理组件。
 - `src/views/`：页面、URL 筛选、加载／错误／空状态；新增组队路由懒加载。
 - `src/utils/teams.js`：中文状态、表单白名单、双版本令牌、业务错误、通知站内跳转和停用词条展示。
 
-接口见 [api.md](../docs/api.md) 与 [api-teams.md](../docs/api-teams.md)。同一页筛选使用服务器分页，不能仅过滤当前页。模型／字段修改需先同步接口约定。
+接口见 [API 总览](../docs/api.md)、[组队 API](../docs/api-teams.md) 与 [AI 接入](../docs/ai-v3.md)。同一页筛选使用服务器分页，不能仅过滤当前页。模型／字段修改需先同步接口约定。
 
 ## 联调检查
 
@@ -66,8 +99,11 @@ npm run build
 4. 撤回、拒绝、结束、关闭或到期后刷新关系；联系接口拒绝时必须清空旧资料。离窗、离页或 30 秒后联系方式自动隐藏，不存 localStorage。
 5. 发起退出／移除／解散，分别检查同意、拒绝、撤回、24 小时结算和历史。结束成员关系不能仅靠前端删除一行。
 6. 核对搜索分页返回条件、无结果、无权限、重复点击、服务错误；查看通知不应自动继续申请或确认入队。
+7. 检查 AI 无配置检索、四模式切换、流式生成、停止后重试、引用链接和向导到招募页的跳转。科研详情需核对字段与对应来源；不能以编译成功替代接口联调。
 
-单元测试覆盖请求字段白名单、版本令牌、允许动作、错误边界、历史停用选项、通知目标，以及原有账号／日期／网址规则。浏览器联调由团队另记实际结果，单元测试不能代替双账号操作。
+单元测试覆盖请求字段白名单、版本令牌、允许动作、错误边界、历史停用选项、通知目标、账号／日期／网址规则，以及 AI 流式解析、停止重试、Markdown、来源契约和向导条件。浏览器联调由团队另记实际结果，单元测试不能代替双账号操作。
+
+本轮测试结果与已知问题集中记录在[工程整理记录](../docs/engineering-cleanup-20261008.md)，避免将单次验收数字作为长期状态维护。
 
 ## 主题
 

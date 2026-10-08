@@ -1,99 +1,99 @@
-# 创享平台 · Chuangxiang Community
+# 创享社区
 
-当前前端已连接赛事目录、学习资源、知识正文、科研和快讯接口，界面统一使用霞鹜文楷 GB。拉取本轮代码后需执行数据库迁移；启动与接口说明见 [团队进度](docs/progress.md) 和 [资料库接口](docs/api-library.md)。
+面向学生的科创信息与参赛组队网站。前端使用 Vue 3 / Vite，后端使用 Django / DRF，数据库使用 PostgreSQL。
 
-面向学生的科创信息与参赛组队网站。前端使用 Vue，后端使用 Django / DRF，数据库使用 PostgreSQL。
+## 功能
 
-## 先从这里看
+- **赛事与学习资源**：赛事目录、届次通知、报名与组队状态、资料正文、来源和关联学习资源。
+- **组队与账号**：学校邮箱账号、招募发布、申请与双方确认、成员管理、站内通知、举报和申诉。
+- **科研与快讯**：科研介绍、招募筛选、详情及来源链接；首页快讯由团队手动维护。
+- **AI 助手**：赛事、科研、资源和智能四种模式；关键词与 BGE 混合检索、带来源回答、多轮问答、流式输出；赛事向导连接分析与找队友流程。可按配置启用联网搜索。
 
-| 想了解什么 | 入口 |
+上述为代码能力。科研公开展示、模型回答、语义索引、真实邮件和联网搜索分别需要配置；克隆仓库不会复制数据库、账号、密钥、模型或正在运行的内测环境。实际接续入口见[当前进度](docs/progress.md)。
+
+## 阅读入口
+
+| 要做什么 | 文档 |
 | --- | --- |
-| 第一次读代码，从哪个文件开始 | **[代码导读](docs/code-guide.md)** |
-| 目前完成了什么、是否已上传 | [团队进度](docs/progress.md) |
-| 通过临时网址使用 AI 内测版 | [邀请内测](docs/private-beta.md) |
-| 怎么安装和启动 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) |
-| 前后端怎么对接 | [赛事与账号 API](docs/api.md) · [组队 API](docs/api-teams.md) |
-| 查赛事资料与学习资源 | [人工赛事资料](docs/competition-research/README.md) · [目录 1—89](docs/competition-research/tongji-2026-001-089/README.md) |
-| 赛事知识系统第一版交付 | [三个交付包](deliverables/competition-knowledge-v1/README.md) · [接入说明](docs/competition-delivery.md) |
-| 查其他说明 | [文档导航](docs/README.md) |
-
-## 目前能做什么
-
-- **信息中心**：赛事列表、搜索、详情；科研板块标注“暂不开放”，首页保留人工快讯。
-- **参赛组队**：发布招募、申请、双方确认入队和成员管理。
-- **账号与反馈**：学校邮箱账号、站内通知、登录用户的举报与申诉。
-- **资料维护**：当前使用人工整理的统一资料包，导入赛事正文、来源和关联学习资源，并生成当前或下一届组队目标。更新后重建检索索引，步骤见[赛事助手交接](docs/ai-assistant-handoff.md)；旧采集代码保留供历史维护。
-
-赛事知识、学习资源和组队目标统一使用[新版资料导入与检索](docs/competition-search-handoff.md)。执行数据库迁移和统一导入后，即可在资源中心查阅资料、在现有组队入口发布招募。
-
-当前为本机开发版。邮箱使用开发控制台，尚未公网部署。首页赛事助手的条件理解、统一检索、带来源的 AI 回答和现有招募查询见 [赛事助手接入](docs/ai-assistant-handoff.md)；队长按接入说明配置后端 Key 并验证部署环境。内部 AI 草稿服务默认关闭。科研资料使用独立导入命令，公开展示默认关闭；快讯由内容文件维护。实际验证与 GitHub 同步状态以[团队进度](docs/progress.md)为准。
-
-目录范围不等于全部官网均采集成功，也不等于已发布 255 条赛事。来源、实际结果及待处理项见[采集覆盖表](docs/competition-catalog-coverage.md)。前台默认展示未明确截止的赛事，可切换历史；时间未知不代表正在报名。
+| 第一次读代码 | [代码导读](docs/code-guide.md) · [后端模块](backend/README.md) · [前端页面](frontend/README.md) |
+| 安装和启动 | [后端开发](docs/backend-development.md) · [前端开发](frontend/README.md) |
+| 使用内测或部署 | [邀请内测](docs/private-beta.md) · [部署说明](docs/deployment.md) |
+| 接续 AI | [AI 接入](docs/ai-v3.md) · [多轮与联网更新](docs/ai-optimization-20261008.md) · [赛事向导](docs/ai-assistant-handoff.md) |
+| 更新赛事及资源 | [统一资料与检索](docs/competition-search-handoff.md) · [资料库 API](docs/api-library.md) |
+| 导入科研资料 | [科研交付与配置](docs/releases/research-ai-20261007.md) |
+| 查接口和其他资料 | [文档导航](docs/README.md) |
 
 ## 目录
 
 ```text
-项目根目录（名称可自行更改）/
-├── frontend/       # 页面、组件、浏览器请求
-├── backend/        # 接口、业务、数据库模型、采集与 AI 服务
-├── docs/           # 接口约定、团队进度、开发说明
-├── deploy/         # 部署和定时运行脚本
-├── compose.yaml    # 部署配置，本机入门暂不用
-└── README.md       # 阅读入口
+Chuangxiang-Community/
+├── frontend/       # 页面、组件、浏览器请求和前端测试
+├── backend/        # 接口、业务、模型、迁移、AI 和后端测试
+├── docs/           # 当前文档、接口、资料包和来源
+│   └── archive/    # 早期方案、阶段验收与历史进度
+├── scripts/        # 开发/内测启停、资料构建、索引准备和评测
+├── deploy/         # 部署、定时任务和可选搜索服务配置
+├── deliverables/   # 正式交付包，保留清单与校验数据
+├── compose.yaml    # 容器部署配置
+├── AGENTS.md       # 仓库操作规则
+└── agent.md        # 接续开发约定
 ```
 
-这些后端业务目录属于同一个 Django 服务。完整模块说明见[后端目录](backend/README.md)，页面对应关系见[前端说明](frontend/README.md)。
+后端业务目录属于同一个 Django 工程；数据库模型和迁移随对应应用维护。文档内的正式资料包与来源快照是导入、重建和核对依据，不按重复文件或生成物批量清理。
 
 ## 本地启动
 
-### macOS：双击打开界面预览
+### 首次准备
 
-首次使用先安装符合 [`frontend/package.json`](frontend/package.json) 要求的 Node.js，并在 `frontend/` 执行一次 `npm ci`。之后在 Finder 双击项目根目录的 [`打开界面预览.command`](打开界面预览.command)。脚本按自身位置寻找前端文件夹，启动或复用本项目的 Vite 服务，并打开 <http://127.0.0.1:5174/?ui_preview=1>。新启动的服务需要保持终端窗口打开，按 `Ctrl+C` 停止。
+1. 安装 Python 3.13、PostgreSQL 17，以及符合 [package.json](frontend/package.json) 要求的 Node.js。
+2. 按[后端开发](docs/backend-development.md)创建 `backend/.venv`、安装依赖、配置自己的 `backend/.env` 和开发数据库，执行已有迁移。
+3. 在 `frontend/` 执行 `npm ci`。先启动空工程时，列表为空是正常状态；赛事与科研内容按各自交接文档导入。
+4. 需要 AI 时按 [AI 接入](docs/ai-v3.md)配置服务端密钥、模型目录和索引；普通页面读取已保存内容，不等待模型生成。
 
-该入口用于查看当前首页界面；首页赛事和招募卡片是视觉示例。它不启动 Django 或 PostgreSQL，也不用于检验账号、赛事和组队等实际业务。
+### Windows
 
-### 完整业务：手动启动
+完成首次准备后，在仓库根目录执行：
 
-先按[后端开发说明](docs/backend-development.md)准备 Python 3.13、PostgreSQL 17、`backend/.venv`、`backend/.env` 和数据库。macOS 下从项目根目录打开两个终端，分别执行：
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1
+```
+
+默认前端为 <http://127.0.0.1:5173/>，后端为 <http://127.0.0.1:8000/>。脚本隐藏启动两个进程；日志在 `.local/dev/`。Node 不在 PATH 时可指定 `-NodePath 'C:/Program Files/nodejs/node.exe'`。查看和停止：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -Action status
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1 -Action stop
+```
+
+端口占用时按[后端开发](docs/backend-development.md)指定另一组端口，启停时使用同一组参数。脚本不安装依赖、不改数据库；Python 修改后重启后端。
+
+### macOS / Linux
+
+分别在两个终端执行：
 
 ```bash
-# 终端一：后端；首次配置或新增迁移后执行 migrate
+# 终端一，从仓库根目录开始；先完成依赖、配置和迁移
 cd backend
-./.venv/bin/python manage.py migrate --noinput
 ./.venv/bin/python manage.py runserver 127.0.0.1:8000
 ```
 
 ```bash
-# 终端二：前端；首次安装或锁文件变化后执行 npm ci
+# 终端二，从仓库根目录开始
 cd frontend
-npm ci
 npm run dev
 ```
 
-首次配置后端时还需按[后端开发说明](docs/backend-development.md)执行 `init_competition_catalog`，导入赛事目录。Windows PowerShell 下也可从项目根目录分别手动启动：
+管理后台为 <http://127.0.0.1:8000/admin/>，管理员由各自创建。登录与验证时固定使用同一个前端主机名，避免切换 `localhost` / `127.0.0.1`。
 
-```powershell
-# 终端一：后端
-Set-Location .\backend
-.\.venv\Scripts\python.exe manage.py migrate --noinput
-.\.venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
-```
+macOS 仅看界面时，可在安装前端依赖后双击[打开界面预览.command](打开界面预览.command)。该入口使用 UI 示例，不启动数据库或后端，不用于业务验收。
 
-```powershell
-# 终端二：前端；首次安装或锁文件变化后执行 npm ci
-Set-Location .\frontend
-npm.cmd ci
-npm.cmd run dev
-```
+## 配置与维护
 
-完整业务页面打开 <http://localhost:5173/>；管理后台为 <http://127.0.0.1:8000/admin/>，没有预设管理员密码。两个终端都需保持运行；使用学生账号时保持同一个前端地址，避免来回切换 `localhost` 与 `127.0.0.1`。
+- `.env.example` 可共享；真实 `.env`、账号口令、数据库备份、日志、模型与索引留在本机。
+- `DEEPSEEK_*` 控制聊天和赛事向导；`AI_ENABLED` 控制独立的内部草稿服务，不能混用。
+- `PUBLIC_RESEARCH_ENABLED=1` 才开放科研数据；还需导入资料。联网搜索另见 [SearXNG 配置](docs/ai-optimization-20261008.md)。
+- 邮件默认输出到开发终端；真实注册需配置发件服务。内测账号和入口验证见[邀请内测](docs/private-beta.md)。
+- 资料维护以人工整理和导入为主，历史采集代码及维护命令保留。迁移、依赖锁文件、测试和第三方许可说明随代码保存。
+- 项目许可证待团队确认；第三方代码、模型和素材沿用各自许可。
 
-## 继续开发
-
-- 后端先读 `competitions/` 的路由、视图、序列化与模型，再进入组队业务；[代码导读](docs/code-guide.md)给出逐个文件的阅读顺序。
-- 后续 AI 使用[内部信息检索](docs/information-library.md)和[模型调用服务](docs/ai-services.md)。当前普通赛事页面直接读取已保存数据，不等待采集或模型生成。
-- 模型变更保留迁移，现有测试继续维护。安装依赖以各自依赖文件为准；部署见[部署说明](docs/deployment.md)。
-- `.env`、`.venv/`、`.local/`、`node_modules/`、数据库备份、学生资料及密钥留在本机。共享 `editorial.json` 会进入前端，只能放公开内容。
-- 官方通知是信息依据。项目许可证待团队确认，第三方代码、模型和素材需保留来源及许可说明。
-
-目录90—130的赛事资料、学习导读与草稿入库，见[本轮交付说明](docs/curated-research-90-130.md)。资料包含实际届次、来源、缺口和原始附件；与1—89及131—255分工包分别维护。
+校验与测试命令见[后端开发](docs/backend-development.md)和[前端说明](frontend/README.md)。整理范围及本轮验证见[工程整理记录](docs/engineering-cleanup-20261008.md)。
