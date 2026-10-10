@@ -1,4 +1,5 @@
 <script setup>
+import SentMessages from './SentMessages.vue'
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { getGuide, updateGuide } from '../api/guide'
 import { profilePayload, conditionLabels, registrationLabels } from '../utils/guide'
@@ -6,6 +7,7 @@ import { label } from '../utils/teams'
 import { safeExternalUrl } from '../utils/competition'
 
 const result = ref(null), message = ref(''), busy = ref(false), error = ref(''), openOnly = ref(false)
+const sentMessages = ref([])
 const form = reactive({ education: '', grade: '', major: '', interests: '', skills: '', weekly_hours: '', team_size: '', collaboration_mode: '', role: '' })
 let controller, disposed = false
 function accept(data) {
@@ -23,6 +25,7 @@ async function run(action = 'search', recordId, saveProfile = false) {
   controller = new AbortController()
   try {
     const data = { action, message: recordId || saveProfile || ['reset', 'retry'].includes(action) ? '' : message.value }
+    if (data.message.trim()) sentMessages.value.push(data.message.trim())
     if (recordId) data.record_id = recordId
     if (saveProfile) {
       data.profile = profilePayload(form)
@@ -31,6 +34,7 @@ async function run(action = 'search', recordId, saveProfile = false) {
     const reply = await updateGuide(data, controller.signal)
     if (disposed) return
     accept(reply)
+    if (action === 'reset') sentMessages.value = []
     message.value = ''
   } catch (cause) {
     if (!disposed && cause.code !== 'ERR_CANCELED') error.value = cause.response?.status === 400 ? '请检查条件填写：每周投入为 1—80 小时，人数为 1—1000 人。' : '查询未完成，请重试。'
@@ -55,9 +59,10 @@ function enter(event) {
       <div><h2 id="competition-guide-title">选比赛，了解要求，找到队友</h2><p>说说你的兴趣和技能，一起找到适合准备的赛事。</p></div>
       <button type="button" class="text-button" :disabled="busy" @click="run('reset')">重新开始</button>
     </div>
+    <SentMessages :messages="sentMessages" />
     <form class="guide-question" @submit.prevent="run()">
       <label for="guide-message">你的需求</label>
-      <textarea id="guide-message" v-model="message" rows="3" maxlength="500" placeholder="例如：我是大二学生，会一点 Python，每周能投入 5 小时，想了解数学建模比赛。" @keydown="enter" />
+      <textarea id="guide-message" v-model="message" :disabled="busy" rows="3" maxlength="500" placeholder="例如：我是大二学生，会一点 Python，每周能投入 5 小时，想了解数学建模比赛。" @keydown="enter" />
       <button class="action-button" :disabled="busy || !message.trim()">{{ busy ? '正在整理回答…' : '发送' }}</button>
     </form>
     <details class="guide-profile">
@@ -81,7 +86,7 @@ function enter(event) {
     <p v-if="error" role="alert" class="form-error">{{ error }}</p>
     <div v-if="result" aria-live="polite">
       <div v-if="result.answer?.paragraphs?.length" class="guide-answer">
-        <h3>赛事助手</h3>
+        <h3>小创</h3>
         <div v-for="(paragraph, index) in result.answer.paragraphs" :key="index">
           <p class="guide-answer-text">{{ paragraph.text }}</p>
           <a v-for="source in paragraph.citations" :key="`${source.record_id}:${source.id}`" :href="safeExternalUrl(source.url) || undefined" target="_blank" rel="noopener noreferrer" class="guide-citation">{{ source.title }} · {{ source.edition }}</a>
@@ -90,9 +95,10 @@ function enter(event) {
       <p v-else class="guide-response">{{ result.message }}</p>
       <div v-if="result.answer?.notice" role="status">
         <p>{{ result.answer.notice }}</p>
-        <button type="button" class="text-button" :disabled="busy" @click="run('retry')">重试 AI 回答</button>
+        <button type="button" class="text-button" :disabled="busy" @click="run('retry')">请小创重新回答</button>
       </div>
-      <p v-for="question in result.questions" :key="question">{{ question }}</p>
+      <p v-if="result.stage === 'selection' && result.candidates?.length" class="guide-selection-prompt">想参加哪场比赛？选择下方赛事，点击“分析这个赛事”了解要求，再找队友。</p>
+      <template v-else><p v-for="question in result.questions" :key="question">{{ question }}</p></template>
       <div class="guide-candidates">
         <article v-for="(candidate, index) in result.candidates" :key="candidate.record_id" class="guide-card">
           <h3>{{ index + 1 }}. {{ candidate.title }}</h3>
@@ -149,6 +155,10 @@ function enter(event) {
 </template>
 
 <style scoped>
+.competition-guide > .section-heading { flex-wrap: wrap; }
+.competition-guide > .section-heading > .text-button { flex-shrink: 0; white-space: nowrap; }
+.guide-question { margin-top: 20px; }
+.guide-selection-prompt { margin-block: 24px 16px; font-weight: 600; }
 .guide-answer { padding:18px; border-left:3px solid var(--accent-color,#447864); background:var(--bg-secondary,transparent); border-radius:8px; }
 .guide-answer-text { white-space:pre-wrap; line-height:1.85; }
 .guide-citation { display:inline-block; margin:0 12px 8px 0; font-size:.85em; }

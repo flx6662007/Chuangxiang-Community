@@ -3,7 +3,7 @@ import { onMounted, onBeforeUnmount, ref } from 'vue'
 
 const root = ref(null)
 const links = [
-  { id: 'ai', title: 'AI 找赛事', kind: 'ai' },
+  { id: 'ai', title: '小创', description: '找赛事 · 找队友 · 查资料', kind: 'ai' },
   { id: 'newsletters', title: '创享快讯', kind: 'news' },
 ]
 let media
@@ -155,6 +155,7 @@ onBeforeUnmount(() => {
         <svg v-if="index === 0" class="liquid-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2c2 9 5 12 14 14-9 2-12 5-14 14C14 21 11 18 2 16 11 14 14 11 16 2Z" fill="currentColor" /></svg>
         <svg v-else class="liquid-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 6h18a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H13l-7 4v-4a3 3 0 0 1-3-3V9a3 3 0 0 1 4-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 12h12M10 18h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
         <strong>{{ link.title }}</strong>
+        <small v-if="link.description">{{ link.description }}</small>
         <span class="liquid-arrow" aria-hidden="true">↗</span>
       </span>
     </a>
@@ -171,6 +172,7 @@ onBeforeUnmount(() => {
 .liquid-link--news path { fill: var(--illustration-soft, #c5d9e9); }
 .liquid-link--news .liquid-icon path { fill: none; }
 .liquid-label { display: flex; flex-direction: column; align-items: center; gap: 13px; pointer-events: none; }
+.liquid-label small { font-size: clamp(11px, 1vw, 13px); line-height: 1.5; }
 .liquid-label strong { font-size: clamp(20px, 1.85vw, 27px); font-weight: 600; letter-spacing: -.025em; }
 .liquid-icon { width: 32px; height: 32px; }
 .liquid-arrow { font-size: 24px; line-height: 1; transition: transform 300ms var(--motion-ease-out); }

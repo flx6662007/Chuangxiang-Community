@@ -173,6 +173,16 @@ onBeforeUnmount(() => {
 
     <div id="ai" class="home-dark home-ai"><div v-reveal class="home-wrap"><AICompetitionAssistant /></div></div>
 
+    <section id="newsletters" class="home-light home-briefing" aria-labelledby="briefing-title"><div v-reveal class="home-wrap">
+      <header class="home-section-heading"><div><h2 id="briefing-title">创享快讯<br /><span>比赛与科研动态</span></h2></div></header>
+      <form v-if="newslettersCount || newsletterSearch" class="search-bar" role="search" @submit.prevent="searchNewsletters"><label class="sr-only" for="newsletter-search">搜索创享快讯</label><input id="newsletter-search" v-model="newsletterSearchInput" type="search" maxlength="200" placeholder="搜索快讯标题与内容…" /><button class="action-button" type="submit">搜索</button></form>
+      <div v-if="newslettersLoading" class="home-state" role="status">正在加载快讯…</div>
+      <div v-else-if="newslettersError" class="home-state" role="alert">暂时无法加载快讯。<button type="button" @click="loadEditorial('newsletters')">重新加载 ↗</button><button v-if="newslettersPage > 1" type="button" @click="changeNewsletterPage(1)">返回第一页</button></div>
+      <div v-else-if="!newsletters.length" class="briefing-empty"><div><h3>{{ newsletterSearch ? '没有找到匹配快讯' : '暂时没有快讯' }}</h3><p>{{ newsletterSearch ? '换个关键词，或清空搜索查看全部快讯。' : '发布后可在这里查看。' }}</p></div><span>✦</span></div>
+      <div v-else class="briefing-list"><article v-for="item in newsletters" :key="item.id" class="briefing-row"><div><h3>{{ item.title }}</h3><p>{{ item.summary }}</p></div><time :datetime="item.date || undefined">{{ item.date || '日期未注明' }}</time><a v-if="safeExternalUrl(item.sourceUrl)" :href="safeExternalUrl(item.sourceUrl)" target="_blank" rel="noopener noreferrer" :aria-label="`阅读${item.title}的来源`">↗</a></article></div>
+      <el-pagination v-if="!newslettersLoading && !newslettersError && newslettersCount > 3" class="competition-pagination" :current-page="newslettersPage" :page-size="3" :total="newslettersCount" layout="prev, pager, next" prev-text="上一页" next-text="下一页" background aria-label="快讯分页" @update:current-page="changeNewsletterPage" />
+    </div></section>
+
     <section id="discover" class="home-light home-discover" aria-labelledby="discover-title">
       <div v-reveal class="home-wrap">
         <header class="home-section-heading">
@@ -227,14 +237,6 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section id="newsletters" class="home-light home-briefing" aria-labelledby="briefing-title"><div v-reveal class="home-wrap">
-      <header class="home-section-heading"><div><h2 id="briefing-title">创享快讯<br /><span>比赛与科研动态</span></h2></div></header>
-      <form v-if="newslettersCount || newsletterSearch" class="search-bar" role="search" @submit.prevent="searchNewsletters"><label class="sr-only" for="newsletter-search">搜索创享快讯</label><input id="newsletter-search" v-model="newsletterSearchInput" type="search" maxlength="200" placeholder="搜索快讯标题与内容…" /><button class="action-button" type="submit">搜索</button></form>
-      <div v-if="newslettersLoading" class="home-state" role="status">正在加载快讯…</div>
-      <div v-else-if="newslettersError" class="home-state" role="alert">暂时无法加载快讯。<button type="button" @click="loadEditorial('newsletters')">重新加载 ↗</button><button v-if="newslettersPage > 1" type="button" @click="changeNewsletterPage(1)">返回第一页</button></div>
-      <div v-else-if="!newsletters.length" class="briefing-empty"><div><h3>{{ newsletterSearch ? '没有找到匹配快讯' : '暂时没有快讯' }}</h3><p>{{ newsletterSearch ? '换个关键词，或清空搜索查看全部快讯。' : '发布后可在这里查看。' }}</p></div><span>✦</span></div>
-      <div v-else class="briefing-list"><article v-for="item in newsletters" :key="item.id" class="briefing-row"><div><h3>{{ item.title }}</h3><p>{{ item.summary }}</p></div><time :datetime="item.date || undefined">{{ item.date || '日期未注明' }}</time><a v-if="safeExternalUrl(item.sourceUrl)" :href="safeExternalUrl(item.sourceUrl)" target="_blank" rel="noopener noreferrer" :aria-label="`阅读${item.title}的来源`">↗</a></article></div>
-      <el-pagination v-if="!newslettersLoading && !newslettersError && newslettersCount > 3" class="competition-pagination" :current-page="newslettersPage" :page-size="3" :total="newslettersCount" layout="prev, pager, next" prev-text="上一页" next-text="下一页" background aria-label="快讯分页" @update:current-page="changeNewsletterPage" />
-    </div></section>
+
   </div>
 </template>

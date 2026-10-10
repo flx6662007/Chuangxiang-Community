@@ -1,5 +1,6 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import SentMessages from './SentMessages.vue'
 import AppIcon from './AppIcon.vue'
 import { renderAIMessage } from '../utils/aiMarkdown.js'
 import { getAIStatus } from '../api/ai'
@@ -59,9 +60,12 @@ async function loadStatus() {
 onMounted(loadStatus)
 const { messages, pending, phase, error, failed, submit, stop, dispose, clear } = useAIChat(requestAIChatStream)
 
+const sentMessages = ref([])
+
 function changeMode(value) {
   if (value === mode.value || pending.value) return
   clear()
+  sentMessages.value = []
   query.value = ''
   validation.value = ''
   mode.value = value
@@ -69,6 +73,7 @@ function changeMode(value) {
 
 function newConversation() {
   clear()
+  sentMessages.value = []
   query.value = ''
   validation.value = ''
   followOutput = true
@@ -93,6 +98,8 @@ function submitChat() {
   }
   query.value = ''
   validation.value = ''
+  sentMessages.value.push(text)
+  followOutput = true
   void submit(text, { mode: mode.value, webSearch: webSearch.value })
 }
 
@@ -117,26 +124,27 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
   <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">科创 AI 助手</h2>
+        <h2 id="ai-assistant-title">小创</h2>
       </div>
       <div class="ai-heading-actions">
         <span class="editorial-label">赛事 · 科研 · 资源</span>
-        <button v-if="configured" type="button" class="ai-new-conversation" @click="newConversation">新对话</button>
+        <button v-if="configured && mode !== 'competition'" type="button" class="ai-new-conversation" @click="newConversation">新对话</button>
       </div>
     </div>
-    <p class="ai-assistant-intro">选择关注方向，问比赛、科研机会或学习资源；也可以在赛事模式使用完整的选赛与找队友向导。</p>
+    <p class="ai-assistant-intro">我是小创，陪你找赛事、找队友，也帮你查科研机会和学习资源。</p>
     <div class="ai-mode-list" role="group" aria-label="助手模式">
       <button v-for="option in modeOptions" :key="option.value" type="button" class="ai-mode-button"
         :class="{ 'is-active': mode === option.value }" :aria-pressed="mode === option.value"
         :disabled="pending" @click="changeMode(option.value)">{{ option.label }}</button>
     </div>
-    <div v-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
+    <CompetitionGuide v-if="mode === 'competition'" />
+    <div v-else-if="statusLoading" class="home-state" role="status">正在加载查询工具…</div>
     <div v-else-if="statusError" class="home-state" role="alert">查询工具暂时无法加载。<button class="text-button" @click="loadStatus">重试</button></div>
     <CatalogSearch v-else-if="!configured" />
     <div v-else class="ai-assistant-panel">
       <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0" @scroll="onConversationScroll">
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
-          <strong>{{ message.role === 'user' ? '你' : '创享 AI' }}</strong>
+          <strong>{{ message.role === 'user' ? '你' : '小创' }}</strong>
           <p v-if="message.role === 'user'">{{ message.content }}</p>
           <div v-else-if="message.content" class="ai-chat-markdown" v-html="renderAIMessage(message)"></div>
           <p v-else-if="message.generating" class="ai-chat-status">{{ phase === 'retrieving' ? '正在查找资料…' : '正在生成回答…' }}</p>
@@ -187,7 +195,8 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
           <button v-if="failed" class="action-button secondary" type="button" :disabled="pending" @click="submit('', { retry: true, mode, webSearch })">重试这条消息</button>
         </div>
       </div>
-      <form class="ai-assistant-form" aria-label="科创 AI 对话" @submit.prevent="submitChat">
+      <SentMessages :messages="sentMessages" />
+      <form class="ai-assistant-form" aria-label="与小创对话" @submit.prevent="submitChat">
         <label for="ai-competition-query">你的问题</label>
         <textarea
           id="ai-competition-query"
@@ -220,10 +229,6 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
       </form>
       <p class="ai-demo-note">回答按需参考站内资料与站外原文，来源状态会单独标注。Enter 发送，Shift + Enter 换行。切换模式会开始新对话。</p>
     </div>
-    <details v-if="mode === 'competition'" class="ai-guide-details">
-      <summary>打开赛事向导：选赛事、分析条件、找队友</summary>
-      <CompetitionGuide />
-    </details>
   </section>
 </template>
 
@@ -244,7 +249,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-chat-markdown :deep(p:last-child) { margin-bottom: 0; }
 .ai-chat-markdown :deep(a) { color: var(--accent, #6da5ff); }
 .ai-chat-markdown :deep(pre) { overflow-x: auto; }
-.ai-chat-message.is-user { padding-left: 16px; border-left: 2px solid var(--accent, #6da5ff); }
+.ai-chat-message.is-user { justify-self: end; max-width: 90%; padding: 14px 18px; border: 1px solid var(--border); border-radius: 16px 16px 4px 16px; background: var(--bg-primary); }
 .ai-chat-status { margin: 0; color: var(--text-secondary, #a4b1c0); }
 .ai-chat-error p { margin: 0 0 12px; }
 .ai-chat-sources { margin-top: 12px; padding: 12px; border: 1px solid var(--border, #344357); border-radius: 8px; font-size: var(--type-small); }
@@ -265,6 +270,4 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-web-toggle { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 7px 14px; font: inherit; color: var(--text-primary, #f4f2ee); background: transparent; cursor: pointer; white-space: nowrap; }
 .ai-web-toggle.is-active { border-color: var(--accent, #6da5ff); color: var(--accent, #6da5ff); }
 .ai-web-toggle:disabled { opacity: .55; cursor: not-allowed; }
-.ai-guide-details { margin-top: 24px; border-top: 1px solid var(--border, #344357); padding-top: 18px; }
-.ai-guide-details summary { cursor: pointer; }
 </style>

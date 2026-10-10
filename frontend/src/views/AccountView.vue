@@ -124,7 +124,7 @@ async function runAction(name, action) {
 async function submitCredentials() {
   const email = credentials.email.trim().toLowerCase()
   if (!/^[^@\s]+@tongji\.edu\.cn$/.test(email)) {
-    errors.value = ['请使用 @tongji.edu.cn 学校邮箱。']
+    errors.value = ['请使用平台支持的学校邮箱。']
     return
   }
   if (
@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
     <AccountPageHeader
       title="我的"
       accent="账号"
-      :description="privateBeta ? '使用分配的内测账号，体验 AI 助手与组队' : '管理校园身份，也为下一次合作做好准备。'"
+      :description="privateBeta ? '使用分配的内测账号，体验 小创与组队' : '管理校园身份，也为下一次合作做好准备。'"
       :show-nav="!!user && !initializing"
     />
     <div class="account-content">
@@ -264,11 +264,11 @@ onBeforeUnmount(() => {
               type="email"
               autocomplete="username"
               maxlength="254"
-              :placeholder="privateBeta ? '分配给你的测试账号' : '你的邮箱@tongji.edu.cn'"
+              :placeholder="privateBeta ? '分配给你的测试账号' : '请输入你的学校邮箱'"
               required
               :disabled="!!busy || mode === 'reset'"
             />
-            <p class="field-hint">{{ privateBeta ? '请使用内测负责人分配的账号和密码；账号中的邮箱是测试标识。' : '接受使用同济学校邮箱的各院系学生。' }}</p>
+            <p class="field-hint">{{ privateBeta ? '请使用内测负责人分配的账号和密码；账号中的邮箱是测试标识。' : '请使用学校邮箱登录或注册。' }}</p>
             <template v-if="mode === 'reset'">
               <label for="reset-code">邮件中的重置验证码</label>
               <input
@@ -361,7 +361,7 @@ onBeforeUnmount(() => {
         </el-card>
         <aside class="account-intro">
           <h2>连接校园，<br /><span>从一个好想法开始</span></h2>
-          <p>{{ privateBeta ? '本轮体验 AI 赛事助手、资料查询、发布招募、申请入队和举报。每位同学使用自己的测试账号，密码遗失可联系内测负责人。' : '使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。' }}</p>
+          <p>{{ privateBeta ? '本轮体验 小创、资料查询、发布招募、申请入队和举报。每位同学使用自己的测试账号，密码遗失可联系内测负责人。' : '使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。' }}</p>
           <RouterLink class="more-link" :to="{ name: 'competitions' }"
             >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>
         </aside>
