@@ -140,7 +140,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
                 <small v-if="!['research_opportunity', 'research_group'].includes(source.kind)">{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
                 <small v-if="source.status_note">{{ source.status_note }}</small>
                 <small v-if="source.trust_label && !['research_opportunity', 'research_group'].includes(source.kind)">{{ source.trust_label }}{{ source.reviewed ? ' · 已核验' : ' · 未经人工核验' }}</small>
-                <a v-if="source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">外部原文</a>
+                <a v-if="source.internal_url && source.url !== source.internal_url" :href="source.url" target="_blank" rel="noopener noreferrer">外部原文</a>
               </li>
             </ol>
           </div>
@@ -148,8 +148,9 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
             <strong>相关推荐</strong>
             <ul>
               <li v-for="(item, itemIndex) in message.recommendations" :key="itemIndex">
-                <span>{{ itemIndex + 1 }}. {{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组' }[item.object_type] }} · </span>
-                <a :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                <span>{{ itemIndex + 1 }}. {{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组', team: '组队招募' }[item.object_type] }} · </span>
+                <RouterLink v-if="item.internal_url" :to="item.internal_url">{{ item.title }}</RouterLink>
+                <a v-else :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
                 <template v-if="item.object_type === 'research_opportunity' && Object.keys(item.facts || {}).length">
                   <template v-for="[field, label] in researchFields" :key="field">
                     <small v-if="item.facts[field]">{{ label }}：{{ item.facts[field] }} <ResearchFieldLinks :links="item.field_links[field]" :context="`${item.title} · ${label}`" /></small>

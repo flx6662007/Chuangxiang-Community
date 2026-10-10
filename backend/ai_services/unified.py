@@ -12,11 +12,14 @@ from common.public_content import public_text, safe_source_url
 from information_library.semantic import SemanticError
 from research.models import ResearchOpportunity
 from resources.models import Resource, ResourceCompetition, ResourceResearchOpportunity
+from resources.selectors import resource_catalog_map
 
 from .router import query_terms
 from .platform import retrieve_platform
 from .unified_index import search as semantic_search
 from .research_retrieval import intent as research_intent, research_score, matches_conditions
+from .resource_retrieval import (resource_scores, resource_request, resource_primary_request,
+                                 relevant_resource_ids, association_priority)
 
 
 class ResearchGroupSelector:
@@ -84,11 +87,30 @@ def public_secondary_records(*, group_selector=None):
     public_resources = Resource.objects.filter(publication_status='published', availability='available').exclude(
         code__startswith='demo-').exclude(title__contains='【虚构样例】').select_related('category').prefetch_related(
         'tags', 'directions').order_by('code')
-    resource_ids = list(public_resources.values_list('pk', flat=True))
+    public_resources = list(public_resources)
+    resource_ids = [item.pk for item in public_resources]
+    catalogs = resource_catalog_map(public_resources)
+    from competition_catalog.models import CatalogEntry
+    from curation.retrieval import student_visible_documents
+    catalog_aliases = {entry.code: list(entry.aliases) for entry in CatalogEntry.objects.filter(
+        is_active=True, code__in={entry['code'] for entries in catalogs.values() for entry in entries})}
+    # Only aliases from currently public knowledge may enrich a public catalog.
+    for document in student_visible_documents().select_related('current_revision'):
+        raw = document.current_revision.metadata.get('search_record', {})
+        if not isinstance(raw, dict):
+            continue
+        codes, aliases = raw.get('catalog_codes'), raw.get('aliases')
+        for code in codes if isinstance(codes, list) else []:
+            if code in catalog_aliases and isinstance(aliases, list):
+                catalog_aliases[code].extend(value for value in aliases if isinstance(value, str))
     competition_links = {}
-    for resource_id, competition_id in ResourceCompetition.objects.filter(
-            resource_id__in=resource_ids, competition__publication_status='published').values_list('resource_id', 'competition_id'):
+    named_associations = {}
+    for resource_id, competition_id, title in ResourceCompetition.objects.filter(
+            resource_id__in=resource_ids, competition__publication_status='published').order_by(
+                'resource_id', 'competition_id').values_list('resource_id', 'competition_id', 'competition__title'):
         competition_links.setdefault(resource_id, []).append(f'db-{competition_id}')
+        named_associations.setdefault(resource_id, []).append({'object_type': 'competition',
+            'object_id': f'db-{competition_id}', 'title': public_text(title)})
     research_links = {}
     if settings.PUBLIC_RESEARCH_ENABLED:
         for resource_id, opportunity_id in ResourceResearchOpportunity.objects.filter(
@@ -105,6 +127,10 @@ def public_secondary_records(*, group_selector=None):
                             tags=[term.name for term in item.tags.all()], direction=[term.name for term in item.directions.all()],
                             related={'competition': competition_links.get(item.pk, []),
                                      'research_opportunity': research_links.get(item.pk, [])}))
+        rows[-1]['catalogs'] = [{**entry, 'name': public_text(entry['name']), 'aliases': list(dict.fromkeys(public_text(value)
+                                   for value in catalog_aliases.get(entry['code'], []) if value))}
+                                 for entry in catalogs.get(item.pk, [])]
+        rows[-1]['named_associations'] = named_associations.get(item.pk, [])
     if settings.PUBLIC_RESEARCH_ENABLED:
         opportunities = {f'db-{item.pk}': item for item in ResearchOpportunity.objects.filter(
             publication_status='published').exclude(code__startswith='demo-')}
@@ -196,9 +222,7 @@ def _mode_fit(kind, mode):
 
 def _rank(rows, question, mode, *, index=None, domains=()):
     terms = query_terms(question)
-    # Explicit technology names are topical anchors; shared words like 入门 cannot replace them.
-    anchors = [term for term in re.findall(r'[a-z][a-z0-9+#.-]{1,}', question.casefold())
-               if term not in ('ai', 'vr', 'ar')]
+    resource_keyword, eligible_resources = resource_scores(rows, question)
     research_request = research_intent(question)
     research_rows = [row for row in rows if row['object_type'] == 'research_opportunity']
     pinned = {row['object_id'] for row in research_rows if row['title'] in question}
@@ -206,10 +230,8 @@ def _rank(rows, question, mode, *, index=None, domains=()):
     schools = {row['institution'].split(' · ')[0] for row in research_rows
                if row.get('institution') and row['institution'].split(' · ')[0] in question}
     def eligible(row):
-        if row['object_type'] == 'resource' and anchors:
-            text = ' '.join((row['title'], row['summary'], row['content'], *row['tags'], *row['direction'])).casefold()
-            if not all(anchor in text for anchor in anchors):
-                return False
+        if row['object_type'] == 'resource':
+            return row['object_id'] in eligible_resources
         if row['object_type'] != 'research_opportunity':
             return True
         if pinned:
@@ -220,6 +242,8 @@ def _rank(rows, question, mode, *, index=None, domains=()):
             return 0
         if row['object_type'] == 'research_opportunity':
             return research_score(row, question, pinned=row['object_id'] in pinned)
+        if row['object_type'] == 'resource':
+            return resource_keyword.get(row['object_id'], 0)
         if row['object_type'] == 'team' and not terms and 'team' in domains:
             return 0.3
         return _keyword_score(row, question, terms)
@@ -236,6 +260,12 @@ def _rank(rows, question, mode, *, index=None, domains=()):
     semantic = {key: score for key, score in semantic.items() if key in eligible_keys}
     # Relation counts/freshness must not turn a weak semantic candidate into a recommendation.
     semantic = {key: score for key, score in semantic.items() if score >= 0.45 or key in keyword}
+    relevant_resources = relevant_resource_ids(resource_keyword, {
+        identifier: score for (kind, identifier), score in semantic.items() if kind == 'resource'})
+    keyword = {key: score for key, score in keyword.items()
+               if key[0] != 'resource' or key[1] in relevant_resources}
+    semantic = {key: score for key, score in semantic.items()
+                if key[0] != 'resource' or key[1] in relevant_resources}
     keyword_order = sorted(keyword, key=lambda key: (-keyword[key], key))
     semantic_order = sorted(semantic, key=lambda key: (-semantic[key], key))
     rrf = {}
@@ -250,6 +280,13 @@ def _rank(rows, question, mode, *, index=None, domains=()):
     result = []
     for key in rrf:
         row = by_key[key].copy()
+        if row['object_type'] == 'resource':
+            row['catalogs'] = sorted(row.get('catalogs', []), key=lambda item: association_priority(item['name'], question))
+            row['named_associations'] = sorted(row.get('named_associations', []),
+                                              key=lambda item: association_priority(item['title'], question))
+            named_ids = [item['object_id'] for item in row['named_associations']]
+            row['related_object_ids'] = {**row['related_object_ids'], 'competition': named_ids or
+                                         row['related_object_ids'].get('competition', [])}
         if row.get('evidence_blocks'):
             preferred = 'recruitment' if research_request['recruitment'] else 'achievements' if research_request['achievements'] else 'introduction'
             row['evidence_blocks'] = sorted(row['evidence_blocks'], key=lambda block: block['section'] != preferred)
@@ -265,7 +302,7 @@ def _rank(rows, question, mode, *, index=None, domains=()):
     return result, warnings, 'hybrid' if semantic else 'keyword'
 
 
-def _competition_rows(question, *, limit=8):
+def _competition_rows(question, *, limit=8, resources=()):
     result = search_competitions(question[:500], mode='hybrid', limit=limit)
     cards = {entry['record_id']: entry['competition']['id'] for entry in result['results']}
     rows, evidence_rows = [], []
@@ -288,6 +325,9 @@ def _competition_rows(question, *, limit=8):
         baseline = baselines['competition_hybrid'] if result['mode_used'] == 'hybrid' else baselines['competition_keyword']
         exact_bonus = baselines['competition_exact_bonus'] if question.casefold().strip() == hit['title'].casefold() else 0
         rows[-1]['retrieval_score'] = round(min(1.0, baseline + exact_bonus - position * baselines['competition_rank_step']), 4)
+        catalog_codes = set(hit.get('catalog_codes') or [hit.get('catalog_code')]) - {None}
+        rows[-1]['catalog_resource_ids'] = [row['object_id'] for row in resources
+            if row['object_type'] == 'resource' and catalog_codes & {entry['code'] for entry in row.get('catalogs', [])}]
         passages = hit['passages'][:2] or [{'text': hit['summary'] or hit['title'],
                                             'evidence_ids': [linked['id'] for linked in hit['evidence']]}]
         for passage in passages:
@@ -321,12 +361,13 @@ def _related_competitions(ids):
 
 
 def retrieve_unified(question, mode, route, *, index=None, group_selector=None, limit=8):
+    resources_only = mode == 'resource' or (mode == 'smart' and resource_primary_request(question))
     secondary = public_secondary_records(group_selector=group_selector)
     ranked, warnings, secondary_mode = _rank(secondary, question, mode, index=index, domains=route.domains)
-    include_competition = mode == 'competition' or (mode == 'smart' and 'competition' in route.domains)
+    include_competition = mode == 'competition' or (mode == 'smart' and not resources_only and 'competition' in route.domains)
     competitions, knowledge_rows, competition_mode = [], [], 'not_requested'
     if include_competition:
-        competitions, knowledge_rows, competition_mode, comp_warnings = _competition_rows(question)
+        competitions, knowledge_rows, competition_mode, comp_warnings = _competition_rows(question, resources=secondary)
         warnings.extend(item['code'] if isinstance(item, dict) else str(item) for item in comp_warnings)
         curated_ids = {f'db-{identifier}' for row in competitions
                        for identifier in row['related_object_ids'].get('competition_id', [])}
@@ -354,8 +395,9 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
     primary = list(unique.values())
     topical_anchors = [term for term in ('数学建模', '人工智能', '机器学习', '数据分析', '机器人', '人机交互') if term in question]
     if topical_anchors:
-        primary = [row for row in primary if all(term in ' '.join((row['title'], row['summary'], row['content'], *row['tags'], *row['direction']))
-                                                 for term in topical_anchors)]
+        primary = [row for row in primary if row['object_type'] == 'resource' or all(
+            term in ' '.join((row['title'], row['summary'], row['content'], *row['tags'], *row['direction']))
+            for term in topical_anchors)]
     if re.search(r'入门|零基础|初学', question):
         technologies = re.findall(r'[a-z][a-z0-9+#.-]{1,}', question.casefold())
         def foundation(row):
@@ -370,24 +412,33 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
             return not title
         if any(foundation(row) for row in primary):
             primary = [row for row in primary if row['object_type'] != 'resource' or foundation(row)]
-    wants_resources = bool(re.search(r'资源|教程|课程|学习|准备', question))
+    wants_resources = resource_request(question) or bool(re.search(r'学习|准备', question))
     if mode == 'research' and not wants_resources:
         primary = [row for row in primary if row['object_type'] in ('research_opportunity', 'research_group')]
     if mode == 'competition' and competitions and not wants_resources:
         primary = [row for row in primary if row['object_type'] == 'competition']
-    exact = [row for row in primary if row['title'].casefold() in question.casefold()]
+    # A short product name inside a functional request (e.g. Zotero + stable
+    # citation keys) is not an instruction to discard its relevant plugins.
+    exact = [row for row in primary if mode != 'resource' and not (mode == 'smart' and wants_resources) and
+             row['object_type'] != 'resource' and
+             row['title'].casefold() in question.casefold()]
     if exact:
         primary = exact
     elif mode == 'smart':
         allowed = {kind for domain, kinds in (
             ('competition', ('competition',)), ('project', ('research_opportunity', 'research_group')),
-            ('resource', ('resource',))) if domain in route.domains for kind in kinds}
+            ('resource', ('resource',)), ('team', ('team',))) if domain in route.domains for kind in kinds}
         primary = [row for row in primary if row['object_type'] in allowed]
+    if resources_only:
+        primary = [row for row in primary if row['object_type'] == 'resource']
+    prefer_resources = mode == 'smart' and resources_only
     if mode == 'competition':
         primary.sort(key=lambda row: (row['object_type'] != 'competition', -row['retrieval_score']))
     elif mode == 'research':
         primary.sort(key=lambda row: (row['object_type'] not in ('research_opportunity', 'research_group'), -row['retrieval_score']))
     elif mode == 'resource':
+        primary.sort(key=lambda row: (row['object_type'] != 'resource', -row['retrieval_score']))
+    elif prefer_resources:
         primary.sort(key=lambda row: (row['object_type'] != 'resource', -row['retrieval_score']))
     else:
         primary.sort(key=lambda row: -row['retrieval_score'])
@@ -407,24 +458,32 @@ def retrieve_unified(question, mode, route, *, index=None, group_selector=None, 
                 break
             if row not in selected:
                 selected.append(row)
-        selected.sort(key=lambda row: -row['retrieval_score'])
+        selected.sort(key=lambda row: (row['object_type'] != 'resource' if prefer_resources else False,
+                                       -row['retrieval_score']))
     else:
         selected = primary[:limit]
     selected_keys = {(row['object_type'], row['object_id']) for row in selected}
     by_key = {(row['object_type'], row['object_id']): row for row in secondary}
-    related_competition_ids = {identifier for row in selected if row['object_type'] == 'resource'
+    related_competition_ids = {identifier for row in selected if not resources_only and row['object_type'] == 'resource'
                                for identifier in row['related_object_ids'].get('competition', [])}
     by_key.update({(row['object_type'], row['object_id']): row
                    for row in _related_competitions(related_competition_ids)})
     for row in selected[:4]:
-        for kind, ids in row['related_object_ids'].items():
-            for identifier in ids[:3]:
+        relations = {**row['related_object_ids']}
+        if row.get('catalog_resource_ids'):
+            relations['resource'] = list(dict.fromkeys([*relations.get('resource', []), *row['catalog_resource_ids']]))
+        for kind, ids in relations.items():
+            if resources_only and kind != 'resource':
+                continue
+            for identifier in ids:
                 key = (kind, identifier)
                 related = by_key.get(key)
                 if related and key not in selected_keys:
                     added = related.copy()
                     added['retrieval_score'] = round(max(added['retrieval_score'], row['retrieval_score'] * 0.7), 4)
-                    added['relation_reason'] = f"与{row['title']}已建立关联"
+                    added['relation_reason'] = (f"与{row['title']}属于同一赛事目录" if identifier in
+                        row.get('catalog_resource_ids', []) and identifier not in row['related_object_ids'].get(kind, [])
+                        else f"与{row['title']}已建立关联")
                     selected.append(added)
                     selected_keys.add(key)
     selected = selected[:limit + 4]
@@ -450,13 +509,18 @@ def as_evidence(row):
                     and re.fullmatch(r'db-\d+', row['object_id']) else
                     '/competitions/' + canonical_competition_id if row['object_type'] == 'competition'
                     and re.fullmatch(r'[1-9]\d*', canonical_competition_id) else None)
+    catalog_names = [entry['name'] for entry in row.get('catalogs', [])]
+    named = [entry['title'] for entry in row.get('named_associations', [])]
+    association_text = ('已关联赛事目录：' + '、'.join(catalog_names) + '\n' if catalog_names else '')
+    association_text += ('已关联公开赛事：' + '、'.join(dict.fromkeys(named)) + '\n' if named else '')
     return {'kind': row['object_type'], 'entity_id': row['object_id'], 'version': row['version'],
             'title': row['title'], 'url': row['source_url'],
             'internal_url': internal_url,
             'canonical_competition_id': canonical_competition_id,
-            'related_object_ids': {kind: ids[:5] for kind, ids in row['related_object_ids'].items()
+            'related_object_ids': {kind: ids for kind, ids in row['related_object_ids'].items()
                                    if kind in ('competition', 'resource', 'research_opportunity', 'research_group', 'team')},
-            'text': (group_label + row['summary'] + '\n' + row['content'])[:1800],
+            'catalogs': row.get('catalogs', []), 'named_associations': row.get('named_associations', []),
+            'text': (group_label + row['summary'] + '\n' + association_text + row['content'])[:1800],
             'verified_at': row['verified_at'], 'published_on': row['published_at'],
             'status': row['status'], 'status_note': row.get('relation_reason') or row.get('status_note') or row['category'],
             'source_type': row['source_type'], 'reviewed': bool(row['verified_at']),
@@ -476,6 +540,7 @@ def recommendations(rows):
                                     for kind, ids in row['related_object_ids'].items() if isinstance(ids, list) and kind in
                                     ('competition', 'resource', 'research_opportunity', 'research_group', 'team')},
              'source_url': row['source_url'],
+             'catalogs': row.get('catalogs', []), 'named_associations': row.get('named_associations', []),
              'facts': row.get('facts', {}), 'field_links': row.get('field_links', {}),
              'research_group_label': row.get('research_group_label') or '',
              'reviewed': bool(row['verified_at']), 'retrieval_score': row['retrieval_score'],

@@ -8,6 +8,8 @@ from django.test import SimpleTestCase, TestCase, override_settings
 from django.utils import timezone
 
 from competitions.models import Competition, CompetitionSource, CompetitionTaxonomy
+from competition_catalog.models import CatalogEntry
+from curation.models import DocumentLink, DocumentRevision, KnowledgeDocument
 from research.models import ResearchOpportunity
 from resources.models import Resource, ResourceCompetition, ResourceResearchOpportunity, ResourceTaxonomy
 from teams.models import Team, Recruitment, RecruitmentRevision
@@ -116,6 +118,66 @@ class UnifiedRetrievalTests(TestCase):
             publication_status='published', availability='available', published_at=timezone.now())
         result = self.retrieve('天文学入门资料', 'resource')
         self.assertEqual(result['records'][0]['object_id'], added.code)
+
+    def test_catalog_association_and_alias_are_searchable_without_edition_link(self):
+        catalog = CatalogEntry.objects.create(code='2099001', name='工程控制公开赛', aliases=['CTRL赛事'],
+            grade='A', levels='国家级', source_url='https://www.tongji.edu.cn/catalog')
+        actor = get_user_model().objects.create_user(email='catalog-owner@tongji.edu.cn')
+        document = KnowledgeDocument.objects.create(code='resource-catalog-unit', title='关联资料', review_status='draft')
+        revision = DocumentRevision.objects.create(document=document, version=1, title='关联资料',
+            body='不可因目录关联获得的草稿正文', content_hash='a' * 64, created_by=actor)
+        DocumentLink.objects.create(revision=revision, resource=self.python_resource)
+        DocumentLink.objects.create(revision=revision, catalog=catalog)
+        document.current_revision = revision
+        document.save(update_fields=['current_revision'])
+        result = self.retrieve('CTRL赛事 学习资料', 'resource')
+        target = next(row for row in result['records'] if row['object_id'] == self.python_resource.code)
+        self.assertEqual(target['catalogs'][0]['code'], catalog.code)
+        self.assertIn(catalog.name, as_evidence(target)['text'])
+        self.assertNotIn('草稿正文', as_evidence(target)['text'])
+        catalog.is_active = False
+        catalog.save(update_fields=['is_active'])
+        visible = next(row for row in public_secondary_records() if row['object_id'] == self.python_resource.code)
+        self.assertEqual(visible['catalogs'], [])
+        self.assertFalse(self.retrieve('CTRL赛事 学习资料', 'resource')['records'])
+
+    def test_resource_mode_does_not_expand_into_other_object_types(self):
+        result = self.retrieve('机器人控制学习资源', 'resource')
+        self.assertTrue(result['records'])
+        self.assertEqual({row['object_type'] for row in result['records']}, {'resource'})
+
+    def test_smart_rules_request_keeps_matching_resource(self):
+        rules = Resource.objects.create(code='robot-rules-unit', title='机器人创意大赛赛项规程与报名指南',
+            description='机器人编程赛项规则与报名指南', category=self.related_resource.category,
+            access_url='https://www.tongji.edu.cn/rules', publication_status='published',
+            published_at=timezone.now())
+        with patch('ai_services.unified.search_competitions', return_value=self.curated_competition()):
+            result = self.retrieve('机器人赛项的规程和报名指南在哪', 'smart')
+        self.assertIn(rules.code, {row['object_id'] for row in result['records']})
+
+    def test_full_competition_name_in_a_resource_request_does_not_drop_resources(self):
+        with patch('ai_services.unified.search_competitions', return_value=self.curated_competition()):
+            result = self.retrieve('机器人创意大赛控制编程学习资料', 'smart')
+        primary = [row for row in result['records'] if not row.get('relation_reason')]
+        self.assertIn(self.related_resource.code, {row['object_id'] for row in primary})
+        self.assertEqual(primary[0]['object_type'], 'resource')
+
+    def test_smart_material_scope_does_not_fill_cards_with_semantic_contest_matches(self):
+        question = '机器人比赛控制编程课作业，最好提供解答'
+        with patch('ai_services.unified.search_competitions') as competition_search:
+            result = self.retrieve(question, 'smart')
+        competition_search.assert_not_called()
+        self.assertTrue(result['records'])
+        self.assertEqual({row['object_type'] for row in result['records']}, {'resource'})
+        self.assertEqual(result['knowledge_rows'], [])
+        target = next(row for row in result['records'] if row['object_id'] == self.related_resource.code)
+        self.assertEqual(target['named_associations'][0]['title'], self.competition.title)
+
+    def test_smart_explicit_contest_and_material_request_keeps_both(self):
+        with patch('ai_services.unified.search_competitions', return_value=self.curated_competition()):
+            result = self.retrieve('推荐机器人比赛和控制编程资料', 'smart')
+        primary = [row for row in result['records'] if not row.get('relation_reason')]
+        self.assertEqual({row['object_type'] for row in primary}, {'resource', 'competition'})
 
     def test_public_open_team_card_is_searchable_and_links_to_real_detail(self):
         self.competition.recruitment_enabled = True

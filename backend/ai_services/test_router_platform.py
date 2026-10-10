@@ -27,7 +27,7 @@ class RouterTests(SimpleTestCase):
             ('你好', 'general', ('other',)),
             ('有哪些机器人比赛', 'platform', ('competition',)),
             ('实验室科研项目官网最新通知', 'hybrid', ('project',)),
-            ('竞赛规则资料', 'hybrid', ('competition',)),
+            ('竞赛规则资料', 'hybrid', ('competition', 'resource')),
             ('请联网查官网', 'web', ('other',)),
             ('怎么组队', 'platform', ('team',)),
         ]
@@ -36,6 +36,14 @@ class RouterTests(SimpleTestCase):
                 result = route_query(question)
                 self.assertEqual(result.intent, intent)
                 self.assertEqual(result.domains, domains)
+
+    def test_documents_and_examples_keep_the_resource_domain(self):
+        for question in ('赛事报名规程和指南在哪', 'HTML CSS JavaScript 入门资料',
+                         '高教社杯赛题和附件入口', '回归分析残差诊断示例'):
+            with self.subTest(question=question):
+                self.assertIn('resource', route_query(question).domains)
+        self.assertEqual(route_query('HTML CSS JavaScript 入门资料').domains, ('resource',))
+        self.assertEqual(route_query('科研 AI 技能可以帮文献打标签吗').domains, ('project', 'resource'))
 
     def test_platform_context_is_data_and_history_is_unchanged(self):
         class Provider:
@@ -51,7 +59,8 @@ class RouterTests(SimpleTestCase):
             'status': 'unknown', 'status_note': '截止未知',
         }]
         with patch('ai_services.chat.retrieve_unified', return_value={
-            'records': [{'source_type': 'platform_competition'}], 'knowledge_rows': [],
+            'records': [{'object_type': 'competition', 'object_id': 'db-1',
+                         'source_type': 'platform_competition'}], 'knowledge_rows': [],
             'knowledge_status': 'no_published_knowledge',
             'mode_used': 'keyword', 'warnings': [],
         }) as retrieval, patch('ai_services.chat.evidence_rows', return_value=direct), patch(

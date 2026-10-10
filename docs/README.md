@@ -22,6 +22,8 @@
 | 多轮问答、流式交互与联网搜索 | [10 月 8 日更新](ai-optimization-20261008.md) |
 | 赛事推荐、分析与找队友 | [赛事助手交接](ai-assistant-handoff.md) |
 | BGE 赛事索引与资料维护 | [检索交接](competition-search-handoff.md) |
+| 学习资料问法与检索回归 | [资源评测](resource-evaluation/README.md) |
+| 学习资料检索修复与实测 | [10 月 10 日更新](releases/resource-retrieval-20261010.md) |
 | 既有 BGE/科研接入步骤 | [V2 接入记录](ai-v2.md)，结合后续更新阅读 |
 | 模型调用与内部草稿服务 | [AI 服务](ai-services.md) |
 | 后台信息库与公共接口分工 | [信息库](information-library.md) |

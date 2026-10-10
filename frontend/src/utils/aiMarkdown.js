@@ -19,6 +19,9 @@ markdown.renderer.rules.link_close = (tokens, index, options, env) => {
   return '</span>'
 }
 export function renderAIMessage(message) {
-  const urls = new Set(message.generating || message.incomplete ? [] : (message.sources || []).map(source => source.url))
+  const urls = new Set(message.generating || message.incomplete ? [] : (message.sources || [])
+    .flatMap(source => [source.url, ...(source.kind === 'resource' && Array.isArray(source.links)
+      ? source.links.filter(link => typeof link?.url === 'string' && /^https?:\/\//.test(link.url)).map(link => link.url)
+      : [])]))
   return markdown.render(message.content || '', { urls })
 }

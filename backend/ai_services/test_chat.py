@@ -38,6 +38,38 @@ class ChatTests(SimpleTestCase):
     def provider(self, handler):
         return OpenAICompatibleClient(CONFIG, httpx.MockTransport(handler))
 
+    def test_resource_answer_receives_registered_entries_and_keeps_them_clickable(self):
+        from .unified import _record
+
+        homepage = 'https://www.zotero.org/'
+        docs = 'https://www.zotero.org/support/quick_start_guide'
+        record = _record('resource', 'research-tool-zotero', 'Zotero', '文献管理工具',
+                         f'项目主页：{homepage}\n入门文档：{docs}',
+                         'https://github.com/zotero/zotero', source_type='platform_resource')
+        payloads = []
+
+        class Provider:
+            def complete_text(self, messages):
+                payloads.extend(messages)
+                return f'项目主页：{homepage}\n入门文档：{docs}\n来源[1]'
+
+        with patch('ai_services.chat.retrieve_unified', return_value={
+                'records': [record], 'knowledge_rows': [], 'knowledge_status': 'not_requested',
+                'mode_used': 'keyword', 'warnings': [],
+            }), patch('ai_services.chat.search_external') as external:
+            result = chat([{'role': 'user', 'content': 'Zotero 文献管理工具的入口在哪？'}],
+                          client=Provider(), details=True, web_search=False)
+        self.assertIn(homepage, result['message']['content'])
+        self.assertIn(docs, result['message']['content'])
+        self.assertNotIn('已省略', result['message']['content'])
+        self.assertEqual(len(result['sources'][0]['links']), 2)
+        self.assertEqual(result['recommendations'][0]['source_url'], record['source_url'])
+        evidence = payloads[-2]['content']
+        self.assertIn('"links":', evidence)
+        self.assertIn(docs, evidence)
+        self.assertIn('不能据此断言平台未收录', payloads[0]['content'])
+        external.assert_not_called()
+
     def test_three_turns_pass_history_and_fixed_system_prompt(self):
         payloads = []
 
