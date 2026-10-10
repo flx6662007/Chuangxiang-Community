@@ -1,6 +1,10 @@
 /* Both themes resolve the same semantic palette. Component fallbacks only support
    isolated rendering; application pages should never depend on them for theming. */
 :root {
+  --brand-logo-start: #9ac4f4;
+  --brand-logo-middle: #76a7e8;
+  --brand-logo-end: #5e8dd0;
+  --brand-logo-tile: #a9cefa;
   --dot-rgb: 141, 184, 228;
   --dot-halo-rgb: 91, 138, 190;
   --theme-button-ink: #a3aeba;
@@ -71,6 +75,10 @@
 }
 :root[data-theme='light'] {
   color-scheme: light;
+  --brand-logo-start: #527ea8;
+  --brand-logo-middle: #3e6d96;
+  --brand-logo-end: #315e84;
+  --brand-logo-tile: #4475a0;
   --bg-primary: #f2f1ed;
   --bg-secondary: #e9eae6;
   --surface: #faf9f6;

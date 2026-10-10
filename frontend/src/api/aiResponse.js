@@ -69,11 +69,12 @@ export function parseAIReply(data) {
       ? publicTeamUrl(source.kind, source.entity_id, source.url, source.internal_url) : safeHttpUrl(source.url))
   }).map(source => ({
     id: source.id,
+    entity_id: typeof source.entity_id === 'string' ? source.entity_id.slice(0, 100) : null,
     title: source.title,
     url: source.url,
     links: sourceLinks(source),
     internal_url: publicInternalUrl(source.kind, source.entity_id, source.internal_url, source.database_id),
-    database_id: /^[1-9]\d*$/.test(source.database_id || '') ? String(source.database_id) : undefined,
+    database_id: /^[1-9]\d*$/.test(source.database_id || '') ? String(source.database_id) : null,
     kind: source.kind,
     source_type: typeof source.source_type === 'string' ? source.source_type : null,
     trust_label: typeof source.trust_label === 'string' ? source.trust_label : null,
@@ -89,9 +90,11 @@ export function parseAIReply(data) {
       && typeof item.title === 'string' && typeof item.reason === 'string'
       && (item.object_type === 'team' ? publicTeamUrl(item.object_type, item.object_id, item.source_url, item.internal_url)
         : safeHttpUrl(item.source_url)))
-    .map(item => ({ object_type: item.object_type, object_id: item.object_id, title: item.title, reason: item.reason,
+    .map(item => ({ object_type: item.object_type,
+      object_id: typeof item.object_id === 'string' ? item.object_id.slice(0, 100) : null,
+      title: item.title, reason: item.reason,
       internal_url: publicInternalUrl(item.object_type, item.object_id, item.internal_url, item.database_id),
-      database_id: /^[1-9]\d*$/.test(item.database_id || '') ? String(item.database_id) : undefined,
+      database_id: /^[1-9]\d*$/.test(item.database_id || '') ? String(item.database_id) : null,
       ...researchFacts(item),
       source_url: item.source_url, reviewed: item.reviewed === true,
       status_note: typeof item.status_note === 'string' ? item.status_note : '',

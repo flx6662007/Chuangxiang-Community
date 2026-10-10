@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
+import BrandLogo from '../components/BrandLogo.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
 const route = useRoute()
 const privateBeta = import.meta.env.VITE_PRIVATE_BETA === '1'
@@ -24,12 +25,10 @@ function revisitAi() {
   >
     <el-header class="app-header">
       <div class="app-header-inner">
-        <RouterLink class="brand" to="/" aria-label="创享平台首页"
-          ><span class="brand-mark"><AppIcon name="spark" :size="23" /></span
-          ><span
-            >创享<span class="brand-subtitle">CHUANGXIANG</span></span
-          ></RouterLink
-        >
+        <RouterLink class="brand" to="/" aria-label="创享平台首页">
+          <BrandLogo />
+          <span>创享<span class="brand-subtitle">CHUANGXIANG</span></span>
+        </RouterLink>
         <nav class="app-nav" aria-label="主导航">
           <RouterLink to="/" exact-active-class="is-active">发现</RouterLink>
           <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi">AI</RouterLink>

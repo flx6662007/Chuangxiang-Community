@@ -2,6 +2,7 @@
 import ipaddress
 import re
 import socket
+import ssl
 import time
 from dataclasses import dataclass
 from urllib.parse import urljoin, urlsplit, urlunsplit
@@ -17,6 +18,38 @@ DOCUMENT_CONTENT_TYPES = {
     'application/octet-stream', 'binary/octet-stream', 'application/zip',
     'application/msword', 'text/plain',
 }
+
+
+def _certificate_matches_host(certificate, hostname):
+    """Match a chain-verified certificate's SAN against the original URL host."""
+    try:
+        address = ipaddress.ip_address(hostname)
+    except ValueError:
+        address = None
+        try:
+            hostname = hostname.encode('idna').decode('ascii').lower().rstrip('.')
+        except UnicodeError:
+            return False
+    for kind, name in certificate.get('subjectAltName', ()):
+        if address is not None:
+            if kind == 'IP Address':
+                try:
+                    if ipaddress.ip_address(name) == address:
+                        return True
+                except ValueError:
+                    continue
+        elif kind == 'DNS':
+            name = name.lower().rstrip('.')
+            if name == hostname:
+                return True
+            if name.startswith('*.') and name.count('*') == 1:
+                suffix = name[2:]
+                labels = hostname.split('.')
+                if (len(labels) == len(suffix.split('.')) + 1
+                        and not labels[0].startswith('xn--')
+                        and hostname.endswith('.' + suffix)):
+                    return True
+    return False
 
 
 class FetchError(Exception):
@@ -58,20 +91,40 @@ class Document:
 
 class OfficialClient:
     """每页最多三次请求、三跳重定向、2 MB 解压后正文，站点间隔一秒。"""
-    def __init__(self, hosts, *, transport=None, resolve=True, interval=1, timeout=15, attempts=3, deadline=None):
+    def __init__(self, hosts, *, transport=None, resolve=True, interval=1, timeout=15, attempts=3,
+                 deadline=None, proxy=None):
         self.hosts, self.resolve, self.interval = set(hosts), resolve, interval
         self.deadline = deadline
         self.attempts = attempts
+        self.proxy = proxy
+        # httpcore's HTTP CONNECT transport verifies an IP-pinned URL against the
+        # IP, not its original SNI hostname. Keep CA validation and verify SAN
+        # against that hostname explicitly before reading any response bytes.
+        tls = ssl.create_default_context() if proxy else True
+        if proxy:
+            tls.check_hostname = False
         self.client = httpx.Client(
             headers={'User-Agent': USER_AGENT, 'Accept': 'text/html,text/plain;q=0.8'},
             timeout=httpx.Timeout(timeout, connect=min(5, timeout)), follow_redirects=False,
-            transport=transport, trust_env=False,
+            transport=transport, proxy=proxy, verify=tls, trust_env=False,
             limits=httpx.Limits(max_keepalive_connections=0),
         )
+        self.dns_client = (httpx.Client(proxy=proxy, timeout=httpx.Timeout(timeout, connect=min(5, timeout)),
+                                        follow_redirects=False, trust_env=False) if proxy else self.client)
         self.robots, self.last_request, self.addresses = {}, 0, {}
 
     def close(self):
         self.client.close()
+        if self.dns_client is not self.client:
+            self.dns_client.close()
+
+    def _verify_proxy_certificate(self, response, hostname):
+        if not self.proxy or urlsplit(str(response.url)).scheme != 'https':
+            return
+        stream = response.extensions.get('network_stream')
+        tls = stream.get_extra_info('ssl_object') if stream is not None else None
+        if tls is None or not _certificate_matches_host(tls.getpeercert(), hostname):
+            raise FetchError('tls_hostname_mismatch', '网页证书与原域名不匹配，已拒绝读取。')
 
     def _remaining(self):
         if self.deadline is None:
@@ -85,15 +138,23 @@ class OfficialClient:
         self._remaining()
         if host in self.addresses:
             return self.addresses[host]
-        try:
-            addresses = [row[4][0] for row in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)]
-        except OSError:
-            addresses = []
+        if self.proxy:
+            # Avoid slow/fake local TUN DNS when a local HTTP proxy is in use.
+            try:
+                ipaddress.ip_address(host)
+                addresses = [host]
+            except ValueError:
+                addresses = []
+        else:
+            try:
+                addresses = [row[4][0] for row in socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)]
+            except OSError:
+                addresses = []
         if not addresses or any(not ipaddress.ip_address(address).is_global for address in addresses):
             # 本机 TUN 代理可返回 fake-IP；向固定公网 DoH 服务重新求真实地址。
             # 仍然只连接校验通过的公网 IP，不将 198.18/私网加入允许列表。
             try:
-                with self.client.stream('GET', 'https://1.1.1.1/dns-query',
+                with self.dns_client.stream('GET', 'https://1.1.1.1/dns-query',
                         params={'name': host, 'type': 'A'}, headers={'Accept': 'application/dns-json'},
                         **({'timeout': self._remaining()} if self.deadline is not None else {})) as response:
                     if response.status_code != 200:
@@ -143,6 +204,7 @@ class OfficialClient:
                     if self.deadline is not None:
                         request_options['timeout'] = self._remaining()
                     with self.client.stream('GET', request_url, **request_options) as response:
+                        self._verify_proxy_certificate(response, parts.hostname)
                         if response.status_code in (301, 302, 303, 307, 308):
                             if hop == 3 or not response.headers.get('location'):
                                 raise FetchError('redirect_limit', '官方页面重定向过多。', response.status_code)

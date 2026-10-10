@@ -67,6 +67,13 @@ function changeMode(value) {
   mode.value = value
 }
 
+function newConversation() {
+  clear()
+  query.value = ''
+  validation.value = ''
+  followOutput = true
+}
+
 function addExample(example) {
   const current = query.value.trim()
   if (!current.includes(example)) query.value = current ? `${current}，${example}` : example
@@ -112,7 +119,10 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
       <div>
         <h2 id="ai-assistant-title">科创 AI 助手</h2>
       </div>
-      <span class="editorial-label">赛事 · 科研 · 资源</span>
+      <div class="ai-heading-actions">
+        <span class="editorial-label">赛事 · 科研 · 资源</span>
+        <button v-if="configured" type="button" class="ai-new-conversation" @click="newConversation">新对话</button>
+      </div>
     </div>
     <p class="ai-assistant-intro">选择关注方向，问比赛、科研机会或学习资源；也可以在赛事模式使用完整的选赛与找队友向导。</p>
     <div class="ai-mode-list" role="group" aria-label="助手模式">
@@ -137,6 +147,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
               <li v-for="source in message.sources" :key="source.id">
                 <RouterLink v-if="source.internal_url" :to="source.internal_url">[{{ source.id }}] {{ source.title }}</RouterLink>
                 <a v-else :href="source.url" target="_blank" rel="noopener noreferrer">[{{ source.id }}] {{ source.title }}</a>
+                <small v-if="source.database_id || source.entity_id">站内编号：{{ source.database_id || source.entity_id }}</small>
                 <small v-if="!['research_opportunity', 'research_group'].includes(source.kind)">{{ source.published_on ? `发布 ${source.published_on}` : source.verified_at ? `核查 ${source.verified_at.slice(0, 10)}` : source.read_at ? `读取 ${source.read_at.slice(0, 10)}` : '日期未注明' }}</small>
                 <small v-if="source.status_note">{{ source.status_note }}</small>
                 <small v-if="source.trust_label && !['research_opportunity', 'research_group'].includes(source.kind)">{{ source.trust_label }}{{ source.reviewed ? ' · 已核验' : ' · 未经人工核验' }}</small>
@@ -151,6 +162,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
                 <span>{{ itemIndex + 1 }}. {{ { competition: '赛事', resource: '资源', research_opportunity: '科研资料', research_group: '课题组', team: '组队招募' }[item.object_type] }} · </span>
                 <RouterLink v-if="item.internal_url" :to="item.internal_url">{{ item.title }}</RouterLink>
                 <a v-else :href="item.source_url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+                <small v-if="item.database_id || item.object_id">站内编号：{{ item.database_id || item.object_id }}</small>
                 <template v-if="item.object_type === 'research_opportunity' && Object.keys(item.facts || {}).length">
                   <template v-for="[field, label] in researchFields" :key="field">
                     <small v-if="item.facts[field]">{{ label }}：{{ item.facts[field] }} <ResearchFieldLinks :links="item.field_links[field]" :context="`${item.title} · ${label}`" /></small>
@@ -242,6 +254,10 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
 .ai-chat-sources a { color: var(--accent, #6da5ff); }
 .ai-chat-coverage { display: block; margin-top: 8px; color: var(--text-secondary, #a4b1c0); }
 .ai-mode-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.ai-heading-actions { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 12px; }
+.ai-new-conversation { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 7px 14px; font: inherit; color: var(--text-primary, #f4f2ee); background: transparent; cursor: pointer; white-space: nowrap; }
+.ai-new-conversation:hover { border-color: var(--accent, #6da5ff); color: var(--accent, #6da5ff); }
+.ai-new-conversation:focus-visible { outline: 2px solid var(--accent, #6da5ff); outline-offset: 3px; }
 .ai-mode-button { border: 1px solid var(--border, #344357); border-radius: 999px; padding: 8px 18px; color: var(--text-primary, #f4f2ee); background: transparent; font: inherit; cursor: pointer; }
 .ai-mode-button.is-active { color: var(--bg-primary, #101a24); background: var(--text-primary, #f4f2ee); }
 .ai-mode-button:disabled { opacity: .55; cursor: not-allowed; }

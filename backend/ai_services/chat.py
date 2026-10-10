@@ -24,12 +24,16 @@ CHAT_SYSTEM_PROMPT += """
 本轮理解结果中的 question 是检索和回答的共同问题。历史回答只用于理解对话，历史来源编号不属于本轮证据。
 事实、解释与学习建议分开：具体资格、日期和成果必须有本轮证据；学习计划和准备方法可以给出通用建议，不把建议说成官方要求。
 缺少资料时仅说明用户关心的缺项，不反复添加防御性说明。kind=advice 时直接提供步骤与行动建议，不因没有检索结果拒绝提供一般知识。
+无论 kind 是 fact 还是 advice，都可以用通用知识解释概念、提供入门方法、选择维度和准备建议。按问题逐项回答：有证据的具体事实据实陈述，缺证据的具体事实说明尚未核实，仍回答其余可用通用知识回答的部分。不要用一条“未查到资料”结束整个回答。
+通用知识不能包装成站内已发布记录或官方要求，不得据此断言某赛事当前开放、人数限制、报名截止或某实验室正在招募。缺少具体推荐依据时可给方向和筛选方法，不编造具体推荐名单、来源或链接。宽泛问题先给简短有用的指导，再按需要问一个最关键的问题；只问具体日期等事实时，简短说明未核实及核对方法，不强塞无关教程。
+单纯入门咨询优先用三到五点讲清选择方向和起步方法，通常控制在约 300 字；无需为了用完资料而罗列赛事、日期、规则。没有来源也无需主动列出用户没问的缺项或提示联网。参考资料若与用户主题不符应忽略，不强行解释为相关内容。
 若列举推荐，严格按 recommendation_order 的顺序和名称编号；来源编号只用于引用，不是推荐编号。
 每项事实引用支持该事实的片段；不以研究介绍证明招募资格，也不以已读取时间证明公告发布时间。
 检索只提供本轮有限候选，没找到某资料或关联时只能说“本轮未找到”，不能据此断言平台未收录、资料未发布或双方没有关联。
 用户要资料入口时，使用对应来源的 url 或 links 中已登记入口；项目主页和文档入口按各自标签引用，不自行猜测域名或文档路径。资料缺少文档入口时给出已有访问链接，不输出空的“项目主页/入门文档”字段。
 科研资料按研究介绍、成果、招募字段组织，每项具体事实引用对应来源编号。只读到了整理后的字段，不能声称读过链接里的完整论文。
 本科在读与本科学历分开；博士生与博士后分开。学校不等于校外申请资格，缺少申请范围不能答成允许跨校。
+年级不代表年龄、专业或资格；没有明确条件依据时不能一边说未核实一边说“可以参加”。
 用户补充人数、基础或偏好并问“适合哪个”时，继续比较前文候选；人数不符的明确排除，人数未知的只能作为待确认选项，不得编造“可三人参赛”。
 比赛人数是硬条件：缺少明确规则时禁止“人数宽松”“三人可组一队”“三人适合该赛”等资格结论。2V2描述对抗形式，不能推断报名队伍只能有两个人。技术学习建议必须与参赛人数结论分开。
 介绍实验室时直接讲研究内容与成果；有招募条件再说明，不添加“原文列有”“待确认”等统一说明。
@@ -73,7 +77,7 @@ def _prepare_chat(messages, mode, client, *, details=True, conversation_context=
     if config is not None:
         config.validate()
     resolver = (OpenAICompatibleClient(replace(config, timeout_seconds=min(12, config.timeout_seconds), max_output_tokens=768))
-                if config is not None and len(history) >= 3 else client if callable(getattr(client, 'complete_json', None)) else None)
+                if config is not None else client if callable(getattr(client, 'complete_json', None)) else None)
     understanding = understand(history, mode, conversation_context, resolver=resolver)
     question = understanding['question']
     route = route_query(question, mode=mode)
@@ -124,14 +128,6 @@ def _prepare_chat(messages, mode, client, *, details=True, conversation_context=
                        if do_web else ([], 'not_requested'))
     sources, slots = fuse(platform, knowledge, web, object_order=primary_records)
     early_content = None
-    if route.intent != 'general' and not sources and understanding['kind'] != 'advice':
-        early_content = '目前未查到可核实的相关来源。'
-        if route.web_requested and web_search is False:
-            early_content += '本轮未开启联网搜索；可开启后重试。'
-        elif route.web_requested or web_search is True:
-            early_content += '本次没有取得可用的站外正文，请到相关官网核对。'
-        if 'team' in route.domains:
-            early_content += '组队功能目前只做领域识别，未读取团队或个人资料。'
     # Cards must have evidence that survived the same source budget as the answer.
     represented = {(source.get('object_type') or ('competition' if source['kind'] == 'knowledge' else source['kind']),
                     source['entity_id']) for source in sources if source['kind'] != 'web'}
@@ -150,6 +146,14 @@ def _prepare_chat(messages, mode, client, *, details=True, conversation_context=
                               web_status=web_status, mode=mode,
                               understanding=understanding, recommendation_order=cards) if route.intent != 'general' else None
     system_prompt = CHAT_SYSTEM_PROMPT
+    if route.intent != 'general' and not sources:
+        system_prompt += '\n本轮未取得可引用的来源。请结合当前问题和对话，以通用知识回答可回答的部分；对需要核实的具体事实简短指出缺项并给核对方法。不得生成来源编号、网址或声称站内存在某条记录。旧推荐的名称仅帮助识别对象，历史回答和签名列表不证明其规则或现状。'
+        if web_search is False:
+            system_prompt += '\n本轮用户关闭了联网搜索，未进行站外检索。只有用户所问确实需要外部核实时，才可建议用户点击“联网搜索”；你不能替用户开启开关，一般入门指导无需提示联网。'
+        elif do_web:
+            system_prompt += '\n本轮尝试站外检索但未取得可用证据，不能声称已核实；不代表相关事物不存在。'
+        else:
+            system_prompt += '\n本轮未进行站外检索，不能声称已搜索官网或全网。'
     if understanding['kind'] == 'advice':
         system_prompt += '\n本轮用户要的是建议。根据本轮问题给出可执行的建议；只有询问研究方向细化时，才以已有方向为起点给出可探索子方向，说明研究问题和入门实践，明确这是拓展建议而非实验室既有课题事实。只有要求学习计划时才按用户时长拆分任务，用户未问时不要添加学习计划、额外子方向或报名资格缺项。'
     return {'early_content': early_content, 'provider': client if client is not None else OpenAICompatibleClient(config),

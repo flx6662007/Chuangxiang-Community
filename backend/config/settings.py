@@ -280,8 +280,9 @@ AI_CHAT = {
 # Optional self-hosted search. Empty URL preserves the registered-official-site adapter.
 AI_EXTERNAL_SEARCH = {
     'SEARXNG_URL': os.getenv('AI_SEARXNG_URL', ''),
-    'TIMEOUT_SECONDS': 15,
-    'MAX_PAGES': 3,
+    'WEB_PROXY_URL': os.getenv('AI_WEB_PROXY_URL', ''),
+    'TIMEOUT_SECONDS': 25,
+    'MAX_PAGES': 8,
     'MIN_RESULTS': 2,
     'MIN_CONFIDENCE': 0.55,
     # Only server-maintained, exact hostnames may elevate a result to official status.

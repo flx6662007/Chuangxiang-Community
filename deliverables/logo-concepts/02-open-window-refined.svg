@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">创享 Logo 精修草图：开放之窗</title>
+  <desc id="desc">蓝色轻渐变的开放方框，右上角有一枚独立的小方块。</desc>
+  <defs>
+    <linearGradient id="window-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#9AC4F4"/>
+      <stop offset=".55" stop-color="#76A7E8"/>
+      <stop offset="1" stop-color="#5E8DD0"/>
+    </linearGradient>
+  </defs>
+  <path d="M39 12.5H21A8.5 8.5 0 0 0 12.5 21v22a8.5 8.5 0 0 0 8.5 8.5h22a8.5 8.5 0 0 0 8.5-8.5V33" fill="none" stroke="url(#window-blue)" stroke-width="6.5" stroke-linecap="round"/>
+  <rect x="46.5" y="11" width="8" height="8" rx="1.8" fill="#A9CEFA"/>
+</svg>

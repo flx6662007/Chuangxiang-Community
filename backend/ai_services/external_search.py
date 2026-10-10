@@ -74,12 +74,29 @@ class SearXNGAdapter:
         # This endpoint is operator-owned configuration; never taken from chat or search results.
         if parts.scheme not in ('http', 'https') or not parts.hostname or parts.username or parts.password or parts.query or parts.fragment:
             return [], 'external_search_unconfigured'
+        proxy = self.config.get('WEB_PROXY_URL', '')
+        if proxy:
+            try:
+                proxy_parts = urlsplit(proxy)
+                valid_proxy = (proxy_parts.scheme == 'http'
+                               and proxy_parts.hostname in {'127.0.0.1', 'localhost', '::1'}
+                               and proxy_parts.port is not None
+                               and 0 < proxy_parts.port <= 65535
+                               and proxy_parts.username is None and proxy_parts.password is None
+                               and proxy_parts.path in ('', '/')
+                               and not proxy_parts.query and not proxy_parts.fragment
+                               and '\\' not in proxy
+                               and not any(char.isspace() or ord(char) < 32 for char in proxy))
+            except (ValueError, TypeError):
+                valid_proxy = False
+            if not valid_proxy:
+                return [], 'external_search_unconfigured'
         cache_key = 'ai-web-v2:' + hashlib.sha256((endpoint + query).encode()).hexdigest()
         cached = cache.get(cache_key)
         if cached is not None:
             return cached, 'ready'
         deadline = time.monotonic() + min(25, max(1, float(self.config.get('TIMEOUT_SECONDS', 15))))
-        limit = min(3, max(1, int(self.config.get('MAX_PAGES', 3))))
+        limit = min(8, max(1, int(self.config.get('MAX_PAGES', 3))))
         try:
             with httpx.Client(timeout=min(5, deadline - time.monotonic()), follow_redirects=False,
                               trust_env=False, transport=self.transport) as client:
@@ -111,8 +128,11 @@ class SearXNGAdapter:
                 try:
                     host = urlsplit(url).hostname
                     checked_url(url, [host], resolve=False)
-                    reader = self.client_factory([host], timeout=min(5, max(.01, deadline-time.monotonic())),
-                                                 attempts=1, interval=0, deadline=deadline)
+                    reader_options = {'timeout': min(5, max(.01, deadline-time.monotonic())),
+                                      'attempts': 1, 'interval': 0, 'deadline': deadline}
+                    if proxy:
+                        reader_options['proxy'] = proxy
+                    reader = self.client_factory([host], **reader_options)
                     page = reader.get(url)
                     checked_url(page.url, [host], resolve=False)
                     row, links = page_evidence(page, query)

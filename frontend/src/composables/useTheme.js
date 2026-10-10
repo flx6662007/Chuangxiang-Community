@@ -11,6 +11,8 @@ let fallbackTimer
 function applyTheme(value, persist = false) {
   theme.value = value
   document.documentElement.dataset.theme = value
+  const favicon = document.getElementById('site-favicon')
+  if (favicon) favicon.href = `${import.meta.env.BASE_URL}favicon-${value}.svg`
   if (persist) {
     preference = value
     try { localStorage.setItem(THEME_STORAGE_KEY, value) } catch { /* Private storage may be unavailable. */ }

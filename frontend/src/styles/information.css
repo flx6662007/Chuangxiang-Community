@@ -12,7 +12,7 @@
 .is-editorial-page .app-header { height: 82px; background: var(--editorial-dark); border-bottom: 1px solid var(--border-soft, #ffffff18); }
 .is-editorial-page .app-header-inner { width: min(calc(100% - 96px), 1320px); gap: clamp(38px, 5vw, 100px); }
 .is-editorial-page .brand { color: var(--text-primary, #f5f4ef); font-size: var(--type-title-lg); letter-spacing: .03em; }
-.is-editorial-page .brand-mark { border-color: var(--border-accent, #4987e7); outline: none; color: var(--accent, #69a1fa); width: 37px; height: 37px; }
+.is-editorial-page .brand-logo { width: 37px; height: 37px; }
 .is-editorial-page .brand-subtitle { color: var(--text-secondary, #778394); font-size: var(--type-overline); letter-spacing: .2em; font-weight: 500; }
 .is-editorial-page .app-nav { gap: clamp(18px, 2.4vw, 35px); }
 .is-editorial-page .app-nav a,
@@ -210,7 +210,7 @@
   .is-editorial-page .app-header { height: auto; min-height: 70px; padding: 0 16px; }
   .is-editorial-page .app-header-inner { width: 100%; flex-wrap: wrap; gap: 0 16px; padding: 14px 0 8px; }
   .is-editorial-page .brand { font-size: var(--type-title-md); }
-  .is-editorial-page .brand-mark { width: 32px; height: 32px; }
+  .is-editorial-page .brand-logo { width: 32px; height: 32px; }
   .is-editorial-page .app-nav { order: 3; width: 100%; height: 43px; gap: 24px; overflow-x: auto; }
   .is-editorial-page .app-nav a { flex: 0 0 auto; font-size: var(--type-small); }
   .is-editorial-page .app-nav a.is-active::after { bottom: 3px; }

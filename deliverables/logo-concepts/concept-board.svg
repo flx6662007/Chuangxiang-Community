@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1000" viewBox="0 0 1680 1000" role="img" aria-labelledby="board-title board-description">
+  <title id="board-title">创享 Logo 方向草图</title>
+  <desc id="board-description">三款蓝色单色扁平标志：双轨交汇、开放之窗、共创之桥；每款包含大图和导航栏尺寸预览。</desc>
+  <defs>
+    <g id="mark-a" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="square" stroke-linejoin="round">
+      <path d="M12 14 31 32h21M12 50l19-18"/>
+    </g>
+    <g id="mark-b">
+      <path d="M40 12H20a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8V34" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+      <path d="M47 12h6v7h-6z" fill="currentColor"/>
+    </g>
+    <g id="mark-c" fill="currentColor">
+      <path d="M10 51V31c0-13 9-21 22-21s22 8 22 21v20h-9V31c0-8-5-12-13-12s-13 4-13 12v20z"/>
+      <path d="M23 39h18" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="square"/>
+    </g>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+      .mono { font-family: "SFMono-Regular", Menlo, Consolas, monospace; }
+      .cn { font-family: "LXGW WenKai GB", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+    </style>
+  </defs>
+  <rect width="1680" height="1000" fill="#0B111B"/>
+  <path d="M64 147h1552" stroke="#25364A"/>
+  <text x="64" y="65" class="mono" font-size="16" letter-spacing="3" fill="#76A7E8">CHUANGXIANG  /  IDENTITY STUDY</text>
+  <text x="64" y="117" class="cn" font-size="39" font-weight="600" fill="#EDF2F7">创享 · 标志方向</text>
+  <text x="1616" y="105" text-anchor="end" class="sans" font-size="17" fill="#8D9CAC">单色 / 扁平 / 导航栏适配</text>
+
+  <g transform="translate(64 188)">
+    <rect width="490" height="736" rx="12" fill="#111C2A" stroke="#2C3D50"/>
+    <text x="32" y="46" class="mono" font-size="14" letter-spacing="2" fill="#88A1BB">01  /  CONVERGE</text>
+    <rect x="32" y="76" width="426" height="350" rx="8" fill="#162436"/>
+    <use href="#mark-a" transform="translate(174 177) scale(2.22)" color="#76A7E8"/>
+    <text x="32" y="489" class="cn" font-size="30" font-weight="600" fill="#EDF2F7">双轨交汇</text>
+    <text x="32" y="527" class="sans" font-size="16" fill="#A8B8C8">机会与伙伴从两端汇入，向前成为一条路。</text>
+    <path d="M32 562h426" stroke="#2C3D50"/>
+    <text x="32" y="598" class="mono" font-size="13" letter-spacing="2" fill="#8295AA">IN CONTEXT / 37 PX</text>
+    <rect x="32" y="622" width="426" height="84" rx="6" fill="#0B111B" stroke="#35475B"/>
+    <use href="#mark-a" transform="translate(51 644) scale(.62)" color="#76A7E8"/>
+    <text x="106" y="660" class="cn" font-size="25" font-weight="600" fill="#F5F4EF">创享</text>
+    <text x="106" y="681" class="mono" font-size="10" letter-spacing="1.7" fill="#8295AA">CHUANGXIANG</text>
+  </g>
+
+  <g transform="translate(595 188)">
+    <rect width="490" height="736" rx="12" fill="#111C2A" stroke="#2C3D50"/>
+    <text x="32" y="46" class="mono" font-size="14" letter-spacing="2" fill="#88A1BB">02  /  OPEN WINDOW</text>
+    <rect x="32" y="76" width="426" height="350" rx="8" fill="#162436"/>
+    <use href="#mark-b" transform="translate(174 177) scale(2.22)" color="#76A7E8"/>
+    <text x="32" y="489" class="cn" font-size="30" font-weight="600" fill="#EDF2F7">开放之窗</text>
+    <text x="32" y="527" class="sans" font-size="16" fill="#A8B8C8">打开通往赛事、科研与成长机会的入口。</text>
+    <path d="M32 562h426" stroke="#2C3D50"/>
+    <text x="32" y="598" class="mono" font-size="13" letter-spacing="2" fill="#8295AA">IN CONTEXT / 37 PX</text>
+    <rect x="32" y="622" width="426" height="84" rx="6" fill="#0B111B" stroke="#35475B"/>
+    <use href="#mark-b" transform="translate(51 644) scale(.62)" color="#76A7E8"/>
+    <text x="106" y="660" class="cn" font-size="25" font-weight="600" fill="#F5F4EF">创享</text>
+    <text x="106" y="681" class="mono" font-size="10" letter-spacing="1.7" fill="#8295AA">CHUANGXIANG</text>
+  </g>
+
+  <g transform="translate(1126 188)">
+    <rect width="490" height="736" rx="12" fill="#111C2A" stroke="#2C3D50"/>
+    <text x="32" y="46" class="mono" font-size="14" letter-spacing="2" fill="#88A1BB">03  /  BRIDGE</text>
+    <rect x="32" y="76" width="426" height="350" rx="8" fill="#162436"/>
+    <use href="#mark-c" transform="translate(174 177) scale(2.22)" color="#76A7E8"/>
+    <text x="32" y="489" class="cn" font-size="30" font-weight="600" fill="#EDF2F7">共创之桥</text>
+    <text x="32" y="527" class="sans" font-size="16" fill="#A8B8C8">连接不同专业的人，让合作有了起点。</text>
+    <path d="M32 562h426" stroke="#2C3D50"/>
+    <text x="32" y="598" class="mono" font-size="13" letter-spacing="2" fill="#8295AA">IN CONTEXT / 37 PX</text>
+    <rect x="32" y="622" width="426" height="84" rx="6" fill="#0B111B" stroke="#35475B"/>
+    <use href="#mark-c" transform="translate(51 644) scale(.62)" color="#76A7E8"/>
+    <text x="106" y="660" class="cn" font-size="25" font-weight="600" fill="#F5F4EF">创享</text>
+    <text x="106" y="681" class="mono" font-size="10" letter-spacing="1.7" fill="#8295AA">CHUANGXIANG</text>
+  </g>
+  <text x="64" y="971" class="mono" font-size="13" letter-spacing="1.5" fill="#6F8499">CONCEPT STUDY  ·  NOT FINAL ARTWORK</text>
+  <text x="1616" y="971" text-anchor="end" class="mono" font-size="13" letter-spacing="1.5" fill="#6F8499">08 OCT 2026</text>
+</svg>

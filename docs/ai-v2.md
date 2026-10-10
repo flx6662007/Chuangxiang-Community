@@ -12,6 +12,38 @@
 
 本机网络若无法直连模型服务，可在被忽略的 `backend/.env` 设置 `DEEPSEEK_PROXY_URL=http://127.0.0.1:本机代理端口` 并重启后端。模型客户端只接受显式配置的本机 HTTP 代理，不读取环境代理，也不把密钥放到前端。代理服务需保持运行；无需代理的部署环境留空。
 
+## 本机 SearXNG 联网搜索
+
+不必购买搜索 API。安装并启动 Docker Desktop 后，可在仓库内创建被 Git 忽略的 `.local/searxng/settings.yml`：
+
+```yaml
+use_default_settings: true
+server:
+  limiter: false
+  public_instance: false
+  image_proxy: false
+search:
+  formats:
+    - html
+    - json
+```
+
+在仓库根目录启动仅监听本机的容器（其他进程已经占用 8888 时先换一个本机端口）：
+
+```bash
+docker run -d --name chuangxiang-search --restart unless-stopped \
+  -p 127.0.0.1:8888:8080 \
+  -v "$PWD/.local/searxng/settings.yml:/etc/searxng/settings.yml:ro" \
+  -e "SEARXNG_SECRET=$(openssl rand -hex 32)" \
+  docker.io/searxng/searxng:latest
+curl --get --data-urlencode 'q=Python programming' \
+  --data-urlencode 'format=json' http://127.0.0.1:8888/search
+```
+
+在 `backend/.env` 设置 `AI_SEARXNG_URL=http://127.0.0.1:8888`，然后重启 Django。若本机的 Python 进程不能直连搜索结果网页，可再设置 `AI_WEB_PROXY_URL=http://127.0.0.1:本机代理端口`；它只接受本机 HTTP 代理，和容器的出站代理是两回事。若 Docker 容器内的搜索引擎也无法联网，需在 SearXNG YAML 的 `outgoing.proxies.all://` 中配置容器可访问的代理地址，再重启容器；不要把宿主机的 `127.0.0.1` 直接写成容器代理地址。
+
+服务只把搜索结果当作候选链接，还需读取网页正文、遵守 robots 规则并核验证书与公网 IP 后才将内容作为引用。部分网站拒绝抓取时会跳过，不能保证每个问题都取得站外来源。Docker Desktop、容器及本机代理都需保持运行；此配置仅用于本机，不代表公网部署。
+
 ## 流式聊天
 
 首页助手使用 `POST /api/v1/ai/chat/stream/`，请求体仍为 `{ "messages": [...], "mode": "smart|competition|research|resource" }`，沿用原接口的 CSRF、限流、历史窗口和检索流程。模型的 Chat Completions SSE 内容分片直接作为 `event: delta` 转发；生成结束后，后端校验回答中的引用与链接，再用 `event: done` 发送与原 `/api/v1/ai/chat/` 相同的完整 JSON（`message`、`sources`、`recommendations`、`route`、`retrieval` 等）。前端以 `done.message` 校正最终文本，并保留结构化来源与推荐。上游断流、超时或无效结果发送安全的 `event: error`，客户端结束生成状态并提供重试；用户可停止请求。原 JSON 接口继续可用。

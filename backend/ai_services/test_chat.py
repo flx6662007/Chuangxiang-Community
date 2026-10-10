@@ -143,7 +143,10 @@ class ChatTests(SimpleTestCase):
                 self.assertEqual(response.status_code, expected)
                 self.assertEqual(response.json()['code'], code)
                 self.assertNotIn(CONFIG.api_key.encode(), response.content)
-                self.assertEqual(len(calls), 1)
+                # One failed planning call falls back; answer generation is a distinct call.
+                self.assertEqual(len(calls), 2)
+                self.assertIn('response_format', json.loads(calls[0].content))
+                self.assertNotIn('response_format', json.loads(calls[1].content))
 
     def test_network_and_timeout_errors_are_safe(self):
         for exception, status, code in [

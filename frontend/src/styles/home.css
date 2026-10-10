@@ -32,7 +32,7 @@
 }
 .app-shell.is-home .app-header-inner { width: min(calc(100% - 96px), 1320px); gap: clamp(38px, 5vw, 100px); }
 .app-shell.is-home .brand { color: var(--text-primary, #f5f4ef); font-size: var(--type-title-lg); letter-spacing: .03em; }
-.app-shell.is-home .brand-mark { border-color: var(--border-accent, #4987e7); outline: none; color: var(--accent, #69a1fa); width: 37px; height: 37px; }
+.app-shell.is-home .brand-logo { width: 37px; height: 37px; }
 .app-shell.is-home .brand-subtitle { color: var(--text-secondary, #778394); font-size: var(--type-overline); letter-spacing: .2em; font-weight: 500; }
 .app-shell.is-home .app-nav { gap: clamp(18px, 2.4vw, 35px); }
 .app-shell.is-home .app-nav a,
@@ -286,7 +286,7 @@
   .app-shell.is-home .app-header { height: auto; min-height: 70px; padding: 0 16px; }
   .app-shell.is-home .app-header-inner { width: 100%; flex-wrap: wrap; gap: 0 16px; padding: 14px 0 8px; }
   .app-shell.is-home .brand { font-size: var(--type-title-md); }
-  .app-shell.is-home .brand-mark { width: 32px; height: 32px; }
+  .app-shell.is-home .brand-logo { width: 32px; height: 32px; }
   .app-shell.is-home .app-nav { order: 3; width: 100%; height: 43px; gap: 24px; overflow-x: auto; }
   .app-shell.is-home .app-nav a { flex: 0 0 auto; font-size: var(--type-small); }
   .app-shell.is-home .app-nav a.is-active::after { bottom: 3px; }
