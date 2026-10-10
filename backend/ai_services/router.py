@@ -7,7 +7,9 @@ import re
 DOMAIN_WORDS = {
     'competition': ('竞赛', '比赛', '赛事', '参赛', '报名', '大赛', 'competition', 'contest'),
     'project': ('科研', '课题', '实验室', '项目', '导师', 'research', 'project', 'lab'),
-    'resource': ('资源', '教程', '课程', '学习资料', '学习', '工具', 'resource', 'tutorial'),
+    'resource': ('资源', '教程', '课程', '学习资料', '学习', '工具', '资料', '插件', '技能',
+                 '例程', '示例', '习题', '题库', '赛题', '附件', '规程', '指南', '文档', '作业', '解答',
+                 'resource', 'tutorial'),
     'team': ('组队', '队友', '团队', '招募', 'team', 'teammate'),
 }
 MODES = ('smart', 'competition', 'research', 'resource')

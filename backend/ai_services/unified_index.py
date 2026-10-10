@@ -13,11 +13,15 @@ from pathlib import Path
 from information_library.semantic import LocalBGEEncoder, SemanticError, _matrix, _numpy
 
 
+SCHEMA_VERSION = 3
+
+
 def fingerprint(records):
     payload = [(row['object_type'], row['object_id'], row['version'], row['status'],
                 row['title'], row['summary'], row['content'], row['tags'], row['category'],
                 row['direction'], row['source_url'], row.get('evidence_blocks'),
-                row.get('field_links'), row.get('recruitment_active')) for row in records]
+                row.get('field_links'), row.get('recruitment_active'),
+                row.get('catalogs'), row.get('named_associations')) for row in records]
     return hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
@@ -27,8 +31,13 @@ def build_index(records, *, encoder=None):
     for row in records:
         if row['status'] != 'published' or not row['source_url']:
             continue
+        associations = list(dict.fromkeys([
+            *(item['title'] for item in row.get('named_associations', [])),
+            *(name for item in row.get('catalogs', [])
+              for name in [item['name'], *item.get('aliases', [])]),
+        ]))
         body = ('\n'.join([row['title'], row['summary'], row['content'], row['category'],
-                           *row['tags'], *row['direction']])).strip()
+                           *row['tags'], *row['direction'], *associations])).strip()
         blocks = row.get('evidence_blocks') or [{'text': body, 'section': 'content', 'url': row['source_url'], 'fields': []}]
         for block in blocks:
             body = row['title'] + '\n' + block['text']
@@ -42,7 +51,7 @@ def build_index(records, *, encoder=None):
     if not texts:
         raise SemanticError('unified_index_empty')
     vectors = _matrix(encoder.encode(texts, is_query=False), expected_rows=len(texts))
-    return {'metadata': {'schema_version': 2, 'fingerprint': fingerprint(records),
+    return {'metadata': {'schema_version': SCHEMA_VERSION, 'fingerprint': fingerprint(records),
                          'model_id': encoder.model_id, 'model_revision': encoder.revision,
                          'chunks': chunks, 'provenance': provenance}, 'vectors': vectors}
 
@@ -77,7 +86,7 @@ def search(records, query, *, index=None, encoder=None, threshold=0.60):
         stat = os.stat(path)
         index = load_index(os.path.abspath(path), stat.st_mtime_ns, stat.st_size)
     metadata = index['metadata']
-    if (metadata.get('schema_version') != 2 or metadata.get('fingerprint') != fingerprint(records)
+    if (metadata.get('schema_version') != SCHEMA_VERSION or metadata.get('fingerprint') != fingerprint(records)
             or not metadata.get('model_id') or not metadata.get('model_revision')
             or not isinstance(metadata.get('chunks'), list)):
         raise SemanticError('unified_index_stale')

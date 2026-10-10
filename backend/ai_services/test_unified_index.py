@@ -32,3 +32,23 @@ class UnifiedIndexTests(SimpleTestCase):
         records[0]['summary'] = '内容已更新'
         with self.assertRaisesMessage(SemanticError, 'unified_index_stale'):
             search(records, 'Python 入门', index=index, encoder=FakeEncoder())
+
+    def test_catalog_association_is_searchable_and_changes_invalidate_index(self):
+        records = self.records()
+        records[1]['catalogs'] = [{'code': 'catalog-1', 'name': '编程竞赛', 'aliases': ['Python 竞赛']}]
+        records[1]['named_associations'] = [{'object_id': 'db-1', 'title': '编程竞赛本届'}]
+        index = build_index(records, encoder=FakeEncoder())
+        hits = search(records, 'Python 竞赛', index=index, encoder=FakeEncoder())
+        self.assertIn(('resource', 'robot'), hits)
+        for key in ('catalogs', 'named_associations'):
+            changed = [dict(row) for row in records]
+            changed[1][key] = []
+            with self.subTest(key=key), self.assertRaisesMessage(SemanticError, 'unified_index_stale'):
+                search(changed, 'Python 竞赛', index=index, encoder=FakeEncoder())
+
+    def test_previous_index_schema_requires_rebuild(self):
+        records = self.records()
+        index = build_index(records, encoder=FakeEncoder())
+        index['metadata']['schema_version'] = 2
+        with self.assertRaisesMessage(SemanticError, 'unified_index_stale'):
+            search(records, 'Python 入门', index=index, encoder=FakeEncoder())

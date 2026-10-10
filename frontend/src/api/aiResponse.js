@@ -6,19 +6,38 @@ function safeHttpUrl(value) {
   } catch { return false }
 }
 
-function safeInternalUrl(kind, value) {
-  if (typeof value !== 'string') return null
-  const patterns = {
-    competition: /^\/competitions\/[1-9]\d*$/,
-    resource: /^\/resources\/[a-zA-Z0-9_-]{1,80}$/,
-    research_opportunity: /^\/research\/[1-9]\d*$/,
-    team: /^\/teams\/[1-9]\d*$/,
-  }
-  return patterns[kind]?.test(value) ? value : null
+const resourceLinkLabels = ['项目主页', '入门文档', '官方文档', '学习入口', '教程入口']
+
+function sourceLinks(source) {
+  if (source.kind !== 'resource' || !Array.isArray(source.links)) return []
+  const seen = new Set()
+  return source.links.filter(link => {
+    if (!link || !resourceLinkLabels.includes(link.label) || !safeHttpUrl(link.url) || seen.has(link.url)) return false
+    seen.add(link.url)
+    return true
+  }).slice(0, 5).map(link => ({ label: link.label, url: link.url }))
 }
 
-function safeSourceUrl(kind, value) {
-  return safeHttpUrl(value) || (kind === 'team' && safeInternalUrl(kind, value) === value)
+function publicInternalUrl(kind, identifier, url, databaseId) {
+  if (kind === 'team' || kind === 'research_opportunity') {
+    const id = typeof identifier === 'string' && /^db-([1-9]\d*)$/.exec(identifier)?.[1]
+    return id && url === `/${kind === 'team' ? 'teams' : 'research'}/${id}` ? url : null
+  }
+  if (kind === 'resource') {
+    return /^\/resources\/[a-zA-Z0-9_-]{1,80}$/.test(url || '')
+      && (!identifier || url === `/resources/${identifier}`) ? url : null
+  }
+  // Legacy competition replies may omit kind/identity; their route was already public.
+  if ((!kind || kind === 'competition') && /^\/competitions\/[1-9]\d*$/.test(url || '')) {
+    return !identifier || (typeof identifier === 'string' && url === `/competitions/${identifier.replace(/^db-/, '')}`)
+      || (/^[1-9]\d*$/.test(databaseId || '') && url === `/competitions/${databaseId}`) ? url : null
+  }
+  return null
+}
+
+function publicTeamUrl(kind, identifier, url, internalUrl) {
+  return kind === 'team' && url === internalUrl
+    && Boolean(publicInternalUrl(kind, identifier, internalUrl))
 }
 
 const researchFields = ['summary', 'direction', 'location', 'achievements', 'roles', 'eligibility',
@@ -46,14 +65,16 @@ export function parseAIReply(data) {
     throw new Error('Invalid AI response')
   }
   const sources = Array.isArray(data.sources) ? data.sources.slice(0, 6).filter(source => {
-    return source && typeof source.title === 'string' && safeSourceUrl(source.kind, source.url)
+    return source && typeof source.title === 'string' && (source.kind === 'team'
+      ? publicTeamUrl(source.kind, source.entity_id, source.url, source.internal_url) : safeHttpUrl(source.url))
   }).map(source => ({
     id: source.id,
     entity_id: typeof source.entity_id === 'string' ? source.entity_id.slice(0, 100) : null,
-    database_id: typeof source.database_id === 'string' && /^\d+$/.test(source.database_id) ? source.database_id : null,
     title: source.title,
     url: source.url,
-    internal_url: safeInternalUrl(source.kind, source.internal_url),
+    links: sourceLinks(source),
+    internal_url: publicInternalUrl(source.kind, source.entity_id, source.internal_url, source.database_id),
+    database_id: /^[1-9]\d*$/.test(source.database_id || '') ? String(source.database_id) : null,
     kind: source.kind,
     source_type: typeof source.source_type === 'string' ? source.source_type : null,
     trust_label: typeof source.trust_label === 'string' ? source.trust_label : null,
@@ -67,11 +88,13 @@ export function parseAIReply(data) {
   const recommendations = Array.isArray(data.recommendations) ? data.recommendations.slice(0, 6)
     .filter(item => item && ['competition', 'resource', 'research_opportunity', 'research_group', 'team'].includes(item.object_type)
       && typeof item.title === 'string' && typeof item.reason === 'string'
-      && safeSourceUrl(item.object_type, item.source_url))
+      && (item.object_type === 'team' ? publicTeamUrl(item.object_type, item.object_id, item.source_url, item.internal_url)
+        : safeHttpUrl(item.source_url)))
     .map(item => ({ object_type: item.object_type,
       object_id: typeof item.object_id === 'string' ? item.object_id.slice(0, 100) : null,
-      database_id: typeof item.database_id === 'string' && /^\d+$/.test(item.database_id) ? item.database_id : null,
-      internal_url: safeInternalUrl(item.object_type, item.internal_url), title: item.title, reason: item.reason,
+      title: item.title, reason: item.reason,
+      internal_url: publicInternalUrl(item.object_type, item.object_id, item.internal_url, item.database_id),
+      database_id: /^[1-9]\d*$/.test(item.database_id || '') ? String(item.database_id) : null,
       ...researchFacts(item),
       source_url: item.source_url, reviewed: item.reviewed === true,
       status_note: typeof item.status_note === 'string' ? item.status_note : '',

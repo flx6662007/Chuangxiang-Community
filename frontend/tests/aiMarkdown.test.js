@@ -15,3 +15,18 @@ test('未闭合 Markdown 及 HTML 不能插入可执行内容', () => {
   const html = renderAIMessage({ content: '<script>alert(1)</script> [链接](javascript:alert(1)) **尚未完成', generating: true })
   assert.doesNotMatch(html, /<script>|<a /)
 })
+
+test('完成回答允许已登记的项目和文档入口，仍阻止模型猜测的同域链接', () => {
+  const homepage = 'https://www.zotero.org/'
+  const docs = 'https://www.zotero.org/support/quick_start_guide'
+  const message = { content: `[主页](${homepage}) [文档](${docs}) [猜测](https://www.zotero.org/unknown)`,
+    sources: [{ kind: 'resource', url: 'https://github.com/zotero/zotero', links: [
+      { label: '项目主页', url: homepage }, { label: '入门文档', url: docs },
+    ] }] }
+  const html = renderAIMessage(message)
+  assert.match(html, /href="https:\/\/www.zotero.org\/"/)
+  assert.match(html, /href="https:\/\/www.zotero.org\/support\/quick_start_guide"/)
+  assert.doesNotMatch(html, /href="https:\/\/www.zotero.org\/unknown"/)
+  assert.doesNotMatch(renderAIMessage({ ...message, generating: true }), /<a /)
+  assert.doesNotMatch(renderAIMessage({ ...message, incomplete: true }), /<a /)
+})

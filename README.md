@@ -46,4 +46,5 @@ macOS / Linux 的启动步骤，以及端口、日志和停止服务的方法，
 - [资料维护](docs/competition-search-handoff.md)：赛事资料导入与检索索引。
 - [智能助手](docs/ai-v3.md)：模型、检索和联网搜索配置。
 - [内测使用](docs/private-beta.md) · [部署说明](docs/deployment.md)。
+- [Windows 评审包](docs/portable-review.md)：解压后双击运行，附构建方法。
 - [团队进度](docs/progress.md) · [完整文档目录](docs/README.md)。

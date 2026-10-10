@@ -20,6 +20,19 @@ test('response sources remain visible but never enter the next model request', (
     [{ role: 'user', content: '问题' }, { role: 'assistant', content: '见来源[1]' }])
 })
 
+test('资源来源保留已登记入口，过滤任意字段和不安全链接', () => {
+  const homepage = { label: '项目主页', url: 'https://www.zotero.org/' }
+  const result = parseAIReply({ message: { role: 'assistant', content: '资料入口' }, sources: [
+    { id: 1, kind: 'resource', title: 'Zotero', url: 'https://github.com/zotero/zotero', links: [homepage, homepage,
+      { label: '任意指令', url: 'https://malicious.edu.cn/' },
+      { label: '入门文档', url: 'javascript:alert(1)' },
+      { label: '官方文档', url: 'https://user:pass@www.zotero.org/' }] },
+    { id: 2, kind: 'web', title: '网页', url: 'https://www.zotero.org/', links: [homepage] },
+  ] })
+  assert.deepEqual(result.sources[0].links, [homepage])
+  assert.deepEqual(result.sources[1].links, [])
+})
+
 test('结构化推荐只接受安全来源，保留关联资源和审核标记', () => {
   const answer = parseAIReply({
     message: { role: 'assistant', content: '推荐资料[1]' },
@@ -65,4 +78,25 @@ test('站内记录编号和详情路由在聊天来源中保留', () => {
   assert.equal(result.sources[1].internal_url, '/teams/8')
   assert.equal(result.recommendations[0].object_id, 'db-8')
   assert.equal(result.recommendations[0].internal_url, '/teams/8')
+})
+
+test('组队来源和推荐仅允许与公开记录编号一致的站内地址', () => {
+  const invalid = ['/teams/9', '/teams/8?admin=true', '//evil.org/teams/8', '/admin/8', '/teams/08', 'javascript:alert(1)']
+  const result = parseAIReply({ message: { role: 'assistant', content: '组队资料' },
+    sources: invalid.map((url, index) => ({ id: index + 1, kind: 'team', entity_id: 'db-8', title: '招募', url, internal_url: url })),
+    recommendations: invalid.map(url => ({ object_type: 'team', object_id: 'db-8', title: '招募', reason: '公开招募', source_url: url, internal_url: url })),
+  })
+  assert.deepEqual(result.sources, [])
+  assert.deepEqual(result.recommendations, [])
+})
+
+test('资源卡片与来源保留同一个站内详情入口，拒绝错配编号', () => {
+  const base = { title: 'Zotero', source_url: 'https://github.com/zotero/zotero', reason: '文献管理' }
+  const result = parseAIReply({ message: { role: 'assistant', content: '资料入口' },
+    sources: [{ kind: 'resource', entity_id: 'zotero', title: 'Zotero', url: base.source_url, internal_url: '/resources/zotero' }],
+    recommendations: [{ ...base, object_type: 'resource', object_id: 'zotero', internal_url: '/resources/zotero' },
+      { ...base, object_type: 'resource', object_id: 'zotero', internal_url: '/resources/other' }],
+  })
+  assert.equal(result.recommendations[0].internal_url, result.sources[0].internal_url)
+  assert.equal(result.recommendations[1].internal_url, null)
 })

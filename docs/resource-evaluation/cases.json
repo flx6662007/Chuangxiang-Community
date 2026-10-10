@@ -1,0 +1,966 @@
+{
+  "schema_version": 1,
+  "title": "公开学习资源问答检索回归",
+  "created_on": "2026-10-10",
+  "public_snapshot_count": 322,
+  "provenance": "16条真实问法来自2026-10-10公开平台实测；8条generalization为修复过程中独立设计的新问法，没有修前成绩；另有1条未知课程编号与Python组合的审查负例。本轮按真实SSE偏题卡补充人工精度判断，并新增PubMed帮助文档及OpenCV阈值分割两条独立表达。仅保存公开资源元数据和人工相关性判断，不含账号、密钥、私有数据库或模型输出。",
+  "evaluation_boundary": "评估_prepare_chat最终来源、推荐和提供给模型的关联上下文；不生成回答，不能代替真实模型正文准确性评测。",
+  "cases": [
+    {
+      "id": "resource-01-python-exact",
+      "split": "observed",
+      "question": "请帮我找一下 Python官方教程，给我资料入口。",
+      "expected_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "明确名称基线，应返回对应教程。",
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-9d4793efb57c90ecf197177f",
+        "knowledge-resource-8f369f8f1381e51c0f65a90c",
+        "research-tool-napari",
+        "research-tool-nature-skills",
+        "research-tool-scientific-agent-skills",
+        "research-tool-google-deepmind-science-skills",
+        "research-tool-label-studio",
+        "knowledge-resource-e12bbb24f1081781602209fd",
+        "knowledge-resource-c1be6602499d7f8e4dcc60a5"
+      ],
+      "precision_judgment": "用户要Python语言官方教程或语法/数据结构/文件读写基础；图像、仿真、生物科研AI技能及标注工具偏离该目标。JupyterLab等相关编程环境不因是工具而被禁止。"
+    },
+    {
+      "id": "resource-02-python-intent",
+      "split": "observed",
+      "question": "我想系统学 Python 的列表字典、模块、文件读写和报错处理，站里有什么入门学习资料？",
+      "expected_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "不使用资料完整标题，以描述中的技能内容检索。",
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-9d4793efb57c90ecf197177f",
+        "knowledge-resource-8f369f8f1381e51c0f65a90c",
+        "research-tool-napari",
+        "research-tool-nature-skills",
+        "research-tool-scientific-agent-skills",
+        "research-tool-google-deepmind-science-skills",
+        "research-tool-label-studio",
+        "knowledge-resource-e12bbb24f1081781602209fd",
+        "knowledge-resource-c1be6602499d7f8e4dcc60a5"
+      ],
+      "precision_judgment": "用户要Python语言官方教程或语法/数据结构/文件读写基础；图像、仿真、生物科研AI技能及标注工具偏离该目标。JupyterLab等相关编程环境不因是工具而被禁止。"
+    },
+    {
+      "id": "resource-03-lanqiao-learning",
+      "split": "observed",
+      "question": "准备参加蓝桥杯 Python 组，想先补语法和数据结构，给我学习教程，不要报名通知。",
+      "expected_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "Python官方教程的catalogs明确关联蓝桥杯。只给规程报名入口不算通过。",
+      "required_catalog_context": "2026145",
+      "required_catalog_name": "蓝桥杯",
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-9d4793efb57c90ecf197177f",
+        "knowledge-resource-8f369f8f1381e51c0f65a90c",
+        "research-tool-napari",
+        "research-tool-nature-skills",
+        "research-tool-scientific-agent-skills",
+        "research-tool-google-deepmind-science-skills",
+        "research-tool-label-studio",
+        "knowledge-resource-e12bbb24f1081781602209fd",
+        "knowledge-resource-c1be6602499d7f8e4dcc60a5",
+        "knowledge-resource-1fe049bef274d20f7e258b3a"
+      ],
+      "precision_judgment": "用户要Python语言官方教程或语法/数据结构/文件读写基础；图像、仿真、生物科研AI技能及标注工具偏离该目标。JupyterLab等相关编程环境不因是工具而被禁止。 用户明确不要报名通知，规程入口也不是基础学习教程，不能作为推荐卡补入。",
+      "forbidden_recommendation_title_patterns": [
+        "报名",
+        "通知",
+        "规程"
+      ]
+    },
+    {
+      "id": "resource-04-ccpc-practice",
+      "split": "observed",
+      "question": "我们队要打 CCPC，想练算法证明、复杂度分析和代码实现，有带习题答案的学习资料吗？",
+      "expected_resource_ids": [
+        "knowledge-resource-a5ba561d1bff5df08869de88"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_exercises",
+      "judgment": "MIT 6.006条目描述直接覆盖证明、复杂度分析、程序实现，并关联CCPC。总决赛邀请函不是算法习题。"
+    },
+    {
+      "id": "resource-05-cses-exact",
+      "split": "observed",
+      "question": "有 CSES 分类算法练习题的链接吗？想刷算法题。",
+      "expected_resource_ids": [
+        "knowledge-resource-fe3b784c9c52c34b759310c3"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_exercises",
+      "judgment": "资料名有空格变体；作者的Handbook可补充，但不能替代所请求题库。",
+      "forbidden_recommendation_title_patterns": [
+        "数据新闻",
+        "影视",
+        "汇创青春",
+        "学院奖"
+      ]
+    },
+    {
+      "id": "resource-06-lanqiao-rules",
+      "split": "observed",
+      "question": "第十七届蓝桥杯 Python 赛项的规程和报名指南在哪？这次要规则文件。",
+      "expected_resource_ids": [
+        "knowledge-resource-1fe049bef274d20f7e258b3a"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "competition_rules",
+      "judgment": "与resource-03组成对照；规程条目说明含Python赛规附件。"
+    },
+    {
+      "id": "resource-07-robomaster-exact",
+      "split": "observed",
+      "question": "请找 RoboMaster开发板C型例程与教程，我想看嵌入式软件教程和示例代码。",
+      "expected_resource_ids": [
+        "knowledge-resource-1e392db5410557386e4621ed"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "准确名称基线，描述明确有官方仓库、教程PDF和例程。"
+    },
+    {
+      "id": "resource-08-rm-colloquial",
+      "split": "observed",
+      "question": "刚进 RM 战队，想上手 C 板电控，有官方例程或者嵌入式教程不？",
+      "expected_resource_ids": [
+        "knowledge-resource-1e392db5410557386e4621ed"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "RM、C板是测试用常见简称；ground truth由RoboMaster开发板C型标题和嵌入式教程描述支撑。",
+      "forbidden_recommendation_title_patterns": [
+        "Formula",
+        "方程式",
+        "Fiji",
+        "ImageJ"
+      ]
+    },
+    {
+      "id": "resource-09-cumcm-problems",
+      "split": "observed",
+      "question": "今年是2026年，国赛数模的高教社杯赛题和题目附件，咱们平台有入口吗？",
+      "expected_resource_ids": [
+        "knowledge-resource-c82972560bc14e9aec85b110"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "competition_problem_material",
+      "judgment": "年份写死避免随测试日期漂移；目标是题目附件，不是基础教程。",
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-a3eb15a3d11591d12365d2b1",
+        "knowledge-resource-37bd413fcc9d86d1aad51a49",
+        "knowledge-resource-a1bdf8f3c63bb0109be9e45c",
+        "knowledge-resource-2b6adf3e5bff103fa6d81ea9",
+        "knowledge-resource-c6ae18532ff156056d7ef9b3",
+        "knowledge-resource-c4de5d10e0f28ab73ff8d48f"
+      ],
+      "precision_judgment": "明确查询2026高教社杯国赛题及附件，其他赛事的赛题、笔译样题和工程制造通知不构成替代或必要补充；不是全面禁止数学计算工具。"
+    },
+    {
+      "id": "resource-10-mcm-numerical-learning",
+      "split": "observed",
+      "question": "准备美赛，想先学数组计算和数据分析，有可以跟着练的入门资料吗？",
+      "expected_resource_ids": [
+        "knowledge-resource-752038e778743529758bacf2",
+        "knowledge-resource-8aa0acb7bec19d8f5d8c0c41"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "NumPy和MATLAB Onramp描述与catalogs都匹配。六题与论文索引可补充，但单独返回不满足数组入门意图。"
+    },
+    {
+      "id": "resource-11-regression-intent",
+      "split": "observed",
+      "question": "做市场调查数据的回归分析后，想检查残差和异方差，有带代码的诊断示例吗？",
+      "expected_resource_ids": [
+        "knowledge-resource-29b5ecb49e3c5793bf66db1a"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "不说statsmodels；描述明确包含残差、异方差、诊断方法和代码，关联市场调查与分析大赛。",
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-75d04ec851ef17d8b7db71d8",
+        "knowledge-resource-f7b9d47fd6ba472448094c3f"
+      ],
+      "precision_judgment": "用户已经完成回归，要求残差/异方差诊断代码；表格筛选是更早阶段的数据准备，比赛通知是行政材料。允许JupyterLab、jamovi、Orange等同主题分析工具作为补充，但不能替代诊断示例。"
+    },
+    {
+      "id": "resource-12-zotero-exact",
+      "split": "observed",
+      "question": "平台有 Zotero 这个文献管理工具的介绍和入口吗？",
+      "expected_resource_ids": [
+        "research-tool-zotero"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_tool",
+      "judgment": "应命中Zotero本体，Skills或Better BibTeX只能补充。"
+    },
+    {
+      "id": "resource-13-literature-ai-intent",
+      "split": "observed",
+      "question": "我的 Zotero 文献库有不少重复条目，想让 AI 用自然语言查文献、整理标签和合并重复记录，有合适的工具吗？",
+      "expected_resource_ids": [
+        "research-tool-zotero-skills"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_ai_skill",
+      "judgment": "描述逐项覆盖自然语言检索、标签整理、合并重复条目。"
+    },
+    {
+      "id": "resource-14-bibtex-intent",
+      "split": "observed",
+      "question": "用 Zotero 配合 LaTeX 写论文，想让引用键保持稳定，还能自动导出 bib 文件，应该找哪个插件？",
+      "expected_resource_ids": [
+        "research-tool-zotero-better-bibtex"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_tool_plugin",
+      "judgment": "描述覆盖稳定引用键与自动导出；facts明确LaTeX、BibTeX/BibLaTeX。"
+    },
+    {
+      "id": "resource-15-absent-liaoxuefeng",
+      "split": "observed",
+      "question": "请在平台资料库里找廖雪峰的 Python 教程，给我这份资料的站内入口。",
+      "expected_resource_ids": [],
+      "expectation": "absent_named_resource",
+      "resource_kind": "absent",
+      "judgment": "资源JSON所有字段无廖雪峰；可以坦诚未收录并推荐Python官方教程，不能把替代教程说成廖雪峰。不要把是否有相关Python结果判成负例失败。",
+      "absent_identity_patterns": [
+        "廖雪峰"
+      ],
+      "allowed_alternative_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251"
+      ]
+    },
+    {
+      "id": "resource-16-absent-cs231n",
+      "split": "observed",
+      "question": "资料库里收录了斯坦福 CS231n 课程吗？我只想找这门课的站内资料链接。",
+      "expected_resource_ids": [],
+      "expectation": "absent_named_resource",
+      "resource_kind": "absent",
+      "judgment": "资源JSON所有字段无CS231n；应说明当前库未检出，不应编造站内资源ID、标题或来源链接。",
+      "absent_identity_patterns": [
+        "CS231n"
+      ],
+      "require_no_recommendations": true
+    },
+    {
+      "id": "generalization-01-python-io",
+      "split": "generalization",
+      "question": "找份 Python 基础学习材料，我主要卡在模块导入、异常捕获和文本文件读取。",
+      "expected_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "官方教程描述覆盖模块、文件读写及错误处理；新表达不使用完整标题。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-9d4793efb57c90ecf197177f",
+        "knowledge-resource-8f369f8f1381e51c0f65a90c",
+        "research-tool-napari",
+        "research-tool-nature-skills",
+        "research-tool-scientific-agent-skills",
+        "research-tool-google-deepmind-science-skills",
+        "research-tool-label-studio",
+        "knowledge-resource-e12bbb24f1081781602209fd",
+        "knowledge-resource-c1be6602499d7f8e4dcc60a5"
+      ],
+      "precision_judgment": "用户要Python语言官方教程或语法/数据结构/文件读写基础；图像、仿真、生物科研AI技能及标注工具偏离该目标。JupyterLab等相关编程环境不因是工具而被禁止。"
+    },
+    {
+      "id": "generalization-02-robomaster-board",
+      "split": "generalization",
+      "question": "RoboMaster 电控新人哪里能找到 C 型开发板的示例工程和 PDF 教程？",
+      "expected_resource_ids": [
+        "knowledge-resource-1e392db5410557386e4621ed"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "forbidden_recommendation_title_patterns": [
+        "Formula",
+        "方程式",
+        "Fiji",
+        "ImageJ"
+      ],
+      "judgment": "C型开发板示例工程与嵌入式软件教程PDF是同一资源的明确内容。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "allowed_competition_title_patterns": [
+        "RoboMaster"
+      ]
+    },
+    {
+      "id": "generalization-03-ccpc-assignments",
+      "split": "generalization",
+      "question": "CCPC 备赛有没有算法课作业，最好同时提供解答，方便练正确性证明和复杂度？",
+      "expected_resource_ids": [
+        "knowledge-resource-a5ba561d1bff5df08869de88"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_exercises",
+      "judgment": "MIT 6.006提供习题与解答、证明及复杂度分析，catalogs关联CCPC。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "allowed_competition_title_patterns": [
+        "CCPC"
+      ]
+    },
+    {
+      "id": "generalization-04-mcm-broadcasting",
+      "split": "generalization",
+      "question": "参加美国大学生数学建模竞赛前，想用数组索引、广播和数值运算做练习，该看哪份资料？",
+      "expected_resource_ids": [
+        "knowledge-resource-752038e778743529758bacf2"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "NumPy描述精确覆盖三项能力，且catalogs关联美国大学生数学建模竞赛。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "allowed_competition_title_patterns": [
+        "美国大学生数学建模",
+        "MCM/ICM"
+      ]
+    },
+    {
+      "id": "generalization-05-zotero-ai",
+      "split": "generalization",
+      "question": "有什么科研 AI 技能可以帮 Zotero 文献打标签、合并重复条目，并用自然语言搜索？",
+      "expected_resource_ids": [
+        "research-tool-zotero-skills"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_ai_skill",
+      "judgment": "Zotero Skills描述覆盖全部功能；Zotero本体不是充分匹配。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ]
+    },
+    {
+      "id": "generalization-06-questionnaire-diagnostics",
+      "split": "generalization",
+      "question": "想做问卷回归结果核查，给我讲残差及异方差检测的 notebook 示例。",
+      "expected_resource_ids": [
+        "knowledge-resource-29b5ecb49e3c5793bf66db1a"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "judgment": "statsmodels回归诊断资源是包含残差、异方差代码的官方notebook。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-75d04ec851ef17d8b7db71d8",
+        "knowledge-resource-f7b9d47fd6ba472448094c3f"
+      ],
+      "precision_judgment": "用户已经完成回归，要求残差/异方差诊断代码；表格筛选是更早阶段的数据准备，比赛通知是行政材料。允许JupyterLab、jamovi、Orange等同主题分析工具作为补充，但不能替代诊断示例。"
+    },
+    {
+      "id": "generalization-07-cses-bank",
+      "split": "generalization",
+      "question": "CSES 那套按类别排列的算法题库在哪，给刷题入口。",
+      "expected_resource_ids": [
+        "knowledge-resource-fe3b784c9c52c34b759310c3"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_exercises",
+      "forbidden_recommendation_title_patterns": [
+        "数据新闻",
+        "影视",
+        "汇创青春",
+        "学院奖"
+      ],
+      "judgment": "CSES分类算法练习题明确是可公开读题的题库。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ]
+    },
+    {
+      "id": "generalization-08-bib-sync",
+      "split": "generalization",
+      "question": "论文的 .bib 想随 Zotero 文献库改动自动更新，也想固定引用标识，有现成插件吗？",
+      "expected_resource_ids": [
+        "research-tool-zotero-better-bibtex"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_tool_plugin",
+      "judgment": "Better BibTeX描述覆盖稳定引用键及自动导出，同步到排版写作流程。",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ]
+    },
+    {
+      "id": "adversarial-01-unknown-course-python",
+      "split": "generalization",
+      "question": "我只要 CS9999 的 Python 教程，不要其他课程",
+      "expected_resource_ids": [],
+      "expectation": "absent_named_resource",
+      "resource_kind": "absent",
+      "absent_identity_patterns": [
+        "CS9999"
+      ],
+      "require_no_sources": true,
+      "require_no_recommendations": true,
+      "judgment": "独立审查负例：课程编号CS9999在公开资源中不存在。用户明确拒绝其他课程，不能因Python为已知主题而返回通用Python教程。"
+    },
+    {
+      "id": "generalization-09-pubmed-guide",
+      "split": "generalization",
+      "question": "只找 PubMed 文献检索用户指南的入口，不需要医学竞赛报名流程。",
+      "expected_resource_ids": [
+        "knowledge-resource-b77fab9616e420ad85c66749"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "research_search_guide",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-886ae2a1b5034df3b89aa77b",
+        "research-tool-anthropic-bio-research",
+        "research-tool-napari",
+        "research-tool-label-studio"
+      ],
+      "forbidden_recommendation_title_patterns": [
+        "报名",
+        "参赛流程",
+        "赛项通知"
+      ],
+      "judgment": "资源标题明确为PubMed检索用户指南，描述为免费公开的检索帮助；同一医学赛事的参赛操作手册不等于检索教程。",
+      "precision_judgment": "图像标注、细胞组学分析和赛事报名不满足PubMed帮助文档导航；Zotero等文献工具并不因是工具而一律禁止。"
+    },
+    {
+      "id": "generalization-10-opencv-threshold",
+      "split": "generalization",
+      "question": "找 OpenCV 图像阈值分割的 Python 示例入口，不要 Python 基础语法课或物流赛事通知。",
+      "expected_resource_ids": [
+        "knowledge-resource-ef003736eb1e7a6225d616f1"
+      ],
+      "expectation": "target_in_sources_and_cards",
+      "resource_kind": "learning_tutorial",
+      "allowed_recommendation_kinds": [
+        "resource"
+      ],
+      "forbidden_recommendation_resource_ids": [
+        "knowledge-resource-a17e5b24c217aa807b24e251",
+        "knowledge-resource-959871796244777cd11e709d",
+        "knowledge-resource-75d04ec851ef17d8b7db71d8",
+        "knowledge-resource-8f369f8f1381e51c0f65a90c",
+        "knowledge-resource-c1be6602499d7f8e4dcc60a5"
+      ],
+      "forbidden_recommendation_title_patterns": [
+        "报名",
+        "赛事通知",
+        "赛项通知"
+      ],
+      "judgment": "标题是OpenCV图像阈值分割，描述明确附Python示例及结果比较；与物流技术赛有关联但不应因此推荐赛事任务书。",
+      "precision_judgment": "用户明确要图像分割示例且排除Python基础课/物流通知。保留OpenCV通用教程或NumPy等直接相关基础工具的可能，不要求所有结果只能等于目标ID。"
+    }
+  ],
+  "resource_evidence": [
+    {
+      "id": "research-tool-google-deepmind-science-skills",
+      "title": "Google DeepMind Science Skills",
+      "description": "提供文献检索、蛋白质结构与序列分析等科研技能，配套查询脚本和参考资料，帮助把研究问题转成可检查的检索与分析步骤，适合计算生物学及科研检索训练。",
+      "source_url": "https://github.com/google-deepmind/science-skills",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-anthropic-bio-research",
+      "title": "Anthropic Bio-Research",
+      "description": "为生命科学研究提供单细胞数据质控、组学分析与科研选题工作流程，附带脚本和参考资料，适合在导师指导下开展生物信息学课程项目或本科科研训练。",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-zotero-skills",
+      "title": "Zotero Skills · 文献管理",
+      "description": "通过自然语言检索 Zotero 文献，整理标签、分类、笔记与附件，并支持合并重复条目。适合为课程论文、科研项目和毕业设计维护可持续使用的文献库。",
+      "source_url": "https://github.com/WenyuChiou/zotero-skills",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-scientific-agent-skills",
+      "title": "Scientific Agent Skills · K-Dense",
+      "description": "为 AI 助手提供统计分析、科研绘图及多领域研究工作流程，可按课题选择完整技能目录，帮助整理分析步骤、调用科学工具并检查结果。",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-nature-skills",
+      "title": "Nature Skills · 科研 AI 技能集",
+      "description": "为 AI 助手提供论文阅读、英文润色、科研绘图、统计分析及文献汇报工作流程，保留配套脚本、模板和参考材料，适合把重复科研任务组织成可复用步骤。",
+      "source_url": "https://github.com/Yuan1z0825/nature-skills",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-label-studio",
+      "title": "Label Studio",
+      "description": "在浏览器中标注图像、文本、音频、视频和时序数据，配置标注模板并导出训练数据，适合小型机器学习课题的数据集制作与人工核查。",
+      "source_url": "https://github.com/HumanSignal/label-studio",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-napari",
+      "title": "napari",
+      "description": "浏览和标注多维科学图像，叠加图像、标签、点和三维表面，并与 Python 分析流程衔接，适合显微图像、细胞分割结果和时序图像检查。",
+      "source_url": "https://github.com/napari/napari",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-zotero-better-bibtex",
+      "title": "Better BibTeX for Zotero",
+      "description": "为文献库增加稳定的引用键和自动导出功能，把更新后的参考文献同步到排版写作流程，减少手动维护条目和引用标识的重复工作。",
+      "source_url": "https://github.com/retorquere/zotero-better-bibtex",
+      "catalogs": []
+    },
+    {
+      "id": "research-tool-zotero",
+      "title": "Zotero",
+      "description": "集中收集论文、网页和图书信息，整理文献附件与阅读笔记，并在写作软件中插入引文、生成参考文献，适合课程论文和毕业设计。",
+      "source_url": "https://github.com/zotero/zotero",
+      "catalogs": []
+    },
+    {
+      "id": "knowledge-resource-8aa0acb7bec19d8f5d8c0c41",
+      "title": "MATLAB Onramp",
+      "description": "交互式学习数组、数据分析、可视化和MATLAB基本操作",
+      "source_url": "https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted",
+      "catalogs": [
+        {
+          "code": "2026183",
+          "name": "美国大学生数学建模竞赛（2026）"
+        },
+        {
+          "code": "2026255",
+          "name": "“汇川杯”全国智能自动化创新大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-37bd413fcc9d86d1aad51a49",
+      "title": "2026 MCM/ICM六题与论文索引",
+      "description": "按A—F列题目、结果与优胜论文入口，论文访问可能需会员",
+      "source_url": "https://www.contest.comap.com/undergraduate/contests/mcm/contests/2026/results/index.html",
+      "catalogs": [
+        {
+          "code": "2026183",
+          "name": "美国大学生数学建模竞赛（2026）"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-e12bbb24f1081781602209fd",
+      "title": "SUMO交通仿真教程",
+      "description": "提供路网、交通需求、信号灯、公共交通和Python控制仿真的循序教程",
+      "source_url": "https://eclipse.dev/sumo/docs/Tutorials/index.html",
+      "catalogs": [
+        {
+          "code": "2026167",
+          "name": "第二十一届全国大学生交通运输科技大赛"
+        },
+        {
+          "code": "2026168",
+          "name": "全国大学生轨道交通科技创新大赛"
+        },
+        {
+          "code": "2026169",
+          "name": "中国城市轨道交通科技创新创业大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-c1be6602499d7f8e4dcc60a5",
+      "title": "CARLA仿真快速起步",
+      "description": "指导安装仿真服务器及Python客户端、启动示例并读取仿真环境",
+      "source_url": "https://carla.readthedocs.io/en/latest/start_quickstart/",
+      "catalogs": [
+        {
+          "code": "2026166",
+          "name": "OnSite自动驾驶算法挑战赛"
+        },
+        {
+          "code": "2026175",
+          "name": "中国大学生无人驾驶方程式大赛（2026）"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-1fe049bef274d20f7e258b3a",
+      "title": "第十七届蓝桥杯各赛项规程与报名指南入口",
+      "description": "包含章程、C/C++/Java/Python/Web/网络安全及AI赛规附件；各赛项分别阅读",
+      "source_url": "https://ie.cufe.edu.cn/info/1069/7376.htm",
+      "catalogs": [
+        {
+          "code": "2026145",
+          "name": "蓝桥杯全国软件和信息技术专业人才大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-a5ba561d1bff5df08869de88",
+      "title": "MIT 6.006算法课程习题与解答",
+      "description": "算法课程配套题目、模板与解答，训练证明、复杂度分析和程序实现",
+      "source_url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/assignments/",
+      "catalogs": [
+        {
+          "code": "2026143",
+          "name": "CCF大学生计算机系统与程序设计竞赛（CCSP）"
+        },
+        {
+          "code": "2026144",
+          "name": "CCPC全国大学生程序设计竞赛"
+        },
+        {
+          "code": "2026145",
+          "name": "蓝桥杯全国软件和信息技术专业人才大赛"
+        },
+        {
+          "code": "2026146",
+          "name": "码蹄杯全国大学生程序设计大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-2b6adf3e5bff103fa6d81ea9",
+      "title": "2025 ICPC世界总决赛官方题目",
+      "description": "提供完整题目PDF和题目时间、内存等说明，可作高阶算法训练",
+      "source_url": "https://worldfinals.icpc.global/problems/2025/finals/index.html",
+      "catalogs": [
+        {
+          "code": "2026143",
+          "name": "CCF大学生计算机系统与程序设计竞赛（CCSP）"
+        },
+        {
+          "code": "2026144",
+          "name": "CCPC全国大学生程序设计竞赛"
+        },
+        {
+          "code": "2026145",
+          "name": "蓝桥杯全国软件和信息技术专业人才大赛"
+        },
+        {
+          "code": "2026146",
+          "name": "码蹄杯全国大学生程序设计大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-752038e778743529758bacf2",
+      "title": "NumPy数组计算快速入门",
+      "description": "以数组形状、索引、广播和数值运算示例训练数据计算能力",
+      "source_url": "https://numpy.org/doc/stable/user/quickstart.html",
+      "catalogs": [
+        {
+          "code": "2026122",
+          "name": "第七届上海市大学生力学竞赛个人赛"
+        },
+        {
+          "code": "2026123",
+          "name": "第七届上海市大学生力学竞赛团体赛"
+        },
+        {
+          "code": "2026182",
+          "name": "第十七届丘成桐大学生数学竞赛"
+        },
+        {
+          "code": "2026183",
+          "name": "美国大学生数学建模竞赛（2026）"
+        },
+        {
+          "code": "2026212",
+          "name": "国际大学生物理竞赛（2026）"
+        },
+        {
+          "code": "2026213",
+          "name": "全国部分地区大学生物理竞赛（上海赛区）"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-a17e5b24c217aa807b24e251",
+      "title": "Python官方教程",
+      "description": "介绍Python语法、数据结构、模块、文件读写与错误处理，可建立可复现的数据处理脚本",
+      "source_url": "https://docs.python.org/3/tutorial/",
+      "catalogs": [
+        {
+          "code": "2026100",
+          "name": "全国大学生电子设计竞赛嵌入式系统专题赛"
+        },
+        {
+          "code": "2026143",
+          "name": "CCF大学生计算机系统与程序设计竞赛（CCSP）"
+        },
+        {
+          "code": "2026144",
+          "name": "CCPC全国大学生程序设计竞赛"
+        },
+        {
+          "code": "2026145",
+          "name": "蓝桥杯全国软件和信息技术专业人才大赛"
+        },
+        {
+          "code": "2026146",
+          "name": "码蹄杯全国大学生程序设计大赛"
+        },
+        {
+          "code": "2026147",
+          "name": "强网杯全国网络安全挑战赛"
+        },
+        {
+          "code": "2026151",
+          "name": "上海市大学生网络安全大赛"
+        },
+        {
+          "code": "2026152",
+          "name": "网鼎杯网络安全大赛"
+        },
+        {
+          "code": "2026166",
+          "name": "OnSite自动驾驶算法挑战赛"
+        },
+        {
+          "code": "2026167",
+          "name": "第二十一届全国大学生交通运输科技大赛"
+        },
+        {
+          "code": "2026168",
+          "name": "全国大学生轨道交通科技创新大赛"
+        },
+        {
+          "code": "2026169",
+          "name": "中国城市轨道交通科技创新创业大赛"
+        },
+        {
+          "code": "2026175",
+          "name": "中国大学生无人驾驶方程式大赛（2026）"
+        },
+        {
+          "code": "2026239",
+          "name": "中国数据新闻大赛"
+        },
+        {
+          "code": "2026255",
+          "name": "“汇川杯”全国智能自动化创新大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-9d4793efb57c90ecf197177f",
+      "title": "OpenCV Python教程",
+      "description": "从图像读写、滤波、特征和视频分析练习视觉处理",
+      "source_url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "catalogs": [
+        {
+          "code": "2026098",
+          "name": "国际青年人工智能大赛"
+        },
+        {
+          "code": "2026102",
+          "name": "全球人工智能技术创新大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-b77fab9616e420ad85c66749",
+      "title": "PubMed 文献检索用户指南",
+      "description": "免费公开的检索帮助",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/help/",
+      "catalogs": [
+        {
+          "code": "2026088",
+          "name": "全国大学生医学创新大赛暨“一带一路”国际竞赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-886ae2a1b5034df3b89aa77b",
+      "title": "医学创新大赛参赛流程操作手册",
+      "description": "11页图文操作说明；操作手册可公开阅读，实际报名需要登录",
+      "source_url": "https://slyx.zjnu.edu.cn/_upload/article/files/16/34/afab5c184223904f162628ea2a5e/2e250a13-f3e2-474c-9796-6959a858ba51.pdf",
+      "catalogs": [
+        {
+          "code": "2026088",
+          "name": "全国大学生医学创新大赛暨“一带一路”国际竞赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-a1bdf8f3c63bb0109be9e45c",
+      "title": "2026笔译样题及评分标准",
+      "description": "官方样题和评分标准，赛段要求分别列出",
+      "source_url": "https://ucc.fltrp.com/c/2026-03-27/541273.shtml",
+      "catalogs": [
+        {
+          "code": "2026081",
+          "name": "“外研社·国才杯”“理解当代中国”全国大学生外语能力大赛（英语组）"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-c82972560bc14e9aec85b110",
+      "title": "2026年高教社杯赛题发布页",
+      "description": "2026年赛题与题目附件，可用于训练问题分析、模型假设、求解与论文表达",
+      "source_url": "https://www.mcm.edu.cn/html_cn/node/27b6e148f8113f09b0269f64a02629fb.html",
+      "catalogs": [
+        {
+          "code": "2026074",
+          "name": "全国大学生数学建模竞赛(2026)"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-29b5ecb49e3c5793bf66db1a",
+      "title": "statsmodels：回归诊断示例",
+      "description": "官方notebook提供残差、异方差等诊断方法及代码示例，可支持统计分析结果的解释",
+      "source_url": "https://www.statsmodels.org/stable/examples/notebooks/generated/regression_diagnostics.html",
+      "catalogs": [
+        {
+          "code": "2026060",
+          "name": "全国大学生市场调查与分析大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-f7b9d47fd6ba472448094c3f",
+      "title": "第十七届竞赛环节与备赛说明（高校通知）",
+      "description": "个人知识赛与团队实践赛，并预告2026年11月至2027年2月专家授课",
+      "source_url": "https://jwc.nbu.edu.cn/info/1126/18026.htm",
+      "catalogs": [
+        {
+          "code": "2026060",
+          "name": "全国大学生市场调查与分析大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-75d04ec851ef17d8b7db71d8",
+      "title": "pandas：筛选表格数据教程",
+      "description": "教程演示按列、条件及位置选取数据，涉及缺失值筛选；是通用数据处理基础",
+      "source_url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html",
+      "catalogs": [
+        {
+          "code": "2026060",
+          "name": "全国大学生市场调查与分析大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-fe3b784c9c52c34b759310c3",
+      "title": "CSES分类算法练习题",
+      "description": "可公开读题",
+      "source_url": "https://cses.fi/problemset/",
+      "catalogs": [
+        {
+          "code": "2026041",
+          "name": "ACM-ICPC国际大学生程序设计竞赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-c4de5d10e0f28ab73ff8d48f",
+      "title": "2025 ICPC World Finals解题思路",
+      "description": "2025年决赛题的解题思路，适合对照题目分析算法与复杂度",
+      "source_url": "https://icpc.global/worldfinals/problems/2025-ICPC-World-Finals/2025-ICPC-Solutions.pdf",
+      "catalogs": [
+        {
+          "code": "2026041",
+          "name": "ACM-ICPC国际大学生程序设计竞赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-c6ae18532ff156056d7ef9b3",
+      "title": "2025 ICPC世界总决赛完整题集",
+      "description": "24页题集，包含题意、输入输出、样例和限制；属于往届题",
+      "source_url": "https://worldfinals.icpc.global/problems/2025/finals/problems/problemset.pdf",
+      "catalogs": [
+        {
+          "code": "2026041",
+          "name": "ACM-ICPC国际大学生程序设计竞赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-ef003736eb1e7a6225d616f1",
+      "title": "OpenCV图像阈值分割教程",
+      "description": "官方教程附Python示例和结果比较",
+      "source_url": "https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html",
+      "catalogs": [
+        {
+          "code": "2026039",
+          "name": "中国大学生机械工程创新创意大赛-物流技术创意赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-959871796244777cd11e709d",
+      "title": "2026物流技术创意赛任务与实施方案入口",
+      "description": "散料搬运机器人任务要求自动识别、装卸与自主运行，可据此设计机构和控制系统",
+      "source_url": "https://notice.ysu.edu.cn/info/2264/25623.htm",
+      "catalogs": [
+        {
+          "code": "2026039",
+          "name": "中国大学生机械工程创新创意大赛-物流技术创意赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-1e392db5410557386e4621ed",
+      "title": "RoboMaster开发板C型例程与教程",
+      "description": "官方仓库含嵌入式软件教程PDF和例程",
+      "source_url": "https://github.com/RoboMaster/Development-Board-C-Examples",
+      "catalogs": [
+        {
+          "code": "2026033",
+          "name": "第二十五届全国大学生机器人大赛ROBOMASTER"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-a3eb15a3d11591d12365d2b1",
+      "title": "2026数马&华教杯增减材复合制造及数字孪生赛项通知",
+      "description": "具体任务涉及单桨叶水面航行器，要求模型、图纸、技术方案和相关工程文件",
+      "source_url": "https://3dds.3ddl.net/index.php?ctl=Informationlist&id=699&met=details",
+      "catalogs": [
+        {
+          "code": "2026031",
+          "name": "全国三维数字化创新设计大赛"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-resource-8f369f8f1381e51c0f65a90c",
+      "title": "MuJoCo Python官方文档",
+      "description": "学习Python仿真接口和模型运行；辽宁工程技术大学赛项说明明确列出Python版MuJoCo",
+      "source_url": "https://mujoco.readthedocs.io/en/stable/python.html",
+      "catalogs": [
+        {
+          "code": "2026009",
+          "name": "中国大学生机械工程创新创意大赛-智能制造赛"
+        }
+      ]
+    }
+  ]
+}

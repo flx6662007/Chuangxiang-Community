@@ -1,6 +1,6 @@
 # 科创 AI 助手接入说明
 
-更新至 2026-10-08 的代码状态。首页支持智能、赛事、科研、资源四种模式，包含多轮理解、公开资料检索、流式回答和可选联网搜索。赛事向导继续提供找赛事、分析适配与找队友流程。实现与历史验收见[赛事助手交接](ai-assistant-handoff.md)、[科研交付](releases/research-ai-20261007.md)及[多轮与联网交付](ai-optimization-20261008.md)；这些记录不证明目标环境已经部署。
+更新至 2026-10-10 的代码状态。首页支持智能、赛事、科研、资源四种模式，包含多轮理解、公开资料检索、流式回答和可选联网搜索。赛事向导继续提供找赛事、分析适配与找队友流程。实现与历史验收见[赛事助手交接](ai-assistant-handoff.md)、[科研交付](releases/research-ai-20261007.md)及[多轮与联网交付](ai-optimization-20261008.md)；这些记录不证明目标环境已经部署。
 
 ## 请求与会话
 
@@ -20,14 +20,24 @@
 
 ## 资料与索引
 
-赛事使用已编审公开资料的关键词/BGE 混合检索，也读取直接发布的赛事；资源只取 `published + available`。科研须设置 `PUBLIC_RESEARCH_ENABLED=1`，再读取具有核验依据的公开资料。科研介绍、成果与招募分别取证，资格不明确时保留待确认说明。资源关系使用 `ResourceCompetition` 和 `ResourceResearchOpportunity`，公开队伍推荐不暴露成员或联系人资料。
+赛事使用已编审公开资料的关键词/BGE 混合检索，也读取直接发布的赛事；资源只取 `published + available`。科研须设置 `PUBLIC_RESEARCH_ENABLED=1`，再读取具有核验依据的公开资料。科研介绍、成果与招募分别取证，资格不明确时保留待确认说明。资源关系读取 `ResourceCompetition`、`ResourceResearchOpportunity` 及当前有效资料版本的赛事目录关联，公开队伍推荐不暴露成员或联系人资料。
+
+资源查询同时匹配名称、内容与已关联赛事，中文按短语匹配，英文使用词边界和名称简称，避免把 RM 匹配到 Formula。教程、习题、规则、赛题、插件等需求进入资料检索；资源模式不混入赛事或队伍推荐。返回上下文保留关联赛事名称，来源预算按检索顺序分配。资料中登记的项目主页、文档等入口随 `sources[].links` 返回；来源和推荐标题打开站内详情，外部入口单独保留。
 
 | 索引 | 配置与重建命令（在仓库根目录运行） |
 | --- | --- |
 | 赛事公开正文 | `COMPETITION_SEMANTIC_INDEX`；`python backend/manage.py rebuild_ai_index` |
 | 资源与科研 | `UNIFIED_SEMANTIC_INDEX`；`python backend/manage.py rebuild_unified_index` |
 
-两份 NPZ 使用 `COMPETITION_EMBEDDING_MODEL_PATH` 指定的固定版本 BGE 模型，互不替换，不需要 Qdrant。先安装 `backend/requirements-retrieval.txt`，必要时运行 `scripts/prepare-competition-model.py`，再从目标数据库的公开资料重建。统一索引使用 schema 2；未配置、过期或模型不可用时降级关键词。资料、来源或发布状态变化后需重建，科研关闭时不会进入该索引的公开资料集合。模型和索引放被 Git 忽略的本机目录。
+两份 NPZ 使用 `COMPETITION_EMBEDDING_MODEL_PATH` 指定的固定版本 BGE 模型，互不替换，不需要 Qdrant。先安装 `backend/requirements-retrieval.txt`，必要时运行 `scripts/prepare-competition-model.py`，再从目标数据库的公开资料重建。统一索引使用 schema 3，包含资源的赛事目录名称与关联信息；旧 schema 2 须重建。未配置、过期或模型不可用时降级关键词，赛事索引可用不代表资源语义检索已启用。资料、来源、关联或发布状态变化后需重建，科研关闭时不会进入该索引的公开资料集合。模型和索引放被 Git 忽略的本机目录。
+
+资源索引可写到仓库内 `.local/unified-search/database.npz`：
+
+```powershell
+python backend/manage.py rebuild_unified_index --output .local/unified-search/database.npz
+```
+
+将该文件的**绝对路径**写入本机 `backend/.env` 的 `UNIFIED_SEMANTIC_INDEX`，重启后端，再按[学习资源检索回归](resource-evaluation/README.md)验证。报告应无 `unified_index_unconfigured` / `unified_index_stale`；仅执行构建命令或设置路径都不等于问答验收通过。
 
 排序设置位于 `ai_services/unified.py`，可通过 Django 的 `AI_RETRIEVAL_WEIGHTS`、`AI_RETRIEVAL_BASELINES` 覆盖。科研数据导入、开关及字段证据维护见[科研交付](releases/research-ai-20261007.md)和[AI 维护说明](ai-v2.md)。
 
