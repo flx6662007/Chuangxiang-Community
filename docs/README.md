@@ -10,6 +10,7 @@
 | 后端环境、数据库与测试 | [后端开发](backend-development.md) · [后端模块](../backend/README.md) · [模块分工](code-guide.md#模块分工) |
 | 前端页面、配置与测试 | [前端说明](../frontend/README.md) |
 | 临时网址与内测账号 | [邀请内测](private-beta.md) |
+| Windows 解压运行的评审演示包 | [评审包使用与构建](portable-review.md) |
 | 服务器部署与费用 | [部署](deployment.md) · [采购清单](procurement.md) |
 | 维护命令与人工验收 | [定时任务](maintenance.md) · [操作检查](manual-checks.md) |
 | 本轮工程整理 | [整理范围与验证](engineering-cleanup-20261008.md) |
