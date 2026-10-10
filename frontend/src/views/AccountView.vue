@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
     <AccountPageHeader
       title="我的"
       accent="账号"
-      :description="privateBeta ? '使用分配的内测账号，体验 小创与组队' : '管理校园身份，也为下一次合作做好准备。'"
+      :description="privateBeta ? '使用分配的内测账号，体验 小创AI与组队' : '管理校园身份，也为下一次合作做好准备。'"
       :show-nav="!!user && !initializing"
     />
     <div class="account-content">
@@ -361,7 +361,7 @@ onBeforeUnmount(() => {
         </el-card>
         <aside class="account-intro">
           <h2>连接校园，<br /><span>从一个好想法开始</span></h2>
-          <p>{{ privateBeta ? '本轮体验 小创、资料查询、发布招募、申请入队和举报。每位同学使用自己的测试账号，密码遗失可联系内测负责人。' : '使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。' }}</p>
+          <p>{{ privateBeta ? '本轮体验 小创AI、资料查询、发布招募、申请入队和举报。每位同学使用自己的测试账号，密码遗失可联系内测负责人。' : '使用学校邮箱建立你的创享账号。赛事信息无需登录，也可以自由浏览。' }}</p>
           <RouterLink class="more-link" :to="{ name: 'competitions' }"
             >先去发现赛事 <AppIcon name="arrow" :size="17" /></RouterLink>
         </aside>

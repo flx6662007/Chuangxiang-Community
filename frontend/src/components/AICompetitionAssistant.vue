@@ -1,4 +1,5 @@
 <script setup>
+import XiaochuangLogo from './XiaochuangLogo.vue'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import SentMessages from './SentMessages.vue'
 import AppIcon from './AppIcon.vue'
@@ -124,14 +125,13 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
   <section class="ai-assistant" aria-labelledby="ai-assistant-title">
     <div class="section-heading ai-assistant-heading">
       <div>
-        <h2 id="ai-assistant-title">小创</h2>
+        <h2 id="ai-assistant-title"><XiaochuangLogo variant="heading" /></h2>
       </div>
       <div class="ai-heading-actions">
         <span class="editorial-label">赛事 · 科研 · 资源</span>
         <button v-if="configured && mode !== 'competition'" type="button" class="ai-new-conversation" @click="newConversation">新对话</button>
       </div>
     </div>
-    <p class="ai-assistant-intro">我是小创，陪你找赛事、找队友，也帮你查科研机会和学习资源。</p>
     <div class="ai-mode-list" role="group" aria-label="助手模式">
       <button v-for="option in modeOptions" :key="option.value" type="button" class="ai-mode-button"
         :class="{ 'is-active': mode === option.value }" :aria-pressed="mode === option.value"
@@ -144,7 +144,8 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
     <div v-else class="ai-assistant-panel">
       <div v-if="messages.length" ref="conversation" class="ai-conversation" role="log" aria-label="当前对话" aria-live="polite" :aria-busy="pending" tabindex="0" @scroll="onConversationScroll">
         <article v-for="(message, index) in messages" :key="index" class="ai-chat-message" :class="{ 'is-user': message.role === 'user' }">
-          <strong>{{ message.role === 'user' ? '你' : '小创' }}</strong>
+          <strong v-if="message.role === 'user'">你</strong>
+          <XiaochuangLogo v-else />
           <p v-if="message.role === 'user'">{{ message.content }}</p>
           <div v-else-if="message.content" class="ai-chat-markdown" v-html="renderAIMessage(message)"></div>
           <p v-else-if="message.generating" class="ai-chat-status">{{ phase === 'retrieving' ? '正在查找资料…' : '正在生成回答…' }}</p>
@@ -196,7 +197,7 @@ onBeforeUnmount(() => { statusController?.abort(); dispose() })
         </div>
       </div>
       <SentMessages :messages="sentMessages" />
-      <form class="ai-assistant-form" aria-label="与小创对话" @submit.prevent="submitChat">
+      <form class="ai-assistant-form" aria-label="与小创AI对话" @submit.prevent="submitChat">
         <label for="ai-competition-query">你的问题</label>
         <textarea
           id="ai-competition-query"

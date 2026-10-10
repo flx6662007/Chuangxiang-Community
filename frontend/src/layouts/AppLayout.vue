@@ -1,4 +1,5 @@
 <script setup>
+import XiaochuangLogo from '../components/XiaochuangLogo.vue'
 import { useRoute } from 'vue-router'
 import AppIcon from '../components/AppIcon.vue'
 import BrandLogo from '../components/BrandLogo.vue'
@@ -31,7 +32,7 @@ function revisitAi() {
         </RouterLink>
         <nav class="app-nav" aria-label="主导航">
           <RouterLink to="/" exact-active-class="is-active">发现</RouterLink>
-          <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi">小创</RouterLink>
+          <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi"><XiaochuangLogo variant="nav" /></RouterLink>
           <RouterLink
             :to="{ name: 'competitions' }"
             :class="{ 'is-active': ['competitions', 'catalog-detail', 'competition-detail'].includes($route.name) }"
@@ -57,7 +58,7 @@ function revisitAi() {
       </div>
     </el-header>
     <el-main class="app-main">
-      <div v-if="privateBeta" class="private-beta-banner" role="note">邀请内测 · 使用分配的测试账号体验 小创、组队和举报，操作记录仅用于本轮测试</div>
+      <div v-if="privateBeta" class="private-beta-banner" role="note">邀请内测 · 使用分配的测试账号体验 <XiaochuangLogo />、组队和举报，操作记录仅用于本轮测试</div>
       <RouterView />
     </el-main>
     <footer class="app-footer">

@@ -1,4 +1,5 @@
 <script setup>
+import XiaochuangLogo from './XiaochuangLogo.vue'
 import SentMessages from './SentMessages.vue'
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { getGuide, updateGuide } from '../api/guide'
@@ -86,7 +87,7 @@ function enter(event) {
     <p v-if="error" role="alert" class="form-error">{{ error }}</p>
     <div v-if="result" aria-live="polite">
       <div v-if="result.answer?.paragraphs?.length" class="guide-answer">
-        <h3>小创</h3>
+        <h3><XiaochuangLogo /></h3>
         <div v-for="(paragraph, index) in result.answer.paragraphs" :key="index">
           <p class="guide-answer-text">{{ paragraph.text }}</p>
           <a v-for="source in paragraph.citations" :key="`${source.record_id}:${source.id}`" :href="safeExternalUrl(source.url) || undefined" target="_blank" rel="noopener noreferrer" class="guide-citation">{{ source.title }} · {{ source.edition }}</a>
@@ -95,7 +96,7 @@ function enter(event) {
       <p v-else class="guide-response">{{ result.message }}</p>
       <div v-if="result.answer?.notice" role="status">
         <p>{{ result.answer.notice }}</p>
-        <button type="button" class="text-button" :disabled="busy" @click="run('retry')">请小创重新回答</button>
+        <button type="button" class="text-button" :disabled="busy" @click="run('retry')">请 <XiaochuangLogo /> 重新回答</button>
       </div>
       <p v-if="result.stage === 'selection' && result.candidates?.length" class="guide-selection-prompt">想参加哪场比赛？选择下方赛事，点击“分析这个赛事”了解要求，再找队友。</p>
       <template v-else><p v-for="question in result.questions" :key="question">{{ question }}</p></template>
