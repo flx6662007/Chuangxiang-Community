@@ -33,10 +33,11 @@ const examples = computed(() => examplesByMode[mode.value])
 const query = ref('')
 const validation = ref('')
 const conversation = ref(null)
-let followOutput = true
+let stayAtTop = true
 function onConversationScroll() {
   const panel = conversation.value
-  if (panel) followOutput = panel.scrollHeight - panel.scrollTop - panel.clientHeight < 80
+  // 用户向下滚动离开开头后，不再强制回到开头，方便继续往下阅读。
+  if (panel) stayAtTop = panel.scrollTop < 80
 }
 const configured = ref(false)
 const statusLoading = ref(true)
@@ -77,7 +78,7 @@ function newConversation() {
   sentMessages.value = []
   query.value = ''
   validation.value = ''
-  followOutput = true
+  stayAtTop = true
 }
 
 function addExample(example) {
@@ -100,7 +101,7 @@ function submitChat() {
   query.value = ''
   validation.value = ''
   sentMessages.value.push(text)
-  followOutput = true
+  stayAtTop = true
   void submit(text, { mode: mode.value, webSearch: webSearch.value })
 }
 
@@ -115,7 +116,8 @@ function onKeydown(event) {
 watch(() => [messages.value.length, messages.value.at(-1)?.content, pending.value, error.value], async () => {
   await nextTick()
   const panel = conversation.value
-  if (panel && followOutput) panel.scrollTop = panel.scrollHeight
+  // 生成时保持在对话开头，方便用户从头阅读。
+  if (panel && stayAtTop) panel.scrollTop = 0
 })
 
 onBeforeUnmount(() => { statusController?.abort(); dispose() })
