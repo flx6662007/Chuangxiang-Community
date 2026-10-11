@@ -381,6 +381,23 @@
   opacity: var(--line-opacity, 0);
   mask-image: radial-gradient(90px 24px at var(--line-x, 50%) 50%, #000 15%, transparent);
   transition: opacity 220ms ease;
-  filter: drop-shadow(0 0 3px var(--accent-shadow, #69a9ff88));
+
 }
 .welcome .separator-glow path { stroke: var(--illustration-soft, #9bc7ff); stroke-width: 1.4; }
+
+/* Selected handwritten headline: move the copy gently inward without changing the lead typography. */
+.welcome .hero-copy { padding-top: 96px; padding-left: 24px; min-width: 0; }
+.welcome .hero-copy .hero-wordmark { width: min(100%, 650px); margin: 0 0 26px; line-height: 0; white-space: normal; }
+.welcome .hero-wordmark img { display: block; width: 100%; height: auto; }
+:root[data-theme='dark'] .welcome .hero-wordmark img { filter: invert(1) hue-rotate(180deg); }
+@media (min-width: 901px) and (max-width: 1200px) {
+  .welcome .hero-copy { padding-top: 84px; padding-left: 18px; }
+}
+@media (max-width: 900px) {
+  .welcome .hero-copy { padding-top: 70px; padding-left: 16px; }
+  .welcome .hero-copy .hero-wordmark { width: min(100%, 620px); }
+}
+@media (max-width: 640px) {
+  .welcome .hero-copy { padding-top: 54px; padding-left: 8px; }
+  .welcome .hero-copy .hero-wordmark { margin-bottom: 24px; }
+}

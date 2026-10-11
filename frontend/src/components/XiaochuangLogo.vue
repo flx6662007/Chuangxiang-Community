@@ -20,7 +20,7 @@ defineProps({
 .xiaochuang-logo--heading { width: clamp(210px, 24vw, 300px); }
 .xiaochuang-logo--hero { width: 100%; background: currentColor; mask: var(--wordmark) center / contain no-repeat; }
 .xiaochuang-logo--hero img { visibility: hidden; }
-:global([data-theme="dark"]) .xiaochuang-logo:not(.xiaochuang-logo--hero) img { filter: brightness(0) invert(1); opacity: .92; }
+:global([data-theme="dark"] .xiaochuang-logo:not(.xiaochuang-logo--hero) img) { filter: brightness(0) invert(1); opacity: .92; }
 @media (max-width: 640px) { .xiaochuang-logo--nav { width: 82px; } }
 @media (forced-colors: active) {
   .xiaochuang-logo { background: CanvasText; mask: var(--wordmark) center / contain no-repeat; }

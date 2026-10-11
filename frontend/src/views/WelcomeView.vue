@@ -1,4 +1,5 @@
 <script setup>
+import homeHeadline from '../assets/home-headline.png'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { listCompetitions } from '../api/competitions'
@@ -154,7 +155,7 @@ onBeforeUnmount(() => {
       <div class="home-wrap">
         <div class="home-hero">
           <div class="hero-copy">
-            <h1 id="welcome-title">在创新中相遇，<br />遇见<span>更大的可能</span></h1>
+            <h1 id="welcome-title" class="hero-wordmark"><img :src="homeHeadline" alt="在创新中相遇，遇见更大可能" width="1774" height="887" /></h1>
             <p class="hero-lead">查看比赛通知和科研项目，<br />了解报名与参与方式。</p>
           </div>
           <div class="hero-art hero-shortcuts"><HomeLiquidLinks /></div>
