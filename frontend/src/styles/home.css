@@ -388,7 +388,7 @@
 
 /* Selected handwritten headline: move the copy gently inward without changing the lead typography. */
 .welcome .hero-copy { padding-top: 96px; padding-left: 24px; min-width: 0; }
-.welcome .hero-copy .hero-wordmark { width: min(100%, 650px); margin: 0 0 26px; line-height: 0; white-space: normal; }
+.welcome .hero-copy .hero-wordmark { width: min(82%, 530px); margin: 0 0 26px -24px; line-height: 0; white-space: normal; }
 .welcome .hero-wordmark img { display: block; width: 100%; height: auto; }
 :root[data-theme='dark'] .welcome .hero-wordmark img { filter: invert(1) hue-rotate(180deg); }
 @media (min-width: 901px) and (max-width: 1200px) {
@@ -396,9 +396,19 @@
 }
 @media (max-width: 900px) {
   .welcome .hero-copy { padding-top: 70px; padding-left: 16px; }
-  .welcome .hero-copy .hero-wordmark { width: min(100%, 620px); }
+  .welcome .hero-copy .hero-wordmark { width: min(82%, 505px); }
 }
 @media (max-width: 640px) {
   .welcome .hero-copy { padding-top: 54px; padding-left: 8px; }
-  .welcome .hero-copy .hero-wordmark { margin-bottom: 24px; }
+  .welcome .hero-copy .hero-wordmark { margin-bottom: 24px; margin-left: -12px; }
 }
+
+/* Discovery research uses the same compact card language as competitions. */
+.welcome .home-research-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.welcome .home-research-card { gap: 22px; padding: 26px; }
+.welcome .home-research-card:first-child { background: var(--surface-tinted, #1d3755); border-color: var(--border-strong, #426083); }
+.welcome .home-research-card .discover-body { flex: 1; }
+.welcome .home-research-summary { color: var(--text-secondary, #9cabbc); font-size: var(--type-small); line-height: var(--leading-loose); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 16px 0 0; }
+.welcome .home-research-card .discover-level { overflow-wrap: anywhere; }
+@media (max-width: 900px) { .welcome .home-research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .welcome .home-research-grid { grid-template-columns: minmax(0, 1fr); } }

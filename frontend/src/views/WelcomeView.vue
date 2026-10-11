@@ -1,7 +1,7 @@
 <script setup>
 import homeHeadline from '../assets/home-headline.png'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import { listCompetitions } from '../api/competitions'
 import { listRecruitments } from '../api/teams'
 import { listResearch, listNewsletters } from '../api/editorial'
@@ -9,7 +9,6 @@ import { summaryDeadline, levelLabels, safeExternalUrl, deadlineStatusLabel } fr
 import { label, optionNames } from '../utils/teams'
 import { previewCompetitions, previewRecruitments } from '../mocks/homeVisualPreview'
 import AICompetitionAssistant from '../components/AICompetitionAssistant.vue'
-import ProjectOpportunityCard from '../components/ProjectOpportunityCard.vue'
 import HomeDotField from '../components/HomeDotField.vue'
 import HomeMarginMotif from '../components/HomeMarginMotif.vue'
 import HomeLiquidLinks from '../components/HomeLiquidLinks.vue'
@@ -215,7 +214,20 @@ onBeforeUnmount(() => {
         <div v-if="researchLoading" class="home-state" role="status">正在加载科研线索…</div>
         <div v-else-if="researchError" class="home-state" role="alert">科研线索暂时无法加载。<button type="button" @click="loadEditorial('research')">重新加载 ↗</button></div>
         <div v-else-if="!laboratories.length" class="home-state">目前没有公开科研线索。<RouterLink :to="{ name: 'research-projects' }">查看科研页面 ↗</RouterLink></div>
-        <div v-else class="research-editorial-list"><ProjectOpportunityCard v-for="item in laboratories" :key="item.id" :item="item" /></div>
+        <div v-else class="home-research-grid">
+          <component :is="/^db-\d+$/.test(item.id) ? RouterLink : 'a'" v-for="item in laboratories" :key="item.id" class="discover-item home-research-card"
+            v-bind="/^db-\d+$/.test(item.id)
+              ? { to: { name: 'research-detail', params: { id: item.id.slice(3) } } }
+              : { href: safeExternalUrl(item.sourceUrl) || undefined, target: '_blank', rel: 'noopener noreferrer' }">
+            <div class="discover-top"><span>{{ item.unit || '科研课题组' }}</span><span aria-hidden="true">↗</span></div>
+            <div class="discover-body">
+              <p v-if="item.details?.direction || item.direction" class="discover-level">{{ item.details?.direction || item.direction }}</p>
+              <h3>{{ item.title }}</h3>
+              <p class="home-research-summary">{{ item.summary }}</p>
+            </div>
+            <div class="discover-bottom"><span>{{ item.details?.location || '科研课题组' }}</span><span>{{ /^db-\d+$/.test(item.id) ? '查看课题组详情 ↗' : safeExternalUrl(item.sourceUrl) ? '官方说明 ↗' : '暂无来源链接' }}</span></div>
+          </component>
+        </div>
       </div>
     </section>
 

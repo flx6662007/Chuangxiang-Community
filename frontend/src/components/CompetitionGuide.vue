@@ -1,5 +1,6 @@
 <script setup>
 import XiaochuangLogo from './XiaochuangLogo.vue'
+import AppIcon from './AppIcon.vue'
 import SentMessages from './SentMessages.vue'
 import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
 import { getGuide, updateGuide } from '../api/guide'
@@ -55,19 +56,17 @@ function enter(event) {
 </script>
 
 <template>
-  <section class="competition-guide" aria-labelledby="competition-guide-title" :aria-busy="busy">
-    <div class="section-heading">
-      <div><h2 id="competition-guide-title">选比赛，了解要求，找到队友</h2><p>说说你的兴趣和技能，一起找到适合准备的赛事。</p></div>
-      <button type="button" class="text-button" :disabled="busy" @click="run('reset')">重新开始</button>
-    </div>
+  <section class="competition-guide ai-assistant-panel" aria-label="赛事对话" :aria-busy="busy">
     <SentMessages :messages="sentMessages" />
-    <form class="guide-question" @submit.prevent="run()">
-      <label for="guide-message">你的需求</label>
+    <form class="guide-question ai-assistant-form" @submit.prevent="run()">
+      <label for="guide-message">你的问题</label>
       <textarea id="guide-message" v-model="message" :disabled="busy" rows="3" maxlength="500" placeholder="例如：我是大二学生，会一点 Python，每周能投入 5 小时，想了解数学建模比赛。" @keydown="enter" />
-      <button class="action-button" :disabled="busy || !message.trim()">{{ busy ? '正在整理回答…' : '发送' }}</button>
+      <div class="ai-assistant-actions guide-send-actions">
+        <button class="action-button ai-submit" :disabled="busy || !message.trim()"><AppIcon name="spark" :size="17" />{{ busy ? '正在整理回答…' : '发送' }}</button>
+      </div>
     </form>
-    <details class="guide-profile">
-      <summary>查看和修改我的条件</summary>
+    <section class="guide-profile" aria-labelledby="guide-profile-title">
+      <h3 id="guide-profile-title">查看和修改我的条件</h3>
       <form @submit.prevent="run('search', null, true)">
         <div class="guide-fields">
           <label>学历<select v-model="form.education"><option value="">未填写</option><option v-for="value in ['本科','专科','硕士','博士']" :key="value">{{ value }}</option></select></label>
@@ -83,7 +82,7 @@ function enter(event) {
         <label class="guide-checkbox"><input v-model="openOnly" type="checkbox" />只看可以组队的赛事</label>
         <button class="action-button secondary" :disabled="busy">按这些条件查找</button>
       </form>
-    </details>
+    </section>
     <p v-if="error" role="alert" class="form-error">{{ error }}</p>
     <div v-if="result" aria-live="polite">
       <div v-if="result.answer?.paragraphs?.length" class="guide-answer">
@@ -93,13 +92,12 @@ function enter(event) {
           <a v-for="source in paragraph.citations" :key="`${source.record_id}:${source.id}`" :href="safeExternalUrl(source.url) || undefined" target="_blank" rel="noopener noreferrer" class="guide-citation">{{ source.title }} · {{ source.edition }}</a>
         </div>
       </div>
-      <p v-else class="guide-response">{{ result.message }}</p>
+      <p v-else-if="result.stage !== 'needs'" class="guide-response">{{ result.message }}</p>
       <div v-if="result.answer?.notice" role="status">
         <p>{{ result.answer.notice }}</p>
         <button type="button" class="text-button" :disabled="busy" @click="run('retry')">请 <XiaochuangLogo /> 重新回答</button>
       </div>
       <p v-if="result.stage === 'selection' && result.candidates?.length" class="guide-selection-prompt">想参加哪场比赛？选择下方赛事，点击“分析这个赛事”了解要求，再找队友。</p>
-      <template v-else><p v-for="question in result.questions" :key="question">{{ question }}</p></template>
       <div class="guide-candidates">
         <article v-for="(candidate, index) in result.candidates" :key="candidate.record_id" class="guide-card">
           <h3>{{ index + 1 }}. {{ candidate.title }}</h3>
@@ -156,26 +154,24 @@ function enter(event) {
 </template>
 
 <style scoped>
-.competition-guide > .section-heading { flex-wrap: wrap; }
-.competition-guide > .section-heading > .text-button { flex-shrink: 0; white-space: nowrap; }
-.guide-question { margin-top: 20px; }
+.guide-question { margin: 0; }
+.guide-send-actions { justify-content: flex-end; }
 .guide-selection-prompt { margin-block: 24px 16px; font-weight: 600; }
-.guide-answer { padding:18px; border-left:3px solid var(--accent-color,#447864); background:var(--bg-secondary,transparent); border-radius:8px; }
+.guide-answer { padding:18px; border-left:3px solid var(--accent, #76a7e8); background:var(--bg-secondary,transparent); border-radius:8px; }
 .guide-answer-text { white-space:pre-wrap; line-height:1.85; }
 .guide-citation { display:inline-block; margin:0 12px 8px 0; font-size:.85em; }
 .guide-team-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
 .guide-team-actions p { flex-basis:100%; }
-.competition-guide { padding-block: 24px; }
-.guide-question,.guide-profile form,.guide-candidates,.guide-team-results { display:grid; gap:16px; }
-.guide-question textarea,.guide-fields input,.guide-fields select { width:100%; padding:10px 12px; color:var(--text-primary); background:var(--bg-secondary,transparent); border:1px solid var(--border-color,#8b8b8b66); border-radius:8px; font:inherit; }
-.guide-question .action-button { justify-self:end; }
-.guide-profile { margin:24px 0; padding:16px; border:1px solid var(--border-color,#8b8b8b66); border-radius:12px; }
+.competition-guide { display: grid; gap: 24px; }
+.guide-profile form,.guide-candidates,.guide-team-results { display:grid; gap:16px; }
+.guide-fields input,.guide-fields select { width:100%; padding:10px 12px; color:var(--text-primary, #edf2f7); background:var(--bg-secondary,transparent); border:1px solid var(--border, #35465b); border-radius:8px; font:inherit; }
+.guide-profile { margin:0; padding:20px; border:1px solid var(--border, #35465b); border-radius:12px; }
 summary { cursor:pointer; font-weight:600; }
 .guide-fields { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:14px; padding-top:16px; }
 .guide-fields label { display:grid; gap:6px; }
 .guide-checkbox { display:flex; gap:8px; align-items:center; }
 .guide-candidates { grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); }
-.guide-card,.guide-analysis { padding:20px; border:1px solid var(--border-color,#8b8b8b66); border-radius:12px; overflow-wrap:anywhere; }
+.guide-card,.guide-analysis { padding:20px; border:1px solid var(--border, #35465b); border-radius:12px; overflow-wrap:anywhere; }
 .guide-card h3,.guide-card h4 { margin-top:0; }
 .guide-analysis { margin-top:24px; }
 .guide-section { margin-block:18px; }
@@ -183,4 +179,17 @@ summary { cursor:pointer; font-weight:600; }
 .guide-section a { color:var(--accent,#4875b8); }
 .guide-response { font-size:1.1em; }
 button:disabled { opacity:.55; cursor:wait; }
+
+.competition-guide.ai-assistant-panel { gap: 24px; }
+.guide-profile { background: var(--surface, #182433); }
+.guide-profile h3 { margin: 0; font-size: var(--type-body-compact); color: var(--text-primary, #edf2f7); }
+.guide-fields { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-fields label { min-width: 0; font-size: var(--type-small); color: var(--text-secondary, #a8b4c2); }
+.guide-fields input, .guide-fields select { min-width: 0; min-height: 44px; }
+.guide-fields input:focus-visible, .guide-fields select:focus-visible { outline: 2px solid var(--accent, #76a7e8); outline-offset: 2px; }
+.guide-profile .action-button { justify-self: start; }
+.guide-checkbox { font-size: var(--type-small); }
+.guide-checkbox input { accent-color: var(--accent, #76a7e8); }
+@media (max-width: 900px) { .guide-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .guide-fields { grid-template-columns: minmax(0, 1fr); } .guide-profile { padding: 16px; } }
 </style>
