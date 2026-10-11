@@ -9,10 +9,42 @@ import CompetitionDetailView from '../views/CompetitionDetailView.vue'
 import AccountView from '../views/AccountView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
 
+let releaseScrollHold
+
+function holdScrollPosition() {
+  releaseScrollHold?.()
+  const shell = document.querySelector('.app-shell')
+  if (!shell || window.scrollY === 0) return
+
+  const body = document.body
+  const previousMinHeight = body.style.minHeight
+  // Lists briefly collapse into a loading message. Keep enough page height
+  // for the current viewport so the browser cannot clamp its scroll position.
+  body.style.minHeight = `${window.scrollY + window.innerHeight}px`
+
+  const releaseWhenSafe = () => {
+    if (shell.getBoundingClientRect().height >= window.scrollY + window.innerHeight - 1) {
+      releaseScrollHold?.()
+    }
+  }
+  const observer = new MutationObserver(releaseWhenSafe)
+  observer.observe(shell, { childList: true, subtree: true })
+  window.addEventListener('scroll', releaseWhenSafe, { passive: true })
+  releaseScrollHold = () => {
+    observer.disconnect()
+    window.removeEventListener('scroll', releaseWhenSafe)
+    body.style.minHeight = previousMinHeight
+    releaseScrollHold = undefined
+  }
+}
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
+    // Filters and pagination update the query on the current page. Keep the
+    // reader's position; only a new page or anchor should move the viewport.
+    if (to.path === from.path && to.hash === from.hash) return false
     if (to.hash) return { el: to.hash, top: 24 }
     return { top: 0 }
   },
@@ -127,6 +159,14 @@ const router = createRouter({
       ],
     },
   ],
+})
+
+router.beforeEach((to, from) => {
+  if (to.path === from.path && to.hash === from.hash && to.fullPath !== from.fullPath) {
+    holdScrollPosition()
+  } else {
+    releaseScrollHold?.()
+  }
 })
 
 router.beforeEach((to) => {
