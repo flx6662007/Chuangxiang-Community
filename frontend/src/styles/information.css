@@ -9,21 +9,6 @@
   background: var(--editorial-light);
   color: var(--editorial-ink);
 }
-.is-editorial-page .app-header { height: 82px; background: var(--editorial-dark); border-bottom: 1px solid var(--border-soft, #ffffff18); }
-.is-editorial-page .app-header-inner { width: min(calc(100% - 96px), 1320px); gap: clamp(38px, 5vw, 100px); }
-.is-editorial-page .brand { color: var(--text-primary, #f5f4ef); font-size: var(--type-title-lg); letter-spacing: .03em; }
-.is-editorial-page .brand-logo { width: 37px; height: 37px; }
-.is-editorial-page .brand-subtitle { color: var(--text-secondary, #778394); font-size: var(--type-overline); letter-spacing: .2em; font-weight: 500; }
-.is-editorial-page .app-nav { gap: clamp(18px, 2.4vw, 35px); }
-.is-editorial-page .app-nav a,
-.is-editorial-page .header-actions > a:not(.header-account) { color: var(--text-secondary, #a3aeba); font-size: var(--type-small); }
-.is-editorial-page .app-nav a:hover,
-.is-editorial-page .app-nav a.is-active,
-.is-editorial-page .header-actions > a:hover,
-.is-editorial-page .header-actions > a.is-active { color: var(--text-primary, #f5f4ef); }
-.is-editorial-page .app-nav a.is-active::after { width: 16px; height: 2px; left: calc(50% - 8px); bottom: 20px; background: var(--accent, #5c93ec); }
-.is-editorial-page .header-account { color: var(--text-primary, #f3f6fa); background: transparent; border-color: var(--border-strong, #465166); border-radius: 30px; padding: 9px 15px; }
-.is-editorial-page .header-account:hover { border-color: var(--border, #8ba9da); background: var(--overlay-soft, #ffffff0c); }
 .is-editorial-page .app-main { width: 100%; max-width: none; padding: 0; overflow: clip; }
 .is-editorial-page .app-footer { width: 100%; margin: 0; padding: 42px max(48px, calc((100% - 1320px) / 2)); background: var(--bg-primary, #080d15); border-top: 1px solid var(--border-soft, #ffffff1d); color: var(--text-secondary, #8f9aa9); }
 .is-editorial-page .footer-brand { color: var(--text-primary, #e8ebee); }
@@ -187,35 +172,17 @@
 .is-editorial-page .resource-detail .detail-emblem { background: var(--bg-secondary, #e7eef1); color: var(--accent, #326b9b); }
 .is-editorial-page .resource-detail .resource-detail-title { color: var(--text-primary, #203348); }
 
-@media (max-width: 900px) {
-  .is-editorial-page .app-nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .is-editorial-page .app-nav a { flex: 0 0 auto; }
-  .is-editorial-page .app-nav::-webkit-scrollbar { display: none; }
-}
 
 [data-reveal-ready] { opacity: 0; transform: translateY(10px); transition: opacity var(--motion-enter) var(--motion-ease-out), transform var(--motion-enter) var(--motion-ease-out); }
 [data-reveal-ready].is-revealed { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 900px) {
-  .is-editorial-page .app-header-inner,
   .is-editorial-page .information-hero-inner,
   .is-editorial-page .information-content { width: calc(100% - 48px); }
-  .is-editorial-page .app-header-inner { gap: 22px; }
-  .is-editorial-page .header-actions > a:not(.header-account) { display: none; }
-  .is-editorial-page .header-account { display: flex; }
   .is-editorial-page .research-opportunity { grid-template-columns: minmax(0, 1fr) 125px; gap: 18px; }
   .is-editorial-page .research-opportunity-action { grid-column: 2; grid-row: 1; text-align: right; }
 }
 @media (max-width: 640px) {
-  .is-editorial-page .app-header { height: auto; min-height: 70px; padding: 0 16px; }
-  .is-editorial-page .app-header-inner { width: 100%; flex-wrap: wrap; gap: 0 16px; padding: 14px 0 8px; }
-  .is-editorial-page .brand { font-size: var(--type-title-md); }
-  .is-editorial-page .brand-logo { width: 32px; height: 32px; }
-  .is-editorial-page .app-nav { order: 3; width: 100%; height: 43px; gap: 24px; overflow-x: auto; }
-  .is-editorial-page .app-nav a { flex: 0 0 auto; font-size: var(--type-small); }
-  .is-editorial-page .app-nav a.is-active::after { bottom: 3px; }
-  .is-editorial-page .header-account { padding: 8px; }
-  .is-editorial-page .header-account span { display: none; }
   .is-editorial-page .information-hero { min-height: 0; }
   .is-editorial-page .information-hero-inner,
   .is-editorial-page .information-content { width: calc(100% - 40px); }

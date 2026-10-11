@@ -25,25 +25,26 @@
   --home-blue: var(--accent, #4385ee);
   background: var(--home-dark);
 }
-.app-shell.is-home .app-header {
+.app-shell .app-header {
+  font-size: var(--type-body-compact);
   height: 82px;
-  background: var(--home-dark);
+  background: var(--bg-primary, #0b111b);
   border-bottom: 1px solid var(--border-soft, #ffffff18);
 }
-.app-shell.is-home .app-header-inner { width: min(calc(100% - 96px), 1320px); gap: clamp(38px, 5vw, 100px); }
-.app-shell.is-home .brand { color: var(--text-primary, #f5f4ef); font-size: var(--type-title-lg); letter-spacing: .03em; }
-.app-shell.is-home .brand-logo { width: 37px; height: 37px; }
-.app-shell.is-home .brand-subtitle { color: var(--text-secondary, #778394); font-size: var(--type-overline); letter-spacing: .2em; font-weight: 500; }
-.app-shell.is-home .app-nav { gap: clamp(18px, 2.4vw, 35px); }
-.app-shell.is-home .app-nav a,
-.app-shell.is-home .header-actions > a:not(.header-account) { color: var(--text-secondary, #a3aeba); font-size: var(--type-small); }
-.app-shell.is-home .app-nav a:hover,
-.app-shell.is-home .app-nav a.is-active,
-.app-shell.is-home .header-actions > a:hover,
-.app-shell.is-home .header-actions > a.is-active { color: var(--text-primary, #f5f4ef); }
-.app-shell.is-home .app-nav a.is-active::after { width: 16px; height: 2px; left: calc(50% - 8px); bottom: 20px; background: var(--accent, #5c93ec); }
-.app-shell.is-home .header-account { color: var(--text-primary, #f3f6fa); background: transparent; border-color: var(--border-strong, #465166); border-radius: 30px; padding: 9px 15px; }
-.app-shell.is-home .header-account:hover { border-color: var(--border, #8ba9da); background: var(--overlay-soft, #ffffff0c); }
+.app-shell .app-header-inner { width: min(calc(100% - 96px), 1320px); gap: clamp(38px, 5vw, 100px); }
+.app-shell .brand { color: var(--text-primary, #f5f4ef); font-size: var(--type-title-lg); letter-spacing: .03em; }
+.app-shell .brand-logo { width: 37px; height: 37px; }
+.app-shell .brand-subtitle { color: var(--text-secondary, #778394); font-size: var(--type-overline); letter-spacing: .2em; font-weight: 500; }
+.app-shell .app-nav { gap: clamp(18px, 2.4vw, 35px); }
+.app-shell .app-nav a,
+.app-shell .header-actions > a:not(.header-account) { color: var(--text-secondary, #a3aeba); font-size: var(--type-small); }
+.app-shell .app-nav a:hover,
+.app-shell .app-nav a.is-active,
+.app-shell .header-actions > a:hover,
+.app-shell .header-actions > a.is-active { color: var(--text-primary, #f5f4ef); }
+.app-shell .app-nav a.is-active::after { width: 16px; height: 2px; left: calc(50% - 8px); bottom: 20px; background: var(--accent, #5c93ec); }
+.app-shell .header-account { color: var(--text-primary, #f3f6fa); background: transparent; border-color: var(--border-strong, #465166); border-radius: 30px; padding: 9px 15px; }
+.app-shell .header-account:hover { border-color: var(--border, #8ba9da); background: var(--overlay-soft, #ffffff0c); }
 .app-shell.is-home .app-main { width: 100%; max-width: none; padding: 0; overflow: hidden; }
 .app-shell.is-home .app-footer {
   width: 100%;
@@ -249,10 +250,10 @@
 .welcome .briefing-row a { font-size: var(--type-title-md); }
 
 @media (max-width: 1200px) {
-  .app-shell.is-home .app-header-inner, .welcome .home-wrap { width: min(calc(100% - 64px), 1320px); }
-  .app-shell.is-home .app-header-inner { gap: 28px; }
-  .app-shell.is-home .app-nav { gap: 18px; }
-  .app-shell.is-home .header-actions { gap: 13px; }
+  .app-shell .app-header-inner, .welcome .home-wrap { width: min(calc(100% - 64px), 1320px); }
+  .app-shell .app-header-inner { gap: 28px; }
+  .app-shell .app-nav { gap: 18px; }
+  .app-shell .header-actions { gap: 13px; }
   .welcome .hero-copy h1 { font-size: clamp(48px, 4.6vw, 64px); }
   .welcome .art-orbit-outer { left: -18px; }
   .welcome .art-orbit-inner { left: 72px; }
@@ -261,12 +262,12 @@
 }
 @media (max-width: 900px) {
   .app-header-inner { gap: 22px; }
-  .app-shell.is-home .app-nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .app-shell.is-home .app-nav a { flex: 0 0 auto; }
-  .app-shell.is-home .app-nav::-webkit-scrollbar { display: none; }
+  .app-shell .app-nav { min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .app-shell .app-nav a { flex: 0 0 auto; }
+  .app-shell .app-nav::-webkit-scrollbar { display: none; }
   .header-actions > a:not(.header-account) { display: none; }
-  .app-shell.is-home .header-account { display: flex; }
-  .app-shell.is-home .app-header-inner, .welcome .home-wrap { width: calc(100% - 48px); }
+  .app-shell .header-account { display: flex; }
+  .app-shell .app-header-inner, .welcome .home-wrap { width: calc(100% - 48px); }
   .welcome .home-hero { grid-template-columns: 1fr; min-height: 0; }
   .welcome .hero-copy { padding: 60px 0 32px; }
   .welcome .hero-art { display: none; }
@@ -283,15 +284,15 @@
 }
 @media (max-width: 640px) {
   .welcome .home-kicker { gap: 8px; letter-spacing: .14em; }
-  .app-shell.is-home .app-header { height: auto; min-height: 70px; padding: 0 16px; }
-  .app-shell.is-home .app-header-inner { width: 100%; flex-wrap: wrap; gap: 0 16px; padding: 14px 0 8px; }
-  .app-shell.is-home .brand { font-size: var(--type-title-md); }
-  .app-shell.is-home .brand-logo { width: 32px; height: 32px; }
-  .app-shell.is-home .app-nav { order: 3; width: 100%; height: 43px; gap: 24px; overflow-x: auto; }
-  .app-shell.is-home .app-nav a { flex: 0 0 auto; font-size: var(--type-small); }
-  .app-shell.is-home .app-nav a.is-active::after { bottom: 3px; }
-  .app-shell.is-home .header-account { padding: 8px; }
-  .app-shell.is-home .header-account span { display: none; }
+  .app-shell .app-header { height: auto; min-height: 70px; padding: 0 16px; }
+  .app-shell .app-header-inner { width: 100%; flex-wrap: wrap; gap: 0 16px; padding: 14px 0 8px; }
+  .app-shell .brand { font-size: var(--type-title-md); }
+  .app-shell .brand-logo { width: 32px; height: 32px; }
+  .app-shell .app-nav { order: 3; width: 100%; height: 43px; gap: 20px; overflow-x: auto; }
+  .app-shell .app-nav a { flex: 0 0 auto; font-size: var(--type-small); }
+  .app-shell .app-nav a.is-active::after { bottom: 3px; }
+  .app-shell .header-account { padding: 8px; }
+  .app-shell .header-account span { display: none; }
   .app-shell.is-home .app-footer { padding: 32px 24px; }
   .welcome .home-wrap { width: calc(100% - 40px); }
   .welcome .hero-copy { padding: 48px 0 28px; }
