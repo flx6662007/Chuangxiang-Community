@@ -39,6 +39,8 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\dev.ps1
 
 macOS / Linux 的启动步骤，以及端口、日志和停止服务的方法，见[后端开发说明](docs/backend-development.md)与[前端说明](frontend/README.md)。
 
+如果只需本机预览已构建的完整网页，可由 Django 同时提供网页和 API，不运行 Vite 开发服务；首次构建和更新前端后执行一次 `npm run build`。步骤见[前端说明](frontend/README.md#不运行-vite-的本机预览)。
+
 ## 文档
 
 - [代码导读](docs/code-guide.md)：了解模块分工和请求流程。

@@ -10,7 +10,8 @@
 | --- | --- |
 | `GET /api/v1/editorial/research/` | 科研列表，支持 `search`、`recruitment=1`、`page`、`page_size` |
 | `GET /api/v1/editorial/research/:id/` | 公开科研详情；数字数据库编号 |
-| `GET /api/v1/editorial/newsletters/` | 已发布快讯列表，支持相同查询参数 |
+| `GET /api/v1/editorial/newsletters/` | 已发布快讯短摘要列表，支持分页与正文搜索，数据库快讯含站内详情入口 |
+| `GET /api/v1/editorial/newsletters/<code>/` | 本期已确认公开版本、分组快照、原文日期与实际站内发布时间；草稿或撤下返回404 |
 | `GET /api/v1/ai/status/` | 返回 `chat_configured` 与 `catalog_search`，不返回密钥或服务配置 |
 | `GET /api/v1/ai/search/?q=RoboMaster` | 从公开赛事目录与知识正文检索，返回目录卡片和匹配原因 |
 | `POST /api/v1/ai/chat/` | JSON 聊天，需服务端模型配置；结构见 [AI 接入](ai-v3.md) |

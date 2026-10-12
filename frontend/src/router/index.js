@@ -59,6 +59,11 @@ const router = createRouter({
           component: WelcomeView,
         },
         {
+          path: 'newsletters/:code',
+          name: 'newsletter-detail',
+          component: () => import('../views/NewsletterDetailView.vue'),
+        },
+        {
           path: 'competitions',
           component: InformationCenterView,
           children: [

@@ -58,3 +58,5 @@
 历史采集实现仍保留，不是当前手动资料维护的必选步骤：[目录覆盖](competition-catalog-coverage.md)、[发现与监测](competition-discovery.md)、[提取上架](catalog-publication.md)、[采集实现](ingestion-implementation.md)、[来源清单](competition-sources.md)。这些文档中的运行数量需按记录日期理解。
 
 [产品范围](product-scope.md)、[前端实现记录](frontend-implementation.md)用于理解已有设计；[历史归档](archive/README.md)保存早期方案、阶段测试和进度。最新路由、接口及配置以当前源码与对应接入文档为准。
+
+- [2026年10月创享快讯维护与发布](newsletter-2026-10.md)：资料核验、最小迁移、预览导入和正式发布步骤。

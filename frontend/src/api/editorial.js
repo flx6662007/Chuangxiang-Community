@@ -15,3 +15,11 @@ export async function getResearch(id, signal) {
   return data
 }
 export const listNewsletters = (params, signal) => listEditorial('newsletters', params, signal)
+
+export async function getNewsletter(code, signal) {
+  const { data } = await http.get(`/editorial/newsletters/${encodeURIComponent(code)}/`, { signal })
+  if (!data || data.code !== code || typeof data.title !== 'string' || !Array.isArray(data.sections)) {
+    throw new Error('Invalid newsletter response')
+  }
+  return data
+}

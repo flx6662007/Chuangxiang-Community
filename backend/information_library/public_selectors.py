@@ -6,13 +6,13 @@ from django.conf import settings
 from django.db.models import Q
 from django.utils import timezone
 
-from newsletters.models import Newsletter, NewsletterItem
+from newsletters.models import NewsletterItem
 from research.models import ResearchOpportunity
 from research.presentation import public_card_details
 from common.public_content import public_text, safe_source_url
 
 from . import selectors
-from .selectors import collect_records, editorial_date, is_demo
+from .selectors import editorial_date, is_demo
 
 
 def _day(value):
@@ -87,25 +87,14 @@ def research_cards():
 
 
 def newsletter_cards():
-    # 仅明确指向本期已确认版本的公开记录；后续草稿和旧版本不参与读取。
-    current = {
-        f'db-{item.pk}': item for item in Newsletter.objects.filter(
-            publication_status='published', current_revision__status='confirmed',
-        ).exclude(code__startswith='demo-').select_related('current_revision')
-        if item.current_revision.newsletter_id == item.pk
-    }
+    from newsletters.presentation import public_issues, issue_detail, issue_card
+
     reserved_urls = {safe_source_url(url) for url in NewsletterItem.objects.values_list('source_url', flat=True)}
     cards = []
-    for row in collect_records(['newsletter']) if current else []:
-        item = current.get(row['id'])
-        # 聚合器会去掉撤下、版本已变更的引用，以及含失效引用的旧导读。
-        if not item or not row['text'] or not row['source_urls']:
-            continue
-        cards.append(_card(
-            row['id'], row['title'], date=_day(item.published_at),
-            verified=_day(item.current_revision.confirmed_at), summary=row['text'],
-            source=row['source_urls'][0],
-        ))
+    for issue in public_issues():
+        detail = issue_detail(issue)
+        if detail['sections']:
+            cards.append(issue_card(issue, detail))
     cards.extend(_editorial_cards('newsletter', reserved_urls))
     return cards
 
@@ -113,4 +102,4 @@ def newsletter_cards():
 def search_cards(cards, query):
     words = query.casefold().split()
     fields = ('title', 'unit', 'summary', 'participation', 'evidenceNote', 'direction')
-    return [item for item in cards if all(word in ('\n'.join(item[key] for key in fields) + json.dumps(item.get('details', {}), ensure_ascii=False)).casefold() for word in words)]
+    return [item for item in cards if all(word in ('\n'.join(item[key] for key in fields) + item.get('_searchText', '') + json.dumps(item.get('details', {}), ensure_ascii=False)).casefold() for word in words)]

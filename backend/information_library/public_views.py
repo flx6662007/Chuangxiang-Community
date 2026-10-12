@@ -23,7 +23,8 @@ class PublicEditorialView(APIView):
         if len(query) > 200:
             raise ValidationError({'search': '搜索内容最多 200 字。'})
         all_rows = self.cards()
-        rows = search_cards(all_rows, query)
+        rows = [{key: value for key, value in row.items() if not key.startswith('_')}
+                for row in search_cards(all_rows, query)]
         if type(self) is PublicEditorialView:
             recruitment = request.query_params.get('recruitment', '')
             if recruitment not in ('', '0', '1'):
@@ -55,4 +56,16 @@ class PublicResearchDetailView(APIView):
         for card in research_cards():
             if card['id'] == f'db-{pk}':
                 return Response(card)
+        raise Http404
+
+
+class PublicNewsletterDetailView(APIView):
+    authentication_classes = ()
+    permission_classes = (AllowAny,)
+
+    def get(self, request, code):
+        from newsletters.presentation import public_issues, issue_detail
+        for issue in public_issues(code):
+            if issue.code == code:
+                return Response(issue_detail(issue))
         raise Http404

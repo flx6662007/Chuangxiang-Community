@@ -24,6 +24,8 @@
 
 全国科研包位于 `docs/research-national/20261007/`，可导入 120 条资料；这是版本化资料包的数量，不是本机数据库计数或实时招募名额。按[科研交付](releases/research-ai-20261007.md)运行 `import_research_materials --database --publish` 先预演，再按目标环境执行 `--apply`。后续维护原资料、构建导入包、应用变更并重建科研索引。
 
+快讯的完整正文与资源快照通过独立公开读取器展示，不放宽本文 AI 检索规则；导入、迁移和发布见[10月快讯维护](newsletter-2026-10.md)。
+
 `backend/information_library/data/editorial.json` 保留 `laboratories`、`newsletters` 人工补充入口；当前仓库两项均为空。前端通过 HTTP API 读取，不再直接导入这个文件。数据库已有同源科研记录时，包括草稿和撤下状态，旧人工副本不会重新公开。该文件属于可公开的资料源，不存放私有草稿、账号、审核记录或密钥；旧人工维护流程见[内容维护](undergraduate-labs.md)。
 
 原文日期、核查日期与截止时间分别保留。历史资料、介绍性线索和名额待确认的内容，不能解释为正在接收申请。`demo-` 与明确虚构样例不进入公共汇总。

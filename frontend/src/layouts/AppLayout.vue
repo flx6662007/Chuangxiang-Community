@@ -19,7 +19,7 @@ function revisitAi() {
     class="app-shell"
     :class="{
       'is-home': $route.name === 'home',
-      'is-editorial-page': ['competitions', 'catalog-detail', 'research-projects', 'resources', 'resource-detail', 'teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
+      'is-editorial-page': ['newsletter-detail', 'competitions', 'catalog-detail', 'research-projects', 'resources', 'resource-detail', 'teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit', 'account', 'my-teams', 'notifications', 'governance'].includes($route.name),
       'is-team-page': ['teams', 'recruitment-detail', 'recruitment-publish', 'recruitment-edit'].includes($route.name),
       'is-account-page': ['account', 'my-teams', 'notifications', 'governance'].includes($route.name),
     }"
@@ -31,7 +31,7 @@ function revisitAi() {
           <span>创享<span class="brand-subtitle">CHUANGXIANG</span></span>
         </RouterLink>
         <nav class="app-nav" aria-label="主导航">
-          <RouterLink to="/" exact-active-class="is-active">发现</RouterLink>
+          <RouterLink to="/" exact-active-class="is-active" :class="{ 'is-active': $route.name === 'newsletter-detail' }">发现</RouterLink>
           <RouterLink :to="{ name: 'home', hash: '#ai' }" @click="revisitAi"><XiaochuangLogo variant="nav" /></RouterLink>
           <RouterLink
             :to="{ name: 'competitions' }"

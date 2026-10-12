@@ -244,7 +244,7 @@
 .welcome .briefing-empty h3, .welcome .briefing-row h3 { font-size: var(--type-title-lg); font-weight: 600; margin: 0 0 11px; }
 .welcome .briefing-empty p, .welcome .briefing-row p { color: var(--text-secondary, #9daebf); font-size: var(--type-small); line-height: var(--leading-body); margin: 0; }
 .welcome .briefing-list { margin-top: 53px; border-bottom: 1px solid var(--border-soft, #ffffff25); }
-.welcome .briefing-row { grid-template-columns: minmax(0, 1fr) 120px 25px; margin: 0; border-bottom: 0; }
+.welcome .briefing-row { grid-template-columns: minmax(0, 1fr) 120px 110px; margin: 0; border-bottom: 0; }
 .welcome .briefing-row + .briefing-row { border-top-color: var(--border-soft, #ffffff20); }
 .welcome .briefing-row time { color: var(--text-secondary, #a0b4c9); font: var(--type-caption) var(--font-ui); letter-spacing: .08em; padding-top: 6px; }
 .welcome .briefing-row a { font-size: var(--type-title-md); }
@@ -412,3 +412,7 @@
 .welcome .home-research-card .discover-level { overflow-wrap: anywhere; }
 @media (max-width: 900px) { .welcome .home-research-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .welcome .home-research-grid { grid-template-columns: minmax(0, 1fr); } }
+
+.welcome .briefing-date { display: grid; gap: 4px; color: var(--text-secondary); font-size: var(--type-caption); }
+.welcome .briefing-row .briefing-read { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--type-small); white-space: nowrap; }
+@media (max-width: 700px) { .welcome .briefing-row { grid-template-columns: minmax(0, 1fr); gap: 16px; } }

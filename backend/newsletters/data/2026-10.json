@@ -1,0 +1,99 @@
+{
+  "code": "guohao-newsletter-2026-10",
+  "title": "国豪创享快讯 · 2026年10月",
+  "source_published_on": "2026-10-10",
+  "credits": "本期编辑：宋佳峻、陆逸飏\n创新俱乐部",
+  "introduction": "本期精选2个竞赛介绍及5组资源，涵盖数学建模、ICT竞赛、创新训练与开发工具，助你快速锁定机会。",
+  "checked_on": "2026-10-11",
+  "items": [
+    {
+      "kind": "competition",
+      "code": "apmcm-2026",
+      "title": "2026年第十六届APMCM亚太地区大学生数学建模竞赛",
+      "edition": "2026年第十六届",
+      "source_url": "https://www.apmcm.org/detail/2512",
+      "body": "报名截止：2026年11月25日。\n参赛对象：普通高校全日制在校大学生，1—3人组队，允许跨校组队；报名时须填写每位参赛者及指导教师所在学校全称，每队最多一名指导教师。\n关键词：人工智能、工程与管理、互联网。\n赛事由中国国际科技促进会物联网工作委员会、北京图象图形学学会联合主办，由亚太地区大学生数学建模竞赛组委会组织。\n竞赛时间：2026年11月26日06:00至11月30日09:00；须提交英文论文。\n组队支持：可前往本站组队广场查找合适队伍，以赛事及平台实际开放情况为准。",
+      "registration_deadline": "2026-11-25",
+      "registration_url": "https://www.saikr.com/apmcm26",
+      "edition_aliases": [
+        "2026",
+        "第十六届",
+        "2026年第16届"
+      ],
+      "title_aliases": [
+        "亚太地区大学生数学建模竞赛",
+        "2026年第十六届亚太地区大学生数学建模竞赛"
+      ]
+    },
+    {
+      "kind": "competition",
+      "code": "huawei-ict-2026-2027",
+      "title": "第十一届华为 ICT 大赛（2026—2027）",
+      "edition": "2026—2027 第十一届",
+      "source_url": "https://e.huawei.com/cn/talent/ict-academy/#/ict-contest?compId=85132018",
+      "body": "关键词：新工科、交叉融合、创新实践。\n面向高校师生的 ICT 赛事，不同赛道有不同参赛要求。\n报名截止须按赛道查看：实践赛为2026年10月31日；创新赛、编程赛为2026年11月30日。其他赛道请查看各自报名安排。\n高校官方通知介绍，实践赛与创新赛均采用3名学生及1名指导教师的同校团队，具体资格、其他赛道安排及报名要求以华为中国区官网为准。\n赛程参考大连理工大学及太原理工大学公开通知；报名时请进入华为中国区官网确认最新安排。\n竞赛分级以本校认定目录为准。",
+      "registration_url": "https://e.huawei.com/cn/talent/ict-academy/#/ict-contest?compId=85132018",
+      "evidence_url": "https://chuangxin.dlut.edu.cn/info/1020/16867.htm",
+      "edition_aliases": [
+        "2026-2027",
+        "2026—2027",
+        "第十一届",
+        "2026-2027 第十一届"
+      ],
+      "title_aliases": [
+        "华为ICT大赛",
+        "华为 ICT 大赛"
+      ]
+    },
+    {
+      "kind": "resource",
+      "code": "national-innovation-training-platform",
+      "title": "创新创业训练计划（国创计划）",
+      "source_url": "http://gjcxcy.bjtu.edu.cn/",
+      "body": "国家级大学生创新训练计划相关信息平台。教育部公开通知提供此平台作为项目查询入口。\n本次访问平台超时，未确认当前页面及2026年申报安排；不代表正在开放个人报名，请结合学校通知查阅。",
+      "verified": false
+    },
+    {
+      "kind": "resource",
+      "code": "github-student-developer-pack",
+      "title": "GitHub Student Developer Pack",
+      "source_url": "https://education.github.com/pack",
+      "body": "面向学生的开发者工具与学习资源套件。通过 GitHub Education 官方页面查看申请条件及当前权益。\n具体权益与适用条件以官方页面为准。",
+      "verified": true
+    },
+    {
+      "kind": "resource",
+      "code": "amazing-github-template",
+      "title": "通用开源项目模板",
+      "source_url": "https://github.com/dec0dOS/amazing-github-template",
+      "body": "提供 README、贡献指南及 GitHub 协作模板，可作为开源项目起步参考。\n原稿的 dec0dOS/awesome-project-template 地址返回404。本期提供同作者的 amazing-github-template 作为替代参考；未确认两个仓库存在更名关系。",
+      "verified": true
+    },
+    {
+      "kind": "resource",
+      "code": "template-next-cross",
+      "title": "template-next-cross",
+      "group_title": "Web／全栈项目模板",
+      "source_url": "https://github.com/makeonteam/template-next-cross",
+      "body": "基于 Next.js 等 Web 技术的跨平台应用模板。可参考项目结构与启动说明，使用前自行检查依赖及维护状态。",
+      "verified": true
+    },
+    {
+      "kind": "resource",
+      "code": "shadcn-ui",
+      "title": "shadcn/ui",
+      "group_title": "Web／全栈项目模板",
+      "source_url": "https://github.com/shadcn-ui/ui",
+      "body": "可用于搭建界面的组件与代码资源。它是组件资源，不是完整全栈应用模板。",
+      "verified": true
+    },
+    {
+      "kind": "resource",
+      "code": "ollama",
+      "title": "Ollama",
+      "source_url": "https://github.com/ollama/ollama",
+      "body": "用于运行和管理大模型的工具，可查阅官方仓库中的安装及使用说明。选用本地模型时应结合设备条件与对应模型许可。",
+      "verified": true
+    }
+  ]
+}

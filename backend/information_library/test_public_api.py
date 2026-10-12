@@ -169,12 +169,14 @@ class PublicEditorialTests(TestCase):
         self.write_editorial(newsletters=[{'id': 'old-news', 'title': '已下架快讯', 'sourceUrl': 'https://www.tongji.edu.cn/lecture'}])
         self.assertEqual(self.client.get('/editorial/newsletters/').json()['count'], 0)
 
-    def test_removed_or_changed_newsletter_reference_and_introduction_hidden(self):
+    def test_changed_reference_keeps_snapshot_and_removed_reference_is_hidden(self):
         target = self.research(last_verified_at=timezone.now())
         self.newsletter(target=target)
         self.assertEqual(self.client.get('/editorial/newsletters/').json()['count'], 1)
         ResearchOpportunity.objects.filter(pk=target.pk).update(content_version=2)
-        self.assertEqual(self.client.get('/editorial/newsletters/').json()['count'], 0)
+        self.assertEqual(self.client.get('/editorial/newsletters/').json()['count'], 1)
+        detail = self.client.get('/editorial/newsletters/public-news/').json()
+        self.assertTrue(detail['sections'][0]['groups'][0]['items'][0]['sourceChanged'])
         ResearchOpportunity.objects.filter(pk=target.pk).update(content_version=1, publication_status='withdrawn', withdrawal_reason='维护')
         self.assertEqual(self.client.get('/editorial/newsletters/').json()['count'], 0)
 

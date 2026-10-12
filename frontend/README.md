@@ -34,6 +34,17 @@ npm run build
 
 邀请内测模式隐藏注册、找回密码和邮箱验证表单，展示分配账号的说明；它只控制界面，不会创建账号、设置服务器权限或核验真实邮箱。启用内测须配套后端配置和测试账号，步骤见[邀请内测说明](../docs/private-beta.md)。构建后的模式固定在产物中，修改后需重新构建。
 
+## 不运行 Vite 的本机预览
+
+此方式使用当前 `backend/.env` 指向的数据库，由 Django 同时提供已构建的前端页面和 API。当前工作区已有 `frontend/dist`，可直接启动。前端源码更新后，先在 `frontend/` 执行一次 `npm run build`。保持 PostgreSQL 运行，在仓库根目录执行：
+
+```bash
+cd backend
+.venv/bin/python manage.py runserver 127.0.0.1:8000 --settings=config.local_preview_settings
+```
+
+浏览器访问 <http://127.0.0.1:8000/>；快讯详情等 Vue 路由可直接打开或刷新。端口 8000 若已有普通 Django 进程占用，先在原终端用 `Ctrl+C` 停止，再启动预览模式。服务只接受本机访问，前后端同源，账号和 API 使用当前开发数据库；关闭后端终端即停止网页。此模式不提供 Vite 的热更新。
+
 ## 页面
 
 | 路由                     | 用途                                                               |
