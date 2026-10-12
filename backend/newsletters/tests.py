@@ -69,15 +69,19 @@ class NewsletterTests(TestCase):
         response = self.detail(issue)
         self.assertEqual(response.status_code, 200)
         detail = response.json()
+        self.assertEqual(detail['code'], 'newsletter-2026-10')
+        self.assertEqual(detail['title'], '创享快讯 · 2026年10月')
         self.assertEqual(detail['sourcePublishedOn'], '2026-10-10')
         self.assertEqual(detail['publishedAt'], issue.published_at.isoformat())
-        self.assertEqual(detail['credits'], self.data['credits'])
+        self.assertEqual(detail['credits'], '创享编辑部')
         self.assertEqual([len(s['groups']) for s in detail['sections']], [2, 5])
         self.assertEqual(len(detail['sections'][1]['groups'][3]['items']), 2)
         self.assertIn('#/ict-contest?compId=', detail['sections'][0]['groups'][1]['items'][0]['sourceUrl'])
         self.assertNotIn('项目招募', response.content.decode())
         self.assertNotIn('confirmed_by', response.content.decode())
         card = self.client.get('/editorial/newsletters/').json()['results'][0]
+        self.assertEqual(card['title'], detail['title'])
+        self.assertEqual(card['detailUrl'], '/newsletters/newsletter-2026-10')
         self.assertEqual(card['sourceUrl'], '')
         self.assertEqual(card['detailUrl'], '/newsletters/' + issue.code)
         self.assertLessEqual(len(card['summary']), 180)
@@ -158,7 +162,7 @@ class NewsletterTests(TestCase):
     def test_existing_public_resources_are_reused_without_mutation(self):
         self.publish()
         data = copy.deepcopy(self.data)
-        data['code'] = 'guohao-newsletter-reuse'
+        data['code'] = 'newsletter-reuse-2026-10'
         before = list(Resource.objects.values('id', 'updated_at', 'content_version', 'description'))
         self.assertTrue(all(row['action'] == 'reuse' for row in plan_import(data)['items']))
         import_issue(data, actor=self.actor, publish=True)

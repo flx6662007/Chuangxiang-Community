@@ -64,7 +64,7 @@ function revisitAi() {
     <footer class="app-footer">
       <div>
         <span class="footer-brand">创享 · 竞赛与科研信息</span
-        ><span>创新俱乐部</span>
+        ><span>创享编辑部</span>
       </div>
       <p>比赛通知 · 学习资料 · 组队招募</p>
     </footer>

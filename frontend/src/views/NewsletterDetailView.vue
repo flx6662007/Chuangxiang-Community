@@ -51,7 +51,7 @@ onBeforeUnmount(() => controller?.abort())
     </div>
     <article v-else-if="item">
       <header class="newsletter-heading">
-        <p class="newsletter-eyebrow">国豪 · 创享快讯</p>
+        <p class="newsletter-eyebrow">创享快讯</p>
         <h1><span v-for="(part, index) in item.title.split(' · ')" :key="index" class="newsletter-title-part">{{ index ? ' · ' : '' }}{{ part }}</span></h1>
         <div class="newsletter-dates">
           <span v-if="item.sourcePublishedOn">原文发布 <time :datetime="item.sourcePublishedOn">{{ item.sourcePublishedOn }}</time></span>
